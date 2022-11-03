@@ -3,7 +3,7 @@
 
 | State                                    | Year(s) |
 | ---------------------------------------- | ------- | 
-| [Andaman & Nicobar Islands]              |    |
+| [Andaman & Nicobar Islands](andaman_and_nicobar/)              |    |
 | [Andhra Pradesh](andhra/)                |   |
 | [Arunachal Pradesh](arunachal/)          |   |
 | [Assam](assam/)                          |    |
