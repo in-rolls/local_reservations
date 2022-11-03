@@ -2,8 +2,8 @@
 
 
 | State                                    | Year(s) | Contributor(s) | 
-| ---------------------------------------- | ------- | 
-|  Andaman & Nicobar Islands               |   | | 
+| ---------------------------------------- | ------- | ------- | 
+|  Andaman & Nicobar Islands               |        | | 
 | Andhra Pradesh                           |   | |
 | Arunachal Pradesh                        |   | |
 | Assam                                    |   | |
