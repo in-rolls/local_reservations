@@ -31,13 +31,13 @@
 | Odisha                                   |     |  |
 | Punjab                                   |     |  |
 | Puducherry                               |     |  |
-| [Rajasthan](rajasthan/)                  |     |  |
+| [Rajasthan](rajasthan/)                  |  2004--2019 for urban and 2005--2020 for panchayat + 2020--2021 from the website  |  |
 | Sikkim                                   |     |  |
 | Tamil Nadu                               |     |  |
-| Telangana                                |     |  |
+| Telangana                                |  2018--2023   |  |
 | Tripura                                  |     |  |
-| [Uttar Pradesh](up/)                     |     |  |
-| [Uttarakhand](uttarakhand/)              |     | |
-| [West Bengal](wb/)                       |     | |
+| [Uttar Pradesh](up/)                     |  2015, 2021  |  |
+| [Uttarakhand](uttarakhand/)              |  2008, 2013, 2018-19 for urban and 2008, 2014, 2019 for panchayat   | |
+| [West Bengal](wb/)                       |  2013 for panchayat, 2008-2018 for municipal  | |
 
 
