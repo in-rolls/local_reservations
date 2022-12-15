@@ -1,0 +1,309 @@
+<style> .textmode { } </style><div>
+	<table cellspacing="0" rules="all" id="ctl00_ContentPlaceHolder1_district_list" style="color:Black;background-color:LightGoldenrodYellow;border-color:Black;border-width:1px;border-style:Solid;font-size:13px;width:100%;border-collapse:collapse;">
+		<caption>
+			राज्य निर्वाचन आयोग, उत्तर प्रदेश <br/>उत्तर प्रदेश के समस्त जनपद की सूची
+		</caption><tr align="center" style="background-color:White;font-weight:bold;height:30px;">
+			<th scope="col" style="text-decoration:underline;">क्र.सं.</th><th scope="col"><a "javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$district_list&#39;,&#39;Sort$dist_code&#39;)" style="color:Black;">जनपद कोड</a></th><th scope="col"><a "javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$district_list&#39;,&#39;Sort$dnm_hin&#39;)" style="color:Black;">जनपद का नाम (हिंदी में)</a></th><th scope="col"><a "javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$district_list&#39;,&#39;Sort$DistrictName&#39;)" style="color:Black;">जनपद का नाम (अंग्रेजी में)</a></th>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                1
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1207</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">अमेठी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Amethi</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                2
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1403</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">अम्बेडकर नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Ambedkar Nagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                3
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">502</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">अमरोहा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Amroha</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                4
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1404</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">अयोध्या</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Ayodhya</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                5
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">701</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">अलीगढ़</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Aligarh</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                6
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">704</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">आगरा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Agra</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                7
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1701</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">आज़मगढ़</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Azamgarh</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                8
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">803</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">इटावा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Etawah</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                9
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1202</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">उन्नाव</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Unnao</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                10
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">707</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">एटा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Etah</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                11
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">804</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">औरैया</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Aurraiya</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                12
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">802</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कन्नौज</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kannauj</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                13
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1603</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कुशी नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kushinagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                14
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">806</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कानपुर देहात</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kanpur Dehat</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                15
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">805</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कानपुर नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kanpur Nagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                16
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">708</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कासगंज</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kasganj</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                17
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1102</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">कौशाम्बी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Kaushambi </td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                18
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">403</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">गाजियाबाद</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Ghaziabad</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                19
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1801</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">गाजीपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Ghazipur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                20
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1304</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">गोंडा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Gonda</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                21
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1601</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">गोरखपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Gorakhpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                22
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">404</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">गौतमबुद्ध नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Gautam Budha Nagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                23
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1802</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">चन्दौली</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Chanduli</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                24
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1004</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">चित्रकूट</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Chitrakoot</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                25
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">901</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">जालौन</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Jalaun</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                26
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1804</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">जौनपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Jaunpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                27
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">903</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">झांसी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Jhanshi</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                28
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1604</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">देवरिया</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Deoria</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                29
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1104</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">प्रतापगढ़</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Pratapgarh</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                30
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1103</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">प्रयागराज</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Prayagraj</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                31
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">602</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">पीलीभीत</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Pilibhit</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                32
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1101</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">फ़तेहपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Fatehpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                33
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">801</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">फ़र्रुखाबाद</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Farrukhabad</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                34
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">705</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">फिरोजाबाद</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Firozabad</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                35
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">604</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बदायूं</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Badaun</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                36
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">601</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बरेली</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Bareilly</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                37
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">405</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बुलंद शहर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Buland Shahar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                38
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1303</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बलरामपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Balrampur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                39
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1703</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बलिया</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Ballia</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                40
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1501</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बस्ती</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Basti</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                41
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1301</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बहराइच</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Bahraich</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                42
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">402</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बागपत</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Baghpat</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                43
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1003</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बाँदा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Banda</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                44
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1401</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बाराबंकी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Barabanki</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                45
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">501</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">बिजनौर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Bijnor</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                46
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1901</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">भदोही(संत रविदास नगर)</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Bhadohi (Sant Ravidas Nagar)</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                47
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1702</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मऊ</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mau</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                48
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">303</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मुज़फ्फरनगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mujaffarnagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                49
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">703</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मथुरा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mathura</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                50
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">706</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मैनपुरी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mainpuri</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                51
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">401</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मेरठ</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Meerut</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                52
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">503</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मुरादाबाद</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Moradabad</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                53
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1602</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">महराजगंज</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Maharajganj</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                54
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1001</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">महोबा</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mahoba</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                55
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1902</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">मीरजापुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Mirzapur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                56
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">504</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">रामपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Rampur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                57
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1201</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">रायबरेली</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Raebareli</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                58
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1204</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">लखनऊ</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Lucknow</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                59
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1206</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">लखीमपुर खीरी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Lakhimpur Khiri</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                60
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">902</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">ललितपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Lalitpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                61
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1803</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">वाराणसी</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Varanasi</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                62
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1302</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">श्रावस्ती</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Shravasti</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                63
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">304</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">शामली</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Shamli</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                64
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">603</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">शाहजहाँपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Shahjahanpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                65
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1503</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">संत कबीर नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Sant Kabir Nagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                66
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">505</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सम्भल</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Sambhal</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                67
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1402</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सुलतानपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Sultanpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                68
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">301</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सहारनपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Saharanpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                69
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1502</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सिद्धार्थ नगर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Siddharth Nagar</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                70
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1205</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सीतापुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Sitapur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                71
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1903</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">सोनभद्र</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Sonbhadra</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                72
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1002</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">हमीरपुर</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Hamirpur</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                73
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">1203</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">हरदोई</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Hardoi</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                74
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">702</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">हाथरस</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Hathras</td>
+		</tr><tr align="center" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;height:25px;">
+			<td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">
+                                                75
+                                            </td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">406</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">हापुड़</td><td class="textmode" style="background-color:White;border-color:Black;border-width:1px;border-style:solid;">Hapur</td>
+		</tr>
+	</table>
+</div>

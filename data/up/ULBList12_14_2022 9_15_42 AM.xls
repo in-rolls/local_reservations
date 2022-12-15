@@ -1,0 +1,2623 @@
+<div>
+	<table class="gd1" cellspacing="0" cellpadding="4" rules="all" id="ctl00_ContentPlaceHolder1_GRDulbdata" style="color:Black;background-color:White;border-color:Black;border-width:1px;border-style:Solid;width:100%;border-collapse:collapse;">
+		<tr align="center" style="color:White;background-color:#333333;font-weight:bold;height:30px;">
+			<th scope="col">क्र. सं.</th><th scope="col">जनपद</th><th scope="col">निकाय का प्रकार</th><th scope="col">निकाय</th>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            1
+                                        </td><td>अमेठी</td><td>नगर पालिका परिषद</td><td>1-जायस</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            2
+                                        </td><td>अमेठी</td><td>नगर पालिका परिषद</td><td>2-गौरीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            3
+                                        </td><td>अमेठी</td><td>नगर ​​पंचायत</td><td>3-मुसाफिरखाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            4
+                                        </td><td>अमेठी</td><td>नगर ​​पंचायत</td><td>4-अमेठी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            5
+                                        </td><td>अम्बेडकर नगर</td><td>नगर पालिका परिषद</td><td>1-अकबरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            6
+                                        </td><td>अम्बेडकर नगर</td><td>नगर पालिका परिषद</td><td>2-टाण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            7
+                                        </td><td>अम्बेडकर नगर</td><td>नगर पालिका परिषद</td><td>3-जलालपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            8
+                                        </td><td>अम्बेडकर नगर</td><td>नगर ​​पंचायत</td><td>1-अशरफपुर किछौछा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            9
+                                        </td><td>अम्बेडकर नगर</td><td>नगर ​​पंचायत</td><td>2-इल्तिफातगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            10
+                                        </td><td>अमरोहा</td><td>नगर पालिका परिषद</td><td>1-अमरोहा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            11
+                                        </td><td>अमरोहा</td><td>नगर पालिका परिषद</td><td>2-हसनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            12
+                                        </td><td>अमरोहा</td><td>नगर पालिका परिषद</td><td>3-धनौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            13
+                                        </td><td>अमरोहा</td><td>नगर पालिका परिषद</td><td>4-बछरायूँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            14
+                                        </td><td>अमरोहा</td><td>नगर पालिका परिषद</td><td>5-गजरौला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            15
+                                        </td><td>अमरोहा</td><td>नगर ​​पंचायत</td><td>1-जोया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            16
+                                        </td><td>अमरोहा</td><td>नगर ​​पंचायत</td><td>3-उझारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            17
+                                        </td><td>अमरोहा</td><td>नगर ​​पंचायत</td><td>4-नौगावां सादात</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            18
+                                        </td><td>अयोध्या</td><td>नगर ​​निगम</td><td>2-अयोध्या</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            19
+                                        </td><td>अयोध्या</td><td>नगर पालिका परिषद</td><td>3-रूदौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            20
+                                        </td><td>अयोध्या</td><td>नगर ​​पंचायत</td><td>1-गोसाई गंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            21
+                                        </td><td>अयोध्या</td><td>नगर ​​पंचायत</td><td>2-भदरसा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            22
+                                        </td><td>अयोध्या</td><td>नगर ​​पंचायत</td><td>3-बीकापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            23
+                                        </td><td>अलीगढ़</td><td>नगर ​​निगम</td><td>1-अलीगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            24
+                                        </td><td>अलीगढ़</td><td>नगर पालिका परिषद</td><td>1-खैर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            25
+                                        </td><td>अलीगढ़</td><td>नगर पालिका परिषद</td><td>2-अतरौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            26
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>1-छर्रा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            27
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>2-बेसवां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            28
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>3-इगलास</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            29
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>4-जट्टारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            30
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>5-कौडियागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            31
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>6-जलाली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            32
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>7-पिलखना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            33
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>8-विजयगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            34
+                                        </td><td>अलीगढ़</td><td>नगर ​​पंचायत</td><td>9-हरदुआगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            35
+                                        </td><td>आगरा</td><td>नगर ​​निगम</td><td>1-आगरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            36
+                                        </td><td>आगरा</td><td>नगर पालिका परिषद</td><td>1-फतेपुरसीकरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            37
+                                        </td><td>आगरा</td><td>नगर पालिका परिषद</td><td>2-शमसाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            38
+                                        </td><td>आगरा</td><td>नगर पालिका परिषद</td><td>3-एत्मादपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            39
+                                        </td><td>आगरा</td><td>नगर पालिका परिषद</td><td>4-बाह</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            40
+                                        </td><td>आगरा</td><td>नगर पालिका परिषद</td><td>5-अछनेरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            41
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>1-पिनाहट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            42
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>2-फतेहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            43
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>3-किरावली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            44
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>4-खेरागढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            45
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>5-जगनेर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            46
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>6-दयालबाग</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            47
+                                        </td><td>आगरा</td><td>नगर ​​पंचायत</td><td>7-स्वामी बाग</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            48
+                                        </td><td>आजमगढ़</td><td>नगर पालिका परिषद</td><td>1-मुबारकपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            49
+                                        </td><td>आजमगढ़</td><td>नगर पालिका परिषद</td><td>2-आजमगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            50
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>1-निजामाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            51
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>2-बिलरियागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            52
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>3-मेहनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            53
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>4-अजमतगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            54
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>5-जीयनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            55
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>6-कटघर लालगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            56
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>7-सरायमीर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            57
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>8-फूलपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            58
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>9-अतरौलिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            59
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>10-महराजगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            60
+                                        </td><td>आजमगढ़</td><td>नगर ​​पंचायत</td><td>11-माहुल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            61
+                                        </td><td>इटावा</td><td>नगर पालिका परिषद</td><td>1-इटावा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            62
+                                        </td><td>इटावा</td><td>नगर पालिका परिषद</td><td>2-भरथना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            63
+                                        </td><td>इटावा</td><td>नगर पालिका परिषद</td><td>3-जसवन्त नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            64
+                                        </td><td>इटावा</td><td>नगर ​​पंचायत</td><td>1-इकदिल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            65
+                                        </td><td>इटावा</td><td>नगर ​​पंचायत</td><td>2-बकेवर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            66
+                                        </td><td>इटावा</td><td>नगर ​​पंचायत</td><td>3-लखना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            67
+                                        </td><td>उन्नाव</td><td>नगर पालिका परिषद</td><td>1-उन्नाव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            68
+                                        </td><td>उन्नाव</td><td>नगर पालिका परिषद</td><td>2-बांगरमऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            69
+                                        </td><td>उन्नाव</td><td>नगर पालिका परिषद</td><td>3-गंगाघाट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            70
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>1-हैदराबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            71
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>2-कुरसठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            72
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>3-फतेहपुर चौरासी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            73
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>4-भगवन्त नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            74
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>5-मोहान</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            75
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>6-रसूलाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            76
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>7-बीघापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            77
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>8-न्योतनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            78
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>9-औरास</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            79
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>10-ऊगू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            80
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>11-नवाबगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            81
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>12-गंज मुरादाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            82
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>13-मौरावां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            83
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>14-सफीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            84
+                                        </td><td>उन्नाव</td><td>नगर ​​पंचायत</td><td>15-पुरवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            85
+                                        </td><td>एटा</td><td>नगर पालिका परिषद</td><td>1-अलीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            86
+                                        </td><td>एटा</td><td>नगर पालिका परिषद</td><td>2-मारहरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            87
+                                        </td><td>एटा</td><td>नगर पालिका परिषद</td><td>3-एटा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            88
+                                        </td><td>एटा</td><td>नगर पालिका परिषद</td><td>4-जलेसर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            89
+                                        </td><td>एटा</td><td>नगर ​​पंचायत</td><td>1-सकीट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            90
+                                        </td><td>एटा</td><td>नगर ​​पंचायत</td><td>2-राजा का रामपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            91
+                                        </td><td>एटा</td><td>नगर ​​पंचायत</td><td>3-अवागढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            92
+                                        </td><td>एटा</td><td>नगर ​​पंचायत</td><td>4-जैथरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            93
+                                        </td><td>एटा</td><td>नगर ​​पंचायत</td><td>5-निधौली कलॉं</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            94
+                                        </td><td>औरैया</td><td>नगर पालिका परिषद</td><td>1-औरैया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            95
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>1-दिबियापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            96
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>2-फफूद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            97
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>3-अटसू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            98
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>4-बाबरपुर अजीतमल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            99
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>5-अछल्दा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            100
+                                        </td><td>औरैया</td><td>नगर ​​पंचायत</td><td>6-बिधूना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            101
+                                        </td><td>कन्नौज</td><td>नगर पालिका परिषद</td><td>1-कन्नौज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            102
+                                        </td><td>कन्नौज</td><td>नगर पालिका परिषद</td><td>2-छिबरामऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            103
+                                        </td><td>कन्नौज</td><td>नगर पालिका परिषद</td><td>3-गुरसहायगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            104
+                                        </td><td>कन्नौज</td><td>नगर ​​पंचायत</td><td>1-तालग्राम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            105
+                                        </td><td>कन्नौज</td><td>नगर ​​पंचायत</td><td>2-सौरिख</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            106
+                                        </td><td>कन्नौज</td><td>नगर ​​पंचायत</td><td>3-तिर्वागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            107
+                                        </td><td>कन्नौज</td><td>नगर ​​पंचायत</td><td>4-सिकन्दरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            108
+                                        </td><td>कन्नौज</td><td>नगर ​​पंचायत</td><td>5-समधन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            109
+                                        </td><td>कुशीनगर</td><td>नगर पालिका परिषद</td><td>1-पडरौना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            110
+                                        </td><td>कुशीनगर</td><td>नगर पालिका परिषद</td><td>2-कुशीनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            111
+                                        </td><td>कुशीनगर</td><td>नगर पालिका परिषद</td><td>3-हाटा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            112
+                                        </td><td>कुशीनगर</td><td>नगर ​​पंचायत</td><td>1-रामकोला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            113
+                                        </td><td>कुशीनगर</td><td>नगर ​​पंचायत</td><td>3-कप्तानगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            114
+                                        </td><td>कुशीनगर</td><td>नगर ​​पंचायत</td><td>5-खडडा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            115
+                                        </td><td>कुशीनगर</td><td>नगर ​​पंचायत</td><td>6-सेवरही</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            116
+                                        </td><td>कानपुर देहात</td><td>नगर पालिका परिषद</td><td>1-पुखरायाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            117
+                                        </td><td>कानपुर देहात</td><td>नगर पालिका परिषद</td><td>2-झींझक</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            118
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>1-अमरौधा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            119
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>2-सिकन्दरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            120
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>3-शिवली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            121
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>4-रूरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            122
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>5-अकबरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            123
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>7-रसूलाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            124
+                                        </td><td>कानपुर देहात</td><td>नगर ​​पंचायत</td><td>8-डेरापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            125
+                                        </td><td>कानपुर नगर</td><td>नगर ​​निगम</td><td>1-कानपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            126
+                                        </td><td>कानपुर नगर</td><td>नगर पालिका परिषद</td><td>1-घाटमपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            127
+                                        </td><td>कानपुर नगर</td><td>नगर पालिका परिषद</td><td>2-बिल्हौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            128
+                                        </td><td>कानपुर नगर</td><td>नगर ​​पंचायत</td><td>1-बिठूर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            129
+                                        </td><td>कानपुर नगर</td><td>नगर ​​पंचायत</td><td>2-शिवराज पुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            130
+                                        </td><td>कासगंज</td><td>नगर पालिका परिषद</td><td>1-सोरों</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            131
+                                        </td><td>कासगंज</td><td>नगर पालिका परिषद</td><td>3-कासगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            132
+                                        </td><td>कासगंज</td><td>नगर पालिका परिषद</td><td>4-गंजडुन्डवारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            133
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>1-पटियाली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            134
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>2-मोहनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            135
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>3-भरगैन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            136
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>4-सिढपुरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            137
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>5-सहावर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            138
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>7-अमॉपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            139
+                                        </td><td>कासगंज</td><td>नगर ​​पंचायत</td><td>12-विलराम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            140
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>1-चायल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            141
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>2-भरवारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            142
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>3-सराय आकिल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            143
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>4-करारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            144
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>5-मंझनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            145
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>6-अझुबा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            146
+                                        </td><td>कौशाम्बी</td><td>नगर ​​पंचायत</td><td>7-सिराथू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            147
+                                        </td><td>गाजियाबाद</td><td>नगर ​​निगम</td><td>1-गाजियाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            148
+                                        </td><td>गाजियाबाद</td><td>नगर पालिका परिषद</td><td>4-मोदी नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            149
+                                        </td><td>गाजियाबाद</td><td>नगर पालिका परिषद</td><td>5-मुरादनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            150
+                                        </td><td>गाजियाबाद</td><td>नगर पालिका परिषद</td><td>6-लोनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            151
+                                        </td><td>गाजियाबाद</td><td>नगर पालिका परिषद</td><td>7-खोड़ा- मकनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            152
+                                        </td><td>गाजियाबाद</td><td>नगर ​​पंचायत</td><td>1-निवाडी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            153
+                                        </td><td>गाजियाबाद</td><td>नगर ​​पंचायत</td><td>2-पतला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            154
+                                        </td><td>गाजियाबाद</td><td>नगर ​​पंचायत</td><td>3-फरीदनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            155
+                                        </td><td>गाजियाबाद</td><td>नगर ​​पंचायत</td><td>5-डासना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            156
+                                        </td><td>गाज़ीपुर</td><td>नगर पालिका परिषद</td><td>1-गाजीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            157
+                                        </td><td>गाज़ीपुर</td><td>नगर पालिका परिषद</td><td>2-जमानियां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            158
+                                        </td><td>गाज़ीपुर</td><td>नगर पालिका परिषद</td><td>3-मुहम्मदाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            159
+                                        </td><td>गाज़ीपुर</td><td>नगर ​​पंचायत</td><td>1-सैदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            160
+                                        </td><td>गाज़ीपुर</td><td>नगर ​​पंचायत</td><td>2-सादात</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            161
+                                        </td><td>गाज़ीपुर</td><td>नगर ​​पंचायत</td><td>3-बहादुरगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            162
+                                        </td><td>गाज़ीपुर</td><td>नगर ​​पंचायत</td><td>4-जंगीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            163
+                                        </td><td>गाज़ीपुर</td><td>नगर ​​पंचायत</td><td>5-दिलदार नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            164
+                                        </td><td>गोंडा</td><td>नगर पालिका परिषद</td><td>1-गोण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            165
+                                        </td><td>गोंडा</td><td>नगर पालिका परिषद</td><td>2-नवाबगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            166
+                                        </td><td>गोंडा</td><td>नगर पालिका परिषद</td><td>3-करनैलगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            167
+                                        </td><td>गोंडा</td><td>नगर ​​पंचायत</td><td>2-कटरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            168
+                                        </td><td>गोंडा</td><td>नगर ​​पंचायत</td><td>3-मनकापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            169
+                                        </td><td>गोंडा</td><td>नगर ​​पंचायत</td><td>4-खरगूपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            170
+                                        </td><td>गोंडा</td><td>नगर ​​पंचायत</td><td>5-परसपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            171
+                                        </td><td>गोरखपुर</td><td>नगर ​​निगम</td><td>1-गोरखपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            172
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>1-सहजनवां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            173
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>2-बांसगांव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            174
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>3-मुण्डेरा बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            175
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>4-पीपीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            176
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>5-पिपराइच</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            177
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>6-गोलाबाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            178
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>7-बडहलगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            179
+                                        </td><td>गोरखपुर</td><td>नगर ​​पंचायत</td><td>8-कस्बा संग्रामपुर उर्फ उनवल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            180
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर पालिका परिषद</td><td>1-दादरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            181
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर ​​पंचायत</td><td>1-दनकौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            182
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर ​​पंचायत</td><td>2-रबूपुरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            183
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर ​​पंचायत</td><td>3-बिलासपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            184
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर ​​पंचायत</td><td>4-जेवर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            185
+                                        </td><td>गौतमबुद्ध नगर</td><td>नगर ​​पंचायत</td><td>5-जहांगीरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            186
+                                        </td><td>चन्दौली</td><td>नगर पालिका परिषद</td><td>1-पं० दीनदयाल उपाध्याय नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            187
+                                        </td><td>चन्दौली</td><td>नगर ​​पंचायत</td><td>1-चकिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            188
+                                        </td><td>चन्दौली</td><td>नगर ​​पंचायत</td><td>2-सौयद राजा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            189
+                                        </td><td>चन्दौली</td><td>नगर ​​पंचायत</td><td>3-चन्दोली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            190
+                                        </td><td>चित्रकूट</td><td>नगर पालिका परिषद</td><td>1-चित्रकूटधाम कर्वी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            191
+                                        </td><td>चित्रकूट</td><td>नगर ​​पंचायत</td><td>1-मानिकपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            192
+                                        </td><td>चित्रकूट</td><td>नगर ​​पंचायत</td><td>2-राजापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            193
+                                        </td><td>जालौन</td><td>नगर पालिका परिषद</td><td>1-उरई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            194
+                                        </td><td>जालौन</td><td>नगर पालिका परिषद</td><td>2-जालौन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            195
+                                        </td><td>जालौन</td><td>नगर पालिका परिषद</td><td>3-कोंच</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            196
+                                        </td><td>जालौन</td><td>नगर पालिका परिषद</td><td>4-कालपी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            197
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>1-रामपुरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            198
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>2-माधौगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            199
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>3-ऊमरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            200
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>4-कोटरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            201
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>5-कदौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            202
+                                        </td><td>जालौन</td><td>नगर ​​पंचायत</td><td>6-नदीगांव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            203
+                                        </td><td>जौनपुर</td><td>नगर पालिका परिषद</td><td>1-जौनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            204
+                                        </td><td>जौनपुर</td><td>नगर पालिका परिषद</td><td>2-मुंगरा बादशाहपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            205
+                                        </td><td>जौनपुर</td><td>नगर पालिका परिषद</td><td>3-शाहगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            206
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>1-मड़ीयाहूं</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            207
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>2-मछली शहर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            208
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>3-केराकत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            209
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>4-खेतासराय</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            210
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>5-जफराबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            211
+                                        </td><td>जौनपुर</td><td>नगर ​​पंचायत</td><td>6-बदलापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            212
+                                        </td><td>झांसी</td><td>नगर ​​निगम</td><td>1-झांसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            213
+                                        </td><td>झांसी</td><td>नगर पालिका परिषद</td><td>1-चिरगॉंव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            214
+                                        </td><td>झांसी</td><td>नगर पालिका परिषद</td><td>2-बरूआसागर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            215
+                                        </td><td>झांसी</td><td>नगर पालिका परिषद</td><td>3-गुरसरांय</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            216
+                                        </td><td>झांसी</td><td>नगर पालिका परिषद</td><td>4-समथर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            217
+                                        </td><td>झांसी</td><td>नगर पालिका परिषद</td><td>5-मऊ रानीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            218
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>1-एरच</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            219
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>2-बडागॉंव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            220
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>3-टोडीफतेहपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            221
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>4-मोंठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            222
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>5-कटेरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            223
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>6-रानीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            224
+                                        </td><td>झांसी</td><td>नगर ​​पंचायत</td><td>7-गरौठा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            225
+                                        </td><td>देवरिया</td><td>नगर पालिका परिषद</td><td>1-गौरा बरहज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            226
+                                        </td><td>देवरिया</td><td>नगर पालिका परिषद</td><td>2-देवरिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            227
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>1-रूद्रपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            228
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>2-गौरी बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            229
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>3-रामपुर कारखाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            230
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>4-भाटपार रानी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            231
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>5-सलेमपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            232
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>6-भटनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            233
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>7-मझौलीराज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            234
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>8-लार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            235
+                                        </td><td>देवरिया</td><td>नगर ​​पंचायत</td><td>9-बरियारपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            236
+                                        </td><td>प्रतापगढ़</td><td>नगर पालिका परिषद</td><td>1-बेल्हा प्रतापगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            237
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>1-पट्टी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            238
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>2-कुण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            239
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>3-मानिकपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            240
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>4-प्रतापगढ सिटी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            241
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>5-अन्तू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            242
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>6-कटरा मेदनीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            243
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>7-लालगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            244
+                                        </td><td>प्रतापगढ़</td><td>नगर ​​पंचायत</td><td>8-रानीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            245
+                                        </td><td>प्रयागराज</td><td>नगर ​​निगम</td><td>1-इलाहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            246
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>1-सिरसा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            247
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>2-लाल गोपाल गंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            248
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>3-झॅूसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            249
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>4-फूलपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            250
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>5-शंकरगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            251
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>6-कोरॉंव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            252
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>7-हन्डिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            253
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>8-भारतगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            254
+                                        </td><td>प्रयागराज</td><td>नगर ​​पंचायत</td><td>9-मऊ आइमा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            255
+                                        </td><td>पीलीभीत</td><td>नगर पालिका परिषद</td><td>1-बीसलपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            256
+                                        </td><td>पीलीभीत</td><td>नगर पालिका परिषद</td><td>2-पूरनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            257
+                                        </td><td>पीलीभीत</td><td>नगर पालिका परिषद</td><td>3-पीलीभीत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            258
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>1-जहानाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            259
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>2-बरखेडा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            260
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>3-बिलसण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            261
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>4-कलीनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            262
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>5-न्यूरिया हुसैनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            263
+                                        </td><td>पीलीभीत</td><td>नगर ​​पंचायत</td><td>6-गुलडिया भिंडारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            264
+                                        </td><td>फतेहपुर</td><td>नगर पालिका परिषद</td><td>1-फतेहपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            265
+                                        </td><td>फतेहपुर</td><td>नगर पालिका परिषद</td><td>2-बिन्दकी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            266
+                                        </td><td>फतेहपुर</td><td>नगर ​​पंचायत</td><td>1-खागा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            267
+                                        </td><td>फतेहपुर</td><td>नगर ​​पंचायत</td><td>2-बहुआ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            268
+                                        </td><td>फतेहपुर</td><td>नगर ​​पंचायत</td><td>3-कोडा जहानाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            269
+                                        </td><td>फतेहपुर</td><td>नगर ​​पंचायत</td><td>4-किशुनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            270
+                                        </td><td>फतेहपुर</td><td>नगर ​​पंचायत</td><td>5-हथगाम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            271
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर पालिका परिषद</td><td>1-कायमगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            272
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर पालिका परिषद</td><td>2-फरुखाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            273
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर ​​पंचायत</td><td>1-कमालगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            274
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर ​​पंचायत</td><td>2-शमशाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            275
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर ​​पंचायत</td><td>3-कम्पिल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            276
+                                        </td><td>फ़र्रुखाबाद</td><td>नगर ​​पंचायत</td><td>4-मोहम्मदाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            277
+                                        </td><td>फिरोज़ाबाद</td><td>नगर ​​निगम</td><td>1-फिरोजाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            278
+                                        </td><td>फिरोज़ाबाद</td><td>नगर पालिका परिषद</td><td>1-सिरसागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            279
+                                        </td><td>फिरोज़ाबाद</td><td>नगर पालिका परिषद</td><td>2-टूण्डला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            280
+                                        </td><td>फिरोज़ाबाद</td><td>नगर पालिका परिषद</td><td>3-शिकोहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            281
+                                        </td><td>फिरोज़ाबाद</td><td>नगर ​​पंचायत</td><td>1-जसराना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            282
+                                        </td><td>फिरोज़ाबाद</td><td>नगर ​​पंचायत</td><td>2-फरिहा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            283
+                                        </td><td>फिरोज़ाबाद</td><td>नगर ​​पंचायत</td><td>3-एका</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            284
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>1-ककराला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            285
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>2-बिसौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            286
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>3-उझानी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            287
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>4-बिलसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            288
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>5-सहसवान</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            289
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>6-बदायू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            290
+                                        </td><td>बदायूं</td><td>नगर पालिका परिषद</td><td>7-दातागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            291
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>1-कछला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            292
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>2-उसहैत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            293
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>5-मुडिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            294
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>6-सखानूँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            295
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>7-इस्लामनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            296
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>9-कुंवर गांव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            297
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>10-उसाँवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            298
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>12-रूदायन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            299
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>13-बजीरगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            300
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>14-गुलडिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            301
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>15-सैदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            302
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>16-अलापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            303
+                                        </td><td>बदायूं</td><td>नगर ​​पंचायत</td><td>17-फैजगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            304
+                                        </td><td>बरेली</td><td>नगर ​​निगम</td><td>1-बरेली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            305
+                                        </td><td>बरेली</td><td>नगर पालिका परिषद</td><td>1-फरीदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            306
+                                        </td><td>बरेली</td><td>नगर पालिका परिषद</td><td>2-नवाबगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            307
+                                        </td><td>बरेली</td><td>नगर पालिका परिषद</td><td>3-आंवला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            308
+                                        </td><td>बरेली</td><td>नगर पालिका परिषद</td><td>4-बहेडी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            309
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>1-फरीदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            310
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>2-शीशगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            311
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>3-देवरनियाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            312
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>4-सिरौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            313
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>5-विशारतगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            314
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>6-शाही</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            315
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>7-फतेहगंज पश्चिमी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            316
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>8-मीरगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            317
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>9-सेंथल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            318
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>10-धौराटांडा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            319
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>11-रिठौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            320
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>12-ठिरिया निजावत खाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            321
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>13-फतेहगंज पूर्वी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            322
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>14-शेरगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            323
+                                        </td><td>बरेली</td><td>नगर ​​पंचायत</td><td>15-रिछा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            324
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>1-खुर्जा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            325
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>2-बुलन्दशहर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            326
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>3-जहाँगीराबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            327
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>4-शिकारपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            328
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>5-स्याना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            329
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>6-गुलावठी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            330
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>7-अनूपशहर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            331
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>8-डिबाई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            332
+                                        </td><td>बुलंदशहर</td><td>नगर पालिका परिषद</td><td>9-सिकन्द्राबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            333
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>1-खानपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            334
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>2-पहासू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            335
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>3-औरंगाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            336
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>4-नरौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            337
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>5-छतारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            338
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>6-बी. बी. नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            339
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>7-बुगरासी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            340
+                                        </td><td>बुलंदशहर</td><td>नगर ​​पंचायत</td><td>8-ककोड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            341
+                                        </td><td>बलरामपुर</td><td>नगर पालिका परिषद</td><td>1-बलरामपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            342
+                                        </td><td>बलरामपुर</td><td>नगर पालिका परिषद</td><td>2-उतरौला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            343
+                                        </td><td>बलरामपुर</td><td>नगर ​​पंचायत</td><td>1-तुलसीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            344
+                                        </td><td>बलरामपुर</td><td>नगर ​​पंचायत</td><td>2-पचपेडवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            345
+                                        </td><td>बलिया</td><td>नगर पालिका परिषद</td><td>1-रसडा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            346
+                                        </td><td>बलिया</td><td>नगर पालिका परिषद</td><td>2-बलिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            347
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>1-चितबडागांव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            348
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>2-बिल्थरा रोड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            349
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>3-सहतवार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            350
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>4-रेवती</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            351
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>5-मनियर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            352
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>6-बॉंसडीह</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            353
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>7-सिकन्दरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            354
+                                        </td><td>बलिया</td><td>नगर ​​पंचायत</td><td>8-बैरिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            355
+                                        </td><td>बस्ती</td><td>नगर पालिका परिषद</td><td>1-बस्ती</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            356
+                                        </td><td>बस्ती</td><td>नगर ​​पंचायत</td><td>1-बभनान बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            357
+                                        </td><td>बस्ती</td><td>नगर ​​पंचायत</td><td>2-हरैया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            358
+                                        </td><td>बस्ती</td><td>नगर ​​पंचायत</td><td>3-बनकटी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            359
+                                        </td><td>बस्ती</td><td>नगर ​​पंचायत</td><td>4-रुधौली बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            360
+                                        </td><td>बहराइच</td><td>नगर पालिका परिषद</td><td>1-नानपारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            361
+                                        </td><td>बहराइच</td><td>नगर पालिका परिषद</td><td>2-बहराइच</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            362
+                                        </td><td>बहराइच</td><td>नगर ​​पंचायत</td><td>1-रिसिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            363
+                                        </td><td>बहराइच</td><td>नगर ​​पंचायत</td><td>2-जरवल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            364
+                                        </td><td>बागपत</td><td>नगर पालिका परिषद</td><td>1-बागपत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            365
+                                        </td><td>बागपत</td><td>नगर पालिका परिषद</td><td>2-बडौत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            366
+                                        </td><td>बागपत</td><td>नगर पालिका परिषद</td><td>3-खेकडा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            367
+                                        </td><td>बागपत</td><td>नगर ​​पंचायत</td><td>1-टटीरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            368
+                                        </td><td>बागपत</td><td>नगर ​​पंचायत</td><td>2-छपरौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            369
+                                        </td><td>बागपत</td><td>नगर ​​पंचायत</td><td>3-दोघट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            370
+                                        </td><td>बागपत</td><td>नगर ​​पंचायत</td><td>4-टीकरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            371
+                                        </td><td>बागपत</td><td>नगर ​​पंचायत</td><td>6-अमीनगर सराय</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            372
+                                        </td><td>बांदा</td><td>नगर पालिका परिषद</td><td>1-अतर्रा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            373
+                                        </td><td>बांदा</td><td>नगर पालिका परिषद</td><td>2-बांदा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            374
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>1-मटौध</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            375
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>2-तिन्दवारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            376
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>3-बबेरु</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            377
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>4-नरैनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            378
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>5-ओरन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            379
+                                        </td><td>बांदा</td><td>नगर ​​पंचायत</td><td>6-विसण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            380
+                                        </td><td>बाराबंकी</td><td>नगर पालिका परिषद</td><td>2-नवाबगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            381
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>1-जौदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            382
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>2-देंवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            383
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>3-बंकी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            384
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>4-सतरिख</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            385
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>5-टिकैतनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            386
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>6-हैदरगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            387
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>7-दरियाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            388
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>8-सिद्धौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            389
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>9-फतेहपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            390
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>10-रामनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            391
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>11-सुबेहा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            392
+                                        </td><td>बाराबंकी</td><td>नगर ​​पंचायत</td><td>12-बेलहरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            393
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>1-स्योहारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            394
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>2-चांदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            395
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>3-नूरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            396
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>4-हल्दौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            397
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>5-बिजनौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            398
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>6-किरतपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            399
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>7-नजीबाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            400
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>8-नहटौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            401
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>9-धामपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            402
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>10-शेरकोट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            403
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>11-नगीना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            404
+                                        </td><td>बिजनौर</td><td>नगर पालिका परिषद</td><td>12-अफजलगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            405
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>1-झालू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            406
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>2-मंडावर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            407
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>3-जलालाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            408
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>4-बढापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            409
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>5-सहसपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            410
+                                        </td><td>बिजनौर</td><td>नगर ​​पंचायत</td><td>6-साहनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            411
+                                        </td><td>भदोही</td><td>नगर पालिका परिषद</td><td>1-भदोही</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            412
+                                        </td><td>भदोही</td><td>नगर पालिका परिषद</td><td>2-गोपीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            413
+                                        </td><td>भदोही</td><td>नगर ​​पंचायत</td><td>1-घोसिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            414
+                                        </td><td>भदोही</td><td>नगर ​​पंचायत</td><td>2-ज्ञानपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            415
+                                        </td><td>भदोही</td><td>नगर ​​पंचायत</td><td>3-खमरिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            416
+                                        </td><td>भदोही</td><td>नगर ​​पंचायत</td><td>4-नई बाजार भदोही</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            417
+                                        </td><td>भदोही</td><td>नगर ​​पंचायत</td><td>5-सुरियावां भदोही</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            418
+                                        </td><td>मऊ</td><td>नगर पालिका परिषद</td><td>1-मऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            419
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>1-अदरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            420
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>2-अमिला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            421
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>3-कोपागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            422
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>4-मुहम्मदाबाद गोहना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            423
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>5-घोसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            424
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>6-दोहरी घाट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            425
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>7-वलीदपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            426
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>8-चिरैयाकोट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            427
+                                        </td><td>मऊ</td><td>नगर ​​पंचायत</td><td>9-मधुबन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            428
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर पालिका परिषद</td><td>2-मुजफ्फरनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            429
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर पालिका परिषद</td><td>4-खतौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            430
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>1-शाहपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            431
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>4-पुरकाजी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            432
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>5-सिसौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            433
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>7-जानसठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            434
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>11-भोकरहेडी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            435
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>12-चरथावल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            436
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>13-मीरापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            437
+                                        </td><td>मुज़फ्फरनगर</td><td>नगर ​​पंचायत</td><td>15-बुढाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            438
+                                        </td><td>मथुरा</td><td>नगर ​​निगम</td><td>2-वृन्दावन-मथुरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            439
+                                        </td><td>मथुरा</td><td>नगर पालिका परिषद</td><td>1-कोसी कलॉं</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            440
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>1-राया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            441
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>2-बाजना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            442
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>3-नन्दगॉंव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            443
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>4-बरसाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            444
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>5-छाता</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            445
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>6-चौमुहॉं</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            446
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>7-गोकुल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            447
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>8-बल्देव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            448
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>9-महावन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            449
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>10-फरह</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            450
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>11-सौंख</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            451
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>12-गोवर्धन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            452
+                                        </td><td>मथुरा</td><td>नगर ​​पंचायत</td><td>13-राधाकुण्ड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            453
+                                        </td><td>मैनपुरी</td><td>नगर पालिका परिषद</td><td>1-मैनपुरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            454
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>1-घिरोर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            455
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>2-कुरावली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            456
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>3-करहल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            457
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>4-ज्योति खुडिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            458
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>5-कुसमरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            459
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>6-बेबर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            460
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>7-भोगॉंव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            461
+                                        </td><td>मैनपुरी</td><td>नगर ​​पंचायत</td><td>8-किशनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            462
+                                        </td><td>मेरठ</td><td>नगर ​​निगम</td><td>1-मेरठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            463
+                                        </td><td>मेरठ</td><td>नगर पालिका परिषद</td><td>1-सरधना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            464
+                                        </td><td>मेरठ</td><td>नगर पालिका परिषद</td><td>2-मवाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            465
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>1-करनावल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            466
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>2-परीक्षितगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            467
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>3-लावड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            468
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>4-हस्तिनापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            469
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>5-सिवाल खास</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            470
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>6-बहसूमा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            471
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>7-खरखौदा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            472
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>8-दौराला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            473
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>9-फलावदा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            474
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>10-किठौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            475
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>11-शाहजहाँपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            476
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>12-हर्रा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            477
+                                        </td><td>मेरठ</td><td>नगर ​​पंचायत</td><td>13-खिवाई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            478
+                                        </td><td>मुरादाबाद</td><td>नगर ​​निगम</td><td>1-मुरादाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            479
+                                        </td><td>मुरादाबाद</td><td>नगर पालिका परिषद</td><td>1-बिलारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            480
+                                        </td><td>मुरादाबाद</td><td>नगर पालिका परिषद</td><td>2-ठाकुरद्वारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            481
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>2-उमरी कलां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            482
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>3-कुन्दरकी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            483
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>4-भोजपुर धर्मपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            484
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>6-कॉठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            485
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>7-अगवानपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            486
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>8-पाकबड़ा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            487
+                                        </td><td>मुरादाबाद</td><td>नगर ​​पंचायत</td><td>9-ढकिया</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            488
+                                        </td><td>महराजगंज</td><td>नगर पालिका परिषद</td><td>1-महराजगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            489
+                                        </td><td>महराजगंज</td><td>नगर पालिका परिषद</td><td>2-नौतनवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            490
+                                        </td><td>महराजगंज</td><td>नगर पालिका परिषद</td><td>3-सिसवा बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            491
+                                        </td><td>महराजगंज</td><td>नगर ​​पंचायत</td><td>1-सिसवा बाज़ार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            492
+                                        </td><td>महराजगंज</td><td>नगर ​​पंचायत</td><td>2-आनंद नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            493
+                                        </td><td>महराजगंज</td><td>नगर ​​पंचायत</td><td>3-निचलौल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            494
+                                        </td><td>महराजगंज</td><td>नगर ​​पंचायत</td><td>4-घुघली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            495
+                                        </td><td>महराजगंज</td><td>नगर ​​पंचायत</td><td>5-सोनौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            496
+                                        </td><td>महोबा</td><td>नगर पालिका परिषद</td><td>1-महोबा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            497
+                                        </td><td>महोबा</td><td>नगर पालिका परिषद</td><td>2-चरखारी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            498
+                                        </td><td>महोबा</td><td>नगर ​​पंचायत</td><td>1-कबरई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            499
+                                        </td><td>महोबा</td><td>नगर ​​पंचायत</td><td>2-खरेला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            500
+                                        </td><td>महोबा</td><td>नगर ​​पंचायत</td><td>3-कुलपहाड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            501
+                                        </td><td>मीरजापुर</td><td>नगर पालिका परिषद</td><td>1-चुनार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            502
+                                        </td><td>मीरजापुर</td><td>नगर पालिका परिषद</td><td>2-मीरजापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            503
+                                        </td><td>मीरजापुर</td><td>नगर पालिका परिषद</td><td>3-अहरौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            504
+                                        </td><td>मीरजापुर</td><td>नगर ​​पंचायत</td><td>1-कछवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            505
+                                        </td><td>रामपुर</td><td>नगर पालिका परिषद</td><td>1-टाण्डा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            506
+                                        </td><td>रामपुर</td><td>नगर पालिका परिषद</td><td>2-स्वार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            507
+                                        </td><td>रामपुर</td><td>नगर पालिका परिषद</td><td>3-मिलक</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            508
+                                        </td><td>रामपुर</td><td>नगर पालिका परिषद</td><td>4-बिलासपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            509
+                                        </td><td>रामपुर</td><td>नगर पालिका परिषद</td><td>5-रामपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            510
+                                        </td><td>रामपुर</td><td>नगर ​​पंचायत</td><td>1-शाहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            511
+                                        </td><td>रामपुर</td><td>नगर ​​पंचायत</td><td>2-मसवासी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            512
+                                        </td><td>रामपुर</td><td>नगर ​​पंचायत</td><td>3-कैमरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            513
+                                        </td><td>रायबरेली</td><td>नगर पालिका परिषद</td><td>1-रायबरेली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            514
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>2-बछरावाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            515
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>3-ऊॅचाहार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            516
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>4-नसीराबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            517
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>5-महराजगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            518
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>6-डलमऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            519
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>7-लालगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            520
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>8-सलोन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            521
+                                        </td><td>रायबरेली</td><td>नगर ​​पंचायत</td><td>9-परशदेपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            522
+                                        </td><td>लखनऊ</td><td>नगर ​​निगम</td><td>1-लखनऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            523
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>1-इटौंजा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            524
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>2-काकोरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            525
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>3-महोना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            526
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>4-गोसाईगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            527
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>5-अमेठी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            528
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>6-मलिहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            529
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>7-नगराम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            530
+                                        </td><td>लखनऊ</td><td>नगर ​​पंचायत</td><td>8-बक्शी का तालाब</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            531
+                                        </td><td>लखीमपुर खीरी</td><td>नगर पालिका परिषद</td><td>1-गोला गोकर्ण नाथ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            532
+                                        </td><td>लखीमपुर खीरी</td><td>नगर पालिका परिषद</td><td>2-पलिया कलां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            533
+                                        </td><td>लखीमपुर खीरी</td><td>नगर पालिका परिषद</td><td>3-मोहम्मदी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            534
+                                        </td><td>लखीमपुर खीरी</td><td>नगर पालिका परिषद</td><td>4-लखीम पुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            535
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>1-खीरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            536
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>2-सिंगाही भेडौरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            537
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>3-ओयल ढखवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            538
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>4-धौरहरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            539
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>5-मैलानी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            540
+                                        </td><td>लखीमपुर खीरी</td><td>नगर ​​पंचायत</td><td>6-बरबर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            541
+                                        </td><td>ललितपुर</td><td>नगर पालिका परिषद</td><td>1-ललितपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            542
+                                        </td><td>ललितपुर</td><td>नगर ​​पंचायत</td><td>1-तालबेहट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            543
+                                        </td><td>ललितपुर</td><td>नगर ​​पंचायत</td><td>2-महरौनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            544
+                                        </td><td>ललितपुर</td><td>नगर ​​पंचायत</td><td>3-पाली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            545
+                                        </td><td>वाराणसी</td><td>नगर ​​निगम</td><td>1-वाराणसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            546
+                                        </td><td>वाराणसी</td><td>नगर पालिका परिषद</td><td>1-रामनगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            547
+                                        </td><td>वाराणसी</td><td>नगर ​​पंचायत</td><td>1-गंगापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            548
+                                        </td><td>श्रावस्ती</td><td>नगर पालिका परिषद</td><td>1-भिनगा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            549
+                                        </td><td>श्रावस्ती</td><td>नगर ​​पंचायत</td><td>2-इकौना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            550
+                                        </td><td>शामली</td><td>नगर पालिका परिषद</td><td>1-कांधला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            551
+                                        </td><td>शामली</td><td>नगर पालिका परिषद</td><td>3-कैराना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            552
+                                        </td><td>शामली</td><td>नगर पालिका परिषद</td><td>5-शामली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            553
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>2-एलम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            554
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>3-जलालाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            555
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>6-ऊन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            556
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>8-गढीपुख्ता</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            557
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>9-बनत</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            558
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>10-झिंझाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            559
+                                        </td><td>शामली</td><td>नगर ​​पंचायत</td><td>14-थानाभवन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            560
+                                        </td><td>शाहजहांपुर</td><td>नगर पालिका परिषद</td><td>1-तिलहर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            561
+                                        </td><td>शाहजहांपुर</td><td>नगर पालिका परिषद</td><td>2-जलालाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            562
+                                        </td><td>शाहजहांपुर</td><td>नगर पालिका परिषद</td><td>3-शाहजहॉपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            563
+                                        </td><td>शाहजहांपुर</td><td>नगर पालिका परिषद</td><td>4-पुवायाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            564
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>2-अल्लहागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            565
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>3-रौजा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            566
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>4-खुदागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            567
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>5-कांट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            568
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>6-कटरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            569
+                                        </td><td>शाहजहांपुर</td><td>नगर ​​पंचायत</td><td>7-खुटार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            570
+                                        </td><td>सन्त कबीर नगर</td><td>नगर पालिका परिषद</td><td>1-खलीलाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            571
+                                        </td><td>सन्त कबीर नगर</td><td>नगर ​​पंचायत</td><td>1-मगहर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            572
+                                        </td><td>सन्त कबीर नगर</td><td>नगर ​​पंचायत</td><td>2-हरिहरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            573
+                                        </td><td>सन्त कबीर नगर</td><td>नगर ​​पंचायत</td><td>3-मेंहदावल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            574
+                                        </td><td>सम्भल</td><td>नगर पालिका परिषद</td><td>3-बहजोई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            575
+                                        </td><td>सम्भल</td><td>नगर पालिका परिषद</td><td>4-सम्भल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            576
+                                        </td><td>सम्भल</td><td>नगर पालिका परिषद</td><td>5-चन्दौसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            577
+                                        </td><td>सम्भल</td><td>नगर ​​पंचायत</td><td>1-नरौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            578
+                                        </td><td>सम्भल</td><td>नगर ​​पंचायत</td><td>4-गुन्नौर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            579
+                                        </td><td>सम्भल</td><td>नगर ​​पंचायत</td><td>5-सिरसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            580
+                                        </td><td>सम्भल</td><td>नगर ​​पंचायत</td><td>8-बबराला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            581
+                                        </td><td>सम्भल</td><td>नगर ​​पंचायत</td><td>11-गवां</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            582
+                                        </td><td>सुलतानपुर</td><td>नगर पालिका परिषद</td><td>1-सुलतानपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            583
+                                        </td><td>सुलतानपुर</td><td>नगर ​​पंचायत</td><td>2-कादीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            584
+                                        </td><td>सुलतानपुर</td><td>नगर ​​पंचायत</td><td>3-दोस्तपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            585
+                                        </td><td>सुलतानपुर</td><td>नगर ​​पंचायत</td><td>4-कोईरीपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            586
+                                        </td><td>सहारनपुर</td><td>नगर ​​निगम</td><td>1-सहारनपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            587
+                                        </td><td>सहारनपुर</td><td>नगर पालिका परिषद</td><td>1-देवबन्द</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            588
+                                        </td><td>सहारनपुर</td><td>नगर पालिका परिषद</td><td>2-नकुड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            589
+                                        </td><td>सहारनपुर</td><td>नगर पालिका परिषद</td><td>3-गंगोह</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            590
+                                        </td><td>सहारनपुर</td><td>नगर पालिका परिषद</td><td>4-सरसावा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            591
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>1-अम्बेहटा पीर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            592
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>2-नानौता</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            593
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>3-बेहट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            594
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>4-सुल्तानपुर चिलकाना</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            595
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>5-तीतरों</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            596
+                                        </td><td>सहारनपुर</td><td>नगर ​​पंचायत</td><td>6-रामपुर मनिहारान</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            597
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर पालिका परिषद</td><td>1-सिद्धार्थ नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            598
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर पालिका परिषद</td><td>2-बांसी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            599
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर ​​पंचायत</td><td>1-शोहरतगढ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            600
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर ​​पंचायत</td><td>2-बढनी बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            601
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर ​​पंचायत</td><td>3-डुमरियागंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            602
+                                        </td><td>सिद्धार्थ नगर</td><td>नगर ​​पंचायत</td><td>4-उसका बाजार</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            603
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>1-विसंवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            604
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>2-लहरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            605
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>3-मिश्रिख नौमिषारण्य</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            606
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>4-खैराबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            607
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>5-महमूदा बाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            608
+                                        </td><td>सीतापुर</td><td>नगर पालिका परिषद</td><td>6-सीतापुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            609
+                                        </td><td>सीतापुर</td><td>नगर ​​पंचायत</td><td>1-हरगांव</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            610
+                                        </td><td>सीतापुर</td><td>नगर ​​पंचायत</td><td>2-पैतेपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            611
+                                        </td><td>सीतापुर</td><td>नगर ​​पंचायत</td><td>3-महोली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            612
+                                        </td><td>सीतापुर</td><td>नगर ​​पंचायत</td><td>4-सिधौली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            613
+                                        </td><td>सीतापुर</td><td>नगर ​​पंचायत</td><td>5-तम्बौर अहमदाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            614
+                                        </td><td>सोनभद्र</td><td>नगर पालिका परिषद</td><td>1-राबर्टस गंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            615
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>1-चुर्क - घूर्मा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            616
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>2-चोपन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            617
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>3-घोरावल</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            618
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>4-ओबरा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            619
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>5-दुद्धी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            620
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>6-पिपरी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            621
+                                        </td><td>सोनभद्र</td><td>नगर ​​पंचायत</td><td>7-रेनुकूट</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            622
+                                        </td><td>हमीरपुर</td><td>नगर पालिका परिषद</td><td>1-हमीरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            623
+                                        </td><td>हमीरपुर</td><td>नगर पालिका परिषद</td><td>2-राठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            624
+                                        </td><td>हमीरपुर</td><td>नगर पालिका परिषद</td><td>3-मौदहा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            625
+                                        </td><td>हमीरपुर</td><td>नगर ​​पंचायत</td><td>1-कुरारा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            626
+                                        </td><td>हमीरपुर</td><td>नगर ​​पंचायत</td><td>2-सुमेरपुर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            627
+                                        </td><td>हमीरपुर</td><td>नगर ​​पंचायत</td><td>3-गोहांड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            628
+                                        </td><td>हमीरपुर</td><td>नगर ​​पंचायत</td><td>4-सरीला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            629
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>1-बिलग्राम</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            630
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>2-मल्लाबाँ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            631
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>3-साँडी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            632
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>4-पिहानी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            633
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>5-शाहाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            634
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>6-सण्डीला</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            635
+                                        </td><td>हरदोई</td><td>नगर पालिका परिषद</td><td>7-हरदोई</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            636
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>1-माधौगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            637
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>2-कुरसठ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            638
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>3-पाली</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            639
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>4-बेनीगंज</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            640
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>5-गोपा मऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            641
+                                        </td><td>हरदोई</td><td>नगर ​​पंचायत</td><td>6-कछौना पतसेनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            642
+                                        </td><td>हाथरस</td><td>नगर पालिका परिषद</td><td>1-हाथरस</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            643
+                                        </td><td>हाथरस</td><td>नगर पालिका परिषद</td><td>2-सिकन्दराराऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            644
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>1-सादाबाद</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            645
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>2-सासनी</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            646
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>3-मुरसान</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            647
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>4-हसायन</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            648
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>5-सहपऊ</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            649
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>6-मैंण्डू</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            650
+                                        </td><td>हाथरस</td><td>नगर ​​पंचायत</td><td>7-पुरदिल नगर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            651
+                                        </td><td>हापुड़</td><td>नगर पालिका परिषद</td><td>1-हापुड</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            652
+                                        </td><td>हापुड़</td><td>नगर पालिका परिषद</td><td>2-गढमुक्तेश्वर</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            653
+                                        </td><td>हापुड़</td><td>नगर पालिका परिषद</td><td>3-पिलखुवा</td>
+		</tr><tr align="center" style="height:30px;">
+			<td>
+                                            654
+                                        </td><td>हापुड़</td><td>नगर ​​पंचायत</td><td>4-बाबूगढ</td>
+		</tr>
+	</table>
+</div>
