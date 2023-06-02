@@ -1,4 +1,6 @@
-### Local Election Data (and Scripts)
+### Local Eleectoral Body Reservations
+
+Data on local electoral body (ULB and PRI) reservations. 
 
 
 | State                                    | Year(s) | Contributor(s) | 
