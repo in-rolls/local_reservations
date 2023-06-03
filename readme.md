@@ -1,4 +1,4 @@
-### Local Eleectoral Body Reservations
+### Local Electoral Body Reservations
 
 Data on local electoral body (ULB and PRI) reservations. 
 
