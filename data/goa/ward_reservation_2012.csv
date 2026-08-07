@@ -1,0 +1,1484 @@
+state,year,district,block,gram_panchayat,ward_no,tier,reservation,caste_reservation,woman_reserved,winner,votes,reservation_raw,script,source_pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,I,ward,Other than Woman,NONE,0,Paulo Thomas D'Souza,176,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,II,ward,Other than Woman,NONE,0,Vinayak Dattaram Salgaonkar,299,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,III,ward,Woman,NONE,1,Geeta Laxman Parab,438,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,IV,ward,Woman,NONE,1,Ana Maria Cassiano De Souza,273,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,V,ward,Other than Woman,NONE,0,Savio Pedo Simao Gonsalves,222,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,VI,ward,Other than Woman,NONE,0,Joseph Robert Sequeira,524,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,VII,ward,Woman,NONE,1,Pascoal Alex Fernandes,405,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,VIII,ward,BC Other than Woman,BC,0,Jayanath Rohidas Parulekar,334,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,IX,ward,Other than Woman,NONE,0,Reshma Dayanand Kalangutkar,189,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,X,ward,BC Other than Woman,BC,0,Anny Eduardo E. A. Fernandes,143,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CALANGUTE,XI,ward,Woman,NONE,1,Filomena Saluzinho Fernandes,332,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,I,ward,BC Other than Woman,BC,0,Fermino Aniceto Peter Fernandes,211,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,II,ward,Woman,NONE,1,Alma Ophelia Antonio Francisco Sequeira,187,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,III,ward,Other than Woman,NONE,0,Blaize Michael Fernandes,296,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,IV,ward,Woman,NONE,1,Lalita Ramkrishna Kerkar,338,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,V,ward,Other than Woman,NONE,0,Patrick Francis Xavier Sebastian Gonsalves,453,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,VI,ward,Other than Woman,NONE,0,Purification Cyprian Fialho,522,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,VII,ward,Woman,NONE,1,Estella Minguel Mascarenhas,270,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,VIII,ward,Other than Woman,NONE,0,Lourenco Amancio Fernandes,281,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,IX,ward,Other than Woman,NONE,0,Anna Maria Alex Maria Soares,173,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,X,ward,Other than Woman,NONE,0,Dharmendra Satchit Candolkar,141,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CANDOLIM,XI,ward,Woman,NONE,1,Amalina Jose Dias,123,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,I,ward,BC Other than Woman,BC,0,Narciso Manuel Domingos Pedro de Almeida,280,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,II,ward,BC Woman,BC,1,Piedade Narcis Almeida,181,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,III,ward,Other than Woman,NONE,0,Francisco Edmondo D'costa,129,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,IV,ward,Other than Woman,NONE,0,Dasharath Kashinath Kalangutkar,170,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,V,ward,Other than Woman,NONE,0,Prakash Manguesh Kalangutkar,127,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,VI,ward,Other than Woman,NONE,0,Mahadev Shantaram Rivonkar,162,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NERUL,VII,ward,Woman,NONE,1,Shashikala Janu Govekar,273,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,I,ward,Other than Woman,NONE,0,Gajanan Ramnath Halarnkar,102,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,II,ward,Other than Woman,NONE,0,Ghanasham Pundalik Naik,248,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,III,ward,Woman,NONE,1,Blanch Francis D'souza,193,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,IV,ward,Woman,NONE,1,Radhika Gopal Sawant,197,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,V,ward,Other than Woman,NONE,0,Subhash Harichandra Kalangutkar,239,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,VI,ward,Other than Woman,NONE,0,Swapnil Rama Chodankar,247,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,VII,ward,Woman,NONE,1,Dipali Gurunath Vernekar,265,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,VIII,ward,Other than Woman,NONE,0,Rajesh Tulshidas Valvaikar,322,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,IX,ward,Other than Woman,NONE,0,Umesh Anant Phadte,501,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,X,ward,Other than Woman,NONE,0,Vishranti Rajkumar Desai,196,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PENHA-DE- FRANCA,XI,ward,Woman,NONE,1,Safar Kedar Fadte,164,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,I,ward,BC Other than Woman,BC,0,Sandeep Kashinath Bandodkar,248,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,II,ward,Woman,NONE,1,Sonal Hemant Malvankar,187,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,III,ward,Other than Woman,NONE,0,Rupesh Damodar Naik,194,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,IV,ward,Woman,NONE,1,Damini Dayanand Shirodkar,152,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,V,ward,Other than Woman,NONE,0,Sayajirao Ladko Rane,170,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,VI,ward,BC Other than Woman,BC,0,Karan Kamalakant Govenkar,125,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,VII,ward,Woman,NONE,1,Sangeeta Babani Narvekar,131,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,VIII,ward,BC Other than Woman,BC,0,Amarnath Raghunath Govekar,205,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PILERNE,IX,ward,BC Other than Woman,BC,0,Santosh Kashinath Bandodkar,202,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,I,ward,BC Other than Woman,BC,0,Felix Lycas Rodrigues,119,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,II,ward,BC Woman,BC,1,Snehal Sandeep Gaonkar,140,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,III,ward,Other than Woman,NONE,0,Subhash Gopal Pednekar,123,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,IV,ward,Woman,NONE,1,Rajani Mahadev Parulekar,115,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,V,ward,Other than Woman,NONE,0,Virendra Gurudas Shirodkar,95,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,VI,ward,Other than Woman,NONE,0,Sushmita Subhash Pednekar,228,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,VII,ward,Woman,NONE,1,Deepali Digamber Korgaonkar,164,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,VIII,ward,Other than Woman,NONE,0,Prasanna Prabhakar Nagvekar,196,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,IX,ward,Other than Woman,NONE,0,Kedar Jayprakash Naik,288,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,X,ward,Other than Woman,NONE,0,Prarthna Keshav Garudi Desai,194,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REIS-MAGOES,XI,ward,BC Woman,BC,1,Shruti Suraj Chodankar,222,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,I,ward,Other than Woman,NONE,0,Dayanand Kanta Mandrekar,168,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,II,ward,Woman,NONE,1,Geeta Somanath Rane,237,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,III,ward,Other than Woman,NONE,0,Eknath Vassant Oraskar,195,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,IV,ward,Woman,NONE,1,Neha Naresh Kerkar,177,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,V,ward,BC Other than Woman,BC,0,Nanda Dattaram Virdekar,238,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,VI,ward,Other than Woman,NONE,0,Pandurang Krishna Harmalkar,215,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,VII,ward,Woman,NONE,1,Flory Noel Vaz,147,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,VIII,ward,Other than Woman,NONE,0,Jack Anthony Coelho,276,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALIGAO,IX,ward,BC Other than Woman,BC,0,Vithal Digambar Borkar,172,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,I,ward,Other than Woman,NONE,0,Vijay Yeshwant Chodankar,177,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,II,ward,Woman,NONE,1,Reena Stephan Fernandes,90,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,III,ward,BC Other than Woman,BC,0,Sandeep Dattaram Salgaonkar,280,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,IV,ward,Woman,NONE,1,Geeta Vijay Dalvi,258,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,V,ward,Other than Woman,NONE,0,Krishnakant Dattaram Chodankar,222,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,VI,ward,Other than Woman,NONE,0,Maximiano Arthur Francisco Xavier Fernandes,71,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,VII,ward,Woman,NONE,1,Bindiya Bhagvant Naik,116,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,VIII,ward,BC Other than Woman,BC,0,Rajesh Narayan Savaikar,253,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SALVADOR-DO- MUNDO,IX,ward,Other than Woman,NONE,0,Stephen Agnelo Albuquerque,187,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,I,ward,Other than Woman,NONE,0,Divya Deepak Palyekar,90,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,II,ward,Woman,NONE,1,Resha Rohidas Korgaonkar,127,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,III,ward,Other than Woman,NONE,0,Sachin Uttam Salgaokar,109,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,IV,ward,Other than Woman,NONE,0,Nilkant Anant Naik,175,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,V,ward,BC Other than Woman,BC,0,Uday Namdev Kandolkar,100,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,VI,ward,Other than Woman,NONE,0,Premanand Krishna Kochrekar,98,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SANGOLDA,VII,ward,Woman,NONE,1,Vilma Alex Alvares,146,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,I,ward,Other than Woman,NONE,0,Dinesh Gajanan Patil,349,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,II,ward,Other than Woman,NONE,0,Shital Sachitanand Dabholkar,333,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,III,ward,Woman,NONE,1,Sharad Sakharam Naik,217,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,IV,ward,Woman,NONE,1,Suhasini Surendra Govekar,250,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,V,ward,Other than Woman,NONE,0,Pratima Raghu Govekar,314,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,VI,ward,Other than Woman,NONE,0,Narayan Anant Mayekar,187,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,VII,ward,Woman,NONE,1,Fatima Fernanddo Rebello,310,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,VIII,ward,BC Other than Woman,BC,0,Sandeep Pandurang Chimulkar,218,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,IX,ward,Other than Woman,NONE,0,Lavinio Jude Fernando O.C. Rebello,181,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,X,ward,Other than Woman,NONE,0,Patrick Savio Marcelino Almeida,136,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ANJUNA CAISUVA,XI,ward,BC Woman,BC,1,Sheetal Subhash Naik,222,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,I,ward,BC Other than Woman,BC,0,SAKARAM PUNDALIK NAIK,177,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,II,ward,Woman,NONE,1,SUSHMA SHRIKRISHNA NAGVEKAR,Unopposed,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,III,ward,BC Other than Woman,BC,0,Roshan Vasudev Redkar,138,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,IV,ward,Other than Woman,NONE,0,Augustinho L. T. Diogo D'Souza,169,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,V,ward,Other than Woman,NONE,0,Clefophas Mario Fernandes,113,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,VI,ward,Other than Woman,NONE,0,Joseph Francis Fernandes,97,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ARPORA NAGOVA,VII,ward,Woman,NONE,1,Mahima Mahesh Korgaonkar,156,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,I,ward,Other than Woman,NONE,0,Hanumant Ranu Naik,205,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,II,ward,Woman,NONE,1,Suvarna Ajit Sawant,146,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,III,ward,Other than Woman,NONE,0,Rajesh Govind Naik,156,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,IV,ward,Other than Woman,NONE,0,Victor Peter D'Souza,211,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,V,ward,BC Other than Woman,BC,0,Anand Shyam Kandolkar,243,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,VI,ward,Other than Woman,NONE,0,Jallindar Namdev Gaonkar,148,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSAGAO,VII,ward,Woman,NONE,1,Priyanka Prashant Sangelkar,93,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,I,ward,Other than Woman,NONE,0,Vishant Ganba Naik Gaonkar,150,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,II,ward,BC Woman,BC,1,Savita Subash Korgaonkar,70,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,III,ward,Other than Woman,NONE,0,Dharmendra Ganesh Parab,156,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,IV,ward,Other than Woman,NONE,0,Bapu Govind Naik,214,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,V,ward,Other than Woman,NONE,0,Gurudas Shamba Khorjuvenkar,161,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,VI,ward,BC Other than Woman,BC,0,Gajanan Hanumant Salgaonkar,229,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,CAMURLIM,VII,ward,Woman,NONE,1,Kalpana Rama Dalvi,137,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,I,ward,BC Other than Woman,BC,0,Bharati Vidhyadhar Vaigankar,157,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,II,ward,Woman,NONE,1,Smita Shamsundar Harmalkar,190,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,III,ward,BC Other than Woman,BC,0,Gajanan Jaidev Narvekar,106,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,IV,ward,Other than Woman,NONE,0,Raju Ramnath Banaulikar,Unopposed,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,V,ward,BC Other than Woman,BC,0,Manguesh Shabi Chodankar,99,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,VI,ward,Other than Woman,NONE,0,Rama Shridhar Parab,209,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,OXEL,VII,ward,Woman,NONE,1,Manisha Rama Parab,176,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,I,ward,Other than Woman,NONE,0,Kamala Shrikrishna Nigudkar,317,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,II,ward,Woman,NONE,1,Rita Mariyano Pacheco,151,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,III,ward,Other than Woman,NONE,0,Josephine Alex D'cruz,157,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,IV,ward,Other than Woman,NONE,0,Sanjay Pandurang Korgaonkar,130,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,V,ward,Other than Woman,NONE,0,Edvin Peter Lobo,130,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,VI,ward,Other than Woman,NONE,0,Delilah Michael Lobo,Unopposed,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PARRA,VII,ward,Woman,NONE,1,Candida Domnic D'Souza,183,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,I,ward,Other than Woman,NONE,0,Dhanajay Vassant Pednekar,205,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,II,ward,Woman,NONE,1,Geetashree Narayan Kaulekar,114,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,III,ward,Other than Woman,NONE,0,Vinay Vithal Chopdekar,221,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,IV,ward,BC Other than Woman,BC,0,Gokuldas Shiva Halankar,115,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,V,ward,Other than Woman,NONE,0,Prabhakar Balachandra Halarnkar,191,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,VI,ward,Other than Woman,NONE,0,Vinashree Vinay Shirodkar,98,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,POMBURPA OLAULIM,VII,ward,BC Woman,BC,1,Berta Antonio Almeida,128,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,I,ward,BC Other than Woman,BC,0,Vinod Dattaram Paliemkar,276,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,II,ward,Woman,NONE,1,Poonam Fondu Shirodkar,208,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,III,ward,Other than Woman,NONE,0,Savita Shyam Govekar,214,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,IV,ward,BC Woman,BC,1,Simpal Chandan Dhargalkar,479,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,V,ward,Other than Woman,NONE,0,Digambar Vinayak Agarvadekar,170,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,VI,ward,Other than Woman,NONE,0,Alba Ferdinando Sequeira,285,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,VII,ward,Woman,NONE,1,Anita Rajaram Chari,224,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,VIII,ward,BC Other than Woman,BC,0,Joao Baptista Silvestre Benjamin Fernandes,237,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM MARNA,IX,ward,Other than Woman,NONE,0,Vignesh Gajanan Chodankar,174,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,I,ward,Other than Woman,NONE,0,Deepak Shrikant Haldankar,100,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,II,ward,Woman,NONE,1,Vishakha Vikas Goltekar,103,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,III,ward,BC Other than Woman,BC,0,Nilesh Dina Vaigankar,95,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,IV,ward,Other than Woman,NONE,0,Dina Vishwanath Goltekar,127,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,V,ward,BC Other than Woman,BC,0,Devanand Ankush Pednekar,80,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,VI,ward,BC Other than Woman,BC,0,Amey Raghoba Harmalkar,110,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIOLIM SODIEM,VII,ward,Woman,NONE,1,Deepika Deepak Kalangutkar,145,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,I,ward,Other than Woman,NONE,0,Ditosa Agnelo Lobo,276,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,II,ward,BC Woman,BC,1,Sonia Sanjay Pednekar,187,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,III,ward,Other than Woman,NONE,0,Gauresh Prabhakar Morajkar,176,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,IV,ward,Woman,NONE,1,Vaishali Narayan Satardekar,330,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,V,ward,Other than Woman,NONE,0,Kartik Sajo Kudnekar,322,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,VI,ward,Other than Woman,NONE,0,Anil Vassant Pednekar,177,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,VII,ward,Woman,NONE,1,Maya Gajanand Keni,112,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,VIII,ward,Other than Woman,NONE,0,Shital Sadanand Arolkar,209,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,IX,ward,BC Other than Woman,BC,0,Sandeep Kanta Manjrekar,146,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,X,ward,BC Other than Woman,BC,0,Rajesh Madhukar Kauthankar,284,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SUCCORRO,XI,ward,Woman,NONE,1,Rakshata Rovlu Parsekar,291,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,I,ward,BC Other than Woman,BC,0,Bala Dinkar Naik,283,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,II,ward,Woman,NONE,1,Sangeeta Sagar Lingudkar,225,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,III,ward,Other than Woman,NONE,0,Amita Vassudev Korgaonkar,353,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,IV,ward,Woman,NONE,1,Dipali Laxmikant Bicholkar,278,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,V,ward,Other than Woman,NONE,0,Mohan Vithal Dabhale,220,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,VI,ward,BC Other than Woman,BC,0,Milton Olympio Marques,228,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,VII,ward,Woman,NONE,1,Dikshita Digambar Kalangutkar,255,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,VIII,ward,Other than Woman,NONE,0,Ashok Vishwanath Bhaidkar,95,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,VERLA CANCA,IX,ward,Other than Woman,NONE,0,Agacio Diogo Pascoal Dsouza,135,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,I,ward,Other than Woman,NONE,0,FREDDY ALEX PONTES,165,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,II,ward,Other than Woman,NONE,0,JERRY FELIX ANTHONY NORONHA,161,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,III,ward,Woman,NONE,1,URSULA ZELIO D'SOUZA,161,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,IV,ward,Woman,NONE,1,JYOTSNA SIDDESH NAGDE,212,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,V,ward,BC Other than Woman,BC,0,HARISH ATMARAM MAYENKAR,233,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,VI,ward,Other than Woman,NONE,0,TOME JOHN LEO TAVARES,181,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,VII,ward,BC Woman,BC,1,UJWALA EKNATH KANDOLKAR,327,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,VIII,ward,Other than Woman,NONE,0,VALLABH SHRIPAD POLLE,300,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,IX,ward,Other than Woman,NONE,0,CHARUDATTA JAGANNATH PANJIKAR,290,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,X,ward,Other than Woman,NONE,0,DEEPAK DEVU NAIK,135,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ALDONA,XI,ward,Woman,NONE,1,SANDRA WALTER ROMEO RODRIGUES,131,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,I,ward,Other than Woman,NONE,0,DYANESHWAR RAGHUVIR KALANGUTKAR,123,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,II,ward,Woman,NONE,1,SAPNA VASUDEV MAPARI,208,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,III,ward,Other than Woman,NONE,0,SAVIO DOMINIC AZAVEDO,96,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,IV,ward,Woman,NONE,1,SANJANA SANJIV SALGAONKAR,140,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,V,ward,Other than Woman,NONE,0,BRINDAN GURUDAS KESARKAR,105,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,VI,ward,BC Other than Woman,BC,0,PRAVIN ARJUN BUGDE,216,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,VII,ward,Woman,NONE,1,HEMA SHANKAR NAIK,129,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,VIII,ward,Other than Woman,NONE,0,FRANCISVO JERONE VAZ,206,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,ASSNORA,IX,ward,Other than Woman,NONE,0,MEGHASHYAM BHALCHANDRA CHODANKAR,132,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,I,ward,Other than Woman,NONE,0,AMIT ASHOK SOIRU,120,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,II,ward,BC Woman,BC,1,PRATIKSHA PRABHAKAR MAYEKAR,200,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,III,ward,Other than Woman,NONE,0,ROQUE FELIX DOMNIC JOHN MONIZ,202,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,IV,ward,Other than Woman,NONE,0,SAVIO DAMACIAN MARTIN,192,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,V,ward,Other than Woman,NONE,0,REEMA SUBASH MORAJKAR,128,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,VI,ward,Other than Woman,NONE,0,RANJIT RAMA USGAONKAR,133,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,BASTORA,VII,ward,Woman,NONE,1,RAKHI RAJENDRA NAROJI,283,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,I,ward,BC Other than Woman,BC,0,KRISHNA CHANDRAKANT AMBRE,136,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,II,ward,BC Woman,BC,1,FILOMENA VINCENT PAUL,151,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,III,ward,BC Other than Woman,BC,0,DASHRATH VISHNU BICHOLKAR,184,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,IV,ward,Woman,NONE,1,AMITA KISHOR NAIK,153,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,V,ward,Other than Woman,NONE,0,NILAM MOTIRAM NAIK,151,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,VI,ward,Other than Woman,NONE,0,BABANI MADHU SALGAONKAR,208,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,VII,ward,Woman,NONE,1,DEEPIKA DEVIDAS VARKHANDKAR,247,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,VIII,ward,Other than Woman,NONE,0,JAGANNATH TUKARAM CHODANKAR,192,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,COLVALE,IX,ward,Other than Woman,NONE,0,MAHESHWAR SHAMBA CHODANKAR,122,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,I,ward,Other than Woman,NONE,0,SANNY PANDURANG NANODKAR,136,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,II,ward,Woman,NONE,1,KALPANA UDAY PIRANKAR,159,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,III,ward,Other than Woman,NONE,0,RAMA GAJANAN GADEKAR,160,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,IV,ward,BC Woman,BC,1,CARMELINA ONGUS MENEZES,191,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,V,ward,BC Other than Woman,BC,0,SIDDESH DNYANESHWAR SALGAONKAR,169,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,VI,ward,Other than Woman,NONE,0,FONDU GOPAL NAIK,186,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,VII,ward,Woman,NONE,1,BINDIYA BABAJI GADEKAR,136,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,VIII,ward,BC Other than Woman,BC,0,SAKHARAM RAJARAM MORAJKAR,103,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,GUIRIM,IX,ward,Other than Woman,NONE,0,CARMELINA ALEXANDER FRANCO,304,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,I,ward,Other than Woman,NONE,0,SADANAND SONU RAUL,195,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,II,ward,Woman,NONE,1,SONIA LAVU THAKUR,153,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,III,ward,Other than Woman,NONE,0,RAGHUVIR DATTARAM BAGKAR,254,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,IV,ward,Other than Woman,NONE,0,SANTOSH RAMDAS CHARI,86,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,V,ward,Other than Woman,NONE,0,OSWALD ALFRED JOHN CORDEIRO,248,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,VI,ward,BC Other than Woman,BC,0,SURYAKANT SHANTARAM BHATLEKAR,246,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,MOIRA,VII,ward,Woman,NONE,1,POONAM MANOHAR VOLVOIKAR,127,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,I,ward,Other than Woman,NONE,0,GOVIND PUNDALIK GOVENKAR,130,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,II,ward,Woman,NONE,1,DEEPALI DEELIP MADAKAIKAR,166,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,III,ward,Other than Woman,NONE,0,FREDDY FRANCISCO FERNANDES,128,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,IV,ward,Other than Woman,NONE,0,LAXMAN PANDURANG KERKAR,122,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,V,ward,Other than Woman,NONE,0,MAHENDRANATH KASHINATH GAWAS,129,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,VI,ward,Other than Woman,NONE,0,KAMLAKANT BABAL NAIK,86,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NACHINOLA,VII,ward,BC Woman,BC,1,SANJANA SUNIL KAMBLI,97,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NADORA,I,ward,Other than Woman,NONE,0,BHIKAJI BABLI KALANGUTKAR,86,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NADORA,II,ward,Woman,NONE,1,SHOBHA ANKUSH GAWAS,86,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NADORA,III,ward,Other than Woman,NONE,0,KAMLAKAR LAXIMAN GAWAS,138,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NADORA,IV,ward,BC Other than Woman,BC,0,MADHURA MADHU MANDREKAR,133,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,NADORA,V,ward,Woman,NONE,1,PARVATI MAHADEV GAWAS,127,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,I,ward,Other than Woman,NONE,0,GOVIND ATMARAM KUBAL,128,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,II,ward,Woman,NONE,1,BERNADIN NARLISO LOBO,205,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,III,ward,BC Other than Woman,BC,0,SURENDRA EKNATH CHARI,129,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,IV,ward,Other than Woman,NONE,0,SHIVNATH LAXMAN PINGE,95,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,V,ward,Other than Woman,NONE,0,GOPAL YESHWANT NAIK,101,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,VI,ward,Other than Woman,NONE,0,DINESH UTTAM KHALAP,78,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,PIRNA,VII,ward,Woman,NONE,1,POONAM PRAKASH SAWANT,112,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,I,ward,Other than Woman,NONE,0,UMESH SADANAND GAONKAR,123,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,II,ward,Woman,NONE,1,SHANTI SIDDHARTH MAYENKAR,120,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,III,ward,Other than Woman,NONE,0,ARJUN KASHINATH KAUTHANKAR,100,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,IV,ward,Other than Woman,NONE,0,SATISH NAKUL HARMALKAR,137,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,V,ward,BC Other than Woman,BC,0,SADANAND TUKARAM BAGKAR,173,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,VI,ward,Other than Woman,NONE,0,VALLABH JAYARAM FADTE,69,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,REVORA,VII,ward,Woman,NONE,1,JANHAVI JAGANNATH MANDREKAR,112,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,I,ward,Other than Woman,NONE,0,LAXMIKANT MADHUKAR PARAB,116,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,II,ward,Woman,NONE,1,JYOTI KASHINATH SIRSAIKAR,69,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,III,ward,Other than Woman,NONE,0,GOKULDAS SHANTARAM KANOLKAR,132,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,IV,ward,BC Other than Woman,BC,0,RAJARAM PANDURANG PARSEKAR,75,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,V,ward,BC Other than Woman,BC,0,ANAND SAHADEV TEMKAR,128,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,VI,ward,Other than Woman,NONE,0,DINESH DIGAMBAR FADTE,38,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,SIRSAIM,VII,ward,Woman,NONE,1,MARIA ROSA BENICIA SIMPLICIO DE OLIVEIRA,91,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,I,ward,Other than Woman,NONE,0,ARJUN SHIVA AROSKAR,433,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,II,ward,Woman,NONE,1,ERZILA PHILOMENA MICHAEL FERNANDES,183,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,III,ward,BC Other than Woman,BC,0,SANDEEP DIGAMBAR KAVTHANKAR,305,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,IV,ward,Woman,NONE,1,SHARANEGAL JOSE SANTAN D’SOUZA,132,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,V,ward,Other than Woman,NONE,0,MAHESH NARAYAN DHOND,131,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,VI,ward,BC Other than Woman,BC,0,SHIVDAS TUKARAM KAMBLI,114,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,VII,ward,Woman,NONE,1,MILAN PANDURANG NAIK,157,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,VIII,ward,Other than Woman,NONE,0,TULSHIDAS APA SHINDE,129,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,TIVIM,IX,ward,Other than Woman,NONE,0,VITTHAL NARAYAN VAIGANKAR,280,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,I,ward,Other than Woman,NONE,0,RAJESH KESHAV DABALE,94,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,II,ward,BC Woman,BC,1,KANTI BHIIKAJI KANOLKAR,Unopposed,OBC Wom,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,III,ward,Other than Woman,NONE,0,GEORGE BALBINO D'SOUZA,77,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,IV,ward,BC Other than Woman,BC,0,SHUBANAND VINAYAK MANDREKAR,124,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,V,ward,BC Other than Woman,BC,0,ANAND SHAMSUNDAR GADEKAR,95,O.B.C.,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,VI,ward,Other than Woman,NONE,0,VIRENDRA S. VASUDEV SALGAONKAR,189,General,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bardez,UCASSAIM/PALE /PUNOLA,VII,ward,Woman,NONE,1,GAURAVI GAURESH MADGAONKAR,142,Women,latin,panres_2012_Bardez.pdf
+Goa,2012,North Goa,Bicholim,ADVALPAL,I,ward,Other than Woman,NONE,0,Dilip Harichandra Gaonkar,52,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ADVALPAL,II,ward,Woman,NONE,1,Deepali Vithal Gaonkar,113,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ADVALPAL,III,ward,Other than Woman,NONE,0,Gajanan Ramakant Palkar,106,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ADVALPAL,IV,ward,Other than Woman,NONE,0,Vishwanath Narayan Naik,88,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ADVALPAL,V,ward,BC Woman,BC,1,Lakshata Laximan Desai,125,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,I,ward,BC Other than Woman,BC,0,Anant Mangesh Kanolkar,193,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,II,ward,Woman,NONE,1,Damini Dilip Gawas,127,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,III,ward,Other than Woman,NONE,0,Padmakar Arjun Malik,313,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,IV,ward,Woman,NONE,1,Manda Mahadev Ghadi,153,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,V,ward,Other than Woman,NONE,0,Vishnu Pundalik Ghadi,171,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,VI,ward,Other than Woman,NONE,0,Bablo Hari Gaonkar,153,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,VII,ward,Woman,NONE,1,Shakutalabai Babasaheb Rane,228,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,VIII,ward,BC Other than Woman,BC,0,Mahesh Nilkhant Chari,293,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,LATAMBARCEM,IX,ward,Other than Woman,NONE,0,Babasaheb Krishnarao Rane,236,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,I,ward,Other than Woman,NONE,0,Sanjay Sitaram Arondekar,438,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,II,ward,Other than Woman,NONE,0,Kishor Shankar Karbotkar,228,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,III,ward,Woman,NONE,1,Urvi Gopinath Masurkar,145,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,IV,ward,Woman,NONE,1,Neha Mahendra Thanekar,142,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,V,ward,Other than Woman,NONE,0,Pandurang Pundalik Gaonkar,234,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,VI,ward,BC Other than Woman,BC,0,Narendra Vasant Mayekar,341,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,VII,ward,Woman,NONE,1,Veena Vishwas Chodankar,319,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,VIII,ward,Other than Woman,NONE,0,Narendra Savlo Tari,84,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,IX,ward,BC Other than Woman,BC,0,Vijaykumar Anant Polle,115,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,X,ward,BC Other than Woman,BC,0,Mahesh Vishnu Ghadi,250,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MAYEM-VAIGINIM,XI,ward,BC Woman,BC,1,Suvarna Tulshidas Chodankar,442,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MENCUREM DUMACEM,I,ward,Other than Woman,NONE,0,Sanjay Pundalik Shetye,234,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MENCUREM DUMACEM,II,ward,Woman,NONE,1,Nalita Sanjay Naik,89,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,III,ward,Other than Woman,NONE,0,Sandip Ladu Naik,80,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,IV,ward,Other than Woman,NONE,0,Gurudas Keshav Parab,128,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,V,ward,Woman,NONE,1,Rukmini Narayan Naik,100,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,I,ward,Other than Woman,NONE,0,Govind Pandurang Mandrekar,131,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,II,ward,Woman,NONE,1,Sujal Suresh Revodkar,112,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,III,ward,Other than Woman,NONE,0,Datta Ramnath Morajkar,142,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,IV,ward,Other than Woman,NONE,0,Santosh Pandurang Sarap,126,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,V,ward,Other than Woman,NONE,0,Vasant Ramakant Gad,103,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,VI,ward,Other than Woman,NONE,0,Prakash Yeshwant Arondekar,128,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,MULGAO,VII,ward,BC Woman,BC,1,Shruti Suresh Ghatwal,165,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NARAO,I,ward,ST Other than Woman,ST,0,Govind Sonu Gawde,147,S.T.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NARAO,II,ward,Woman,NONE,1,Pratishtha Premkant Mishal,120,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NARAO,III,ward,Other than Woman,NONE,0,Gopikishan Ramnath Amonkar,83,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NARAO,IV,ward,Other than Woman,NONE,0,Umesh Harishchandra Padolkar,121,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NARAO,V,ward,Woman,NONE,1,Aditi Amar Tuyekar,103,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,I,ward,Other than Woman,NONE,0,Madan Atmaram Gaonkar,232,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,II,ward,Woman,NONE,1,Rupa Ramanath Paryekar,131,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,III,ward,Other than Woman,NONE,0,Uday Sahadev Gaonkar,96,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,IV,ward,Other than Woman,NONE,0,Madhu Kesari Naik,224,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,V,ward,Other than Woman,NONE,0,Pandurang Tima Gholkar,90,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,VI,ward,BC Other than Woman,BC,0,Eknath Sadanand Chari,167,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,ONA MAULINGUEM CURCHERIM,VII,ward,Woman,NONE,1,Sonam Shekhar Gaonkar,161,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,I,ward,Other than Woman,NONE,0,Anil Govind Naik,92,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,II,ward,BC Woman,BC,1,Jyoti Shamsundar Vengurlekar,133,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,III,ward,Other than Woman,NONE,0,Babaji Babal Gaonkar,142,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,IV,ward,Other than Woman,NONE,0,Swapnil Narayan Fadte,89,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,V,ward,Other than Woman,NONE,0,Jayant Sonu Kavlekar,118,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,VI,ward,Other than Woman,NONE,0,Vishnu Tukaram Jalmi,169,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PILGAO,VII,ward,Woman,NONE,1,Roshni Rajendra Kavlekar,130,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,I,ward,Other than Woman,NONE,0,Ramnath Pandurang Bhaip,88,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,II,ward,Woman,NONE,1,Pranali Prashil Naik,62,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,III,ward,Other than Woman,NONE,0,Appa Ladu Raut,120,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,IV,ward,Other than Woman,NONE,0,Ganesh Laxman Raut,147,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,V,ward,BC Other than Woman,BC,0,Sajjan Gopal Naik,138,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,VI,ward,Other than Woman,NONE,0,Ghanasham Vaman Raut,145,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SALEM,VII,ward,Woman,NONE,1,Deepa Ghanashyam Raut,149,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SIRIGAO,I,ward,Other than Woman,NONE,0,Prakash Krishna Gaonkar,118,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SIRIGAO,II,ward,Woman,NONE,1,Ankita Atchut Gaonkar,97,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SIRIGAO,III,ward,BC Other than Woman,BC,0,Ladko Vishnu Palni,89,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SIRIGAO,IV,ward,Other than Woman,NONE,0,Babuso Bhalchandra Gaonkar,92,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SIRIGAO,V,ward,BC Woman,BC,1,Sangita Chandra Gaonkar,80,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,I,ward,Other than Woman,NONE,0,Krishna Mahadev Gawas,134,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,II,ward,Woman,NONE,1,Manjushree Mahadev Parab,73,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,III,ward,Other than Woman,NONE,0,Narayan Rajaram Sinari,149,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,IV,ward,Other than Woman,NONE,0,Vishant Sakharam Sawant,105,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,V,ward,Other than Woman,NONE,0,Shantilal Shamba Shenvi Amonkar,94,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,VI,ward,Other than Woman,NONE,0,Sandesh Gurudas Naik,185,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,AMONA,VII,ward,BC Woman,BC,1,Ujwalata Rajendra Sawant,70,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,I,ward,Other than Woman,NONE,0,Rajesh Mohan Naik,129,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,II,ward,Woman,NONE,1,Jayashri Tulsidas Tari,120,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,III,ward,BC Other than Woman,BC,0,Mahesh Anant Sawant,205,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,IV,ward,Woman,NONE,1,Divya Dattaprasad Kharkande,229,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,V,ward,Other than Woman,NONE,0,Keshav Madhukant Mayekar,163,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,VI,ward,Other than Woman,NONE,0,Mukund Shivram Vaigankar,124,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,VII,ward,BC Woman,BC,1,Aaryan Shyam Gaonkar,160,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,VIII,ward,Other than Woman,NONE,0,Deepak Ramnath Dhawaskar,175,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,KARAPUR SARVAN,IX,ward,Other than Woman,NONE,0,Dhiraj Narayan Sawant,200,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,X,ward,Other than Woman,NONE,0,Satchit Vishnu Sawant,132,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,XI,ward,Woman,NONE,1,Shamin Banu Mahamad Rasul Madar,145,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,I,ward,Other than Woman,NONE,0,Mangaldas Vassudev Naik,52,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,II,ward,Woman,NONE,1,Pramila Premanand Ghadi,97,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,III,ward,BC Other than Woman,BC,0,Rajan Kashinath Falkar,196,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,IV,ward,Other than Woman,NONE,0,Prashant Balchandra Parab,94,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,V,ward,Other than Woman,NONE,0,Suresh Pandurang Kamat,116,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,VI,ward,Other than Woman,NONE,0,Sakha Nanda Malik,143,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,CUDNEM,VII,ward,Woman,NONE,1,Poonam Siddharth Pethker,77,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,I,ward,Other than Woman,NONE,0,Khushali Chandrakant Naik,66,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,II,ward,Woman,NONE,1,Swati Sandesh Mainikar,85,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,III,ward,Other than Woman,NONE,0,Gopinath Anant Gawas,152,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,IV,ward,Other than Woman,NONE,0,Dipesh Sadanand Gauns,85,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,V,ward,Other than Woman,NONE,0,Suman Nilkanth Gawas,93,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,VI,ward,BC Other than Woman,BC,0,Deepak Redi Naik,106,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,NAVELIM,VII,ward,ST Woman,ST,1,Karuna Keshav Mahale,91,ST Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,I,ward,Other than Woman,NONE,0,Shamba Ladu Gauns,270,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,II,ward,Woman,NONE,1,Deepika Rohidas Naik,335,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,III,ward,Other than Woman,NONE,0,Deepak Vithoba Naik,285,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,IV,ward,ST Woman,ST,1,Radhika Raghuvir Gawde,143,ST Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,V,ward,Other than Woman,NONE,0,Subhechya Shamba Gauns,291,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,VI,ward,Other than Woman,NONE,0,Pradeep Ram Gawade,157,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,VII,ward,Woman,NONE,1,Hausa Santosh Naik,232,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,VIII,ward,BC Other than Woman,BC,0,Mohan Ganesh Valvoikar,235,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,PALEM COTHAMBI,IX,ward,Other than Woman,NONE,0,Anant Sripad Parab,145,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SURLA,I,ward,Other than Woman,NONE,0,Mangaldas Shiva Usgaonkar,86,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,SURLA,II,ward,Woman,NONE,1,Suhasini Subhash Fondekar,188,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,III,ward,ST Other than Woman,ST,0,Bholo Naguesh Khodginkar,136,S.T.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,IV,ward,BC Woman,BC,1,Manisha Rupesh Tari,96,OBC Wom,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,V,ward,Other than Woman,NONE,0,Shradha Sainath Bhamaikar,66,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,VI,ward,Other than Woman,NONE,0,Ramdas Kashinath Gawade,59,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,VII,ward,Woman,NONE,1,Rameshvari Ramesh Ghadi,102,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,VIII,ward,ST Other than Woman,ST,0,Suryakant Vishnu Gawde,101,S.T.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,Name of the Panchayat,IX,ward,BC Other than Woman,BC,0,Sanjay Uttam Surlakar,133,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,I,ward,BC Other than Woman,BC,0,Giridhar Vishnu Haldankar,74,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,II,ward,Woman,NONE,1,Dhanashree Ghanasham Gaonkar,103,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,III,ward,Other than Woman,NONE,0,Gokuldas Krishna Kamat,78,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,IV,ward,BC Other than Woman,BC,0,Sarvesh Suresh Mulgaonkar,135,O.B.C.,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,V,ward,Other than Woman,NONE,0,Dilipkumar Yeshwant Sahastrabudde,113,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,VI,ward,Other than Woman,NONE,0,Mukesh Purshuttam Ghatwal,93,General,latin,panres_2012_Bicholim.pdf
+Goa,2012,North Goa,Bicholim,VELGUEM,VII,ward,Woman,NONE,1,Rupa Madhukar Gawande,79,Women,latin,panres_2012_Bicholim.pdf
+Goa,2012,South Goa,Canacona,Agonda,I,ward,Other than Woman,NONE,0,Pramod N. Folodesai,115,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,II,ward,Woman,NONE,1,Dajula Uttam Pagi,135,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,III,ward,Other than Woman,NONE,0,Fenny Mouricio Miranda,134,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,IV,ward,Other than Woman,NONE,0,Tipu Chandrakant Pagi,187,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,V,ward,Other than Woman,NONE,0,Abel Tome Asucao Emeliano Borges,187,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,VI,ward,Other than Woman,NONE,0,Sapnesh Ganesh Desai,75,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Agonda,VII,ward,Woman,NONE,1,Navnita Narendranatha Naik,268,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,I,ward,Other than Woman,NONE,0,Ajay Vithoba Pagui,363,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,II,ward,Woman,NONE,1,Maria Nazareth Fernandes,111,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,III,ward,ST Other than Woman,ST,0,Narayan Saptu Velip,434,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,IV,ward,ST Woman,ST,1,Anjali Ratnakar Velip,142,ST Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,V,ward,ST Other than Woman,ST,0,Anant Ladu Velip,186,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,VI,ward,Other than Woman,NONE,0,Jairam Bhiva Velip,132,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,VII,ward,BC Woman,BC,1,Vanita Santosh Naik,212,OBC Wom,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,VIII,ward,Other than Woman,NONE,0,Gurudas Bombi Zaraunkar,188,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cola,IX,ward,Other than Woman,NONE,0,Guru Vithoba Velip,181,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,I,ward,Other than Woman,NONE,0,Paik Mhalgo Velip,122,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,II,ward,Woman,NONE,1,Meena Umesh Gaunkar,200,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,III,ward,Other than Woman,NONE,0,Ratnakar Bhisso Velip,112,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,IV,ward,Other than Woman,NONE,0,Anant Mukund Dessai,116,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,V,ward,ST Other than Woman,ST,0,Laxman Mhalgo Velip,Unoppsoed,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,VI,ward,Other than Woman,NONE,0,Datta Jorago Velip,138,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Cotigao,VII,ward,Woman,NONE,1,Vaishnavi Vassant Velip,147,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,I,ward,Other than Woman,NONE,0,Puno Govind Gaonkar,193,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,II,ward,Woman,NONE,1,Lakshavati Datta Velip,158,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,III,ward,ST Other than Woman,ST,0,Umesh Purso Velip,258,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,IV,ward,ST Woman,ST,1,Pramawati Deu Gaonkar,203,ST Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,V,ward,Other than Woman,NONE,0,Arun Vishnu Devidas,171,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,VI,ward,Other than Woman,NONE,0,Barkelo Panglo Velip,194,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,VII,ward,Woman,NONE,1,Taramati Krishna Gaonkar,262,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,VIII,ward,Other than Woman,NONE,0,Ashok Bhiva Velip,302,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Gaondongrem,IX,ward,Other than Woman,NONE,0,Kust Puno Gaonkar,201,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,I,ward,BC Other than Woman,BC,0,Shailesh Umesh Pagi,281,O.B.C.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,II,ward,Woman,NONE,1,Caitania Alex Dias,194,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,III,ward,Other than Woman,NONE,0,Santan Xavier Da' Costa,137,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,IV,ward,Woman,NONE,1,Shilpa Shantaram Daikar,223,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,V,ward,Other than Woman,NONE,0,Ashutosh Hari Bandekar,189,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,VI,ward,Other than Woman,NONE,0,Virendra Vinayak Naik,133,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,VII,ward,Woman,NONE,1,Vinda Govind Satarkar,184,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,VIII,ward,Other than Woman,NONE,0,Rajesh Chandrakant Naik,132,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Loliem-Polem,IX,ward,Other than Woman,NONE,0,Bhushan Balkrishna Prabhu Gaonkar,212,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,I,ward,ST Other than Woman,ST,0,Ramdas Babu Velip,238,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,II,ward,Woman,NONE,1,Maria Jaquelina Thomas Fernandes E Rebelo,138,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,III,ward,Other than Woman,NONE,0,Vallabh Ramchandra Tengse,344,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,IV,ward,Woman,NONE,1,Archana Sunil Painginkar,218,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,V,ward,Other than Woman,NONE,0,Domingos Caetano Francisco Xavier Barreto,283,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,VI,ward,BC Other than Woman,BC,0,Prakash Omu Metri,228,O.B.C.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,VII,ward,Woman,NONE,1,Surekha Keshav Prabhu Gaonker,284,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,VIII,ward,BC Other than Woman,BC,0,Govind Gopi Naik,272,O.B.C.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Poinguinim,IX,ward,Other than Woman,NONE,0,Jagadish Bhiki Tawadkar,398,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,I,ward,Other than Woman,NONE,0,Devendra Kashinath Naik,210,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,II,ward,BC Woman,BC,1,Amruta Gopinath Bhandari,175,OBC Wom,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,III,ward,Other than Woman,NONE,0,Shri Prashant Krishna Dessai,Unoppsoed,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,IV,ward,ST Other than Woman,ST,0,Shri Laxman Ganesh Raikar,Unoppsoed,S.T.,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,V,ward,Other than Woman,NONE,0,Premanand Mahalgo Velip,197,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,VI,ward,Other than Woman,NONE,0,Pandurang Ghurko Gaonkar,171,General,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Canacona,Shirsthal,VII,ward,Woman,NONE,1,Geeta Ganesh Gaonkar,321,Women,latin,panres_2012_Canacona.pdf
+Goa,2012,South Goa,Dharbandora,Collem,I,ward,Other than Woman,NONE,0,Nilesh Chandrakant Satpalkar,197,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,II,ward,Woman,NONE,1,Yashaswi Yadendra Kavlekar,123,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,III,ward,Other than Woman,NONE,0,Nilesh Harichandra Velip,201,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,IV,ward,Woman,NONE,1,Savita Prakash Dessai,191,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,V,ward,Other than Woman,NONE,0,Kiran Khushali Mamlekar,110,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,VI,ward,BC Other than Woman,BC,0,Dilip Datta Priolkar,88,O.B.C.,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,VII,ward,Woman,NONE,1,Veena Vishnu Devidas,120,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,VIII,ward,Other than Woman,NONE,0,Ramesh Kashinath Khandeparkar,173,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Collem,IX,ward,Other than Woman,NONE,0,Bellal Badshah Sayad,153,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,I,ward,Other than Woman,NONE,0,Sashikant Datta Gauns,68,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,II,ward,Woman,NONE,1,Swati Vasudev Gawas,134,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,III,ward,Other than Woman,NONE,0,Kalidas Govind Mainekar,163,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,IV,ward,Woman,NONE,1,Surekha Shamu Velingkar,132,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,V,ward,Other than Woman,NONE,0,Guru Bhiso Gaonkar,261,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,VI,ward,Other than Woman,NONE,0,Shamba Bhaskar Gavde,134,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,VII,ward,Woman,NONE,1,Dipali Dilip Ingavle,53,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,VIII,ward,BC Other than Woman,BC,0,Ramesh Bhikaro Naik,188,O.B.C.,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Dharbandora,IX,ward,Other than Woman,NONE,0,Vinayak Vasudev Gawas,145,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,I,ward,Other than Woman,NONE,0,Umesh Surya Gaonkar,123,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,II,ward,Woman,NONE,1,Vasanti Raghoba Gaonkar,112,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,III,ward,BC Other than Woman,BC,0,Kalidas Laximan Gaonkar,158,O.B.C.,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,IV,ward,Woman,NONE,1,Tanuja Nagesh Samant,202,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,V,ward,Other than Woman,NONE,0,Ramakant Tilu Gaonkar,162,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,VI,ward,ST Other than Woman,ST,0,Sandesh Harichandra Gaonkar,181,S.T.,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,VII,ward,Woman,NONE,1,Sarita Santosh Gaonkar,336,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,VIII,ward,Other than Woman,NONE,0,Ramnath Chandrakant Prabhu,268,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Kirlapal-Dabal,IX,ward,Other than Woman,NONE,0,Hanumant Gopal Gaonkar,158,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,I,ward,Other than Woman,NONE,0,Ramakrishna Laxman Gaonkar,103,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,II,ward,Woman,NONE,1,Snehalata Rajaram Naik,58,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,III,ward,Other than Woman,NONE,0,Govind Kusta Gaonkar,156,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,IV,ward,Other than Woman,NONE,0,Kapil Chandrakant Naik,132,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,V,ward,BC Other than Woman,BC,0,Babu Navlo Zore,89,O.B.C.,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,VI,ward,Other than Woman,NONE,0,Rajendra B.Prabhu Desai,93,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Mollem,VII,ward,ST Woman,ST,1,Kalpana Anil Malekar,74,ST Wom,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,I,ward,Other than Woman,NONE,0,Gautam Govind Sawant,126,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,II,ward,Woman,NONE,1,Vinda Govind Sawant,179,Women,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,III,ward,Other than Woman,NONE,0,Preetam Shivaji Aikar,166,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,IV,ward,Other than Woman,NONE,0,Kamalakant Krish Naik,218,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,V,ward,Other than Woman,NONE,0,Jitendra Vasant Naik,222,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,VI,ward,Other than Woman,NONE,0,Shirish Ganpat Dessai,180,General,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Dharbandora,Sancordem,VII,ward,ST Woman,ST,1,Vaishali Khushali Gaonkar,147,ST Wom,latin,panres_2012_Dharbandora.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,I,ward,Other than Woman,NONE,0,Jose Maria Joaquim Furtado,365,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,II,ward,Woman,NONE,1,Josita Feliciano Cardozo,220,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,III,ward,Other than Woman,NONE,0,John Felix Joseph Fernandes,160,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,IV,ward,Woman,NONE,1,Casandra Savia Custodio Almeida,207,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,V,ward,Other than Woman,NONE,0,Baylon Bento Gomes,196,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,VI,ward,Other than Woman,NONE,0,Luis Santano Xavier D'Costa,214,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,VII,ward,Woman,NONE,1,Filomena Custodinho De Costa E De Melo,180,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,VIII,ward,Other than Woman,NONE,0,Savio Santan Dias,229,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cansaulim-Arossim- Cuelim,IX,ward,BC Other than Woman,BC,0,Ratnadeep Ratnakar Naik,151,O.B.C.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,I,ward,Other than Woman,NONE,0,Anacleto Antonio De Souza,111,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,II,ward,BC Other than Woman,BC,0,Nilima Avdhut Naik,227,O.B.C.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,III,ward,Woman,NONE,1,Veronica Anacleto Andrade,160,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,IV,ward,Woman,NONE,1,Anita Joaquim Vaz,81,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,V,ward,Other than Woman,NONE,0,Hemant Avinash Fadte,155,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,VI,ward,Other than Woman,NONE,0,Kamalaprasad Jaganath Yadav,156,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,VII,ward,Woman,NONE,1,Prajyoti Laximan Kudalkar,124,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,VIII,ward,Other than Woman,NONE,0,Francisco Jose Diago Nunes,165,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,IX,ward,Other than Woman,NONE,0,Mary Joao Mascarenhas,203,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,X,ward,Other than Woman,NONE,0,Sebastiao Benedit Pereira,233,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicalim,XI,ward,Woman,NONE,1,Rubina Pedro Damiao Rodrigues,213,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicolna,I,ward,Other than Woman,NONE,0,Vasant Sahadev Naik,104,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicolna,II,ward,ST Woman,ST,1,Maclene Jose Fernandes,96,ST Wom.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicolna,III,ward,Other than Woman,NONE,0,Laximan Mahadev Kavlekar,83,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicolna,IV,ward,Other than Woman,NONE,0,Claudio Custodio D'Cruz,84,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Chicolna,V,ward,Woman,NONE,1,Sharmila Babani Naik,119,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,I,ward,ST Other than Woman,ST,0,Joao Damiao Salvador Paulo Fernandes,137,S.T.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,II,ward,Other than Woman,NONE,0,Hilario Sebastiao Figeiredo,167,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,III,ward,Woman,NONE,1,Niquela Constancio Fernandes,103,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,IV,ward,ST Woman,ST,1,Vincentina Antonio Silva,151,ST Wom.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,V,ward,Other than Woman,NONE,0,Anita Devendra Kenkre,160,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,VI,ward,BC Other than Woman,BC,0,Raymond Rosario Desa,401,O.B.C.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,VII,ward,Woman,NONE,1,Merciana Antonio Mendes e Vaz,246,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,VIII,ward,Other than Woman,NONE,0,Shantaram Keshav Girap,121,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,IX,ward,Other than Woman,NONE,0,Jose Neccessidade Xavier Mesquita,271,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,X,ward,Other than Woman,NONE,0,Rudolf Francis Gama,196,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Cortalim-Quelossim,XI,ward,Woman,NONE,1,Elvira Antonio Fernandes,122,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,I,ward,Other than Woman,NONE,0,Sharan Sangappa Meti,317,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,II,ward,Other than Woman,NONE,0,Derick Peter Jose Maria Vales,221,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,III,ward,Woman,NONE,1,Shilpa Shrikant Naik,258,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,IV,ward,ST Woman,ST,1,Rosalina Agustino Moniz,153,ST Wom.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,V,ward,BC Other than Woman,BC,0,Narayan Gajanan Naik,463,O.B.C.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,VI,ward,Other than Woman,NONE,0,Ramakant Narayan Borkar,277,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,VII,ward,Woman,NONE,1,Anita Ganesh Mudliar,191,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,VIII,ward,Other than Woman,NONE,0,Gilbert Mariano Minguel Victor,743,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,IX,ward,Other than Woman,NONE,0,Shivanand Mallappa Bingi,402,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,X,ward,Other than Woman,NONE,0,Govind Ramappa Lamani,356,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Sancoale,XI,ward,Woman,NONE,1,Asha Vasudev Naik,411,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,I,ward,Other than Woman,NONE,0,Custodio Christopher Barretto,77,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,II,ward,Woman,NONE,1,Fatima Pereira,153,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,III,ward,Other than Woman,NONE,0,Philipo Remedios Teodosio,157,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,IV,ward,Other than Woman,NONE,0,Estevao Fransquinho Carvalho,140,General,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,V,ward,ST Other than Woman,ST,0,Santano Avelino D'Souza,171,S.T.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,VI,ward,BC Other than Woman,BC,0,Henriques Pascoal D'Mello,202,O.B.C.,latin,panres_2012_Mormugao.pdf
+Goa,2012,South Goa,Mormugao,Velsao-Pale-Issorcim,VII,ward,Woman,NONE,1,Nandita Ruchin Dayal,242,Women,latin,panres_2012_Mormugao.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,I,ward,Other than Woman,NONE,0,Diogo Francis Manuel Rodrigues,96,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,II,ward,Woman,NONE,1,Jyotsana Janardan Kaskar,140,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,III,ward,BC Other than Woman,BC,0,Yeshwant Shamba Narvekar,164,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,IV,ward,Other than Woman,NONE,0,Anand Gangaram Shirgaonkar,125,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,V,ward,Other than Woman,NONE,0,Jayant Raghunath Kerkar,217,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,VI,ward,Other than Woman,NONE,0,Ratnakar Vithal Harji,122,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,QUERIM- TIRACOL,VII,ward,Woman,NONE,1,Runali Raman Talkar,154,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,I,ward,Other than Woman,NONE,0,Sudan Atmaram Shetye,103,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,II,ward,BC Woman,BC,1,SHASHIKALA SANTOSH DAMAJI,64,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,III,ward,Other than Woman,NONE,0,Prabhakar Sitaram Nagvekar,71,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,IV,ward,Other than Woman,NONE,0,Sitaram Prabhakar Raut,65,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,V,ward,Other than Woman,NONE,0,Bhagirath Pandharinath Gaonkar,68,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,VI,ward,Other than Woman,NONE,0,Eknath Hari Chodankar,82,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,AGARWADA CHOPDEM,VII,ward,Woman,NONE,1,Suman Sitaram Khorjuvekar,Unopposed,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,I,ward,Other than Woman,NONE,0,NITIN NAGESH NARSE,179,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,II,ward,Woman,NONE,1,ARATI ARVIND PAYAJI,181,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,III,ward,Other than Woman,NONE,0,Domnic Gabrial Fernandes,190,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,IV,ward,BC Woman,BC,1,Prachi Yogesh Talavnekar,182,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,V,ward,Other than Woman,NONE,0,Sudip Vishnu Korgaonkar,200,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,VI,ward,Other than Woman,NONE,0,Uday Vithal Palyekar,117,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,VII,ward,BC Woman,BC,1,Sarita Krishnakant Bhaidkar,284,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,VIII,ward,Other than Woman,NONE,0,RAMA BAPU SHETYE,223,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,CORGAO,IX,ward,BC Other than Woman,BC,0,PANDHARI NAVSO AROLKAR,236,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,I,ward,Other than Woman,NONE,0,Inacio Daniel Santan D’souza,186,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,II,ward,Woman,NONE,1,Pranali Pravin Vaigankar,184,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,III,ward,BC Other than Woman,BC,0,Dwarkanath Dayaram Naik,136,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,IV,ward,Woman,NONE,1,Herculana Alexin Rodrigues,213,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,V,ward,Other than Woman,NONE,0,Pradeep Tukaram Naik,296,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,VI,ward,BC Other than Woman,BC,0,Anant Madhukar Gadekar,264,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,VII,ward,Woman,NONE,1,Suvarna Gunaji Thakur,227,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,VIII,ward,Other than Woman,NONE,0,Prakash Vasudev Naik,86,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,ARAMBOL,IX,ward,BC Other than Woman,BC,0,Ramchandra Krishna Kerkar,158,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,I,ward,Other than Woman,NONE,0,Vishnu Arjun Sawant,276,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,II,ward,Woman,NONE,1,Seema Raghoba Gawade,262,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,III,ward,Other than Woman,NONE,0,Mahesh Janardhan Konadkar,213,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,IV,ward,Woman,NONE,1,Tara Babuso Hadfadkar,208,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,V,ward,Other than Woman,NONE,0,Ramesh Sakharam Shetmandrekar,271,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,VI,ward,BC Other than Woman,BC,0,Amroj Juse Fernandes,212,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,VII,ward,Woman,NONE,1,Vaishali Vishwanath Shirodkar,334,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,VIII,ward,Other than Woman,NONE,0,Luis Juao D’souza,211,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,IX,ward,Other than Woman,NONE,0,Santosh Atmaram Barde,265,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,X,ward,BC Other than Woman,BC,0,Subhash Vishnu Asolkar,115,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MANDREM,XI,ward,Woman,NONE,1,Sharadha Sadanand Asolkar,153,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,I,ward,Other than Woman,NONE,0,Agnelo Siril D’souza,239,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,II,ward,Woman,NONE,1,Vaishali Machindranath Shetgaonkar,208,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,III,ward,Other than Woman,NONE,0,Dhananjay Mahadev Shetgaonkar,171,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,IV,ward,Woman,NONE,1,Seema Ramchandra Sangale,174,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,V,ward,Other than Woman,NONE,0,Mandar Mohan Poke,156,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,VI,ward,Other than Woman,NONE,0,Hari Madhu Palyekar,170,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,VII,ward,BC Woman,BC,1,Anuradha Ramkrishna Morje,219,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,VIII,ward,Other than Woman,NONE,0,Nilesh Pandurang Shetgaonkar,270,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,MORJIM,IX,ward,BC Other than Woman,BC,0,Uttam Suresh Bandekar,142,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,I,ward,Other than Woman,NONE,0,Dayanand Lavu Parab,117,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,II,ward,Woman,NONE,1,Ujwala Jitendra Tilve,128,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,III,ward,Other than Woman,NONE,0,Ravindra Atchut Parab,87,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,IV,ward,Other than Woman,NONE,0,Babni Laxman Arolkar,79,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,V,ward,Other than Woman,NONE,0,Prasad Tato Parab,158,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,VI,ward,BC Other than Woman,BC,0,Sandeep Manohar Nhanji,169,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PALIEM,VII,ward,Woman,NONE,1,Supriya Uday Gavandi,121,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,I,ward,BC Other than Woman,BC,0,Gurudas Shiva Pande,130,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,II,ward,BC Woman,BC,1,Pravina Prakash Kandolkar,197,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,III,ward,Other than Woman,NONE,0,Rama Vasudev Naik,146,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,IV,ward,Other than Woman,NONE,0,Devendra Krishnaji Prabhu Parsekar Dessai,144,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,V,ward,BC Other than Woman,BC,0,Satish Shankar Nagoji,88,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,VI,ward,Other than Woman,NONE,0,Gopal Mhato Bhisaji,164,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,PARCEM,VII,ward,Woman,NONE,1,Shubada Chandrashekhar Polji,217,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,I,ward,Other than Woman,NONE,0,Yeshwant Ramchandra Talawanekar,116,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,II,ward,BC Woman,BC,1,Jayshri Jairam Pirankar,147,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,III,ward,Other than Woman,NONE,0,Ekanath Shamba Teli,166,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,IV,ward,BC Other than Woman,BC,0,Francis Vitorin Pereira,121,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,V,ward,Other than Woman,NONE,0,Gajanan Dattaram Gadekar,127,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,VI,ward,BC Other than Woman,BC,0,Jagannath Harishchandra Gadekar,133,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TOTAL,VII,ward,Woman,NONE,1,Rajashri Rajan Haldankar,97,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,I,ward,Other than Woman,NONE,0,Sajjan Namdev Konadkar,146,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,II,ward,Woman,NONE,1,Sunita Ashok Raul,176,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,III,ward,Other than Woman,NONE,0,Gokuldas Anant Salgaonkar,163,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,IV,ward,BC Other than Woman,BC,0,Pramod Pandurang Salgaonakar,260,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,V,ward,BC Other than Woman,BC,0,Pradeep Madan Naik,256,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,VI,ward,Other than Woman,NONE,0,Avelin Anton Rodrigues,256,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,DHARGALIM,VII,ward,BC Woman,BC,1,Vinkita Vinayak Naik,288,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,I,ward,Other than Woman,NONE,0,Surya Raghoba Naik,139,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,II,ward,Woman,NONE,1,Ruchi Rama Naik,85,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,III,ward,Other than Woman,NONE,0,Dasharath Dhondu Shinde,75,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,IV,ward,Other than Woman,NONE,0,Ashok Mahadev Dhauskar,103,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,V,ward,BC Other than Woman,BC,0,Chandrashekar Dnyandev Khadpkar,122,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,VI,ward,Other than Woman,NONE,0,Deelip Dattaram Gawas,70,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,IBRAMBPUR,VII,ward,BC Woman,BC,1,Preeti Uttam Barbere,95,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,OZORIM,I,ward,Other than Woman,NONE,0,Ashok Apali Kalangutkar,96,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,OZORIM,II,ward,Woman,NONE,1,Sanjana Dnyaneshwar Parab,90,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,OZORIM,III,ward,BC Other than Woman,BC,0,Dinesh Vasudev Mayekar,125,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,OZORIM,IV,ward,Other than Woman,NONE,0,Nilesh Raya Naik,94,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,OZORIM,V,ward,Woman,NONE,1,Samiksha Sanjay Devidas,125,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,I,ward,BC Other than Woman,BC,0,Anil Achut Dhuri,136,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,II,ward,Woman,NONE,1,Sonakshi Vinod Asolkar,93,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,III,ward,Other than Woman,NONE,0,Rupesh Mukund Parab,133,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,IV,ward,Other than Woman,NONE,0,Ashok Anand Parab,152,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,V,ward,Other than Woman,NONE,0,Chandrakant Ladu Mahale,134,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,VI,ward,Other than Woman,NONE,0,Vinayak Kashinath Mahale,208,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TAMBOXEM- MOPA- UGUEM,VII,ward,Woman,NONE,1,Kalpana Vishwas Mahale,130,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,I,ward,Other than Woman,NONE,0,Britto Caridade D'Souza,149,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,II,ward,BC Woman,BC,1,Kamini Maulankar,Unopposed,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,III,ward,Other than Woman,NONE,0,Nilesh Mohan Mote,157,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,IV,ward,Other than Woman,NONE,0,Tulshidas Bala Naik,97,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,V,ward,Other than Woman,NONE,0,Suryakant Govind Toraskar,90,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,VI,ward,Other than Woman,NONE,0,Vilas Keshav Shetye,179,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TORXEM,VII,ward,Woman,NONE,1,Prerna Pravin Sheyte,111,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,I,ward,Other than Woman,NONE,0,Prajakta Prakash Kannaik,66,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,II,ward,Woman,NONE,1,Vilasini Satyawan Naik,85,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,III,ward,Other than Woman,NONE,0,Uday Krishna Mandrekar,131,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,IV,ward,Other than Woman,NONE,0,Ulhas Rama Naik,134,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,V,ward,Other than Woman,NONE,0,Suhas Uttam Naik,146,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,VI,ward,Other than Woman,NONE,0,Ganpatrao Bhiva Pednekar,97,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,TUEM,VII,ward,BC Woman,BC,1,Swati Sunil Harmalkar,133,OBC Wom,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VARCOND-NAGZOR,I,ward,Other than Woman,NONE,0,Amti Bablo Parab,145,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VARCOND-NAGZOR,II,ward,Woman,NONE,1,Pratima Prakash Satardekar,127,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VARCOND-NAGZOR,III,ward,Other than Woman,NONE,0,Sanjay Narayan Tulaskar,129,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VARCOND-NAGZOR,IV,ward,BC Other than Woman,BC,0,Ankush Anant Arondekar,99,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VARCOND-NAGZOR,V,ward,Woman,NONE,1,Pallavi Prasad Parab,171,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,I,ward,Other than Woman,NONE,0,Sitaram Baburao Parab,78,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,II,ward,Woman,NONE,1,Mayusha Mayur Chari,77,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,III,ward,Other than Woman,NONE,0,Shankar Balkrishna Parab,64,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,IV,ward,Other than Woman,NONE,0,Krishnanath Vasu Parab,96,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,V,ward,Other than Woman,NONE,0,Jagannath Shivaji Naik Desai,123,General,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,VI,ward,BC Other than Woman,BC,0,Pradeep Mahadev Morajkar,78,O.B.C.,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Pernem,VIRNODA,VII,ward,Woman,NONE,1,Taramati Rama Rao,161,Women,latin,panres_2012_Pernem.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,I,ward,Other than Woman,NONE,0,Bhavana Babal Naik,154,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,II,ward,BC Woman,BC,1,Shrinisha Eknath Naik,153,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,III,ward,Other than Woman,NONE,0,Dinesh Sadanand Gaude,128,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,IV,ward,ST Woman,ST,1,Sudhiksha Satish Khandolkar,135,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,V,ward,Other than Woman,NONE,0,Arvind Ramchandra Gaonkar,145,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,VI,ward,Other than Woman,NONE,0,Manoj Ramakant Gaonkar,137,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,VII,ward,Woman,NONE,1,Shraddha Shridhar Phadte,148,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,VIII,ward,Other than Woman,NONE,0,Vishant Laxman Naik,81,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETKI-KANDOLA,IX,ward,Other than Woman,NONE,0,Prakash Krishna Shet,210,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,I,ward,BC Other than Woman,BC,0,Sagun Datta Naik,307,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,II,ward,Other than Woman,NONE,0,Sandeep Ramendra Sinai Khandeparkar,444,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,III,ward,ST Woman,ST,1,Supriya Santosh Gaude,309,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,IV,ward,Woman,NONE,1,Deepa Dina Naik,247,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,V,ward,Other than Woman,NONE,0,Narendra Rama Parab,322,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,VI,ward,Other than Woman,NONE,0,Naveed Noor Ahamad Tahshildar,654,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,VII,ward,Woman,NONE,1,Priya Babu Chari,249,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,VIII,ward,Other than Woman,NONE,0,Sajjad Gauns Mullam,269,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,IX,ward,Other than Woman,NONE,0,Kamlakant Vinayak Parab,407,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,X,ward,Other than Woman,NONE,0,Nagesh Kashinath Naik,251,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,CURTI-KHANDEPAR,XI,ward,Woman,NONE,1,Chandrika Narshiha Kuttikar,346,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),I,ward,Other than Woman,NONE,0,Ashok Krishna Gaude,268,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),II,ward,Woman,NONE,1,Grisha Gauresh Kerkar,258,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),III,ward,Other than Woman,NONE,0,Suresh Shanu Jalmi,99,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),IV,ward,Other than Woman,NONE,0,Suhas Arjun Gaude,153,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),V,ward,Other than Woman,NONE,0,Anil Yeshwant Gaude,115,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),VI,ward,BC Other than Woman,BC,0,Kalidas Datta Naik,145,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUERIM ( KERI ),VII,ward,ST Woman,ST,1,Urmila Santosh Gaude,178,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,I,ward,Other than Woman,NONE,0,Sanket Shrikant Amonkar,184,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,II,ward,Woman,NONE,1,Sulbha Kishor Vazir,270,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,III,ward,Other than Woman,NONE,0,Chandrakant Dulba Gaude,83,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,IV,ward,Woman,NONE,1,Jyosna Raghuvir Shirodkar,206,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,V,ward,BC Other than Woman,BC,0,Umesh Mukund Bhosle,242,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,VI,ward,Other than Woman,NONE,0,Pratap Shivaji Volvoikar,118,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,VII,ward,Woman,NONE,1,Umedha Atul Khandolkar,102,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,VIII,ward,Other than Woman,NONE,0,Francis Inacio Lobo,194,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,TIVREM – ORGAO,IX,ward,Other than Woman,NONE,0,Vithoba Vishnu Dessai,109,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,I,ward,Other than Woman,NONE,0,Vijay Atmaram Gaonkar,190,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,II,ward,ST Other than Woman,ST,0,Devanand Arjun Nanusker,289,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,III,ward,Woman,NONE,1,Deepa Satyavijay Naik,348,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,IV,ward,Woman,NONE,1,Deepali Tulshidas Gad,205,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,V,ward,Other than Woman,NONE,0,Raghunath Babi Gaude,129,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,VI,ward,BC Other than Woman,BC,0,William Ruzario Mascarenhas,157,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,VII,ward,Woman,NONE,1,Bindiya Krishanand Prabhu,242,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,VIII,ward,Other than Woman,NONE,0,Ramnath Ganesh Dangui,227,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,IX,ward,BC Other than Woman,BC,0,Tushar Vasant Balve,204,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,X,ward,Other than Woman,NONE,0,Tulshidas Narayan Prabhu,235,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,USGAO-GANGEM,XI,ward,Woman,NONE,1,Harshada Ulhas Gaude,506,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,I,ward,ST Other than Woman,ST,0,Meenu Goving Gaude,251,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,II,ward,Woman,NONE,1,Swati Satyawan Palkar,227,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,III,ward,Other than Woman,NONE,0,Vinay Vishwanath Naik,96,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,IV,ward,Other than Woman,NONE,0,Mohan Mahadev Verenkar,257,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,V,ward,BC Other than Woman,BC,0,Satyawan Gunlo Palkar,222,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,VI,ward,BC Other than Woman,BC,0,Gurudas Sona Naik,193,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VEREM-VAGURME,VII,ward,Woman,NONE,1,Vaishali Vishwas Naik,169,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VOLVOI,I,ward,Other than Woman,NONE,0,Rajendra Tukaram Naik,80,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VOLVOI,II,ward,Woman,NONE,1,Ankita Ankush Naik,73,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VOLVOI,III,ward,BC Other than Woman,BC,0,Vinayak Audumber Vengurlekar,208,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VOLVOI,IV,ward,Other than Woman,NONE,0,Digambar Damodar Tari,129,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VOLVOI,V,ward,BC Woman,BC,1,Mitali Mahendra Shet,141,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,I,ward,Other than Woman,NONE,0,Shrikant Suresh Gaude,239,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,II,ward,BC Other than Woman,BC,0,Ramchandra Jaya Naik,208,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,III,ward,BC Woman,BC,1,Nayan Shrikant Naik,203,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,IV,ward,Woman,NONE,1,Sharmila Sudesh Lotlikar,343,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,V,ward,Other than Woman,NONE,0,Santosh Babuso Phadte,197,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,VI,ward,Other than Woman,NONE,0,Anand Raghu Naik,250,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,VII,ward,BC Woman,BC,1,Sulaksha Shripad Naik,410,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,VIII,ward,ST Other than Woman,ST,0,Shambu Babuso Gaude,218,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,IX,ward,Other than Woman,NONE,0,Ramchandra Raghu Naik,205,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,X,ward,Other than Woman,NONE,0,Rajendra Raghuvir Naik,341,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BANDORA,XI,ward,Woman,NONE,1,Bilaksh Ramzan Pancham,197,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,I,ward,ST Other than Woman,ST,0,Dharma Krishna Bhomkar,196,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,II,ward,Woman,NONE,1,Mahima Sanjay Naik,223,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,III,ward,Other than Woman,NONE,0,Sunil Dharma Jalmi,182,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,IV,ward,Other than Woman,NONE,0,Abdul M Rahiman Khan,115,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,V,ward,Other than Woman,NONE,0,Damodar Shrikant Naik,200,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,VI,ward,BC Other than Woman,BC,0,Shri Vasant Satarkar,110,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BHOMA-ADCOLNA,VII,ward,Woman,NONE,1,Varsha Datta Naik,122,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,I,ward,ST Other than Woman,ST,0,Vidhya Rajendra Kundaikar,189,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,II,ward,Woman,NONE,1,Anuradha Bhiku Phadte,110,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,III,ward,BC Other than Woman,BC,0,Mohandas Manohar Naik,190,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,IV,ward,Other than Woman,NONE,0,Narayan Santba Naik,145,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,V,ward,Other than Woman,NONE,0,Ramu Vishwanath Naik,249,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,VI,ward,BC Other than Woman,BC,0,Gurudas Pandurang Naik,99,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,KUNDAIM,VII,ward,Woman,NONE,1,Kishori Manohar Gaude,131,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,I,ward,BC Other than Woman,BC,0,Ganapat Dharmu Naik,130,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,II,ward,ST Woman,ST,1,Sita Ramanath Gawade,98,ST Wom.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,III,ward,Other than Woman,NONE,0,Sargam Keshav Gaude,109,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,IV,ward,Other than Woman,NONE,0,Ramchandra Dhaktu Naik,125,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,V,ward,Other than Woman,NONE,0,Ramchandra Govind Naik Mule,149,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,VI,ward,Other than Woman,NONE,0,Vilas Ranganath Naik,124,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,DURBHAT,VII,ward,BC Woman,BC,1,Swati Ramanand Shet,258,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,I,ward,Other than Woman,NONE,0,Dilip Bhanu Naik,198,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,II,ward,Woman,NONE,1,Shaila Manguesh Naik,239,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,III,ward,Other than Woman,NONE,0,Umakant Laxman Naik,307,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,IV,ward,Woman,NONE,1,Sushila Gani Gaude,87,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,V,ward,BC Other than Woman,BC,0,Shailendra Vithal Panjikar,372,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,VI,ward,Other than Woman,NONE,0,Yogesh Gaudu Gaude,145,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,VII,ward,Woman,NONE,1,Vidhya Venku Gaude,272,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,VIII,ward,BC Other than Woman,BC,0,Manoj Madhu Naik,169,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,MARCAIM,IX,ward,ST Other than Woman,ST,0,Savita Thanu Madkaikar,201,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,I,ward,Other than Woman,NONE,0,Usha Shanu Naik,127,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,II,ward,Woman,NONE,1,Sunita Suryakant Naik,206,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,III,ward,Other than Woman,NONE,0,Sandesh Narendra Kapileshwarakar,133,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,IV,ward,BC Woman,BC,1,Priya Shankar Doiphode,181,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,V,ward,Other than Woman,NONE,0,Rajesh Narendra Kavlekar,282,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,VI,ward,BC Other than Woman,BC,0,Pandurang Mahadev Naik,145,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,VII,ward,ST Woman,ST,1,Sweta Thakur Gaude,188,ST Wom.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,VIII,ward,Other than Woman,NONE,0,Harshavardhan Madhusudan Behare,264,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,QUEULA,IX,ward,Other than Woman,NONE,0,Satvasheela Khushali Naik,147,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,I,ward,Other than Woman,NONE,0,Nemu Putu Naik,352,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,II,ward,ST Other than Woman,ST,0,Rangnath Madhu Kunkalekar,207,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,III,ward,Woman,NONE,1,Aditi Devidas Gaude,334,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,IV,ward,ST Woman,ST,1,Ankita Anil Gaude,309,ST Wom.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,V,ward,Other than Woman,NONE,0,Damodar Govind Naik,437,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,VI,ward,Other than Woman,NONE,0,Varad Ulhas Mardolkar,196,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,VII,ward,ST Woman,ST,1,Sukanti Pandurang Gaude,359,ST Wom.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,VIII,ward,Other than Woman,NONE,0,Paresh Narayan P. Gaonkar,152,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,IX,ward,BC Other than Woman,BC,0,Raju Krishna Naik,370,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,X,ward,BC Other than Woman,BC,0,Prashant Nanda Priolkar,376,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VELING-PRIOL- KUNKOLIM,XI,ward,Woman,NONE,1,Karishma Krishnanath Naik,436,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,I,ward,Other than Woman,NONE,0,Babani Tulshidas Sawant,182,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,II,ward,BC Woman,BC,1,Vibha Vishal Durbhatkar,275,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,III,ward,ST Other than Woman,ST,0,Dilesh Prabhakar Gaonkar,246,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,IV,ward,Other than Woman,NONE,0,Ramchandra Dadu Naik,148,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,V,ward,Other than Woman,NONE,0,Dinesh Shivram Naik,79,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,VI,ward,Other than Woman,NONE,0,Bharti Namdev Naik,96,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,VADI -TELAULIM,VII,ward,BC Woman,BC,1,Sanchita Satchidanand Naik,153,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,I,ward,Other than Woman,NONE,0,Sadanand Pandu Gaonkar,170,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,II,ward,ST Woman,ST,1,Manda Mangaldas Gaude,406,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,III,ward,Other than Woman,NONE,0,Durgaprasad Kamalaksha Vaidya,228,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,IV,ward,Woman,NONE,1,Jyoti Paresh Gaude,243,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,V,ward,Other than Woman,NONE,0,Chandrakant Madhukar Samant,249,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,VI,ward,BC Other than Woman,BC,0,Premanand Ramnath Shetkar,173,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,VII,ward,Woman,NONE,1,Poonam Chandrakant Samant,155,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,VIII,ward,BC Other than Woman,BC,0,Rajendra Kashinath Naik,172,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BETHORA-NIRANKAL,IX,ward,Other than Woman,NONE,0,Prasad Pandurang Gaonkar,274,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,I,ward,Other than Woman,NONE,0,Tulshidas Gundu Gaude,319,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,II,ward,Woman,NONE,1,Parimal Ramkrishna Samant,390,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,III,ward,Other than Woman,NONE,0,Dinesh Nanda Naik Raikar,356,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,IV,ward,BC Woman,BC,1,Deepali Dipak Naik,175,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,V,ward,Other than Woman,NONE,0,Jyoti Mukesh Naik,307,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,VI,ward,BC Other than Woman,BC,0,Costancio Francisco Felico Luis,231,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,VII,ward,ST Woman,ST,1,Prashila Nilesh Muli,272,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,VIII,ward,Other than Woman,NONE,0,Anand Raghoba Gaude,242,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,BORIM,IX,ward,Other than Woman,NONE,0,Nutan Santosh Naik,187,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,I,ward,ST Other than Woman,ST,0,Ganesh Surya Desai,120,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,II,ward,Woman,NONE,1,Sugand Rajendra Gaonkar,103,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,III,ward,Other than Woman,NONE,0,Prakash Lumo Gaonkar,239,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,IV,ward,BC Other than Woman,BC,0,Paulo Sebastiao Gudinho,263,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,V,ward,Other than Woman,NONE,0,Keshav Putu Naik,235,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,VI,ward,Other than Woman,NONE,0,Cristavao Santiago Costa,258,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,PANCHWADI,VII,ward,Woman,NONE,1,Esmeralda Antonio D'Costa,142,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,I,ward,Other than Woman,NONE,0,Sandesh Vithal Prabhudesai,715,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,II,ward,Other than Woman,NONE,0,Chhaya Molu Velip,563,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,III,ward,ST Woman,ST,1,Luiza Joquim Gomes,317,ST Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,IV,ward,Woman,NONE,1,Vasundhara Chandrakant Naik,485,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,V,ward,ST Other than Woman,ST,0,Manuel Rosario Cruz,408,S.T.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,VI,ward,Other than Woman,NONE,0,Agostinho Antonio Dias,482,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,VII,ward,Woman,NONE,1,Harsha Hari Naik,328,Women,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,VIII,ward,BC Other than Woman,BC,0,Meghnath Ankush Shirodkar,365,O.B.C.,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,IX,ward,Other than Woman,NONE,0,Andrew Jose Caitan Duarte,213,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,X,ward,Other than Woman,NONE,0,Amit Ankush Shirodkar,418,General,latin,panres_2012_Ponda.pdf
+Goa,2012,North Goa,Ponda,SHIRODA,XI,ward,BC Woman,BC,1,Sanjivani Dayanand Naik,454,OBC Wom,latin,panres_2012_Ponda.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,I,ward,Other than Woman,NONE,0,Salvodor Inacio Fernandes,37,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,II,ward,ST Woman,ST,1,Dumiana Antonio Rebello E. Fernandes,125,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,III,ward,Other than Woman,NONE,0,Piedade Inacio Rocha,159,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,IV,ward,Other than Woman,NONE,0,Agostinho Marian Fernandes,191,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,V,ward,ST Other than Woman,ST,0,Jesus Duming Costa,64,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,VI,ward,Other than Woman,NONE,0,Vithoba Raghoba Deikar,120,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Ambaulim,VII,ward,Woman,NONE,1,Fatima Porbe Rocha,171,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,I,ward,Other than Woman,NONE,0,Caetano Floriano Roman Fernandes,146,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,II,ward,Woman,NONE,1,Sucorina Arnock Fernandes,182,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,III,ward,ST Other than Woman,ST,0,Custodio Bostiao Fernandes,171,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,IV,ward,Other than Woman,NONE,0,Sukash Babani Dessai,71,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,V,ward,Other than Woman,NONE,0,Dayanand Kushali Naik,115,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,VI,ward,Other than Woman,NONE,0,Manojkumar Vasant Naik,95,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Assolda,VII,ward,BC Woman,BC,1,Sumati Gurunath Naik,128,OBC Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,I,ward,Other than Woman,NONE,0,Mafaldo Guliherme Fernandes,103,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,II,ward,Woman,NONE,1,Shanti Minino Mascarenhas,169,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,III,ward,Other than Woman,NONE,0,John Caitano Menezes,120,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,IV,ward,BC Other than Woman,BC,0,Lakshmi Lakshimikant Raikar,115,O.B.C.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,V,ward,Other than Woman,NONE,0,Dumingo Pedru Mascarenhas,155,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,VI,ward,Other than Woman,NONE,0,Krishna Ratnakar Gauns Dessai,173,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Avedem-Cothombi- Chaifi,VII,ward,Woman,NONE,1,Pramila Atul Gauns Dessai,101,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,I,ward,Other than Woman,NONE,0,Bhamtu Fondu N Velip,294,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,II,ward,Woman,NONE,1,Sukanti Rohidas Gaonkar,163,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,III,ward,BC Other than Woman,BC,0,Mahendra Vassudev Gosavi,156,O.B.C.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,IV,ward,Woman,NONE,1,Shrinisha Shantaram Fotte,77,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,V,ward,BC Other than Woman,BC,0,Rasika Rohidas Naik,118,O.B.C.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,VI,ward,Other than Woman,NONE,0,Alka Jagadish Potdar,128,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,VII,ward,Woman,NONE,1,Diya Dharmendra Ballikar,349,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,VIII,ward,Other than Woman,NONE,0,Sanjay Arjun Velip,215,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Balli-Adnem,IX,ward,Other than Woman,NONE,0,Raghunath Kuiro Deikar,228,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,I,ward,Other than Woman,NONE,0,Manisha Ganesh Velip,164,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,II,ward,ST Woman,ST,1,Savita Fondu Gaonkar,167,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,III,ward,Other than Woman,NONE,0,Datta Shanu Velip,407,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,IV,ward,Other than Woman,NONE,0,Sarvanand Mono Velip,257,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,V,ward,Other than Woman,NONE,0,Arjun Sonu Velip,280,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,VI,ward,Other than Woman,NONE,0,Anuja Arjun Velip,263,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Barcem-Quedem,VII,ward,ST Woman,ST,1,Seema Rajendra Velip,Unopposed,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,I,ward,Other than Woman,NONE,0,Tolyo Panglo Gaonkar,192,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,II,ward,Woman,NONE,1,Rashmila Rohidas Velip,Unopposed,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,III,ward,Other than Woman,NONE,0,Dilip Narayan Dessai,102,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,IV,ward,Other than Woman,NONE,0,Satyawan Satu Devidas,125,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,V,ward,Other than Woman,NONE,0,Rajendra Vishwanath Falldessai,167,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,VI,ward,Other than Woman,NONE,0,Ravindra Arjun Velip,129,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Cavrem-Pirla,VII,ward,ST Woman,ST,1,Namita Narayan Gaonkar,143,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,I,ward,Other than Woman,NONE,0,Sanzil Cruz D'Costa,179,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,II,ward,Woman,NONE,1,Medini Santosh Naik,109,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,III,ward,Other than Woman,NONE,0,Deepak Purshottam Faldesai,74,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,IV,ward,Other than Woman,NONE,0,Kushali Sada Naik Dessai,83,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,V,ward,Other than Woman,NONE,0,Shailesh Krishna Naik Dessai,158,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,VI,ward,ST Other than Woman,ST,0,Coisao Pedru Fernandes,117,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Fatorpa-Quitol,VII,ward,ST Woman,ST,1,Luveala Pascoal Corriea,Unopposed,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,I,ward,Other than Woman,NONE,0,Dipak Chandrakant Naik,161,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,II,ward,Woman,NONE,1,Renny Josinho D'Costa,147,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,III,ward,ST Other than Woman,ST,0,Rajesh Ramchandra Gaonkar,161,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,IV,ward,Other than Woman,NONE,0,Selvy Mauricio Rodrigues,130,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,V,ward,Other than Woman,NONE,0,Sandeep Shantaram Malkarnekar,170,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,VI,ward,Other than Woman,NONE,0,Anand Rama Malik,95,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Molcornem,VII,ward,ST Woman,ST,1,Pramila Paik Malik,62,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,I,ward,Other than Woman,NONE,0,Neelu Bhamtu Gaonkar,163,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,II,ward,Woman,NONE,1,Punam Fondu Gaonkar,196,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,III,ward,Other than Woman,NONE,0,Khushali Kusth Velip,212,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,IV,ward,Other than Woman,NONE,0,Pramod Arjun Velip,164,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,V,ward,ST Other than Woman,ST,0,Bhiva Katu Velip,150,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,VI,ward,Other than Woman,NONE,0,Sonu Bhiva Velip,120,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Morpirla,VII,ward,ST Woman,ST,1,Rohisha Rajendra Gaonkar,138,ST Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,I,ward,Other than Woman,NONE,0,Sudhakar Vithal Joshi,105,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,II,ward,Woman,NONE,1,Gracy Serho Fernandes,118,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,III,ward,Other than Woman,NONE,0,Marcus Santano Simoes,128,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,IV,ward,Other than Woman,NONE,0,Mangaldas Yeshwant Naik,88,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,V,ward,Other than Woman,NONE,0,Krishna Kashinath Sawant Dessai,115,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,VI,ward,BC Other than Woman,BC,0,Delfi Mateus Piedade Mateus Piedade J. A. Barbosa,85,O.B.C.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Naqueri-Betul,VII,ward,Woman,NONE,1,Angelina Sebastian Marian Lobo,99,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,I,ward,Other than Woman,NONE,0,Paresh Anand Gauns Dessai,352,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,II,ward,Woman,NONE,1,Maria Zefrina Rebeiroe Avelino Fernandes,202,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,III,ward,ST Other than Woman,ST,0,Milagrino Domnick Menezes,374,S.T.,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,IV,ward,BC Woman,BC,1,Dipti Dina Naik,178,OBC Wom,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,V,ward,Other than Woman,NONE,0,Amey Pandurang Chimulkar,135,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,VI,ward,Other than Woman,NONE,0,Peter Joaquim Fernandes,177,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,VII,ward,Woman,NONE,1,Babita Parvin Gauns Dessai,153,Women,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,VIII,ward,Other than Woman,NONE,0,Pramod Devappa Gauns Dessai,285,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Quepem,Xeldem,IX,ward,Other than Woman,NONE,0,Caetano Francisco Joao De Lima,269,General,latin,panres_2012_Quepem.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,I,ward,Other than Woman,NONE,0,Inacio Mariano Pedro Joao Fernandes,164,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,II,ward,Woman,NONE,1,Maria Remedios Pereira,161,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,III,ward,Other than Woman,NONE,0,Anthony Manuel Fernandes,208,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,IV,ward,Other than Woman,NONE,0,Minguel Elias Britto Pereira,110,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,V,ward,Other than Woman,NONE,0,Pedro Mariano Lourence Fernandes,150,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,VI,ward,Other than Woman,NONE,0,Vincent Mariano Piedade Pereira,157,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,BETALBATIM,VII,ward,Woman,NONE,1,Maria Espranca Nicolau Fernandes,168,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,I,ward,Other than Woman,NONE,0,Conceisao Alias Conception Joseph Dias,82,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,II,ward,BC Woman,BC,1,Siddhi Saulo Naik,109,OBC Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,III,ward,Other than Woman,NONE,0,Basilio Francis Xavier Fernandes,98,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,IV,ward,Other than Woman,NONE,0,Casmiro Baptista Fernandes,73,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,V,ward,Other than Woman,NONE,0,Inacio Jose Antao,73,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,VI,ward,Other than Woman,NONE,0,Felicidade Menino Joao S. Antao,86,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAMURLIM,VII,ward,Woman,NONE,1,Hilda Silveria Michael Francisco Sequeira,56,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,I,ward,Other than Woman,NONE,0,Peter Menino Joanes,292,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,II,ward,Other than Woman,NONE,0,Caetana Carmelina Branca Manuel Antonio Rebelo E. Fernandes,255,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,III,ward,Woman,NONE,1,Royla Clarina Agnelo Fernandes,218,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,IV,ward,Woman,NONE,1,Gldya Trevor Rosario Benedicto Rodrigues E Fernandes,351,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,V,ward,Other than Woman,NONE,0,David Francisco Santano Fernandes,356,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,VI,ward,Other than Woman,NONE,0,Lourenco Saby Joao Alex Fernandes,254,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,VII,ward,Woman,NONE,1,Rita Santana Joaquim Furtado,185,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,VIII,ward,BC Other than Woman,BC,0,Xavier Wenecy Ambrosio Domingos Pereira,294,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,IX,ward,Other than Woman,NONE,0,Remedias N. Francisco Fernandes,360,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,X,ward,Other than Woman,NONE,0,Menino Joje Fernandes,256,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CANA BENAULIM,XI,ward,Woman,NONE,1,Annie Agnelo Da Costa,117,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,I,ward,Other than Woman,NONE,0,Menino Camilo Gregorio Fernandes,297,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,II,ward,Woman,NONE,1,Natalina Anthony Fernandes,415,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,III,ward,Other than Woman,NONE,0,Calvert Serafino Gonsalves,289,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,IV,ward,Woman,NONE,1,"Zarina Blanca Alberto Fernandes,",,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,V,ward,Other than Woman,NONE,0,Francisco Jose Bento Cardozo,163,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,VI,ward,Other than Woman,NONE,0,Snowkon Roberto Gonsalves,171,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,VII,ward,Woman,NONE,1,Blaizy Fransquinho Fernandes,148,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,VIII,ward,Other than Woman,NONE,0,Agnelo Pedro Joaquim Custodio Francisco Pereira,127,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,COLVA,IX,ward,Other than Woman,NONE,0,Cajy Anthony Domingos Fernandes,119,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,I,ward,Other than Woman,NONE,0,Sadanand Shiva Gaude,162,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,II,ward,Woman,NONE,1,Conceicao Rosario Fernandes,176,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,III,ward,Other than Woman,NONE,0,Batista Diogo Damaseno Santana Coelho Costa,112,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,IV,ward,Woman,NONE,1,Maria Franky Monteiro,206,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,V,ward,Other than Woman,NONE,0,Carmo Nattavidadev Fernandes,135,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,VI,ward,ST Other than Woman,ST,0,Joseph Aleixo Colaco,155,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,VII,ward,Woman,NONE,1,Maria Josefa Laurente Rodrigues,198,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,VIII,ward,Other than Woman,NONE,0,Maria A. Basilio Rodrigues,124,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,LOUTOLIM,IX,ward,Other than Woman,NONE,0,Cruz Mariano Alfredo Pereira.,116,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,I,ward,Other than Woman,NONE,0,Domingos Timoteo Rodrigues,118,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,II,ward,Woman,NONE,1,Gerogina Isidorio Mascarenhas,183,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,III,ward,Other than Woman,NONE,0,Domingos F. J. Jose Carvalho,146,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,IV,ward,Woman,NONE,1,Maria Belinda A. De Jesus Maria Amelia F. L. Rodrigues,225,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,V,ward,Other than Woman,NONE,0,Moises Antonio Vaz,234,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,VI,ward,Other than Woman,NONE,0,Anthony Caitan Fernandes,155,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,VII,ward,Woman,NONE,1,Melisa Maclet Seldon D'Costa,256,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,VIII,ward,Other than Woman,NONE,0,Vijay Dominic Lacerda,213,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MAJORDA-UTORDA CALATA,IX,ward,Other than Woman,NONE,0,Manuel Santana Cardozo,185,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,I,ward,Other than Woman,NONE,0,Socorrinha Soccoro Vaz,104,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,II,ward,BC Woman,BC,1,Angela Perpetua Cecilia Antonieta Baraganza E Fernandes,89,OBC Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,III,ward,Other than Woman,NONE,0,Anzil Agnelo Isidorio Godinho,111,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,IV,ward,Other than Woman,NONE,0,Richard Joao F. Gonsalves,121,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,V,ward,Other than Woman,NONE,0,Franky Santano Vales,142,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,VI,ward,Other than Woman,NONE,0,Maria Menino Cabral,96,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAGOA,VII,ward,ST Woman,ST,1,Treza Socorro Faria,65,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,I,ward,Other than Woman,NONE,0,Estaquio Caitano Vaz,205,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,II,ward,Woman,NONE,1,Nelly Menino Mascarenhas,225,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,III,ward,Other than Woman,NONE,0,Anson F. J. Antonio Dias,282,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,IV,ward,Woman,NONE,1,Frida Wilfred D' Sa,404,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,V,ward,ST Other than Woman,ST,0,Rueben Andrew Costa,299,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,VI,ward,Other than Woman,NONE,0,Conceicao Ligorio Colaco,342,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,VII,ward,Woman,NONE,1,Filipa Rosalina Francisco Barreto,156,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,VIII,ward,ST Other than Woman,ST,0,Rosada Santa Cruz Noronha E Ferrao,171,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,IX,ward,ST Other than Woman,ST,0,Camilo Joao Rodrigo Alvares,176,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,X,ward,Other than Woman,NONE,0,Bernado Caetano Fernandes,150,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NUVEM,XI,ward,Woman,NONE,1,Nency John Mascarenhas,216,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,I,ward,Other than Woman,NONE,0,Romaldo Floriano Gonsalves,213,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,II,ward,Woman,NONE,1,Minguelina P. Tarkeshwar A. Naik D' Souza,238,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,III,ward,Other than Woman,NONE,0,Luis Caetano Antonio Quadros,323,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,IV,ward,ST Woman,ST,1,Sebastiana Conceisao Souza,342,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,V,ward,Other than Woman,NONE,0,Camilo Antonio Filip Fernandes,312,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,VI,ward,BC Other than Woman,BC,0,Auduth Gajanan Saterkar,177,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,VII,ward,Woman,NONE,1,Espy Edwin Rodrigues,192,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,VIII,ward,Other than Woman,NONE,0,Antonio Xavier Jose Fernandes,155,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,IX,ward,Other than Woman,NONE,0,Zelia M. L. Xavier Gonsalves e Fernandes,245,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,X,ward,Other than Woman,NONE,0,Isidorio Casmiro Jose Rodrigues,110,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RAIA,XI,ward,Woman,NONE,1,Melba Mathew Colaco,261,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,I,ward,Other than Woman,NONE,0,Sebastiao Jose Anselim Antonio Jose Noronha,81,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,II,ward,Woman,NONE,1,Julieta Joao Gomes,92,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,III,ward,Other than Woman,NONE,0,Elvis Purificacao De Piedade Minguel Coutinho,59,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,IV,ward,Other than Woman,NONE,0,Leslie Camilo Dourado,97,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,V,ward,Other than Woman,NONE,0,Roquezinho Santano Fernandes,76,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,VI,ward,Other than Woman,NONE,0,Simon Stefano Benedito Gervasio Jeronimo Silva,270,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SERAULIM,VII,ward,Woman,NONE,1,Sima Santosh Shanke,398,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,I,ward,BC Other than Woman,BC,0,Cedley Simon Braganza,205,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,II,ward,Woman,NONE,1,Maria Estela Francisco Dias,117,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,III,ward,Other than Woman,NONE,0,Piedade Constancio Moniz,112,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,IV,ward,Woman,NONE,1,Leena Patrick Vaz,100,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,V,ward,ST Other than Woman,ST,0,Marcus Mario Joao Xavier Pereira,205,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,VI,ward,Other than Woman,NONE,0,Marcelino Caetano Faria,389,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,VII,ward,ST Woman,ST,1,Lourenca Pedro Natalino Endro E Gama,Unopposed,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,VIII,ward,Other than Woman,NONE,0,Remegio Piedade Jose Francisco Fernandes,293,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VERNA,IX,ward,Other than Woman,NONE,0,Constancio Antonio Fernandes,173,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,I,ward,Other than Woman,NONE,0,"Damodar Ganesh Naik,",,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,II,ward,BC Woman,BC,1,Deepa Damodar Naik,155,OBC Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,III,ward,Other than Woman,NONE,0,Amit Anand Khanolkar,122,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,IV,ward,Woman,NONE,1,Sharon Pio P. Julio Quadros,200,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,V,ward,Other than Woman,NONE,0,Diago Jose Moraes,98,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,VI,ward,Other than Woman,NONE,0,Agnelo Francisco Dias,63,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,VII,ward,ST Woman,ST,1,Amira Agnelo Rebello E Morais,178,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,VIII,ward,Other than Woman,NONE,0,Floriano Pedro Antonio Fernandes,178,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AQUEM-BAIXO,IX,ward,Other than Woman,NONE,0,Steven Antonio Vaz,129,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,I,ward,Other than Woman,NONE,0,Sandra John Fernandes,115,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,II,ward,Woman,NONE,1,Lavita Thelma Winston Francisco Dias,78,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,III,ward,Other than Woman,NONE,0,Prisco Alerio Socorro S. Rodrigues,171,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,IV,ward,Other than Woman,NONE,0,Orlando Raul Da Silva,148,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,V,ward,Other than Woman,NONE,0,Carlos P. Xavier George,195,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,VI,ward,Other than Woman,NONE,0,Xavier Abrao Agustinho Fernandes,83,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CARMONA,VII,ward,Woman,NONE,1,Divina Rodnie Rodrigues,150,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,I,ward,Other than Woman,NONE,0,James Crispino Barretto,109,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,II,ward,Woman,NONE,1,Viola Assumpcao N.A Costa,114,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,III,ward,Other than Woman,NONE,0,Edwino Manuel Joao Antonio Barreto,75,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,IV,ward,Other than Woman,NONE,0,Thomas Jose Pedro F. Barretto,67,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,V,ward,Other than Woman,NONE,0,Maria Lumena A.E. Milagres Marcos Mendes Rodrigues,86,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,VI,ward,Other than Woman,NONE,0,Lazarinho Vicent Antonio Jose Emerciano Remedios Miranda,64,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CAVELOSSIM,VII,ward,Woman,NONE,1,Brenda Iris Passanha,58,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,I,ward,Other than Woman,NONE,0,Constancio John Fernandes,143,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,II,ward,Woman,NONE,1,Joslyn Constancio Fernandes,238,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,III,ward,Other than Woman,NONE,0,Royen Eusebio Viegas,76,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,IV,ward,ST Woman,ST,1,Antonetta Bela Domingo Manuel Rebello,337,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,V,ward,Other than Woman,NONE,0,Santos Patric Rebello,167,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,VI,ward,Other than Woman,NONE,0,Antonio Inacio Cipriano Sequeira,110,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,VII,ward,Woman,NONE,1,Melsy Aurelo Bareto,404,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,VIII,ward,BC Other than Woman,BC,0,Santano Pedro Joaquim Leitao,191,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,IX,ward,Other than Woman,NONE,0,Flory Mathew Correia,163,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,X,ward,Other than Woman,NONE,0,John Beda Pedro D. Pereira,134,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHINCHINIM-DEUSA,XI,ward,Woman,NONE,1,Lydia Simon Fernandes,222,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,I,ward,Other than Woman,NONE,0,Paulo Pedro Colaco,188,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,II,ward,Woman,NONE,1,Leela Deepak Mangalam,,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,III,ward,BC Other than Woman,BC,0,Hemant Satyendra Kambli,189,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,IV,ward,Woman,NONE,1,Magdalena Martinho Monteiro E Rocha,127,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,V,ward,Other than Woman,NONE,0,"Imran Mohmed Ilyas Kachhi Mohamed,",,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,VI,ward,ST Other than Woman,ST,0,Abel Santano Colaco,186,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,VII,ward,Woman,NONE,1,Terezina Remedias Raicar,149,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,VIII,ward,Other than Woman,NONE,0,Rajani Arun Raikar,143,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,IX,ward,ST Other than Woman,ST,0,Herculano Sebastiao Niasso,231,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,X,ward,Other than Woman,NONE,0,Tulshidas Pandhari Dessai,127,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DAVORLIM- DICARPALE,XI,ward,Woman,NONE,1,Manelina Francisco Fernandes E Carvalho,274,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,I,ward,Other than Woman,NONE,0,Jose Conceicao Bernardo Santano Rebello,147,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,II,ward,Woman,NONE,1,Silvia Remy Fernandes,159,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,III,ward,Other than Woman,NONE,0,Rosario Manuel Agostinho Marcelino D'Costa,148,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,IV,ward,Other than Woman,NONE,0,Edcy F. L. Constanciao Fernandes,90,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,V,ward,Other than Woman,NONE,0,Olasrico B. E. Antonio J. C. Rodrigues,184,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,VI,ward,Other than Woman,NONE,0,Domnic John Rodney Noronha,103,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,DRAMAPUR-SIRLIM,VII,ward,Woman,NONE,1,Netty Guilherme Ferrao,83,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,I,ward,Other than Woman,NONE,0,Adelina Franklin Fernandes,154,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,II,ward,Woman,NONE,1,Stael Piedade Ana Michael Antonio Alexandri Albuquerque Da Cunha,226,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,III,ward,Other than Woman,NONE,0,Santarito Nelson Coelho,230,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,IV,ward,Woman,NONE,1,Belinda Euclid L. W. Dias,217,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,V,ward,Other than Woman,NONE,0,Frank Joquim Fernandes,142,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,VI,ward,Other than Woman,NONE,0,Fatima Lory Fernandes E Dias,144,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,VII,ward,Woman,NONE,1,Anna Chages Carneiro,219,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,VIII,ward,Other than Woman,NONE,0,Minguel Domingo Cardozo,193,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,IX,ward,Other than Woman,NONE,0,Remon Caetano Gomes,151,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,X,ward,ST Other than Woman,ST,0,Salvador Menino Pereira,168,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,NAVELIM,XI,ward,Woman,NONE,1,Maria Sharon Andrew Gomes,187,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ORLIM,I,ward,Other than Woman,NONE,0,Babbita Bonny Vaz,96,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ORLIM,II,ward,Woman,NONE,1,Barbara Leo Joao Vaz,72,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ORLIM,III,ward,Other than Woman,NONE,0,Gaudencio Sebastiao Luis,99,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ORLIM,IV,ward,Other than Woman,NONE,0,Evengelisto John Pimenta,75,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ORLIM,V,ward,Woman,NONE,1,Nifa Joseph J Gabriel Pimenta,98,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,I,ward,Other than Woman,NONE,0,Mustak Sadik Shaikh,117,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,II,ward,Woman,NONE,1,Safiya Bi Abdul Riyaz Shaikh,149,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,III,ward,Other than Woman,NONE,0,Abdul Nabi Shaikh,129,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,IV,ward,Other than Woman,NONE,0,Mamtaz Mohammed Rasul Turki,94,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,V,ward,Other than Woman,NONE,0,Mahammed Samulla Azad Faniband,173,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,VI,ward,Other than Woman,NONE,0,Murtutsab Kareemsab Kaknur,202,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RUMDAMOL- DAVORLIM,VII,ward,Woman,NONE,1,Suhasini Rajkumar Badennar,195,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,I,ward,Other than Woman,NONE,0,Prudencio Jeronio Francisco Carneiro,134,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,II,ward,Woman,NONE,1,Carmina Placida Caetano Jose Anacleto Pereira E Fernandes,107,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,III,ward,Other than Woman,NONE,0,Duarte Mariano Pires,177,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,IV,ward,Other than Woman,NONE,0,Milagrino Camilo Pires,165,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,V,ward,Other than Woman,NONE,0,Estevan Luis Goes,187,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,VI,ward,Other than Woman,NONE,0,Defa Patrica Aldrin Coutinho,157,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,TELAULIM,VII,ward,Woman,NONE,1,Aliny S. P. Bartolomeu Gomes,130,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,I,ward,Other than Woman,NONE,0,Francisco Simiao Rosario Fernandes,153,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,II,ward,Woman,NONE,1,Tercy C Joao Manuel Fernandes,203,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,III,ward,Other than Woman,NONE,0,Anthony John Menino Rodrigues,236,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,IV,ward,Other than Woman,NONE,0,Luiza Antonio Joaquim Pereira e Rodrigues,275,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,V,ward,Other than Woman,NONE,0,Crosly Charlton Jose Francisco Lourenco,239,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,VI,ward,Other than Woman,NONE,0,Roland Minguel Fernandes,256,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VARCA,VII,ward,Woman,NONE,1,Vincentina Roland Fernandes,230,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,I,ward,Other than Woman,NONE,0,Denica Roschmann Correia e Coutinho,137,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,II,ward,Woman,NONE,1,Savita Menino Fernandes,141,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,III,ward,Other than Woman,NONE,0,Percy Anacleto Fernandes,59,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,IV,ward,Other than Woman,NONE,0,Tyron Evangelist Fernandes,69,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,V,ward,BC Other than Woman,BC,0,Santan Alexio D'Silva,119,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,VI,ward,Other than Woman,NONE,0,Loreta Martino D'Silva,132,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,AMEBLIM,VII,ward,Woman,NONE,1,Sophia Roque Rebello,237,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,I,ward,Other than Woman,NONE,0,Jayant Shrimati Arolkar,76,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,II,ward,Woman,NONE,1,Framila Herman Almeida,117,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,III,ward,Other than Woman,NONE,0,Xavier Leornado Almeida,133,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,IV,ward,Other than Woman,NONE,0,Pedrinha Aurelio Cardozo,184,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,V,ward,Other than Woman,NONE,0,Savio Filomeno Ferreira,189,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,VI,ward,BC Other than Woman,BC,0,Pedro Ruzario Santano Cipriana Crasto,Unopposed,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,ASSOLNA,VII,ward,Woman,NONE,1,Merlin Eusebio Noronha,Unopposed,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,I,ward,Other than Woman,NONE,0,Marcelo Aleixo Francisco Fernandes,147,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,II,ward,Woman,NONE,1,Saturlina Joao Fernandes,114,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,III,ward,Other than Woman,NONE,0,Lucia Gustavo Da Cruz Coutinho,148,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,IV,ward,Other than Woman,NONE,0,Etelvina John Antao,115,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,V,ward,Other than Woman,NONE,0,Andrew Antonio Sebastiao Peixota,128,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,VI,ward,Other than Woman,NONE,0,Reve Jose Luis S. R. Dais,130,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CHANDOR-CAVORIM,VII,ward,Woman,NONE,1,Elizaberta Coustancio D'Costa,95,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,I,ward,Other than Woman,NONE,0,Joaquim Santana F. Filomena Rodrigues,210,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,II,ward,Other than Woman,NONE,0,Rupesh Sadashiv Naik,306,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,III,ward,Woman,NONE,1,Rosy Nicolav Paes,464,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,IV,ward,Woman,NONE,1,Cristalina Antonio Xavier Domingos Gomes e Rodrigues.,400,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,V,ward,Other than Woman,NONE,0,Lucy Francisco Rebello,197,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,VI,ward,Other than Woman,NONE,0,Judas Simon Aquino Bareto,280,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,VII,ward,Woman,NONE,1,Valentina Francisco Baraganza,261,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,VIII,ward,Other than Woman,NONE,0,Dionisio Joao Joazinho Sardinha,383,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,IX,ward,Other than Woman,NONE,0,Rue Francisco Menezes,270,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,X,ward,ST Other than Woman,ST,0,Peter Xavier Cardozo,286,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,CURTORIM,XI,ward,Woman,NONE,1,Sucorina Francisco Castanha,344,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,I,ward,Other than Woman,NONE,0,Milagres Methew Gonsalves,99,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,II,ward,Woman,NONE,1,Maura Sebastiao D' Costa,105,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,III,ward,Other than Woman,NONE,0,Flavia Vitorino Costa,165,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,IV,ward,Other than Woman,NONE,0,Balu Ranu Nistani,93,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,V,ward,Other than Woman,NONE,0,Agnelo Caitano P. Crasto,79,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,VI,ward,ST Other than Woman,ST,0,Vincie Remedios Peixoto,167,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,GUIRDOLIM,VII,ward,Woman,NONE,1,Sonia John Dias,109,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,I,ward,Other than Woman,NONE,0,Joao Milagres Joao Domingos D' Costa,57,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,II,ward,Woman,NONE,1,Chistina Vincent Vaz,127,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,III,ward,Other than Woman,NONE,0,Joaquim M. Jose Caitano Costa,62,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,IV,ward,Other than Woman,NONE,0,Salvador Alemao De Santa Margarido Fernandes,61,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,V,ward,Other than Woman,NONE,0,Caetano Joaquim Vaz,69,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,VI,ward,Other than Woman,NONE,0,Francisco Augustinho D'Costa,81,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,MACAZANA,VII,ward,Woman,NONE,1,Tereza Sebastiao Almeida,134,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,I,ward,Other than Woman,NONE,0,Deepak Ichit Kharangate,130,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,II,ward,Woman,NONE,1,Espetina Lacia Z. Marcus Rodrigues,104,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,III,ward,Other than Woman,NONE,0,Xavier Santan Vales,156,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,IV,ward,Other than Woman,NONE,0,Bernardo A. S. Antonio Rodrigues,192,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,V,ward,ST Other than Woman,ST,0,Dilip Vishnu Gaonkar,205,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,VI,ward,BC Other than Woman,BC,0,Francisco Xavier Jacky Dias,204,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,PARODA,VII,ward,Woman,NONE,1,Merciana Luis Rodrigues,137,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RACHOL,I,ward,Other than Woman,NONE,0,Milagres Piedade Fernandes,148,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RACHOL,II,ward,ST Woman,ST,1,Cyrila Sabina Agnelo Alemao,82,ST Wom.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RACHOL,III,ward,Other than Woman,NONE,0,Luis Ubaldino Oliveira,143,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RACHOL,IV,ward,Other than Woman,NONE,0,Joseph Piedade Francisco Xavier Vaz,158,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,RACHOL,V,ward,ST Woman,ST,1,Minguelina Glorio Fernandes e Pereira,134,ST Wom.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,I,ward,Other than Woman,NONE,0,Jose Mario Inacio Gomindes,107,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,II,ward,Woman,NONE,1,Berta Salvador Viegas E. D'Costa,182,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,III,ward,ST Other than Woman,ST,0,Agnelo Jose Moura,262,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,IV,ward,ST Woman,ST,1,Fatima Anthon Dias,Unopposed,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,V,ward,Other than Woman,NONE,0,Julio Joao Monteiro,130,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,VI,ward,BC Other than Woman,BC,0,Perris Antonio D'Costa,172,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,VII,ward,Woman,NONE,1,Milagrena Milagres Cardozo,126,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,VIII,ward,Other than Woman,NONE,0,Gabriel Joaquim Oliverira,187,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,IX,ward,Other than Woman,NONE,0,Nazario Philip Noronha,124,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,X,ward,Other than Woman,NONE,0,Minguel Pascoal Gomes,139,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SAO-JOSE-DE-AREAL,XI,ward,Woman,NONE,1,Andrea Rena Simon Faleiro,267,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SARZORA,I,ward,Other than Woman,NONE,0,Wilson Menino Fernandes,213,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SARZORA,II,ward,Woman,NONE,1,Socorrinna Lourdina Felix Brigido Mascarenhas e Menezes,117,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SARZORA,III,ward,ST Other than Woman,ST,0,Conceicao Jacinto Sebastiao J. P. Fernandes,107,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SARZORA,IV,ward,Other than Woman,NONE,0,Sabita Arcanjo Mascarenhas,166,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,SARZORA,V,ward,BC Woman,BC,1,Edwina Robert Fernandes,135,OBC Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,I,ward,Other than Woman,NONE,0,Melwyn Martino Sanches,129,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,II,ward,ST Woman,ST,1,Severina Luizinho Simoes,141,ST Wom,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,III,ward,Other than Woman,NONE,0,Cruz Augusto Fernandes,214,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,IV,ward,Woman,NONE,1,Shanti Dores Herolino Pereira,126,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,V,ward,Other than Woman,NONE,0,Assiz Cyrilo Pinto,233,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,VI,ward,Other than Woman,NONE,0,Piedade Santano Fernandes,192,General,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,VII,ward,Woman,NONE,1,Sharmila Agnelo Fernandes,251,Women,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,VIII,ward,BC Other than Woman,BC,0,Lodovina Cipriano Fernandes E Cardozo,250,O.B.C.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Salcete,VELIM,IX,ward,ST Other than Woman,ST,0,Savio Piedade Fernandes,182,S.T.,latin,panres_2012_Salcete.pdf
+Goa,2012,South Goa,Sanguem,Bhati,I,ward,Other than Woman,NONE,0,Vilas Peter Hari Crasto,105,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,II,ward,ST Woman,ST,1,Shilpa Anil Naik,138,ST Wom,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,III,ward,Other than Woman,NONE,0,Uday Pandurang Naik,63,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,IV,ward,Other than Woman,NONE,0,Uday Pandurang Naik,73,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,V,ward,Other than Woman,NONE,0,Chandrakant Shaba Gaonkar,127,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,VI,ward,Other than Woman,NONE,0,Ramakant Anant Naik,237,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Bhati,VII,ward,Woman,NONE,1,Shalini Uday Naik,253,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,I,ward,Other than Woman,NONE,0,Santosh Bablo Gaonkar,247,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,II,ward,BC Woman,BC,1,Vaishali Vaikunth Naik,129,OBC Wom,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,III,ward,BC Other than Woman,BC,0,Balo Bago Rekdo,158,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,IV,ward,Other than Woman,NONE,0,Vishant Rohidas Khutkar,117,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,V,ward,Other than Woman,NONE,0,Vilas Raghuvir Bhicholkar,162,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,VI,ward,Other than Woman,NONE,0,Kishor Rama Gauns Dessai,140,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Calem,VII,ward,Woman,NONE,1,Nayan Navlo Shelko,142,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,I,ward,Other than Woman,NONE,0,Savo Chimno Zoro,122,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,II,ward,Woman,NONE,1,Sharmila Bayo Bhandari,194,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,III,ward,Other than Woman,NONE,0,Francis Marian Rodrigues,207,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,IV,ward,Other than Woman,NONE,0,Anand Shrikant Kalekar,152,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,V,ward,Other than Woman,NONE,0,Manuel Kistod Barreto,93,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,VI,ward,ST Other than Woman,ST,0,Pushpali Putu Gaonkar,118,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Curdi-Vadem,VII,ward,BC Woman,BC,1,Gourisha Gurudas Gaonkar,137,OBC Wom,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,I,ward,BC Other than Woman,BC,0,Bunda Vithu Varak,285,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,II,ward,Woman,NONE,1,Smita Prashant Velip,206,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,III,ward,Other than Woman,NONE,0,Vishal Kashinath Naik,221,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,IV,ward,ST Other than Woman,ST,0,Satish Ram Gaonkar,182,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,V,ward,ST Other than Woman,ST,0,Sashikant Shrikant Gaonkar,53,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,VI,ward,Other than Woman,NONE,0,Mahesh Sagun Velip,199,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Neturlim,VII,ward,Woman,NONE,1,Geeta Gajanan Gaonkar,114,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,I,ward,ST Other than Woman,ST,0,Sarvesh Krishna Velip,201,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,II,ward,Woman,NONE,1,Sumitra Anand Naik,319,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,III,ward,ST Other than Woman,ST,0,Sandesh Babi Amolker,165,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,IV,ward,Woman,NONE,1,Priyanka Putu Gaonkar,134,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,V,ward,Other than Woman,NONE,0,Jose Jacinto Afonso,205,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,VI,ward,Other than Woman,NONE,0,Vaishali Vaikunth Naik,211,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,VII,ward,Woman,NONE,1,Suvarna Shivaji Prabhudessai,142,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,VIII,ward,BC Other than Woman,BC,0,Vijaya Rama Naik,197,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Rivona,IX,ward,Other than Woman,NONE,0,Olinda James Faria,46,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,I,ward,BC Other than Woman,BC,0,Ulhas Sada Naik,250,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,II,ward,Woman,NONE,1,Unatti Manjunath Vadar,239,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,III,ward,Other than Woman,NONE,0,Deepak Shersingh Sawant,186,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,IV,ward,Woman,NONE,1,Vinita Namdev Parsekar,145,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,V,ward,Other than Woman,NONE,0,Gokuldas Kashinath Naik,236,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,VI,ward,Other than Woman,NONE,0,Dattaprasad Shivanand Sawardekar,158,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,VII,ward,Woman,NONE,1,Niki Nitesh Bhandari,203,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,VIII,ward,Other than Woman,NONE,0,Sashikant Vishwanath Naik,237,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Sanvordem,IX,ward,BC Other than Woman,BC,0,Sanjay Gurudas Naik,224,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,I,ward,Other than Woman,NONE,0,Francisco Paulo Carvalho,193,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,II,ward,Woman,NONE,1,Ruby Gaspar Faria,193,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,III,ward,Other than Woman,NONE,0,Devidas Kusta Naik,189,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,IV,ward,ST Other than Woman,ST,0,Dashrath Chandrakant Gaonkar,364,S.T.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,V,ward,BC Other than Woman,BC,0,Amey Rajanikant Naik,112,O.B.C.,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,VI,ward,Other than Woman,NONE,0,Vithal Lolu Gaonkar,337,General,latin,panres_2012_Sanguem.pdf
+Goa,2012,South Goa,Sanguem,Uguem,VII,ward,Woman,NONE,1,Suhasini Subhash Gaonkar,192,Women,latin,panres_2012_Sanguem.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,I,ward,ST Other than Woman,ST,0,Gokuldas Govind Gawade,151,S.T.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,II,ward,Woman,NONE,1,Harsha Harichandra Kansekar,103,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,III,ward,Other than Woman,NONE,0,Nitin Bablo Shivdekar,95,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,IV,ward,Other than Woman,NONE,0,Suvarnmala Venkatesh Dessai,281,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,V,ward,Other than Woman,NONE,0,Subodh Shridhar Desai,195,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,VI,ward,Other than Woman,NONE,0,Sukdo Devgo Gaonkar,129,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,BHIRONDEM,VII,ward,Woman,NONE,1,Tereza Estev Andrad,180,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,I,ward,Other than Woman,NONE,0,Narayan Vishnu Mhalshekar,227,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,II,ward,Woman,NONE,1,Bhagyashri Bharat Naik,115,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,III,ward,BC Other than Woman,BC,0,Smt. Swagata Vidhyanand Naik,Unopposed,O.B.C.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,IV,ward,Other than Woman,NONE,0,Vinayak Balkrishna Sawaikar,199,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,V,ward,Other than Woman,NONE,0,Ramnath Raghalo Gaude,240,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,VI,ward,Other than Woman,NONE,0,Sakaram Laxman Gaonkar,250,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,COTOREM,VII,ward,Woman,NONE,1,Suvama Rajesh Gaonkar,172,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,I,ward,Other than Woman,NONE,0,Sanjay Dattaram Parwar,131,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,II,ward,Woman,NONE,1,Shreya Shrikant Gaonkar,137,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,III,ward,Other than Woman,NONE,0,Arjun Bhiso Sawant,257,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,IV,ward,Woman,NONE,1,Sarita Fatgo Gaonkar,195,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,V,ward,Other than Woman,NONE,0,Anikita Atmaram Gawas,248,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,VI,ward,Other than Woman,NONE,0,Mahadev Dholo Gaonkar,192,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,VII,ward,Woman,NONE,1,Gautami Gundu Gawas,191,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,VIII,ward,Other than Woman,NONE,0,Govind Babu Korgaonkar,173,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,DONGURLI-THANE,IX,ward,Other than Woman,NONE,0,Santosh Babu Gaonkar,91,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,I,ward,Other than Woman,NONE,0,Vishant Yoganand Nabar,137,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,II,ward,Woman,NONE,1,Nita Namdev Gaonkar,266,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,III,ward,ST Other than Woman,ST,0,Rohidas Vishnu Gaonkar,131,S.T.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,IV,ward,BC Other than Woman,BC,0,Prakash Vithal Naik,109,O.B.C.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,V,ward,Other than Woman,NONE,0,Lahu Keshav Gaonkar,70,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,VI,ward,Other than Woman,NONE,0,Anjay Bhalchandra Naik,124,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,GULELI,VII,ward,Woman,NONE,1,Ujwala Uttam Melekar,104,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,I,ward,Other than Woman,NONE,0,Suresh Babu Madkar,214,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,II,ward,Woman,NONE,1,Surekha Pandurang Naik,117,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,III,ward,ST Other than Woman,ST,0,Ulhas Vyankatesh Gawade,193,S.T.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,IV,ward,Woman,NONE,1,Urmila Uttam Mainkar,134,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,V,ward,BC Other than Woman,BC,0,Tulshi Rama Navelkar,170,O.B.C.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,VI,ward,Other than Woman,NONE,0,Shivdas Shrikant Madkar,326,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,VII,ward,Woman,NONE,1,Lata Bhimrao Rane,345,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,VIII,ward,Other than Woman,NONE,0,Vidhya Suryakant Desai,307,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,HONDA,IX,ward,Other than Woman,NONE,0,Shashikala Krishnarao Rane,509,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,I,ward,Other than Woman,NONE,0,Shri Vithoba Shankar Sawant,Unopposed,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,II,ward,Woman,NONE,1,Preeti Pandurang Sawant,269,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,III,ward,Other than Woman,NONE,0,Shri Bhalchandra Raghu Gawas,Unopposed,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,IV,ward,Other than Woman,NONE,0,Datta Budho Gawas,404,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,V,ward,Other than Woman,NONE,0,Vatu Vithal Gaonkar,190,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,VI,ward,Other than Woman,NONE,0,Tukaram Rajgo Gaonkar,188,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MAUXI,VII,ward,BC Woman,BC,1,Josna Janu Kale,132,OBC Wom,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,I,ward,Other than Woman,NONE,0,Sushant Mahadev Paste,157,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,II,ward,Woman,NONE,1,Divya Devidas Mhapsekar,107,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,III,ward,Other than Woman,NONE,0,Kusta Pundalik Gaonkar,96,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,IV,ward,Other than Woman,NONE,0,Jairam Vithoba Gaonkar,109,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,V,ward,Other than Woman,NONE,0,Babaji Vithal Gawas,239,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,VI,ward,Other than Woman,NONE,0,Anant Bhagle Naik,164,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,MORLEM,VII,ward,Woman,NONE,1,Parvati Mahadev Mainkar,107,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,I,ward,BC Other than Woman,BC,0,Rama Bhago Kharvat,219,O.B.C.,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,II,ward,Woman,NONE,1,Gopika Bablo Gaonkar,220,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,III,ward,Other than Woman,NONE,0,Ramesh Vishwanath Joshi,190,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,IV,ward,Other than Woman,NONE,0,Samir Sakharam Joshi,243,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,V,ward,Other than Woman,NONE,0,Laximan Ladu Harvalkar,130,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,VI,ward,Other than Woman,NONE,0,Vamanarao Santobarao Desai,218,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,NAGARGAO,VII,ward,Woman,NONE,1,Urmila Laxman Gawas,236,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,I,ward,Other than Woman,NONE,0,Laxman Shantaram Gaude,163,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,II,ward,ST Woman,ST,1,Nayan Uday Gawade,117,ST Wom,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,III,ward,Other than Woman,NONE,0,Sagun Sitaram Vadkar,147,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,IV,ward,Other than Woman,NONE,0,Vijay Krishna Parab,160,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,V,ward,Other than Woman,NONE,0,Devanand Vassant Parab,216,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,VI,ward,Other than Woman,NONE,0,Narendra Ganaba Gaude,171,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PISSURLEM,VII,ward,BC Woman,BC,1,Vaibhavi Vitho Humane,115,OBC Wom,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,I,ward,Other than Woman,NONE,0,Guduras Vasu Gurav,238,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,II,ward,Woman,NONE,1,Laxmi Jayaram Naik,144,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,III,ward,Other than Woman,NONE,0,Anil Laxman Majik,193,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,IV,ward,Other than Woman,NONE,0,Yeshwant Atchut Nak,184,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,V,ward,Other than Woman,NONE,0,Bhiso Arjun Gaonkar,164,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,VI,ward,Other than Woman,NONE,0,Narayan Laxman Mandrekar,112,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,PORIEM,VII,ward,Woman,NONE,1,Prajakta Prakash Salgaonkar,249,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,I,ward,Other than Woman,NONE,0,Jivabarao Tanabarao Rane,274,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,II,ward,Woman,NONE,1,Padmini Chudamani Hulankar,160,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,III,ward,Other than Woman,NONE,0,Mahesh Rajaram Gawas,149,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,IV,ward,Woman,NONE,1,Namrata Dnyaneshwar Kerkar,142,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,V,ward,Other than Woman,NONE,0,Samir Tukaram Govekar,259,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,VI,ward,Other than Woman,NONE,0,Chandrakant Mahadev Gawas,159,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,VII,ward,Woman,NONE,1,Noorun Bi Yahya Karol,143,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,VIII,ward,Other than Woman,NONE,0,Vishram Kashinath Naik,158,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,QUERIM,IX,ward,Other than Woman,NONE,0,Ganu Narayan Gawas,139,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,I,ward,Other than Woman,NONE,0,Anil Govind Nene,135,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,II,ward,Woman,NONE,1,Nayan Narayan Pirankar,171,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,III,ward,Other than Woman,NONE,0,Sayajirao Dattaram Desai,155,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,IV,ward,Other than Woman,NONE,0,Namdev Buli Gaonkar,80,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,V,ward,Other than Woman,NONE,0,Baburao Yenu Paryekar,172,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,VI,ward,Other than Woman,NONE,0,Ashok Mashno Gaonkar,153,General,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Sattari,SANVORDEM,VII,ward,Woman,NONE,1,Kamal Kashinath Gawde,109,Women,latin,panres_2012_Sattari.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,I,ward,Other than Woman,NONE,0,Digamber Vithal Kawlekar,92,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,II,ward,Woman,NONE,1,Manuelina Alberto Dias,135,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,III,ward,Other than Woman,NONE,0,Sneha Casilda De Menezes,48,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,IV,ward,Other than Woman,NONE,0,Francisco Pascoal De Souza,104,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,V,ward,Other than Woman,NONE,0,Celia Jose Fernandes,52,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,VI,ward,Other than Woman,NONE,0,Irineo Francisco D'Cunha,54,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,BATIM,VII,ward,Woman,NONE,1,Emilia Anthony Vas,75,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,I,ward,ST Other than Woman,ST,0,Rofam Kashinath Madkaikar,172,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,II,ward,Other than Woman,NONE,0,Mohan Laxman Narve,149,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,III,ward,BC Woman,BC,1,Shoban Arjun Borkar,405,OBC Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,IV,ward,ST Woman,ST,1,Mohini Mohan Narve,396,ST Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,V,ward,Other than Woman,NONE,0,Chandrakant Pundalik Kunkolkar,244,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,VI,ward,Other than Woman,NONE,0,Shruti Shailesh Kunkalikar,208,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,VII,ward,BC Woman,BC,1,Manisha Shailesh Chopdekar,298,OBC Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,VIII,ward,Other than Woman,NONE,0,Rajesh Prabhakar Vernekar,181,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,IX,ward,Other than Woman,NONE,0,Sunil Madhukant Golatkar,163,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,X,ward,Other than Woman,NONE,0,Dnyaneshwar Demu Shirodkar,120,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHIMBEL,XI,ward,Woman,NONE,1,Rosy Adam Utikuri,135,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,I,ward,Other than Woman,NONE,0,Ghansham Laximan Vernekar,272,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,II,ward,Woman,NONE,1,Maria Leena Jerry da Cunha,201,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,III,ward,Other than Woman,NONE,0,Arnaldo Anthony D'Souza,131,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,IV,ward,ST Woman,ST,1,Sushma Subhash Shirodkar,203,ST Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,V,ward,Other than Woman,NONE,0,Subhash Santu Shirodkar,228,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,VI,ward,Other than Woman,NONE,0,Siddesh Babi Naik,104,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,VII,ward,Woman,NONE,1,Manila Mahanand Sawant,146,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,VIII,ward,Other than Woman,NONE,0,Diona Sanjay Korgaonkar,132,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,IX,ward,Other than Woman,NONE,0,Suryakant Constancio Andrade,128,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,X,ward,ST Other than Woman,ST,0,Vikram Pandurang Fatarpekar,188,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CURCA-BAMBOLIM- TALAULIM,XI,ward,Woman,NONE,1,Sumita Ramesh Kankonkar,136,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,I,ward,Other than Woman,NONE,0,Prakash Gopinath Naik,335,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,II,ward,Woman,NONE,1,Socorinha Amstrong Braganza,223,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,III,ward,Other than Woman,NONE,0,Yatin Pundalik Palekar,263,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,IV,ward,Woman,NONE,1,Hemangi Hemant Golatkar,200,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,V,ward,Other than Woman,NONE,0,Walter Ligorio D'Souza,129,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,VI,ward,BC Other than Woman,BC,0,Girish Pundalik Uskaikar,174,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,VII,ward,Woman,NONE,1,Greta D.Francisco Monteiro,142,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,VIII,ward,BC Other than Woman,BC,0,Asis Jose Manuel Fernandes,149,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,IX,ward,BC Other than Woman,BC,0,Sandhya Anil Hoble,214,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,X,ward,Other than Woman,NONE,0,Lavu Raghuvir Hoble,144,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,MERCES,XI,ward,Woman,NONE,1,Priyanka Prakash Naik,261,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,NEURA,I,ward,Other than Woman,NONE,0,Vinod Vaikunth Kamat,105,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,NEURA,II,ward,Woman,NONE,1,Honorina Erasmo Araujo,141,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,NEURA,III,ward,ST Other than Woman,ST,0,Vidhesh Vishnu Madkaikar,134,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,NEURA,IV,ward,Other than Woman,NONE,0,Pratap Dhananjay Naik,103,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,NEURA,V,ward,BC Woman,BC,1,Sunita Gurudas Naik,187,OBC Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,I,ward,Other than Woman,NONE,0,Cosme Pedro Pires,72,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,II,ward,BC Woman,BC,1,Caetana Cardoso,102,OBC Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,III,ward,Other than Woman,NONE,0,Antonio Jose Afonso,104,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,IV,ward,Other than Woman,NONE,0,Pandurang Govind Mangueshkar,74,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,V,ward,ST Other than Woman,ST,0,Vassudev Shantaram Kunkolienkar,175,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,VI,ward,Other than Woman,NONE,0,Gangu Temi Gauns,93,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SIRIDAO-PALEM,VII,ward,Woman,NONE,1,Shanti Kush Palkar,190,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),I,ward,BC Other than Woman,BC,0,Francisco Roldao D' Souza,189,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),II,ward,BC Woman,BC,1,Vassanti Naguexa Chari,111,OBC Wom.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),III,ward,Other than Woman,NONE,0,Jagdish Umakant Bhobe,138,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),IV,ward,Woman,NONE,1,Shilpa Jagdish Bhobe,141,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),V,ward,Other than Woman,NONE,0,Jeronimo Remedio J. Lopes,192,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),VI,ward,Other than Woman,NONE,0,Maria J. Julieta Cardoso,126,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),VII,ward,Woman,NONE,1,Mamta Mohan Dhond,189,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),VIII,ward,Other than Woman,NONE,0,Andre Evaristo Pereira,97,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ANDRE (GOA VELHA ),IX,ward,BC Other than Woman,BC,0,Caetana Maria Vas e. Mendes,146,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,I,ward,Other than Woman,NONE,0,A. Caitan Jose Fernandes,382,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,II,ward,Other than Woman,NONE,0,Indira Antonio Fernandes,302,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,III,ward,Woman,NONE,1,Maria Frasica Rodrigues,358,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,IV,ward,Woman,NONE,1,Anvisha Amil Balekar,128,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,V,ward,ST Other than Woman,ST,0,Sanjay Ramchandra Fatarpekar,158,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,VI,ward,Other than Woman,NONE,0,Diksha Durganand Kavlekar,138,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,VII,ward,Woman,NONE,1,Shweta Ashok Naik,159,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,VIII,ward,BC Other than Woman,BC,0,William Filomeno Antonio Gonsalves,304,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,IX,ward,Other than Woman,NONE,0,Vincento Domingos Lourenco,146,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,X,ward,BC Other than Woman,BC,0,Namdev Jonu Naik,190,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. CRUZ,XI,ward,Woman,NONE,1,Sauanna Maria Araujo,305,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),I,ward,BC Other than Woman,BC,0,Benny Manuel Silveira,262,O.B.C.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),II,ward,Other than Woman,NONE,0,Paixao Augusto Rebelo,128,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),III,ward,Woman,NONE,1,Teresinha Socorrinha Gonsalves,132,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),IV,ward,Woman,NONE,1,Veronica Andre Fernandes,93,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),V,ward,Other than Woman,NONE,0,Jaime Antonio Afonso,191,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),VI,ward,Other than Woman,NONE,0,Cruz Joao Vales,77,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),VII,ward,Woman,NONE,1,Anjani Tulshidas Kavlekar,216,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),VIII,ward,Other than Woman,NONE,0,Piedade Manuel Fernandes,134,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),IX,ward,Other than Woman,NONE,0,Emie Leavora Fernandes,175,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),X,ward,Other than Woman,NONE,0,Francisco Xavier Frutuoso Gracias,161,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. LAWRENCE( AGASSAIM ),XI,ward,Woman,NONE,1,Shaini Mario Pereira,120,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,I,ward,Other than Woman,NONE,0,Antonio Joao Nouidade Caiado,116,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,II,ward,Woman,NONE,1,Paulina Francisco Po Oliveira,176,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,III,ward,Other than Woman,NONE,0,Sameer Tato Naique,109,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,IV,ward,BC Other than Woman,BC,0,Premnath Ramrai Naik,142,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,V,ward,BC Other than Woman,BC,0,Asha Devanand Madkaikar,169,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,VI,ward,Other than Woman,NONE,0,Francisco Joaquim Vicent Po,274,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,AZOSSIM-MANDUR,VII,ward,ST Woman,ST,1,Shaila Gurudas Gaunekar,326,ST Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,I,ward,ST Other than Woman,ST,0,Kusta Omno Salelkar,188,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,II,ward,Woman,NONE,1,Ashvita Anand Vargaonkar,215,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,III,ward,Other than Woman,NONE,0,Bhalchandra Satu Usgaonkar,135,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,IV,ward,ST Other than Woman,ST,0,Kundan Govind Bhomkar,225,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,V,ward,Other than Woman,NONE,0,Nurpesh Deepu Bhomkar,162,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,VI,ward,Other than Woman,NONE,0,Wilson Wilfred Valadares,242,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CARAMBOLIM,VII,ward,Woman,NONE,1,Wanisha Wilson Valladares,,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,I,ward,Other than Woman,NONE,0,Pandhari Kanta Vernekar,305,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,II,ward,Woman,NONE,1,Arati Narendra Bandodkar,218,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,III,ward,Other than Woman,NONE,0,Salvador Alex Cruz,118,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,IV,ward,BC Woman,BC,1,Divya Devendra Usapkar,247,OBC Wom,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,V,ward,BC Other than Woman,BC,0,Vishal Ashok Acharya,148,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,VI,ward,Other than Woman,NONE,0,Shamba Shankar Kalangutkar,316,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,VII,ward,Woman,NONE,1,Pooja Prasad Chodankar,192,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,VIII,ward,Other than Woman,NONE,0,Vasudev Vasant Dhuri,284,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CHODAN-MADEL,IX,ward,Other than Woman,NONE,0,Rama Maddu Kubal,266,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,I,ward,Other than Woman,NONE,0,Ganu Bhiku Jalmi,184,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,II,ward,ST Woman,ST,1,Dakshata Digambar Kalapurkar,300,ST Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,III,ward,Other than Woman,NONE,0,Caetano M.S. Jose Antonio Po,124,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,IV,ward,BC Other than Woman,BC,0,Gorakhnath Suresh Kerkar,118,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,V,ward,Other than Woman,NONE,0,Purshottam Rupo Dhulapkar,201,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,VI,ward,Other than Woman,NONE,0,Victor Antonio Pereira,80,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CORLIM,VII,ward,Woman,NONE,1,Surpriya Gorakhnath Kerkar,137,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,I,ward,Other than Woman,NONE,0,Cosme Filomeno D' Silva,92,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,II,ward,BC Woman,BC,1,Padmini Dharma Phadte,274,OBC Wom,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,III,ward,BC Other than Woman,BC,0,Suresh Shridhar Naik,194,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,IV,ward,Other than Woman,NONE,0,Suhas Hari Phadte,238,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,V,ward,Other than Woman,NONE,0,Manohar Sonu Gaude,195,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,VI,ward,Other than Woman,NONE,0,Pramod Chandrakant Kamat,107,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,CUMBARJUA,VII,ward,Woman,NONE,1,Soniya Somnath Shet,113,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,I,ward,ST Other than Woman,ST,0,Kanan Vithal Priolkar,175,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,II,ward,Woman,NONE,1,Monica Elvis Aguiar,97,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,III,ward,Other than Woman,NONE,0,Ciriaco Matias Fernandes,87,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,IV,ward,Other than Woman,NONE,0,Prasad Narayan Harmalkar,163,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,V,ward,BC Other than Woman,BC,0,Rajesh Anand Pilernkar,110,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,VI,ward,Other than Woman,NONE,0,Jenu Dattu Kunkalikar,82,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,GOLTIM-NAVELIM,VII,ward,Woman,NONE,1,Ranjita Chandrakant Gaunekar,151,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,I,ward,Other than Woman,NONE,0,Melca Mathias Vaz,137,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,II,ward,BC Woman,BC,1,Vaibhavi Vivek Sawant,98,OBC Wom,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,III,ward,Other than Woman,NONE,0,Tulshidas Surya Kundaikar,143,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,IV,ward,Other than Woman,NONE,0,Prashant Kamalkant Harvalkar,114,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,V,ward,Other than Woman,NONE,0,Gurudas Manohar Bhomkar,75,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,VI,ward,BC Other than Woman,BC,0,Ankita Ashok Chopdekar,93,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SAO MATHIAS,VII,ward,Woman,NONE,1,Greta Ubaldina Peter Vaz,70,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,I,ward,BC Other than Woman,BC,0,Pushparaj Sazu Naik,204,O.B.C,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,II,ward,Woman,NONE,1,Anisha Vishwas Kuttikar,142,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,III,ward,Other than Woman,NONE,0,Prakash Pandhurang Amonkar,141,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,IV,ward,Woman,NONE,1,Janita Pandurang Madkaikar,183,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,V,ward,Other than Woman,NONE,0,Vinayak Jagannath Fadte,170,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,VI,ward,Other than Woman,NONE,0,Xavier Santan Anthony Fialho,111,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,VII,ward,Woman,NONE,1,Geeta Santosh Parvatkar,152,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,VIII,ward,ST Other than Woman,ST,0,Nilkant Pedro Bhomkar,173,S.T.,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,SE OLD GOA,IX,ward,Other than Woman,NONE,0,Vishal Shambhu Volvoikar,206,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,I,ward,Other than Woman,NONE,0,Rohidas Sitaram Narvekar,227,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,II,ward,Woman,NONE,1,Erasma Severino Magalhaes,115,Women,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,III,ward,Other than Woman,NONE,0,Camilo Nolasco Joaquim A.S. Menezes,203,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,IV,ward,Other than Woman,NONE,0,Celesta Philipa Mukesh Saldanha,142,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,V,ward,Other than Woman,NONE,0,Jose Orlando Domingos Agostinho Menezes,150,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,VI,ward,Other than Woman,NONE,0,Ramanand Narayan Chodankar,200,General,latin,panres_2012_Tiswadi.pdf
+Goa,2012,North Goa,Tiswadi,ST. ESTEVAM,VII,ward,Woman,NONE,1,Sabrina Darwin Pereira,168,Women,latin,panres_2012_Tiswadi.pdf

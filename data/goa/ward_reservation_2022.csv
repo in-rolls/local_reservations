@@ -1,0 +1,794 @@
+state,year,district,block,gram_panchayat,ward_no,tier,reservation,caste_reservation,woman_reserved,winner,votes,reservation_raw,script,source_pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,VIII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Balli- Adnem,IX,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Ambaulim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,IX,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,X,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Xeldem,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Assolda,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Avedem- Cotombi- Chaifi,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,VIII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Barcem- Quedem,IX,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Caurem- Pirla,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Molcornem,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,V,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Morpirla,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Fatorpa- Quitol,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,II,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,South Goa,Quepem,Naqueri Betul,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-niminated-candidates-quepemvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,V,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Latambarcem,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,III,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mulgao,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Salem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mencurem- Dhumasem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mencurem- Dhumasem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mencurem- Dhumasem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mencurem- Dhumasem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Mencurem- Dhumasem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Advalpal,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Advalpal,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Advalpal,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Advalpal,IV,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Advalpal,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,IV,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,X,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Karapur- Sarvan,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,III,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Ona- Maulinguem- Curchirem,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Cudnem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Piligao,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,III,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,X,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Maem- Vainguinim,XI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Sirigao,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Sirigao,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Sirigao,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Sirigao,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Naroa,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Naroa,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Naroa,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Naroa,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Naroa,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Pale-Kotambi,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,IV,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Surla,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,V,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Amona,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Navelim,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,North Goa,Bicholim,Velguem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Bicholimvp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,VIII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Kirlapal- Dabal,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Dharbandora,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Collem,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Sancordem,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Dharbandora,Mollem,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Dharbandoravp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,X,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Sancoale,XI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,III,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicalim,X,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,III,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,IX,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,X,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cortalim,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Cansaulim- Arossim- Cuelim,IX,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Velsao- Pale- Issorcim,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Chicolna- Bogmalo,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,V,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,VI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Mormugao,Quelossim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-Mormugaovp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,VIII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cola,IX,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,VIII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Shrishthal,IX,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Agonda,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Poinguinim,IX,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Loliem-Polem,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Gaondongrem,IX,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,South Goa,Canacona,Cotigao,VII,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-canaconavp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,IV,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,X,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Mandrem,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Arambol,IX,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Paliem,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Querim- Tiracol,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,V,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Corgao,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Parcem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Agarwada- Chopdem,VII,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Morjim,IX,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,VIII,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Dhargalim,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tuem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Virnoda,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,IV,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,V,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Casne- Amberem- Porascadem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,III,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Tamboxem- Mopa- Ugvem,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Torxem,VII,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,I,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ibrampur- Hankhane,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ozarim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ozarim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ozarim,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ozarim,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Ozarim,V,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,North Goa,Pernem,Varkhand- Nagzar,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-pernemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Sanvordem,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,V,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Calem,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Rivona,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,V,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,VI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Uguem,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,VI,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Netorlim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,II,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Curdi- Vaddem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,V,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,South Goa,Sanguem,Bhati,VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sanguemvp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,X,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Honda,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Poriem,IX,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,V,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,VI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Pissurlem,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Querim,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,I,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Dongurli- Thane,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Mauxi,VII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,III,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Morlem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Nagargao,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,V,ward,SC Other than Woman,SC,0,,,SC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Cotorem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Bhironda,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Sanvordem,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,I,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Sattari,Guleli,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-sattarivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,VI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,X,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Cruz,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,III,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,IX,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,X,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Curca-Bambolim- Talaulim,XI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,IV,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,V,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Siridao-Palem,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,V,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Batim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,III,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,VI,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,X,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chimbel,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,IX,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,X,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Merces,XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,II,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,VIII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Corlim,IX,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Cumbharjua,IX,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,I,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Estevam,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Se Old Goa,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,I,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,II,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Goltim-Navelim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,II,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,V,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,VI,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Sao Matias,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),III,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),VII,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),IX,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),X,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Lawrence(Agassaim),XI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,I,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,II,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,IV,ward,ST Woman,ST,1,,,ST Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,VII,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Carambolim,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),IV,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),VII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),VIII,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,St.Andre (Goa Velha),IX,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,I,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,V,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,VI,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Azossim-Mandur,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,II,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,III,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,IV,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,VI,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Neura,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,I,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,II,ward,ST Other than Woman,ST,0,,,ST,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,III,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,IV,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,V,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,VI,ward,Other than Woman,NONE,0,,,General,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,VII,ward,BC Woman,BC,1,,,OBC Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,VIII,ward,BC Other than Woman,BC,0,,,OBC,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
+Goa,2022,North Goa,Tiswadi,Chodan-Madel,IX,ward,Woman,NONE,1,,,Women,latin,list-of-validly-nominated-candidates-tiswadivp_2022.pdf
