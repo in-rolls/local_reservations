@@ -7,3 +7,4 @@ data/rajasthan/.RData
 __pycache__/
 *.pyc
 .pytest_cache/
+data/ap/ocr/

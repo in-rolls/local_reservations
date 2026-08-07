@@ -38,10 +38,13 @@ from normalize import label, normalize_reservation  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 AP = ROOT / "data" / "ap" / "2020_res_gp"
+OCR_CACHE = ROOT / "data" / "ap" / "ocr"
 
-COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
-           "tier", "reservation", "caste_reservation", "woman_reserved",
-           "ward_count", "ocr_repaired", "reservation_raw", "script"]
+COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
+           "ward_no", "tier", "reservation", "caste_reservation",
+           "woman_reserved", "ward_count", "wards_parsed",
+           "ward_list_complete", "ocr_repaired", "reservation_raw", "script",
+           "text_source"]
 
 # District codes in the filenames.
 DISTRICTS = {
@@ -55,13 +58,23 @@ DISTRICTS = {
 # S<->5, B<->8, and the bracket around "W" appearing as ( { [ or mismatched.
 CATEGORY = re.compile(
     r"(?<![A-Za-z0-9])(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]|[Gg][Nn])"
-    r"\s*(?:[({\[]\s*[WwVv]\s*[)}\]]?)?",
+    # the gender marker is "(W)" in most districts but Anantapur writes the
+    # open seats explicitly too - UR(G), SC/G, BC/W - and a slash is as common
+    # a separator there as a bracket
+    r"\s*(?:[({\[/]\s*[WwVvGg]\s*[)}\]]?)?",
     re.X)
+
+# A gram panchayat name: at least one run of letters. Used to tell a real record
+# from an abstract row, which is numbers all the way across.
+HAS_NAME = re.compile(r"[A-Za-z]{3}")
 
 # a ward count, with the digit confusions this OCR makes: l/I->1, t->1, O->0
 COUNT = re.compile(r"^[0-9tTlIiOo]{1,3}$")
 
 CANONICAL = {"5": "S", "8": "B", "0": "O"}
+
+# the gazette header numbers ward columns 1..20
+MAX_WARDS = 20
 
 
 def repair(token):
@@ -79,11 +92,25 @@ def repair(token):
 def digits(token):
     """A ward count as OCR left it: "t4" is 14, "72" is 12 in this font."""
     mapped = token.translate(str.maketrans("tTlIiOo", "1110000"))
-    return mapped if mapped.isdigit() else ""
+    if mapped.isdigit() and int(mapped) > MAX_WARDS and mapped.startswith("7"):
+        # "72" and "74" are 12 and 14 in this font. Only rewrite when the value
+        # is otherwise impossible - the header numbers wards 1..20 - so a
+        # genuine 7 is never touched.
+        mapped = "1" + mapped[1:]
+    # Anything still outside 1..20 is not a ward count. It is usually the next
+    # record's serial number, picked up because Anantapur's gazette is
+    # sarpanch-only and has no ward column for the reader to land on. Returning
+    # blank says "not stated", which is true; returning 202 would not be.
+    if not mapped.isdigit() or not (1 <= int(mapped) <= MAX_WARDS):
+        return ""
+    return mapped
 
 
 def parse_line(line):
     """Split one gram panchayat line, or return None if it is not one."""
+    # Tesseract renders the table rules as pipes and stray brackets; they carry
+    # no information and would otherwise break the category tokens apart.
+    line = re.sub(r"[|]+", " ", line)
     line = re.sub(r"\s+", " ", line).strip()
     # the serial itself is OCR-damaged in places ("4a" for 48)
     head = re.match(r"^(\d{1,4}[A-Za-z]?)\s+(.*)$", line)
@@ -95,6 +122,13 @@ def parse_line(line):
     if not matches:
         return None
     first = matches[0]
+
+    # Distinguishing a real record from an abstract row cannot be done by
+    # counting categories: Anantapur's gazette is sarpanch-only, with no ward
+    # columns at all, so its records carry exactly one. What separates them is
+    # that a record names a place and an abstract row is numbers across.
+    if not HAS_NAME.search(rest[:first.start()]):
+        return None
 
     names = rest[:first.start()].strip()
     if not names:
@@ -110,7 +144,19 @@ def parse_line(line):
     count_token = tail.split(" ")[0] if tail else ""
     ward_count = digits(count_token) if COUNT.match(count_token or "") else ""
 
+    # Bound the ward list by the count the record itself states. Reassembling
+    # wrapped records means the buffer also picks up page furniture and stray
+    # fragments, which pushed the ward total to 134% of what the gazette says
+    # it should be. Trusting the document's own count fixes the over-capture
+    # and makes any shortfall measurable rather than hidden by a surplus.
     wards = [m.group(0) for m in matches[1:]]
+    if ward_count.isdigit() and int(ward_count) > 0:
+        wards = wards[:int(ward_count)]
+    else:
+        # No readable count on this record. The gazette's own header numbers
+        # wards 1 to 20, so that is the ceiling; without it the reassembled
+        # buffer keeps absorbing page furniture.
+        wards = wards[:MAX_WARDS]
     return {
         "serial": head.group(1), "mandal": mandal, "panchayat": panchayat,
         "sarpanch_raw": first.group(0), "ward_count": ward_count,
@@ -135,7 +181,12 @@ def _records(lines):
     opener = re.compile(r"^\s*\d{1,4}[A-Za-z]?\s+[A-Za-z]")
     buffer = ""
     for raw in lines:
-        line = re.sub(r"\s+", " ", raw).strip()
+        # Strip the table rules here, not only in parse_line. Our OCR renders
+        # them as pipes, so a row arrives as "44 |Alamuru ALAMURU ..." and the
+        # opener - which expects a letter after the serial - never matches.
+        # That silently cut East Godavari from 10,226 rows to 83.
+        line = re.sub(r"[|]+", " ", raw)
+        line = re.sub(r"\s+", " ", line).strip()
         if not line:
             continue
         if opener.match(line):
@@ -148,14 +199,27 @@ def _records(lines):
         yield buffer
 
 
+def source_text(path):
+    """Prefer our own OCR over the embedded text layer.
+
+    The layer these gazettes ship is itself OCR and gets digits and letters
+    wrong in the category cells - 5C, 8c, t4. scripts/ap/ocr.py re-renders and
+    re-reads them, which fixes those at the source instead of repairing them
+    downstream and hoping. Falls back to the embedded layer when no cache
+    exists, so the parser still runs without the OCR step.
+    """
+    cached = OCR_CACHE / f"{path.stem}.txt"
+    if cached.exists():
+        return cached.read_text(encoding="utf-8"), "ocr"
+    return subprocess.run(["pdftotext", "-layout", str(path), "-"],
+                          capture_output=True, text=True).stdout, "embedded"
+
+
 def parse_pdf(path):
     district = DISTRICTS.get(path.stem.split("_")[0], path.stem)
-    text = subprocess.run(["pdftotext", "-layout", str(path), "-"],
-                          capture_output=True, text=True).stdout
+    text, origin = source_text(path)
     rows = []
     for page_no, page in enumerate(text.split("\f"), 1):
-        if "RESERVATION" not in page.upper():
-            continue
         for line in _records(page.split("\n")):
             parsed = parse_line(line)
             if not parsed:
@@ -169,7 +233,18 @@ def parse_pdf(path):
                 "state": "Andhra Pradesh", "year": "2020",
                 "district": district, "block": parsed["mandal"],
                 "gram_panchayat": parsed["panchayat"],
-                "ward_count": parsed["ward_count"], "script": script,
+                "ward_count": parsed["ward_count"],
+                "wards_parsed": len(parsed["ward_raws"]),
+                "serial": parsed["serial"], "script": script,
+                "text_source": origin,
+                # 1 when the ward list matches the count the record states, 0
+                # when it does not, blank when the record states no count.
+                # Only 63% of AP's records come out complete, so a ward row
+                # without this flag would silently mix complete lists with
+                # truncated ones.
+                "ward_list_complete": (
+                    int(len(parsed["ward_raws"]) == int(parsed["ward_count"]))
+                    if parsed["ward_count"].isdigit() else ""),
             }
             rows.append(emit.stamp(dict(
                 base, ward_no="", tier="sarpanch",

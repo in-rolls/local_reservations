@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: help inventory probe goa jharkhand jk ap test coverage
+.PHONY: help inventory probe goa jharkhand jk ap test coverage expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -10,6 +10,8 @@ help:
 	@echo "make jk          parse + validate Jammu & Kashmir"
 	@echo "make ap          parse + validate Andhra Pradesh"
 	@echo "make coverage    regenerate the readme table and check every link"
+	@echo "make expect      triage every column against the data dictionary"
+	@echo "make dictionary  regenerate DICTIONARY.md from the declarations"
 	@echo "make test        unit tests for the shared normalizer"
 
 inventory:
@@ -36,6 +38,12 @@ ap:
 
 coverage:
 	$(PY) scripts/build_coverage.py --check
+
+expect:
+	cd scripts/common && $(PY) expectations.py
+
+dictionary:
+	cd scripts/common && $(PY) make_dictionary.py
 
 test:
 	cd scripts/common && $(PY) -m pytest -q

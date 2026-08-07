@@ -61,6 +61,10 @@ CODES = {
     "bc": ("BC", 0), "bcw": ("BC", 1), "bcwomen": ("BC", 1),
     "obc": ("BC", 0), "obcw": ("BC", 1), "obcwomen": ("BC", 1),
     "bca": ("BC", 0), "bcaw": ("BC", 1),
+    # Anantapur marks the open seats explicitly with G for General rather than
+    # leaving them unmarked: UR(G), SC/G, BC/W.
+    "urg": ("NONE", 0), "gng": ("NONE", 0), "og": ("NONE", 0),
+    "scg": ("SC", 0), "stg": ("ST", 0), "bcg": ("BC", 0), "obcg": ("BC", 0),
 }
 
 
