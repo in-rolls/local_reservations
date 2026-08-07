@@ -9,6 +9,7 @@ help:
 	@echo "make jharkhand   parse + validate Jharkhand, one file per tier"
 	@echo "make jk          parse + validate Jammu & Kashmir"
 	@echo "make ap          parse + validate Andhra Pradesh"
+	@echo "make coverage    regenerate the readme table and check every link"
 	@echo "make test        unit tests for the shared normalizer"
 
 inventory:
@@ -32,6 +33,9 @@ jk:
 ap:
 	$(PY) scripts/ap/parse.py
 	$(PY) scripts/ap/validate.py
+
+coverage:
+	$(PY) scripts/build_coverage.py --check
 
 test:
 	cd scripts/common && $(PY) -m pytest -q
