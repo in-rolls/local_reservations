@@ -64,7 +64,22 @@ HARYANA = [
     ("fiN+Mk oxZ d efgyk", "BC", 1),           # floating "+" diacritic
 ]
 
-NON_CATEGORIES = ["", None, "Sarpanch", "Panch", "iap", "5", "--", "Independent"]
+# ------------------------------------------------------------ J&K vocabulary
+# Three different years, three different vocabularies. "Res. For SC/Women" is
+# the one that mattered: tokens were split on whitespace only, so "SC/Women"
+# became the single token "scwomen", the caste test missed, and an SC-woman seat
+# was recorded as an open seat reserved for a woman.
+JK = [
+    ("Un Reserved", "NONE", 0), ("Open", "NONE", 0), ("OC", "NONE", 0),
+    ("Gn", "NONE", 0), ("Gn Women", "NONE", 1),
+    ("Res. For Women", "NONE", 1),
+    ("Res. For SC", "SC", 0), ("Res. For SC/Women", "SC", 1),
+    ("Res. For Women/SC", "SC", 1),
+    ("ST Reserved", "ST", 0), ("ST/W", "ST", 1),
+]
+
+NON_CATEGORIES = ["", None, "Sarpanch", "Panch", "iap", "5", "--", "Independent",
+                  "Reserved for"]
 
 
 @pytest.mark.parametrize("raw,caste", JHARKHAND_CASTE)
@@ -77,7 +92,7 @@ def test_jharkhand_gender_column():
     assert woman_of("vU;") == 0
 
 
-@pytest.mark.parametrize("raw,caste,woman", GOA + AP + HARYANA)
+@pytest.mark.parametrize("raw,caste,woman", GOA + AP + HARYANA + JK)
 def test_single_cell_states(raw, caste, woman):
     result = normalize_reservation(raw)
     assert result is not None, f"{raw!r} was not recognised as a category"

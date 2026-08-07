@@ -49,7 +49,8 @@ VACANT = ("rikt", "riet", "vacant", "fjDr", "[kkyh")
 # letters-only form, so "O.B.C.", "OBC" and "Obc" all land here, and so does
 # "UR (W)" -> "urw".
 CODES = {
-    "g": ("NONE", 0), "gen": ("NONE", 0), "general": ("NONE", 0),
+    "g": ("NONE", 0), "gn": ("NONE", 0), "gen": ("NONE", 0),
+    "general": ("NONE", 0),
     "ur": ("NONE", 0), "unreserved": ("NONE", 0), "open": ("NONE", 0),
     "oc": ("NONE", 0), "o": ("NONE", 0),
     "w": ("NONE", 1), "women": ("NONE", 1), "woman": ("NONE", 1),
@@ -124,7 +125,11 @@ def caste_of(text):
     # Caste", so chasing the qualifier means chasing each new misspelling.
     # "sched" decides it even when the noun is wrong - the 2016 Haryana gazette
     # prints "Scheduled Class", which is Caste misspelt, not Backward Class.
-    tokens = {re.sub(r"[^a-z]", "", t) for t in s.lower().split()}
+    # Split on any non-letter, not just whitespace. J&K writes "Res. For
+    # SC/Women"; splitting on spaces alone leaves that as the single token
+    # "scwomen", the "sc" test misses, and an SC-woman seat is recorded as an
+    # open seat reserved for a woman - the caste silently dropped.
+    tokens = {t for t in re.split(r"[^a-z]+", s.lower()) if t}
     if "trib" in letters or "st" in tokens:
         return "ST"
     if "cast" in letters or "sched" in letters or "sc" in tokens:
