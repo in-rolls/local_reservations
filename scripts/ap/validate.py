@@ -24,6 +24,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA = ROOT / "data" / "ap"
 SOURCE = DATA / "2020_res_gp"
+OCR = DATA / "ocr"
 
 # Andhra Pradesh reserves half of all sarpanch seats for women.
 WOMEN_SHARE = 0.50
@@ -41,19 +42,41 @@ def load(tier):
         return list(csv.DictReader(fh))
 
 
+def _is_column_numbering(numbers):
+    """A run like 1 2 3 4 5 ... is the header's column numbers, not data."""
+    values = [int(n) for n in numbers]
+    return len(values) >= 6 and all(b - a == 1 for a, b in zip(values, values[1:]))
+
+
 def abstract_total(path, district):
-    """The district's gram panchayat count, as its own FORMAT-I abstract states."""
-    text = subprocess.run(["pdftotext", "-layout", "-f", "1", "-l", "4",
-                           str(path), "-"], capture_output=True, text=True).stdout
-    flat = re.sub(r"\s+", " ", text)
-    # "East Godavari 1103 94 89 183 ..." - the first sizeable number after the name
-    found = re.search(re.escape(district) + r"\s+(\d{3,5})\b", flat)
-    if found:
-        return int(found.group(1))
-    # some gazettes print the name split across lines; try the last word
-    tail = district.split()[-1]
-    found = re.search(re.escape(tail) + r"\s+(\d{3,5})\b", flat)
-    return int(found.group(1)) if found else None
+    """The district's gram panchayat count, as its own FORMAT-I abstract states.
+
+    Read from our OCR rather than the embedded text layer. The embedded layer
+    breaks "East Godavari" across three lines, so a regex anchored on the name
+    lands on a Scheduled-Area subtotal - which is how this check once reported
+    825 of 183 as a pass. The OCR keeps the abstract row intact:
+
+        1 adie 1103 94 89 | 183 2 4 3 5 1 6 112 | 88 | 200 ...
+
+    so the first three-or-more-digit number on the row is the district total.
+    """
+    cached = OCR / f"{path.stem}.txt"
+    if not cached.exists():
+        return None
+    for page in cached.read_text(encoding="utf-8").split("\f")[:6]:
+        upper = page.upper()
+        if "SARPANCH" not in upper.replace(" ", ""):
+            continue
+        if "ABSTRACT" not in upper and "FORMAT" not in upper:
+            continue
+        for line in page.split("\n"):
+            numbers = re.findall(r"\b\d{2,5}\b", line)
+            if len(numbers) < 8 or _is_column_numbering(numbers):
+                continue
+            big = [int(n) for n in numbers if int(n) >= 100]
+            if big:
+                return big[0]
+    return None
 
 
 def pct(part, whole):

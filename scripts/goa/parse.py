@@ -32,6 +32,7 @@ import sys
 import pdfplumber
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import emit  # noqa: E402
 from normalize import label, normalize_reservation  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
@@ -86,12 +87,13 @@ def taluka_of(path, printed):
     return clean(printed).title()
 
 
-def row(year, taluka, panchayat, ward, raw, winner="", votes="", source=""):
+def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
+        path=None, page=None):
     parsed = normalize_reservation(raw)
     if not parsed:
         return None
     caste, woman, script = parsed
-    return {
+    made = {
         "state": "Goa", "year": year,
         "district": DISTRICT.get(taluka.lower(), ""), "block": taluka,
         "gram_panchayat": panchayat, "ward_no": ward, "tier": "ward",
@@ -99,6 +101,10 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source=""):
         "woman_reserved": woman, "winner": winner, "votes": votes,
         "reservation_raw": clean(raw), "script": script, "source_pdf": source,
     }
+    # Every other state stamps provenance; Goa's parser predates emit.stamp, so
+    # its rows could not be traced back to a page. The expectations run flagged
+    # exactly that.
+    return emit.stamp(made, path, page, ROOT) if path else made
 
 
 def parse_2012(path):
@@ -122,7 +128,7 @@ def parse_2012(path):
                     winner = cells[5] if len(cells) > 5 else ""
                     votes = cells[7] if len(cells) > 7 else ""
                     made = row("2012", taluka, panchayat or "", ward, category,
-                               winner, votes, path.name)
+                               winner, votes, path.name, path, page.page_number)
                     if made:
                         out.append(made)
     return out
@@ -155,7 +161,8 @@ def parse_2022(path):
                     if key in seen:
                         continue
                     made = row("2022", taluka, panchayat or "", ward, category,
-                               source=path.name)
+                               source=path.name, path=path,
+                               page=page.page_number)
                     if made:
                         seen[key] = made
     return list(seen.values())
@@ -248,7 +255,8 @@ def parse_2017(path):
                     continue
                 seen.add(key)
                 made = row("2017", taluka, panchayat, ward_match.group(1),
-                           cat_match.group(1), source=path.name)
+                           cat_match.group(1), source=path.name, path=path,
+                           page=page.page_number)
                 if made:
                     out.append(made)
     return out
@@ -288,11 +296,7 @@ def main():
         print(file=sys.stderr)
 
         out = GOA / f"ward_reservation_{year}.csv"
-        with out.open("w", newline="", encoding="utf-8") as fh:
-            writer = csv.DictWriter(fh, fieldnames=COLUMNS, extrasaction="ignore",
-                                    lineterminator="\n")
-            writer.writeheader()
-            writer.writerows(rows)
+        emit.write(rows, out.with_suffix(""), COLUMNS)
 
         talukas = {r["block"] for r in rows}
         panchayats = {(r["block"], r["gram_panchayat"]) for r in rows}
