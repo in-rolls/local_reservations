@@ -215,7 +215,7 @@ Jammu & Kashmir,2010,,,Budhan-B,IV,Danna,ward,Woman,NONE,1,all_seats,,,,,Women,l
 Jammu & Kashmir,2010,,,Budhan-B,VII,Bagard,ward,ST Woman,ST,1,all_seats,,,,,ST/W,latin,data/jk/2010/(Mahore).pdf,9,(Mahore).pdf
 Jammu & Kashmir,2010,,,Budhan-B,VIII,Kote Katha,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/(Mahore).pdf,9,(Mahore).pdf
 Jammu & Kashmir,2010,,,Budhan-B,X,Soo Devta,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/(Mahore).pdf,9,(Mahore).pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Akhnoor.pdf,1,Akhnoor.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Akhnoor.pdf,1,Akhnoor.pdf
 Jammu & Kashmir,2010,,,Ambaran,1,Ambaran,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Akhnoor.pdf,1,Akhnoor.pdf
 Jammu & Kashmir,2010,,,Ambaran,2,Ambaran/Bhambaran Lower,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Akhnoor.pdf,1,Akhnoor.pdf
 Jammu & Kashmir,2010,,,Ambaran,3,Ambaran I,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Akhnoor.pdf,1,Akhnoor.pdf
@@ -575,7 +575,7 @@ Jammu & Kashmir,2010,,,Targwal,5,Targwal Moh Chibber,ward,SC Other than Woman,SC
 Jammu & Kashmir,2010,,,Targwal,6,Sunail Proper,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Akhnoor.pdf,9,Akhnoor.pdf
 Jammu & Kashmir,2010,,,Targwal,7,Sunial Moh Rajputtian,ward,SC Woman,SC,1,all_seats,,,,,Res. For Women/SC,latin,data/jk/2010/Akhnoor.pdf,9,Akhnoor.pdf
 Jammu & Kashmir,2010,,,Targwal,8,Sunial Moh Chibber,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Akhnoor.pdf,9,Akhnoor.pdf
-Jammu & Kashmir,2010,,,Name of halqa Panchayat,Number & Name of Panch Constituencies,,ward,Woman,NONE,1,all_seats,,,,,Reseerved for Women,latin,data/jk/2010/Assar.pdf,1,Assar.pdf
+Jammu & Kashmir,2010,,,,Number & Name of Panch Constituencies,,ward,Woman,NONE,1,all_seats,,,,,Reseerved for Women,latin,data/jk/2010/Assar.pdf,1,Assar.pdf
 Jammu & Kashmir,2010,,,Assar-Ginota,IV,Kundari,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Assar.pdf,1,Assar.pdf
 Jammu & Kashmir,2010,,,Assar-Ginota,V,Nansalla,ward,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2010/Assar.pdf,1,Assar.pdf
 Jammu & Kashmir,2010,,,Assar-Ginota,VII,Ginota-B,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Assar.pdf,1,Assar.pdf
@@ -638,7 +638,7 @@ Jammu & Kashmir,2010,,,Dhargloon (M),5. Naloie,,ward,ST Other than Woman,ST,0,al
 Jammu & Kashmir,2010,,,Dhargloon (M),6. Bakerwalan,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,1,Balakote.pdf
 Jammu & Kashmir,2010,,,Nar,"6. Moh. Margian, Gujjarian, Baglain",,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,2,Balakote.pdf
 Jammu & Kashmir,2010,,,Sangiote,6. Lowaraka,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,2,Balakote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,7. Nundyala,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
+Jammu & Kashmir,2010,,,Bhata Durain,7. Nundyala,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
 Jammu & Kashmir,2010,,,Jarranwali Gali,1. Bajarana,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
 Jammu & Kashmir,2010,,,Jarranwali Gali,2. Hissab Wali,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
 Jammu & Kashmir,2010,,,Jarranwali Gali,3. Dhara Upper,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
@@ -652,7 +652,7 @@ Jammu & Kashmir,2010,,,Kallar Mohra,7. Khate,,ward,ST Other than Woman,ST,0,all_
 Jammu & Kashmir,2010,,,Kallar Mohra,8. Moh Passwalan,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
 Jammu & Kashmir,2010,,,Kallar Mohra,9. Paswalan,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
 Jammu & Kashmir,2010,,,Kallar Mohra,10 Danna,,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Balakote.pdf,3,Balakote.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
 Jammu & Kashmir,2010,,,Asso,1,Asso,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
 Jammu & Kashmir,2010,,,Asso,2,Mangia,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
 Jammu & Kashmir,2010,,,Asso,3,Drabal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
@@ -694,10 +694,10 @@ Jammu & Kashmir,2010,,,Doulka,6,Dandi,ward,Other than Woman,NONE,0,all_seats,,,,
 Jammu & Kashmir,2010,,,Fatehpur,1,Muklera,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
 Jammu & Kashmir,2010,,,Fatehpur,2,Fatehpur,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
 Jammu & Kashmir,2010,,,Fatehpur,3,Beringi,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Bani.pdf,1,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Tapper,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Tallel,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Fagolta,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
+Jammu & Kashmir,2010,,,Fatehpur,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
+Jammu & Kashmir,2010,,,Fatehpur,4,Tapper,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
+Jammu & Kashmir,2010,,,Fatehpur,5,Tallel,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
+Jammu & Kashmir,2010,,,Fatehpur,6,Fagolta,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
 Jammu & Kashmir,2010,,,Gatti,1,Sarthali,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
 Jammu & Kashmir,2010,,,Gatti,2,Attalu,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
 Jammu & Kashmir,2010,,,Gatti,3,Jhandia,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
@@ -745,12 +745,12 @@ Jammu & Kashmir,2010,,,Sandhi,4,Kumhal,ward,SC Woman,SC,1,all_seats,,,,,Res. For
 Jammu & Kashmir,2010,,,Sandhi,5,Sandhi,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
 Jammu & Kashmir,2010,,,Sandhi,6,Seshwali,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
 Jammu & Kashmir,2010,,,Sandroon,1,Bandhghat,ward,ST Woman,ST,1,all_seats,,,,,Res. For ST/Women,latin,data/jk/2010/Bani.pdf,2,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,2,Dholla,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,3,Dandiot,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Koti,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Bhatand,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Hathan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,2,Dholla,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,3,Dandiot,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,4,Koti,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,5,Bhatand,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
+Jammu & Kashmir,2010,,,Sandroon,6,Hathan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
 Jammu & Kashmir,2010,,,Siara,1,Siara (E),ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
 Jammu & Kashmir,2010,,,Siara,2,Siara (W),ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
 Jammu & Kashmir,2010,,,Siara,3,Majra,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bani.pdf,3,Bani.pdf
@@ -822,7 +822,7 @@ Jammu & Kashmir,2010,,Banihal,Nowgam,VII,Kharkoote,ward,Woman,NONE,1,all_seats,,
 Jammu & Kashmir,2010,,Banihal,Thather lower,I,Numberdar Mohalla,ward,Woman,NONE,1,all_seats,,,,,R.Women,latin,data/jk/2010/Banihal .pdf,4,Banihal .pdf
 Jammu & Kashmir,2010,,Banihal,Thather lower,IV,Takia Lower,ward,Woman,NONE,1,all_seats,,,,,R.Women,latin,data/jk/2010/Banihal .pdf,4,Banihal .pdf
 Jammu & Kashmir,2010,,Banihal,Thather lower,VII,Chanpora,ward,Woman,NONE,1,all_seats,,,,,R.Women,latin,data/jk/2010/Banihal .pdf,4,Banihal .pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chhan Arorian,1,Chhan Arorian I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chhan Arorian,2,Chhan Arorian II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chhan Arorian,3,Chhan Arorian III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
@@ -868,10 +868,10 @@ Jammu & Kashmir,2010,,,Hardo Muthi,8,Wazir Chak Plai,ward,SC Other than Woman,SC
 Jammu & Kashmir,2010,,,Ghair,1,Ghair I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
 Jammu & Kashmir,2010,,,Ghair,2,Ghair II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
 Jammu & Kashmir,2010,,,Ghair,3,Ghair III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,1,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Fathu Chak,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Ballan Pein,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Parkhwal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
+Jammu & Kashmir,2010,,,Ghair,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
+Jammu & Kashmir,2010,,,Ghair,4,Fathu Chak,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
+Jammu & Kashmir,2010,,,Ghair,5,Ballan Pein,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
+Jammu & Kashmir,2010,,,Ghair,6,Parkhwal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
 Jammu & Kashmir,2010,,,Kishanpur Kandi,1,Kishanpur Kandi I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
 Jammu & Kashmir,2010,,,Kishanpur Kandi,2,Kishanpur Kandi II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
 Jammu & Kashmir,2010,,,Kishanpur Kandi,3,Kishanpur Kandi III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
@@ -915,8 +915,8 @@ Jammu & Kashmir,2010,,,Hamirpur,2,Hamirpur II,ward,Other than Woman,NONE,0,all_s
 Jammu & Kashmir,2010,,,Hamirpur,3,Hamirpur III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
 Jammu & Kashmir,2010,,,Hamirpur,4,Hamirpur IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
 Jammu & Kashmir,2010,,,Hamirpur,5,Sanjwan,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,2,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Sandey Chak,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
+Jammu & Kashmir,2010,,,Hamirpur,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
+Jammu & Kashmir,2010,,,Hamirpur,6,Sandey Chak,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chak Desa Choudrian,1,Chak Desa Choudrian I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chak Desa Choudrian,2,Chak Desa Choudrian II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
 Jammu & Kashmir,2010,,,Chak Desa Choudrian,3,Partiyal & Malwan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
@@ -961,7 +961,7 @@ Jammu & Kashmir,2010,,,Forelain (West) A,5,Gurha Suraj,ward,Other than Woman,NON
 Jammu & Kashmir,2010,,,Forelain (West) A,6,Mohni,ward,ST Other than Woman,ST,0,all_seats,,,,,Res For ST,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
 Jammu & Kashmir,2010,,,Forelain (West) A,7,Mohni-Chainpura,ward,ST Woman,ST,1,all_seats,,,,,Res. For ST/Women,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
 Jammu & Kashmir,2010,,,Forelain (West) A,8,Chainpura,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,3,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
+Jammu & Kashmir,2010,,,Forelain (West) A,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
 Jammu & Kashmir,2010,,,Forelain (West) B,1,"Faral, Salmeta",ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
 Jammu & Kashmir,2010,,,Forelain (West) B,2,Sait,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
 Jammu & Kashmir,2010,,,Forelain (West) B,3,"Kalyari, Burn, Kaity",ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
@@ -1009,10 +1009,10 @@ Jammu & Kashmir,2010,,,Pandrar,6,Pandrar VI,ward,Other than Woman,NONE,0,all_sea
 Jammu & Kashmir,2010,,,Tarfwala,1,Dadoli I,ward,SC Woman,SC,1,all_seats,,,,,Res. For Women/SC,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
 Jammu & Kashmir,2010,,,Tarfwala,2,Dadoli II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
 Jammu & Kashmir,2010,,,Tarfwala,3,Mirpu Jagoo I,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,4,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Mirpu Jagoo II,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Taraf Pain,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Taraf Bala,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
+Jammu & Kashmir,2010,,,Tarfwala,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
+Jammu & Kashmir,2010,,,Tarfwala,4,Mirpu Jagoo II,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
+Jammu & Kashmir,2010,,,Tarfwala,5,Taraf Pain,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
+Jammu & Kashmir,2010,,,Tarfwala,6,Taraf Bala,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
 Jammu & Kashmir,2010,,,Mearth,1,Mearth I,ward,SC Woman,SC,1,all_seats,,,,,Res. For Women/SC,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
 Jammu & Kashmir,2010,,,Mearth,2,Mearth II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
 Jammu & Kashmir,2010,,,Mearth,3,Mearth III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
@@ -1057,7 +1057,7 @@ Jammu & Kashmir,2010,,,Rakh Husheri,3,Rakh Husheri III,ward,Other than Woman,NON
 Jammu & Kashmir,2010,,,Rakh Husheri,4,Rakh Husheri IV,ward,Woman,NONE,1,all_seats,,,,,Res. For women,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
 Jammu & Kashmir,2010,,,Rakh Husheri,5,Rakh Husheri V,ward,SC Other than Woman,SC,0,all_seats,,,,,Res For SC,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
 Jammu & Kashmir,2010,,,Rakh Husheri,6,Rakh Husheri VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,5,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
+Jammu & Kashmir,2010,,,Rakh Husheri,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
 Jammu & Kashmir,2010,,,Flote (B),1,Sumwan I,ward,SC Woman,SC,1,all_seats,,,,,Res For SC/Women,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
 Jammu & Kashmir,2010,,,Flote (B),2,Sumwan II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
 Jammu & Kashmir,2010,,,Flote (B),3,Sumwan III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res For SC,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
@@ -1090,7 +1090,7 @@ Jammu & Kashmir,2010,,,Barwal (West),3,"Moh. Chigla, Moh. Irkharu, Moh. Ambiwala
 Jammu & Kashmir,2010,,,Barwal (West),4,"Moh. Talawala, Salaria, Shah Paroth & Moh. Jaledha",ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
 Jammu & Kashmir,2010,,,Barwal (West),5,Moh. Abrol to H/o Late Master Sudesh Kumar Manjli Band,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
 Jammu & Kashmir,2010,,,Barwal (West),6,Moh. Tirth Ram tro H/o Principal Sh. Girdhari Singh,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,6,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
+Jammu & Kashmir,2010,,,Barwal (West),S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
 Jammu & Kashmir,2010,,,Jandhore,1,Jandhore I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
 Jammu & Kashmir,2010,,,Jandhore,2,Jandhore II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
 Jammu & Kashmir,2010,,,Jandhore,3,Jandhore III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
@@ -1123,7 +1123,7 @@ Jammu & Kashmir,2010,,,Bouhra,3,Bouhra III,ward,ST Other than Woman,ST,0,all_sea
 Jammu & Kashmir,2010,,,Bouhra,4,Bouhra IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
 Jammu & Kashmir,2010,,,Bouhra,5,Bouhra V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
 Jammu & Kashmir,2010,,,Bouhra,6,Bouhra VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Barnoti.pdf,7,Barnoti.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
 Jammu & Kashmir,2010,,,Poonda,1,Avtar,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
 Jammu & Kashmir,2010,,,Poonda,2,Poonda,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
 Jammu & Kashmir,2010,,,Poonda,3,Mandrore,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
@@ -1167,8 +1167,8 @@ Jammu & Kashmir,2010,,,Sabar,4,Haripur,ward,Woman,NONE,1,all_seats,,,,,Res. For 
 Jammu & Kashmir,2010,,,Sabar,5,Mukati,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
 Jammu & Kashmir,2010,,,Sabar,6,Thanger,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
 Jammu & Kashmir,2010,,,Sabar,7,Patti,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,1,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,8,Sabar (Bari),ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
+Jammu & Kashmir,2010,,,Sabar,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
+Jammu & Kashmir,2010,,,Sabar,8,Sabar (Bari),ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
 Jammu & Kashmir,2010,,,Thein,1,Thein East,ward,ST Woman,ST,1,all_seats,,,,,Res. For ST/Women,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
 Jammu & Kashmir,2010,,,Thein,2,Thein West,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
 Jammu & Kashmir,2010,,,Thein,3,Gharola,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
@@ -1215,7 +1215,7 @@ Jammu & Kashmir,2010,,,Saman,3,Jandrota West,ward,SC Other than Woman,SC,0,all_s
 Jammu & Kashmir,2010,,,Saman,4,Narolli,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
 Jammu & Kashmir,2010,,,Saman,5,Saman,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
 Jammu & Kashmir,2010,,,Saman,6,Blow,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,2,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
+Jammu & Kashmir,2010,,,Saman,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
 Jammu & Kashmir,2010,,,Mara Patti,1,Swankh,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
 Jammu & Kashmir,2010,,,Mara Patti,2,Kotla,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
 Jammu & Kashmir,2010,,,Mara Patti,3,Kangote Dhani,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
@@ -1264,11 +1264,11 @@ Jammu & Kashmir,2010,,,Draman,7,Draman VII,ward,Woman,NONE,1,all_seats,,,,,Res. 
 Jammu & Kashmir,2010,,,Draman,8,Draman VIII,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
 Jammu & Kashmir,2010,,,Jannu,1,Gadodi,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
 Jammu & Kashmir,2010,,,Jannu,2,U/Jannu,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,3,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,3,Khuni Dhar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Proper Jannu,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Upper Thanue,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Dhana,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
+Jammu & Kashmir,2010,,,Jannu,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
+Jammu & Kashmir,2010,,,Jannu,3,Khuni Dhar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
+Jammu & Kashmir,2010,,,Jannu,4,Proper Jannu,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
+Jammu & Kashmir,2010,,,Jannu,5,Upper Thanue,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
+Jammu & Kashmir,2010,,,Jannu,6,Dhana,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
 Jammu & Kashmir,2010,,,B/Rural,1,Patti,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
 Jammu & Kashmir,2010,,,B/Rural,2,Batara,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
 Jammu & Kashmir,2010,,,B/Rural,3,Kothi,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
@@ -1312,10 +1312,10 @@ Jammu & Kashmir,2010,,,"Mahanpur ""B""",6,Trimbli Lower,ward,ST Other than Woman
 Jammu & Kashmir,2010,,,Nowshera,1,Kather I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
 Jammu & Kashmir,2010,,,Nowshera,2,Kather II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
 Jammu & Kashmir,2010,,,Nowshera,3,Nowshera,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,4,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,4,Sundla,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,5,Kua,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Samlar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
+Jammu & Kashmir,2010,,,Nowshera,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
+Jammu & Kashmir,2010,,,Nowshera,4,Sundla,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
+Jammu & Kashmir,2010,,,Nowshera,5,Kua,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
+Jammu & Kashmir,2010,,,Nowshera,6,Samlar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
 Jammu & Kashmir,2010,,,Ghagrore,1,Dhani,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
 Jammu & Kashmir,2010,,,Ghagrore,2,Jait,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
 Jammu & Kashmir,2010,,,Ghagrore,3,Kakdhera,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Basohli.pdf,5,Basohli.pdf
@@ -1688,7 +1688,7 @@ Jammu & Kashmir,2010,,Bhallessa,Trithloo,I,Trithloo-A,ward,Woman,NONE,1,all_seat
 Jammu & Kashmir,2010,,Bhallessa,Trithloo,III,New Colony,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Bhallessa.pdf,10,Bhallessa.pdf
 Jammu & Kashmir,2010,,Bhallessa,Trithloo,IV,Trithloo Adda,ward,ST Woman,ST,1,all_seats,,,,,ST Women,latin,data/jk/2010/Bhallessa.pdf,10,Bhallessa.pdf
 Jammu & Kashmir,2010,,Bhallessa,Trithloo,V,Shoran Bala,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Bhallessa.pdf,10,Bhallessa.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Bhalwal.pdf,1,Bhalwal.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Bhalwal.pdf,1,Bhalwal.pdf
 Jammu & Kashmir,2010,,,Amb,1,Amb,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Bhalwal.pdf,1,Bhalwal.pdf
 Jammu & Kashmir,2010,,,Amb,2,Amb Moh. Harizan,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Bhalwal.pdf,1,Bhalwal.pdf
 Jammu & Kashmir,2010,,,Amb,3,Amb Moh. Ramdassia,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Bhalwal.pdf,1,Bhalwal.pdf
@@ -1923,7 +1923,7 @@ Jammu & Kashmir,2010,,,Chowa,5,Bhatta Kharota,ward,ST Other than Woman,ST,0,all_
 Jammu & Kashmir,2010,,,Chowa,6,Chegain,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Bhalwal.pdf,5,Bhalwal.pdf
 Jammu & Kashmir,2010,,,Chowa,7,Graint,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Bhalwal.pdf,5,Bhalwal.pdf
 Jammu & Kashmir,2010,,,Chowa,8,Sucka,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Bhalwal.pdf,5,Bhalwal.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
 Jammu & Kashmir,2010,,,Aglidhar,1,Moh. Chanellan,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
 Jammu & Kashmir,2010,,,Aglidhar,2,Moh. Muallan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
 Jammu & Kashmir,2010,,,Aglidhar,3,Moh. Thrallian,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
@@ -1969,9 +1969,9 @@ Jammu & Kashmir,2010,,,Batheri,2,Jotha,ward,SC Other than Woman,SC,0,all_seats,,
 Jammu & Kashmir,2010,,,Batheri,3,Batheri Upper -A,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
 Jammu & Kashmir,2010,,,Batheri,4,Batheri Upper -B,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
 Jammu & Kashmir,2010,,,Batheri,5,Madian,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,1,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,2,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Moh. Rodian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,2,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
+Jammu & Kashmir,2010,,,Batheri,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,2,Billawar.pdf
+Jammu & Kashmir,2010,,,Batheri,6,Moh. Rodian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,2,Billawar.pdf
+Jammu & Kashmir,2010,,,Batheri,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
 Jammu & Kashmir,2010,,,Derli,1,Upper Kalonta,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
 Jammu & Kashmir,2010,,,Derli,2,Lower Kalonta,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
 Jammu & Kashmir,2010,,,Derli,3,Rajal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
@@ -2014,7 +2014,7 @@ Jammu & Kashmir,2010,,,Upper Dungara,5,Proper Dungara,ward,SC Other than Woman,S
 Jammu & Kashmir,2010,,,Upper Dungara,6,Moh. Tamail,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
 Jammu & Kashmir,2010,,,Upper Dungara,7,Moh. Vaid,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
 Jammu & Kashmir,2010,,,Upper Dungara,8,Jeel,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,3,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
+Jammu & Kashmir,2010,,,Upper Dungara,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
 Jammu & Kashmir,2010,,,Lower Dungara (Kishenpur),1,Proper Kishanpur,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
 Jammu & Kashmir,2010,,,Lower Dungara (Kishenpur),2,Kishanpur West opp. Bustand,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
 Jammu & Kashmir,2010,,,Lower Dungara (Kishenpur),3,Nargadi East,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
@@ -2061,7 +2061,7 @@ Jammu & Kashmir,2010,,,Gura Kalyal A,7,Lower Gurah,ward,Woman,NONE,1,all_seats,,
 Jammu & Kashmir,2010,,,Gura Kalyal A,8,Kalyal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
 Jammu & Kashmir,2010,,,Gura Kalyal A,9,Sarni,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
 Jammu & Kashmir,2010,,,Gura Kalyal A,10,Bheya,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,4,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
+Jammu & Kashmir,2010,,,Gura Kalyal A,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
 Jammu & Kashmir,2010,,,Gura Kalyal B,1,Komla,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
 Jammu & Kashmir,2010,,,Gura Kalyal B,2,Bardhat,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
 Jammu & Kashmir,2010,,,Gura Kalyal B,3,Ludera,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
@@ -2116,7 +2116,7 @@ Jammu & Kashmir,2010,,,Malti,5,Malrian,ward,Other than Woman,NONE,0,all_seats,,,
 Jammu & Kashmir,2010,,,Malti,6,S.C. Saryara,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
 Jammu & Kashmir,2010,,,Malti,7,Mundian,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
 Jammu & Kashmir,2010,,,Malti,8,Bund Tadu,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,5,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
+Jammu & Kashmir,2010,,,Malti,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
 Jammu & Kashmir,2010,,,Mooni,1,Mooni,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
 Jammu & Kashmir,2010,,,Mooni,2,Dhanna,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
 Jammu & Kashmir,2010,,,Mooni,3,Shara,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
@@ -2170,9 +2170,9 @@ Jammu & Kashmir,2010,,,Sialna,2,Darna,ward,Other than Woman,NONE,0,all_seats,,,,
 Jammu & Kashmir,2010,,,Sialna,3,Dargoti,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
 Jammu & Kashmir,2010,,,Sialna,4,Dadora,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
 Jammu & Kashmir,2010,,,Sialna,5,Nalan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,6,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,7,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Mogian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,7,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
+Jammu & Kashmir,2010,,,Sialna,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,7,Billawar.pdf
+Jammu & Kashmir,2010,,,Sialna,6,Mogian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,7,Billawar.pdf
+Jammu & Kashmir,2010,,,Sialna,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
 Jammu & Kashmir,2010,,,Salore,1,Banyari,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
 Jammu & Kashmir,2010,,,Salore,2,Mallan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
 Jammu & Kashmir,2010,,,Salore,3,Nagrota West,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
@@ -2229,7 +2229,7 @@ Jammu & Kashmir,2010,,,Dhar Dugnoo,5,Sari,ward,Other than Woman,NONE,0,all_seats
 Jammu & Kashmir,2010,,,Dhar Dugnoo,6,Majera,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
 Jammu & Kashmir,2010,,,Dhar Dugnoo,7,Kakroo,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
 Jammu & Kashmir,2010,,,Dhar Dugnoo,8,Gotra,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Billawar.pdf,8,Billawar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
+Jammu & Kashmir,2010,,,Dhar Dugnoo,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
 Jammu & Kashmir,2010,,,Upper Dhar Dugnoo,1,Khadari,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
 Jammu & Kashmir,2010,,,Upper Dhar Dugnoo,2,Jandhar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
 Jammu & Kashmir,2010,,,Upper Dhar Dugnoo,3,Kund,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
@@ -2264,7 +2264,7 @@ Jammu & Kashmir,2010,,,Plail,3,Upper Plail,ward,Other than Woman,NONE,0,all_seat
 Jammu & Kashmir,2010,,,Plail,4,Durgat,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
 Jammu & Kashmir,2010,,,Plail,5,Trough,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
 Jammu & Kashmir,2010,,,Plail,6,Khrowa,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Billawar.pdf,9,Billawar.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Bishnah.pdf,1,Bishnah.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Bishnah.pdf,1,Bishnah.pdf
 Jammu & Kashmir,2010,,,Allah,1,Allah 1,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Bishnah.pdf,1,Bishnah.pdf
 Jammu & Kashmir,2010,,,Allah,2,Allah 2,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bishnah.pdf,1,Bishnah.pdf
 Jammu & Kashmir,2010,,,Allah,3,Allah 3,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Bishnah.pdf,1,Bishnah.pdf
@@ -2632,7 +2632,7 @@ Jammu & Kashmir,2010,,Dachhan,Sounder-B,I,Sheikh Mohalla,ward,Woman,NONE,1,all_s
 Jammu & Kashmir,2010,,Dachhan,Sounder-B,IV,Krussa,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Dachhan.pdf,2,Dachhan.pdf
 Jammu & Kashmir,2010,,Dachhan,Sounder-C,I,Ikhalla,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Dachhan.pdf,2,Dachhan.pdf
 Jammu & Kashmir,2010,,Dachhan,Sounder-C,IV,Tandar Lower,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Dachhan.pdf,2,Dachhan.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Dansal.pdf,1,Dansal.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Dansal.pdf,1,Dansal.pdf
 Jammu & Kashmir,2010,,,Aithem,1,Aithem Upper,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Dansal.pdf,1,Dansal.pdf
 Jammu & Kashmir,2010,,,Aithem,2,Aithem Lower,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Dansal.pdf,1,Dansal.pdf
 Jammu & Kashmir,2010,,,Aithem,3,Padoon Upper,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Dansal.pdf,1,Dansal.pdf
@@ -3083,7 +3083,7 @@ Jammu & Kashmir,2010,,Drabshalla,Tipri,I,Tipri-A,ward,ST Woman,ST,1,all_seats,,,
 Jammu & Kashmir,2010,,Drabshalla,Tipri,II,Tipri-B,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Drabshalla.pdf,6,Drabshalla.pdf
 Jammu & Kashmir,2010,,Drabshalla,Tipri,IV,Patshala-A,ward,ST Woman,ST,1,all_seats,,,,,ST Women,latin,data/jk/2010/Drabshalla.pdf,6,Drabshalla.pdf
 Jammu & Kashmir,2010,,Drabshalla,Tipri,VI,Inderwal,ward,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2010/Drabshalla.pdf,6,Drabshalla.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,No.,Name Of Panch Constituency,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Ghagwal.pdf,1,Ghagwal.pdf
+Jammu & Kashmir,2010,,,,No.,Name Of Panch Constituency,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Ghagwal.pdf,1,Ghagwal.pdf
 Jammu & Kashmir,2010,,Ghat doda,,IV,W/Ghat,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Ghat doda.pdf,1,Ghat doda.pdf
 Jammu & Kashmir,2010,,Ghat doda,,VI,Badroon,ward,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2010/Ghat doda.pdf,1,Ghat doda.pdf
 Jammu & Kashmir,2010,,Ghat doda,Arnora-U,I,Bari,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Ghat doda.pdf,1,Ghat doda.pdf
@@ -3298,7 +3298,7 @@ Jammu & Kashmir,2010,,Gundana,,II,Gujjer Basti,ward,ST Other than Woman,ST,0,all
 Jammu & Kashmir,2010,,Gundana,,IV,Parshula-U,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Gundana.pdf,4,Gundana.pdf
 Jammu & Kashmir,2010,,Gundana,,I,Bhader Gowari,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Gundana.pdf,4,Gundana.pdf
 Jammu & Kashmir,2010,,Gundana,,IV,Khemthawa,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Gundana.pdf,4,Gundana.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Bhaiya,1,Bhaiya I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Bhaiya,2,Bhaiya II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Bhaiya,3,Bhaiya III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
@@ -3337,7 +3337,7 @@ Jammu & Kashmir,2010,,,Changi,3,Changi III,ward,SC Other than Woman,SC,0,all_sea
 Jammu & Kashmir,2010,,,Changi,4,Changi IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Changi,5,Changi V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Changi,6,Changi VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,1,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Changi,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Chann Khatrian,1,Chann Khatrian I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Chann Khatrian,2,Chann Khatrian II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Chann Khatrian,3,Chann Khatrian III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
@@ -3381,9 +3381,9 @@ Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",2,Dinga Amb II,ward,Other than W
 Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",3,Dinga Amb III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
 Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",4,Dinga Amb IV,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
 Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",5,Dinga Amb V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,2,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,3,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,6,Dinga Amb VI,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Hiranagar.pdf,3,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
+Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,3,Hiranagar.pdf
+Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",6,Dinga Amb VI,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Hiranagar.pdf,3,Hiranagar.pdf
+Jammu & Kashmir,2010,,,"Dinga Amb- B, HQ-Koper",S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Gara,1,Gara I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Gara,2,Gara II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Gara,3,Gara III,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
@@ -3429,9 +3429,9 @@ Jammu & Kashmir,2010,,,Kootah,6,Kootah VI,ward,SC Other than Woman,SC,0,all_seat
 Jammu & Kashmir,2010,,,Kootah,7,Kanah I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Kootah,8,Kanah II (Mayan),ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Kootah,9,Sohal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,4,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,5,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,10,"Patta, Rasana",ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,5,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Kootah,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,5,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Kootah,10,"Patta, Rasana",ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,5,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Kootah,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Jandi,1,Jandi A-I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Jandi,2,Jandi B-II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Jandi,3,Jandi C-III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
@@ -3474,8 +3474,8 @@ Jammu & Kashmir,2010,,,Mangloor (West),3,Mangloor III,ward,Other than Woman,NONE
 Jammu & Kashmir,2010,,,Mangloor (West),4,Mangloor IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Mangloor (West),5,Mangloor V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Mangloor (West),6,Mangloor VI,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Hiranagar.pdf,6,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,7,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Mangloor (West),S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,7,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Mangloor (West),S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Marheen,1,Marheen I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Marheen,2,Marheen II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Marheen,3,Marheen III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
@@ -3514,7 +3514,7 @@ Jammu & Kashmir,2010,,,Sallan,3,Sallan III,ward,SC Other than Woman,SC,0,all_sea
 Jammu & Kashmir,2010,,,Sallan,4,Sallan IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Sallan,5,Sallan V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Sallan,6,Sallan VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,8,Hiranagar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,9,Hiranagar.pdf
+Jammu & Kashmir,2010,,,Sallan,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Hiranagar.pdf,9,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Sprain,1,Sprain I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Hiranagar.pdf,9,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Sprain,2,Sprain II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Hiranagar.pdf,9,Hiranagar.pdf
 Jammu & Kashmir,2010,,,Sprain,3,Sprain III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Hiranagar.pdf,9,Hiranagar.pdf
@@ -3698,7 +3698,7 @@ Jammu & Kashmir,2010,vide Order No.,Kalakote,Dhangoite,4,Slari,ward,Woman,NONE,1
 Jammu & Kashmir,2010,vide Order No.,Kalakote,Dhangoite,5,Poundal,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Kalakote.pdf,6,Kalakote.pdf
 Jammu & Kashmir,2010,vide Order No.,Kalakote,Dhangoite,7,Jata Brahmana (U),ward,ST Woman,ST,1,all_seats,,,,,ST Women,latin,data/jk/2010/Kalakote.pdf,6,Kalakote.pdf
 Jammu & Kashmir,2010,vide Order No.,Kalakote,Dhangoite,8,Jata Brahmana (L),ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Kalakote.pdf,6,Kalakote.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
 Jammu & Kashmir,2010,,,Basantpur,1,Basantpur I,ward,SC Woman,SC,1,all_seats,,,,,Res. For Women/SC,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
 Jammu & Kashmir,2010,,,Basantpur,2,Basantpur II,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
 Jammu & Kashmir,2010,,,Basantpur,3,Kainta III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
@@ -3729,7 +3729,7 @@ Jammu & Kashmir,2010,,,Dhanore I,3,Dhanore III,ward,Other than Woman,NONE,0,all_
 Jammu & Kashmir,2010,,,Dhanore I,4,Dhanore IV,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
 Jammu & Kashmir,2010,,,Dhanore I,5,Dhanore V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
 Jammu & Kashmir,2010,,,Dhanore I,6,Dhanore VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,1,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
+Jammu & Kashmir,2010,,,Dhanore I,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
 Jammu & Kashmir,2010,,,Tridwan,1,Moh. Palyani Sounth,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
 Jammu & Kashmir,2010,,,Tridwan,2,Tridwan II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
 Jammu & Kashmir,2010,,,Tridwan,3,Tridwan III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
@@ -3762,7 +3762,7 @@ Jammu & Kashmir,2010,,,Dilwan,3,Dilwan,ward,Other than Woman,NONE,0,all_seats,,,
 Jammu & Kashmir,2010,,,Dilwan,4,Dilwan,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
 Jammu & Kashmir,2010,,,Dilwan,5,Rakhey,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
 Jammu & Kashmir,2010,,,Dilwan,6,Potoli,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,2,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
+Jammu & Kashmir,2010,,,Dilwan,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
 Jammu & Kashmir,2010,,,Khanyara,1,Khanyara Upper,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
 Jammu & Kashmir,2010,,,Khanyara,2,Khanyara Lower,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
 Jammu & Kashmir,2010,,,Khanyara,3,Jamalpur Upper,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
@@ -3799,7 +3799,7 @@ Jammu & Kashmir,2010,,,Govindsar (A),5,Govindsar Ward No. V,ward,SC Other than W
 Jammu & Kashmir,2010,,,Govindsar (A),6,Govindsar Ward No. VI,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
 Jammu & Kashmir,2010,,,Govindsar (A),7,Govindsar Ward No. VII,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
 Jammu & Kashmir,2010,,,Govindsar (A),8,Govindsar Ward No. VIII,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,3,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
+Jammu & Kashmir,2010,,,Govindsar (A),S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
 Jammu & Kashmir,2010,,,Govindsar (B) H.Q. Chack Raju,1,Govindsar Ward No. I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
 Jammu & Kashmir,2010,,,Govindsar (B) H.Q. Chack Raju,2,Govindsar Ward No. II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
 Jammu & Kashmir,2010,,,Govindsar (B) H.Q. Chack Raju,3,"Govindsar Ward No. III, Vill. Chack Raju",ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
@@ -3832,7 +3832,7 @@ Jammu & Kashmir,2010,,,Janglote East Patyari,3,Kanyari Moh. ST III,ward,ST Other
 Jammu & Kashmir,2010,,,Janglote East Patyari,4,Kanyari IV Moh. SC,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
 Jammu & Kashmir,2010,,,Janglote East Patyari,5,Bali Tali V Garjeet,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
 Jammu & Kashmir,2010,,,Janglote East Patyari,6,Parana Pindi,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,4,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
+Jammu & Kashmir,2010,,,Janglote East Patyari,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
 Jammu & Kashmir,2010,,,Kathera,1,Kathera I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
 Jammu & Kashmir,2010,,,Kathera,2,Kathera II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
 Jammu & Kashmir,2010,,,Kathera,3,Fajal III,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
@@ -3865,7 +3865,7 @@ Jammu & Kashmir,2010,,,Rakh Lachhipur,3,Rakh Lachhipur No. III,ward,Other than W
 Jammu & Kashmir,2010,,,Rakh Lachhipur,4,Rakh Lachhipur No. IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
 Jammu & Kashmir,2010,,,Rakh Lachhipur,5,Lachhipur Chak Bhaga No. V,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
 Jammu & Kashmir,2010,,,Rakh Lachhipur,6,"Chak Baga No, VI",ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,5,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
+Jammu & Kashmir,2010,,,Rakh Lachhipur,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
 Jammu & Kashmir,2010,,,Jakhbar,1,Jakhbar I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
 Jammu & Kashmir,2010,,,Jakhbar,2,Jakhbar II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
 Jammu & Kashmir,2010,,,Jakhbar,3,Jakhbar III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
@@ -3902,7 +3902,7 @@ Jammu & Kashmir,2010,,,Chak Sona Nupa,3,Chak Ludden,ward,Other than Woman,NONE,0
 Jammu & Kashmir,2010,,,Chak Sona Nupa,4,Chak Sajjan Moh. Primary School I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
 Jammu & Kashmir,2010,,,Chak Sona Nupa,5,Chak Sajjan Moh. Masjid II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
 Jammu & Kashmir,2010,,,Chak Sona Nupa,6,Chak Sajjan Moh. Chowkidar III,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,6,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
+Jammu & Kashmir,2010,,,Chak Sona Nupa,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
 Jammu & Kashmir,2010,,,Chak Sardar Desa Singh,1,Chak S.D. Singh Moh. Mankey Talab I,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
 Jammu & Kashmir,2010,,,Chak Sardar Desa Singh,2,Chak S.D. Singh Moh. Nursery wale II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
 Jammu & Kashmir,2010,,,Chak Sardar Desa Singh,3,Chak S.D. Singh Moh. Numberdar III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
@@ -3931,7 +3931,7 @@ Jammu & Kashmir,2010,,,Goond,3,Goond III,ward,SC Other than Woman,SC,0,all_seats
 Jammu & Kashmir,2010,,,Goond,4,Goond IV,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
 Jammu & Kashmir,2010,,,Goond,5,Pomwal I,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
 Jammu & Kashmir,2010,,,Goond,6,Pomwal II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,7,Kathua.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
+Jammu & Kashmir,2010,,,Goond,S.No.,Name Of Panch Constituencies,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
 Jammu & Kashmir,2010,,,Bhajwal Narolian,1,Bhajwal I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
 Jammu & Kashmir,2010,,,Bhajwal Narolian,2,Bhajwal II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
 Jammu & Kashmir,2010,,,Bhajwal Narolian,3,Bhajwal III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
@@ -3956,7 +3956,7 @@ Jammu & Kashmir,2010,,,Keerian,3,Keerian III,ward,SC Other than Woman,SC,0,all_s
 Jammu & Kashmir,2010,,,Keerian,4,Keerian IV,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
 Jammu & Kashmir,2010,,,Keerian,5,Keerian V,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
 Jammu & Kashmir,2010,,,Keerian,6,Chak Deria VI & Chak Chamfer,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Kathua.pdf,8,Kathua.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Khour.pdf,1,Khour.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Khour.pdf,1,Khour.pdf
 Jammu & Kashmir,2010,,,Bakore,1,Upper Bakore,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Khour.pdf,1,Khour.pdf
 Jammu & Kashmir,2010,,,Bakore,2,Lower Bakore,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Khour.pdf,1,Khour.pdf
 Jammu & Kashmir,2010,,,Bakore,3,Chak Kora,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Khour.pdf,1,Khour.pdf
@@ -4292,7 +4292,7 @@ Jammu & Kashmir,2010,,Kishtwar,Trigam-B,IV,Lonepora,ward,Woman,NONE,1,all_seats,
 Jammu & Kashmir,2010,,Kishtwar,Trigam-B,V,Pallan-B,ward,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2010/Kishtwar.pdf,9,Kishtwar.pdf
 Jammu & Kashmir,2010,,Kishtwar,Trigam-C,I,Kunja,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Kishtwar.pdf,9,Kishtwar.pdf
 Jammu & Kashmir,2010,,Kishtwar,Trigam-C,IV,Wasnoti-A,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Kishtwar.pdf,9,Kishtwar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat Halqua,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
+Jammu & Kashmir,2010,,,,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Lower Thal,1,Thall,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Lower Thal,2,Kokhai,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Lower Thal,3,Tungli,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
@@ -4337,7 +4337,7 @@ Jammu & Kashmir,2010,,,Thall Upper,3,Bandhala,ward,Other than Woman,NONE,0,all_s
 Jammu & Kashmir,2010,,,Thall Upper,4,Dabbi,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Thall Upper,5,Kutt,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Thall Upper,6,Dhar,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,1,Lohai Mlhar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat Halqua,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
+Jammu & Kashmir,2010,,,Thall Upper,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Bhatodi,1,Padetair,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Bhatodi,2,Salli Khalanu,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Bhatodi,3,Moar,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
@@ -4390,7 +4390,7 @@ Jammu & Kashmir,2010,,,Machhedi,5,Bagoee,ward,Other than Woman,NONE,0,all_seats,
 Jammu & Kashmir,2010,,,Machhedi,6,Mehad,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Machhedi,7,Dull A,ward,ST Woman,ST,1,all_seats,,,,,Res. For ST/Women,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Machhedi,8,Dull B,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Lohai Mlhar.pdf,2,Lohai Mlhar.pdf
-Jammu & Kashmir,2010,,,Name Of Panchayat Halqua,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,3,Lohai Mlhar.pdf
+Jammu & Kashmir,2010,,,Machhedi,S.No.,Name Of Ward,ward,Other than Woman,NONE,0,all_seats,,,,,Remarks Reserved/ UnReserved,latin,data/jk/2010/Lohai Mlhar.pdf,3,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Gudu Falal,1,Khartala,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Lohai Mlhar.pdf,3,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Gudu Falal,2,Rukhal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,3,Lohai Mlhar.pdf
 Jammu & Kashmir,2010,,,Gudu Falal,3,Parola,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Lohai Mlhar.pdf,3,Lohai Mlhar.pdf
@@ -4664,7 +4664,7 @@ Jammu & Kashmir,2010,,Manjakote,Pollullian,3,Ziarat Sharief,ward,ST Other than W
 Jammu & Kashmir,2010,,Manjakote,Pollullian,4,Sachana Wali,ward,ST Woman,ST,1,all_seats,,,,,Reserved for ST Women,latin,data/jk/2010/Manjakote.pdf,7,Manjakote.pdf
 Jammu & Kashmir,2010,,Manjakote,Pollullian,5,Ninganar Upper,ward,ST Other than Woman,ST,0,all_seats,,,,,Reserved for ST,latin,data/jk/2010/Manjakote.pdf,7,Manjakote.pdf
 Jammu & Kashmir,2010,,Manjakote,Pollullian,6,Ninganar Lower,ward,ST Other than Woman,ST,0,all_seats,,,,,Reserved for ST,latin,data/jk/2010/Manjakote.pdf,7,Manjakote.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Marh.pdf,1,Marh.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/Marh.pdf,1,Marh.pdf
 Jammu & Kashmir,2010,,,Akalpur,1,Akalpur Moh. Christian,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Marh.pdf,1,Marh.pdf
 Jammu & Kashmir,2010,,,Akalpur,2,Akalpur Moh. Upper,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Marh.pdf,1,Marh.pdf
 Jammu & Kashmir,2010,,,Akalpur,3,Akalpur Moh. Harizana,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Marh.pdf,1,Marh.pdf
@@ -5478,7 +5478,7 @@ Jammu & Kashmir,2010,,,T m r i b a,2,U e r D a n n a pw p,ward,Woman,NONE,1,all_
 Jammu & Kashmir,2010,,,T m r i b a,3,L o e r D a n a id d,ward,ST Other than Woman,ST,0,all_seats,,,,,S T,latin,data/jk/2010/Poonch.pdf,10,Poonch.pdf
 Jammu & Kashmir,2010,,,T m r i b a,5,M o ll r i b a,ward,Woman,NONE,1,all_seats,,,,,S T W o m e,latin,data/jk/2010/Poonch.pdf,10,Poonch.pdf
 Jammu & Kashmir,2010,,,T m r i b a,8,T m r - h a a a n d i a,ward,Woman,NONE,1,all_seats,,,,,W o m e,latin,data/jk/2010/Poonch.pdf,10,Poonch.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
+Jammu & Kashmir,2010,,,,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
 Jammu & Kashmir,2010,,,Anandpur,1,Main Utter Behani,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
 Jammu & Kashmir,2010,,,Anandpur,2,Goshala,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
 Jammu & Kashmir,2010,,,Anandpur,3,Mari Khui,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
@@ -5514,9 +5514,9 @@ Jammu & Kashmir,2010,,,Kartholi,4,Barjani,ward,Woman,NONE,1,all_seats,,,,,Res. F
 Jammu & Kashmir,2010,,,Kartholi,5,Kadgal,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
 Jammu & Kashmir,2010,,,Kartholi,6,Rayor,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
 Jammu & Kashmir,2010,,,Kartholi,7,Rayor Adda,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Purmandal.pdf,1,Purmandal.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,2,Purmandal.pdf
+Jammu & Kashmir,2010,,,Kartholi,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,2,Purmandal.pdf
 Jammu & Kashmir,2010,,,II,8,Tabella,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,2,Purmandal.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
 Jammu & Kashmir,2010,,,Katwalta,1,Rajoli,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
 Jammu & Kashmir,2010,,,Katwalta,2,Queli Brahamana,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
 Jammu & Kashmir,2010,,,Katwalta,3,QueliGujjaran Nallah,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
@@ -5556,9 +5556,9 @@ Jammu & Kashmir,2010,,,Purmandal,2,Moh. Bagal,ward,Other than Woman,NONE,0,all_s
 Jammu & Kashmir,2010,,,Purmandal,3,M o h . S c h o o l,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
 Jammu & Kashmir,2010,,,Purmandal,4,Moh. Bhagtan,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
 Jammu & Kashmir,2010,,,Purmandal,5,Moh. Khajuria,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,3,Purmandal.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,4,Purmandal.pdf
+Jammu & Kashmir,2010,,,Purmandal,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,4,Purmandal.pdf
 Jammu & Kashmir,2010,,,II,6,Nathwal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,4,Purmandal.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
 Jammu & Kashmir,2010,,,Sangwal,1,Sangwal Moh. Pond,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
 Jammu & Kashmir,2010,,,Sangwal,2,Sangwal Moh. Tubewell,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
 Jammu & Kashmir,2010,,,Sangwal,3,Sangwal Moh. SC,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
@@ -5591,7 +5591,7 @@ Jammu & Kashmir,2010,,,Salmeri,3,Pekhri Upper,ward,Other than Woman,NONE,0,all_s
 Jammu & Kashmir,2010,,,Salmeri,4,Pekhri Lower,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
 Jammu & Kashmir,2010,,,Salmeri,5,Gupwal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
 Jammu & Kashmir,2010,,,Salmeri,6,Amwal,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Purmandal.pdf,5,Purmandal.pdf
-Jammu & Kashmir,2010,,,Name of Halqua Panchyat,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/RS Pura.pdf,1,RS Pura.pdf
+Jammu & Kashmir,2010,,,,No & Name of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Reserved/ Un-reserved,latin,data/jk/2010/RS Pura.pdf,1,RS Pura.pdf
 Jammu & Kashmir,2010,,,Abdal,1,Abdal W. No. 1,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/RS Pura.pdf,1,RS Pura.pdf
 Jammu & Kashmir,2010,,,Abdal,2,Abdal W.No 2,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/RS Pura.pdf,1,RS Pura.pdf
 Jammu & Kashmir,2010,,,Abdal,3,Abdal W.No 3,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/RS Pura.pdf,1,RS Pura.pdf
@@ -6398,7 +6398,7 @@ Jammu & Kashmir,2010,,,Trigam Lower-A,I,Ahama Lower,ward,Woman,NONE,1,all_seats,
 Jammu & Kashmir,2010,,,Trigam Lower-A,IV,Agnari,ward,ST Woman,ST,1,all_seats,,,,,R.Women ST,latin,data/jk/2010/Ramsoo.pdf,7,Ramsoo.pdf
 Jammu & Kashmir,2010,,,Trigam Lower-B,I,Kumla,ward,Woman,NONE,1,all_seats,,,,,R.Women,latin,data/jk/2010/Ramsoo.pdf,7,Ramsoo.pdf
 Jammu & Kashmir,2010,,,Trigam Lower-B,IV,Wagan,ward,Woman,NONE,1,all_seats,,,,,R.Women,latin,data/jk/2010/Ramsoo.pdf,7,Ramsoo.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
+Jammu & Kashmir,2010,,,,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
 Jammu & Kashmir,2010,,,Amli Old,1,Amli,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
 Jammu & Kashmir,2010,,,Amli Old,2,Painthi,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
 Jammu & Kashmir,2010,,,Amli Old,3,Kupri,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
@@ -6430,9 +6430,9 @@ Jammu & Kashmir,2010,,,Bhartgarh,2,Jamora,ward,Other than Woman,NONE,0,all_seats
 Jammu & Kashmir,2010,,,Bhartgarh,3,Paper Brahamana,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
 Jammu & Kashmir,2010,,,Bhartgarh,4,Paper Avatara,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
 Jammu & Kashmir,2010,,,Bhartgarh,5,Padya Top,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Samba.pdf,1,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,2,Samba.pdf
+Jammu & Kashmir,2010,,,Bhartgarh,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,2,Samba.pdf
 Jammu & Kashmir,2010,,,II,6,Bagari/Bhartgarh,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,2,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
 Jammu & Kashmir,2010,,,Blater,1,Blater I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
 Jammu & Kashmir,2010,,,Blater,2,Blater II,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
 Jammu & Kashmir,2010,,,Blater,3,Blater III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
@@ -6462,9 +6462,9 @@ Jammu & Kashmir,2010,,,Chajwal,6,Kurwalta,ward,Other than Woman,NONE,0,all_seats
 Jammu & Kashmir,2010,,,Chajwal,7,Kote,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
 Jammu & Kashmir,2010,,,Chajwal,8,Nownkah,ward,ST Other than Woman,ST,0,all_seats,,,,,Res. For ST,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
 Jammu & Kashmir,2010,,,Chajwal,9,Chaani,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,3,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,4,Samba.pdf
+Jammu & Kashmir,2010,,,Chajwal,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,4,Samba.pdf
 Jammu & Kashmir,2010,,,II,10,Padday,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,4,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
 Jammu & Kashmir,2010,,,Dagore,1,Dagore Moh. Brahamana,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
 Jammu & Kashmir,2010,,,Dagore,2,Dagore Moh. SC,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
 Jammu & Kashmir,2010,,,Dagore,3,Bara,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
@@ -6495,7 +6495,7 @@ Jammu & Kashmir,2010,,,Glard,7,Sordi Moh. SC Sinki,ward,SC Woman,SC,1,all_seats,
 Jammu & Kashmir,2010,,,Glard,8,Bain Brahamana,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
 Jammu & Kashmir,2010,,,Glard,9,Bain Moh. Mandir,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
 Jammu & Kashmir,2010,,,Glard,10,Bain Camp,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,5,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
+Jammu & Kashmir,2010,,,Glard,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
 Jammu & Kashmir,2010,,,Goran,1,Goran,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
 Jammu & Kashmir,2010,,,Goran,2,Bellian Sarla,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
 Jammu & Kashmir,2010,,,Goran,3,Samotha,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
@@ -6525,9 +6525,9 @@ Jammu & Kashmir,2010,,,Kard,6,Katli Moh. Mistry,ward,SC Other than Woman,SC,0,al
 Jammu & Kashmir,2010,,,Kard,7,Katli Moh. Sandh,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
 Jammu & Kashmir,2010,,,Kard,8,Katli Moh.Ramdasian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
 Jammu & Kashmir,2010,,,Kard,9,Gowal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,6,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,7,Samba.pdf
+Jammu & Kashmir,2010,,,Kard,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,7,Samba.pdf
 Jammu & Kashmir,2010,,,II,10,Katli/Karadian/ Kathain,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,7,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
 Jammu & Kashmir,2010,,,Mandi Kehli,1,Chak Manga Rakwal Moh. Choudrian,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
 Jammu & Kashmir,2010,,,Mandi Kehli,2,Chak Manga Rakwal Moh. Ramdasian,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
 Jammu & Kashmir,2010,,,Mandi Kehli,3,Chak Manga Rakwal Moh. Mahashan,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
@@ -6553,9 +6553,9 @@ Jammu & Kashmir,2010,,,Mandi Pushwalian,2,Mandi Thalora II,ward,Other than Woman
 Jammu & Kashmir,2010,,,Mandi Pushwalian,3,Mandi Thalora III,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
 Jammu & Kashmir,2010,,,Mandi Pushwalian,4,Mandi Garh SC,ward,SC Woman,SC,1,all_seats,,,,,Res. For SC/Women,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
 Jammu & Kashmir,2010,,,Mandi Pushwalian,5,Mandi Garh Moh. Rajputtan,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,8,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,9,Samba.pdf
+Jammu & Kashmir,2010,,,Mandi Pushwalian,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,9,Samba.pdf
 Jammu & Kashmir,2010,,,II,6,Mandi Dansal,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,9,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
 Jammu & Kashmir,2010,,,Mohargarh,1,Mohargarh,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
 Jammu & Kashmir,2010,,,Mohargarh,2,Chilla Danga,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
 Jammu & Kashmir,2010,,,Mohargarh,3,Kumi,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
@@ -6587,9 +6587,9 @@ Jammu & Kashmir,2010,,,Pangdhour,6,Rakh Amb Talli Moh. Refugee Basti,ward,Other 
 Jammu & Kashmir,2010,,,Pangdhour,7,Karandi Moh. Upper,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
 Jammu & Kashmir,2010,,,Pangdhour,8,Karandi Moh. Lower,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
 Jammu & Kashmir,2010,,,Pangdhour,9,Balouri Moh. Rajput,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,10,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,11,Samba.pdf
+Jammu & Kashmir,2010,,,Pangdhour,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,11,Samba.pdf
 Jammu & Kashmir,2010,,,II,10,Balouri Moh. SC,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,11,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
 Jammu & Kashmir,2010,,,Rehian,1,Rehian Moh. Charkan A,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
 Jammu & Kashmir,2010,,,Rehian,2,Rehian Moh. Charkan B,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
 Jammu & Kashmir,2010,,,Rehian,3,Rehian Moh.Sambyal,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
@@ -6617,9 +6617,9 @@ Jammu & Kashmir,2010,,,Samlah,2,Sarain South,ward,Other than Woman,NONE,0,all_se
 Jammu & Kashmir,2010,,,Samlah,6,Tund,ward,SC Other than Woman,SC,0,all_seats,,,,,Res. For SC,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
 Jammu & Kashmir,2010,,,Samlah,4,Gangari,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
 Jammu & Kashmir,2010,,,Samlah,5,Bupnergarh,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,12,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,13,Samba.pdf
+Jammu & Kashmir,2010,,,Samlah,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,13,Samba.pdf
 Jammu & Kashmir,2010,,,II,6,Dhargarh,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,13,Samba.pdf
-Jammu & Kashmir,2010,,,Name Of Halqa Panchayat,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,14,Samba.pdf
+Jammu & Kashmir,2010,,,II,Name Of Panch Constituency,,ward,Other than Woman,NONE,0,all_seats,,,,,Whether Reserved or Un- Reserved,latin,data/jk/2010/Samba.pdf,14,Samba.pdf
 Jammu & Kashmir,2010,,,Sarna,1,Sarna I,ward,Woman,NONE,1,all_seats,,,,,Res. For Women,latin,data/jk/2010/Samba.pdf,14,Samba.pdf
 Jammu & Kashmir,2010,,,Sarna,2,Sarna II,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,14,Samba.pdf
 Jammu & Kashmir,2010,,,Sarna,3,Badla Dunia,ward,Other than Woman,NONE,0,all_seats,,,,,Un Reserved,latin,data/jk/2010/Samba.pdf,14,Samba.pdf
@@ -6734,7 +6734,7 @@ Jammu & Kashmir,2010,vide Order No.,,Hathal B,4,Saleri -II Kothi,ward,Woman,NONE
 Jammu & Kashmir,2010,vide Order No.,,Hathal B,6,Pirkhana,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Sunderbani.pdf,7,Sunderbani.pdf
 Jammu & Kashmir,2010,vide Order No.,,Hathal B,7,Thandi kassi,ward,Woman,NONE,1,all_seats,,,,,R.women,latin,data/jk/2010/Sunderbani.pdf,7,Sunderbani.pdf
 Jammu & Kashmir,2010,vide Order No.,,Hathal B,8,Sapppa Da Gura,ward,ST Other than Woman,ST,0,all_seats,,,,,ST,latin,data/jk/2010/Sunderbani.pdf,7,Sunderbani.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
+Jammu & Kashmir,2010,,,,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
 Jammu & Kashmir,2010,,,Bachain – Wali,1 Hundi,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
 Jammu & Kashmir,2010,,,Bachain – Wali,4. Chawana,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
 Jammu & Kashmir,2010,,,Bachain – Wali,7. Magrian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
@@ -6749,7 +6749,7 @@ Jammu & Kashmir,2010,,,Gunthal Lower,4. Moh.Manda Lower,--,ward,Woman,NONE,1,all
 Jammu & Kashmir,2010,,,Gunthal Lower,7. Moh.Darunian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
 Jammu & Kashmir,2010,,,Sangla Lower,1. Moh.Tand Mothi Wala,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
 Jammu & Kashmir,2010,,,Sangla Lower,4. Moh.Malhoti,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,1,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
+Jammu & Kashmir,2010,,,Sangla Lower,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
 Jammu & Kashmir,2010,,,Dandi Dhara,1. Moh.Dakhan,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
 Jammu & Kashmir,2010,,,Dandi Dhara,4. Moh.Jabra Kali,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
 Jammu & Kashmir,2010,,,Dandi Dhara,7. Moh.Saydan,---,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
@@ -6763,7 +6763,7 @@ Jammu & Kashmir,2010,,,Dundak,4.Jabri,--,ward,Woman,NONE,1,all_seats,,,,,Women,l
 Jammu & Kashmir,2010,,,Dundak,7.Hundi,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
 Jammu & Kashmir,2010,,,Dhara Sangla,1.Moh. Dhara,---,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
 Jammu & Kashmir,2010,,,Dhara Sangla,4.Moh. Gujjar Nar,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,2,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
+Jammu & Kashmir,2010,,,Dhara Sangla,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
 Jammu & Kashmir,2010,,,Marhote Upper,1.Moh. Murad Kot,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
 Jammu & Kashmir,2010,,,Marhote Upper,4.Moh.Kasana Kalaban,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
 Jammu & Kashmir,2010,,,Marhote Upper,7.Moh. Chappran,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
@@ -6777,7 +6777,7 @@ Jammu & Kashmir,2010,,,Sanai Upper,1. Panyali Upper,--,ward,Woman,NONE,1,all_sea
 Jammu & Kashmir,2010,,,Sanai Upper,4.Takia Lower,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
 Jammu & Kashmir,2010,,,Sanai Upper,7.Rajdhana (U),--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
 Jammu & Kashmir,2010,,,Sani Lower,1.Moh. Khet (U),ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,3,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
+Jammu & Kashmir,2010,,,Sani Lower,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
 Jammu & Kashmir,2010,,,2,4.Jabra Lower,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
 Jammu & Kashmir,2010,,,2,7.Khuei,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
 Jammu & Kashmir,2010,,,Lassana Lower,1.Moh Bajjaran,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
@@ -6793,7 +6793,7 @@ Jammu & Kashmir,2010,,,Surankote Upper,1.Moh. Dana,ST,ward,Woman,NONE,1,all_seat
 Jammu & Kashmir,2010,,,Surankote Upper,4.Moh. Kamri Wala,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
 Jammu & Kashmir,2010,,,Surankote Upper,7.Moh. Bastidara A,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
 Jammu & Kashmir,2010,,,Gunthal Upper,1.Moh. Draman Kalsan,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,4,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
+Jammu & Kashmir,2010,,,Gunthal Upper,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
 Jammu & Kashmir,2010,,,2,4. Moh.Bandian,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
 Jammu & Kashmir,2010,,,2,7.Moh. Bagla,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
 Jammu & Kashmir,2010,,,Seri Chawana,1.Munu Wali,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
@@ -6806,7 +6806,7 @@ Jammu & Kashmir,2010,,,Seri Khawaja,1.Hattian Upper,--,ward,Woman,NONE,1,all_sea
 Jammu & Kashmir,2010,,,Seri Khawaja,4.Haveli Lower,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
 Jammu & Kashmir,2010,,,Seri Khawaja,7. Loharan Bhattian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
 Jammu & Kashmir,2010,,,Hari Budha Upper,1.Moh. Arunwala,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,5,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
+Jammu & Kashmir,2010,,,Hari Budha Upper,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
 Jammu & Kashmir,2010,,,2,4.Moh. Junglan,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
 Jammu & Kashmir,2010,,,Hari Budha Lower,1.Moh. Allu-Wala,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
 Jammu & Kashmir,2010,,,Hari Budha Lower,4.Moh. Dhairy,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
@@ -6819,7 +6819,7 @@ Jammu & Kashmir,2010,,,Mohra Bachai Lower,1. Moh. Ludyara Lower,--,ward,Woman,NO
 Jammu & Kashmir,2010,,,Mohra Bachai Lower,4.Moh. Lower Mora,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
 Jammu & Kashmir,2010,,,Mohra Bachai Lower,7.Moh Saydan Baahai,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
 Jammu & Kashmir,2010,,,Pamrote,1. Moh. Saydan,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,6,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
+Jammu & Kashmir,2010,,,Pamrote,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
 Jammu & Kashmir,2010,,,2,4. Moh. Ferozallan,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
 Jammu & Kashmir,2010,,,Sheindara Lower,1 Zirat Sharief (U),--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
 Jammu & Kashmir,2010,,,Sheindara Lower,4.Thandi Kassi (L),ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
@@ -6832,7 +6832,7 @@ Jammu & Kashmir,2010,,,Dodi,4.Moori Lower,,ward,Woman,NONE,1,all_seats,,,,,Women
 Jammu & Kashmir,2010,,,Dodi,7.Dhaki Upper,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
 Jammu & Kashmir,2010,,,Surankote Lower,1.Moh. Manda (A),--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
 Jammu & Kashmir,2010,,,Surankote Lower,4.Moh. Mirzian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,7,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
+Jammu & Kashmir,2010,,,Surankote Lower,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
 Jammu & Kashmir,2010,,,2,7.Moh. Balakote,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
 Jammu & Kashmir,2010,,,Marhote Lower Right,1. Moh. Mailvan Ganar Wali,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
 Jammu & Kashmir,2010,,,Marhote Lower Right,4.Moh. Karsan,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
@@ -6843,8 +6843,8 @@ Jammu & Kashmir,2010,,,Kallar Katal,4.Moh. Saydan /Meluan,ST,ward,Woman,NONE,1,a
 Jammu & Kashmir,2010,,,Kallar Katal,7.Moh. Mehluan/ Kashmirian,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
 Jammu & Kashmir,2010,,,Phagla,1. Moh. Gorsian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
 Jammu & Kashmir,2010,,,Phagla,4 Moh. Hod Lower Qurashian,--,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,8,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,9,Surankote.pdf
-Jammu & Kashmir,2010,,,Name of Halqa Panchayat,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,10,Surankote.pdf
+Jammu & Kashmir,2010,,,Phagla,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,9,Surankote.pdf
+Jammu & Kashmir,2010,,,2,ST,,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,10,Surankote.pdf
 Jammu & Kashmir,2010,,,2,7 Moh. Moori,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,10,Surankote.pdf
 Jammu & Kashmir,2010,,,Sangla Upper,1. Moh Larri Wala,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,10,Surankote.pdf
 Jammu & Kashmir,2010,,,Sangla Upper,4. Moh Sibba,ST,ward,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2010/Surankote.pdf,10,Surankote.pdf

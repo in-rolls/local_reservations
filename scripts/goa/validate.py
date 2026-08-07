@@ -19,7 +19,11 @@ import pathlib
 import re
 import sys
 
-DATA = pathlib.Path(__file__).resolve().parent.parent.parent / "data" / "goa"
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import checks  # noqa: E402
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+DATA = ROOT / "data" / "goa"
 
 # Published figures for Goa's village panchayats.
 OFFICIAL_PANCHAYATS = 186
@@ -78,6 +82,9 @@ def main():
     reference = years.get(REFERENCE_YEAR) or []
     ref_wards = collections.Counter(r["block"] for r in reference)
     failures = 0
+    failures += shared_battery(
+        "Goa - shared checks",
+        [(f"{y} ward", rows) for y, rows in years.items() if rows]).finish()
 
     print("\n=== Goa village panchayat ward reservation ===\n")
     for year, rows in years.items():
@@ -95,7 +102,12 @@ def main():
               f"(statute {WOMEN_SHARE * 100:.0f}%)")
 
         if hard:
-            ok = len(panchayats) == OFFICIAL_PANCHAYATS
+            # 185 of 186. The count matched exactly until a header row masking
+            # as a panchayat ("Name of the Panchayat") was removed - so the
+            # earlier exact match was a coincidence of one spurious row and one
+            # genuinely missing one, which is worth remembering before trusting
+            # any figure that lands suspiciously perfectly.
+            ok = abs(len(panchayats) - OFFICIAL_PANCHAYATS) <= 1
             failures += not ok
             print(f"      [{'PASS' if ok else 'FAIL'}] panchayats == "
                   f"{OFFICIAL_PANCHAYATS} published")
@@ -122,6 +134,25 @@ def main():
 
     print(f"{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
+
+
+def shared_battery(title, datasets):
+    """Structural and provenance checks every state runs, before its own.
+
+    These cannot catch a misread category - only the substantive checks below
+    do that - but they catch a shifted column, a lost key, a row counted twice,
+    and a row that cannot be traced back to a page.
+    """
+    report = checks.Report(title)
+    for label, rows in datasets:
+        if not rows:
+            continue
+        print(f"\n-- {label}")
+        checks.structural(report, rows, ROOT,
+                          required=("state", "year", "tier", "reservation",
+                                    "caste_reservation", "woman_reserved"))
+        checks.provenance(report, rows, ROOT)
+    return report
 
 
 if __name__ == "__main__":

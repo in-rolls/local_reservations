@@ -33,6 +33,10 @@ DATA = ROOT / "data"
 README = ROOT / "readme.md"
 
 START, END = "<!-- coverage:start -->", "<!-- coverage:end -->"
+SLICE_START, SLICE_END = "<!-- slices:start -->", "<!-- slices:end -->"
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
+import reference  # noqa: E402
 
 # A parsed dataset is one carrying these columns. Filenames are not evidence.
 REQUIRED = {"state", "year", "tier", "reservation", "caste_reservation"}
@@ -187,6 +191,111 @@ def build_rows():
     return table
 
 
+def datasets():
+    """Every CSV under data/ that carries our schema, with its rows."""
+    for path in sorted(DATA.glob("*/*.csv")):
+        try:
+            with path.open(encoding="utf-8", errors="replace") as fh:
+                reader = csv.DictReader(fh)
+                if not reader.fieldnames or not REQUIRED <= set(reader.fieldnames):
+                    continue
+                rows = list(reader)
+        except OSError:
+            continue
+        if rows:
+            yield path, rows
+
+
+def slices():
+    """One entry per state x year x tier - the grain the data actually has.
+
+    The state-level table collapses years into a cell, which reads as though
+    Goa's three cycles are comparable. They are not: 2012 is complete and names
+    the winner, while 2017 and 2022 are partial nomination lists. Splitting by
+    slice puts the caveat next to the number.
+    """
+    grouped = collections.defaultdict(list)
+    directory_of = {}
+    for path, rows in datasets():
+        for row in rows:
+            key = (row.get("state", ""), row.get("year", ""), row.get("tier", ""))
+            grouped[key].append(row)
+            directory_of[key] = path.parent.name
+
+    out = []
+    for (state, year, tier), rows in sorted(grouped.items()):
+        total = len(rows)
+        women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
+        districts = {r.get("district") for r in rows if (r.get("district") or "").strip()}
+        out.append({
+            "state": state, "year": year, "tier": tier, "rows": total,
+            "women": 100.0 * women / max(total, 1),
+            "districts": len(districts),
+            "coverage": _coverage(state, year, tier, rows),
+            "notes": "; ".join(_notes(state, year, tier, rows, len(districts))),
+            "dir": directory_of[(state, year, tier)],
+        })
+    return out
+
+
+def _coverage(state, year, tier, rows):
+    """Rows against a published total, comparing like with like."""
+    spec = reference.published(state, year, tier)
+    total = spec.get("total")
+    if not total:
+        return "—"
+    counted = rows
+    if spec.get("basis") == "elected":
+        # an "elected" figure excludes seats nobody holds
+        counted = [r for r in rows if str(r.get("vacant", "")) != "1"]
+
+    # Compare like with like. Goa's 186 counts *panchayats*, and the rows are
+    # wards - dividing one by the other reported 797% coverage, which is the
+    # same unit error that once made Haryana 2016 look like a 102% over-count.
+    unit = spec.get("unit", "seats")
+    if unit == "panchayats":
+        n = len({(r.get("block"), r.get("gram_panchayat")) for r in counted})
+    else:
+        n = len(counted)
+    return f"{100.0 * n / total:.0f}% of {total:,} {unit}"
+
+
+def _notes(state, year, tier, rows, districts):
+    """Caveats derived from the rows, so they cannot go stale."""
+    notes = []
+    if not any((r.get("winner") or "").strip() for r in rows):
+        notes.append("no winner published")
+    if rows and rows[0].get("listing_scope") == "reserved_only":
+        notes.append("**reserved seats only** — shares are a property of the "
+                     "document, not of the state")
+    if rows and rows[0].get("script") == "krutidev":
+        notes.append("place names not transliterated")
+
+    expected = reference.districts_expected(state, year)
+    if expected and districts and districts < expected:
+        notes.append(f"partial: {districts} of {expected} districts")
+
+    flags = [r.get("ward_list_complete") for r in rows]
+    known = [f for f in flags if f in ("0", "1")]
+    if known and len(known) > 0.1 * len(rows):
+        share = 100.0 * sum(1 for f in known if f == "1") / len(known)
+        notes.append(f"ward list complete for {share:.0f}% of rows with a "
+                     f"stated count")
+    return notes
+
+
+def render_slices(entries):
+    head = ("| State | Year | Tier | Rows | Women | Districts | vs published | "
+            "Notes | Where |\n|---|---|---|---|---|---|---|---|---|\n")
+    body = ""
+    for e in entries:
+        body += (f"| {e['state']} | {e['year']} | `{e['tier']}` | "
+                 f"{e['rows']:,} | {e['women']:.0f}% | {e['districts']} | "
+                 f"{e['coverage']} | {e['notes'] or '—'} | "
+                 f"[data/{e['dir']}/](data/{e['dir']}/) |\n")
+    return head + body
+
+
 def render(table):
     head = ("| State | Tier | Years | Rows | Status | Where |\n"
             "|---|---|---|---|---|---|\n")
@@ -227,19 +336,24 @@ def main():
 
     table = build_rows()
     rendered = render(table)
+    entries = slices()
+    rendered_slices = render_slices(entries)
 
     if args.dry_run:
+        print(rendered_slices)
         print(rendered)
     else:
         text = README.read_text(encoding="utf-8")
-        block = f"{START}\n\n{rendered}\n{END}"
-        if START in text and END in text:
-            text = re.sub(re.escape(START) + r".*?" + re.escape(END), block,
-                          text, flags=re.S)
-        else:
-            text = text.rstrip() + "\n\n" + block + "\n"
+        for start, end, block_body in ((SLICE_START, SLICE_END, rendered_slices),
+                                       (START, END, rendered)):
+            block = f"{start}\n\n{block_body}\n{end}"
+            if start in text and end in text:
+                text = re.sub(re.escape(start) + r".*?" + re.escape(end), block,
+                              text, flags=re.S)
+            else:
+                text = text.rstrip() + "\n\n" + block + "\n"
         README.write_text(text, encoding="utf-8")
-        print(f"wrote {README} ({len(table)} states)")
+        print(f"wrote {README} ({len(entries)} slices, {len(table)} states)")
 
     status = collections.Counter(row[4] for row in table)
     print("  " + "  ".join(f"{k}={v}" for k, v in status.most_common()))

@@ -67,10 +67,20 @@ def district_from_title(text):
 
 
 def carry(values, index, current):
-    """Read a column that is only printed on the first row of each group."""
+    """Read a column that is only printed on the first row of each group.
+
+    Header text must be rejected *here*, not when the row is emitted. The
+    header row is read before the guard sees it, so its text lands in the
+    carried-forward variable and every subsequent row inherits it - which is
+    how 1,398 J&K 2018 rows ended up in a district called "Name of District"
+    even with a guard on the emit.
+    """
     if index is None or index >= len(values):
         return current
-    return values[index] or current
+    value = values[index]
+    if not value or emit.is_header_text(value):
+        return current
+    return value
 
 
 def map_columns(table_rows):
@@ -184,15 +194,19 @@ def parse_mapped(path, year):
                     # only accept something with letters in it
                     found = cell("district")
                     if (found and re.search(r"[A-Za-z]{3}", found)
-                            and found.lower() not in HEADER_NOISE):
+                            and not emit.is_header_text(found)):
                         district = found
-                    block = cell("block") or block
-                    halqa = cell("halqa") or halqa
+                    for name, value in (("block", cell("block")),
+                                        ("halqa", cell("halqa"))):
+                        if value and not emit.is_header_text(value):
+                            if name == "block":
+                                block = value
+                            else:
+                                halqa = value
 
                     ward_no, ward_name = cell("ward_no"), cell("ward_name")
                     if not ward_no or not re.match(r"^[IVXLC]+$|^\d+$", ward_no):
                         continue
-
                     base = {
                         "state": "Jammu & Kashmir", "year": year,
                         "district": district, "block": block, "halqa": halqa,

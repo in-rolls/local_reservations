@@ -23,6 +23,9 @@ import csv
 import pathlib
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import checks  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JK = ROOT / "data" / "jk"
 
@@ -52,6 +55,10 @@ def main():
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
     failures = 0
+    failures += shared_battery(
+        "Jammu & Kashmir - shared checks",
+        [(f"{y} {t}", load(t, y) or [])
+         for y in YEARS for t in ("sarpanch", "ward")]).finish()
 
     print("\n=== Jammu & Kashmir panchayat reservation ===\n")
 
@@ -120,6 +127,25 @@ def main():
 
     print(f"\n{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
+
+
+def shared_battery(title, datasets):
+    """Structural and provenance checks every state runs, before its own.
+
+    These cannot catch a misread category - only the substantive checks below
+    do that - but they catch a shifted column, a lost key, a row counted twice,
+    and a row that cannot be traced back to a page.
+    """
+    report = checks.Report(title)
+    for label, rows in datasets:
+        if not rows:
+            continue
+        print(f"\n-- {label}")
+        checks.structural(report, rows, ROOT,
+                          required=("state", "year", "tier", "reservation",
+                                    "caste_reservation", "woman_reserved"))
+        checks.provenance(report, rows, ROOT)
+    return report
 
 
 if __name__ == "__main__":

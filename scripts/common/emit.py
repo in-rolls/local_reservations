@@ -17,8 +17,41 @@ only way to settle it was to open the page.
 import csv
 import json
 import pathlib
+import re
 
 PROVENANCE = ["source_path", "source_page", "source_pdf"]
+
+# Phrases that are table headers, not places. A header row that survives into
+# the data is invisible in a row count and only shows up as a duplicate key -
+# Goa carried three rows for a panchayat called "Name of the Panchayat", and
+# J&K 2018 a district called "Name of District".
+HEADER_TEXT = {
+    "name of the panchayat", "name of panchayat", "name of the taluka",
+    "name of district", "name of the district", "district name",
+    "name of block", "name of the block", "block name", "name of halqa",
+    "name of the halqa", "panchayat name", "grampanchayat", "gram panchayat",
+    "name of the grampanchayat", "number & name of panch constituencies",
+    "name of the mandal", "mandal",
+}
+
+
+# Enumerating header phrases one at a time does not converge - the list grew
+# through "Name of the Panchayat", "Name of District" and then "Name of Number"
+# as each new source was parsed. These are all the same shape: a column caption
+# describing what the column holds, never a place.
+HEADER_SHAPE = re.compile(
+    r"^\s*(?:sl\.?|sr\.?|s\.?\s*no\.?|no\.?|number|name|names)\b"
+    r"|^\s*(?:the\s+)?name\s+of\b"
+    r"|\bname\s+of\s+(?:the\s+)?(?:district|block|panchayat|halqa|taluka|"
+    r"mandal|number|ward|constituenc\w*)\b",
+    re.I)
+
+
+def is_header_text(value):
+    text = (value or "").strip()
+    if not text:
+        return False
+    return text.lower() in HEADER_TEXT or bool(HEADER_SHAPE.match(text))
 
 
 def stamp(row, path, page=None, root=None):

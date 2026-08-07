@@ -98,6 +98,15 @@ def structural(report, rows, root, key=SEAT_KEY, required=()):
              or not r.get("tier")]
     report.check(not blank, "no blank state/year/tier", f"{len(blank)} rows")
 
+    # Jharkhand calls it constituency and J&K calls it halqa; without the
+    # aliases the key degrades to (district, block) and reports collisions that
+    # are really just a missing column.
+    key = list(key)
+    if "gram_panchayat" not in columns:
+        for alias in ("constituency", "halqa"):
+            if alias in columns:
+                key = [alias if f == "gram_panchayat" else f for f in key]
+                break
     present = [f for f in key if f in columns]
     counts = collections.Counter(tuple(r.get(f, "") for f in present) for r in rows)
     duplicates = [k for k, n in counts.items() if n > 1]

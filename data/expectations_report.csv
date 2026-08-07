@@ -19,9 +19,9 @@ warn,ap/sarpanch_reservation_2020.csv,column,block,length outside 2..40,62,0.012
 warn,ap/ward_reservation_2020.csv,column,gram_panchayat,length outside 2..45,53,0.0012,Nellore Thotapalli Gudur 13] M | Nellore Thotapalli Gudur 13] M | Nellore Thotapalli Gudur 13] M,data/ap/2020_res_gp/nlr_res_gp.pdf,11
 warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,27,0.0052,7S | 5S | 1g,data/ap/2020_res_gp/atp_res_gp.pdf,18
 warn,ap/ward_reservation_2020.csv,column,serial,outside 1..9999,22,0.0005,0 | 0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
-warn,goa/ward_reservation_2012.csv,column,votes,not an integer,19,0.0128,Unopposed | Unopposed | Unopposed,data/goa/2012/panres_2012_Bardez.pdf,5
+warn,goa/ward_reservation_2012.csv,column,votes,not an integer,19,0.0129,Unopposed | Unopposed | Unopposed,data/goa/2012/panres_2012_Bardez.pdf,5
 warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45,12,0.0023,Beluguppa Kalvapalli SsC(G) 11 | B.C (G) _ S.C (W) U.R (W) B.C  | Ranipactiodavenn Kunavaram 16 ,data/ap/2020_res_gp/atp_res_gp.pdf,5
-warn,jk/ward_reservation_2010.csv,column,halqa,length outside 2..45,8,0.0011,2 | 2 | 2,data/jk/2010/Surankote.pdf,4
+warn,jk/ward_reservation_2010.csv,column,halqa,length outside 2..45,9,0.0012,2 | 2 | 2,data/jk/2010/Surankote.pdf,4
 warn,jk/ward_reservation_2018.csv,column,ward_name,length outside 2..40,3,0.0021,"vii-BRADINARD,KHATAN, GANIE,BI | i-DARDKHOWER/KOLI/ BARA /AHENG | ii-DARDKHOWER/ KHATANA /PASWAL",data/jk/2018/Srinagar.pdf,1
 warn,ap/sarpanch_reservation_2020.csv,column,serial,outside 1..9999,2,0.0004,0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6

@@ -18,6 +18,9 @@ import re
 import subprocess
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import checks  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA = ROOT / "data" / "jharkhand"
 SOURCE = DATA / "2015"
@@ -64,6 +67,9 @@ def main():
     args = ap.parse_args()
 
     failures = 0
+    failures += shared_battery(
+        "Jharkhand - shared checks",
+        [(t, load(t) or []) for t in TIERS]).finish()
     print("\n=== Jharkhand panchayat reservation, 2015 ===\n")
 
     folders = sorted(p.name for p in SOURCE.iterdir() if p.is_dir())
@@ -115,6 +121,25 @@ def main():
 
     print(f"\n{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
+
+
+def shared_battery(title, datasets):
+    """Structural and provenance checks every state runs, before its own.
+
+    These cannot catch a misread category - only the substantive checks below
+    do that - but they catch a shifted column, a lost key, a row counted twice,
+    and a row that cannot be traced back to a page.
+    """
+    report = checks.Report(title)
+    for label, rows in datasets:
+        if not rows:
+            continue
+        print(f"\n-- {label}")
+        checks.structural(report, rows, ROOT,
+                          required=("state", "year", "tier", "reservation",
+                                    "caste_reservation", "woman_reserved"))
+        checks.provenance(report, rows, ROOT)
+    return report
 
 
 if __name__ == "__main__":

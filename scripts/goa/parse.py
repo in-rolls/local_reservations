@@ -89,6 +89,10 @@ def taluka_of(path, printed):
 
 def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
         path=None, page=None):
+    # A header row that survives shows up only as a duplicate key later - Goa
+    # carried three wards for a panchayat called "Name of the Panchayat".
+    if emit.is_header_text(panchayat) or emit.is_header_text(taluka):
+        return None
     parsed = normalize_reservation(raw)
     if not parsed:
         return None

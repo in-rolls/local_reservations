@@ -11,6 +11,39 @@ files, from `data/inventory.csv` for states still raw, and from the sibling
 repositories, then checks that every link resolves. It drifted twice while
 hand-maintained, so it is no longer hand-maintained.
 
+## What we have
+
+One row per state, year and tier — the grain the data actually has. The notes
+are derived from the rows themselves rather than written by hand, so they cannot
+drift from what is in the files.
+
+Read the notes before the numbers. J&K 2018's 82% women is a property of a
+document that lists only the reserved wards, not a fact about J&K; Goa's 2017
+and 2022 cycles are nomination lists and name no winner; Jharkhand's place names
+are still in the legacy font they were printed in.
+
+<!-- slices:start -->
+
+| State | Year | Tier | Rows | Women | Districts | vs published | Notes | Where |
+|---|---|---|---|---|---|---|---|---|
+| Andhra Pradesh | 2020 | `sarpanch` | 5,179 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 84% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `ward` | 45,155 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 86% of rows with a stated count | [data/ap/](data/ap/) |
+| Goa | 2012 | `ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
+| Goa | 2017 | `ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
+| Goa | 2022 | `ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
+| Jammu & Kashmir | 2010 | `ward` | 7,340 | 48% | 2 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `sarpanch` | 410 | 33% | 14 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `ward` | 2,326 | 32% | 14 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2018 | `ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
+| Jharkhand | 2015 | `mukhiya` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `panchayat_samiti` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `ward_member` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `zila_parishad` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+
+<!-- slices:end -->
+
+## What is still missing
+
 *Status* means: **parsed** — in this schema, one row per seat-year;
 **prior work, other schema** — real coverage contributed earlier, in its own
 layout; **raw, unparsed** — source documents on disk, no parser yet;
@@ -22,14 +55,14 @@ layout; **raw, unparsed** — source documents on disk, no parser yet;
 | State | Tier | Years | Rows | Status | Where |
 |---|---|---|---|---|---|
 | Andaman & Nicobar Islands | - | - | - | not held | - |
-| Andhra Pradesh | sarpanch, ward | 2020 | 26,287 | parsed | [data/ap/](data/ap/) |
+| Andhra Pradesh | sarpanch, ward | 2020 | 50,334 | parsed | [data/ap/](data/ap/) |
 | Arunachal Pradesh | - | - | - | not held | - |
 | Assam | - | - | - | raw, unparsed | [data/assam/](data/assam/) - 1 digital-text |
 | Bihar | mukhiya, sarpanch, panch, ward | 2006, 2011, 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |
 | Chandigarh | - | - | - | raw, unparsed | [data/chandigarh/](data/chandigarh/) - 4 digital-text, 1 scan |
 | Chhattisgarh | - | - | - | not held | - |
 | Dadra & Nagar Haveli and Daman & Diu | - | - | - | not held | - |
-| Goa | ward | 2012, 2017, 2022 | 2,960 | parsed | [data/goa/](data/goa/) |
+| Goa | ward | 2012, 2017, 2022 | 2,948 | parsed | [data/goa/](data/goa/) |
 | Gujarat | - | - | - | not held | - |
 | Haryana | sarpanch, ward | 2016, 2022 | 135,426 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
 | Himachal Pradesh | - | - | - | not held | - |
