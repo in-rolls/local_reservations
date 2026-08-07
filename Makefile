@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: help inventory probe goa jharkhand jk test coverage
+.PHONY: help inventory probe goa jharkhand jk ap test coverage
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -8,6 +8,7 @@ help:
 	@echo "make goa         parse + validate Goa ward reservation"
 	@echo "make jharkhand   parse + validate Jharkhand, one file per tier"
 	@echo "make jk          parse + validate Jammu & Kashmir"
+	@echo "make ap          parse + validate Andhra Pradesh"
 	@echo "make test        unit tests for the shared normalizer"
 
 inventory:
@@ -27,6 +28,10 @@ jharkhand:
 jk:
 	$(PY) scripts/jk/parse.py
 	$(PY) scripts/jk/validate.py
+
+ap:
+	$(PY) scripts/ap/parse.py
+	$(PY) scripts/ap/validate.py
 
 test:
 	cd scripts/common && $(PY) -m pytest -q
