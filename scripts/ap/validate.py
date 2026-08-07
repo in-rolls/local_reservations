@@ -144,6 +144,23 @@ def main():
             print(f"   [INFO] {district:16s} {got:5d} parsed, abstract total "
                   f"not readable")
 
+    # Anantapur states each sarpanch seat twice, in two separately typeset
+    # proformas. Two independent statements of the same fact agreeing is the
+    # strongest evidence available in this state that a row was read right -
+    # there is no published per-seat figure to check against - so the ones that
+    # disagree are named rather than counted and forgotten.
+    twice = [r for r in sarpanch if r.get("printings") == "2"]
+    if twice:
+        disagree = [r for r in twice if r.get("printings_agree") == "0"]
+        share = 100.0 * (len(twice) - len(disagree)) / len(twice)
+        flag = "PASS" if share >= 95 else "WARN"
+        print(f"\n   [{flag}] seats stated twice agree - "
+              f"{len(twice) - len(disagree)} of {len(twice)} ({share:.1f}%)")
+        for row in disagree[:8]:
+            print(f"        {row['district']}/{row['block']}/"
+                  f"{row['gram_panchayat']}: kept {row['reservation']!r} "
+                  f"(from {row['reservation_raw']!r}), p{row['source_page']}")
+
     bad = [r for r in sarpanch
            if r["caste_reservation"] not in ("SC", "ST", "BC", "NONE")]
     failures += bool(bad)

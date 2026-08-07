@@ -64,7 +64,11 @@ PUBLISHED = {
         "source": "Each gazette states its own district total in its FORMAT-I "
                   "abstract, which is a better denominator than a state figure "
                   "because only 5 of 13 districts are held. scripts/ap/"
-                  "validate.py reads it per district.",
+                  "validate.py reads it per district. Anantapur states each "
+                  "seat twice, in a sarpanch-only proforma and again as the "
+                  "first column of the ward table; the file holds their union "
+                  "deduplicated, and the two agree on 98.4% of the seats "
+                  "stated by both.",
     },
     ("Goa", "2017", "ward"): {
         "total": None, "basis": "per-taluka", "unit": "wards",

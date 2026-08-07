@@ -8,20 +8,19 @@ warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 52% abo
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block,blank share 81% above the 35% tolerated,2352,0.8124, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 68% above the 35% tolerated,1732,0.6808, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,neither a number nor a Roman numeral,1432,1.0,Number & Name of Panch Constit | PC-II | PC-V,data/jk/2018/2018_Anantnag.pdf,1
-warn,ap/ward_reservation_2020.csv,column,block,length outside 2..40,519,0.0115,Nellore Muthukur 3 Doruvulapal | Nellore Muthukur 3 Doruvulapal | Nellore Muthukur 3 Doruvulapal,data/ap/2020_res_gp/nlr_res_gp.pdf,8
-warn,ap/ward_reservation_2020.csv,column,serial,not an integer,277,0.0061,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
+warn,ap/ward_reservation_2020.csv,column,serial,not an integer,279,0.0061,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jk/ward_reservation_2010.csv,column,ward_no,neither a number nor a Roman numeral,268,0.0365,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,length outside 1..6,235,0.1641,Number & Name of Panch Constit | PC-VIII | PC-VIII,data/jk/2018/2018_Anantnag.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_no,length outside 1..6,203,0.0277,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_name,length outside 2..40,78,0.0106,"Sungal Lower Moh Parwana and M | Sungal Lower Moh Karala,Vidhuw | Nai Basti Sungal Lower Moh Tat",data/jk/2010/Akhnoor.pdf,9
 warn,jk/sarpanch_reservation_2016.csv,column,halqa,blank share 15% above the 10% tolerated,63,0.1537, |  | ,data/jk/2016/Publication Jammu B.pdf,1
-warn,ap/sarpanch_reservation_2020.csv,column,block,length outside 2..40,62,0.012,Beluguppa Kalvapalli SsC(G) 11 | Ranipactiodavenn Kunavaram 16  | Thotlavalluru Chagantipadu \ua,data/ap/2020_res_gp/atp_res_gp.pdf,5
-warn,ap/ward_reservation_2020.csv,column,gram_panchayat,length outside 2..45,53,0.0012,Nellore Thotapalli Gudur 13] M | Nellore Thotapalli Gudur 13] M | Nellore Thotapalli Gudur 13] M,data/ap/2020_res_gp/nlr_res_gp.pdf,11
-warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,27,0.0052,7S | 5S | 1g,data/ap/2020_res_gp/atp_res_gp.pdf,18
+warn,ap/ward_reservation_2020.csv,column,block,length outside 2..40,37,0.0008,K | K | K,data/ap/2020_res_gp/est_res_gp.pdf,66
+warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,26,0.0055,5S | 1g | 1s,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,ap/ward_reservation_2020.csv,column,serial,outside 1..9999,22,0.0005,0 | 0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
 warn,goa/ward_reservation_2012.csv,column,votes,not an integer,19,0.0129,Unopposed | Unopposed | Unopposed,data/goa/2012/panres_2012_Bardez.pdf,5
-warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45,12,0.0023,Beluguppa Kalvapalli SsC(G) 11 | B.C (G) _ S.C (W) U.R (W) B.C  | Ranipactiodavenn Kunavaram 16 ,data/ap/2020_res_gp/atp_res_gp.pdf,5
 warn,jk/ward_reservation_2010.csv,column,halqa,length outside 2..45,9,0.0012,2 | 2 | 2,data/jk/2010/Surankote.pdf,4
+warn,ap/sarpanch_reservation_2020.csv,column,block,length outside 2..40,4,0.0008,K | h | a,data/ap/2020_res_gp/est_res_gp.pdf,66
+warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45,4,0.0008,Chigicherla De (G) zee Dharmav | Chilamakuru B.C (G) _ S.C (W)  | Kunavaram 16 8 8 16 0 0 0 0 0 ,data/ap/2020_res_gp/atp_res_gp.pdf,7
 warn,jk/ward_reservation_2018.csv,column,ward_name,length outside 2..40,3,0.0021,"vii-BRADINARD,KHATAN, GANIE,BI | i-DARDKHOWER/KOLI/ BARA /AHENG | ii-DARDKHOWER/ KHATANA /PASWAL",data/jk/2018/Srinagar.pdf,1
 warn,ap/sarpanch_reservation_2020.csv,column,serial,outside 1..9999,2,0.0004,0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6

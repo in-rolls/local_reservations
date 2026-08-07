@@ -26,8 +26,8 @@ are still in the legacy font they were printed in.
 
 | State | Year | Tier | Rows | Women | Districts | vs published | Notes | Where |
 |---|---|---|---|---|---|---|---|---|
-| Andhra Pradesh | 2020 | `sarpanch` | 5,179 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 84% of rows with a stated count | [data/ap/](data/ap/) |
-| Andhra Pradesh | 2020 | `ward` | 45,155 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 86% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `sarpanch` | 4,738 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `ward` | 45,478 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count | [data/ap/](data/ap/) |
 | Goa | 2012 | `ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
 | Goa | 2017 | `ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
 | Goa | 2022 | `ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
@@ -55,7 +55,7 @@ layout; **raw, unparsed** — source documents on disk, no parser yet;
 | State | Tier | Years | Rows | Status | Where |
 |---|---|---|---|---|---|
 | Andaman & Nicobar Islands | - | - | - | not held | - |
-| Andhra Pradesh | sarpanch, ward | 2020 | 50,334 | parsed | [data/ap/](data/ap/) |
+| Andhra Pradesh | sarpanch, ward | 2020 | 50,216 | parsed | [data/ap/](data/ap/) |
 | Arunachal Pradesh | - | - | - | not held | - |
 | Assam | - | - | - | raw, unparsed | [data/assam/](data/assam/) - 1 digital-text |
 | Bihar | mukhiya, sarpanch, panch, ward | 2006, 2011, 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |

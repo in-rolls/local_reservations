@@ -9,6 +9,10 @@ Office of Sarpanches & Ward Members", one line per gram panchayat:
     |                  |     number of wards
     serial             the sarpanch's own reservation
 
+...but only in some districts. Krishna prints the count before the sarpanch's
+cell on some of its pages and after it on others, and Nellore puts a revenue
+division in front of the mandal and numbers the panchayats within it.
+
 Two things make this the hardest state in the repo:
 
 **The text layer is OCR output, and it is wrong in places.** `5C` for SC, `8c`
@@ -43,8 +47,9 @@ OCR_CACHE = ROOT / "data" / "ap" / "ocr"
 COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
            "ward_no", "tier", "reservation", "caste_reservation",
            "woman_reserved", "ward_count", "wards_parsed",
-           "ward_list_complete", "ocr_repaired", "reservation_raw", "script",
-           "text_source"]
+           "ward_list_complete", "printings", "printings_agree",
+           "ocr_repaired", "reservation_raw",
+           "script", "text_source"]
 
 # District codes in the filenames.
 DISTRICTS = {
@@ -105,9 +110,58 @@ def digits(token):
         return ""
     return mapped
 
+STANDALONE = re.compile(r"(?:(?<=\s)|^)([0-9tTlIiOo]{1,3})(?=\s|$)")
 
-def parse_line(line):
-    """Split one gram panchayat line, or return None if it is not one."""
+# Every form the closed category vocabulary can legitimately take. Used only to
+# recognise an OCR-damaged sarpanch code in the one position the layout says a
+# code must be - never to invent one anywhere else.
+CANONICAL_CODES = [f"{c}{g}" for c in ("UR", "SC", "ST", "BC", "GN")
+                   for g in ("", "(W)", "(G)")]
+
+
+def _distance(a, b):
+    """Levenshtein, for deciding whether a damaged token is still that code."""
+    if a == b:
+        return 0
+    previous = list(range(len(b) + 1))
+    for i, x in enumerate(a, 1):
+        current = [i]
+        for j, y in enumerate(b, 1):
+            current.append(min(previous[j] + 1, current[j - 1] + 1,
+                               previous[j - 1] + (x != y)))
+        previous = current
+    return previous[-1]
+
+
+def as_category(text, limit=1):
+    """Read `text` as a reservation code, or return None.
+
+    The gazette's own layout tells us a code sits here, and the vocabulary is
+    fifteen strings long, so a token that is nearly one of them almost certainly
+    is it: "uUR(W)" is UR(W) with a doubled letter, "sccw)" is SC(W) with the
+    bracket read as a c. Without this the token fails to match, the parser takes
+    the *next* code on the line - which belongs to ward 1 - and records it as
+    the sarpanch's. That is not a missing value but a wrong one, and it is
+    invisible in the output: Krishna's Pinapaka came out "Other than Woman"
+    when the page says UR(W).
+
+    `limit` is deliberately tight. Beyond one edit the guess stops being
+    recoverable and the row is better dropped than silently misfiled.
+    """
+    squashed = re.sub(r"[^A-Za-z()]", "", (text or "").upper())
+    squashed = squashed.replace("{", "(").replace("[", "(")
+    if not squashed:
+        return None
+    best, best_distance = None, limit + 1
+    for code in CANONICAL_CODES:
+        d = _distance(squashed, code)
+        if d < best_distance:
+            best, best_distance = code, d
+    return best if best_distance <= limit else None
+
+
+def scan_line(line):
+    """Pick a record apart as far as the layout-independent facts go."""
     # Tesseract renders the table rules as pipes and stray brackets; they carry
     # no information and would otherwise break the category tokens apart.
     line = re.sub(r"[|]+", " ", line)
@@ -121,47 +175,230 @@ def parse_line(line):
     matches = list(CATEGORY.finditer(rest))
     if not matches:
         return None
-    first = matches[0]
 
     # Distinguishing a real record from an abstract row cannot be done by
     # counting categories: Anantapur's gazette is sarpanch-only, with no ward
     # columns at all, so its records carry exactly one. What separates them is
     # that a record names a place and an abstract row is numbers across.
-    if not HAS_NAME.search(rest[:first.start()]):
+    names = rest[:matches[0].start()].strip()
+    if not names or not HAS_NAME.search(names):
         return None
+    return {"serial": head.group(1), "names": names, "rest": rest,
+            "matches": matches}
 
-    names = rest[:first.start()].strip()
-    if not names:
-        return None
-    # mandal is Title Case, gram panchayat is UPPERCASE - the only separator
-    words = names.split()
-    upper_from = next((i for i, w in enumerate(words)
-                       if w.isupper() and len(w) > 2), len(words))
-    mandal = " ".join(words[:upper_from]).strip()
-    panchayat = " ".join(words[upper_from:]).strip() or mandal
 
-    tail = rest[first.end():].strip()
-    count_token = tail.split(" ")[0] if tail else ""
-    ward_count = digits(count_token) if COUNT.match(count_token or "") else ""
+# A code with one stray character stuck to its front, which is how this OCR
+# renders a table rule that touched the text: "JUR(W)" for UR(W), "lurcwy" for
+# UR(W). Used only to fill a shortfall the record itself declares - see
+# recover_wards - never to find codes in the first place, because with the word
+# boundary relaxed this also matches inside ordinary names ("Sur-" would give
+# UR) and would start inventing wards out of place names.
+LOOSE = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]?(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]"
+                   r"|[Gg][Nn])\s*(?:[({\[/]\s*[WwVvGg]\s*[)}\]]?)?"
+                   # the match has to end at a word boundary as well as start
+                   # at one, or "Surareddypalem" yields a UR ward out of a
+                   # place name - which a truncated line can put in this region
+                   r"(?![A-Za-z])")
+
+
+def recover_wards(region, spans, shortfall):
+    """Find wards the strict pattern missed, up to the number declared missing.
+
+    A ward whose code did not match is not a blank in the output - the ward
+    simply is not there, and the row count is short by one with nothing to say
+    why. Nellore loses one ward on a quarter of its records that way.
+
+    The record states how many wards it has, so the search is bounded by an
+    external fact rather than by how many candidates a looser pattern can find:
+    at most `shortfall` are taken, and each still has to be within one edit of a
+    real code. If more candidates turn up than are missing, none are taken -
+    that means the shortfall is not understood and guessing would be worse.
+    """
+    if shortfall <= 0:
+        return []
+    found = []
+    for m in LOOSE.finditer(region):
+        if any(m.start() < end and start < m.end() for start, end in spans):
+            continue
+        code = as_category(m.group(0))
+        if code:
+            found.append((m.start(), code))
+    return found if len(found) <= shortfall else []
+
+
+def apply_layout(record):
+    """Fill in the fields whose position depends on the layout.
+
+    The districts do not agree on the column order, and neither does a single
+    district with itself. Krishna's page 12 prints
+
+        serial  mandal  panchayat  SARPANCH  count  ward...
+
+    and its page 13 prints
+
+        serial  mandal  panchayat  count  SARPANCH  ward...
+
+    which is why this is decided per record rather than per document: these
+    gazettes are compiled from sheets typeset mandal by mandal.
+
+    The signal is where the standalone number falls. When it ends the name
+    segment the count comes first, and the sarpanch's own cell is whatever
+    follows - the position where a damaged code would otherwise be lost
+    entirely. When a place name follows the number instead, it is Nellore's
+    panchayat index, the one case where a district marks the boundary between
+    the two names explicitly. Either reading is checked afterwards against the
+    count the record states, via ward_list_complete.
+    """
+    names, rest, matches = record["names"], record["rest"], record["matches"]
+    found = list(STANDALONE.finditer(names))
+    trailing = names[found[-1].end():].strip() if found else ""
+    count_first = bool(found) and (not trailing or bool(as_category(trailing)))
+    place, panchayat, sarpanch_raw, ward_count = names, "", "", ""
+    repaired = recovered = 0
+
+    if count_first:
+        last = found[-1]
+        ward_count = digits(last.group(1))
+        place = names[:last.start()].strip()
+        mended = as_category(trailing)
+        if mended:
+            sarpanch_raw, repaired = mended, 1
+            wards = [m.group(0) for m in matches]
+        else:
+            sarpanch_raw = matches[0].group(0)
+            wards = [m.group(0) for m in matches[1:]]
+    else:
+        sarpanch_raw = matches[0].group(0)
+        wards = [m.group(0) for m in matches[1:]]
+        tail = rest[matches[0].end():].strip()
+        token = tail.split(" ")[0] if tail else ""
+        ward_count = digits(token) if COUNT.match(token or "") else ""
+        if found:
+            # Nellore numbers the panchayats within each mandal and prints that
+            # number between the two names, which is the only place any district
+            # marks the boundary explicitly. Where it is there, use it.
+            last = found[-1]
+            after = names[last.end():].strip()
+            if after and HAS_NAME.search(after):
+                place, panchayat = names[:last.start()].strip(), after
 
     # Bound the ward list by the count the record itself states. Reassembling
     # wrapped records means the buffer also picks up page furniture and stray
     # fragments, which pushed the ward total to 134% of what the gazette says
     # it should be. Trusting the document's own count fixes the over-capture
     # and makes any shortfall measurable rather than hidden by a surplus.
-    wards = [m.group(0) for m in matches[1:]]
     if ward_count.isdigit() and int(ward_count) > 0:
+        spans = [m.span() for m in matches]
+        start = matches[0].start() if count_first else matches[0].end()
+        extra = recover_wards(rest[start:], [(a - start, b - start)
+                                             for a, b in spans],
+                              int(ward_count) - len(wards))
+        if extra:
+            ordered = [(m.start() - start, m.group(0)) for m in matches
+                       if m.start() >= start] + extra
+            # matches before `start` are the sarpanch's own cell, already
+            # excluded by the offset filter above - do not drop one again
+            wards = [c for _, c in sorted(ordered)]
+            recovered = len(extra)
         wards = wards[:int(ward_count)]
     else:
         # No readable count on this record. The gazette's own header numbers
         # wards 1 to 20, so that is the ceiling; without it the reassembled
         # buffer keeps absorbing page furniture.
         wards = wards[:MAX_WARDS]
-    return {
-        "serial": head.group(1), "mandal": mandal, "panchayat": panchayat,
-        "sarpanch_raw": first.group(0), "ward_count": ward_count,
-        "ward_raws": wards,
-    }
+
+    record.update({"mandal": "", "place": place, "panchayat": panchayat,
+                   "sarpanch_raw": sarpanch_raw, "ward_count": ward_count,
+                   "ward_raws": wards, "code_repaired": repaired,
+                   "wards_recovered": recovered})
+    return record
+
+
+MIN_GROUP = 3
+
+
+def mandal_vocabulary(names):
+    """Learn the mandal names from how the records are ordered.
+
+    The gazette lists panchayats grouped by mandal, so the mandal name repeats
+    down a run of consecutive records while the panchayat name does not. Every
+    first word that opens such a run is therefore a mandal name.
+
+    Whether the mandal is one word or two has to be decided once for the whole
+    document, not run by run. "Anantapur Rural" is a real two-word mandal and
+    every single record under it repeats both words; "Atmakur B.Yaleru" is
+    mandal Atmakur with a two-word panchayat, and looking only at a few adjacent
+    records cannot tell the two apart - three consecutive B.Yaleru hamlets look
+    exactly like a two-word mandal. Deciding it across every record that shares
+    the first word can: Atmakur's second word varies, Anantapur's never does.
+    """
+    groups = collections.defaultdict(list)
+    for name in names:
+        words = name.split()
+        if words:
+            groups[words[0].lower()].append(words)
+
+    vocabulary = {}
+    for key, group in groups.items():
+        vocabulary[key] = group[0][0]
+        second = {w[1].lower() for w in group if len(w) > 1}
+        if (len(group) >= MIN_GROUP and len(second) == 1
+                and all(len(w) > 2 for w in group)):
+            vocabulary[key + " " + second.pop()] = " ".join(group[0][:2])
+    return vocabulary
+
+
+def split_names(records):
+    """Separate the mandal from the panchayat where the line itself cannot.
+
+        406 Kalyandurg Garudapuram      ->  Kalyandurg | Garudapuram
+        407 Kalyandurg Golla            ->  Kalyandurg | Golla
+        408 Kalyandurg Hulikal          ->  Kalyandurg | Hulikal
+
+    Without this the two columns come out identical, which is how Anantapur's
+    block and gram_panchayat ended up holding the same string. The vocabulary is
+    built over the whole document rather than a page, so a mandal that happens
+    to have one record on a page still gets split - it was learnt elsewhere.
+    """
+    pending = [r for r in records if not r["panchayat"]]
+    vocabulary = mandal_vocabulary([r["place"] for r in pending])
+    for record in pending:
+        words = record["place"].split()
+        record["mandal"], record["panchayat"] = "", record["place"]
+        # longest match wins, so a two-word mandal beats its own first word
+        for size in (2, 1):
+            if len(words) < size:
+                continue
+            key = " ".join(w.lower() for w in words[:size])
+            if key in vocabulary:
+                record["mandal"] = vocabulary[key]
+                record["panchayat"] = " ".join(words[size:]) or vocabulary[key]
+                break
+
+    # Where the panchayat name was already known, everything before it is the
+    # mandal - except that Nellore prints the revenue division in front of it.
+    # A division spans several mandals, so its name heads more than one distinct
+    # place string, while a genuine two-word mandal like "Anantapur Rural" heads
+    # exactly one.
+    known = [r for r in records if not r["mandal"] and r["panchayat"]]
+    spread = collections.defaultdict(set)
+    for record in known:
+        words = record["place"].split()
+        if words:
+            spread[words[0].lower()].add(record["place"])
+    divisions = {word for word, places in spread.items() if len(places) > 1}
+    for record in known:
+        words = record["place"].split()
+        # A division whose own name is misread heads only the one place string
+        # and so never reaches the test above - "Nellcre Podalakur" for Nellore
+        # Podalakur. Allowing a single edit against a division already learnt
+        # recognises it. This picks where the name starts; it does not rewrite
+        # the name, which stays as printed.
+        if len(words) > 1 and (words[0].lower() in divisions or
+                               any(_distance(words[0].lower(), d) <= 1
+                                   for d in divisions)):
+            words = words[1:]
+        record["mandal"] = " ".join(words)
 
 
 def _records(lines):
@@ -219,53 +456,103 @@ def parse_pdf(path):
     district = DISTRICTS.get(path.stem.split("_")[0], path.stem)
     text, origin = source_text(path)
     rows = []
+    # the whole document is parsed before any row is emitted, because the mandal
+    # names are learnt from the order of the records rather than from any one
+    # line - see split_names()
+    document = []
     for page_no, page in enumerate(text.split("\f"), 1):
         for line in _records(page.split("\n")):
-            parsed = parse_line(line)
-            if not parsed:
-                continue
-            fixed, repaired = repair(parsed["sarpanch_raw"])
+            parsed = scan_line(line)
+            if parsed:
+                document.append((page_no, parsed))
+    scanned = [r for _, r in document]
+    for record in scanned:
+        apply_layout(record)
+    split_names(scanned)
+    for page_no, parsed in document:
+        fixed, repaired = repair(parsed["sarpanch_raw"])
+        # the sarpanch's own cell only - wards recovered for this record are
+        # counted on the ward rows, not here
+        repaired = int(repaired) + parsed["code_repaired"]
+        got = normalize_reservation(fixed)
+        if not got:
+            continue
+        caste, woman, script = got
+        base = {
+            "state": "Andhra Pradesh", "year": "2020",
+            "district": district, "block": parsed["mandal"],
+            "gram_panchayat": parsed["panchayat"],
+            "ward_count": parsed["ward_count"],
+            "wards_parsed": len(parsed["ward_raws"]),
+            "serial": parsed["serial"], "script": script,
+            "text_source": origin,
+            # 1 when the ward list matches the count the record states, 0
+            # when it does not, blank when the record states no count. 92% of
+            # the records that state a count come out complete; a ward row
+            # without this flag would silently mix those with the truncated
+            # ones, which are mostly lines the page cut off at its right edge.
+            "ward_list_complete": (
+                int(len(parsed["ward_raws"]) == int(parsed["ward_count"]))
+                if parsed["ward_count"].isdigit() else ""),
+        }
+        rows.append(emit.stamp(dict(
+            base, ward_no="", tier="sarpanch",
+            reservation=label(caste, woman), caste_reservation=caste,
+            woman_reserved=woman, ocr_repaired=repaired,
+            reservation_raw=parsed["sarpanch_raw"],
+        ), path, page_no, ROOT))
+
+        for index, raw in enumerate(parsed["ward_raws"], 1):
+            fixed, repaired = repair(raw)
             got = normalize_reservation(fixed)
             if not got:
                 continue
             caste, woman, script = got
-            base = {
-                "state": "Andhra Pradesh", "year": "2020",
-                "district": district, "block": parsed["mandal"],
-                "gram_panchayat": parsed["panchayat"],
-                "ward_count": parsed["ward_count"],
-                "wards_parsed": len(parsed["ward_raws"]),
-                "serial": parsed["serial"], "script": script,
-                "text_source": origin,
-                # 1 when the ward list matches the count the record states, 0
-                # when it does not, blank when the record states no count.
-                # Only 63% of AP's records come out complete, so a ward row
-                # without this flag would silently mix complete lists with
-                # truncated ones.
-                "ward_list_complete": (
-                    int(len(parsed["ward_raws"]) == int(parsed["ward_count"]))
-                    if parsed["ward_count"].isdigit() else ""),
-            }
             rows.append(emit.stamp(dict(
-                base, ward_no="", tier="sarpanch",
+                base, ward_no=str(index), tier="ward",
                 reservation=label(caste, woman), caste_reservation=caste,
                 woman_reserved=woman, ocr_repaired=int(repaired),
-                reservation_raw=parsed["sarpanch_raw"],
+                reservation_raw=raw, script=script,
             ), path, page_no, ROOT))
+    return dedupe(rows)
 
-            for index, raw in enumerate(parsed["ward_raws"], 1):
-                fixed, repaired = repair(raw)
-                got = normalize_reservation(fixed)
-                if not got:
-                    continue
-                caste, woman, script = got
-                rows.append(emit.stamp(dict(
-                    base, ward_no=str(index), tier="ward",
-                    reservation=label(caste, woman), caste_reservation=caste,
-                    woman_reserved=woman, ocr_repaired=int(repaired),
-                    reservation_raw=raw, script=script,
-                ), path, page_no, ROOT))
-    return rows
+
+def dedupe(rows):
+    """Collapse seats that the gazette states more than once.
+
+    Anantapur's gazette carries the sarpanch reservation twice, in two
+    different proformas: PROFORMA-I is the sarpanch list on its own, and
+    PROFORMA-III is the ward table whose first column is the panchayat's own
+    seat. Neither is complete - 212 seats appear only in the first and 472 only
+    in the second - so the shipped file is their union, not either one.
+
+    Left alone this counted 432 seats twice, and the duplication was invisible
+    while the mandal and panchayat columns were still wrong, because no two keys
+    ever collided to reveal it.
+
+    The second statement is worth more as a check than as a row: two independent
+    typesettings of the same fact agree on 427 of those 432 seats, and the five
+    that disagree are reported by validate.py rather than silently resolved.
+    `printings` records how many statements stood behind each row.
+    """
+    groups = collections.OrderedDict()
+    for row in rows:
+        key = (row["tier"], row["district"], row["block"].lower(),
+               row["gram_panchayat"].lower(), row["ward_no"])
+        groups.setdefault(key, []).append(row)
+    out = []
+    for group in groups.values():
+        # keep the statement that carries the most, so a seat listed in both the
+        # sarpanch-only proforma and the ward table keeps its ward count
+        best = max(group, key=lambda r: (int(r["wards_parsed"] or 0),
+                                         -int(r["ocr_repaired"] or 0)))
+        best["printings"] = len(group)
+        # blank when there is nothing to compare, so "no second statement" is
+        # never mistaken for "the two statements matched"
+        best["printings_agree"] = ("" if len(group) == 1 else
+                                   int(len({r["reservation"] for r in group}) == 1))
+        out.append(best)
+    return out
 
 
 def main():

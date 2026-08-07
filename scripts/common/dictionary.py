@@ -145,9 +145,22 @@ COLUMNS = [
            note="1 when the ward list matches the stated count. Only about a "
                 "third of AP's ward rows qualify, so a consumer should filter "
                 "on this rather than assume."),
-    column("ocr_repaired", "boolean", max_blank=0.0, severity=WARN,
-           note="The category cell needed mending. A wrong mend is "
-                "indistinguishable from a right one, so these stay findable."),
+    column("ocr_repaired", "integer", range=(0, 2), max_blank=0.0, severity=WARN,
+           note="How many mends the row's category cell needed. A wrong mend "
+                "is indistinguishable from a right one, so these stay "
+                "findable."),
+    column("printings", "integer", range=(1, 4), max_blank=0.0, severity=WARN,
+           note="How many times the gazette states this seat. Anantapur "
+                "prints the sarpanch reservation in two proformas - a "
+                "sarpanch-only list and the ward table's first column - so "
+                "where both carry a seat this is 2 and validate.py checks that "
+                "the two agree rather than assuming it."),
+    column("printings_agree", "boolean", severity=WARN,
+           note="Whether the gazette's separate statements of this seat say "
+                "the same thing. Blank where the seat is stated only once - "
+                "which is not the same as agreeing. Two independent "
+                "typesettings agreeing is the strongest evidence available "
+                "here that a row was read correctly."),
     column("text_source", "enum", allowed=["ocr", "embedded"], severity=INFO,
            note="Whether the row came from our own OCR or the PDF's embedded "
                 "text layer, which for AP is itself faulty OCR."),

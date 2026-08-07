@@ -49,7 +49,9 @@ than a defect.
 | `ward_count` | integer | error | range 1–20; ≤75% blank | The number of wards the record itself states. The gazette header numbers ward columns 1 to 20, so anything above that is an OCR misread - 72 and 74 are 12 and 14 in this font. Blank for most of Andhra Pradesh because Anantapur's gazette is sarpanch-only and prints no ward column at all, which is why the blank tolerance is high. |
 | `wards_parsed` | integer | warn | range 0–20; ≤0% blank |  |
 | `ward_list_complete` | boolean | warn | ≤50% blank | 1 when the ward list matches the stated count. Only about a third of AP's ward rows qualify, so a consumer should filter on this rather than assume. |
-| `ocr_repaired` | boolean | warn | ≤0% blank | The category cell needed mending. A wrong mend is indistinguishable from a right one, so these stay findable. |
+| `ocr_repaired` | integer | warn | range 0–2; ≤0% blank | How many mends the row's category cell needed. A wrong mend is indistinguishable from a right one, so these stay findable. |
+| `printings` | integer | warn | range 1–4; ≤0% blank | How many times the gazette states this seat. Anantapur prints the sarpanch reservation in two proformas - a sarpanch-only list and the ward table's first column - so where both carry a seat this is 2 and validate.py checks that the two agree rather than assuming it. |
+| `printings_agree` | boolean | warn | — | Whether the gazette's separate statements of this seat say the same thing. Blank where the seat is stated only once - which is not the same as agreeing. Two independent typesettings agreeing is the strongest evidence available here that a row was read correctly. |
 | `text_source` | enum | info | one of `ocr`, `embedded` | Whether the row came from our own OCR or the PDF's embedded text layer, which for AP is itself faulty OCR. |
 | `script` | enum | error | one of `latin`, `krutidev`; ≤0% blank | Which typesetting the row was read from. |
 | `source_pdf` | string | error | length 4–80; ≤0% blank |  |
