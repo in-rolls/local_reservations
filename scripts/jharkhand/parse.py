@@ -44,6 +44,7 @@ from normalize import _undouble, caste_of, is_vacant, label, woman_of  # noqa: E
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
+OCR_CACHE = ROOT / "data" / "jharkhand" / "ocr"
 
 COLUMNS = ["state", "year", "district", "block", "block_no",
            "gram_panchayat", "gp_no", "ward_no", "seat_no", "seat_id_raw",
@@ -347,10 +348,19 @@ TIER_HEADS = [
     ('ftyk ifj"kn', "zila_parishad"),
     ("iapk;r lfefr", "panchayat_samiti"),
     ("xzke iapk;r", "ward_member"),
+    # the same offices as a scan reads them, in Unicode rather than Kruti Dev,
+    # and in the same order for the same reason
+    ("मुखिया", "mukhiya"),
+    ("जिला परिषद", "zila_parishad"),
+    ("पंचायत समिति", "panchayat_samiti"),
+    ("ग्राम पंचायत", "ward_member"),
 ]
 
-STACKED_CASTE = re.compile(r"vuk[fj]+\{kr|vuq\S*\s*tu\s*tkfr|vuq\S*\s*tkfr|fiNM\+k")
-STACKED_GENDER = re.compile(r"(efgyk|vU;)(?!\s*fiNM)")
+STACKED_CASTE = re.compile(
+    r"vuk[fj]+\{kr|vuq\S*\s*tu\s*tkfr|vuq\S*\s*tkfr|fiNM\+k"
+    r"|अनारक्षित|अनु\S*\s*जन\s*जाति|अनु\S*\s*जाति|पिछ\S*\s*वर्ग")
+# "अन्य पिछड़ा वर्ग" is a caste, so the gender marker must not match inside it
+STACKED_GENDER = re.compile(r"(efgyk|vU;|महिला|अन्य)(?!\s*(?:fiNM|पिछ))")
 
 
 def parse_stacked(path, district):
@@ -375,9 +385,8 @@ def parse_stacked(path, district):
     """
     rows = []
     block = ""
-    with pdfplumber.open(str(path)) as pdf:
-        for page in pdf.pages:
-            text = page.extract_text(layout=True) or ""
+    for page_number, text in stacked_pages(path):
+        if True:
             header = RE_BLOCK.search(text)
             if header:
                 block = clean(header.group(1))
@@ -431,8 +440,27 @@ def parse_stacked(path, district):
                 rows.append(emit.stamp(seat_row(
                     district, block, tier, caste, woman, seat, name,
                     f"{line[caste_at.start():gender_at.start()].strip()} | "
-                    f"{gender_at.group(1)}"), path, page.page_number, ROOT))
+                    f"{gender_at.group(1)}"), path, page_number, ROOT))
     return rows
+
+
+def stacked_pages(path):
+    """The document's pages as text, from its own layer or from OCR.
+
+    Six districts ship the same form as a photograph, so pdftotext returns
+    nothing and they contributed no rows at all. scripts/jharkhand/ocr.py caches
+    them; a scan reads into Unicode Devanagari, which is easier than the Kruti
+    Dev the typeset districts use.
+    """
+    with pdfplumber.open(str(path)) as pdf:
+        pages = [(page.page_number, page.extract_text(layout=True) or "")
+                 for page in pdf.pages]
+    if sum(len(t) for _, t in pages) > 400:
+        return pages
+    cached = OCR_CACHE / f"{path.stem}.txt"
+    if not cached.exists():
+        return pages
+    return list(enumerate(cached.read_text(encoding="utf-8").split("\f"), 1))
 
 
 def parse_pdf(path, district):
