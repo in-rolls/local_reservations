@@ -1,6 +1,4 @@
 severity,file,scope,column,rule,count,share,examples,first_source,first_page
-warn,jk/ward_reservation_2010.csv,column,district,blank share 94% above the 20% tolerated,6888,0.9384, |  | ,data/jk/2010/(Mahore).pdf,1
-warn,jk/ward_reservation_2010.csv,column,block,blank share 70% above the 35% tolerated,5104,0.6954, |  | ,data/jk/2010/(Mahore).pdf,1
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 99% above the 10% tolerated,2863,0.9889, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 99% above the 60% tolerated,2863,0.9889, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 99% above the 90% tolerated,2515,0.9886, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1

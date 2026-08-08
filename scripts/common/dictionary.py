@@ -103,6 +103,11 @@ COLUMNS = [
                 "it can disagree with them - which is checked as a row rule."),
     column("reservation_raw", "string", length=(1, 120), max_blank=0.0,
            note="The source cell, untouched, so any row can be audited."),
+    column("district_declared", "boolean", severity=INFO,
+           note="Set where the district was declared from a roster outside the "
+                "corpus rather than read from the document. Eight of J&K's "
+                "2010 blocks name no district anywhere in their file; saying "
+                "so is the difference between a reading and an assertion."),
     column("listing_scope", "enum", allowed=["all_seats", "reserved_only"],
            severity=WARN,
            note="J&K's 2018 documents list only the reserved wards, so any "
@@ -188,7 +193,8 @@ COLUMNS = [
                 "text layer, which for AP is itself faulty OCR."),
 
     # ------------------------------------------------------------ provenance
-    column("script", "enum", allowed=["latin", "krutidev"], max_blank=0.0,
+    column("script", "enum", allowed=["latin", "krutidev", "devanagari"],
+           max_blank=0.0,
            note="Which typesetting the row was read from."),
     column("source_pdf", "string", required=True, length=(4, 80), max_blank=0.0),
     column("source_path", "path", required=True, max_blank=0.0,

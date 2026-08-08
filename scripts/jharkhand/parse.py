@@ -38,6 +38,7 @@ import pdfplumber
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
 import canon  # noqa: E402
 import emit  # noqa: E402
+import krutidev  # noqa: E402
 from normalize import _undouble, caste_of, is_vacant, label, woman_of  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
@@ -334,6 +335,24 @@ def main():
     # after every district is read, because a block named only by number in one
     # district's sheets is named in full in another's
     filled, ambiguous = fill_block_names(rows)
+
+    # The names are printed in Kruti Dev, a font encoding rather than damage, so
+    # they convert deterministically. Left as printed they cannot be joined to
+    # any other source on name, which was the largest recoverable gap in the
+    # corpus. seat_id_raw keeps the string exactly as the page had it.
+    # district is not in this list: it comes from the folder name and is
+    # already English, so running it through the converter turned "Garhwa" into
+    # "घ्ंतीूं" - real-looking Devanagari for a word that was never Kruti Dev.
+    converted = 0
+    for row in rows:
+        for column in ("block", "gram_panchayat"):
+            value = row.get(column) or ""
+            if value and not krutidev.looks_converted(value):
+                row[column] = krutidev.to_unicode(value)
+                converted += 1
+        row["script"] = "devanagari"
+    print(f"transliterated {converted:,} names from Kruti Dev to Unicode",
+          file=sys.stderr)
     print(f"block names joined on (district, block_no): {filled:,} rows filled, "
           f"{ambiguous} keys left ambiguous", file=sys.stderr)
 

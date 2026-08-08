@@ -39,7 +39,8 @@ from normalize import label, normalize_reservation  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JK = ROOT / "data" / "jk"
 
-COLUMNS = ["state", "year", "district", "block", "halqa", "ward_no",
+COLUMNS = ["state", "year", "district", "district_declared", "block", "halqa",
+           "ward_no",
            "ward_name", "tier", "tier_local", "reservation", "caste_reservation",
            "woman_reserved", "listing_scope", "pop_sc", "pop_st", "pop_oc",
            "pop_total", "reservation_raw", "script"]
@@ -65,6 +66,68 @@ def district_from_title(text):
     """2016 and 2018 print "... in respect of District Doda" above the table."""
     found = re.search(r"District\s+([A-Za-z][A-Za-z .\-]{2,25})", text or "")
     return clean(found.group(1)) if found else ""
+
+
+# Jammu & Kashmir's districts as they stood in 2010. A closed list, which is
+# what makes the district readable at all: the 2010 documents spell the word
+# before it at least four ways - DISTRICT, Distrist, ISTRICT with the D lost to
+# the scan, and sometimes nothing but a comma - so the word is matched by edit
+# distance and the name that follows against this roster. Free-text capture was
+# tried first and returned "JAMMU Name" and "REASI ANNEXURE".
+DISTRICT_ROSTER = [
+    "Jammu", "Samba", "Kathua", "Udhampur", "Reasi", "Rajouri", "Poonch",
+    "Doda", "Ramban", "Kishtwar", "Anantnag", "Kulgam", "Pulwama", "Shopian",
+    "Srinagar", "Budgam", "Ganderbal", "Bandipora", "Baramulla", "Kupwara",
+    "Leh", "Kargil",
+]
+
+# Eight of the 2010 blocks name no district anywhere in their document. These
+# come from outside the corpus and are marked as such rather than presented as
+# something the page said - see the district_declared column.
+DISTRICT_OF_BLOCK = {
+    "dachhan": "Kishtwar", "marwah": "Kishtwar", "padder": "Kishtwar",
+    "warwan": "Kishtwar", "inderbal": "Kishtwar", "nagsani": "Kishtwar",
+    "gool": "Ramban", "ramsoo": "Ramban",
+}
+
+_WORD = re.compile(r"\b([A-Za-z]{5,9})\b")
+
+
+def _distance(a, b):
+    previous = list(range(len(b) + 1))
+    for i, x in enumerate(a, 1):
+        current = [i]
+        for j, y in enumerate(b, 1):
+            current.append(min(previous[j] + 1, current[j - 1] + 1,
+                               previous[j - 1] + (x != y)))
+        previous = current
+    return previous[-1]
+
+
+def district_from_document(text):
+    """The district a 2010 document names, or "" if it names none.
+
+    Prefers the name that follows a district-ish word; falls back to any roster
+    name on the page, which is safe because these are district-level documents
+    and the roster names are distinctive.
+    """
+    flat = re.sub(r"\s+", " ", text or "")
+    for found in _WORD.finditer(flat):
+        if _distance(found.group(1).upper(), "DISTRICT") <= 2:
+            after = flat[found.end():found.end() + 30]
+            for name in DISTRICT_ROSTER:
+                if re.match(r"\W{0,3}" + name, after, re.I):
+                    return name
+    for name in DISTRICT_ROSTER:
+        if re.search(r"\b" + name + r"\b", flat, re.I):
+            return name
+    return ""
+
+
+def block_from_filename(path):
+    """2010 names each file for its block. Verified rather than assumed: on the
+    2,236 rows where the page also states a block, the two agree every time."""
+    return re.sub(r"[()]", "", path.stem).strip()
 
 
 def carry(values, index, current):
@@ -238,6 +301,50 @@ def parse_mapped(path, year):
     return rows
 
 
+def fill_place(rows, path):
+    """Give a document's rows the block and district the document itself names.
+
+    2010's files have no district column at all and a block column that is
+    printed on only a third of the rows, so both were left blank: 6,888 rows
+    with no district and 5,104 with no block, out of 7,340. Neither is missing
+    from the documents - the block is the filename and the district is in the
+    title - so neither needed to stay blank.
+
+    A value already read from the page always wins; this only fills what is
+    empty.
+    """
+    if not rows:
+        return
+    block = block_from_filename(path)
+    district = ""
+    try:
+        with pdfplumber.open(str(path)) as pdf:
+            district = district_from_document(pdf.pages[0].extract_text() or "")
+    except Exception:  # noqa: BLE001 - a document that will not open names nothing
+        district = ""
+    declared = ""
+    if not district:
+        district = DISTRICT_OF_BLOCK.get(block.lower(), "")
+        declared = "1" if district else ""
+
+    for row in rows:
+        if not (row.get("block") or "").strip():
+            row["block"] = block
+        # A district read off the page still has to be a district. 344 rows
+        # carried "vide Order No." - the tail of an order reference that landed
+        # in the column - and it survived because it was not blank. The roster
+        # is closed, so anything outside it is boilerplate, not a place.
+        current = (row.get("district") or "").strip()
+        if current and not any(current.lower() == d.lower()
+                               for d in DISTRICT_ROSTER):
+            current = ""
+        if not current:
+            row["district"] = district
+            row["district_declared"] = declared
+        else:
+            row["district"] = current
+
+
 def parse_generic(path, year, layout):
     """2010 and 2018: one reservation column, ward tier only.
 
@@ -313,6 +420,7 @@ def main():
                 got = []
             if not got:
                 empty.append(path.name)
+            fill_place(got, path)
             rows += got
             print(f"\r  {year} {path.name[:40]:40s} rows={len(rows)}",
                   end="", file=sys.stderr)

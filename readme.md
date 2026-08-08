@@ -15,7 +15,7 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 25 | 88,610 |
+| [Open gaps](WORKLIST.md) | 20 | 70,105 |
 | [Undetermined](WORKLIST.md) | 6 | 12,985 |
 | [Accepted properties of the sources](WORKLIST.md) | 6 | 53,331 |
 
@@ -50,14 +50,14 @@ are still in the legacy font they were printed in.
 | Goa | 2012 | `gp_ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
 | Goa | 2017 | `gp_ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
 | Goa | 2022 | `gp_ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
-| Jammu & Kashmir | 2010 | `gp_ward` | 7,340 | 48% | 2 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2016 | `gp_head` | 410 | 33% | 14 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2016 | `gp_ward` | 2,326 | 32% | 14 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2018 | `gp_ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
-| Jharkhand | 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `gp_ward` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jammu & Kashmir | 2010 | `gp_ward` | 7,340 | 48% | 10 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `gp_head` | 410 | 33% | 5 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `gp_ward` | 2,326 | 32% | 5 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2018 | `gp_ward` | 1,432 | 82% | 12 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
+| Jharkhand | 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | partial: 15 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | partial: 16 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_ward` | 6,174 | 52% | 5 | — | partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | partial: 4 of 24 districts | [data/jharkhand/](data/jharkhand/) |
 
 <!-- slices:end -->
 

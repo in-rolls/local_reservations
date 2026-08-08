@@ -1,411 +1,411 @@
-state,year,district,block,halqa,ward_no,ward_name,tier,tier_local,reservation,caste_reservation,woman_reserved,listing_scope,pop_sc,pop_st,pop_oc,pop_total,reservation_raw,script,source_path,source_page,source_pdf
-Jammu & Kashmir,2016,Doda,1. Assar,1. Assar- Ginota,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,192,192,Women,latin,data/jk/2016/Annex A Doda.pdf,1,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,2. Bibrota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,389,389,Open,latin,data/jk/2016/Annex A Doda.pdf,1,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,3. Blandpur,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,286,0,3,289,SC,latin,data/jk/2016/Annex A Doda.pdf,2,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,4. Chaka- A-1,,,gp_head,sarpanch,Woman,NONE,1,all_seats,120,0,320,440,Women,latin,data/jk/2016/Annex A Doda.pdf,3,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,5. Chaka- A-2,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,316,316,Open,latin,data/jk/2016/Annex A Doda.pdf,3,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,6. Chaka- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,356,356,Open,latin,data/jk/2016/Annex A Doda.pdf,4,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,7. Chill,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,156,156,Women,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,8. Chirota- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,326,10,336,ST,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,9. Chirota- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,5,247,0,252,Open,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,10. Kuthyara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,48,0,303,351,Women,latin,data/jk/2016/Annex A Doda.pdf,6,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,11. Ramgarh Kurmail,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,150,0,0,150,SC,latin,data/jk/2016/Annex A Doda.pdf,7,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,12. Ranka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,64,0,170,234,Open,latin,data/jk/2016/Annex A Doda.pdf,7,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,1. Assar,13. Shamthi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,401,401,Open,latin,data/jk/2016/Annex A Doda.pdf,8,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,1. Bheja,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,140,0,55,195,SC Women,latin,data/jk/2016/Annex A Doda.pdf,8,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,2. Butla,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,108,0,108,ST,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,3. Chakka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,310,310,Open,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,4. Chanchor a,,,gp_head,sarpanch,Woman,NONE,1,all_seats,30,0,205,235,Women,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,5. Chinote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,40,65,165,270,Open,latin,data/jk/2016/Annex A Doda.pdf,10,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,6. Dandi,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,165,0,165,ST,latin,data/jk/2016/Annex A Doda.pdf,10,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,7. Dhareja,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,112,112,Women,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,8. Diggi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,30,10,125,165,Open,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,9. Drodhu,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,126,0,160,286,Open,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,10. Dugga,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,183,0,82,265,SC Women,latin,data/jk/2016/Annex A Doda.pdf,12,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,11. Gatha,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,284,284,Open,latin,data/jk/2016/Annex A Doda.pdf,12,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,12. Guttassa,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,140,0,20,160,SC,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,13. Hanga,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,149,0,55,204,SC Women,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,14. Jalga,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,18,0,58,76,Open,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,15. Katyara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,168,168,Open,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,16. Kursari,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,170,170,Women,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,17. Manthla,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,382,0,0,382,SC,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,18. Manwah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,26,145,171,Open,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,19. Misrata,,,gp_head,sarpanch,Woman,NONE,1,all_seats,44,0,263,307,Women,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,20. Nalthi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,11,254,265,Open,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,21. Neota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,125,0,80,205,Open,latin,data/jk/2016/Annex A Doda.pdf,16,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,22. Sadder,,,gp_head,sarpanch,Woman,NONE,1,all_seats,25,11,182,218,Women,latin,data/jk/2016/Annex A Doda.pdf,16,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,23. Sarna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,6,0,197,203,Open,latin,data/jk/2016/Annex A Doda.pdf,17,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,24. Sartingal,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,207,207,Open,latin,data/jk/2016/Annex A Doda.pdf,17,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,25. Songai,,,gp_head,sarpanch,Woman,NONE,1,all_seats,46,0,210,256,Women,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,26. Sungli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,30,140,170,Open,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,27. Thanalla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,389,389,Open,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,28. Thuba,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,0,81,244,325,SC Women,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,29. Udrana- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,266,266,Open,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,2. Bhaderw ah,30. Udrana- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,300,300,Open,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,1. Bajarni upper,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,192,192,Women,latin,data/jk/2016/Annex A Doda.pdf,20,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,2. Beoli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,21,0,310,331,Open,latin,data/jk/2016/Annex A Doda.pdf,21,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,3. Bhagwah lower-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,302,302,Open,latin,data/jk/2016/Annex A Doda.pdf,21,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,4. Bhagwah lower-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,118,118,Women,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,5. Bhagwah upper-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,344,344,Open,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,6. Bhagwah upper-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,278,278,Open,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,7. Bijarni Lower-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,226,226,Women,latin,data/jk/2016/Annex A Doda.pdf,23,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,8. Bijarni Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,102,21,210,333,Open,latin,data/jk/2016/Annex A Doda.pdf,24,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,9. Gaddi- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,283,283,Open,latin,data/jk/2016/Annex A Doda.pdf,24,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,10. Gaddi-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,116,85,201,Women,latin,data/jk/2016/Annex A Doda.pdf,25,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,11. Gai Dessa-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,171,171,Open,latin,data/jk/2016/Annex A Doda.pdf,25,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,12. Gai Dessa-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,210,210,Open,latin,data/jk/2016/Annex A Doda.pdf,26,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,13. Gai Dessa-C,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,330,330,Women,latin,data/jk/2016/Annex A Doda.pdf,26,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,14. Ganika,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,209,209,Open,latin,data/jk/2016/Annex A Doda.pdf,27,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,15. Mallan-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,237,237,Open,latin,data/jk/2016/Annex A Doda.pdf,27,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,16. Mallan-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,416,416,Women,latin,data/jk/2016/Annex A Doda.pdf,28,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,17. Manjmi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,225,225,Open,latin,data/jk/2016/Annex A Doda.pdf,28,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,3. Bhagwah,18. Malwas,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,154,154,Open,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,1 Berru,,,gp_head,sarpanch,Woman,NONE,1,all_seats,14,14,263,291,Women,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,2. Choundri,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,25,0,231,256,Open,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,3. Derka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,243,243,Open,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,4. Dugli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,270,270,Women,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,5. Gajoth,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,0,230,320,Open,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,6. Guraka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,0,255,335,Open,latin,data/jk/2016/Annex A Doda.pdf,31,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,7. Kari Chattra,,,gp_head,sarpanch,Woman,NONE,1,all_seats,90,0,240,330,Women,latin,data/jk/2016/Annex A Doda.pdf,31,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,8. Khellani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,26,0,160,186,Open,latin,data/jk/2016/Annex A Doda.pdf,32,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,9. Panjgraie n,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,6,284,290,Open,latin,data/jk/2016/Annex A Doda.pdf,32,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,10. Pranu,,,gp_head,sarpanch,Woman,NONE,1,all_seats,40,81,166,287,Women,latin,data/jk/2016/Annex A Doda.pdf,33,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,11. Reware,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,127,48,130,305,SC,latin,data/jk/2016/Annex A Doda.pdf,33,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,12. Shangroo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,201,80,102,383,Open,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,13. Sindra,,,gp_head,sarpanch,Woman,NONE,1,all_seats,66,0,354,420,Women,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,14. Soura,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,357,357,Open,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,15. Southa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,152,152,Open,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,4. Bhalla,16. Trown,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,42,309,351,Women,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,1. Batara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,131,0,109,240,Women,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,2. Bharghi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,180,80,40,300,Open,latin,data/jk/2016/Annex A Doda.pdf,36,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,3. Chonwer y,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,57,24,234,315,Open,latin,data/jk/2016/Annex A Doda.pdf,36,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,4. Darie,,,gp_head,sarpanch,Woman,NONE,1,all_seats,191,0,127,318,Women,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,5. Dhadkie- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,165,0,165,ST,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,6. Dhadkie- B,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,140,0,140,ST,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,7. Dherwari- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,196,196,Women,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,8. Dherwari- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,16,0,172,188,Open,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,9. Gandoh,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,2,290,3,295,ST,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,10 Kandolu,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,42,115,14,171,ST Women,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,11. Kharanga l,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,115,0,185,300,Open,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,12. Shengani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,65,90,175,330,Open,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,13. Sinoo,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,66,58,124,Women,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,5. Bhallessa,14. Trithloo,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,204,45,249,ST,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,1. Achhair,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,144,144,Women,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,2. Alnigung ota-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,169,16,185,Open,latin,data/jk/2016/Annex A Doda.pdf,41,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,3. Alnigung ota-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,93,0,150,243,Open,latin,data/jk/2016/Annex A Doda.pdf,41,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,4. Barthi,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,203,203,Women,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,5. Chancer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,106,106,Open,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,6 Changa- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,251,251,Open,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,7. Changa- B,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,0,150,150,ST Women,latin,data/jk/2016/Annex A Doda.pdf,43,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,8. Chantibal a,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,534,30,40,604,SC,latin,data/jk/2016/Annex A Doda.pdf,43,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,9. Dohassa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,188,188,Open,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,10. Dudwar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,290,290,Women,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,11. Gawari,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,393,393,Open,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,12. Gurekhra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,151,151,Open,latin,data/jk/2016/Annex A Doda.pdf,45,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,13. Inharra,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,90,0,0,90,SC Women,latin,data/jk/2016/Annex A Doda.pdf,45,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,14. Kaljugas ar-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,180,0,65,245,Open,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,15. Kaljugas ar-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,172,106,358,Open,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,16. Kilhotran,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,180,180,Women,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,17. Porapain,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,190,20,75,285,Open,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,18. Samaie,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,152,99,0,251,Open,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,19. Tantli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,4,0,174,178,Women,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,6. Changa,20. Thalorn,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,194,194,Open,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,1. Bhatoli,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,9,279,33,321,ST Women,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,2. Chilibala,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,60,190,250,Open,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,3. Chilli- Pain,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,98,60,93,251,ST,latin,data/jk/2016/Annex A Doda.pdf,49,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,4. Haddel,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,179,0,179,ST Women,latin,data/jk/2016/Annex A Doda.pdf,49,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,5. Manoo- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,180,12,192,ST,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,6. Manoo- B,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,199,20,219,ST,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,7. Mukhsys as,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,200,12,212,ST Women,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,7. Chili Pingal,8. Sanwara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,92,102,194,Open,latin,data/jk/2016/Annex A Doda.pdf,51,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,1. Bhallara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,102,0,159,261,Women,latin,data/jk/2016/Annex A Doda.pdf,51,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,2. Chagsoo,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,24,0,141,165,SC,latin,data/jk/2016/Annex A Doda.pdf,52,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,3. Chiralla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,55,28,361,444,Open,latin,data/jk/2016/Annex A Doda.pdf,52,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,4. Jagota,,,gp_head,sarpanch,Woman,NONE,1,all_seats,10,0,87,97,Women,latin,data/jk/2016/Annex A Doda.pdf,53,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,5. Panshei,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,253,253,Open,latin,data/jk/2016/Annex A Doda.pdf,53,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,6. Puneja,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,218,0,88,306,SC,latin,data/jk/2016/Annex A Doda.pdf,54,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,7. Rokali,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,451,451,Women,latin,data/jk/2016/Annex A Doda.pdf,54,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,8. Sonartha wa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,30,0,400,430,Open,latin,data/jk/2016/Annex A Doda.pdf,55,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,8. Chiralla,9. Thellella,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,370,370,Open,latin,data/jk/2016/Annex A Doda.pdf,55,Annex A Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,1 Bagla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,310,310,Women,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,2. Barath- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,29,182,211,Open,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,3. Barath- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,4,215,74,293,Open,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,4. Dhar- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,186,186,Women,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,5. Kalihand,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,256,256,Open,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,6. Kulhand,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,135,0,336,471,Open,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,7. Seel,,,gp_head,sarpanch,Woman,NONE,1,all_seats,58,0,171,229,Women,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,8. Udyanpu r,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,283,283,Open,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,9. Dali Udyanpu r,9.Ugad,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),1. Arnora- L,,,gp_head,sarpanch,Woman,NONE,1,all_seats,36,0,453,489,Women,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),2. Arnora- U,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,347,347,Open,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),3. Bhaboor,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,112,112,Open,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),4. Birshalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,275,275,Women,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),5. Dashnan,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,190,190,Open,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),6. Dhar- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,259,259,Open,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),7. Dhara- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,186,186,Women,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),8. Dhara- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,2 2 9,2 2 9,O p e n,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),9. Hanch,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,236,0,126,362,Open,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),10. Jijote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,189,189,Women,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),11. Jodhpur- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,74,0,82,156,Open,latin,data/jk/2016/Annex B Doda.pdf,7,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),12. Jodhpur- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,24,0,109,133,Open,latin,data/jk/2016/Annex B Doda.pdf,7,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),13. Koti,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,400,400,Women,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),14. Roti- Paderna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,344,344,Open,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),15. Sharerna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,227,227,Open,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,10. Doda (Ghat),16. Shiva,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,42,0,253,295,Open,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,1. Barshalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,70,0,159,229,Women,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,2. Bhalwan a,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,250,70,400,Open,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,3. Cheroute,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,140,140,Open,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,4. Dal- Khankote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,599,599,Women,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,5. Dongroo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,20,208,228,Open,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,6. Grather- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,371,371,Open,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,7. Grather- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,80,175,255,Women,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,8. Gundna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,190,190,Open,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,9. Jatheli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,12,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,10 Ludna,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,90,250,340,Women,latin,data/jk/2016/Annex B Doda.pdf,12,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,11. Malwana East,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,0,297,497,Open,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,12. Malwana West,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,290,290,Open,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,13. Mohalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,46,21,234,301,Women,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,14. Persholla- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,330,0,0,330,Open,latin,data/jk/2016/Annex B Doda.pdf,14,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,11. Gundana,15. Persholla- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,201,201,Open,latin,data/jk/2016/Annex B Doda.pdf,14,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,1. Bhatyas,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,206,206,Women,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,2. Budhli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,104,104,Open,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,3. Challer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,150,150,Open,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,4. Champal,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,62,60,10,132,ST Women,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,5. Chanyas,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,500,500,Open,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,6. Gondow- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,0,235,271,Open,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,7. Gondow- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,130,130,Women,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,8. Jakyas- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,189,189,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,9. Jakyas- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,142,142,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,12. Jakyas,10. Tilogra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,290,290,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,1. Bathri,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,89,314,403,ST Women,latin,data/jk/2016/Annex B Doda.pdf,18,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,2. Batogra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,240,240,Open,latin,data/jk/2016/Annex B Doda.pdf,18,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,3. Dharyout h,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,130,20,150,Open,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,4. Goila,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,280,280,Women,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,5. Hallaran,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,138,22,45,205,ST,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,6. Jia,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,202,0,0,202,Open,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,7. Joura,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,22,282,304,Women,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,8. Joura Khurd,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,198,198,Open,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,9. Kansoo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,76,0,63,139,Open,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,10. Kencha/ Bitola,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,106,296,402,Women,latin,data/jk/2016/Annex B Doda.pdf,21,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,11. Malanoo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,195,195,Open,latin,data/jk/2016/Annex B Doda.pdf,21,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,13. Kahara,12. Tanta,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,380,380,Open,latin,data/jk/2016/Annex B Doda.pdf,22,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,1. Dhandal- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,519,519,Women,latin,data/jk/2016/Annex B Doda.pdf,22,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,2. Dhandal- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,353,353,Open,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,3. Gagla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,13,0,243,256,Open,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,4. Kastigarh,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,22,250,272,Women,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,5. Kotli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,26,0,292,318,Open,latin,data/jk/2016/Annex B Doda.pdf,24,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,6. Kuddhar,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,385,385,Open,latin,data/jk/2016/Annex B Doda.pdf,25,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,7. Mund Dhar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,412,412,Women,latin,data/jk/2016/Annex B Doda.pdf,25,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,14. Kastigarh,8. Munddha r lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,215,63,289,567,Open,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,1. Hambal- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,159,159,Women,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,2. Hambal- B,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,295,0,0,295,SC,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,3. Khellani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,60,0,227,287,Open,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,4. Malhori,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,,205,205,Women,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,5. Paryote- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,,202,202,Open,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,6. Paryote- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,50,,81,131,Open,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,7. Sars,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,233,233,Women,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,15. Khellani,8. Sarsi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,245,245,Open,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,1. Bari,,,gp_head,sarpanch,Woman,NONE,1,all_seats,48,0,155,203,Women,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,2. Behota Loga,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,185,185,Open,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,3. Behota Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,147,147,Open,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,4. Goha,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,201,201,Women,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,5. Mangota- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,30,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,6. Mangota- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,180,180,Open,latin,data/jk/2016/Annex B Doda.pdf,30,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,7. Mothi- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,92,113,205,Women,latin,data/jk/2016/Annex B Doda.pdf,31,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,8. Mothi- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,153,153,Open,latin,data/jk/2016/Annex B Doda.pdf,31,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,9. Prabal,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,343,343,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,10. Roat- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,260,260,Women,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,11. Roat- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,0,30,230,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,12. Sarak,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,232,232,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,13. Sewat,,,gp_head,sarpanch,Woman,NONE,1,all_seats,100,0,30,130,Women,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,16. Marmat,14. Upper Behota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,131,36,203,Open,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,1. Bhatoli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,123,75,65,263,Women,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,2. Bhella,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,251,251,Open,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,3. Jangalwa r,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,395,395,Open,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,4. Kandote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,205,0,0,205,Women,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,5. Nandna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,47,9,327,383,Open,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,6. Panthan,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,273,0,0,273,SC,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,7. Phagsoo- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,540,540,Women,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,8. Phagsoo- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,19,324,343,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,9. Sharote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,120,0,0,120,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
-Jammu & Kashmir,2016,Doda,17. Thathri,10. Thathri- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,15,206,221,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Baron Batote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,339,339,Women,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Chakwa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,134,0,417,551,open,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Champa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,78,256,146,480,open,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
-Jammu & Kashmir,2016,of Name of Panch the panch,Batote,Champa,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Dharmoun d,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Karma,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Sana,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,3,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Batote,Sana,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,3,Batote.pdf
-Jammu & Kashmir,2016,of Name of Panch the panch,Batote,Sana,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Batote.pdf,4,Batote.pdf
-Jammu & Kashmir,2016,Ramban,Ghandhri,Bhathan,,,gp_head,sarpanch,Woman,NONE,1,all_seats,16,67,283,366,Women,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
-Jammu & Kashmir,2016,Ramban,Ghandhri,Ganderi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,441,441,Open,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
-Jammu & Kashmir,2016,Ramban,Ghandhri,Ganderi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,359,359,Open,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
-Jammu & Kashmir,2016,Ramban,Ghandhri,Kangha,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ghandhari.pdf,2,Ghandhari.pdf
-Jammu & Kashmir,2016,Ramban,Ghandhri,Tanger,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ghandhari.pdf,2,Ghandhari.pdf
-Jammu & Kashmir,2016,Ramban,Khari,Khari Lower- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,348,348,Women,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
-Jammu & Kashmir,2016,Ramban,Khari,Khari Lower- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,229,229,Open,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
-Jammu & Kashmir,2016,Ramban,Khari,Khari Upper- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,26,427,453,Open,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
-Jammu & Kashmir,2016,Ramban,Khari,Khari Upper- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,450,450,Women,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
-Jammu & Kashmir,2016,halqa Panch as per census,Khari,Khari Upper- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
-Jammu & Kashmir,2016,Ramba n,Khari,Mahu upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
-Jammu & Kashmir,2016,Ramba n,Khari,Mangit,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Ashar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Bankote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Chacknar wah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Chamalwa s Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,2,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Chamalwa s Upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,2,PDF Banihal.pdf
-Jammu & Kashmir,2016,Panch panch,Banihal,Chamalwa s Upper,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Changloo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Doliam Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
-Jammu & Kashmir,2016,Panch panch,Banihal,Doliam Lower,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Doligam Upper-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Gund Adalkote- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Gund Adalkote- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
-Jammu & Kashmir,2016,Panch panch,Banihal,Gund Adalkote- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Karwah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Kaskote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
-Jammu & Kashmir,2016,Panch panch,Banihal,Kaskote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Nagam,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
-Jammu & Kashmir,2016,Ramban,Banihal,Nowgam,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
-Jammu & Kashmir,2016,Samba,1. Bari Brahmana,Birpur Upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,1,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,1. Bari Brahmana,Kartholi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,1,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Total,Kartholi,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,1. Bari Brahmana,Meen Sarkar,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,1. Bari Brahmana,Palli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Bari Brahmana,Patli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Total,Patli,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Bari Brahmana,Smailpur,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Bari Brahmana,Tarore,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,G.Total,13,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Sumb,Blater,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Sumb,Goran,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Total,Goran,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Sumb,Patyari,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Sumb,Samlah,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Total,Samlah,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,38,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Samba,Sumb,Taloor,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,38,PDF Samba Distt.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,326,0,0,326,SC,latin,data/jk/2016/Publication Jammu B.pdf,1,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,22,0,298,320,Women,latin,data/jk/2016/Publication Jammu B.pdf,1,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,220,0,407,627,Women,latin,data/jk/2016/Publication Jammu B.pdf,2,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,349,0,166,515,SC,latin,data/jk/2016/Publication Jammu B.pdf,3,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,87,0,250,337,Women,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,300,0,121,421,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,250,40,289,579,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,300,21,183,504,Women,latin,data/jk/2016/Publication Jammu B.pdf,5,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,73,400,563,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,5,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,200,10,200,410,SC,latin,data/jk/2016/Publication Jammu B.pdf,6,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,100,270,570,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,6,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,400,10,120,530,SC,latin,data/jk/2016/Publication Jammu B.pdf,7,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,100,0,400,500,Women,latin,data/jk/2016/Publication Jammu B.pdf,7,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,100,0,400,500,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,8,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,83,0,341,424,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,8,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,250,10,289,549,Women,latin,data/jk/2016/Publication Jammu B.pdf,9,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,120,0,150,270,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,9,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,145,290,110,545,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,31,0,470,501,Women,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,0,285,321,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,102,0,739,841,Women,latin,data/jk/2016/Publication Jammu B.pdf,12,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,206,0,606,812,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,14,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,206,0,606,812,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,14,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,65,0,440,505,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,15,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,50,0,263,313,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,16,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,145,0,419,564,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,16,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,178,0,462,640,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,17,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,200,0,185,385,SC Women,latin,data/jk/2016/Publication Jammu B.pdf,17,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,98,252,90,440,Women,latin,data/jk/2016/Publication Jammu B.pdf,20,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,46,23,180,248,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,21,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,0,226,316,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,22,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,56,24,72,152,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,22,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,224,0,224,Women,latin,data/jk/2016/Publication Jammu B.pdf,23,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,300,0,321,621,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,25,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,180,0,90,270,Women,latin,data/jk/2016/Publication Jammu B.pdf,27,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,44,0,280,324,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,28,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,382,0,205,587,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,382,42,35,459,SC Women,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,58,0,397,455,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,312,0,196,508,Women,latin,data/jk/2016/Publication Jammu B.pdf,30,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,289,0,137,426,SC,latin,data/jk/2016/Publication Jammu B.pdf,31,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,99,0,53,152,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,31,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,101,0,89,190,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,32,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,60,0,307,367,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,32,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,50,0,452,502,SC,latin,data/jk/2016/Publication Jammu B.pdf,33,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,502,502,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,33,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,297,0,33,330,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,34,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,117,0,452,569,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,34,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,960,960,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,408,408,Women,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,836,0,836,ST,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,701,729,1430,ST WOMEN,latin,data/jk/2016/Publication Jammu B.pdf,36,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Jammu,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,7,450,457,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,36,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,114,0,252,366,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,37,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,332,0,297,629,SC,latin,data/jk/2016/Publication Jammu B.pdf,38,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,330,27,-273,630,SC,latin,data/jk/2016/Publication Jammu B.pdf,38,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,17,15,168,200,Women,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,159,0,0,159,ST,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,20,0,229,249,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,200,0,200,400,Women,latin,data/jk/2016/Publication Jammu B.pdf,40,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,330,330,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,40,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,126,0,220,346,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,41,Publication Jammu B.pdf
-Jammu & Kashmir,2016,JAMMU,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,130,40,100,270,SC,latin,data/jk/2016/Publication Jammu B.pdf,41,Publication Jammu B.pdf
-Jammu & Kashmir,2016,Ramban,Rajgarh,Draman,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,9,138,147,Women,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
-Jammu & Kashmir,2016,Ramban,Rajgarh,Gharhi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,125,0,170,295,Open,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
-Jammu & Kashmir,2016,Ramban,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,46,0,188,233,Open,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
-Jammu & Kashmir,2016,Ramban,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,58,0,168,225,Women,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
-Jammu & Kashmir,2016,Name Name of Number,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Rajgarh.pdf,2,Rajgarh.pdf
-Jammu & Kashmir,2016,Ramban,Rajgarh,Rajgarh,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Rajgarh.pdf,2,Rajgarh.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Ahdwa,,,gp_head,sarpanch,Woman,NONE,1,all_seats,67,36,175,278,Women,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Balawat,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,236,79,315,ST,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Balawat,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,410,410,Open,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Balihote-B,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,,,,,ST women,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Chanderko te,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Dhandhrat h-A (Jawag),,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
-Jammu & Kashmir,2016,of Panch Sarpanch of,Ramban,Dhandhrat h-A (Jawag),,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Dandrath- C (Dugson),,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Demote-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
-Jammu & Kashmir,2016,of Panch Sarpanch of,Ramban,Demote-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Gam,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Ganote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
-Jammu & Kashmir,2016,of Panch Sarpanch of,Ramban,Ganote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,5,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Kunfer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,5,Ramban.pdf
-Jammu & Kashmir,2016,of Panch Sarpanch of,Ramban,Kunfer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Maitra Gibindpora- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Marog,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Marog,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Pernote-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Pernote-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Sawani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
-Jammu & Kashmir,2016,of Panch Sarpanch of,Ramban,Sawani,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Seri-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramban,Sildhar,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Bajmasta,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,19,210,229,Women,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Bhordar-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,332,332,Open,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Bhordar-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,455,455,Open,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
-Jammu & Kashmir,2016,halqa Panch Sarpanch of,Ramsoo,Bhordar-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Dhanmasta- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Dhanmasta- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Neel-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,3,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Neel-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,3,Ramsoo.pdf
-Jammu & Kashmir,2016,halqa Panch Sarpanch of,Ramsoo,Neel-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Neel-D,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Sarbagni-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
-Jammu & Kashmir,2016,halqa Panch Sarpanch of,Ramsoo,Sarbagni-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Shagan,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
-Jammu & Kashmir,2016,halqa Panch Sarpanch of,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,6,Ramsoo.pdf
-Jammu & Kashmir,2016,halqa Panch Sarpanch of,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,6,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Trigam Lower-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,7,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ramsoo,Trigam Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,7,Ramsoo.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Alanbass-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,127,127,Women,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Alanbass-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,85,85,Open,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Bhangara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,27,379,407,Open,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
-Jammu & Kashmir,2016,halqa Sarpanch of,Ukhral,Bhangara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,2,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Maligam-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,2,Ukhral.pdf
-Jammu & Kashmir,2016,halqa Sarpanch of,Ukhral,Maligam-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Panchal-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Panchal-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
-Jammu & Kashmir,2016,halqa Sarpanch of,Ukhral,Panchal-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Phagmulla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Pogal Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
-Jammu & Kashmir,2016,Ramban,Ukhral,Sena Bhatti- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,5,Ukhral.pdf
-Jammu & Kashmir,2016,RRaammbbaann,Ukhral,SSeennaa BBhhaattttii-- BB,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,5,Ukhral.pdf
+state,year,district,district_declared,block,halqa,ward_no,ward_name,tier,tier_local,reservation,caste_reservation,woman_reserved,listing_scope,pop_sc,pop_st,pop_oc,pop_total,reservation_raw,script,source_path,source_page,source_pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,1. Assar- Ginota,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,192,192,Women,latin,data/jk/2016/Annex A Doda.pdf,1,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,2. Bibrota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,389,389,Open,latin,data/jk/2016/Annex A Doda.pdf,1,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,3. Blandpur,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,286,0,3,289,SC,latin,data/jk/2016/Annex A Doda.pdf,2,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,4. Chaka- A-1,,,gp_head,sarpanch,Woman,NONE,1,all_seats,120,0,320,440,Women,latin,data/jk/2016/Annex A Doda.pdf,3,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,5. Chaka- A-2,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,316,316,Open,latin,data/jk/2016/Annex A Doda.pdf,3,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,6. Chaka- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,356,356,Open,latin,data/jk/2016/Annex A Doda.pdf,4,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,7. Chill,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,156,156,Women,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,8. Chirota- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,326,10,336,ST,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,9. Chirota- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,5,247,0,252,Open,latin,data/jk/2016/Annex A Doda.pdf,5,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,10. Kuthyara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,48,0,303,351,Women,latin,data/jk/2016/Annex A Doda.pdf,6,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,11. Ramgarh Kurmail,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,150,0,0,150,SC,latin,data/jk/2016/Annex A Doda.pdf,7,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,12. Ranka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,64,0,170,234,Open,latin,data/jk/2016/Annex A Doda.pdf,7,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,1. Assar,13. Shamthi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,401,401,Open,latin,data/jk/2016/Annex A Doda.pdf,8,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,1. Bheja,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,140,0,55,195,SC Women,latin,data/jk/2016/Annex A Doda.pdf,8,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,2. Butla,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,108,0,108,ST,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,3. Chakka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,310,310,Open,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,4. Chanchor a,,,gp_head,sarpanch,Woman,NONE,1,all_seats,30,0,205,235,Women,latin,data/jk/2016/Annex A Doda.pdf,9,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,5. Chinote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,40,65,165,270,Open,latin,data/jk/2016/Annex A Doda.pdf,10,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,6. Dandi,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,165,0,165,ST,latin,data/jk/2016/Annex A Doda.pdf,10,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,7. Dhareja,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,112,112,Women,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,8. Diggi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,30,10,125,165,Open,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,9. Drodhu,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,126,0,160,286,Open,latin,data/jk/2016/Annex A Doda.pdf,11,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,10. Dugga,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,183,0,82,265,SC Women,latin,data/jk/2016/Annex A Doda.pdf,12,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,11. Gatha,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,284,284,Open,latin,data/jk/2016/Annex A Doda.pdf,12,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,12. Guttassa,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,140,0,20,160,SC,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,13. Hanga,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,149,0,55,204,SC Women,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,14. Jalga,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,18,0,58,76,Open,latin,data/jk/2016/Annex A Doda.pdf,13,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,15. Katyara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,168,168,Open,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,16. Kursari,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,170,170,Women,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,17. Manthla,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,382,0,0,382,SC,latin,data/jk/2016/Annex A Doda.pdf,14,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,18. Manwah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,26,145,171,Open,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,19. Misrata,,,gp_head,sarpanch,Woman,NONE,1,all_seats,44,0,263,307,Women,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,20. Nalthi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,11,254,265,Open,latin,data/jk/2016/Annex A Doda.pdf,15,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,21. Neota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,125,0,80,205,Open,latin,data/jk/2016/Annex A Doda.pdf,16,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,22. Sadder,,,gp_head,sarpanch,Woman,NONE,1,all_seats,25,11,182,218,Women,latin,data/jk/2016/Annex A Doda.pdf,16,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,23. Sarna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,6,0,197,203,Open,latin,data/jk/2016/Annex A Doda.pdf,17,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,24. Sartingal,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,207,207,Open,latin,data/jk/2016/Annex A Doda.pdf,17,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,25. Songai,,,gp_head,sarpanch,Woman,NONE,1,all_seats,46,0,210,256,Women,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,26. Sungli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,30,140,170,Open,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,27. Thanalla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,389,389,Open,latin,data/jk/2016/Annex A Doda.pdf,18,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,28. Thuba,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,0,81,244,325,SC Women,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,29. Udrana- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,266,266,Open,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,2. Bhaderw ah,30. Udrana- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,300,300,Open,latin,data/jk/2016/Annex A Doda.pdf,19,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,1. Bajarni upper,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,192,192,Women,latin,data/jk/2016/Annex A Doda.pdf,20,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,2. Beoli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,21,0,310,331,Open,latin,data/jk/2016/Annex A Doda.pdf,21,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,3. Bhagwah lower-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,302,302,Open,latin,data/jk/2016/Annex A Doda.pdf,21,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,4. Bhagwah lower-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,118,118,Women,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,5. Bhagwah upper-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,344,344,Open,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,6. Bhagwah upper-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,278,278,Open,latin,data/jk/2016/Annex A Doda.pdf,22,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,7. Bijarni Lower-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,226,226,Women,latin,data/jk/2016/Annex A Doda.pdf,23,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,8. Bijarni Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,102,21,210,333,Open,latin,data/jk/2016/Annex A Doda.pdf,24,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,9. Gaddi- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,283,283,Open,latin,data/jk/2016/Annex A Doda.pdf,24,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,10. Gaddi-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,116,85,201,Women,latin,data/jk/2016/Annex A Doda.pdf,25,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,11. Gai Dessa-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,171,171,Open,latin,data/jk/2016/Annex A Doda.pdf,25,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,12. Gai Dessa-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,210,210,Open,latin,data/jk/2016/Annex A Doda.pdf,26,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,13. Gai Dessa-C,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,330,330,Women,latin,data/jk/2016/Annex A Doda.pdf,26,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,14. Ganika,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,209,209,Open,latin,data/jk/2016/Annex A Doda.pdf,27,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,15. Mallan-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,237,237,Open,latin,data/jk/2016/Annex A Doda.pdf,27,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,16. Mallan-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,416,416,Women,latin,data/jk/2016/Annex A Doda.pdf,28,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,17. Manjmi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,225,225,Open,latin,data/jk/2016/Annex A Doda.pdf,28,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,3. Bhagwah,18. Malwas,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,154,154,Open,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,1 Berru,,,gp_head,sarpanch,Woman,NONE,1,all_seats,14,14,263,291,Women,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,2. Choundri,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,25,0,231,256,Open,latin,data/jk/2016/Annex A Doda.pdf,29,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,3. Derka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,243,243,Open,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,4. Dugli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,270,270,Women,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,5. Gajoth,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,0,230,320,Open,latin,data/jk/2016/Annex A Doda.pdf,30,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,6. Guraka,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,0,255,335,Open,latin,data/jk/2016/Annex A Doda.pdf,31,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,7. Kari Chattra,,,gp_head,sarpanch,Woman,NONE,1,all_seats,90,0,240,330,Women,latin,data/jk/2016/Annex A Doda.pdf,31,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,8. Khellani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,26,0,160,186,Open,latin,data/jk/2016/Annex A Doda.pdf,32,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,9. Panjgraie n,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,6,284,290,Open,latin,data/jk/2016/Annex A Doda.pdf,32,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,10. Pranu,,,gp_head,sarpanch,Woman,NONE,1,all_seats,40,81,166,287,Women,latin,data/jk/2016/Annex A Doda.pdf,33,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,11. Reware,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,127,48,130,305,SC,latin,data/jk/2016/Annex A Doda.pdf,33,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,12. Shangroo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,201,80,102,383,Open,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,13. Sindra,,,gp_head,sarpanch,Woman,NONE,1,all_seats,66,0,354,420,Women,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,14. Soura,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,357,357,Open,latin,data/jk/2016/Annex A Doda.pdf,34,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,15. Southa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,152,152,Open,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,4. Bhalla,16. Trown,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,42,309,351,Women,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,1. Batara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,131,0,109,240,Women,latin,data/jk/2016/Annex A Doda.pdf,35,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,2. Bharghi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,180,80,40,300,Open,latin,data/jk/2016/Annex A Doda.pdf,36,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,3. Chonwer y,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,57,24,234,315,Open,latin,data/jk/2016/Annex A Doda.pdf,36,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,4. Darie,,,gp_head,sarpanch,Woman,NONE,1,all_seats,191,0,127,318,Women,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,5. Dhadkie- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,165,0,165,ST,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,6. Dhadkie- B,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,140,0,140,ST,latin,data/jk/2016/Annex A Doda.pdf,37,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,7. Dherwari- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,196,196,Women,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,8. Dherwari- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,16,0,172,188,Open,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,9. Gandoh,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,2,290,3,295,ST,latin,data/jk/2016/Annex A Doda.pdf,38,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,10 Kandolu,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,42,115,14,171,ST Women,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,11. Kharanga l,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,115,0,185,300,Open,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,12. Shengani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,65,90,175,330,Open,latin,data/jk/2016/Annex A Doda.pdf,39,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,13. Sinoo,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,66,58,124,Women,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,5. Bhallessa,14. Trithloo,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,204,45,249,ST,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,1. Achhair,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,144,144,Women,latin,data/jk/2016/Annex A Doda.pdf,40,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,2. Alnigung ota-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,169,16,185,Open,latin,data/jk/2016/Annex A Doda.pdf,41,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,3. Alnigung ota-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,93,0,150,243,Open,latin,data/jk/2016/Annex A Doda.pdf,41,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,4. Barthi,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,203,203,Women,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,5. Chancer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,106,106,Open,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,6 Changa- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,251,251,Open,latin,data/jk/2016/Annex A Doda.pdf,42,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,7. Changa- B,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,0,150,150,ST Women,latin,data/jk/2016/Annex A Doda.pdf,43,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,8. Chantibal a,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,534,30,40,604,SC,latin,data/jk/2016/Annex A Doda.pdf,43,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,9. Dohassa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,188,188,Open,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,10. Dudwar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,290,290,Women,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,11. Gawari,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,393,393,Open,latin,data/jk/2016/Annex A Doda.pdf,44,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,12. Gurekhra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,151,151,Open,latin,data/jk/2016/Annex A Doda.pdf,45,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,13. Inharra,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,90,0,0,90,SC Women,latin,data/jk/2016/Annex A Doda.pdf,45,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,14. Kaljugas ar-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,180,0,65,245,Open,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,15. Kaljugas ar-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,172,106,358,Open,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,16. Kilhotran,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,180,180,Women,latin,data/jk/2016/Annex A Doda.pdf,46,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,17. Porapain,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,190,20,75,285,Open,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,18. Samaie,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,152,99,0,251,Open,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,19. Tantli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,4,0,174,178,Women,latin,data/jk/2016/Annex A Doda.pdf,47,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,6. Changa,20. Thalorn,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,194,194,Open,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,1. Bhatoli,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,9,279,33,321,ST Women,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,2. Chilibala,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,60,190,250,Open,latin,data/jk/2016/Annex A Doda.pdf,48,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,3. Chilli- Pain,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,98,60,93,251,ST,latin,data/jk/2016/Annex A Doda.pdf,49,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,4. Haddel,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,179,0,179,ST Women,latin,data/jk/2016/Annex A Doda.pdf,49,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,5. Manoo- A,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,180,12,192,ST,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,6. Manoo- B,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,199,20,219,ST,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,7. Mukhsys as,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,200,12,212,ST Women,latin,data/jk/2016/Annex A Doda.pdf,50,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,7. Chili Pingal,8. Sanwara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,92,102,194,Open,latin,data/jk/2016/Annex A Doda.pdf,51,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,1. Bhallara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,102,0,159,261,Women,latin,data/jk/2016/Annex A Doda.pdf,51,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,2. Chagsoo,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,24,0,141,165,SC,latin,data/jk/2016/Annex A Doda.pdf,52,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,3. Chiralla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,55,28,361,444,Open,latin,data/jk/2016/Annex A Doda.pdf,52,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,4. Jagota,,,gp_head,sarpanch,Woman,NONE,1,all_seats,10,0,87,97,Women,latin,data/jk/2016/Annex A Doda.pdf,53,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,5. Panshei,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,253,253,Open,latin,data/jk/2016/Annex A Doda.pdf,53,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,6. Puneja,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,218,0,88,306,SC,latin,data/jk/2016/Annex A Doda.pdf,54,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,7. Rokali,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,451,451,Women,latin,data/jk/2016/Annex A Doda.pdf,54,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,8. Sonartha wa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,30,0,400,430,Open,latin,data/jk/2016/Annex A Doda.pdf,55,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,8. Chiralla,9. Thellella,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,370,370,Open,latin,data/jk/2016/Annex A Doda.pdf,55,Annex A Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,1 Bagla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,310,310,Women,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,2. Barath- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,29,182,211,Open,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,3. Barath- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,4,215,74,293,Open,latin,data/jk/2016/Annex B Doda.pdf,1,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,4. Dhar- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,186,186,Women,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,5. Kalihand,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,256,256,Open,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,6. Kulhand,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,135,0,336,471,Open,latin,data/jk/2016/Annex B Doda.pdf,2,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,7. Seel,,,gp_head,sarpanch,Woman,NONE,1,all_seats,58,0,171,229,Women,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,8. Udyanpu r,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,283,283,Open,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,9. Dali Udyanpu r,9.Ugad,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,3,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),1. Arnora- L,,,gp_head,sarpanch,Woman,NONE,1,all_seats,36,0,453,489,Women,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),2. Arnora- U,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,347,347,Open,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),3. Bhaboor,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,112,112,Open,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),4. Birshalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,275,275,Women,latin,data/jk/2016/Annex B Doda.pdf,4,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),5. Dashnan,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,190,190,Open,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),6. Dhar- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,259,259,Open,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),7. Dhara- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,186,186,Women,latin,data/jk/2016/Annex B Doda.pdf,5,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),8. Dhara- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,2 2 9,2 2 9,O p e n,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),9. Hanch,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,236,0,126,362,Open,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),10. Jijote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,189,189,Women,latin,data/jk/2016/Annex B Doda.pdf,6,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),11. Jodhpur- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,74,0,82,156,Open,latin,data/jk/2016/Annex B Doda.pdf,7,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),12. Jodhpur- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,24,0,109,133,Open,latin,data/jk/2016/Annex B Doda.pdf,7,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),13. Koti,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,400,400,Women,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),14. Roti- Paderna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,344,344,Open,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),15. Sharerna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,227,227,Open,latin,data/jk/2016/Annex B Doda.pdf,8,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,10. Doda (Ghat),16. Shiva,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,42,0,253,295,Open,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,1. Barshalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,70,0,159,229,Women,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,2. Bhalwan a,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,80,250,70,400,Open,latin,data/jk/2016/Annex B Doda.pdf,9,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,3. Cheroute,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,140,140,Open,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,4. Dal- Khankote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,599,599,Women,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,5. Dongroo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,20,208,228,Open,latin,data/jk/2016/Annex B Doda.pdf,10,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,6. Grather- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,371,371,Open,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,7. Grather- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,80,175,255,Women,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,8. Gundna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,190,190,Open,latin,data/jk/2016/Annex B Doda.pdf,11,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,9. Jatheli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,12,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,10 Ludna,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,90,250,340,Women,latin,data/jk/2016/Annex B Doda.pdf,12,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,11. Malwana East,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,0,297,497,Open,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,12. Malwana West,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,290,290,Open,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,13. Mohalla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,46,21,234,301,Women,latin,data/jk/2016/Annex B Doda.pdf,13,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,14. Persholla- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,330,0,0,330,Open,latin,data/jk/2016/Annex B Doda.pdf,14,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,11. Gundana,15. Persholla- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,201,201,Open,latin,data/jk/2016/Annex B Doda.pdf,14,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,1. Bhatyas,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,206,206,Women,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,2. Budhli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,104,104,Open,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,3. Challer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,150,150,Open,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,4. Champal,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,62,60,10,132,ST Women,latin,data/jk/2016/Annex B Doda.pdf,15,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,5. Chanyas,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,500,500,Open,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,6. Gondow- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,0,235,271,Open,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,7. Gondow- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,130,130,Women,latin,data/jk/2016/Annex B Doda.pdf,16,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,8. Jakyas- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,189,189,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,9. Jakyas- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,142,142,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,12. Jakyas,10. Tilogra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,290,290,Open,latin,data/jk/2016/Annex B Doda.pdf,17,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,1. Bathri,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,89,314,403,ST Women,latin,data/jk/2016/Annex B Doda.pdf,18,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,2. Batogra,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,240,240,Open,latin,data/jk/2016/Annex B Doda.pdf,18,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,3. Dharyout h,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,130,20,150,Open,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,4. Goila,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,280,280,Women,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,5. Hallaran,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,138,22,45,205,ST,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,6. Jia,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,202,0,0,202,Open,latin,data/jk/2016/Annex B Doda.pdf,19,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,7. Joura,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,22,282,304,Women,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,8. Joura Khurd,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,198,198,Open,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,9. Kansoo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,76,0,63,139,Open,latin,data/jk/2016/Annex B Doda.pdf,20,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,10. Kencha/ Bitola,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,106,296,402,Women,latin,data/jk/2016/Annex B Doda.pdf,21,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,11. Malanoo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,195,195,Open,latin,data/jk/2016/Annex B Doda.pdf,21,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,13. Kahara,12. Tanta,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,380,380,Open,latin,data/jk/2016/Annex B Doda.pdf,22,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,1. Dhandal- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,519,519,Women,latin,data/jk/2016/Annex B Doda.pdf,22,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,2. Dhandal- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,353,353,Open,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,3. Gagla,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,13,0,243,256,Open,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,4. Kastigarh,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,22,250,272,Women,latin,data/jk/2016/Annex B Doda.pdf,23,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,5. Kotli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,26,0,292,318,Open,latin,data/jk/2016/Annex B Doda.pdf,24,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,6. Kuddhar,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,385,385,Open,latin,data/jk/2016/Annex B Doda.pdf,25,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,7. Mund Dhar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,412,412,Women,latin,data/jk/2016/Annex B Doda.pdf,25,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,14. Kastigarh,8. Munddha r lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,215,63,289,567,Open,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,1. Hambal- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,159,159,Women,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,2. Hambal- B,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,295,0,0,295,SC,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,3. Khellani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,60,0,227,287,Open,latin,data/jk/2016/Annex B Doda.pdf,26,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,4. Malhori,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,,205,205,Women,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,5. Paryote- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,,202,202,Open,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,6. Paryote- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,50,,81,131,Open,latin,data/jk/2016/Annex B Doda.pdf,27,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,7. Sars,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,233,233,Women,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,15. Khellani,8. Sarsi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,245,245,Open,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,1. Bari,,,gp_head,sarpanch,Woman,NONE,1,all_seats,48,0,155,203,Women,latin,data/jk/2016/Annex B Doda.pdf,28,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,2. Behota Loga,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,185,185,Open,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,3. Behota Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,147,147,Open,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,4. Goha,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,201,201,Women,latin,data/jk/2016/Annex B Doda.pdf,29,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,5. Mangota- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,230,230,Open,latin,data/jk/2016/Annex B Doda.pdf,30,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,6. Mangota- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,180,180,Open,latin,data/jk/2016/Annex B Doda.pdf,30,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,7. Mothi- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,92,113,205,Women,latin,data/jk/2016/Annex B Doda.pdf,31,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,8. Mothi- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,153,153,Open,latin,data/jk/2016/Annex B Doda.pdf,31,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,9. Prabal,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,343,343,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,10. Roat- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,260,260,Women,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,11. Roat- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,0,30,230,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,12. Sarak,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,232,232,Open,latin,data/jk/2016/Annex B Doda.pdf,32,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,13. Sewat,,,gp_head,sarpanch,Woman,NONE,1,all_seats,100,0,30,130,Women,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,16. Marmat,14. Upper Behota,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,131,36,203,Open,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,1. Bhatoli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,123,75,65,263,Women,latin,data/jk/2016/Annex B Doda.pdf,33,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,2. Bhella,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,251,251,Open,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,3. Jangalwa r,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,395,395,Open,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,4. Kandote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,205,0,0,205,Women,latin,data/jk/2016/Annex B Doda.pdf,34,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,5. Nandna,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,47,9,327,383,Open,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,6. Panthan,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,273,0,0,273,SC,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,7. Phagsoo- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,540,540,Women,latin,data/jk/2016/Annex B Doda.pdf,35,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,8. Phagsoo- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,19,324,343,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,9. Sharote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,120,0,0,120,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
+Jammu & Kashmir,2016,Doda,,17. Thathri,10. Thathri- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,15,206,221,Open,latin,data/jk/2016/Annex B Doda.pdf,36,Annex B Doda.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Baron Batote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,339,339,Women,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Chakwa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,134,0,417,551,open,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Champa,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,78,256,146,480,open,latin,data/jk/2016/Batote.pdf,1,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Champa,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Dharmoun d,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Karma,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,2,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Sana,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,3,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Sana,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,open,latin,data/jk/2016/Batote.pdf,3,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Batote,Sana,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Batote.pdf,4,Batote.pdf
+Jammu & Kashmir,2016,Ramban,,Ghandhri,Bhathan,,,gp_head,sarpanch,Woman,NONE,1,all_seats,16,67,283,366,Women,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
+Jammu & Kashmir,2016,Ramban,,Ghandhri,Ganderi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,441,441,Open,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
+Jammu & Kashmir,2016,Ramban,,Ghandhri,Ganderi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,359,359,Open,latin,data/jk/2016/Ghandhari.pdf,1,Ghandhari.pdf
+Jammu & Kashmir,2016,Ramban,,Ghandhri,Kangha,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ghandhari.pdf,2,Ghandhari.pdf
+Jammu & Kashmir,2016,Ramban,,Ghandhri,Tanger,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ghandhari.pdf,2,Ghandhari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Khari Lower- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,348,348,Women,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Khari Lower- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,229,229,Open,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Khari Upper- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,26,427,453,Open,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Khari Upper- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,450,450,Women,latin,data/jk/2016/Khari.pdf,1,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Khari Upper- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Mahu upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Khari,Mangit,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Khari.pdf,2,Khari.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Ashar,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Bankote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Chacknar wah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,1,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Chamalwa s Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,2,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Chamalwa s Upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,2,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Chamalwa s Upper,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Changloo,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Doliam Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,3,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Doliam Lower,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Doligam Upper-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Gund Adalkote- A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Gund Adalkote- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,4,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Gund Adalkote- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Karwah,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Kaskote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,5,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Kaskote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Nagam,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
+Jammu & Kashmir,2016,Ramban,,Banihal,Nowgam,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Banihal.pdf,6,PDF Banihal.pdf
+Jammu & Kashmir,2016,Samba,,1. Bari Brahmana,Birpur Upper,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,1,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,1. Bari Brahmana,Kartholi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,1,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Total,Kartholi,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,1. Bari Brahmana,Meen Sarkar,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,1. Bari Brahmana,Palli,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Bari Brahmana,Patli,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,2,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Total,Patli,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Bari Brahmana,Smailpur,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Bari Brahmana,Tarore,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,3,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,G.Total,13,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Sumb,Blater,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Sumb,Goran,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,36,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Total,Goran,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Sumb,Patyari,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Sumb,Samlah,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,,,,,SC,latin,data/jk/2016/PDF Samba Distt.pdf,37,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Total,Samlah,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/PDF Samba Distt.pdf,38,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Samba,,Sumb,Taloor,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/PDF Samba Distt.pdf,38,PDF Samba Distt.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,326,0,0,326,SC,latin,data/jk/2016/Publication Jammu B.pdf,1,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,22,0,298,320,Women,latin,data/jk/2016/Publication Jammu B.pdf,1,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,220,0,407,627,Women,latin,data/jk/2016/Publication Jammu B.pdf,2,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,349,0,166,515,SC,latin,data/jk/2016/Publication Jammu B.pdf,3,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,87,0,250,337,Women,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,300,0,121,421,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,250,40,289,579,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,4,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,300,21,183,504,Women,latin,data/jk/2016/Publication Jammu B.pdf,5,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,73,400,563,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,5,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,200,10,200,410,SC,latin,data/jk/2016/Publication Jammu B.pdf,6,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,200,100,270,570,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,6,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,400,10,120,530,SC,latin,data/jk/2016/Publication Jammu B.pdf,7,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,100,0,400,500,Women,latin,data/jk/2016/Publication Jammu B.pdf,7,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,100,0,400,500,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,8,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,83,0,341,424,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,8,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,250,10,289,549,Women,latin,data/jk/2016/Publication Jammu B.pdf,9,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,120,0,150,270,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,9,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,145,290,110,545,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,31,0,470,501,Women,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,36,0,285,321,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,11,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,102,0,739,841,Women,latin,data/jk/2016/Publication Jammu B.pdf,12,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,206,0,606,812,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,14,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,206,0,606,812,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,14,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,65,0,440,505,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,15,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,50,0,263,313,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,16,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,145,0,419,564,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,16,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,178,0,462,640,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,17,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,200,0,185,385,SC Women,latin,data/jk/2016/Publication Jammu B.pdf,17,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,98,252,90,440,Women,latin,data/jk/2016/Publication Jammu B.pdf,20,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,46,23,180,248,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,21,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,90,0,226,316,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,22,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,56,24,72,152,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,22,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,224,0,224,Women,latin,data/jk/2016/Publication Jammu B.pdf,23,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,300,0,321,621,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,25,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,180,0,90,270,Women,latin,data/jk/2016/Publication Jammu B.pdf,27,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,44,0,280,324,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,28,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,382,0,205,587,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Woman,SC,1,all_seats,382,42,35,459,SC Women,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,58,0,397,455,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,29,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,312,0,196,508,Women,latin,data/jk/2016/Publication Jammu B.pdf,30,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,289,0,137,426,SC,latin,data/jk/2016/Publication Jammu B.pdf,31,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,99,0,53,152,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,31,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,101,0,89,190,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,32,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,60,0,307,367,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,32,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,50,0,452,502,SC,latin,data/jk/2016/Publication Jammu B.pdf,33,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,502,502,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,33,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,297,0,33,330,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,34,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,117,0,452,569,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,34,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,960,960,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,408,408,Women,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,836,0,836,ST,latin,data/jk/2016/Publication Jammu B.pdf,35,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,0,701,729,1430,ST WOMEN,latin,data/jk/2016/Publication Jammu B.pdf,36,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Jammu,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,7,450,457,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,36,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,114,0,252,366,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,37,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,332,0,297,629,SC,latin,data/jk/2016/Publication Jammu B.pdf,38,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,330,27,-273,630,SC,latin,data/jk/2016/Publication Jammu B.pdf,38,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,17,15,168,200,Women,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,159,0,0,159,ST,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,20,0,229,249,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,39,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Woman,NONE,1,all_seats,200,0,200,400,Women,latin,data/jk/2016/Publication Jammu B.pdf,40,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,330,330,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,40,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,126,0,220,346,OPEN,latin,data/jk/2016/Publication Jammu B.pdf,41,Publication Jammu B.pdf
+Jammu & Kashmir,2016,JAMMU,,Publication Jammu B,,,,gp_head,sarpanch,SC Other than Woman,SC,0,all_seats,130,40,100,270,SC,latin,data/jk/2016/Publication Jammu B.pdf,41,Publication Jammu B.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Draman,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,9,138,147,Women,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Gharhi,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,125,0,170,295,Open,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,46,0,188,233,Open,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,58,0,168,225,Women,latin,data/jk/2016/Rajgarh.pdf,1,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Jhatgali-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Rajgarh.pdf,2,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Rajgarh,Rajgarh,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Rajgarh.pdf,2,Rajgarh.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Ahdwa,,,gp_head,sarpanch,Woman,NONE,1,all_seats,67,36,175,278,Women,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Balawat,,,gp_head,sarpanch,ST Other than Woman,ST,0,all_seats,0,236,79,315,ST,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Balawat,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,410,410,Open,latin,data/jk/2016/Ramban.pdf,1,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Balihote-B,,,gp_head,sarpanch,ST Woman,ST,1,all_seats,,,,,ST women,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Chanderko te,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Dhandhrat h-A (Jawag),,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,2,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Dhandhrat h-A (Jawag),,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Dandrath- C (Dugson),,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Demote-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,3,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Demote-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Gam,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Ganote,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,4,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Ganote,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,5,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Kunfer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,5,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Kunfer,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Maitra Gibindpora- B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Marog,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Marog,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,6,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Pernote-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Pernote-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Sawani,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,7,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Sawani,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Seri-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramban,Sildhar,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramban.pdf,8,Ramban.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Bajmasta,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,19,210,229,Women,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Bhordar-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,332,332,Open,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Bhordar-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,455,455,Open,latin,data/jk/2016/Ramsoo.pdf,1,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Bhordar-B,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Dhanmasta- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Dhanmasta- B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,2,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Neel-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,3,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Neel-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,3,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Neel-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Neel-D,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Sarbagni-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,4,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Sarbagni-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Shagan,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,5,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,6,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Sujmatna-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ramsoo.pdf,6,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Trigam Lower-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,7,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ramsoo,Trigam Lower-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ramsoo.pdf,7,Ramsoo.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Alanbass-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,0,0,127,127,Women,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Alanbass-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,0,85,85,Open,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Bhangara,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,0,27,379,407,Open,latin,data/jk/2016/Ukhral.pdf,1,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Bhangara,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,2,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Maligam-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,2,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Maligam-A,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Panchal-A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Panchal-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,3,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Panchal-B,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Phagmulla,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Pogal Lower,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,4,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,Sena Bhatti- A,,,gp_head,sarpanch,Woman,NONE,1,all_seats,,,,,Women,latin,data/jk/2016/Ukhral.pdf,5,Ukhral.pdf
+Jammu & Kashmir,2016,Ramban,,Ukhral,SSeennaa BBhhaattttii-- BB,,,gp_head,sarpanch,Other than Woman,NONE,0,all_seats,,,,,Open,latin,data/jk/2016/Ukhral.pdf,5,Ukhral.pdf

@@ -33,6 +33,7 @@ than a defect.
 | `woman_reserved` | boolean | error | ≤0% blank | 1 if reserved for a woman. |
 | `reservation` | enum | error | one of `Woman`, `Other than Woman`, `SC Woman`, `SC Other than Woman`, `ST Woman`, `ST Other than Woman`, `BC Woman`, `BC Other than Woman`; ≤0% blank | The two fields above, joined. Written separately from them, so it can disagree with them - which is checked as a row rule. |
 | `reservation_raw` | string | error | length 1–120; ≤0% blank | The source cell, untouched, so any row can be audited. |
+| `district_declared` | boolean | info | — | Set where the district was declared from a roster outside the corpus rather than read from the document. Eight of J&K's 2010 blocks name no district anywhere in their file; saying so is the difference between a reading and an assertion. |
 | `listing_scope` | enum | warn | one of `all_seats`, `reserved_only` | J&K's 2018 documents list only the reserved wards, so any share computed from them is a property of the document. Absent means all_seats. |
 | `winner` | string | warn | length 2–60; ≤60% blank | Only some states publish the elected member. |
 | `votes` | integer | warn | range 0–100000; ≤60% blank | Goa 2012 only. |
@@ -56,7 +57,7 @@ than a defect.
 | `gender_stated` | boolean | warn | ≤0% blank | Whether the source actually stated this seat's gender. Where a document marks only the women's seats a bare code is a man; where it marks both, a bare code is a marker that did not survive the scan, and woman_reserved=0 there is a guess. Filter on this before computing a women's share. |
 | `printings_agree` | boolean | warn | — | Whether the gazette's separate statements of this seat say the same thing. Blank where the seat is stated only once - which is not the same as agreeing. Two independent typesettings agreeing is the strongest evidence available here that a row was read correctly. |
 | `text_source` | enum | info | one of `ocr`, `embedded` | Whether the row came from our own OCR or the PDF's embedded text layer, which for AP is itself faulty OCR. |
-| `script` | enum | error | one of `latin`, `krutidev`; ≤0% blank | Which typesetting the row was read from. |
+| `script` | enum | error | one of `latin`, `krutidev`, `devanagari`; ≤0% blank | Which typesetting the row was read from. |
 | `source_pdf` | string | error | length 4–80; ≤0% blank |  |
 | `source_path` | path | error | ≤0% blank | Relative to data/, and checked by opening it rather than by matching a pattern - a first attempt at a filename regex rejected 1,783 perfectly good Jharkhand rows because one file is called 'Gomia_GPS, GPM & GPVM.pdf'. What matters is that the document is there, not what it is called. |
 | `source_page` | integer | error | range 1–2000; ≤0% blank |  |

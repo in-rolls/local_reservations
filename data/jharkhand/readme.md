@@ -8,10 +8,10 @@
 
 | Year | Tier | Rows | Women | Districts | vs published | Notes |
 |---|---|---|---|---|---|---|
-| 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts |
-| 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts |
-| 2015 | `gp_ward` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts |
-| 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts |
+| 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | partial: 15 of 24 districts |
+| 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | partial: 16 of 24 districts |
+| 2015 | `gp_ward` | 6,174 | 52% | 5 | — | partial: 5 of 24 districts |
+| 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | partial: 4 of 24 districts |
 
 Read the notes before the numbers — several of them say that a share is a property of which pages were published rather than of the state.
 
