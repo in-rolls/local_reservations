@@ -121,6 +121,31 @@ LISTING_SCOPE = {
 }
 
 
+# What stage of document a slice came from. This decides whether "no winner
+# recorded" is a fact about the document or a gap in our collecting: a pre-poll
+# reservation roster names no winner and never will, while for anything else a
+# results notification may exist that nobody has looked for. An absent entry is
+# an open question, not a default.
+#
+#   pre_poll   a reservation roster drawn before the election
+#   result     a notification published after, naming who won
+DOCUMENT_STAGE = {
+    ("Goa", "2012", "gp_ward"): "result",
+    ("Goa", "2017", "gp_ward"): "pre_poll",
+    ("Goa", "2022", "gp_ward"): "pre_poll",
+    ("Jharkhand", "2015", "gp_head"): "result",
+    ("Jharkhand", "2015", "gp_ward"): "result",
+    ("Jharkhand", "2015", "block_member"): "result",
+    ("Jharkhand", "2015", "zp_member"): "result",
+    ("Andhra Pradesh", "2020", "gp_head"): "pre_poll",
+    ("Andhra Pradesh", "2020", "gp_ward"): "pre_poll",
+}
+
+
+def document_stage(state, year, tier):
+    return DOCUMENT_STAGE.get((state, year, tier))
+
+
 def listing_scope(state, year, tier):
     return LISTING_SCOPE.get((state, year, tier), "all_seats")
 

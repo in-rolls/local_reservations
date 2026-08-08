@@ -11,6 +11,16 @@ files, from `data/inventory.csv` for states still raw, and from the sibling
 repositories, then checks that every link resolves. It drifted twice while
 hand-maintained, so it is no longer hand-maintained.
 
+<!-- worklist:start -->
+
+| | Entries | Rows affected |
+|---|---|---|
+| [Open gaps](WORKLIST.md) | 24 | 97,999 |
+| [Undetermined](WORKLIST.md) | 6 | 12,985 |
+| [Accepted properties of the sources](WORKLIST.md) | 6 | 53,333 |
+
+<!-- worklist:end -->
+
 ## What we have
 
 One row per state, year and tier — the grain the data actually has. The notes

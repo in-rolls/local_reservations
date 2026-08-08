@@ -341,6 +341,7 @@ def _notes(state, year, tier, rows, districts):
         share = 100.0 * sum(1 for f in known if f == "1") / len(known)
         notes.append(f"ward list complete for {share:.0f}% of rows with a "
                      f"stated count")
+    # the full reasoning, and what would close each gap, lives in WORKLIST.md
     return notes
 
 
