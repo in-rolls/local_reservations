@@ -365,9 +365,14 @@ def parse_stacked(path, district):
     put block seats and ward seats in one bucket.
     """
     rows = []
+    block = ""
     with pdfplumber.open(str(path)) as pdf:
         for page in pdf.pages:
-            lines = (page.extract_text(layout=True) or "").split("\n")
+            text = page.extract_text(layout=True) or ""
+            header = RE_BLOCK.search(text)
+            if header:
+                block = clean(header.group(1))
+            lines = text.split("\n")
             for index, line in enumerate(lines):
                 caste_at = STACKED_CASTE.search(line)
                 if not caste_at:
@@ -375,9 +380,12 @@ def parse_stacked(path, district):
                 gender_at = STACKED_GENDER.search(line, caste_at.end())
                 if not gender_at:
                     continue
+                # Pakur's mukhiya list, and Ranchi's, name no seat at all -
+                # the gender is the last column and no panchayat is identified
+                # anywhere on the page. Those rows are still a reservation for
+                # a real seat; they simply do not say which, so they are kept
+                # with an empty identifier rather than dropped. 364 rows.
                 seat = line[gender_at.end():].strip()
-                if not seat:
-                    continue
                 left = [line[:caste_at.start()]]
                 for other in (index - 1, index + 1):
                     if 0 <= other < len(lines) and not STACKED_CASTE.search(lines[other]):
@@ -405,11 +413,14 @@ def parse_stacked(path, district):
                 # "XX jk¡ph @01@01@yijk& ¼2½". 88 rows whose post read only
                 # "gram panchayat" were heads filed as ward members until this
                 # looked at what the seat itself says.
-                if tier == "ward_member" and not split_seat_id(
+                # only where there is an identifier to read - with none, the
+                # post text is the only evidence and overriding it would turn
+                # every unidentified ward seat into a panchayat head
+                if seat and tier == "ward_member" and not split_seat_id(
                         seat, "ward_member").get("seat_no"):
                     tier = "mukhiya"
                 rows.append(emit.stamp(seat_row(
-                    district, "", tier, caste, woman, seat, name,
+                    district, block, tier, caste, woman, seat, name,
                     f"{line[caste_at.start():gender_at.start()].strip()} | "
                     f"{gender_at.group(1)}"), path, page.page_number, ROOT))
     return rows

@@ -129,29 +129,29 @@ Jharkhand,2015,block_member,seat_key_unique,internal,warn,249,0,"largest group 2
 Jharkhand,2015,block_member,tier_local_maps_to_one_tier,internal,pass,panchayat_samiti,block_member,
 Jharkhand,2015,block_member,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,block_member,provenance_resolves,internal,pass,0,0,24 documents
-Jharkhand,2015,gp_head,rows_in_band,declared,pass,2637,1000..4400,
+Jharkhand,2015,gp_head,rows_in_band,declared,pass,2745,1000..4400,
 Jharkhand,2015,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 35%>35%; gp_no 63%>60%; seat_no 99%>90%,,3 column(s) over tolerance
-Jharkhand,2015,gp_head,coverage_vs_published,external,warn,2637 (61%),4345 gram panchayats,seats
-Jharkhand,2015,gp_head,women_share_vs_statute,external,pass,52.0%,floor 50%,
+Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 38%>35%; gp_no 65%>60%; seat_no 99%>90%,,3 column(s) over tolerance
+Jharkhand,2015,gp_head,coverage_vs_published,external,warn,2745 (63%),4345 gram panchayats,seats
+Jharkhand,2015,gp_head,women_share_vs_statute,external,pass,51.8%,floor 50%,
 Jharkhand,2015,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_head,seat_key_unique,internal,warn,59,0,"largest group 27 at ('Deoghar', '', '', '', '')"
+Jharkhand,2015,gp_head,seat_key_unique,internal,warn,167,0,"largest group 106 at ('Pakur', '', '', '', '')"
 Jharkhand,2015,gp_head,tier_local_maps_to_one_tier,internal,pass,mukhiya,gp_head,
 Jharkhand,2015,gp_head,year_constant,internal,pass,2015,2015,
-Jharkhand,2015,gp_head,provenance_resolves,internal,pass,0,0,45 documents
-Jharkhand,2015,gp_ward,rows_in_band,declared,pass,8206,1000..12000,
+Jharkhand,2015,gp_head,provenance_resolves,internal,pass,0,0,46 documents
+Jharkhand,2015,gp_ward,rows_in_band,declared,pass,8345,1000..12000,
 Jharkhand,2015,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Jharkhand,2015,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Jharkhand,2015,gp_ward,coverage_vs_published,external,skip,8206,,no published total for this slice
+Jharkhand,2015,gp_ward,coverage_vs_published,external,skip,8345,,no published total for this slice
 Jharkhand,2015,gp_ward,women_share_vs_statute,external,pass,52.8%,floor 50%,
 Jharkhand,2015,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,402,0,"largest group 43 at ('Lohardaga', '', '', '', '')"
+Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,541,0,"largest group 139 at ('Ranchi', '', '', '', '')"
 Jharkhand,2015,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward_member,gp_ward,
 Jharkhand,2015,gp_ward,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,gp_ward,provenance_resolves,internal,pass,0,0,20 documents

@@ -42,7 +42,18 @@ KD_WOMAN = "efgyk"                              # mahila
 KD_OTHER = "vU;"                                # anya - the "not a woman" cell
 KD_OTHER_THAN = "flok;"                         # sivay - "other than"
 
-VACANT = ("rikt", "riet", "vacant", "fjDr", "[kkyh")
+# Unicode Devanagari, which is what OCR of a scanned notification returns -
+# Jharkhand's six scanned districts are the same PROFORMA-23 form as its text
+# ones, just photographed. Janjati has to be tested before jati for the same
+# reason its Kruti Dev spelling does: the first contains the second.
+DEV_ST = re.compile(r"अनु\S*\s*जन\s*जाति|जनजाति")
+DEV_SC = re.compile(r"अनु\S*\s*जाति")
+DEV_BC = re.compile(r"पिछ\S*\s*वर्ग")
+DEV_NONE = re.compile(r"अनारक्षित|अनारछित")
+DEV_WOMAN = "महिला"
+DEV_OTHER = "अन्य"
+
+VACANT = ("rikt", "riet", "vacant", "fjDr", "[kkyh", "रिक्त")
 
 # ------------------------------------------------------------- short codes
 # Goa, Andhra and J&K print codes rather than phrases. Matched on the
@@ -120,6 +131,18 @@ def caste_of(text):
     if KD_UNRESERVED.search(kd) or KD_UNRESERVED.search(tight):
         return "NONE"
 
+    # Devanagari, in the same order and for the same reason as the Kruti Dev
+    # above: "अन्य पिछड़ा वर्ग" contains "अन्य", so backward class has to be
+    # decided before the word that also marks gender.
+    if DEV_ST.search(s):
+        return "ST"
+    if DEV_BC.search(s):
+        return "BC"
+    if DEV_SC.search(s):
+        return "SC"
+    if DEV_NONE.search(s):
+        return "NONE"
+
     letters = re.sub(r"[^a-z]", "", s.lower())
     if letters in CODES:
         return CODES[letters][0]
@@ -165,6 +188,15 @@ def woman_of(text):
     if KD_WOMAN in kd or KD_WOMAN in tight:
         return 1
     if KD_OTHER in kd or KD_OTHER in tight:
+        return 0
+
+    # "अन्य पिछड़ा वर्ग" is a caste, not a gender, so the backward-class phrase
+    # is ruled out before "अन्य" is read as "other than woman".
+    if DEV_BC.search(s):
+        return None
+    if DEV_WOMAN in s:
+        return 1
+    if DEV_OTHER in s:
         return 0
 
     letters = re.sub(r"[^a-z]", "", s.lower())
