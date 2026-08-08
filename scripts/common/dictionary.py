@@ -103,6 +103,11 @@ COLUMNS = [
                 "it can disagree with them - which is checked as a row rule."),
     column("reservation_raw", "string", length=(1, 120), max_blank=0.0,
            note="The source cell, untouched, so any row can be audited."),
+    column("seat_from_image", "boolean", severity=INFO,
+           note="Set where the seat identifier was OCR'd from an image because "
+                "the document drew that column as pictures rather than text. "
+                "The ward number in these rows comes from the ordering, not "
+                "from the digits, which the OCR reads badly."),
     column("district_declared", "boolean", severity=INFO,
            note="Set where the district was declared from a roster outside the "
                 "corpus rather than read from the document. Eight of J&K's "

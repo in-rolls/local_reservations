@@ -151,7 +151,7 @@ Jharkhand,2015,gp_ward,women_share_by_block,external,skip,,,only applies where t
 Jharkhand,2015,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,134,0,"largest group 121 at ('Lohardaga', '', '', '', '')"
+Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,56,0,"largest group 43 at ('Lohardaga', '', '', '', '')"
 Jharkhand,2015,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward_member,gp_ward,
 Jharkhand,2015,gp_ward,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,gp_ward,provenance_resolves,internal,pass,0,0,19 documents

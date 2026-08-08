@@ -20,12 +20,12 @@ The document holds more than our parse recovered. Each line says what would clos
 | 310 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Prakasam 180, Nellore 110, Anantapur 20 |
 | 266 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 6% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
-| 134 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 121 rows |
-| 121 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 114 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 49 rows |
 | 98 | Jharkhand | 2015 | `zp_member` | some districts are not held | 4 of 24 districts |
 | 84 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 17 rows |
 | 59 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 27 rows |
+| 56 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 43 rows |
+| 43 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 10 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
 | 1 | Jharkhand | 2015 | `gp_head` | the seat identifier is an image, not text | — |
 

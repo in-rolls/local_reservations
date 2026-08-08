@@ -29,6 +29,7 @@ Writes data/jharkhand/<tier>_reservation_2015.{csv,jsonl}.
 
 import argparse
 import collections
+import csv
 import pathlib
 import re
 import sys
@@ -46,7 +47,8 @@ JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 
 COLUMNS = ["state", "year", "district", "block", "block_no",
            "gram_panchayat", "gp_no", "ward_no", "seat_no", "seat_id_raw",
-           "tier", "tier_local", "reservation", "caste_reservation",
+           "seat_from_image", "tier", "tier_local", "reservation",
+           "caste_reservation",
            "woman_reserved", "winner", "vacant", "reservation_raw", "script"]
 
 # Kruti Dev for each post. "neoqf[k;k" is a *deputy* mukhiya, so the match is
@@ -231,6 +233,66 @@ def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
     }
 
 
+IMAGE_SEATS = JHARKHAND / "image_seats.csv"
+
+
+def fill_image_seats(rows):
+    """Fill the seats that were printed as pictures rather than text.
+
+    Three pages of the Lohardaga notification draw their whole seat column as
+    embedded images, so the text layer holds only the district's roman numeral
+    and those rows identify no seat at all - the largest single key collision in
+    the corpus. scripts/jharkhand/ocr_seats.py reads them; this joins the
+    result back on.
+
+    The join is on the serial number, which both sides state, and confirmed by
+    the name beside it. It cannot be on position: the OCR finds more rows on a
+    page than the parser does - 38 against 34 on page 22 - so matching by order
+    would file every seat against the wrong person.
+    """
+    if not IMAGE_SEATS.exists():
+        return 0, 0
+    with IMAGE_SEATS.open(encoding="utf-8") as fh:
+        found = {(r["source_pdf"], r["source_page"], r["serial"]): r
+                 for r in csv.DictReader(fh) if r["serial"]}
+    if not found:
+        return 0, 0
+
+    filled = rejected = 0
+    for row in rows:
+        if (row.get("gram_panchayat") or "").strip():
+            continue
+        serial = re.match(r"^\s*(\d{1,3})\b", row.get("winner") or "")
+        if not serial:
+            continue
+        got = found.get((row.get("source_pdf", ""),
+                         str(row.get("source_page", "")), serial.group(1)))
+        if not got:
+            continue
+        # the parsed name is Kruti Dev and the OCR's is Unicode, so they are
+        # comparable only after transliteration - and if they disagree the
+        # serials did not line up and the seat would be filed against the
+        # wrong person
+        printed = krutidev.to_unicode(re.sub(r"^\s*\d{1,3}\s*", "",
+                                             row.get("winner") or ""))
+        if got["name_ocr"] and printed:
+            if _similar(printed, got["name_ocr"]) < 0.5:
+                rejected += 1
+                continue
+        row["gram_panchayat"] = got["gram_panchayat"]
+        row["ward_no"] = got["ward_no"]
+        row["block_no"] = got["block_no"] or row.get("block_no", "")
+        row["seat_from_image"] = 1
+        filled += 1
+    return filled, rejected
+
+
+def _similar(a, b):
+    """Overlap of two names, for confirming a join rather than making one."""
+    left, right = set(a.replace(" ", "")), set(b.replace(" ", ""))
+    return len(left & right) / max(len(left | right), 1)
+
+
 def fill_block_names(rows):
     """Give a block its name where the row states only its number.
 
@@ -335,6 +397,10 @@ def main():
     # after every district is read, because a block named only by number in one
     # district's sheets is named in full in another's
     filled, ambiguous = fill_block_names(rows)
+    from_images, rejected = fill_image_seats(rows)
+    if from_images or rejected:
+        print(f"seats read from images: {from_images:,} filled, "
+              f"{rejected:,} rejected on a name mismatch", file=sys.stderr)
 
     # The names are printed in Kruti Dev, a font encoding rather than damage, so
     # they convert deterministically. Left as printed they cannot be joined to

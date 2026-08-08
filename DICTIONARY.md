@@ -33,6 +33,7 @@ than a defect.
 | `woman_reserved` | boolean | error | ≤0% blank | 1 if reserved for a woman. |
 | `reservation` | enum | error | one of `Woman`, `Other than Woman`, `SC Woman`, `SC Other than Woman`, `ST Woman`, `ST Other than Woman`, `BC Woman`, `BC Other than Woman`; ≤0% blank | The two fields above, joined. Written separately from them, so it can disagree with them - which is checked as a row rule. |
 | `reservation_raw` | string | error | length 1–120; ≤0% blank | The source cell, untouched, so any row can be audited. |
+| `seat_from_image` | boolean | info | — | Set where the seat identifier was OCR'd from an image because the document drew that column as pictures rather than text. The ward number in these rows comes from the ordering, not from the digits, which the OCR reads badly. |
 | `district_declared` | boolean | info | — | Set where the district was declared from a roster outside the corpus rather than read from the document. Eight of J&K's 2010 blocks name no district anywhere in their file; saying so is the difference between a reading and an assertion. |
 | `listing_scope` | enum | warn | one of `all_seats`, `reserved_only` | J&K's 2018 documents list only the reserved wards, so any share computed from them is a property of the document. Absent means all_seats. |
 | `winner` | string | warn | length 2–60; ≤60% blank | Only some states publish the elected member. |
