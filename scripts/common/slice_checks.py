@@ -1,0 +1,300 @@
+"""One catalogue of checks, run per state x year x tier.
+
+Each check declares what it **appeals to**, because that is what decides whether
+it can catch anything real:
+
+    internal   consistency of our own output with itself. Cheap, and it cannot
+               catch a misread category - the file agrees with itself either way.
+    declared   our own declarations in dictionary.py, reference.py, canon.py. It
+               catches drift from what we said we expected.
+    external   a published total, a statutory share, a population, a second
+               printing. The only kind that reliably catches silent corruption,
+               because every parser bug in this repository produced plausible
+               values rather than an error.
+
+`SKIP` is a first-class status and must render differently from `PASS`. That
+distinction is not cosmetic: `rows_in_band` silently skipped Andhra Pradesh's
+45,478 wards and Jharkhand's 6,174 - the two largest slices here - for as long
+as they had no declared band, and a skip that renders as a pass is how nobody
+noticed. So a skipped check on a slice over SKIP_FLOOR rows now fails.
+"""
+
+import collections
+import pathlib
+
+import canon
+import dictionary
+import reference
+
+FAIL_STATUSES = ("fail",)
+
+PASS, WARN, FAIL, SKIP = "pass", "warn", "fail", "skip"
+
+# Above this many rows, "no rule declared" stops being an acceptable answer.
+SKIP_FLOOR = 1000
+
+CHECKS = []
+
+
+def check(check_id, appeals_to):
+    def register(fn):
+        CHECKS.append({"id": check_id, "appeals_to": appeals_to, "fn": fn})
+        return fn
+    return register
+
+
+class Slice:
+    """One state x year x tier, with the things every check wants."""
+
+    def __init__(self, state, year, tier, rows, root):
+        self.state, self.year, self.tier = state, year, tier
+        self.rows, self.root = rows, pathlib.Path(root)
+        self.n = len(rows)
+        self.women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
+        self.tier_local = sorted({r.get("tier_local", "") for r in rows})
+        # the row's own value wins where a source states one; otherwise the
+        # declared default for the slice
+        self.scope = (rows[0].get("listing_scope")
+                      or reference.listing_scope(state, year, tier))
+
+    def share(self, field, value):
+        return sum(1 for r in self.rows if r.get(field) == value) / max(self.n, 1)
+
+    def filled(self, column):
+        return sum(1 for r in self.rows if (r.get(column) or "").strip())
+
+
+def result(status, observed="", expected="", detail=""):
+    return {"status": status, "observed": str(observed),
+            "expected": str(expected), "detail": detail}
+
+
+# ------------------------------------------------------------------ declared
+
+@check("rows_in_band", "declared")
+def rows_in_band(s):
+    band = dictionary.ROW_BANDS.get((s.state, s.tier))
+    if not band:
+        return result(SKIP, s.n, "", "no row band declared for this state and tier")
+    low, high = band
+    return result(PASS if low <= s.n <= high else FAIL, s.n, f"{low}..{high}")
+
+
+@check("caste_scheme_respected", "declared")
+def caste_scheme_respected(s):
+    allowed = canon.allowed_castes(s.state)
+    if not allowed:
+        return result(SKIP, "", "", f"no caste scheme declared for {s.state}")
+    seen = {r.get("caste_reservation") for r in s.rows}
+    extra = seen - allowed
+    # Kerala reserves no backward-class seat in local bodies, so zero BC rows is
+    # the law rather than a parsing failure. Declaring the scheme is what makes
+    # that distinguishable from Goa suddenly losing its BC rows.
+    return result(FAIL if extra else PASS, ",".join(sorted(seen)),
+                  ",".join(sorted(allowed)),
+                  f"outside the scheme: {sorted(extra)}" if extra else
+                  canon.caste_scheme(s.state))
+
+
+@check("blank_share_within_tolerance", "declared")
+def blank_share_within_tolerance(s):
+    """Evaluated per slice, not per file.
+
+    A column that is entirely blank for one tier inside a mixed file disappears
+    into the file's average, which is how a wholly missing column can look like
+    a tolerable blank rate.
+    """
+    over = []
+    for column in s.rows[0]:
+        spec = dictionary.BY_NAME.get(column)
+        if not spec or spec.get("max_blank") is None:
+            continue
+        blank = 1 - s.filled(column) / max(s.n, 1)
+        # entirely blank means the column is not in this source at all, which is
+        # a fact about the document rather than a defect
+        if spec["max_blank"] < blank < 1.0:
+            over.append(f"{column} {blank:.0%}>{spec['max_blank']:.0%}")
+    return result(WARN if over else PASS, "; ".join(over[:4]), "",
+                  f"{len(over)} column(s) over tolerance")
+
+
+# ------------------------------------------------------------------ external
+
+@check("coverage_vs_published", "external")
+def coverage_vs_published(s):
+    spec = reference.published(s.state, s.year, s.tier)
+    total = spec.get("total")
+    if not total:
+        return result(SKIP, s.n, "",
+                      spec.get("source", "no published total for this slice")[:110])
+    counted = s.rows
+    if spec.get("basis") == "elected":
+        # an "elected" figure excludes seats nobody holds
+        counted = [r for r in counted if str(r.get("vacant", "")) != "1"]
+    if spec.get("unit") == "panchayats":
+        n = len({(r.get("block"), canon.unit_name(r)) for r in counted})
+    else:
+        n = len(counted)
+    share = 100.0 * n / total
+    return result(PASS if share >= 90 else WARN, f"{n} ({share:.0f}%)",
+                  f"{total} {spec.get('unit', 'seats')}", spec.get("basis", ""))
+
+
+@check("women_share_vs_statute", "external")
+def women_share_vs_statute(s):
+    if s.scope != "all_seats":
+        return result(SKIP, f"{s.women}/{s.n}", "",
+                      f"the document is a {s.scope} listing, so its share is a "
+                      f"property of the document rather than of the state")
+    kind, value = reference.women_rule(s.state, s.year)
+    if not kind:
+        return result(SKIP, f"{s.women}/{s.n}", "", "no statutory rule declared")
+
+    # Where the source states how many wards a record should have, check the
+    # statute on the records we know we read whole. Andhra Pradesh's wards come
+    # to 43.5% overall against a half share - but 46.9% across the records whose
+    # list is verified complete, and 37.3% across the truncated ones. The
+    # deficit is our parse, not the state's reservation, and averaging the two
+    # together says neither thing.
+    rows, note = s.rows, ""
+    verified = [r for r in s.rows if r.get("ward_list_complete") == "1"]
+    if verified and len(verified) < s.n:
+        whole = s.women / max(s.n, 1)
+        rows, note = verified, (f"over the {len(verified):,} rows whose list is "
+                                f"verified complete; {whole:.1%} over all "
+                                f"{s.n:,}, the gap being truncated records")
+    women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
+    share = women / max(len(rows), 1)
+    # "not less than one third" is the wording of the 73rd Amendment, so a
+    # higher share is compliance. Haryana's half is an exact split. Passing the
+    # wrong one of these turned J&K's compliant 48% into a failure once.
+    if kind == "floor":
+        ok = share >= value - 0.02
+    else:
+        ok = abs(share - value) <= 0.05
+    return result(PASS if ok else FAIL, f"{share:.1%}",
+                  f"{kind} {value:.0%}", note)
+
+
+@check("women_share_by_block", "external")
+def women_share_by_block(s):
+    """A statutory share usually binds per block, not statewide.
+
+    That is what makes it worth running: offsetting errors cannot satisfy a
+    per-block check the way they can satisfy a state total, which is how
+    Haryana's wrapped-label bug was found.
+    """
+    kind, value = reference.women_rule(s.state, s.year)
+    if kind != "target" or s.scope == "reserved_only":
+        return result(SKIP, "", "", "only applies where the share is an exact split")
+    grouped = collections.defaultdict(list)
+    for row in s.rows:
+        grouped[(row.get("district", ""), row.get("block", ""))].append(row)
+    off = [k for k, sub in grouped.items()
+           if abs(sum(1 for r in sub if str(r.get("woman_reserved")) == "1")
+                  / len(sub) - value) > 0.06]
+    ok = len(off) <= 0.1 * max(len(grouped), 1)
+    return result(PASS if ok else WARN, f"{len(off)} of {len(grouped)} blocks off",
+                  f"within 6pp of {value:.0%}")
+
+
+@check("caste_share_vs_population", "external")
+def caste_share_vs_population(s):
+    """Where the source prints populations, an SC-reserved seat should sit in a
+    place with more SC people. The strongest check available in J&K."""
+    with_pop = [r for r in s.rows if (r.get("pop_sc") or "").isdigit()
+                and (r.get("pop_total") or "").isdigit()
+                and int(r["pop_total"]) > 0]
+    if len(with_pop) < 50:
+        return result(SKIP, len(with_pop), "", "no population columns in this source")
+    def mean(rows):
+        return sum(int(r["pop_sc"]) / int(r["pop_total"]) for r in rows) / len(rows)
+    sc = [r for r in with_pop if r.get("caste_reservation") == "SC"]
+    rest = [r for r in with_pop if r.get("caste_reservation") != "SC"]
+    if not sc or not rest:
+        return result(SKIP, "", "", "no SC-reserved seats with populations")
+    return result(PASS if mean(sc) > mean(rest) else FAIL,
+                  f"SC seats {mean(sc):.1%} vs others {mean(rest):.1%}",
+                  "SC-reserved seats sit where more SC people live")
+
+
+# ------------------------------------------------------------------ internal
+
+@check("label_agrees", "internal")
+def label_agrees(s):
+    def expected(row):
+        prefix = {"SC": "SC", "ST": "ST", "BC": "BC"}.get(
+            row.get("caste_reservation"), "")
+        woman = "Woman" if str(row.get("woman_reserved")) == "1" else "Other than Woman"
+        return f"{prefix} {woman}".strip()
+    bad = [r for r in s.rows if r.get("reservation") != expected(r)]
+    return result(FAIL if bad else PASS, len(bad), 0,
+                  "the label is written separately from the two fields it "
+                  "summarises, so they can disagree")
+
+
+@check("alias_family_exclusive", "internal")
+def alias_family_exclusive(s):
+    """No row may name the panchayat in two columns.
+
+    The whole coalesce into a single master column rests on this, and until now
+    it was assumed rather than checked.
+    """
+    bad = 0
+    for row in s.rows:
+        try:
+            canon.unit_name(row)
+        except ValueError:
+            bad += 1
+    return result(FAIL if bad else PASS, bad, 0,
+                  f"one of {canon.UNIT_COLUMNS}")
+
+
+@check("seat_key_unique", "internal")
+def seat_key_unique(s):
+    counts = collections.Counter(
+        (r.get("district", ""), r.get("block", ""), canon.unit_name(r),
+         r.get("ward_no", ""), r.get("seat_no", "")) for r in s.rows)
+    dup = sum(n for n in counts.values() if n > 1)
+    worst = counts.most_common(1)[0] if counts else (None, 0)
+    return result(WARN if dup else PASS, dup, 0,
+                  f"largest group {worst[1]} at {worst[0]}" if dup else "")
+
+
+@check("tier_local_maps_to_one_tier", "internal")
+def tier_local_maps_to_one_tier(s):
+    bad = [local for local in s.tier_local
+           if canon.tier_of(local, s.state) != s.tier]
+    return result(FAIL if bad else PASS, ",".join(s.tier_local), s.tier,
+                  f"does not map here: {bad}" if bad else "")
+
+
+@check("year_constant", "internal")
+def year_constant(s):
+    years = {r.get("year") for r in s.rows}
+    return result(FAIL if len(years) > 1 else PASS, ",".join(sorted(years)), s.year,
+                  "two cycles merged into one slice" if len(years) > 1 else "")
+
+
+@check("provenance_resolves", "internal")
+def provenance_resolves(s):
+    missing = {p for p in {r.get("source_path", "") for r in s.rows}
+               if not p or not (s.root / p).exists()}
+    return result(FAIL if missing else PASS, len(missing), 0,
+                  f"e.g. {sorted(missing)[:1]}" if missing else
+                  f"{len({r.get('source_path') for r in s.rows})} documents")
+
+
+def run(a_slice):
+    """Every check against one slice, with skips escalated where they matter."""
+    out = []
+    for spec in CHECKS:
+        got = spec["fn"](a_slice)
+        # A skip on a large slice is not an acceptable answer - it means a rule
+        # nobody has declared, and it reads as a pass to anyone scanning.
+        if got["status"] == SKIP and spec["appeals_to"] == "declared" \
+                and a_slice.n > SKIP_FLOOR:
+            got["status"] = FAIL
+            got["detail"] += f" (and {a_slice.n:,} rows is too many to leave unchecked)"
+        out.append(dict(got, check_id=spec["id"], appeals_to=spec["appeals_to"]))
+    return out

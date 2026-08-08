@@ -105,6 +105,26 @@ WOMEN_RULE = {
 }
 
 
+# Whether a slice's document lists every seat. A statutory share cannot be
+# checked against a subset, and the difference between "this state under-reserves"
+# and "this document is a partial listing" is the whole finding.
+#
+#   all_seats      a full roster
+#   reserved_only  only the reserved seats are listed, so the share is a
+#                  property of the document (J&K 2018)
+#   partial        a real but incomplete roster - Goa's 2017 and 2022 files are
+#                  nomination-stage listings covering roughly half the wards
+#                  that 2012 covers
+LISTING_SCOPE = {
+    ("Goa", "2017", "gp_ward"): "partial",
+    ("Goa", "2022", "gp_ward"): "partial",
+}
+
+
+def listing_scope(state, year, tier):
+    return LISTING_SCOPE.get((state, year, tier), "all_seats")
+
+
 def published(state, year, tier):
     return PUBLISHED.get((state, year, tier), {})
 

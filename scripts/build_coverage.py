@@ -156,6 +156,8 @@ def unmapped_directories():
     """
     names = {p.name for p in DATA.iterdir() if p.is_dir()}
     names |= set(raw_holdings())
+    # derived output is not a state, and datasets.py is the one place that says so
+    names -= datasets.DERIVED
     return sorted(n for n in names if pretty(n) not in ALL_STATES)
 
 
