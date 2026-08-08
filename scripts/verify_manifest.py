@@ -50,8 +50,8 @@ def main():
 
     release = manifest.get("release") or "(untagged)"
     print(f"manifest {release}, schema version "
-          f"{manifest.get('schema_version')}, commit "
-          f"{manifest.get('git_commit', '')[:12]}")
+          f"{manifest.get('schema_version')}, built from "
+          f"{manifest.get('built_from_commit', '')[:12]}")
     if manifest.get("dirty"):
         print("  WARNING: built from a tree with uncommitted changes")
     for sibling in manifest.get("sibling_repos", []):

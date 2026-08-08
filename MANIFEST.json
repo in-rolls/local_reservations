@@ -1,5 +1,6 @@
 {
-  "committed_utc": "2026-08-08T05:19:23-07:00",
+  "built_from_commit": "7af935a6523635a77bb53a879413bca9ddd5bf07",
+  "committed_utc": "2026-08-08T05:20:47-07:00",
   "dirty": false,
   "files": [
     {
@@ -445,7 +446,6 @@
       ]
     }
   ],
-  "git_commit": "a90618447d6fc490da8b131098a7202e7116fb31",
   "master_columns": [
     "dataset_id",
     "row_id",
