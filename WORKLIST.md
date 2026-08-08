@@ -11,15 +11,15 @@ The document holds more than our parse recovered. Each line says what would clos
 | 45,476 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 5 of 13 districts |
 | 6,174 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 5 of 24 districts |
 | 4,738 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 5 of 13 districts |
-| 3,661 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Prakasam 2,251, Nellore 1,069, Anantapur 341 |
 | 2,895 | Jharkhand | 2015 | `block_member` | some districts are not held | 15 of 24 districts |
 | 2,544 | Jharkhand | 2015 | `gp_head` | some districts are not held | 16 of 24 districts |
 | 2,282 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 5% of rows |
+| 1,745 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 971, Prakasam 523, Anantapur 183 |
 | 510 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 27 rows |
 | 418 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 8 rows |
-| 310 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Prakasam 180, Nellore 110, Anantapur 20 |
 | 266 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 6% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
+| 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 114 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 49 rows |
 | 98 | Jharkhand | 2015 | `zp_member` | some districts are not held | 4 of 24 districts |
 | 84 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 17 rows |
@@ -32,11 +32,11 @@ The document holds more than our parse recovered. Each line says what would clos
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.
 
-**the source states a caste but no gender** — Where a document marks both the women's and the open seats, a code whose marker did not survive the scan is unknown, not male - and woman_reserved defaults to 0, which silently turns a woman's seat into an open one. Worse, the two markers are not lost at equal rates: Prakasam loses (G) about twice as often as (W), so its surviving rows read 66% women against a statutory half. Neither the raw share nor the filtered one estimates the truth there.
-  *Closes with:* a second reading of the affected pages - the codes are printed, they simply did not survive this scan. Anantapur fell from 25% unmarked to 4% once the hyphen and run-on forms of the marker were recognised, so the remainder is likely reachable the same way.
-
 **some ward lists are shorter than the record says** — The line was cut at the page's right edge, so wards are missing rather than blank. This is measurable rather than hidden only because the record states its own count - and it biases the women's share downward, 37% across truncated records against 47% across whole ones.
   *Closes with:* re-reading the truncated records at a wider render, or from the second proforma where one exists.
+
+**the source states a caste but no gender** — Where a document marks both the women's and the open seats, a code whose marker did not survive the scan is unknown, not male - and woman_reserved defaults to 0, which silently turns a woman's seat into an open one. Worse, the two markers are not lost at equal rates: Prakasam loses (G) about twice as often as (W), so its surviving rows read 66% women against a statutory half. Neither the raw share nor the filtered one estimates the truth there.
+  *Closes with:* a second reading of the affected pages - the codes are printed, they simply did not survive this scan. Anantapur fell from 25% unmarked to 4% once the hyphen and run-on forms of the marker were recognised, so the remainder is likely reachable the same way.
 
 **some rows do not identify a distinct seat** — Two rows sharing a district, block, panchayat and ward number cannot be told apart. Usually one of those four did not parse.
   *Closes with:* parsing whichever identifier is blank on the colliding rows.

@@ -3,7 +3,7 @@ Andhra Pradesh,2020,gp_head,rows_in_band,declared,pass,4738,500..13200,
 Andhra Pradesh,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,4738,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a stat"
-Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,51.9%,target 50%,"over the 4,428 rows whose gender the source states; 48.5% over all 4,738"
+Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,49.9%,target 50%,"over the 4,606 rows whose gender the source states; 48.5% over all 4,738"
 Andhra Pradesh,2020,gp_head,women_share_by_block,external,warn,284 of 485 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
@@ -16,7 +16,7 @@ Andhra Pradesh,2020,gp_ward,rows_in_band,declared,pass,45476,5000..130000,
 Andhra Pradesh,2020,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Andhra Pradesh,2020,gp_ward,coverage_vs_published,external,skip,45476,,no published total for this slice
-Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,50.9%,target 50%,"over the 41,815 rows whose gender the source states; 46.8% over all 45,476"
+Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,48.7%,target 50%,"over the 43,731 rows whose gender the source states; 46.8% over all 45,476"
 Andhra Pradesh,2020,gp_ward,women_share_by_block,external,warn,161 of 479 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"

@@ -1,10 +1,10 @@
 {
-  "built_from_commit": "f769ea0710a1ad97abe8d641c634558e58425eeb",
-  "committed_utc": "2026-08-08T06:13:54-07:00",
+  "built_from_commit": "8d9c70b257571a2e96d2f2c645bf3c7738cfc33d",
+  "committed_utc": "2026-08-08T06:18:59-07:00",
   "dirty": false,
   "files": [
     {
-      "bytes": 16988318,
+      "bytes": 16952402,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -19,7 +19,7 @@
       ],
       "rows": 50214,
       "rows_identifying_a_distinct_seat": 50214,
-      "sha256": "3b673aebe06c13d7e9361f440b21886ed545c3c1b107e5c8830270ecb8d7d5be",
+      "sha256": "be81e09869dfe2078090b8ee0fb27a8fe80fc6e78a9cc6a7902580dcbe7de8b7",
       "states": [
         "Andhra Pradesh"
       ],
@@ -62,7 +62,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "3598c1f0fb615fed4354a2985fb151f2dcbea0da95ca41e67668ac6249d824fd",
+      "sha256": "971be707309fd814efe8d9dcb3d55d3161410ad808f22008b383c9900cd0c092",
       "states": [
         "Goa"
       ],
@@ -125,7 +125,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "22b00951b2552e68b0b97306e82f0fe3864f3973b38a63f50d79d9921eef5557",
+      "sha256": "2fea5353ca7284b2320580ae2b94ab0fe3d6426908a3bddeef643d61d6d312a0",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -157,7 +157,7 @@
       ],
       "rows": 11711,
       "rows_identifying_a_distinct_seat": 11512,
-      "sha256": "2d2dc2ec08cd6ae0c4b66dfd3bf2b2707ff15c359c0eb1d75d372578a0b709a9",
+      "sha256": "24c2ea99dbd6d1df86b934d8e4cde207970f1db70a374040e26dc126b6b62ed9",
       "states": [
         "Jharkhand"
       ],
@@ -230,7 +230,7 @@
       "kind": "parsed",
       "path": "data/ap/sarpanch_reservation_2020.csv",
       "rows": 4738,
-      "sha256": "c07943d41699332e7e8e4c3c046abeafe5df91584464fda56ac6a84180564c63",
+      "sha256": "619df589f6f10a92f47d5aebdc913971318b5aecf409f7421ed689dd3852c346",
       "states": [
         "Andhra Pradesh"
       ],
@@ -246,7 +246,7 @@
       "kind": "parsed",
       "path": "data/ap/ward_reservation_2020.csv",
       "rows": 45476,
-      "sha256": "59db71afbd99320cf43350eedbb9d1ed9e2df5ef543385ee3cf6e41336efc980",
+      "sha256": "fb50e418139fa0e53baab4192eb1022f193311b1989e86ede6b37200959a20d5",
       "states": [
         "Andhra Pradesh"
       ],

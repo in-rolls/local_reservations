@@ -565,19 +565,29 @@ def mark_gender_stated(rows):
     whose marker did not survive the scan, and calling it a man's seat is an
     invention rather than a reading.
 
-    The difference is worth 6,422 rows. Anantapur read 38% women against a
-    statutory half until the hyphen and run-on forms of the marker were
+    The difference is worth thousands of rows. Anantapur read 38% women against
+    a statutory half until the hyphen and run-on forms of the marker were
     recognised; what is left is genuinely absent from the page, and the honest
     answer is that we do not know, not that it was a man.
 
-    The convention is decided per document, by whether it ever marks an open
-    seat - a state that writes (G) at all writes it everywhere.
+    **The convention is decided per page, not per document.** Prakasam does both
+    - open the file to page 14 and every open seat is a bare UR with no (G) in
+    sight, while other pages mark them - so judging the whole document by its
+    majority marked 2,431 rows unknown that the page had stated perfectly
+    clearly. Krishna's ward count moves between pages of one document for the
+    same reason: these gazettes are assembled from sheets typeset separately.
     """
-    marks_open = sum(1 for r in rows if OPEN_MARKER.search(r["reservation_raw"].strip()))
-    both = marks_open > 0.05 * max(len(rows), 1)
+    by_page = collections.defaultdict(list)
     for row in rows:
-        stated = bool(GENDER_MARKER.search(row["reservation_raw"].strip()))
-        row["gender_stated"] = 1 if (stated or not both) else 0
+        by_page[(row.get("source_pdf", ""), row.get("source_page", ""))].append(row)
+
+    for page in by_page.values():
+        marks_open = sum(1 for r in page
+                         if OPEN_MARKER.search(r["reservation_raw"].strip()))
+        both = marks_open > 0.05 * max(len(page), 1)
+        for row in page:
+            stated = bool(GENDER_MARKER.search(row["reservation_raw"].strip()))
+            row["gender_stated"] = 1 if (stated or not both) else 0
     return sum(1 for r in rows if not r["gender_stated"])
 
 
