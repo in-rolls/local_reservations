@@ -72,6 +72,7 @@ DIRECTORY_NAMES = {
     "ap": "Andhra Pradesh", "jk": "Jammu & Kashmir", "wb": "West Bengal",
     "up": "Uttar Pradesh", "madhya_pradesh": "Madhya Pradesh",
     "tamil_nadu": "Tamil Nadu", "delhi": "NCT of Delhi",
+    "himachal": "Himachal Pradesh",
 }
 
 # States with no panchayati raj reservation to collect. Recording why is
@@ -96,6 +97,21 @@ ALL_STATES = [
 
 def pretty(directory):
     return DIRECTORY_NAMES.get(directory, directory.replace("_", " ").title())
+
+
+def unmapped_directories():
+    """Directories under data/ whose name does not resolve to a state.
+
+    A directory that fails to map is not an error anywhere - it simply never
+    matches, and the state is reported as "not held" while its documents sit on
+    disk. That is what happened to Himachal: pretty("himachal") is "Himachal",
+    the state is listed as "Himachal Pradesh", and una_2020.pdf was reported as
+    nothing acquired. Checked rather than assumed, because the failure is
+    silent by construction.
+    """
+    names = {p.name for p in DATA.iterdir() if p.is_dir()}
+    names |= set(raw_holdings())
+    return sorted(n for n in names if pretty(n) not in ALL_STATES)
 
 
 def parsed_datasets():
@@ -307,8 +323,14 @@ def links_in(text):
     return re.findall(r"\[[^\]]*\]\(([^)]+)\)", text)
 
 
-def check_links(text):
-    """Relative paths must exist; http(s) links must answer 200."""
+def check_links(text, base=None):
+    """Relative paths must exist; http(s) links must answer 200.
+
+    `base` is the directory the links are written relative to - the state
+    readmes live a level down, so their `../../SOURCES.md` resolves against
+    data/<state>/ and not against the repository root.
+    """
+    base = base or ROOT
     dead = []
     for target in sorted(set(links_in(text))):
         if target.startswith(("http://", "https://")):
@@ -321,7 +343,7 @@ def check_links(text):
             except Exception as exc:  # noqa: BLE001 - any failure is a dead link
                 dead.append((target, type(exc).__name__))
         else:
-            if not (ROOT / target).exists():
+            if not (base / target).resolve().exists():
                 dead.append((target, "missing on disk"))
     return dead
 
@@ -333,6 +355,10 @@ def main():
     ap.add_argument("--dry-run", action="store_true",
                     help="print the table without writing readme.md")
     args = ap.parse_args()
+
+    unmapped = unmapped_directories()
+    if unmapped:
+        print(f"  directories that map to no state: {unmapped}")
 
     table = build_rows()
     rendered = render(table)
@@ -360,12 +386,17 @@ def main():
 
     if args.check:
         dead = check_links(README.read_text(encoding="utf-8"))
+        for path in sorted(DATA.glob("*/readme.md")):
+            dead += [(f"{path.parent.name}/{t}", why) for t, why in
+                     check_links(path.read_text(encoding="utf-8"), path.parent)]
         if dead:
             print(f"\n{len(dead)} dead link(s):")
             for target, why in dead:
                 print(f"   {target}  -> {why}")
             return 1
         print("  all links resolve")
+        if unmapped:
+            return 1
     return 0
 
 

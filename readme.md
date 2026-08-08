@@ -17,6 +17,9 @@ One row per state, year and tier — the grain the data actually has. The notes
 are derived from the rows themselves rather than written by hand, so they cannot
 drift from what is in the files.
 
+Each state directory also has its own generated readme — what is in it, which
+documents each row came from, what to be careful of, and how to rebuild it.
+
 Read the notes before the numbers. J&K 2018's 82% women is a property of a
 document that lists only the reserved wards, not a fact about J&K; Goa's 2017
 and 2022 cycles are nomination lists and name no winner; Jharkhand's place names
@@ -65,7 +68,7 @@ layout; **raw, unparsed** — source documents on disk, no parser yet;
 | Goa | ward | 2012, 2017, 2022 | 2,948 | parsed | [data/goa/](data/goa/) |
 | Gujarat | - | - | - | not held | - |
 | Haryana | sarpanch, ward | 2016, 2022 | 135,426 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
-| Himachal Pradesh | - | - | - | not held | - |
+| Himachal Pradesh | - | - | - | raw, unparsed | [data/himachal/](data/himachal/) - 1 scan |
 | Jammu & Kashmir | sarpanch, ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
 | Jharkhand | mukhiya, panchayat_samiti, ward_member, zila_parishad | 2015 | 11,711 | parsed | [data/jharkhand/](data/jharkhand/) |
 | Karnataka | - | GP reservation history (.dta) | - | prior work, other schema | [data/karnataka/](data/karnataka/) |

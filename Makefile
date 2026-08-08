@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: help inventory probe goa jharkhand jk ap test coverage expect dictionary
+.PHONY: help inventory probe goa jharkhand jk ap test coverage state-readmes expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -36,8 +36,11 @@ ap:
 	$(PY) scripts/ap/parse.py
 	$(PY) scripts/ap/validate.py
 
-coverage:
+coverage: state-readmes
 	$(PY) scripts/build_coverage.py --check
+
+state-readmes:
+	$(PY) scripts/build_state_readmes.py
 
 expect:
 	cd scripts/common && $(PY) expectations.py
