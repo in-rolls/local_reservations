@@ -177,6 +177,29 @@ def districts_missing(s):
     return found(s.n, f"{got} of {expected} districts")
 
 
+@note("panchayat_not_named",
+      "the row does not say which panchayat",
+      OPEN_GAP,
+      because="The reservation and the winner were read but the seat column "
+              "was not, so the row is a real seat whose identity is unknown. "
+              "This is most of what looks like a key collision: two rows that "
+              "both name no panchayat are not duplicates, they are two "
+              "different seats we cannot tell apart. Jharkhand's OCR'd "
+              "districts name it on 34% of rows against 92% for the districts "
+              "that came as text.",
+      closes_with="a better read of the seat column on the scanned pages - the "
+                  "identifier is printed, it is the scan that did not carry it")
+def panchayat_not_named(s):
+    if s.tier in ("zp_member", "block_head", "zp_head"):
+        return None          # numbered across the district, no panchayat to name
+    missing = [r for r in s.rows if not canon.unit_name(r)]
+    if not missing:
+        return None
+    worst = collections.Counter(r.get("district", "") for r in missing)
+    return found(len(missing), ", ".join(f"{d} {n:,}"
+                                         for d, n in worst.most_common(3)))
+
+
 @note("seat_key_not_unique",
       "some rows do not identify a distinct seat",
       OPEN_GAP,
@@ -184,13 +207,17 @@ def districts_missing(s):
               "cannot be told apart. Usually one of those four did not parse.",
       closes_with="parsing whichever identifier is blank on the colliding rows")
 def seat_key_not_unique(s):
+    # Rows that name no panchayat are counted by panchayat_not_named instead.
+    # Lumping them here says two seats are duplicates when what is true is that
+    # we cannot tell them apart - a different problem with a different fix.
+    named = [r for r in s.rows if canon.unit_name(r)]
     counts = collections.Counter(
         (r.get("district", ""), r.get("block", ""), canon.unit_name(r),
-         r.get("ward_no", ""), r.get("seat_no", "")) for r in s.rows)
+         r.get("ward_no", ""), r.get("seat_no", "")) for r in named)
     dup = sum(n for n in counts.values() if n > 1)
     if not dup:
         return None
-    worst = counts.most_common(1)[0]
+    worst = counts.most_common(1)[0] if counts else ((), 0)
     return found(dup, f"largest group {worst[1]} rows")
 
 

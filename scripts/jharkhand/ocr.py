@@ -31,11 +31,24 @@ PSM = "4"
 LANG = "hin"
 
 
+# A tier name in one of the two encodings we can actually read. Any of these
+# means the text layer is usable; none means it is not, whatever its length.
+READABLE = ("eqf[k;k", "xzke iapk;r", "iapk;r lfefr", 'ftyk ifj"kn',
+            "मुखिया", "ग्राम पंचायत", "पंचायत समिति", "जिला परिषद")
+
+
 def has_text(path):
-    """True when the document already has a usable text layer."""
+    """True when the text layer is one we can read - not merely present.
+
+    Asking "is there text?" skipped Chatra, Godda and Godda's blocks, which
+    carry 86,000 to 375,000 characters of a legacy font that is neither Kruti
+    Dev nor Unicode and decodes to "grgo-s r€-.Ff{ 6rzr rorRrf,". Length is not
+    readability, and those three districts sat in the worklist as a source
+    ceiling on the strength of it.
+    """
     out = subprocess.run(["pdftotext", "-layout", str(path), "-"],
                          capture_output=True, text=True, errors="replace").stdout
-    return len(out.strip()) > 400
+    return any(token in out for token in READABLE)
 
 
 def page_count(path):
@@ -45,6 +58,27 @@ def page_count(path):
         if line.startswith("Pages:"):
             return int(line.split()[1])
     return 0
+
+
+def rotation(image):
+    """How far the page is turned, from Tesseract's own orientation pass.
+
+    Godda's blocks are printed sideways - the content is perfectly legible and
+    OCR returned pure noise, because nothing had turned the page the right way
+    up. Confidence is checked because the same call returns 1.03 on a page that
+    is merely a little skewed, and acting on that would rotate a good page into
+    a bad one.
+    """
+    out = subprocess.run(["tesseract", str(image), "stdout", "--psm", "0"],
+                         capture_output=True, text=True, errors="replace",
+                         timeout=300).stdout
+    degrees = confidence = 0.0
+    for line in out.split("\n"):
+        if line.startswith("Rotate:"):
+            degrees = float(line.split(":")[1])
+        elif line.startswith("Orientation confidence:"):
+            confidence = float(line.split(":")[1])
+    return degrees if confidence >= 2.0 else 0.0
 
 
 def ocr(path):
@@ -61,6 +95,11 @@ def ocr(path):
             if not rendered:
                 pages.append("")
                 continue
+            turn = rotation(rendered[0])
+            if turn:
+                from PIL import Image
+                with Image.open(rendered[0]) as image:
+                    image.rotate(-turn, expand=True).save(rendered[0])
             pages.append(subprocess.run(
                 ["tesseract", str(rendered[0]), "stdout", "-l", LANG,
                  "--psm", PSM],

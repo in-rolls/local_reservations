@@ -15,7 +15,7 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 18 | 20,561 |
+| [Open gaps](WORKLIST.md) | 26 | 33,002 |
 | [Blocked](WORKLIST.md) | 2 | 50,431 |
 | [Undetermined](WORKLIST.md) | 6 | 12,985 |
 | [Accepted properties of the sources](WORKLIST.md) | 6 | 53,548 |
@@ -55,10 +55,10 @@ are still in the legacy font they were printed in.
 | Jammu & Kashmir | 2016 | `gp_head` | 410 | 33% | 5 | — | no winner published | [data/jk/](data/jk/) |
 | Jammu & Kashmir | 2016 | `gp_ward` | 2,326 | 32% | 5 | — | no winner published | [data/jk/](data/jk/) |
 | Jammu & Kashmir | 2018 | `gp_ward` | 1,432 | 82% | 12 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
-| Jharkhand | 2015 | `block_member` | 3,409 | 52% | 17 | 63% of 5,423 seats | partial: 17 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `gp_head` | 2,745 | 52% | 18 | 63% of 4,345 gram panchayats | partial: 18 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `gp_ward` | 8,345 | 53% | 6 | — | partial: 6 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `zp_member` | 133 | 52% | 5 | 24% of 545 seats | partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `block_member` | 4,354 | 52% | 21 | 80% of 5,423 seats | partial: 21 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_head` | 4,214 | 52% | 23 | 97% of 4,345 gram panchayats | partial: 23 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_ward` | 11,113 | 53% | 9 | — | partial: 9 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `zp_member` | 181 | 52% | 8 | 33% of 545 seats | partial: 8 of 24 districts | [data/jharkhand/](data/jharkhand/) |
 
 <!-- slices:end -->
 
@@ -87,7 +87,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | Haryana | gp_head, gp_ward | 2016, 2022 | 135,218 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
 | Himachal Pradesh | - | - | - | documents, no parser | [data/himachal/](data/himachal/) - 1 scan |
 | Jammu & Kashmir | gp_head, gp_ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
-| Jharkhand | block_member, gp_head, gp_ward, zp_member | 2015 | 14,632 | parsed | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | block_member, gp_head, gp_ward, zp_member | 2015 | 19,862 | parsed | [data/jharkhand/](data/jharkhand/) |
 | Karnataka | - | gram panchayat head, 1993/2000/2002/2005/2007 | - | tables, other layout | [data/karnataka/](data/karnataka/) |
 | Kerala | gp_ward, block_member, zp_member, ulb_ward | 2010, 2015, 2020 | 65,296 | parsed | [local_elections_kerala](https://github.com/in-rolls/local_elections_kerala) |
 | Ladakh | - | - | - | not held | - |

@@ -455,7 +455,13 @@ def stacked_pages(path):
     with pdfplumber.open(str(path)) as pdf:
         pages = [(page.page_number, page.extract_text(layout=True) or "")
                  for page in pdf.pages]
-    if sum(len(t) for _, t in pages) > 400:
+    # Readability, not length. Chatra and the Godda blocks carry 86,000 to
+    # 375,000 characters of a third legacy font - neither Kruti Dev nor Unicode
+    # - which decodes to "grgo-s r€-.Ff{ 6rzr rorRrf,". Testing the length let
+    # that through and the OCR cache went unread, so three districts stayed
+    # empty while their text sat in data/jharkhand/ocr.
+    joined = "\n".join(t for _, t in pages)
+    if any(key in joined for key, _ in TIER_HEADS):
         return pages
     cached = OCR_CACHE / f"{path.stem}.txt"
     if not cached.exists():
