@@ -42,8 +42,9 @@ from normalize import _undouble, caste_of, is_vacant, label, woman_of  # noqa: E
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 
-COLUMNS = ["state", "year", "district", "block", "block_no", "seat_no",
-           "constituency", "tier", "reservation", "caste_reservation",
+COLUMNS = ["state", "year", "district", "block", "block_no",
+           "gram_panchayat", "gp_no", "ward_no", "seat_no", "seat_id_raw",
+           "tier", "reservation", "caste_reservation",
            "woman_reserved", "winner", "vacant", "reservation_raw", "script"]
 
 # Kruti Dev for each post. "neoqf[k;k" is a *deputy* mukhiya, so the match is
@@ -59,10 +60,31 @@ TIER_BY_KEY = {_undouble(k): v for k, v in TIERS.items()}
 # "iz[k.M & [kjkSaa/kh" = prakhand (block) - <name>. Read from the page's layout
 # text, because the table renders this header with characters multiplied
 # ("iiiizz[[zz[[kkkk....MMMM").
-RE_BLOCK = re.compile(r"iz\[k\.M\s*&\s*(\S[^\n]{0,40})")
+# Stop at "ftyk" (zila): the header reads "iz[k.M & rksipk¡ph ftyk & /kuckn",
+# and taking the lot made the block name "Topchanchi zila Dhanbad".
+RE_BLOCK = re.compile(r"iz\[k\.M\s*&\s*(\S[^\n]{0,40}?)(?:\s*ftyk\b|$)")
 
-# last column: "I x<+ok@01@01&lq.Mh" - <district>@<block no>@<seat no>&<name>
-RE_SEAT_ID = re.compile(r"@\s*(\d+)\s*@\s*(\d+)\s*&\s*(.*)$")
+# The last column is not a name. It is a compound seat identifier that runs the
+# district, the block, the gram panchayat and the constituency number together:
+#
+#   XV cksdkjks@08 pkl@18 lruiqj@izk0fu0{ks0 la0&12
+#   |  |          |       |      |                |
+#   |  district   |       |      the label "izk0fu0{ks0 la0" = territorial
+#   roman         block   gram   constituency number
+#                         panchayat
+#
+# Reading it whole as "constituency" cost more than it looks: `block` came out
+# 52-100% blank across the four tiers when the block is right there in the
+# string, ward_member had no ward number at all for 6,174 rows, and 121 rows
+# collided on a seat key that was nothing but a roman numeral.
+#
+# Four tiers print four layouts and the typesetters bracket the number five
+# ways, so the parts are found by searching rather than by position, and
+# anything that does not resolve is left blank rather than guessed.
+SEAT_LABEL = re.compile(r"izk0\s*fu0\s*\{ks0\s*la0")
+SEAT_TAIL = re.compile(r"(?:¼\s*(\d+)\s*½|\(\s*(\d+)\s*\)|&\s*(\d+))\s*$")
+SEAT_ROMAN = re.compile(r"(?<![A-Za-z])([IVXLC]{1,6})(?![A-Za-z])")
+SEAT_NUMBERED = re.compile(r"^(\d+)[\s/]+(.*\S)$")
 
 # Fallback for the districts whose tables carry no ruling lines. pdfplumber
 # finds no table there and the rows are simply lost - 9 of the 19 districts
@@ -73,6 +95,87 @@ RE_SEAT_ID = re.compile(r"@\s*(\d+)\s*@\s*(\d+)\s*&\s*(.*)$")
 RE_TEXT_ROW = re.compile(
     r"^(?P<name>.*?)\s*(?P<post>" + "|".join(re.escape(k) for k in TIERS) + r")"
     r"\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
+
+
+def split_seat_id(text, tier):
+    """Pull the district, block, gram panchayat and constituency number apart.
+
+    The same shape means different things at different tiers - a zila parishad
+    identifier names only the district, a panchayat samiti one ends with the
+    block, and a ward one ends with the gram panchayat - so the tier decides
+    what the trailing name is rather than the parser guessing. Where a string
+    does not resolve to a known layout, nothing is returned: a wrong block name
+    would be indistinguishable from a right one, and this corpus is legacy-font
+    mojibake where nobody would notice.
+    """
+    s = re.sub(r"\s+", " ", (text or "").strip())
+    if not s:
+        return {}
+    out = {}
+
+    # the number is bracketed five ways across the districts: la0&12, ¼12½,
+    # (12), &12, - (12)
+    s = SEAT_LABEL.sub("", s)
+    tail = SEAT_TAIL.search(s)
+    if tail:
+        out["seat_no"] = next(g for g in tail.groups() if g)
+        s = s[:tail.start()]
+    s = s.strip().strip("&-/@ ").strip()
+
+    # the roman numeral is the district's index and floats: it opens the string
+    # in most districts and trails it in East Singhbhum
+    roman = SEAT_ROMAN.search(s)
+    if roman:
+        out["district_roman"] = roman.group(1)
+        s = (s[:roman.start()] + " " + s[roman.end():])
+    s = s.strip().strip("&-/@ ").strip()
+
+    parts = [p.strip(" &-/") for p in s.split("@")]
+    parts = [p for p in parts if p]
+
+    def kind(p):
+        if re.fullmatch(r"\d+", p):
+            return "N"
+        return "M" if SEAT_NUMBERED.match(p) else "T"
+
+    shape = "".join(kind(p) for p in parts)
+    out["shape"] = shape
+
+    def numbered(p):
+        found = SEAT_NUMBERED.match(p)
+        return (found.group(1), found.group(2)) if found else ("", p)
+
+    if shape == "TMM":            # district@NN block@NN gram panchayat
+        out["block_no"], out["block"] = numbered(parts[1])
+        out["gp_no"], out["gram_panchayat"] = numbered(parts[2])
+    elif shape == "TNNT":         # district@NN@NN@gram panchayat
+        out["block_no"], out["gp_no"] = parts[1], parts[2]
+        out["gram_panchayat"] = parts[3]
+    elif shape == "TNM":          # district@NN@NN gram panchayat
+        out["block_no"] = parts[1]
+        out["gp_no"], out["gram_panchayat"] = numbered(parts[2])
+    elif shape == "TMT":          # district@NN block@gram panchayat
+        out["block_no"], out["block"] = numbered(parts[1])
+        out["gram_panchayat"] = parts[2]
+    elif shape == "NNT":          # the district is missing, the rest is not
+        out["block_no"], out["gp_no"] = parts[0], parts[1]
+        out["gram_panchayat"] = parts[2]
+    elif shape == "TNT":
+        # The trailing name is the block at panchayat samiti level and the gram
+        # panchayat below it. Same shape, different meaning - which is why this
+        # function needs the tier.
+        out["block_no"] = parts[1]
+        out["block" if tier == "panchayat_samiti" else "gram_panchayat"] = parts[2]
+    elif shape == "NT":
+        out["block_no"] = parts[0]
+        out["block" if tier == "panchayat_samiti" else "gram_panchayat"] = parts[1]
+    elif shape == "T":
+        # A bare name is the gram panchayat at mukhiya level, where the
+        # identifier is only ever the name, and the district at zila parishad
+        # level, whose constituencies are numbered across the whole district.
+        if tier == "mukhiya":
+            out["gram_panchayat"] = parts[0]
+    return out
 
 
 def clean(cell):
@@ -90,6 +193,69 @@ def district_of(folder):
     name = re.sub(r"\b(MUKHIYA|PSS|GPS|ZP)\b", "", name, flags=re.I)
     name = re.sub(r"[()&]", " ", name)
     return " ".join(name.split()).title()
+
+
+def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
+    """One row, with the compound seat identifier taken apart.
+
+    The block parsed out of the identifier wins over the one read from the page
+    header: the header is a page-level guess that does not change when the table
+    crosses a block boundary mid-page, while the identifier is stated on the row
+    itself.
+    """
+    seat = split_seat_id(raw, tier)
+    number = seat.get("seat_no", "")
+    return {
+        # Which of the two the block came from, so fill_block_names() can build
+        # its lookup from the rows that state it and ignore the rest. Not a
+        # declared column, so emit drops it.
+        "block_from": "identifier" if seat.get("block") else
+                      ("page" if page_block else ""),
+        "state": "Jharkhand", "year": "2015", "district": district,
+        "block": seat.get("block") or page_block,
+        "block_no": seat.get("block_no", ""),
+        "gram_panchayat": seat.get("gram_panchayat", ""),
+        "gp_no": seat.get("gp_no", ""),
+        # the trailing number is the ward at ward-member level and the seat
+        # within the district or block above it
+        "ward_no": number if tier == "ward_member" else "",
+        "seat_no": "" if tier == "ward_member" else number,
+        "seat_id_raw": clean(raw),
+        "tier": tier, "reservation": label(caste, woman),
+        "caste_reservation": caste, "woman_reserved": woman,
+        "winner": winner, "vacant": int(is_vacant(winner)),
+        "reservation_raw": raw_label, "script": "krutidev",
+    }
+
+
+def fill_block_names(rows):
+    """Give a block its name where the row states only its number.
+
+    Half the districts print the block as a number and nothing else
+    ("yksgjnxk@5@10@ck?kk"), while the panchayat samiti sheets for the same
+    district print both. So the name is recovered by joining on a key that both
+    sides state, not by inferring anything.
+
+    The lookup is built only from blocks that came from the seat identifier.
+    The page header is not usable for it: it is read once per page and does not
+    change when a table crosses a block boundary mid-page, which is how Dhanbad
+    ended up with three different names against block 04.
+    """
+    lookup = collections.defaultdict(collections.Counter)
+    for row in rows:
+        if row.get("block_from") == "identifier" and row["block_no"]:
+            lookup[(row["district"], row["block_no"])][row["block"]] += 1
+
+    resolved = {key: names.most_common(1)[0][0]
+                for key, names in lookup.items() if len(names) == 1}
+    filled = 0
+    for row in rows:
+        if row.get("block_from") == "identifier" or not row["block_no"]:
+            continue
+        name = resolved.get((row["district"], row["block_no"]))
+        if name:
+            row["block"], filled = name, filled + 1
+    return filled, len(lookup) - len(resolved)
 
 
 def parse_pdf(path, district):
@@ -112,22 +278,10 @@ def parse_pdf(path, district):
                     caste, woman = caste_of(cells[2]), woman_of(cells[3])
                     if caste is None or woman is None:
                         continue
-                    seat = RE_SEAT_ID.search(cells[4])
-                    block_no, seat_no, name = ("", "", cells[4])
-                    if seat:
-                        block_no, seat_no, name = (seat.group(1), seat.group(2),
-                                                   clean(seat.group(3)))
-                    rows.append(emit.stamp({
-                        "state": "Jharkhand", "year": "2015",
-                        "district": district, "block": block,
-                        "block_no": block_no, "seat_no": seat_no,
-                        "constituency": name, "tier": tier,
-                        "reservation": label(caste, woman),
-                        "caste_reservation": caste, "woman_reserved": woman,
-                        "winner": cells[0], "vacant": int(is_vacant(cells[0])),
-                        "reservation_raw": f"{cells[2]} | {cells[3]}",
-                        "script": "krutidev",
-                    }, path, page.page_number, ROOT))
+                    rows.append(emit.stamp(seat_row(
+                        district, block, tier, caste, woman, cells[4],
+                        cells[0], f"{cells[2]} | {cells[3]}"),
+                        path, page.page_number, ROOT))
 
             if len(rows) == before:
                 rows += _from_text(page, path, district, block)
@@ -146,22 +300,11 @@ def _from_text(page, path, district, block):
         woman = woman_of(found.group("woman"))
         if not tier or caste is None or woman is None:
             continue
-        seat = RE_SEAT_ID.search(found.group("seat"))
-        block_no, seat_no, name = ("", "", found.group("seat"))
-        if seat:
-            block_no, seat_no, name = (seat.group(1), seat.group(2),
-                                       clean(seat.group(3)))
         winner = clean(found.group("name"))
-        out.append(emit.stamp({
-            "state": "Jharkhand", "year": "2015", "district": district,
-            "block": block, "block_no": block_no, "seat_no": seat_no,
-            "constituency": name, "tier": tier,
-            "reservation": label(caste, woman), "caste_reservation": caste,
-            "woman_reserved": woman, "winner": winner,
-            "vacant": int(is_vacant(winner)),
-            "reservation_raw": f"{found.group('caste')} | {found.group('woman')}",
-            "script": "krutidev",
-        }, path, page.page_number, ROOT))
+        out.append(emit.stamp(seat_row(
+            district, block, tier, caste, woman, found.group("seat"), winner,
+            f"{found.group('caste')} | {found.group('woman')}"),
+            path, page.page_number, ROOT))
     return out
 
 
@@ -185,6 +328,12 @@ def main():
                 failed.append((path.name, type(exc).__name__))
             print(f"\r  {district:18s} rows={len(rows)}", end="", file=sys.stderr)
     print(file=sys.stderr)
+
+    # after every district is read, because a block named only by number in one
+    # district's sheets is named in full in another's
+    filled, ambiguous = fill_block_names(rows)
+    print(f"block names joined on (district, block_no): {filled:,} rows filled, "
+          f"{ambiguous} keys left ambiguous", file=sys.stderr)
 
     by_tier = collections.defaultdict(list)
     for row in rows:

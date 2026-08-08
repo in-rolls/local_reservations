@@ -21,10 +21,10 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`mukhiya_reservation_2015.csv`](mukhiya_reservation_2015.csv) | 2,544 | 18 | 44 |
-| [`panchayat_samiti_reservation_2015.csv`](panchayat_samiti_reservation_2015.csv) | 2,895 | 18 | 22 |
-| [`ward_member_reservation_2015.csv`](ward_member_reservation_2015.csv) | 6,174 | 18 | 19 |
-| [`zila_parishad_reservation_2015.csv`](zila_parishad_reservation_2015.csv) | 98 | 18 | 4 |
+| [`mukhiya_reservation_2015.csv`](mukhiya_reservation_2015.csv) | 2,544 | 21 | 44 |
+| [`panchayat_samiti_reservation_2015.csv`](panchayat_samiti_reservation_2015.csv) | 2,895 | 21 | 22 |
+| [`ward_member_reservation_2015.csv`](ward_member_reservation_2015.csv) | 6,174 | 21 | 19 |
+| [`zila_parishad_reservation_2015.csv`](zila_parishad_reservation_2015.csv) | 98 | 21 | 4 |
 
 ## About these sources
 

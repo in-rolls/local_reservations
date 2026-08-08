@@ -24,6 +24,8 @@ import pathlib
 import re
 import subprocess
 
+import dictionary
+
 CASTES = {"SC", "ST", "BC", "NONE"}
 SEAT_KEY = ("state", "year", "tier", "district", "block", "gram_panchayat",
             "ward_no")
@@ -98,13 +100,14 @@ def structural(report, rows, root, key=SEAT_KEY, required=()):
              or not r.get("tier")]
     report.check(not blank, "no blank state/year/tier", f"{len(blank)} rows")
 
-    # Jharkhand calls it constituency and J&K calls it halqa; without the
-    # aliases the key degrades to (district, block) and reports collisions that
-    # are really just a missing column.
+    # J&K calls it halqa; without the alias the key degrades to
+    # (district, block) and reports collisions that are really just a missing
+    # column. The mapping is read from the dictionary rather than repeated here,
+    # so there is one place that decides what the panchayat column is called.
     key = list(key)
     if "gram_panchayat" not in columns:
-        for alias in ("constituency", "halqa"):
-            if alias in columns:
+        for alias, canonical in dictionary.ALIAS_OF.items():
+            if canonical == "gram_panchayat" and alias in columns:
                 key = [alias if f == "gram_panchayat" else f for f in key]
                 break
     present = [f for f in key if f in columns]

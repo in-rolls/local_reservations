@@ -14,15 +14,14 @@ of a gazette, because each one of these got parsed plausibly and wrongly first:
 None of those raised. They are pinned so they cannot come back quietly.
 """
 
-import pathlib
-import sys
-
 import pytest
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "ap"))
+import parsers
 
-from parse import (apply_layout, as_category, mandal_vocabulary,  # noqa: E402
-                   recover_wards, scan_line, split_names)
+ap = parsers.load("ap")
+apply_layout, as_category = ap.apply_layout, ap.as_category
+mandal_vocabulary, recover_wards = ap.mandal_vocabulary, ap.recover_wards
+scan_line, split_names = ap.scan_line, ap.split_names
 
 
 # ------------------------------------------------------------ damaged codes

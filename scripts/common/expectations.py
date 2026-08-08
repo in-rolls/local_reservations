@@ -208,7 +208,7 @@ def check_dataset(findings, path, rows):
                          f"{band[0]}..{band[1]}", [(rows[0], subset)], total)
 
     # A name column whose length distribution jumps has absorbed its neighbour.
-    for name in ("gram_panchayat", "halqa", "constituency", "block", "district"):
+    for name in ("gram_panchayat", "halqa", "block", "district"):
         values = [(r.get(name) or "").strip() for r in rows]
         values = [v for v in values if v]
         if len(values) < 20:

@@ -68,12 +68,13 @@ COLUMNS = [
 
     # ------------------------------------------------------ the seat itself
     column("gram_panchayat", "string",
-           aliases=("constituency", "halqa"), length=(2, 45), max_blank=0.10,
+           aliases=("halqa",), length=(2, 45), max_blank=0.10,
            severity=WARN,
-           note="The panchayat. Called halqa in J&K and printed as a "
-                "constituency string in Jharkhand. A value far over the length "
-                "bound has usually swallowed the next column - that is how AP's "
-                "broken mandal split was found."),
+           note="The panchayat. Called halqa in J&K. Jharkhand printed it "
+                "inside a compound seat identifier until that was taken apart; "
+                "see seat_id_raw. A value far over the length bound has "
+                "usually swallowed the next column - that is how AP's broken "
+                "mandal split was found."),
     column("ward_no", "roman_or_integer", length=(1, 6), max_blank=0.30,
            severity=WARN,
            note="Blank on sarpanch and mukhiya rows by design. J&K and Goa "
@@ -116,10 +117,16 @@ COLUMNS = [
     column("serial", "integer", range=(1, 9999), max_blank=0.10, severity=WARN,
            note="AP's per-mandal running number; gaps in it mean lost rows."),
     column("halqa", "string", length=(2, 45), max_blank=0.10, severity=WARN),
-    column("constituency", "string", length=(1, 60), max_blank=0.10,
+    column("seat_id_raw", "string", length=(1, 90), max_blank=0.05,
            severity=INFO,
-           note="Jharkhand. Legacy Kruti Dev, so unreadable until "
-                "transliterated - recorded, not treated as a defect."),
+           note="Jharkhand. The seat identifier exactly as printed, before it "
+                "was taken apart - a compound of district, block, gram "
+                "panchayat and constituency number run together with @ and /. "
+                "Kept because the split is the kind of thing worth being able "
+                "to re-check against the page."),
+    column("gp_no", "integer", range=(1, 99), max_blank=0.60, severity=WARN,
+           note="The gram panchayat's number within its block, where the "
+                "source states one."),
 
     # --------------------------------------------------------- J&K population
     column("pop_sc", "integer", range=(0, 100000), max_blank=0.90, severity=WARN,

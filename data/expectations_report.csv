@@ -1,17 +1,17 @@
 severity,file,scope,column,rule,count,share,examples,first_source,first_page
 warn,jk/ward_reservation_2010.csv,column,district,blank share 94% above the 20% tolerated,6888,0.9384, |  | ,data/jk/2010/(Mahore).pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,row,ward_no,ward row has no ward number,6174,1.0, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Bermo_GPS_GPM & GPVM.pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,column,block_no,blank share 100% above the 90% tolerated,6165,0.9985, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Bermo_GPS_GPM & GPVM.pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,column,seat_no,blank share 100% above the 90% tolerated,6165,0.9985, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Bermo_GPS_GPM & GPVM.pdf,1
 warn,jk/ward_reservation_2010.csv,column,block,blank share 70% above the 35% tolerated,5104,0.6954, |  | ,data/jk/2010/(Mahore).pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 52% above the 35% tolerated,3222,0.5219, |  | ,data/jharkhand/2015/17. LOHARDAGA MUKHIYA PSS/LOHARDAGA ZP PSS MUKHIYA GPS.pdf,6
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block,blank share 81% above the 35% tolerated,2352,0.8124, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 68% above the 35% tolerated,1732,0.6808, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 99% above the 10% tolerated,2863,0.9889, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 99% above the 60% tolerated,2863,0.9889, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 99% above the 90% tolerated,2515,0.9886, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 62% above the 60% tolerated,1585,0.623, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,neither a number nor a Roman numeral,1432,1.0,Number & Name of Panch Constit | PC-II | PC-V,data/jk/2018/2018_Anantnag.pdf,1
+warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 37% above the 35% tolerated,934,0.3671, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,2
 warn,ap/ward_reservation_2020.csv,column,serial,not an integer,279,0.0061,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jk/ward_reservation_2010.csv,column,ward_no,neither a number nor a Roman numeral,268,0.0365,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,length outside 1..6,235,0.1641,Number & Name of Panch Constit | PC-VIII | PC-VIII,data/jk/2018/2018_Anantnag.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_no,length outside 1..6,203,0.0277,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
+warn,jharkhand/ward_member_reservation_2015.csv,row,ward_no,ward row has no ward number,132,0.0214, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Chandankiyari_GPS_GPM_GPVM.pdf,17
 warn,jk/ward_reservation_2010.csv,column,ward_name,length outside 2..40,78,0.0106,"Sungal Lower Moh Parwana and M | Sungal Lower Moh Karala,Vidhuw | Nai Basti Sungal Lower Moh Tat",data/jk/2010/Akhnoor.pdf,9
 warn,jk/sarpanch_reservation_2016.csv,column,halqa,blank share 15% above the 10% tolerated,63,0.1537, |  | ,data/jk/2016/Publication Jammu B.pdf,1
 warn,ap/ward_reservation_2020.csv,column,block,length outside 2..40,37,0.0008,K | K | K,data/ap/2020_res_gp/est_res_gp.pdf,66
@@ -24,24 +24,25 @@ warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45
 warn,jk/ward_reservation_2018.csv,column,ward_name,length outside 2..40,3,0.0021,"vii-BRADINARD,KHATAN, GANIE,BI | i-DARDKHOWER/KOLI/ BARA /AHENG | ii-DARDKHOWER/ KHATANA /PASWAL",data/jk/2018/Srinagar.pdf,1
 warn,ap/sarpanch_reservation_2020.csv,column,serial,outside 1..9999,2,0.0004,0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6
-warn,jharkhand/ward_member_reservation_2015.csv,dataset,constituency,"length distribution is skewed - median 48, p95 58; a name this long has usually swallowed the next column",1,0.0002,p95=58,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Bermo_GPS_GPM & GPVM.pdf,1
 warn,jk/sarpanch_reservation_2016.csv,column,pop_oc,not an integer,1,0.0024,2 2 9,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/sarpanch_reservation_2016.csv,column,pop_oc,outside 0..100000,1,0.0024,-273,data/jk/2016/Publication Jammu B.pdf,38
 warn,jk/sarpanch_reservation_2016.csv,column,pop_total,not an integer,1,0.0024,2 2 9,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/ward_reservation_2016.csv,column,pop_oc,not an integer,1,0.0004,2 2 9,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/ward_reservation_2016.csv,column,pop_oc,outside 0..100000,1,0.0004,-273,data/jk/2016/Publication Jammu B.pdf,38
 warn,jk/ward_reservation_2016.csv,column,pop_total,not an integer,1,0.0004,2 2 9,data/jk/2016/Annex B Doda.pdf,6
-info,jharkhand/ward_member_reservation_2015.csv,column,constituency,length outside 1..60,79,0.0128,XV cksdkjks@09 pUnufd;kjh@10 H | XV cksdkjks@09 pUnufd;kjh@10 H | XV cksdkjks@09 pUnufd;kjh@10 H,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Chandankiyari_GPS_GPM_GPVM.pdf,7
 info,ap/sarpanch_reservation_2020.csv,column,ward_no,not present in this source (entirely blank),1,0.0002,,data/ap/2020_res_gp/atp_res_gp.pdf,3
 info,goa/ward_reservation_2017.csv,column,winner,not present in this source (entirely blank),1,0.0015,,data/goa/2017/bardez.pdf,1
 info,goa/ward_reservation_2017.csv,column,votes,not present in this source (entirely blank),1,0.0015,,data/goa/2017/bardez.pdf,1
 info,goa/ward_reservation_2022.csv,column,winner,not present in this source (entirely blank),1,0.0013,,data/goa/2022/list-of-validly-niminated-candidates-quepemvp_2022.pdf,1
 info,goa/ward_reservation_2022.csv,column,votes,not present in this source (entirely blank),1,0.0013,,data/goa/2022/list-of-validly-niminated-candidates-quepemvp_2022.pdf,1
-info,jharkhand/panchayat_samiti_reservation_2015.csv,column,block_no,not present in this source (entirely blank),1,0.0003,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
-info,jharkhand/panchayat_samiti_reservation_2015.csv,column,seat_no,not present in this source (entirely blank),1,0.0003,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+info,jharkhand/mukhiya_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0004,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+info,jharkhand/panchayat_samiti_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0003,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+info,jharkhand/ward_member_reservation_2015.csv,column,seat_no,not present in this source (entirely blank),1,0.0002,,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Bermo_GPS_GPM & GPVM.pdf,1
 info,jharkhand/zila_parishad_reservation_2015.csv,column,block,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
 info,jharkhand/zila_parishad_reservation_2015.csv,column,block_no,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
-info,jharkhand/zila_parishad_reservation_2015.csv,column,seat_no,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
+info,jharkhand/zila_parishad_reservation_2015.csv,column,gram_panchayat,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
+info,jharkhand/zila_parishad_reservation_2015.csv,column,gp_no,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
+info,jharkhand/zila_parishad_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0102,,data/jharkhand/2015/14. DHANBAD MUKHIYA PSS/DHANBAD ZP PSS MUKHIYA GPS.pdf,1
 info,jk/sarpanch_reservation_2016.csv,column,ward_no,not present in this source (entirely blank),1,0.0024,,data/jk/2016/Annex A Doda.pdf,1
 info,jk/sarpanch_reservation_2016.csv,column,ward_name,not present in this source (entirely blank),1,0.0024,,data/jk/2016/Annex A Doda.pdf,1
 info,jk/ward_reservation_2010.csv,column,pop_sc,not present in this source (entirely blank),1,0.0001,,data/jk/2010/(Mahore).pdf,1

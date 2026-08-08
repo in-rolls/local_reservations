@@ -25,7 +25,7 @@ than a defect.
 | `tier` | enum | error | one of `sarpanch`, `mukhiya`, `ward`, `ward_member`, `panchayat_samiti`, `zila_parishad`; ≤0% blank | Which office the seat is. Goa reserves wards and elects its sarpanch indirectly; Jharkhand reserves the mukhiya; Haryana the sarpanch; J&K 2016 gives both. |
 | `district` | string | warn | length 3–30; ≤20% blank | J&K's 2010 files carry no district column at all, so a blank share above zero is expected there but not elsewhere. |
 | `block` | string | warn | length 2–40; ≤35% blank | Block, taluka or mandal depending on the state. |
-| `gram_panchayat` | string | warn | length 2–45; ≤10% blank; also called `constituency`, `halqa` | The panchayat. Called halqa in J&K and printed as a constituency string in Jharkhand. A value far over the length bound has usually swallowed the next column - that is how AP's broken mandal split was found. |
+| `gram_panchayat` | string | warn | length 2–45; ≤10% blank; also called `halqa` | The panchayat. Called halqa in J&K. Jharkhand printed it inside a compound seat identifier until that was taken apart; see seat_id_raw. A value far over the length bound has usually swallowed the next column - that is how AP's broken mandal split was found. |
 | `ward_no` | roman_or_integer | warn | length 1–6; ≤30% blank | Blank on sarpanch and mukhiya rows by design. J&K and Goa number wards in Roman numerals, so this is not purely numeric. |
 | `ward_name` | string | warn | length 2–40; ≤30% blank | J&K only. |
 | `caste_reservation` | enum | error | one of `SC`, `ST`, `BC`, `NONE`; ≤0% blank | Orthogonal to woman_reserved: a seat can be both. |
@@ -41,7 +41,8 @@ than a defect.
 | `seat_no` | integer | warn | range 1–999; ≤90% blank |  |
 | `serial` | integer | warn | range 1–9999; ≤10% blank | AP's per-mandal running number; gaps in it mean lost rows. |
 | `halqa` | string | warn | length 2–45; ≤10% blank |  |
-| `constituency` | string | info | length 1–60; ≤10% blank | Jharkhand. Legacy Kruti Dev, so unreadable until transliterated - recorded, not treated as a defect. |
+| `seat_id_raw` | string | info | length 1–90; ≤5% blank | Jharkhand. The seat identifier exactly as printed, before it was taken apart - a compound of district, block, gram panchayat and constituency number run together with @ and /. Kept because the split is the kind of thing worth being able to re-check against the page. |
+| `gp_no` | integer | warn | range 1–99; ≤60% blank | The gram panchayat's number within its block, where the source states one. |
 | `pop_sc` | integer | warn | range 0–100000; ≤90% blank | J&K prints the populations the allocation was based on, which is the only place in this repo the rule can be checked against its own inputs. |
 | `pop_st` | integer | warn | range 0–100000; ≤90% blank |  |
 | `pop_oc` | integer | warn | range 0–100000; ≤90% blank |  |
