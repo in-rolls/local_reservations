@@ -54,7 +54,9 @@ COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
 # District codes in the filenames.
 DISTRICTS = {
     "atp": "Anantapur", "est": "East Godavari", "kri": "Krishna",
-    "nlr": "Nellore", "pkm": "Prakasam", "wst": "West Godavari",
+    "nlr": "Nellore", "pkm": "Prakasam",
+    # the archive names West Godavari "wg" where the other tiers use "wst"
+    "wg": "West Godavari", "wst": "West Godavari",
     "kdp": "Kadapa", "ctr": "Chittoor", "gnt": "Guntur", "srk": "Srikakulam",
     "vsp": "Visakhapatnam", "vzm": "Vizianagaram", "krl": "Kurnool",
 }

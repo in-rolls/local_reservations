@@ -13,14 +13,14 @@ The document holds more than our parse recovered. Each line says what would clos
 | 4,214 | Jharkhand | 2015 | `gp_head` | some districts are not held | 23 of 24 districts |
 | 4,107 | Jharkhand | 2015 | `block_member` | the row does not say which panchayat | Giridih 466, Palamu 354, Ranchi 349 |
 | 2,156 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Chatra 1,475, Jamtara 227, Latehar 166 |
-| 1,827 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
+| 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
 | 1,141 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Chatra 415, Latehar 213, Jamtara 192 |
 | 363 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 6 rows |
 | 290 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
+| 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 206 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 24 rows |
-| 205 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
 | 181 | Jharkhand | 2015 | `zp_member` | some districts are not held | 8 of 24 districts |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
@@ -59,8 +59,8 @@ Closable, but not from here. These are not waiting on effort; they are waiting o
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 45,693 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 5 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
-| 4,738 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 5 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
+| 54,763 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
+| 5,589 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
 
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.
@@ -90,12 +90,12 @@ The document says what it says. Nothing to do, but a reader needs to know before
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 45,693 | Andhra Pradesh | 2020 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
-| 4,738 | Andhra Pradesh | 2020 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
+| 54,763 | Andhra Pradesh | 2020 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
+| 5,589 | Andhra Pradesh | 2020 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
 | 1,432 | Jammu & Kashmir | 2018 | `gp_ward` | lists only the reserved seats | shares here are a property of the document |
 | 793 | Goa | 2022 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 684 | Goa | 2017 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
-| 208 | Andhra Pradesh | 2020 | `gp_head` | the source has no ward column | sarpanch rows carrying no wards at all |
+| 210 | Andhra Pradesh | 2020 | `gp_head` | the source has no ward column | sarpanch rows carrying no wards at all |
 
 **no winner is recorded** — Whether this is a source property depends on what stage of document it is. A pre-poll reservation roster names no winner and never will; for anything else, a results notification may exist that we have not looked for. Asserting the first without checking is a claim about every document a state published.
   *Closes with:* declaring reference.DOCUMENT_STAGE for this slice - pre_poll settles it as a source property, and anything else means going to look.

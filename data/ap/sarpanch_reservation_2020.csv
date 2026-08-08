@@ -4737,3 +4737,854 @@ Andhra Pradesh,2020,Prakasam,YERRA,GONDAPALEM NARA SAYAPALEM,12,,gp_head,sarpanc
 Andhra Pradesh,2020,Prakasam,YERRA,GONDAPALEM VEERA BHADRA PURAM,1g,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/pkm_res_gp.pdf,64,pkm_res_gp.pdf
 Andhra Pradesh,2020,Prakasam,YERRA,GONDAPALEM VENKATDRI PALEM,17,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/pkm_res_gp.pdf,64,pkm_res_gp.pdf
 Andhra Pradesh,2020,Prakasam,YERRAGONDA PALEM,YERRAGONDA PALEM,1g,,gp_head,sarpanch,ST Woman,ST,1,20,14,0,1,,1,0,ST (W),latin,ocr,data/ap/2020_res_gp/pkm_res_gp.pdf,64,pkm_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Achanta,1,,gp_head,sarpanch,SC Woman,SC,1,,18,,1,,1,0,scw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,— Achanta Vemavaram,2,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Penumanchii,3,,gp_head,sarpanch,Woman,NONE,1,,12,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Kodamanchili,4,,gp_head,sarpanch,SC Other than Woman,SC,0,14,13,0,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Koderu,5,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,urw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Pedamallam,6,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Kandaravalli,7,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Karugorumili,8,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Valluru sow),9,,gp_head,sarpanch,BC Other than Woman,BC,0,14,13,0,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Bhimalapuram,10,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Achanta,Ayodyalanka,11,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Acnanta,Seshammachervu],12,,gp_head,sarpanch,BC Other than Woman,BC,0,10,9,0,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,7,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Ai Bhimavaram,13,,gp_head,sarpanch,BC Woman,BC,1,,12,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Ajjamuru,14,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Apparaopet,15,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Cherukumilli,16,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Chinakapavaram,17,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Chinamillipadu,18,,gp_head,sarpanch,BC Woman,BC,1,8,8,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Dumpagadapa,19,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Gummuluru,20,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Kollaparru,21,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Kuppanapudi,22,,gp_head,sarpanch,Woman,NONE,1,,12,,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Mandapadu,23,,gp_head,sarpanch,BC Other than Woman,BC,0,8,8,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Pedakapavaram},24,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Rajulapeta,25,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Siddapuram,26,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Taratava,27,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akiveedu,Kalingagudem,28,,gp_head,sarpanch,BC Woman,BC,1,,8,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,8,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,ARAVALLI,29,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,ATTILI,30,,gp_head,sarpanch,SC Woman,SC,1,20,20,1,2,0,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,JAttili,BALLIPADU,31,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,DANTHUPALLI,32,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,EEDURU,33,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,JAttili,GUMMAMPADU,34,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,KANCHUMARRU,35,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,KOMMARA,36,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,K S GATTU,37,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,LN PURAM,38,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,MANCHILI,39,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,Sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,PALI,40,,gp_head,sarpanch,BC Woman,BC,1,,10,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,PALURU,41,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,SKINNERAPURAM,42,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,TIRUPATHIPURAM,43,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Attili,UNIKILI,44,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,JAttili,VARIGHEDU,46,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,9,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Agadalalanka,47,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Amberpeta,48,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Bhimadole,49,,gp_head,sarpanch,SC Other than Woman,SC,0,16,16,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Chettunnapadu,50,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Duddepudi,51,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Gundugolanu,52,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Kodurupadu,53,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Korukollu,54,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Kurellagudem,55,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Lakshmipuram,56,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Polasanipalli,57,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Pulla,58,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimadole,Surappagudem,59,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,10,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,RAYALAM,60,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,scw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,VEMPA,61,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,scw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,GOLLAVANITIPPA],62,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,K ANNAVARAM,63,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,NAGIDIPALEM,64,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,CHINAMIRAM,65,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,DONGAPINDI,66,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,GUTLAPADU,67,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,ANAKODERU,68,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,YANAMADURRU,69,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,DIRUSUMARRU],70,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,KovHaPusaamarru ~—,71,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,NARASIMHAPURAM,72,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,JONNALAGARUVU],73,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,SRI RAMA PURAM,74,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimaveram,THOKATIPPA,75,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,BETHAPUDI,76,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,TADERU,77,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bbimavaram,LOSARI,78,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,KOMATITIPPA NORTH,79,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,TUNDURRU,80,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,DEYYALATIPPA,81,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,L V N PURAM,82,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaramn,KOMARADA,83,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Bhimavaram,PEDAGARUVU,84,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,11,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Aliveru,85,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Anth digud:,86,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Atchiyyapal,87,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Buttaigudem,88,,gp_head,sarpanch,ST Woman,ST,1,14,14,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Dorar idi,89,,gp_head,sarpanch,ST Other than Woman,ST,0,14,14,1,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Jainavarigudem,90,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,K.R.Puram,91,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Kamayyakunta,92,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,1,ST{W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,jKorsavarigudem,93,,gp_head,sarpanch,ST Other than Woman,ST,0,,8,,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Kota Nagavaram,94,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Koya Raj dry},95,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Lakshmudugudem,96,,gp_head,sarpanch,ST Woman,ST,1,12,12,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,But,dem M yyapal,97,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Munjuluru,98,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,N.R.Palem,99,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Ni lagudem,100,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Puliramudugudem,101,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,R.Ganapavaram,102,,gp_head,sarpanch,ST Woman,ST,1,14,14,1,1,,1,1,ST(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Rajanagaram,103,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Ravvarigudem,104,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Buttayagudem,Seethappagud,105,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,12,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,CHAGALLU,106,,gp_head,sarpanch,SC Woman,SC,1,20,20,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,CHIKKALA,107,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,NELATURU,108,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,BRAHMANAGUDEM,109,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,S MUPPAVARAM;},110,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,UNAGATLA,111,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,MARKONDAPADU,112,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,DARAVARAM,113,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,MALLAVARAM,114,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,KALAVALAPALLI},115,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,NANDIGAMPADU,116,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,GOWRIPALLI,117,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chagallu,CHANDRAVARAM,118,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,13,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,CHINTALAPUDI,119,,gp_head,sarpanch,ST Woman,ST,1,20,20,1,2,0,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,NAMAVARAM,120,,gp_head,sarpanch,ST Other than Woman,ST,0,,12,,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,ERRAMPALLE,121,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,ERRAGUNTAPALLE,122,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,RAGHAVAPURAM,123,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,PRAGADAVARAM,124,,gp_head,sarpanch,SC Other than Woman,SC,0,16,16,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,UTASAMUDRAM} —,125,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,ENDAPALLI,126,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,SEETHANAGARAM}],127,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,RECHARLA,128,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,LINGAGUDEM,129,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,POTHUNURU,130,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,MALLAYAGUDEM,131,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,VENKATAPURAM,132,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,SIVAPURAM,133,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,rHimmareppraue,134,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,GANIJERLA,135,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,CHINTAMPALLI],136,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Chintalapudi,venkatapricupem,137,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,14,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,eaters,Pe [Fee Noor Ward Reservation for No Mandal Gram Wards Panchayat Reservat I 2 3 4 5 6 7 3 9 10 il 12 13 14 15 16 17 18 19] _20 Te7 [Denduluru cunacuwraarur Bow),6,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,DOSAPADU,169,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,ur,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,GALAYAGUDEM,170,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,cancannacupem,171,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Dendulura,socannapaLem,173,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,uR(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,[KOTHAGUDEM Bow) {,174,,gp_head,sarpanch,Other than Woman,NONE,0,12,11,0,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,KOVVALI sew,175,,gp_head,sarpanch,BC Other than Woman,BC,0,14,13,0,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,= MEDINARAOPALEM,176,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,MUPPAVARAM,177,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,pendulura,PERUGUGUDEM,178,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,POTHUNURU,179,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,soMAVARAPPADU,181,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,SANIGUDEM,182,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Denduluru,SRIRAMAVARAM,183,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,15,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tirumala,CH Pothepalli,139,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tirumala,Dorasanipadu.,140,,gp_head,sarpanch,SC Other than Woman,SC,0,2,2,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,G.Kothapalli,142,,gp_head,sarpanch,SC Other than Woman,SC,0,2,2,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,lp,Tirumala 1S.Raghavapuram.,145,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,uR(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tirumala_,[Kodigudem,147,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,M nagulapalli,149,,gp_head,sarpanch,SC Other than Woman,SC,0,,13,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Maddulagudem,150,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tirumala,[Narayana puram.,152,,gp_head,sarpanch,Other than Woman,NONE,0,,20,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Pangidigudem,154,,gp_head,sarpanch,SC Other than Woman,SC,0,,13,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Rajupalem.,155,,gp_head,sarpanch,Woman,NONE,1,,20,,1,,1,0,urw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,[Rama Singa Varam.,158,,gp_head,sarpanch,BC Other than Woman,BC,0,2,2,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tiramala,Thimmapuram,159,,gp_head,sarpanch,BC Other than Woman,BC,0,,20,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Vempadu,161,,gp_head,sarpanch,BC Other than Woman,BC,0,3,3,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Buttayigudem,163,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Gollagudem,164,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D-Tirumala,1.8.Jagannedapuram,165,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,D.Tirumala,Sattala,166,,gp_head,sarpanch,Woman,NONE,1,,9,,1,,1,0,urw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,16,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Bandapuram,184,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Chinnayagudem,185,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Devarapalli,186,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Duddukuru,187,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Dhumantunigudem,188,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Gowripatnam,189,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Krishnampalem,190,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,} Kurukuru,191,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Lakshmipuram,192,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Pallantla,193,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,{ Ramannapalem,194,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,jSangayagudem,195,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Tyajampudi,196,,gp_head,sarpanch,Woman,NONE,1,14,14,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Yadavolu,197,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Devarapalli,Yernagudem L,198,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,17,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,ABBIRAJUPALEM,199,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,ARYAPETA,200,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,BADAVA,201,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,BURUGUPALLI,202,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,CHINCHINADA,203,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,CHINTADIBBA,204,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,DODDIPATLA,205,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,ELAMANCHILIKASPA,206,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,ELAMANCHILILANKA,207,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,} GANGADUPALEM,208,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,} GUMPARRU,209,,gp_head,sarpanch,BC Woman,BC,1,,10,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,ILAPAKURRU,210,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,K.S.PALEM,211,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,}KALAGAMPUDI,212,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,KAMBHOTLAPALEM,213,,gp_head,sarpanch,BC Woman,BC,1,8,8,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,KANAKAYALANKA,214,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,KATTUPALEM,215,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,}KAZA EAST,216,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,KAZA WEST,217,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,LAKSHMIPALEM,218,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,MATLAPALEM,219,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,MEDAPADU,220,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,NARINAMERAKA,221,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,NEREDUMILLI,222,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,PEDALANKA,223,,gp_head,sarpanch,SC Other than Woman,SC,0,,8,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,PENUMARRU,224,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,SIRAGALAPALLE,225,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,UTADA,226,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,VADDILANKA,227,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Elamanchili,Y.V.LANKA,228,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,18,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,CHATAPARRU +,229,,gp_head,sarpanch,SC Other than Woman,SC,0,14,13,0,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,GupIvaKALaNka,230,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,JALIPUDI _-,231,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,KALAKURRU.~,232,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,KATLAMPUDL,233,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,K.D.PURAM,234,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,KOKKIRAYILANKA],235,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,KOMATILANKA,236,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,MADEPALLI,237,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,MALKAPURAM,238,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,MONDIKODU,239,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,PEDAYAGANAMILLI .,240,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,PRATHIKOLLANKA},241,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,PYDICHINTHAPADU }-,242,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Eluru,SREEPARRU _,243,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,19,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,AGOPAVARAM,244,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,APPANAPETA,245,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,ARDHAVARAM,246,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,CH.AGRAHARAM,247,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,D.K.VALLI,248,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,GANAPAVARAM,249,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,JALLIKOMMARA,250,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,JALLI KAKINADA,251,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,KASIPADU,252,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,KESAVARAM,253,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,KOMARRU,254,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,KOMATLAPALEM,255,,gp_head,sarpanch,Woman,NONE,1,6,6,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,KOTHAPALLI,256,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,MOYYERU,257,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,MUGGULLA,258,,gp_head,sarpanch,BC Woman,BC,1,8,8,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,MUPARTHIPADU,259,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,PIPPARA,260,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,SKONDEPADU,261,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,SARIPALLI,262,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VAKAPALLI,263,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VALLURU,264,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VARADARAJAPURAM,265,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VEERSWARAPURAM,266,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VELAGAPALLI,267,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Ganapavaram,VENKATARAJAPURAM,268,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,20,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,veLtactinratacuvem —,269,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,BHIMOLU,270,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,CHERUKUMILLI},271,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,CHITYALA,272,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,DONDAPUDI,273,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,GANGOLU,274,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,GOPALAPURAM,275,,gp_head,sarpanch,SC Woman,SC,1,,16,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,GUDDIGUDEM,276,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,JAGANNADHAPURAM,277,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,KARAGAPADU,278,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,KARICHERLAGUDEM,279,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,KOMATIKUNTA,280,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,KOVVURUPADU,281,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,RAJAMPALEM,282,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,SAGGONDA,283,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,SANJEEVAPURAM,284,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,VADALAKUNTA,285,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Gopalapuram,VENKATAYAPALEM,286,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,21,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Arjunudupalem,287,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,East Vipparru,288,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Eletipadu,289,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Goteru,290,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Inaparru,291,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,lragavaram,292,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Itempudi,293,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,K.Illindaraparru],294,,gp_head,sarpanch,SC Woman,SC,1,,12,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,K.Kumudavalli,295,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Kakileru,296,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Kanteru,297,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Kattavapadu,298,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Kavalipuram,299,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,j Kothapadu,300,,gp_head,sarpanch,BC Woman,BC,1,,10,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,= Ogidi,301,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,j Pekeru,302,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Podalada,303,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Rapaka,304,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram_,Relangi,305,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,1,SC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Iragavaram,Yerraicheruvu,307,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,22,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,A.Polavaram,308,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Akl,Akl,309,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Ammapalem,310,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Chakradevarapeli],311,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Devulapalli,312,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddiguiem,Guravaigudem,313,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,1,Bc(w},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Kethavaram sBe-~,314,,gp_head,sarpanch,Other than Woman,NONE,0,12,11,0,1,,1,0,ur,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Lakkavaram,315,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Mysannagudem,316,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddiguiem,Nagulagudem,317,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Nimmalagudem,318,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Pangidigudem,319,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Pattennapalem,320,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Perampeta,321,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,jJangar,Putalagatlagudem,322,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddiguiem,Srinivasapuram,323,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Taduvai,324,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,scw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Tekkinavarigudem,325,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Tirumalapuram,326,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jangareddigudem,Vegavaram,327,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,Sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,23,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Ankannagudem,328,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Darbhagudem,329,,gp_head,sarpanch,ST Woman,ST,1,,12,,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Jeelugumilli,330,,gp_head,sarpanch,ST Woman,ST,1,12,12,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Kamayyapalem,331,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Mulagalampalli,332,,gp_head,sarpanch,ST Other than Woman,ST,0,12,12,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,P.Ankampalem,333,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,P.Rajavaram,334,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Rachannagudem,335,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Swarnavarigudem,336,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,T.Gangannagudem,337,,gp_head,sarpanch,ST Woman,ST,1,,8,,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,Tatiyyakulagudem,338,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,sT,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Jeelugumilli,}Vankavarigudem,339,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,24,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Adamilli,361,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,k,kota Ankalampadu,362,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,East Edavalli,363,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Guntupalli,364,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarap,KS.R am,365,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Kallacheruvu,366,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,k,K pukotal,367,,gp_head,sarpanch,SC Woman,SC,1,18,18,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Polasigudem,368,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,k,Rawis lem,369,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamevarapukota,Ravikampadu,370,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kemavarapukota,Sagipadu,371,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Tadikalapudi,372,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kemavarapuketa,Uppalapadu,373,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,uRw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kemavarapukota,Veerisettigudem,374,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kamavarapukota,Tadicherla,375,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,26,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,ARIKIREVULA,376,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,CHIDIPI,377,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,DHARMAVARAM,378,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,DOMMERU,379,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,I.PANGIDI,380,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,KAPAVARAM,381,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,KUMARADEVAM,382,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,MADDURU,383,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,MADDURU LANKA,384,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,NANDAMURU,385,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,PASIVEDALA,386,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,PENAKANAMETTA,387,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,SEETHAMPETA,388,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,THOGUMMI,389,,gp_head,sarpanch,Woman,NONE,1,,12,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,VADAPALLI,390,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kovvur,VEMULURU,391,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,27,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Atchuthapuram,392,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Bayyanagudem,393,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Bodigudem,394,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Dippakayalapad,395,,gp_head,sarpanch,ST Woman,ST,1,14,14,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Gavaravaram,396,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,c!,397,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Kannapuram,398,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagud,idevip,399,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Nar pal,400,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Parimpudi,401,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Ponguturu,402,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Rajavaram,403,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagud,R ji,404,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Saripalli,405,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Seethampeta,406,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Vedanthapuram,407,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Yerrampeta,408,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Koyyalagudem,Kunthalagudem,409,,gp_head,sarpanch,Woman,NONE,1,3,3,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,28,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,AMARAVARAM,410,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,DACHARAM,411,,gp_head,sarpanch,ST Woman,ST,1,,10,,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,DAMARACHARLA,412,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,sT,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,GANAPAVARAM,413,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,GOMMUGUDEM,414,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,1,ST(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,KIVVAKA,415,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,KUKUNOOR,416,,gp_head,sarpanch,Woman,NONE,1,,14,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,MADHARAM,417,,gp_head,sarpanch,ST Other than Woman,ST,0,,10,,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,}MAREDUBAKA,418,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,PEDA RAVIGUDEM,419,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,SeETHARAMA NAGAR,420,,gp_head,sarpanch,ST Other than Woman,ST,0,,8,,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,SRIDHARA VELAIR,421,,gp_head,sarpanch,ST Other than Woman,ST,0,,10,,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,THONDIPAKA,422,,gp_head,sarpanch,ST Woman,ST,1,,10,,1,,1,1,ST(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,UPPERU,423,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Kukkunoor,VINJARAM,424,,gp_head,sarpanch,ST Other than Woman,ST,0,,12,,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,29,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,avwaranenivartouvem,425,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,ASANNAGUDEM,426,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,AYYAPARAJUGUDEM,427,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,BADARALA,428,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,BHOGOLE,429,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,DHARMAJIGUDEM,430,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,K.GOKAVARAM,431,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,KALARAYANAGUDEM,432,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,KONIJARLA,433,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,KOTHAPALLI,434,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,LINGAPALEM,435,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,MATTAMGUDEM,436,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,MUDICHARLA,437,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,MULAGALAMPADU,438,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,NARASANNAPALEM,439,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,PATCHANAGARAM,440,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,= PuPPaLavaricuDEM,441,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,RANGAPURAM,442,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,SINGAGUDEM,443,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,T.CH.R.PALEM,444,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,VEMULAPALLI,445,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Lingapalem,YADAVALLI-39,446,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,30,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Jagannadhapuram,447,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Kalipatnam East},448,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu—,Kalipatnam west,449,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,K.P palem north},450,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,{K.P palem south},451,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Komaatithipa,452,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Kothapalem,453,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,uRw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,_ Kothota,454,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,{Modi,455,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,—_ Mogaltur,456,,gp_head,sarpanch,SC Other than Woman,SC,0,,18,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Mutyalapalli,457,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogaituru,Pathapadu,458,,gp_head,sarpanch,BC Woman,BC,1,4,4,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Perupalem North},459,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Perupalem South},460,,gp_head,sarpanch,BC Woman,BC,1,,14,,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogaltura,Ramannapalem,461,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Serepalem,462,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Mogalturu,Varathippa,463,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,31,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Achannapalem,464,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Ananthapalli,465,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Anumunilanka,466,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Avapadu,467,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Ayyavaram,468,,gp_head,sarpanch,BC Other than Woman,BC,0,,8,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Chadaraasik,469,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Cheepurugudem,470,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,1,SC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Chodavaram (East)},471,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Chodavaram(West},472,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Dubacherla,473,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Ghantavarigudem,474,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Gundepalli,475,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Jagannadhapuram,476,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Kavuluru,477,,gp_head,sarpanch,Other than Woman,NONE,0,7,7,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Marellamudi,478,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Musullagunta,479,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Nabipeta,480,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Nallajerla,481,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Pothavaram,482,,gp_head,sarpanch,SC Other than Woman,SC,0,,16,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Pral pal,483,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Pullalapadu,484,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Singarajupalem,485,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Subhadrapalem,486,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nallajerla,Telikicherla,487,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,32,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Biyyaputippa,488,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Chamakuripalem,489,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Chittavaram,490,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,Sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Dharbarevu,491,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Gondi,492,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,K.Bethapudi,493,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Kopparru,494,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,K Navarasapuram,495,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,L.B.cherla,496,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Lakshmaneswaram,497,,gp_head,sarpanch,BC Other than Woman,BC,0,,14,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Likhithapudi,498,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Mallavaram,499,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Mallavaram Lanka},500,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Marritippa,501i,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,P Navarasapuram,502,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Pacdamainavani tanka,503,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Pasaladeevi,504,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Pedalanka,505,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Rajugarithota,506,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Rustumbada,507,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Sarava,508,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Saripalli,509,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,sectharamapuram North,510,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Sectharamapuram South,511,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Turputallu,512,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,N,am Vemuladeevi East},513,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Vemuladeevi West],514,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Narasapuram,Y.S.Palem,515,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,33,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,ATLAPADU .,516,,gp_head,sarpanch,SC Woman,SC,1,,10,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,D MUPPAVARAM,517,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,GOPAVARAM,518,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,JEEDIGUNTA,519,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,KALAVACHERLA,520,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,KAMSALIPALEM,521,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,KATAKOTESWARAM,522,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,KORUMAMIDI,523,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,KORUPALLI,524,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,MUNIPALLI,525,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,PANDALAPARRU,526,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,1,UR{W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,PENDYALA,527,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,PURUSHOTHAPALLI],528,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,RAVIMETLA,529,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,SAMISRAGUDEM],530,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,{SETTIPETA,531,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,SINGAVARAM,532,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,SURAPURAM,533,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,TADIMALLA,534,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,TALLAPALEM,535,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,— TIMMARAJUPALEM,536,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,{UNAKARAMILLI],537,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidadavole,VIJJESWARAM,538,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,34,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,ADAVIKOLANU,539,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,AMUDALAPALLI,540,,gp_head,sarpanch,Other than Woman,NONE,0,6,6,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru.,BAVAIPALEM,541,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,BHUVVANAPALLI},542,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,BYNEPALLI,543,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,CHANAMILLI,544,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,= CHINANINDRAKOLANU,545,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,DEVARAGOPAVARAM],546,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru.,ENIKEPALLI,547,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,GUNAPARRU,548,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,KROVVIDI ret era,1549,,gp_head,sarpanch,Other than Woman,NONE,0,,5,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,MANDALAPARRY),554,,gp_head,sarpanch,Other than Woman,NONE,0,,5,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,NIDAMARRU EBC,551,,gp_head,sarpanch,BC Woman,BC,1,14,13,0,1,,1,0,BC(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru.,PEDANINDRAKOLANU,552,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru,SIDDAPURAM,553,,gp_head,sarpanch,Woman,NONE,1,3,3,1,1,,1,0,UR (W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Nidamarru_,THOKALAPALLI_,654,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,35,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Garagaparru,555,,gp_head,sarpanch,Other than Woman,NONE,0,14,14,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Gollalakoderu,556,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Goraganamudi,557,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu_,Kondepudi,558,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Korukollu,559,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Kumudavalli,560,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Mogallu,561,,gp_head,sarpanch,BC Woman,BC,1,,14,,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Mypa,562,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Palakoderu,563,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,— Pennada Agraharam,564,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,= Srungavruksham,565,,gp_head,sarpanch,SC Other than Woman,SC,0,,16,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Vendra,566,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Vendra Agraharam,567,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakoderu,Vissakoderu,568,,gp_head,sarpanch,BC Other than Woman,BC,0,,14,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,36,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,AGARRU,569,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,Sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,AGARTHIPALEM,570,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,ARATLAKATTA,571,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,BALLIPADU,572,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,CHANDAPARRU,573,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,CHINTHAPARRU,574,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,DAGGULURU,575,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,DIGAMARRU,576,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,GAVARAPETA,577,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,GORINTADA,578,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,KAPAVARAM,579,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Paiakol,KOTHAPETA,580,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,LANKALAKODERU,581,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,PALAMURU,582,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,PEDAMAMIDIPALLI,583,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,SAGAMCHERUVU,584,,gp_head,sarpanch,BC Woman,BC,1,,8,,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,SIVADEVUNICHIKKALA,585,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,TILLAPUDI,586,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,VADLAVANIPALEM,587,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,VALAMARRU,588,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Paiakol,VELIVELA BOY,589,,gp_head,sarpanch,Other than Woman,NONE,0,10,9,0,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Palakol,VENKATAPURAM,590,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,37,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Appanaveedu,591,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Epuru,592,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Gogunta,593,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Gudipadu,594,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Jayapuram,595,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Kalaparru,596,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,—_— Kokkirapadu,597,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Koniki,598,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Kotha Mupparru},599,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Kothuru,600,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Naidugudem,601,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Patha Mupparru,602,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Pedapadu,603,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,Sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Punukollu,604,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Rajupeta,605,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Sakala Kothapalli,606,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Satyavolu,607,,gp_head,sarpanch,BC Woman,BC,1,,10,,1,,1,1,Bc(w,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Tallagudem,608,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Thotagudem,609,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Vaddigudem,610,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Vasanthawada,611,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Vatluru,612,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedapadu,Veerammakunta,613,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,38,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Ammapalem,614,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Ankannagudem,615,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,B.Singavaram,616,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Bapirajugudem,617,,gp_head,sarpanch,BC Other than Woman,BC,0,12,10,0,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Bhogapuram,618,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Duggirala,620,,gp_head,sarpanch,SC Woman,SC,1,,12,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Garlamadugu,621,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Jagannadhapuram,622,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Janampeta,623,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,K Kannapuram,624,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Kavvagunta,625,,gp_head,sarpanch,Woman,NONE,1,,0,,1,,1,1,UR(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Kondalaraopalem,626,,gp_head,sarpanch,Woman,NONE,1,,9,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Koppulavarigudem,628,,gp_head,sarpanch,SC Woman,SC,1,10,10,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Kuchimpudi,629,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Lakshmipuram,630,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Munduru,631,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Nadipalli,632,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Nyayampalli,633,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Pedakadimi,634,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Pedavegi,635,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Pinakadimi,636,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Ramasingavaram,637,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Ratnalakunta,638,,gp_head,sarpanch,Woman,NONE,1,,0,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Rayannapalem,639,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Gokavaram,640,,gp_head,sarpanch,Other than Woman,NONE,0,10,2,0,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Vanguru,641,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Vegi(W)ada,642,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pedavegi,Vijayarai,643,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,39,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Akuteegapadu,644,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Alampuram,645,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,B.Kondepadu,646,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Bodapadu,647,,gp_head,sarpanch,BC Other than Woman,BC,0,,8,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Chintapalli,648,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Darsiparru,649,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Jatlapalem,650,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,K.Pentapadu,651,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Korumilli,652,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Meenavalluru,653,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Mounjipadu,654,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Mudunuru,655,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Parimella,656,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Pentapadu,657,,gp_head,sarpanch,SC Woman,SC,1,,16,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Racharla,658,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentepadu,Ramachandrapuram,659,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Ravipadu,660,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Umamaheswaram,661,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,Vallurupalli,662,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,West Vipparru,663,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Pentapadu,‘ Yanalapalli,664,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,40,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Chinamallam,665,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Deva,666,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Dongaravipalem,667,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,_ [laparru,668,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Kotalaparru,669,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda_,Mulaparru,670,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Munamarru,671,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda_,Nadipudi,672,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Penugonda,673,,gp_head,sarpanch,SC Woman,SC,1,1,1,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Ramannapalem,674,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Siddantham,675,,gp_head,sarpanch,SC Other than Woman,SC,0,16,16,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Tamarada,676,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda_,Vadali,677,,gp_head,sarpanch,BC Woman,BC,1,,14,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Venkatramapuram,678,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penugonda,Somarajucheruvu},679,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,41,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Alamuru,680,,gp_head,sarpanch,BC Woman,BC,1,,12,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Bhatlamaguturu,681,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Juttiga,682,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Mallipudi,683,,gp_head,sarpanch,BC Other than Woman,BC,0,,11,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Mamuduru,684,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Marteru,685,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Garuvu,686,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,"Natta Rameswaram,",687,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Nelamuru,688,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Neggipudi,689,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Oduru,690,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Penumantra,691,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Polamuru,692,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,S.I.Parru,693,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Koyyetipadu,694,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,"Satyavaram,",695,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,V.V.Palem,696,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Penumantra,Velagaleru,697,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,42,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Nadupalli,698,,gp_head,sarpanch,SC Woman,SC,1,,12,,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kanuru,699,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kanuru Agrahaaram,700,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Usulumarru,701,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Teeparru,702,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kakaraparru,703,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Venkatrayapuran},704,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Ajjaram,705,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kaapavaram,706,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Peravali,707,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kothapalli Agaharam,708,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Nallakulavaripalem,709,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Mukkamala,710,,gp_head,sarpanch,BC Other than Woman,BC,0,,13,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Khandavalli,711,,gp_head,sarpanch,SC Other than Woman,SC,0,16,16,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Malleswaram,712,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,uR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Annavarapaadu,713,,gp_head,sarpanch,Woman,NONE,1,,20,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Peravali,Kadimpaadu,715,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,43,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Appannachervu,716,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Gummuluru,717,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Jaganadhapuram,718,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Jinnuru pew),719,,gp_head,sarpanch,Woman,NONE,1,14,13,0,1,,1,0,uRW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Kavitam,720,,gp_head,sarpanch,SC Other than Woman,SC,0,,13,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Kommuchikkala],721,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Mattaparru,722,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Minimimchilipadu],723,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Panditavillura,724,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Pemmaraju Polavarm,725,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Penumadam,726,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Poduru,727,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Ravipadu,728,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,uR(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Turpupalem,729,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,uRw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Vaddiparru,730,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Poduru,Vedangi,731,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,44,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,= Vinjaram,732,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Thutigunta,733,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Koruturu,734,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,_ Itikalakota,735,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Geddapalli,736,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Kondrukota,737,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,__ LND Peta,738,,gp_head,sarpanch,ST Other than Woman,ST,0,12,12,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Pragadapalli,739,,gp_head,sarpanch,ST Other than Woman,ST,0,12,12,1,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Chegondapalli,740,,gp_head,sarpanch,ST Other than Woman,ST,0,8,8,1,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,‘ Jillellagudem,741,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,‘ Polavaram,742,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Gutala,743,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Kotha Pattisam,744,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Polavaram,Pattisam,745,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,45,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,APPARAOPETA,761,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,ARUGOLANU,762,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,ARULLA,763,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepailigudem,BANGARUGUDEM,764,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,CHINATADEPALLI,765,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,DANDAGARRA,766,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,JAGGANADHAPURAM,767,,gp_head,sarpanch,SC Woman,SC,1,,20,,1,,1,1,SC(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,KADIYEDDA,769,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligadem,KOMMUGUDEM,770,,gp_head,sarpanch,SC Woman,SC,1,,10,,1,,1,1,SC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,KOTHURU,771,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,KRISHNAYAPALEM,772,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,MADHAVARAM,773,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,MARAMPALLI,774,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,METTAUPPARAGUDEM,775,,gp_head,sarpanch,BC Woman,BC,1,,10,,1,,1,1,BC(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,MODHUGAGUNTA,776,,gp_head,sarpanch,BC Woman,BC,1,,20,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,NEELADRIPURAM,779,,gp_head,sarpanch,BC Other than Woman,BC,0,12,12,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,PATTEMPALEM,780,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,PEDATADEPALLI,781,,gp_head,sarpanch,BC Other than Woman,BC,0,,14,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,PULLAYIGUDEM,782,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,RAMANNAGUDEM,783,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,UPPARAGUDEM,784,,gp_head,sarpanch,SC Other than Woman,SC,0,8,8,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,VEERAMPALEM,785,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,venK cupem,786,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tadepalligudem,VENKATRAOPALEM,787,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,46,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,_ Annadevarapeta,788,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,—_ Ballipadu,789,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Gajjaram,790,,gp_head,sarpanch,SC Other than Woman,SC,0,12,12,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Malakapalli,791,,gp_head,sarpanch,SC Other than Woman,SC,0,,14,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Peddevam,792,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Pochavaram,793,,gp_head,sarpanch,Other than Woman,NONE,0,,9,,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Prakkilanka,794,,gp_head,sarpanch,Woman,NONE,1,,12,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,—_ Tadipudi,795,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,_— Tallapudi,796,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,Bc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,=‘ Tirugudumetta,797,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tallapudi,Vegeswarapuram,798,,gp_head,sarpanch,Other than Woman,NONE,0,,15,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,47,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Konala,799,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Muddapuran,800,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,uRW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Duvva,801,,gp_head,sarpanch,BC Other than Woman,BC,0,,16,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Tetali,802,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,scw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Mandapaka Bow),3803,,gp_head,sarpanch,Other than Woman,NONE,0,14,12,0,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Velpuru pow),804,,gp_head,sarpanch,Other than Woman,NONE,0,18,15,0,1,,1,0,uR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Mahalakshmi Cheruvu,805,,gp_head,sarpanch,Other than Woman,NONE,0,3,3,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Yerrai Cheruvu,806,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,ur,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Tanuku,Komaravaram,807,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,48,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasap,T.Narasap,746,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.0,Appalarajugad,747,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Bandhamcharla,748,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,SC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Bandivarigudem,749,,gp_head,sarpanch,Woman,NONE,1,2,2,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Berrampalemy,780,,gp_head,sarpanch,SC Woman,SC,1,,20,,1,,1,1,SC(W,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Kethavararn,752,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Makkinavarigiccm,753,,gp_head,sarpanch,BC Other than Woman,BC,0,14,13,0,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Marrigndem,754,,gp_head,sarpanch,ST Other than Woman,ST,0,,9,,1,,1,0,st,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Rajupotnepalli,755,,gp_head,sarpanch,Other than Woman,NONE,0,19,10,0,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,T.Narasapuram,756,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Tediam,757,,gp_head,sarpanch,Woman,NONE,1,,20,,1,,1,0,urw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,T.Narasapuram,Velagapagu,760,,gp_head,sarpanch,SC Other than Woman,SC,0,1,1,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,49,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,AREDU,808,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,"ARTHAMURU Be,",809,,gp_head,sarpanch,BC Other than Woman,BC,0,10,8,0,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,CHERUKUWADA,810,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,CHILUKURU,811,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,CHINAPULLERU,812,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,KALIGOTLA,813,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,KALISIPUDI Bow),814,,gp_head,sarpanch,BC Other than Woman,BC,0,10,9,0,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,KOLAMURU,815,,gp_head,sarpanch,Woman,NONE,1,,12,,1,,1,0,uRw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,warabevaratuam Bow),816,,gp_head,sarpanch,SC Other than Woman,SC,0,14,13,0,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,NRPaAGRAHARAM,817,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,PAMULAPARRU,818,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,PANDUVVA,819,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,urw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,PEDAPULLERU!,820,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,Bc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,UND!,821,,gp_head,sarpanch,SC Other than Woman,SC,0,,17,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,UNUDURRU,822,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,uRW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,UPPULURU,823,,gp_head,sarpanch,Other than Woman,NONE,0,2,2,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,VANDRUM,824,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,VELIVARRU,825,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,uRw,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undi,YENDAGANDI,826,,gp_head,sarpanch,SC Other than Woman,SC,0,,13,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,50,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,PASALAPUDI,827,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,KALDHARI,828,,gp_head,sarpanch,SC Woman,SC,1,14,14,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,VELAGADURRU,829,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,MORTHA,830,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,CHIVATAM,831,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,PALANGI,832,,gp_head,sarpanch,BC Other than Woman,BC,0,14,14,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,TADIPARRU,833,,gp_head,sarpanch,Other than Woman,NONE,0,12,12,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,UNDRAJAVARAM,834,,gp_head,sarpanch,SC Other than Woman,SC,0,,16,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,DAMMENNU,835,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,CHILAKAPADU,836,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,SATYAWADA,837,,gp_head,sarpanch,Woman,NONE,1,12,12,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,VADLURU,838,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,VELIVENNU,839,,gp_head,sarpanch,BC Other than Woman,BC,0,,16,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,K.SAVARAM,840,,gp_head,sarpanch,Other than Woman,NONE,0,,12,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Undrajavaram,SURYARAOPALEM,841,,gp_head,sarpanch,SC Woman,SC,1,,12,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,51,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,A Gokavaram,842,,gp_head,sarpanch,BC Woman,BC,1,12,12,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Apparao Peta,843,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Badampudi,844,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,Sc(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Bommidi,845,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Chebrolu,846,,gp_head,sarpanch,BC Woman,BC,1,,14,,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Donthavaram,847,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Gollagudem,848,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Gopalapuram,849,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Gopinadhapatnam,850,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Kagupadu,851,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Kaikaram,852,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Kakarlamudi,853,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,kamsaligunta,854,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,=‘ Nachugunta,855,,gp_head,sarpanch,SC Other than Woman,SC,0,,12,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Nallamadu,856,,gp_head,sarpanch,Other than Woman,NONE,0,8,8,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Narayanapuram,857,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,‘ Neeladripuram,858,,gp_head,sarpanch,SC Other than Woman,SC,0,,10,,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Rachuru,859,,gp_head,sarpanch,BC Other than Woman,BC,0,,10,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Ravulaparru,860,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Setharamapuram,861,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,0,URW,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Tallapuram,862,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Thimmayapalem,863,,gp_head,sarpanch,Woman,NONE,1,,8,,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Unguturu,864,,gp_head,sarpanch,BC Woman,BC,1,,14,,1,,1,1,BC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Uppakapadu,865,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Vellamilli,866,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,VA Puram,867,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Unguturu,Yerramillipadu,868,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,52,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Andaluru,869,,gp_head,sarpanch,SC Other than Woman,SC,0,10,10,1,1,,1,0,sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Balepalli,870,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Bobbanapalli,872,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Chintalakoti garuvu],873,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,1,UR(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Dusanapudi,874,,gp_head,sarpanch,Other than Woman,NONE,0,,8,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Konithiwada,875,,gp_head,sarpanch,BC Woman,BC,1,14,14,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Matsypuripalem},876,,gp_head,sarpanch,Woman,NONE,1,10,10,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,V,Mad,877,,gp_head,sarpanch,Other than Woman,NONE,0,,10,,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Matsyapuri,878,,gp_head,sarpanch,SC Other than Woman,SC,0,14,14,1,1,,1,0,Sc,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Mentepudi,879,,gp_head,sarpanch,Woman,NONE,1,4,4,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Nandamuru Garuvu,880,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Navuduru,881,,gp_head,sarpanch,SC Woman,SC,1,12,12,1,1,,1,0,sc(w),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veer,Panj: am},883,,gp_head,sarpanch,Woman,NONE,1,,10,,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Perkipalem,884,,gp_head,sarpanch,Other than Woman,NONE,0,10,10,1,1,,1,0,UR,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Rayakuduru,885,,gp_head,sarpanch,SC Woman,SC,1,,14,,1,,1,1,SC(W},latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Thokalapudi,886,,gp_head,sarpanch,BC Other than Woman,BC,0,10,10,1,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Tholeru,887,,gp_head,sarpanch,BC Other than Woman,BC,0,,12,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,V,Uttarapal,888,,gp_head,sarpanch,BC Woman,BC,1,10,10,1,1,,1,0,BC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Vaddigudem,889,,gp_head,sarpanch,BC Other than Woman,BC,0,,8,,1,,1,0,BC,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Veeravallipalem},890,,gp_head,sarpanch,Woman,NONE,1,8,8,1,1,,1,0,UR(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Veeravasaram,Veeravasaram,891,,gp_head,sarpanch,SC Woman,SC,1,16,16,1,1,,1,0,SC(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,53,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Koida,892,,gp_head,sarpanch,ST Woman,ST,1,10,10,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Repakagommu,893,,gp_head,sarpanch,ST Woman,ST,1,,12,,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Rudramkota,894,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Thirumalapuram,895,,gp_head,sarpanch,ST Woman,ST,1,8,8,1,1,,1,0,ST(W),latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Narlavaram,896,,gp_head,sarpanch,ST Other than Woman,ST,0,,8,,1,,1,0,sT,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Thatkurgommu],897,,gp_head,sarpanch,ST Other than Woman,ST,0,14,14,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Medepalli,898,,gp_head,sarpanch,ST Other than Woman,ST,0,12,12,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Katukur,899,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
+Andhra Pradesh,2020,West Godavari,Velairpad,Ramavaram,900,,gp_head,sarpanch,ST Other than Woman,ST,0,10,10,1,1,,1,0,ST,latin,ocr,data/ap/2020_res_gp/wg_res_gp.pdf,54,wg_res_gp.pdf
