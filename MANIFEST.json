@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "abd1627167462ddfad0a003c48c67de464b6c62d",
-  "committed_utc": "2026-08-08T10:24:28-07:00",
+  "built_from_commit": "be8c4571272c7cd3673f7917c17a834e244fc494",
+  "committed_utc": "2026-08-08T10:58:16-07:00",
   "dirty": false,
   "files": [
     {
@@ -19,7 +19,7 @@
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "9f4f5ce01648771ac6e143d0f3ec90e5d2806af2194168dd9e52c2f04842d86d",
+      "sha256": "f090aebd9251d00f81fea652e92a6a867d75ef29fa079717d13df1ec86566ba2",
       "states": [
         "Andhra Pradesh"
       ],
@@ -39,11 +39,11 @@
       "sha256": "b5c506be6b0734ebc8204fcdb146d1e391920ebca7208cdc00a4ee055715b72e"
     },
     {
-      "bytes": 18904400,
+      "bytes": 18834114,
       "kind": "master",
       "path": "data/master/master_extras.csv",
-      "rows": 604131,
-      "sha256": "f31e699db63ced500230cdf3902cc1a8d33262ca264547c1060879c265bd41d4"
+      "rows": 601211,
+      "sha256": "3b35f40a1f68d368894052588370ba8bb6869aa2ef6a32d08ab63a91d162261b"
     },
     {
       "bytes": 942222,
@@ -62,7 +62,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "875cd1df9ce263a4721d1d408c68d11c82045e6d087597ed213328f67ec715b9",
+      "sha256": "ab7c0648cd99159cbcb9d8f8af63c3ba0fb97e2ac65bbaa9083b43fb5fccb36b",
       "states": [
         "Goa"
       ],
@@ -125,7 +125,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "f3828ce2dba5bb61a8c96e13a12fbdddd0cacf688ef3982fbdcd165f7e5bd03d",
+      "sha256": "77d37befe6f5714baed4aff26dd263761277baad7d4a89ea4f67dbb446455bd9",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "bytes": 8922431,
+      "bytes": 8867337,
       "dataset_ids": [
         "jharkhand/block_member/2015",
         "jharkhand/gp_head/2015",
@@ -156,8 +156,8 @@
         "page"
       ],
       "rows": 19862,
-      "rows_identifying_a_distinct_seat": 15468,
-      "sha256": "841ad2fbd63e80392d9f2a7e496c19a07f5912a43f5db89b51daad1245571201",
+      "rows_identifying_a_distinct_seat": 15428,
+      "sha256": "8504408bc721f36348b353986424074859dd3adbf09917515643c1f41f2c3f09",
       "states": [
         "Jharkhand"
       ],
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "bytes": 804979,
+      "bytes": 809670,
       "dataset_ids": [
         "haryana/gp_head/2016",
         "haryana/gp_head/2022",
@@ -191,8 +191,8 @@
       ],
       "kind": "master",
       "path": "data/master/master_key_collisions.csv",
-      "rows": 9522,
-      "sha256": "0be21004daa14bbe36bc879b7fa5212140f120a567ea02fe85f928c905077b42"
+      "rows": 9562,
+      "sha256": "09aff5cfd162f17ea35a5262fbf9bbbe47d9d21e27f32114d1a56349fa2c1ec3"
     },
     {
       "bytes": 12275613,
@@ -307,11 +307,11 @@
       ]
     },
     {
-      "bytes": 1307034,
+      "bytes": 1274271,
       "kind": "parsed",
       "path": "data/jharkhand/mukhiya_reservation_2015.csv",
       "rows": 4214,
-      "sha256": "0f046991d7c8290ac85709852624c6dd2701496210e51b1c2a1332df7aefd6ac",
+      "sha256": "37bbba3afe47e693eb45f77a06e5974b78267242d0198dd78f24137a81dd79b1",
       "states": [
         "Jharkhand"
       ],
@@ -323,11 +323,11 @@
       ]
     },
     {
-      "bytes": 1307452,
+      "bytes": 1307414,
       "kind": "parsed",
       "path": "data/jharkhand/panchayat_samiti_reservation_2015.csv",
       "rows": 4354,
-      "sha256": "7b86da05fc3facbc91be6e2ff2aa8c946f99dce01c2e8de9a29680bce9760c1a",
+      "sha256": "1200ad5f10feb6d67393d1506fbf057bded6609b43e2a29379c5ee6fc184651f",
       "states": [
         "Jharkhand"
       ],
@@ -339,11 +339,11 @@
       ]
     },
     {
-      "bytes": 3665400,
+      "bytes": 3665047,
       "kind": "parsed",
       "path": "data/jharkhand/ward_member_reservation_2015.csv",
       "rows": 11113,
-      "sha256": "aae58462a610cb0ffb196d041884835a972ee19bdcf4dec9941ccf7f980ce60c",
+      "sha256": "49879c890b0256a3fe69e63060cdcf9a5fe007e2e893b5f6083fd7fc498262fd",
       "states": [
         "Jharkhand"
       ],

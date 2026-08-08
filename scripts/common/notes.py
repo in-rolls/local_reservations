@@ -199,8 +199,13 @@ def districts_missing(s):
       closes_with="a better read of the seat column on the scanned pages - the "
                   "identifier is printed, it is the scan that did not carry it")
 def panchayat_not_named(s):
-    if s.tier in ("zp_member", "block_head", "zp_head"):
-        return None          # numbered across the district, no panchayat to name
+    # A seat above panchayat level has no panchayat to name: a block member's
+    # constituency is numbered within its block and a district member's across
+    # the district. Counting those as unnamed made 4,107 correctly-parsed
+    # panchayat samiti rows look like a defect - they carry a block and a seat
+    # number, which is the whole of their identity.
+    if s.tier in ("block_member", "block_head", "zp_member", "zp_head"):
+        return None
     missing = [r for r in s.rows if not canon.unit_name(r)]
     if not missing:
         return None

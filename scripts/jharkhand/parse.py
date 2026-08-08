@@ -127,6 +127,15 @@ def split_seat_id(text, tier):
         s = s[:tail.start()]
     s = s.strip().strip("&-/@ ").strip()
 
+    # Some districts put the panchayat's name after the ampersand where others
+    # put its number - "I x<+ok 05@01 & cjMhgk" against "...&¼01½". Reading the
+    # ampersand as introducing a number only, the name was dropped and 1,141
+    # mukhiya rows named no panchayat at all.
+    trailing = re.search(r"&\s*([^&@/\d][^&@/]*?)\s*$", s)
+    if trailing and re.search(r"\w", trailing.group(1)):
+        out["trailing_name"] = trailing.group(1).strip()
+        s = s[:trailing.start()].strip()
+
     # the roman numeral is the district's index and floats: it opens the string
     # in most districts and trails it in East Singhbhum
     roman = SEAT_ROMAN.search(s)
@@ -154,6 +163,12 @@ def split_seat_id(text, tier):
 
     shape = "".join(kind(p) for p in parts)
     out["shape"] = shape
+
+    # A name taken from after the ampersand is the panchayat below block level
+    # and the block at panchayat samiti level, the same rule the shapes follow.
+    name = out.pop("trailing_name", "")
+    if name:
+        out["block" if tier == "panchayat_samiti" else "gram_panchayat"] = name
 
     def numbered(p):
         found = SEAT_NUMBERED.match(p)
