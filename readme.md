@@ -21,6 +21,12 @@ hand-maintained, so it is no longer hand-maintained.
 
 <!-- worklist:end -->
 
+Every release is pinned by **[MANIFEST.json](MANIFEST.json)** — a SHA-256 for
+every file, the exact master column order, and the commit each sibling
+repository was read at. Verify a checkout with `python3
+scripts/verify_manifest.py`, which is standard library only and imports nothing
+else here, so it works from a bare checkout or an unpacked tarball.
+
 ## What we have
 
 One row per state, year and tier — the grain the data actually has. The notes

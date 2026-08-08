@@ -1,6 +1,6 @@
 PY ?= python3
 
-.PHONY: help inventory probe goa jharkhand jk ap test coverage state-readmes stats worklist master expect dictionary
+.PHONY: help inventory probe goa jharkhand jk ap test coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -38,6 +38,18 @@ ap:
 
 master:
 	$(PY) scripts/build_master.py
+
+manifest:
+	$(PY) scripts/build_manifest.py
+
+verify:
+	$(PY) scripts/verify_manifest.py
+
+# Prepares and checks a release. It deliberately does not tag: a tag is one of
+# the few things you cannot take back, so this prints the command and a human
+# runs it.
+release-check: test master stats worklist coverage manifest verify
+	@$(PY) scripts/release_check.py $(VERSION)
 
 stats:
 	$(PY) scripts/build_stats.py --quiet
