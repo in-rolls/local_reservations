@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "1a36cba11023d84de8afe0a676086ebd43cf140b",
-  "committed_utc": "2026-08-08T12:25:37-07:00",
+  "built_from_commit": "14cd87ff0991ced05c7776c7c251c5c09dd2f398",
+  "committed_utc": "2026-08-08T13:13:07-07:00",
   "dirty": false,
   "files": [
     {
@@ -19,7 +19,7 @@
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "f98d1ca753c0fe51551a9942bfdec7876445372be0c9b824f761018bb1ef4dab",
+      "sha256": "d894ec0bde1853bed3f8c34582b6d6f78c91516d6d5374dc98b4e7232dbe279f",
       "states": [
         "Andhra Pradesh"
       ],
@@ -30,6 +30,13 @@
       "years": [
         "2020"
       ]
+    },
+    {
+      "bytes": 99,
+      "kind": "master",
+      "path": "data/master/master_candidates.csv",
+      "rows": 0,
+      "sha256": "c5a7432012f2c1ce6ec6380732adbecbd2bc115ebfc7d50a1fdf4e2a2f81b09c"
     },
     {
       "bytes": 37,
@@ -63,7 +70,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "7d5a6f5921bf8d810cd0b236605a9d386275594fc8e2d02f82338b4c799a46c6",
+      "sha256": "3c1c88290919362df468fcc8cd44102bffc37786ebd2ef641c99937b218352f9",
       "states": [
         "Goa"
       ],
@@ -126,7 +133,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "a4c73c06578b1fd98c4fe484b6f3e2c31b7a77cfbdfaa4d9b1858c03e07df726",
+      "sha256": "16654c4ef76886d804e4c04586a92b88859bf1f7afd22cfad398e0619e9e5336",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -158,7 +165,7 @@
       ],
       "rows": 19862,
       "rows_identifying_a_distinct_seat": 15447,
-      "sha256": "0732c77e3fef73098c04710428e94ec4cae99dcafda76b7964faa6c6ceb43754",
+      "sha256": "a56692024713c3b02d6680b42a44de923304e997603f7672db3203474a2bcd27",
       "states": [
         "Jharkhand"
       ],
@@ -510,7 +517,7 @@
   ],
   "totals": {
     "master_rows": 269408,
-    "master_states": 6,
+    "master_states": 7,
     "parsed_rows": 94670
   }
 }
