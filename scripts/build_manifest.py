@@ -46,11 +46,20 @@ def git(directory, *args):
         return ""
 
 
+# The manifest itself does not count. Writing it dirties the tree, so a build
+# that checked plain `git status` reported clean on its first run and dirty on
+# its second - the manifest recording a fact its own existence changed.
+GENERATED = ("MANIFEST.json", "MANIFEST.md")
+
+
 def repo_state(directory):
+    changed = [line for line in git(directory, "status", "--porcelain").split("\n")
+               if line.strip() and not any(line.strip().endswith(name)
+                                           for name in GENERATED)]
     return {
         "commit": git(directory, "rev-parse", "HEAD"),
         "committed_utc": git(directory, "show", "-s", "--format=%cI", "HEAD"),
-        "dirty": bool(git(directory, "status", "--porcelain")),
+        "dirty": bool(changed),
     }
 
 
