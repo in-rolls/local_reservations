@@ -36,6 +36,7 @@ import sys
 import pdfplumber
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import canon  # noqa: E402
 import emit  # noqa: E402
 from normalize import _undouble, caste_of, is_vacant, label, woman_of  # noqa: E402
 
@@ -44,7 +45,7 @@ JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 
 COLUMNS = ["state", "year", "district", "block", "block_no",
            "gram_panchayat", "gp_no", "ward_no", "seat_no", "seat_id_raw",
-           "tier", "reservation", "caste_reservation",
+           "tier", "tier_local", "reservation", "caste_reservation",
            "woman_reserved", "winner", "vacant", "reservation_raw", "script"]
 
 # Kruti Dev for each post. "neoqf[k;k" is a *deputy* mukhiya, so the match is
@@ -221,7 +222,8 @@ def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
         "ward_no": number if tier == "ward_member" else "",
         "seat_no": "" if tier == "ward_member" else number,
         "seat_id_raw": clean(raw),
-        "tier": tier, "reservation": label(caste, woman),
+        "tier": canon.tier_of(tier, "Jharkhand"), "tier_local": tier,
+        "reservation": label(caste, woman),
         "caste_reservation": caste, "woman_reserved": woman,
         "winner": winner, "vacant": int(is_vacant(winner)),
         "reservation_raw": raw_label, "script": "krutidev",
@@ -337,7 +339,7 @@ def main():
 
     by_tier = collections.defaultdict(list)
     for row in rows:
-        by_tier[row["tier"]].append(row)
+        by_tier[row["tier_local"]].append(row)
 
     for tier in sorted(by_tier):
         subset = by_tier[tier]

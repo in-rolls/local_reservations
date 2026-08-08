@@ -22,7 +22,8 @@ than a defect.
 |---|---|---|---|---|
 | `state` | string | error | length 3–30; ≤0% blank | Printed name of the state or union territory. |
 | `year` | integer | error | range 1990–2030; ≤0% blank | Election year. Four digits; a range would mean two cycles got merged into one file. |
-| `tier` | enum | error | one of `sarpanch`, `mukhiya`, `ward`, `ward_member`, `panchayat_samiti`, `zila_parishad`; ≤0% blank | Which office the seat is. Goa reserves wards and elects its sarpanch indirectly; Jharkhand reserves the mukhiya; Haryana the sarpanch; J&K 2016 gives both. |
+| `tier` | enum | error | one of `gp_head`, `gp_ward`, `block_member`, `block_head`, `zp_member`, `zp_head`, `kachahari_head`, `kachahari_member`, `ulb_ward`, `ulb_head`; ≤0% blank | Which office the seat is, canonically. The same office is printed under different names by different states, and worse, the same name means different offices - Bihar's sarpanch heads a village court, not the panchayat. See canon.py. |
+| `tier_local` | string | warn | length 2–40; ≤0% blank | The office as the state printed it: sarpanch, mukhiya, ward_member. Kept so nothing is lost to the canonical mapping and any row can be checked against its gazette. |
 | `district` | string | warn | length 3–30; ≤20% blank | J&K's 2010 files carry no district column at all, so a blank share above zero is expected there but not elsewhere. |
 | `block` | string | warn | length 2–40; ≤35% blank | Block, taluka or mandal depending on the state. |
 | `gram_panchayat` | string | warn | length 2–45; ≤10% blank; also called `halqa` | The panchayat. Called halqa in J&K. Jharkhand printed it inside a compound seat identifier until that was taken apart; see seat_id_raw. A value far over the length bound has usually swallowed the next column - that is how AP's broken mandal split was found. |
@@ -65,10 +66,12 @@ A file outside its band has lost rows or double counted them.
 
 | State | Tier | Expected rows |
 |---|---|---|
-| Andhra Pradesh | sarpanch | 500–13,200 |
-| Goa | ward | 400–1,800 |
-| Jammu & Kashmir | sarpanch | 100–4,500 |
-| Jammu & Kashmir | ward | 500–35,000 |
-| Jharkhand | mukhiya | 1,000–4,400 |
-| Jharkhand | panchayat_samiti | 1,000–5,500 |
-| Jharkhand | zila_parishad | 50–600 |
+| Andhra Pradesh | gp_head | 500–13,200 |
+| Andhra Pradesh | gp_ward | 5,000–130,000 |
+| Goa | gp_ward | 400–1,800 |
+| Jammu & Kashmir | gp_head | 100–4,500 |
+| Jammu & Kashmir | gp_ward | 500–35,000 |
+| Jharkhand | block_member | 1,000–5,500 |
+| Jharkhand | gp_head | 1,000–4,400 |
+| Jharkhand | gp_ward | 1,000–12,000 |
+| Jharkhand | zp_member | 50–600 |

@@ -36,35 +36,80 @@ START, END = "<!-- coverage:start -->", "<!-- coverage:end -->"
 SLICE_START, SLICE_END = "<!-- slices:start -->", "<!-- slices:end -->"
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
+import datasets  # noqa: E402
 import reference  # noqa: E402
 
-# A parsed dataset is one carrying these columns. Filenames are not evidence.
-REQUIRED = {"state", "year", "tier", "reservation", "caste_reservation"}
 
 # States split into their own repositories.
+# States parsed in a repository of their own, with the files that hold the
+# parse. The files are named rather than globbed: summing every CSV in a repo
+# counted Haryana's download manifest as 187 seats, and would have counted
+# quota_raj's copy of Uttar Pradesh - which is byte-identical to
+# local_elections_up - as a second Uttar Pradesh.
 SIBLINGS = {
-    "Haryana": ("2016, 2022", "sarpanch, ward",
-                "https://github.com/in-rolls/local_elections_haryana"),
-    "Bihar": ("2006, 2011, 2016", "mukhiya, sarpanch, panch, ward",
-              "https://github.com/in-rolls/local_elections_bihar"),
-    "Kerala": ("2005, 2010, 2015, 2020", "ward",
-               "https://github.com/in-rolls/local_elections_kerala"),
-    "Uttar Pradesh": ("2005, 2010, 2015, 2021", "pradhan",
-                      "https://github.com/in-rolls/local_elections_up"),
-    "Uttarakhand": ("2008, 2014, 2019", "panchayat",
-                    "https://github.com/in-rolls/local_elections_uttarakhand"),
+    "Haryana": {
+        "repo": "local_elections_haryana", "years": "2016, 2022",
+        "tiers": "gp_head, gp_ward",
+        "files": ["data/2016/gp_reservation.csv", "data/2016/ward_reservation.csv",
+                  "data/2022/gp_reservation.csv", "data/2022/ward_reservation.csv"],
+    },
+    "Bihar": {
+        "repo": "local_elections_bihar", "years": "2016",
+        "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari",
+        "files": ["data/mukhiya.csv", "data/ward_member.csv", "data/sarpanch.csv",
+                  "data/panch.csv", "data/panchayat_samiti_member.csv",
+                  "data/zila_parishad_member.csv"],
+    },
+    "Kerala": {
+        "repo": "local_elections_kerala", "years": "2010, 2015, 2020",
+        "tiers": "gp_ward, block_member, zp_member, ulb_ward",
+        "files": ["data/lsgi-election-kerala.csv"],
+    },
+    "Uttar Pradesh": {
+        "repo": "local_elections_up", "years": "2005, 2010, 2015, 2021",
+        "tiers": "gp_head",
+        "files": ["data/fin/up_gp_sarpanch_2005_fixed_with_transliteration.parquet",
+                  "data/fin/up_gp_sarpanch_2010_fixed_with_transliteration.parquet",
+                  "data/fin/up_gp_sarpanch_2015_fixed_with_transliteration.parquet",
+                  "data/fin/up_gp_sarpanch_2021_fixed_with_transliteration.parquet"],
+    },
+    "Uttarakhand": {
+        "repo": "local_elections_uttarakhand", "years": "2008, 2014, 2019",
+        "tiers": "gp_head, block_member, zp_member",
+        "files": ["data/uttarakhand-panchayat-elections.csv",
+                  "data/uttarakhand-panchayat-elections-haridwar.csv"],
+    },
+    # Rajasthan's parse lives in quota_raj rather than a local_elections_* repo,
+    # which is the only reason it spent this long filed under "prior work, other
+    # schema" - a label that reads as "already handled" when it meant "parsed,
+    # just not by a repository I was looking for". It is as ready as Haryana:
+    # caste_category and female_reserved are already separate columns.
+    "Rajasthan": {
+        "repo": "quota_raj", "years": "2005, 2010, 2015, 2020",
+        "tiers": "gp_head",
+        "files": ["data/raj/source_2005_std.parquet",
+                  "data/raj/source_2010_std.parquet",
+                  "data/raj/source_2015_std.parquet",
+                  "data/raj/source_2020_std.parquet"],
+    },
 }
 
-# States whose data predates this schema. It is real coverage, just not in our
-# column layout, so calling it "raw, unparsed" would understate it. Years are as
-# recorded by whoever contributed them.
+# Held here, in someone else's column layout, and nobody has parsed it. This is
+# a different thing from SIBLINGS and must not share a label with it: these are
+# open work, not coverage already achieved.
 LEGACY = {
-    "Rajasthan": ("2004-2019 urban, 2005-2021 panchayat", "rajasthan"),
-    "Telangana": ("2018-2023", "telangana"),
-    "West Bengal": ("2013 panchayat, 2008-2018 municipal", "wb"),
-    "Karnataka": ("GP reservation history (.dta)", "karnataka"),
-    "NCT of Delhi": ("2007, 2012, 2017 (urban)", "delhi"),
-    "Maharashtra": ("Mumbai 2007, 2012, 2017 (urban only)", "maharashtra"),
+    "Telangana": ("gram panchayat + ward 2019, municipal 2020-21", "telangana"),
+    "West Bengal": ("2018 delimitation-and-reservation gazettes, 20 districts", "wb"),
+    "Karnataka": ("gram panchayat head, 1993/2000/2002/2005/2007", "karnataka"),
+}
+
+# Urban local bodies only. Not a gap in rural coverage and not open work here -
+# the Trivedi Centre holds urban material, and the master is being landed for
+# panchayati raj first. Kept visible so "nothing for Maharashtra" is not read as
+# "nothing acquired".
+URBAN_ONLY = {
+    "NCT of Delhi": ("2007, 2012, 2017", "delhi"),
+    "Maharashtra": ("Mumbai 2007, 2012, 2017", "maharashtra"),
 }
 
 # Directory name in data/ -> printed state name.
@@ -118,17 +163,7 @@ def parsed_datasets():
     """Every CSV in data/ that carries our schema, keyed by state name."""
     found = collections.defaultdict(lambda: {"years": set(), "tiers": set(),
                                              "rows": 0, "dir": None})
-    for path in sorted(DATA.glob("*/*.csv")):
-        try:
-            with path.open(encoding="utf-8") as fh:
-                reader = csv.DictReader(fh)
-                if not reader.fieldnames or not REQUIRED <= set(reader.fieldnames):
-                    continue
-                rows = list(reader)
-        except (OSError, UnicodeDecodeError):
-            continue
-        if not rows:
-            continue
+    for path, rows in datasets.parsed():
         state = rows[0]["state"] or pretty(path.parent.name)
         entry = found[state]
         entry["dir"] = path.parent.name
@@ -150,20 +185,35 @@ def raw_holdings():
     return holdings
 
 
-def sibling_rows(url):
-    """Count rows in a sibling repo if it is checked out next to this one."""
-    name = url.rsplit("/", 1)[-1]
-    directory = ROOT.parent / name
+def sibling_rows(spec):
+    """Count the rows in a sibling's named parse files.
+
+    Only the declared files, never a glob: summing every CSV in a repository
+    counted Haryana's 187-row download manifest as seats, and would have counted
+    quota_raj's byte-identical copy of Uttar Pradesh as a second Uttar Pradesh.
+
+    Parquet is not readable from the standard library, so those files are
+    counted as unknown rather than as zero. The authoritative counts come from
+    the master build, which reads them through an adapter.
+    """
+    directory = ROOT.parent / spec["repo"]
     if not directory.exists():
         return "-"
-    total = 0
-    for path in directory.rglob("*.csv"):
-        try:
-            with path.open(encoding="utf-8", errors="replace") as fh:
-                total += max(sum(1 for _ in fh) - 1, 0)
-        except OSError:
+    total, unread = 0, 0
+    for relative in spec["files"]:
+        path = directory / relative
+        if not path.exists() or path.suffix != ".csv":
+            unread += 1
             continue
-    return f"{total:,}" if total else "-"
+        with path.open(encoding="utf-8", errors="replace") as fh:
+            total += max(sum(1 for _ in fh) - 1, 0)
+    # Parquet cannot be read from the standard library, so say so rather than
+    # printing a dash that reads as "nothing here". The authoritative counts
+    # come from the master build, which reads these through an adapter.
+    note = f"{unread} parquet" if unread else ""
+    if not total:
+        return note or "0"
+    return f"{total:,}" + (f" + {note}" if note else "")
 
 
 def build_rows():
@@ -181,13 +231,20 @@ def build_rows():
                           f"[data/{entry['dir']}/](data/{entry['dir']}/)"))
             continue
         if state in SIBLINGS:
-            years, tiers, url = SIBLINGS[state]
-            table.append((state, tiers, years, sibling_rows(url), "parsed",
-                          f"[{url.rsplit('/', 1)[-1]}]({url})"))
+            spec = SIBLINGS[state]
+            url = f"https://github.com/in-rolls/{spec['repo']}"
+            table.append((state, spec["tiers"], spec["years"],
+                          sibling_rows(spec), "parsed",
+                          f"[{spec['repo']}]({url})"))
             continue
         if state in LEGACY:
             years, directory = LEGACY[state]
-            table.append((state, "-", years, "-", "prior work, other schema",
+            table.append((state, "-", years, "-", "tables, other layout",
+                          f"[data/{directory}/](data/{directory}/)"))
+            continue
+        if state in URBAN_ONLY:
+            years, directory = URBAN_ONLY[state]
+            table.append((state, "`ulb_ward`", years, "-", "urban only",
                           f"[data/{directory}/](data/{directory}/)"))
             continue
         if state in NO_PRI:
@@ -200,26 +257,11 @@ def build_rows():
             counts = raw[directory]
             text = ", ".join(f"{n} {k}" for k, n in counts.most_common()
                              if k in ("digital-text", "scan", "mixed", "tabular"))
-            table.append((state, "-", "-", "-", "raw, unparsed",
+            table.append((state, "-", "-", "-", "documents, no parser",
                           f"[data/{directory}/](data/{directory}/) - {text}"))
         else:
             table.append((state, "-", "-", "-", "not held", "-"))
     return table
-
-
-def datasets():
-    """Every CSV under data/ that carries our schema, with its rows."""
-    for path in sorted(DATA.glob("*/*.csv")):
-        try:
-            with path.open(encoding="utf-8", errors="replace") as fh:
-                reader = csv.DictReader(fh)
-                if not reader.fieldnames or not REQUIRED <= set(reader.fieldnames):
-                    continue
-                rows = list(reader)
-        except OSError:
-            continue
-        if rows:
-            yield path, rows
 
 
 def slices():
@@ -232,7 +274,7 @@ def slices():
     """
     grouped = collections.defaultdict(list)
     directory_of = {}
-    for path, rows in datasets():
+    for path, rows in datasets.parsed():
         for row in rows:
             key = (row.get("state", ""), row.get("year", ""), row.get("tier", ""))
             grouped[key].append(row)

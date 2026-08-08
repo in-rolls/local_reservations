@@ -21,45 +21,45 @@ denominator there would be worse than admitting there isn't one.
 
 # (state, year, tier) -> {"total": int|None, "basis": str, "source": str}
 PUBLISHED = {
-    ("Goa", "2012", "ward"): {
+    ("Goa", "2012", "gp_ward"): {
         "total": 186, "basis": "seats", "unit": "panchayats",
         "source": "Goa SEC: 186 village panchayats went to poll in 2012. The "
                   "parsed file reproduces this exactly, which is what gives "
                   "confidence in the other two cycles' parsers.",
     },
-    ("Jharkhand", "2015", "mukhiya"): {
+    ("Jharkhand", "2015", "gp_head"): {
         "total": 4345, "basis": "seats", "unit": "gram panchayats",
         "source": "Jharkhand SEC, 2015 three-tier panchayat election.",
     },
-    ("Jharkhand", "2015", "panchayat_samiti"): {
+    ("Jharkhand", "2015", "block_member"): {
         "total": 5423, "basis": "seats", "unit": "seats",
         "source": "Jharkhand SEC, 2015.",
     },
-    ("Jharkhand", "2015", "zila_parishad"): {
+    ("Jharkhand", "2015", "zp_member"): {
         "total": 545, "basis": "seats", "unit": "seats",
         "source": "Jharkhand SEC, 2015.",
     },
-    ("Jammu & Kashmir", "2010", "ward"): {
+    ("Jammu & Kashmir", "2010", "gp_ward"): {
         "total": None, "basis": "unknown", "unit": "panch constituencies",
         "source": "No reliable published total, and the holdings are an ad-hoc "
                   "subset of districts rather than a full corpus. Measuring "
                   "against a made-up denominator would be worse than not "
                   "measuring.",
     },
-    ("Jammu & Kashmir", "2016", "sarpanch"): {
+    ("Jammu & Kashmir", "2016", "gp_head"): {
         "total": None, "basis": "unknown", "unit": "halqas",
         "source": "As above.",
     },
-    ("Jammu & Kashmir", "2016", "ward"): {
+    ("Jammu & Kashmir", "2016", "gp_ward"): {
         "total": None, "basis": "unknown", "unit": "panch constituencies",
         "source": "As above.",
     },
-    ("Jammu & Kashmir", "2018", "ward"): {
+    ("Jammu & Kashmir", "2018", "gp_ward"): {
         "total": None, "basis": "unknown", "unit": "panch constituencies",
         "source": "As above, and these documents list only the reserved wards, "
                   "so a completeness figure would not mean what it looks like.",
     },
-    ("Andhra Pradesh", "2020", "sarpanch"): {
+    ("Andhra Pradesh", "2020", "gp_head"): {
         "total": None, "basis": "per-district", "unit": "gram panchayats",
         "source": "Each gazette states its own district total in its FORMAT-I "
                   "abstract, which is a better denominator than a state figure "
@@ -70,11 +70,11 @@ PUBLISHED = {
                   "deduplicated, and the two agree on 98.4% of the seats "
                   "stated by both.",
     },
-    ("Goa", "2017", "ward"): {
+    ("Goa", "2017", "gp_ward"): {
         "total": None, "basis": "per-taluka", "unit": "wards",
         "source": "Measured against 2012, which is complete, taluka by taluka.",
     },
-    ("Goa", "2022", "ward"): {
+    ("Goa", "2022", "gp_ward"): {
         "total": None, "basis": "per-taluka", "unit": "wards",
         "source": "As above.",
     },

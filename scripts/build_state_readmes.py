@@ -25,6 +25,9 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_coverage as coverage  # noqa: E402
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
+import datasets  # noqa: E402
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
@@ -100,19 +103,14 @@ def slices_by_directory():
 def dataset_files(directory):
     """Parsed outputs in this directory, with what each holds."""
     out = []
-    for path in sorted((DATA / directory).glob("*.csv")):
-        with path.open(encoding="utf-8", errors="replace") as fh:
-            reader = csv.DictReader(fh)
-            if not reader.fieldnames or not coverage.REQUIRED <= set(reader.fieldnames):
-                continue
-            rows = list(reader)
-        if not rows:
+    for path, rows in datasets.parsed():
+        if path.parent.name != directory:
             continue
         out.append({
             "name": path.name,
             "stem": path.stem,
             "rows": len(rows),
-            "columns": len(reader.fieldnames),
+            "columns": len(rows[0]),
             "sources": len({r.get("source_path", "") for r in rows}),
         })
     return out
@@ -303,12 +301,13 @@ def render_unparsed(directory, state, status, where):
                f"repository's schema yet, so it does not appear in the "
                f"per-slice table in the [top-level readme](../../readme.md).")
     out.append("")
-    if status == "prior work, other schema":
-        out.append("This is real coverage contributed earlier, in its own "
-                   "column layout. Calling it unparsed would understate it; "
-                   "calling it parsed would imply it joins cleanly to the "
-                   "other states, which it does not until the schema "
-                   "harmonisation is done.")
+    if status == "tables, other layout":
+        out.append("The documents or tables are here and nobody has parsed "
+                   "them into this repository's schema yet. This is open work, "
+                   "not coverage already achieved - a distinction the old label "
+                   "\"prior work, other schema\" blurred, which is how "
+                   "Rajasthan sat here for months while its parse existed in "
+                   "another repository.")
         out.append("")
         if where:
             out.append(f"Recorded years: {where}.")
@@ -337,9 +336,9 @@ def build():
     """Return {path: text} for every state directory."""
     entries = slices_by_directory()
     legacy = {d: (state, years) for state, (years, d) in coverage.LEGACY.items()}
-    siblings = {}
-    for state, (years, tiers, url) in coverage.SIBLINGS.items():
-        siblings[state] = (years, tiers, url)
+    siblings = {state: (spec["years"], spec["tiers"],
+                        f"https://github.com/in-rolls/{spec['repo']}")
+                for state, spec in coverage.SIBLINGS.items()}
 
     out = {}
     for directory in sorted(p.name for p in DATA.iterdir() if p.is_dir()):
@@ -350,12 +349,13 @@ def build():
         elif directory in legacy:
             name, years = legacy[directory]
             out[target] = render_unparsed(directory, name,
-                                          "prior work, other schema", years)
+                                          "tables, other layout", years)
         elif state in siblings:
             years, tiers, url = siblings[state]
             out[target] = render_sibling(directory, state, years, tiers, url)
         else:
-            out[target] = render_unparsed(directory, state, "raw, unparsed", "")
+            out[target] = render_unparsed(directory, state,
+                                          "documents, no parser", "")
     return out
 
 

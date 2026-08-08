@@ -8,8 +8,8 @@
 
 | Year | Tier | Rows | Women | Districts | vs published | Notes |
 |---|---|---|---|---|---|---|
-| 2020 | `sarpanch` | 4,738 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count |
-| 2020 | `ward` | 45,478 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count |
+| 2020 | `gp_head` | 4,738 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count |
+| 2020 | `gp_ward` | 45,478 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count |
 
 Read the notes before the numbers — several of them say that a share is a property of which pages were published rather than of the state.
 
@@ -19,8 +19,8 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`sarpanch_reservation_2020.csv`](sarpanch_reservation_2020.csv) | 4,738 | 23 | 5 |
-| [`ward_reservation_2020.csv`](ward_reservation_2020.csv) | 45,478 | 23 | 5 |
+| [`sarpanch_reservation_2020.csv`](sarpanch_reservation_2020.csv) | 4,738 | 24 | 5 |
+| [`ward_reservation_2020.csv`](ward_reservation_2020.csv) | 45,478 | 24 | 5 |
 
 ## About these sources
 

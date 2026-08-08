@@ -8,9 +8,9 @@
 
 | Year | Tier | Rows | Women | Districts | vs published | Notes |
 |---|---|---|---|---|---|---|
-| 2012 | `ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — |
-| 2017 | `ward` | 684 | 27% | 2 | — | no winner published |
-| 2022 | `ward` | 793 | 39% | 2 | — | no winner published |
+| 2012 | `gp_ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — |
+| 2017 | `gp_ward` | 684 | 27% | 2 | — | no winner published |
+| 2022 | `gp_ward` | 793 | 39% | 2 | — | no winner published |
 
 Read the notes before the numbers — several of them say that a share is a property of which pages were published rather than of the state.
 
@@ -20,9 +20,9 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`ward_reservation_2012.csv`](ward_reservation_2012.csv) | 1,471 | 17 | 12 |
-| [`ward_reservation_2017.csv`](ward_reservation_2017.csv) | 684 | 17 | 10 |
-| [`ward_reservation_2022.csv`](ward_reservation_2022.csv) | 793 | 17 | 9 |
+| [`ward_reservation_2012.csv`](ward_reservation_2012.csv) | 1,471 | 18 | 12 |
+| [`ward_reservation_2017.csv`](ward_reservation_2017.csv) | 684 | 18 | 10 |
+| [`ward_reservation_2022.csv`](ward_reservation_2022.csv) | 793 | 18 | 9 |
 
 ## About these sources
 

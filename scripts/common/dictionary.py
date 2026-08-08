@@ -28,8 +28,12 @@ CASTES = ["SC", "ST", "BC", "NONE"]
 
 # The office a row is about. These states do not reserve the same one, which is
 # why a pooled file without this column would silently compare different things.
-TIERS = ["sarpanch", "mukhiya", "ward", "ward_member", "panchayat_samiti",
-         "zila_parishad"]
+# The canonical offices. States print these under many names - sarpanch,
+# mukhiya, pradhan, ward, ward_member - and the printed name is kept alongside
+# in tier_local. canon.py owns the mapping and the reasons.
+TIERS = ["gp_head", "gp_ward", "block_member", "block_head",
+         "zp_member", "zp_head", "kachahari_head", "kachahari_member",
+         "ulb_ward", "ulb_head"]
 
 RESERVATION_LABELS = [
     "Woman", "Other than Woman",
@@ -56,9 +60,14 @@ COLUMNS = [
            note="Election year. Four digits; a range would mean two cycles got "
                 "merged into one file."),
     column("tier", "enum", required=True, allowed=TIERS, max_blank=0.0,
-           note="Which office the seat is. Goa reserves wards and elects its "
-                "sarpanch indirectly; Jharkhand reserves the mukhiya; Haryana "
-                "the sarpanch; J&K 2016 gives both."),
+           note="Which office the seat is, canonically. The same office is "
+                "printed under different names by different states, and worse, "
+                "the same name means different offices - Bihar's sarpanch heads "
+                "a village court, not the panchayat. See canon.py."),
+    column("tier_local", "string", length=(2, 40), max_blank=0.0, severity=WARN,
+           note="The office as the state printed it: sarpanch, mukhiya, "
+                "ward_member. Kept so nothing is lost to the canonical "
+                "mapping and any row can be checked against its gazette."),
     column("district", "string", length=(3, 30), max_blank=0.20,
            severity=WARN,
            note="J&K's 2010 files carry no district column at all, so a blank "
@@ -191,14 +200,20 @@ ALIAS_OF = {alias: c["name"] for c in COLUMNS for alias in c["aliases"]}
 
 # Plausible row counts per state and tier, as a band rather than a number - a
 # file outside its band has either lost rows or double counted them.
+# Keyed on the canonical tier. An absent band is not a pass - it is an
+# unchecked slice, and the two largest slices in the repo (Andhra Pradesh's
+# 45,478 wards and Jharkhand's 6,174) went unchecked for exactly that reason,
+# because check_dataset skips what it has no band for.
 ROW_BANDS = {
-    ("Goa", "ward"): (400, 1800),
-    ("Jharkhand", "mukhiya"): (1000, 4400),
-    ("Jharkhand", "panchayat_samiti"): (1000, 5500),
-    ("Jharkhand", "zila_parishad"): (50, 600),
-    ("Jammu & Kashmir", "sarpanch"): (100, 4500),
-    ("Jammu & Kashmir", "ward"): (500, 35000),
-    ("Andhra Pradesh", "sarpanch"): (500, 13200),
+    ("Goa", "gp_ward"): (400, 1800),
+    ("Jharkhand", "gp_head"): (1000, 4400),
+    ("Jharkhand", "gp_ward"): (1000, 12000),
+    ("Jharkhand", "block_member"): (1000, 5500),
+    ("Jharkhand", "zp_member"): (50, 600),
+    ("Jammu & Kashmir", "gp_head"): (100, 4500),
+    ("Jammu & Kashmir", "gp_ward"): (500, 35000),
+    ("Andhra Pradesh", "gp_head"): (500, 13200),
+    ("Andhra Pradesh", "gp_ward"): (5000, 130000),
 }
 
 ROMAN = re.compile(r"^[IVXLC]+$", re.I)

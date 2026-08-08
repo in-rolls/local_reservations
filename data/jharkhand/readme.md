@@ -8,10 +8,10 @@
 
 | Year | Tier | Rows | Women | Districts | vs published | Notes |
 |---|---|---|---|---|---|---|
-| 2015 | `mukhiya` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts |
-| 2015 | `panchayat_samiti` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts |
-| 2015 | `ward_member` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts |
-| 2015 | `zila_parishad` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts |
+| 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts |
+| 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts |
+| 2015 | `gp_ward` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts |
+| 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts |
 
 Read the notes before the numbers — several of them say that a share is a property of which pages were published rather than of the state.
 
@@ -21,10 +21,10 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`mukhiya_reservation_2015.csv`](mukhiya_reservation_2015.csv) | 2,544 | 21 | 44 |
-| [`panchayat_samiti_reservation_2015.csv`](panchayat_samiti_reservation_2015.csv) | 2,895 | 21 | 22 |
-| [`ward_member_reservation_2015.csv`](ward_member_reservation_2015.csv) | 6,174 | 21 | 19 |
-| [`zila_parishad_reservation_2015.csv`](zila_parishad_reservation_2015.csv) | 98 | 21 | 4 |
+| [`mukhiya_reservation_2015.csv`](mukhiya_reservation_2015.csv) | 2,544 | 22 | 44 |
+| [`panchayat_samiti_reservation_2015.csv`](panchayat_samiti_reservation_2015.csv) | 2,895 | 22 | 22 |
+| [`ward_member_reservation_2015.csv`](ward_member_reservation_2015.csv) | 6,174 | 22 | 19 |
+| [`zila_parishad_reservation_2015.csv`](zila_parishad_reservation_2015.csv) | 98 | 22 | 4 |
 
 ## About these sources
 

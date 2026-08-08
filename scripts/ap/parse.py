@@ -45,7 +45,7 @@ AP = ROOT / "data" / "ap" / "2020_res_gp"
 OCR_CACHE = ROOT / "data" / "ap" / "ocr"
 
 COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
-           "ward_no", "tier", "reservation", "caste_reservation",
+           "ward_no", "tier", "tier_local", "reservation", "caste_reservation",
            "woman_reserved", "ward_count", "wards_parsed",
            "ward_list_complete", "printings", "printings_agree",
            "ocr_repaired", "reservation_raw",
@@ -496,7 +496,7 @@ def parse_pdf(path):
                 if parsed["ward_count"].isdigit() else ""),
         }
         rows.append(emit.stamp(dict(
-            base, ward_no="", tier="sarpanch",
+            base, ward_no="", tier="gp_head", tier_local="sarpanch",
             reservation=label(caste, woman), caste_reservation=caste,
             woman_reserved=woman, ocr_repaired=repaired,
             reservation_raw=parsed["sarpanch_raw"],
@@ -509,7 +509,7 @@ def parse_pdf(path):
                 continue
             caste, woman, script = got
             rows.append(emit.stamp(dict(
-                base, ward_no=str(index), tier="ward",
+                base, ward_no=str(index), tier="gp_ward", tier_local="ward",
                 reservation=label(caste, woman), caste_reservation=caste,
                 woman_reserved=woman, ocr_repaired=int(repaired),
                 reservation_raw=raw, script=script,
@@ -569,7 +569,7 @@ def main():
 
     by_tier = collections.defaultdict(list)
     for row in rows:
-        by_tier[row["tier"]].append(row)
+        by_tier[row["tier_local"]].append(row)
 
     for tier in sorted(by_tier):
         subset = by_tier[tier]

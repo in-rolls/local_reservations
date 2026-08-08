@@ -49,7 +49,7 @@ DISTRICT = {
 }
 
 COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
-           "tier", "reservation", "caste_reservation", "woman_reserved",
+           "tier", "tier_local", "reservation", "caste_reservation", "woman_reserved",
            "winner", "votes", "reservation_raw", "script", "source_pdf"]
 
 RE_WARD_LINE = re.compile(r"^\s*Ward\s+([IVXLC]+|\d+)\s*$", re.I)
@@ -100,7 +100,8 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
     made = {
         "state": "Goa", "year": year,
         "district": DISTRICT.get(taluka.lower(), ""), "block": taluka,
-        "gram_panchayat": panchayat, "ward_no": ward, "tier": "ward",
+        "gram_panchayat": panchayat, "ward_no": ward,
+        "tier": "gp_ward", "tier_local": "ward",
         "reservation": label(caste, woman), "caste_reservation": caste,
         "woman_reserved": woman, "winner": winner, "votes": votes,
         "reservation_raw": clean(raw), "script": script, "source_pdf": source,

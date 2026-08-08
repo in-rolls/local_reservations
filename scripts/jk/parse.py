@@ -32,6 +32,7 @@ import sys
 import pdfplumber
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent / "common"))
+import canon  # noqa: E402
 import emit  # noqa: E402
 from normalize import label, normalize_reservation  # noqa: E402
 
@@ -39,7 +40,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JK = ROOT / "data" / "jk"
 
 COLUMNS = ["state", "year", "district", "block", "halqa", "ward_no",
-           "ward_name", "tier", "reservation", "caste_reservation",
+           "ward_name", "tier", "tier_local", "reservation", "caste_reservation",
            "woman_reserved", "listing_scope", "pop_sc", "pop_st", "pop_oc",
            "pop_total", "reservation_raw", "script"]
 
@@ -229,7 +230,8 @@ def parse_mapped(path, year):
                             base,
                             ward_no=ward_no if tier == "ward" else "",
                             ward_name=ward_name if tier == "ward" else "",
-                            tier=tier, reservation=label(caste, woman),
+                            tier=canon.tier_of(tier, "Jammu & Kashmir"),
+                            tier_local=tier, reservation=label(caste, woman),
                             caste_reservation=caste, woman_reserved=woman,
                             reservation_raw=raw, script=script,
                         ), path, page.page_number, ROOT))
@@ -267,7 +269,8 @@ def parse_generic(path, year, layout):
                         "state": "Jammu & Kashmir", "year": year,
                         "district": district, "block": block, "halqa": halqa,
                         "ward_no": ward_no, "ward_name": ward_name,
-                        "tier": "ward", "reservation": label(caste, woman),
+                        "tier": "gp_ward", "tier_local": "ward",
+                        "reservation": label(caste, woman),
                         "caste_reservation": caste, "woman_reserved": woman,
                         "listing_scope": LISTING_SCOPE.get(year, "all_seats"),
                         "pop_sc": "", "pop_st": "", "pop_oc": "", "pop_total": "",
@@ -317,7 +320,7 @@ def main():
 
         by_tier = collections.defaultdict(list)
         for row in rows:
-            by_tier[row["tier"]].append(row)
+            by_tier[row["tier_local"]].append(row)
         for tier, subset in sorted(by_tier.items()):
             stem = JK / f"{tier}_reservation_{year}"
             csv_path, _ = emit.write(subset, stem, COLUMNS)

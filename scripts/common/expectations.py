@@ -24,30 +24,19 @@ import re
 import statistics
 import sys
 
+import datasets as DS
 import dictionary as D
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA = ROOT / "data"
 REPORT = DATA / "expectations_report.csv"
 
-REQUIRED_SCHEMA = {"state", "year", "tier", "reservation", "caste_reservation"}
 REPORT_COLUMNS = ["severity", "file", "scope", "column", "rule", "count",
                   "share", "examples", "first_source", "first_page"]
 
 
 def datasets():
-    """Every CSV under data/ that carries our schema."""
-    for path in sorted(DATA.glob("*/*.csv")):
-        try:
-            with path.open(encoding="utf-8", errors="replace") as fh:
-                reader = csv.DictReader(fh)
-                if not reader.fieldnames or not REQUIRED_SCHEMA <= set(reader.fieldnames):
-                    continue
-                rows = list(reader)
-        except OSError:
-            continue
-        if rows:
-            yield path, rows
+    return DS.parsed()
 
 
 class Findings:
@@ -170,13 +159,14 @@ def check_rows(findings, path, rows):
                  bad, total)
 
     # a seat-level row has no ward; a ward row must have one
-    seat_tiers = {"sarpanch", "mukhiya", "panchayat_samiti", "zila_parishad"}
+    seat_tiers = {"gp_head", "block_member", "block_head", "zp_member",
+                  "zp_head", "kachahari_head"}
     bad = [(r, r.get("ward_no")) for r in rows
            if r.get("tier") in seat_tiers and (r.get("ward_no") or "").strip()]
     findings.add(D.WARN, path, "row", "ward_no",
                  "seat-level row carries a ward number", bad, total)
     bad = [(r, "") for r in rows
-           if r.get("tier") in ("ward", "ward_member")
+           if r.get("tier") in ("gp_ward", "ulb_ward", "kachahari_member")
            and not (r.get("ward_no") or "").strip()]
     findings.add(D.WARN, path, "row", "ward_no",
                  "ward row has no ward number", bad, total)

@@ -29,27 +29,27 @@ are still in the legacy font they were printed in.
 
 | State | Year | Tier | Rows | Women | Districts | vs published | Notes | Where |
 |---|---|---|---|---|---|---|---|---|
-| Andhra Pradesh | 2020 | `sarpanch` | 4,738 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count | [data/ap/](data/ap/) |
-| Andhra Pradesh | 2020 | `ward` | 45,478 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count | [data/ap/](data/ap/) |
-| Goa | 2012 | `ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
-| Goa | 2017 | `ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
-| Goa | 2022 | `ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
-| Jammu & Kashmir | 2010 | `ward` | 7,340 | 48% | 2 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2016 | `sarpanch` | 410 | 33% | 14 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2016 | `ward` | 2,326 | 32% | 14 | — | no winner published | [data/jk/](data/jk/) |
-| Jammu & Kashmir | 2018 | `ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
-| Jharkhand | 2015 | `mukhiya` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `panchayat_samiti` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `ward_member` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
-| Jharkhand | 2015 | `zila_parishad` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Andhra Pradesh | 2020 | `gp_head` | 4,738 | 46% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `gp_ward` | 45,478 | 43% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count | [data/ap/](data/ap/) |
+| Goa | 2012 | `gp_ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
+| Goa | 2017 | `gp_ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
+| Goa | 2022 | `gp_ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
+| Jammu & Kashmir | 2010 | `gp_ward` | 7,340 | 48% | 2 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `gp_head` | 410 | 33% | 14 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2016 | `gp_ward` | 2,326 | 32% | 14 | — | no winner published | [data/jk/](data/jk/) |
+| Jammu & Kashmir | 2018 | `gp_ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state | [data/jk/](data/jk/) |
+| Jharkhand | 2015 | `block_member` | 2,895 | 52% | 15 | 53% of 5,423 seats | place names not transliterated; partial: 15 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_head` | 2,544 | 52% | 16 | 59% of 4,345 gram panchayats | place names not transliterated; partial: 16 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `gp_ward` | 6,174 | 52% | 5 | — | place names not transliterated; partial: 5 of 24 districts | [data/jharkhand/](data/jharkhand/) |
+| Jharkhand | 2015 | `zp_member` | 98 | 52% | 4 | 18% of 545 seats | place names not transliterated; partial: 4 of 24 districts | [data/jharkhand/](data/jharkhand/) |
 
 <!-- slices:end -->
 
 ## What is still missing
 
 *Status* means: **parsed** — in this schema, one row per seat-year;
-**prior work, other schema** — real coverage contributed earlier, in its own
-layout; **raw, unparsed** — source documents on disk, no parser yet;
+**held, unparsed** — documents or tables are here, in someone else's
+layout, and nobody has parsed them into this schema yet; **raw, unparsed** — source documents on disk, no parser yet;
 **not held** — nothing acquired; **no PRI** — nothing to collect.
 
 
@@ -58,41 +58,41 @@ layout; **raw, unparsed** — source documents on disk, no parser yet;
 | State | Tier | Years | Rows | Status | Where |
 |---|---|---|---|---|---|
 | Andaman & Nicobar Islands | - | - | - | not held | - |
-| Andhra Pradesh | sarpanch, ward | 2020 | 50,216 | parsed | [data/ap/](data/ap/) |
+| Andhra Pradesh | gp_head, gp_ward | 2020 | 50,216 | parsed | [data/ap/](data/ap/) |
 | Arunachal Pradesh | - | - | - | not held | - |
-| Assam | - | - | - | raw, unparsed | [data/assam/](data/assam/) - 1 digital-text |
-| Bihar | mukhiya, sarpanch, panch, ward | 2006, 2011, 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |
-| Chandigarh | - | - | - | raw, unparsed | [data/chandigarh/](data/chandigarh/) - 4 digital-text, 1 scan |
+| Assam | - | - | - | documents, no parser | [data/assam/](data/assam/) - 1 digital-text |
+| Bihar | gp_head, gp_ward, block_member, zp_member, kachahari | 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |
+| Chandigarh | - | - | - | documents, no parser | [data/chandigarh/](data/chandigarh/) - 4 digital-text, 1 scan |
 | Chhattisgarh | - | - | - | not held | - |
 | Dadra & Nagar Haveli and Daman & Diu | - | - | - | not held | - |
-| Goa | ward | 2012, 2017, 2022 | 2,948 | parsed | [data/goa/](data/goa/) |
+| Goa | gp_ward | 2012, 2017, 2022 | 2,948 | parsed | [data/goa/](data/goa/) |
 | Gujarat | - | - | - | not held | - |
-| Haryana | sarpanch, ward | 2016, 2022 | 135,426 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
-| Himachal Pradesh | - | - | - | raw, unparsed | [data/himachal/](data/himachal/) - 1 scan |
-| Jammu & Kashmir | sarpanch, ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
-| Jharkhand | mukhiya, panchayat_samiti, ward_member, zila_parishad | 2015 | 11,711 | parsed | [data/jharkhand/](data/jharkhand/) |
-| Karnataka | - | GP reservation history (.dta) | - | prior work, other schema | [data/karnataka/](data/karnataka/) |
-| Kerala | ward | 2005, 2010, 2015, 2020 | 148,885 | parsed | [local_elections_kerala](https://github.com/in-rolls/local_elections_kerala) |
+| Haryana | gp_head, gp_ward | 2016, 2022 | 135,218 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
+| Himachal Pradesh | - | - | - | documents, no parser | [data/himachal/](data/himachal/) - 1 scan |
+| Jammu & Kashmir | gp_head, gp_ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
+| Jharkhand | block_member, gp_head, gp_ward, zp_member | 2015 | 11,711 | parsed | [data/jharkhand/](data/jharkhand/) |
+| Karnataka | - | gram panchayat head, 1993/2000/2002/2005/2007 | - | tables, other layout | [data/karnataka/](data/karnataka/) |
+| Kerala | gp_ward, block_member, zp_member, ulb_ward | 2010, 2015, 2020 | 65,296 | parsed | [local_elections_kerala](https://github.com/in-rolls/local_elections_kerala) |
 | Ladakh | - | - | - | not held | - |
 | Lakshadweep | - | - | - | not held | - |
-| Madhya Pradesh | - | - | - | raw, unparsed | [data/madhya_pradesh/](data/madhya_pradesh/) - 2 scan |
-| Maharashtra | - | Mumbai 2007, 2012, 2017 (urban only) | - | prior work, other schema | [data/maharashtra/](data/maharashtra/) |
+| Madhya Pradesh | - | - | - | documents, no parser | [data/madhya_pradesh/](data/madhya_pradesh/) - 2 scan |
+| Maharashtra | `ulb_ward` | Mumbai 2007, 2012, 2017 | - | urban only | [data/maharashtra/](data/maharashtra/) |
 | Manipur | - | - | - | not held | - |
 | Meghalaya | - | - | - | no PRI | Sixth Schedule - autonomous district councils, no PRI |
 | Mizoram | - | - | - | no PRI | Sixth Schedule - village councils, no PRI |
 | Nagaland | - | - | - | no PRI | Article 371A - village councils, no PRI |
-| NCT of Delhi | - | 2007, 2012, 2017 (urban) | - | prior work, other schema | [data/delhi/](data/delhi/) |
-| Odisha | - | - | - | raw, unparsed | [data/odisha/](data/odisha/) - 6 digital-text |
-| Puducherry | - | - | - | raw, unparsed | [data/puducherry/](data/puducherry/) - 1 digital-text, 1 scan |
+| NCT of Delhi | `ulb_ward` | 2007, 2012, 2017 | - | urban only | [data/delhi/](data/delhi/) |
+| Odisha | - | - | - | documents, no parser | [data/odisha/](data/odisha/) - 6 digital-text |
+| Puducherry | - | - | - | documents, no parser | [data/puducherry/](data/puducherry/) - 1 digital-text, 1 scan |
 | Punjab | - | - | - | not held | - |
-| Rajasthan | - | 2004-2019 urban, 2005-2021 panchayat | - | prior work, other schema | [data/rajasthan/](data/rajasthan/) |
+| Rajasthan | gp_head | 2005, 2010, 2015, 2020 | 4 parquet | parsed | [quota_raj](https://github.com/in-rolls/quota_raj) |
 | Sikkim | - | - | - | not held | - |
-| Tamil Nadu | - | - | - | raw, unparsed | [data/tamil_nadu/](data/tamil_nadu/) - 11 digital-text, 1 scan |
-| Telangana | - | 2018-2023 | - | prior work, other schema | [data/telangana/](data/telangana/) |
+| Tamil Nadu | - | - | - | documents, no parser | [data/tamil_nadu/](data/tamil_nadu/) - 11 digital-text, 1 scan |
+| Telangana | - | gram panchayat + ward 2019, municipal 2020-21 | - | tables, other layout | [data/telangana/](data/telangana/) |
 | Tripura | - | - | - | not held | - |
-| Uttar Pradesh | pradhan | 2005, 2010, 2015, 2021 | 1,552,251 | parsed | [local_elections_up](https://github.com/in-rolls/local_elections_up) |
-| Uttarakhand | panchayat | 2008, 2014, 2019 | 129,044 | parsed | [local_elections_uttarakhand](https://github.com/in-rolls/local_elections_uttarakhand) |
-| West Bengal | - | 2013 panchayat, 2008-2018 municipal | - | prior work, other schema | [data/wb/](data/wb/) |
+| Uttar Pradesh | gp_head | 2005, 2010, 2015, 2021 | 4 parquet | parsed | [local_elections_up](https://github.com/in-rolls/local_elections_up) |
+| Uttarakhand | gp_head, block_member, zp_member | 2008, 2014, 2019 | 116,514 | parsed | [local_elections_uttarakhand](https://github.com/in-rolls/local_elections_uttarakhand) |
+| West Bengal | - | 2018 delimitation-and-reservation gazettes, 20 districts | - | tables, other layout | [data/wb/](data/wb/) |
 
 <!-- coverage:end -->
 

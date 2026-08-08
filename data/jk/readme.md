@@ -8,10 +8,10 @@
 
 | Year | Tier | Rows | Women | Districts | vs published | Notes |
 |---|---|---|---|---|---|---|
-| 2010 | `ward` | 7,340 | 48% | 2 | — | no winner published |
-| 2016 | `sarpanch` | 410 | 33% | 14 | — | no winner published |
-| 2016 | `ward` | 2,326 | 32% | 14 | — | no winner published |
-| 2018 | `ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state |
+| 2010 | `gp_ward` | 7,340 | 48% | 2 | — | no winner published |
+| 2016 | `gp_head` | 410 | 33% | 14 | — | no winner published |
+| 2016 | `gp_ward` | 2,326 | 32% | 14 | — | no winner published |
+| 2018 | `gp_ward` | 1,432 | 82% | 13 | — | no winner published; **reserved seats only** — shares are a property of the document, not of the state |
 
 Read the notes before the numbers — several of them say that a share is a property of which pages were published rather than of the state.
 
@@ -21,10 +21,10 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`sarpanch_reservation_2016.csv`](sarpanch_reservation_2016.csv) | 410 | 21 | 12 |
-| [`ward_reservation_2010.csv`](ward_reservation_2010.csv) | 7,340 | 21 | 54 |
-| [`ward_reservation_2016.csv`](ward_reservation_2016.csv) | 2,326 | 21 | 12 |
-| [`ward_reservation_2018.csv`](ward_reservation_2018.csv) | 1,432 | 21 | 13 |
+| [`sarpanch_reservation_2016.csv`](sarpanch_reservation_2016.csv) | 410 | 22 | 12 |
+| [`ward_reservation_2010.csv`](ward_reservation_2010.csv) | 7,340 | 22 | 54 |
+| [`ward_reservation_2016.csv`](ward_reservation_2016.csv) | 2,326 | 22 | 12 |
+| [`ward_reservation_2018.csv`](ward_reservation_2018.csv) | 1,432 | 22 | 13 |
 
 ## About these sources
 
