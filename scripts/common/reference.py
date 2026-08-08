@@ -59,6 +59,56 @@ PUBLISHED = {
         "source": "As above, and these documents list only the reserved wards, "
                   "so a completeness figure would not mean what it looks like.",
     },
+    # Bihar's six tiers, 2016. No denominator, and the reason is specific.
+    #
+    # The State Election Commission does publish per-tier totals, in a 434-page
+    # scan with no text layer; OCR'd, its summary table reads "पंचायत आम
+    # निर्वाचन, 2021 एक नजर में" - **2021**, not 2016. It gives 8,067 gram
+    # panchayats, 533 blocks, 38 districts and 247,658 directly elected seats.
+    # Those are the wrong cycle for this data and are recorded here as context
+    # rather than as a total, because `coverage_vs_published` would treat a
+    # total as authoritative and report a completeness figure against a
+    # delimitation these rows were not drawn under.
+    #
+    # They are still worth having: against 2021's 8,067 panchayats the scrape's
+    # 7,997 mukhiya seats are 99.1%, and its 10,837 panchayat samiti seats are
+    # 97.7% of 2021's 11,094. The zila parishad tier is the one that does not
+    # look like that.
+    #
+    # Recovering the 2016 totals means finding the 2016 report; that is on the
+    # worklist. What is available without it is internal: the mukhiya and the
+    # sarpanch are elected over the same set of panchayats, and the ward member
+    # and the panch over the same set of wards, so each pair should agree. They
+    # differ by 81 and 4,790 - a measurable statement about completeness that
+    # needs no outside number at all.
+    ("Bihar", "2016", "gp_head"): {
+        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "source": "Bihar SEC's published per-tier totals are for the 2021 "
+                  "cycle (8,067 gram panchayats), not 2016. No 2016 total "
+                  "recovered.",
+    },
+    ("Bihar", "2016", "gp_ward"): {
+        "total": None, "basis": "unknown", "unit": "panchayat wards",
+        "source": "As above.",
+    },
+    ("Bihar", "2016", "kachahari_head"): {
+        "total": None, "basis": "unknown", "unit": "gram kachaharis",
+        "source": "As above.",
+    },
+    ("Bihar", "2016", "kachahari_member"): {
+        "total": None, "basis": "unknown", "unit": "kachahari wards",
+        "source": "As above.",
+    },
+    ("Bihar", "2016", "block_member"): {
+        "total": None, "basis": "unknown", "unit": "seats",
+        "source": "As above.",
+    },
+    ("Bihar", "2016", "zp_member"): {
+        "total": None, "basis": "unknown", "unit": "seats",
+        "source": "As above. The scrape is visibly short here in a way the "
+                  "other five tiers are not: Sheikhpura holds 1 seat and "
+                  "Nawada 2, against 44 for Patna and 55 for Madhubani.",
+    },
     ("Andhra Pradesh", "2020", "gp_head"): {
         "total": None, "basis": "per-district", "unit": "gram panchayats",
         "source": "Each gazette states its own district total in its FORMAT-I "

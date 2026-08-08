@@ -234,6 +234,15 @@ ROW_BANDS = {
     ("Haryana", "gp_head"): (4000, 8000),
     ("Haryana", "gp_ward"): (40000, 80000),
     ("Rajasthan", "gp_head"): (8000, 14000),
+    # Bihar 2016, one cycle. Bounds are set around what the scrape holds rather
+    # than around a published total, because there is no published per-tier
+    # total available in machine-readable form - see reference.PUBLISHED.
+    ("Bihar", "gp_head"): (6000, 9500),
+    ("Bihar", "gp_ward"): (80000, 125000),
+    ("Bihar", "kachahari_head"): (6000, 9500),
+    ("Bihar", "kachahari_member"): (80000, 125000),
+    ("Bihar", "block_member"): (8000, 13000),
+    ("Bihar", "zp_member"): (500, 1400),
 }
 
 ROMAN = re.compile(r"^[IVXLC]+$", re.I)

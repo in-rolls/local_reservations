@@ -190,12 +190,18 @@ def woman_of(text):
     if KD_OTHER in kd or KD_OTHER in tight:
         return 0
 
-    # "अन्य पिछड़ा वर्ग" is a caste, not a gender, so the backward-class phrase
-    # is ruled out before "अन्य" is read as "other than woman".
-    if DEV_BC.search(s):
-        return None
+    # An explicit "महिला" settles it before anything else, because Bihar writes
+    # "पिछड़ा वर्ग(महिला)" - a backward-class seat reserved for a woman. Testing
+    # the backward-class phrase first, as this did, returned None for all 38,430
+    # of those across the six files: the caste read correctly, the woman marker
+    # was dropped, and nothing would have flagged it because None is also what a
+    # genuinely silent cell returns.
     if DEV_WOMAN in s:
         return 1
+    # "अन्य पिछड़ा वर्ग" is a caste, not a gender, so the backward-class phrase
+    # is still ruled out before "अन्य" is read as "other than woman".
+    if DEV_BC.search(s):
+        return None
     if DEV_OTHER in s:
         return 0
 

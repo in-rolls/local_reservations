@@ -18,6 +18,8 @@ So every row carries two columns: `tier`, the canonical office, and
 who wants to group by the local vocabulary still can.
 """
 
+import re
+
 import dictionary
 
 # The canonical offices, with the body each belongs to.
@@ -86,7 +88,9 @@ def tier_of(local, state):
     unrecognised office is a gram panchayat head is how Bihar's village court
     would get pooled with everyone else's panchayat.
     """
-    key = (local or "").strip().lower()
+    # "Ward Member", "ward_member" and "ward member" are one name. Bihar prints
+    # them spaced and this table is written with underscores.
+    key = re.sub(r"[\s_]+", "_", (local or "").strip().lower())
     if (state, key) in TIER_BY_STATE:
         return TIER_BY_STATE[(state, key)]
     return TIER_OF_LOCAL.get(key)

@@ -42,8 +42,12 @@ MASTER_COLUMNS = [
     "woman_reserved", "reservation", "reservation_raw", "listing_scope",
     # what a row is
     "unit_of_observation", "seat_candidates",
-    # person
-    "winner", "winner_basis", "votes", "vacant", "unopposed",
+    # who won, and - where the source states a contest rather than a seat -
+    # who came second and by how much. These are facts about the seat, so they
+    # belong here; the full field of candidates is a fact about the contest and
+    # lives in the candidate table.
+    "winner", "winner_basis", "votes", "runner_up", "runner_up_votes",
+    "margin", "vacant", "unopposed",
     # provenance
     "script", "source_repo", "source_commit", "source_path", "source_page",
     "provenance_level", "quality_flags",
@@ -51,14 +55,45 @@ MASTER_COLUMNS = [
 
 # Columns that the master carries under its own name, so an adapter's leftovers
 # can be identified as extras rather than silently dropped.
-CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated", "seat_members"}
+CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated", "seat_members",
+                                 "winner_votes"}
 
-# The companion table for candidate-level sources. Not part of the master,
-# because the master has to be one row per seat to be countable, and not
-# discarded either, because it is real data about a real contest.
-CANDIDATE_COLUMNS = ["row_id", "candidate_no", "candidate_name", "gender",
-                     "age", "category", "educ", "party", "votes", "result",
-                     "father_husband_name"]
+# The long form, and a table in its own right rather than an appendage. Four of
+# the sources state a contest, not a seat: every candidate who stood, what they
+# polled, and who they were. That is a different unit of observation, not a
+# lesser one, so it gets its own declared schema, its own files, its own row
+# identifiers and its own place in the manifest.
+#
+# It carries place and office rather than only a join key, so it can be read on
+# its own without reconstructing the seat first, and it carries the seat's
+# reservation so the obvious question - who contests a seat reserved for whom -
+# is answerable in one table. `row_id` joins it back to the wide one.
+CANDIDATE_COLUMNS = [
+    # grain
+    "dataset_id", "candidate_id", "row_id", "seat_key", "candidate_no",
+    # place
+    "state", "year", "district", "block", "gram_panchayat", "ward_no",
+    "seat_no",
+    # office
+    "tier", "tier_local",
+    # what the seat was reserved for, so the long form stands on its own
+    "caste_reservation", "woman_reserved",
+    # who stood
+    "candidate_name", "relation_name", "candidate_gender", "candidate_woman",
+    "candidate_age", "candidate_caste", "candidate_education", "party",
+    # how they did
+    "votes", "candidate_rank", "elected", "result",
+    # provenance, the same as the seat it belongs to
+    "source_repo", "source_commit", "source_path", "source_page",
+]
+
+# What an adapter supplies per candidate. Everything else on a candidate row is
+# copied from the seat it belongs to, so an adapter states each fact once.
+CANDIDATE_FIELDS = [
+    "candidate_name", "relation_name", "candidate_gender", "candidate_woman",
+    "candidate_age", "candidate_caste", "candidate_education", "party",
+    "votes", "candidate_rank", "elected", "result",
+]
 
 SEAT_FIELDS = ["state", "year", "tier", "district", "block", "gram_panchayat",
                "ward_no", "seat_no"]
@@ -98,6 +133,12 @@ def quality_flags(row):
         flags.append("gender_not_stated")
     if row.get("winner_basis") == "argmax_votes":
         flags.append("winner_inferred")
+    # the source stated this contest twice, with vote counts that disagree
+    if str(row.get("duplicate_candidacy") or "0") not in ("0", ""):
+        flags.append("duplicate_candidacy")
+    # one serial number carrying two different candidates, unresolvable
+    if str(row.get("serial_not_unique") or "0") not in ("0", ""):
+        flags.append("serial_not_unique")
     if row.get("script") in ("krutidev", "devanagari"):
         flags.append("name_untransliterated")
     return ";".join(flags)
@@ -152,7 +193,13 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         "seat_candidates": seat_candidates,
         "winner": row.get("winner", ""),
         "winner_basis": row.get("winner_basis", ""),
-        "votes": row.get("votes", ""), "vacant": row.get("vacant", ""),
+        # winner_votes where a collapse worked it out, votes where the source
+        # stated it directly against the seat
+        "votes": row.get("winner_votes") or row.get("votes", ""),
+        "runner_up": row.get("runner_up", ""),
+        "runner_up_votes": row.get("runner_up_votes", ""),
+        "margin": row.get("margin", ""),
+        "vacant": row.get("vacant", ""),
         "unopposed": row.get("unopposed", ""),
         "script": row.get("script", ""),
         "source_repo": source_repo, "source_commit": source_commit,
@@ -169,26 +216,27 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
     return {k: "" if v is None else str(v) for k, v in out.items()}
 
 
-def candidates(row, row_id_value):
-    """The candidate rows a collapsed seat stood on, long-form.
+def candidates(row, seat):
+    """The long-form rows for one seat, in the candidate schema.
 
-    Collapsing Bihar, UP 2021 and Uttarakhand to seats discards 426,486 rows of
-    real data - names, votes, party, the candidate's own caste. None of it is a
-    reservation fact, which is why it is not in the master; all of it is real,
-    which is why it is not thrown away.
+    `row` is the adapter's row, which carries `seat_members`; `seat` is the
+    finished master row, which carries the place, the office, the reservation
+    and the provenance. Each is stated once and copied here, so the two tables
+    cannot drift from each other.
 
-    The master stays one row per seat because it has to be countable. Every
-    other state contributes one row per seat, so Bihar entering long form would
-    be 71% of the pooled table against a true share of India's gram panchayat
-    seats nearer 45% - weighting a state by how contested its seats happened to
-    be, which is not a fact about reservation. The candidates ride alongside
-    instead, joinable on row_id, the same arrangement as the extras.
+    A seat-level source contributes nothing and that is not a gap - Haryana
+    states seats, so there are no candidates to state.
     """
+    shared = {c: seat.get(c, "") for c in CANDIDATE_COLUMNS if c in seat}
     out = []
     for position, member in enumerate(row.get("seat_members") or (), 1):
-        out.append(dict({c: str(member.get(c, "") or "")
-                         for c in CANDIDATE_COLUMNS},
-                        row_id=row_id_value, candidate_no=position))
+        got = dict(shared, candidate_no=position, row_id=seat.get("row_id", ""))
+        got.update({c: member.get(c, "") for c in CANDIDATE_FIELDS})
+        got["candidate_id"] = hashlib.sha1(
+            f"{seat.get('row_id', '')}|{position}".encode("utf-8")
+        ).hexdigest()[:12]
+        out.append({c: "" if got.get(c) is None else str(got.get(c, ""))
+                    for c in CANDIDATE_COLUMNS})
     return out
 
 

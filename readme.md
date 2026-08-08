@@ -15,7 +15,7 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 31 | 32,943 |
+| [Open gaps](WORKLIST.md) | 33 | 32,991 |
 | [Blocked](WORKLIST.md) | 2 | 70,410 |
 | [Undetermined](WORKLIST.md) | 3 | 12,791 |
 | [Accepted properties of the sources](WORKLIST.md) | 9 | 74,769 |
@@ -78,7 +78,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | Andhra Pradesh | gp_head, gp_ward | 2020 | 60,352 | parsed | [data/ap/](data/ap/) |
 | Arunachal Pradesh | - | - | - | not held | - |
 | Assam | - | - | - | documents, no parser | [data/assam/](data/assam/) - 1 digital-text |
-| Bihar | gp_head, gp_ward, block_member, zp_member, kachahari | 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |
+| Bihar | gp_head, gp_ward, block_member, zp_member, kachahari_head, kachahari_member | 2016 | 645,605 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |
 | Chandigarh | - | - | - | documents, no parser | [data/chandigarh/](data/chandigarh/) - 4 digital-text, 1 scan |
 | Chhattisgarh | - | - | - | not held | - |
 | Dadra & Nagar Haveli and Daman & Diu | - | - | - | not held | - |

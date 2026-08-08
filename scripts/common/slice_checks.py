@@ -89,7 +89,14 @@ def caste_scheme_respected(s):
     allowed = canon.allowed_castes(s.state)
     if not allowed:
         return result(SKIP, "", "", f"no caste scheme declared for {s.state}")
-    seen = {r.get("caste_reservation") for r in s.rows}
+    # A blank is not a category outside the scheme, it is the absence of one:
+    # 328 Bihar rows read "--select--" and state no reservation at all. Reading
+    # blank as a violation would push a state to default them to unreserved,
+    # which is the opposite of what this repository wants.
+    seen = {r.get("caste_reservation") for r in s.rows if
+            (r.get("caste_reservation") or "").strip()}
+    unstated = sum(1 for r in s.rows
+                   if not (r.get("caste_reservation") or "").strip())
     extra = seen - allowed
     # Kerala reserves no backward-class seat in local bodies, so zero BC rows is
     # the law rather than a parsing failure. Declaring the scheme is what makes
@@ -97,7 +104,9 @@ def caste_scheme_respected(s):
     return result(FAIL if extra else PASS, ",".join(sorted(seen)),
                   ",".join(sorted(allowed)),
                   f"outside the scheme: {sorted(extra)}" if extra else
-                  canon.caste_scheme(s.state))
+                  f"{canon.caste_scheme(s.state)}"
+                  + (f"; {unstated:,} rows state no category" if unstated
+                     else ""))
 
 
 @check("blank_share_within_tolerance", "declared")
@@ -244,7 +253,10 @@ def label_agrees(s):
             row.get("caste_reservation"), "")
         woman = "Woman" if str(row.get("woman_reserved")) == "1" else "Other than Woman"
         return f"{prefix} {woman}".strip()
-    bad = [r for r in s.rows if r.get("reservation") != expected(r)]
+    # A row that states no category has no label to agree with. Bihar's 328
+    # "--select--" rows are blank in all three columns, which is consistent.
+    stated = [r for r in s.rows if (r.get("caste_reservation") or "").strip()]
+    bad = [r for r in stated if r.get("reservation") != expected(r)]
     return result(FAIL if bad else PASS, len(bad), 0,
                   "the label is written separately from the two fields it "
                   "summarises, so they can disagree")

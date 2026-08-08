@@ -17,6 +17,7 @@ come from that commit, so `dirty` is recorded and release-check refuses.
 import argparse
 import collections
 import csv
+import gzip
 import hashlib
 import json
 import pathlib
@@ -72,7 +73,13 @@ def digest(path):
 
 
 def read(path):
-    with path.open(encoding="utf-8", errors="replace") as fh:
+    """Rows from a CSV, gzipped or not.
+
+    The per-state tables are gzipped because GitHub refuses a file over 100 MB
+    and Bihar's candidate table is 208 MB uncompressed.
+    """
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8", errors="replace") as fh:
         return list(csv.DictReader(fh))
 
 
@@ -106,11 +113,15 @@ def build():
     files, totals = [], collections.Counter()
 
     master_dir = ROOT / "data" / "master"
-    for path in sorted(master_dir.glob("master_*.csv")):
+    for path in sorted(list(master_dir.glob("master_*.csv*")) +
+                       list(master_dir.glob("candidates_*.csv*"))):
         rows = read(path)
-        files.append(dict(describe(path, rows), kind="master"))
-        if path.name not in ("master_extras.csv", "master_dropped.csv",
-                             "master_key_collisions.csv"):
+        kind = "candidates" if path.name.startswith("candidates_") else "master"
+        files.append(dict(describe(path, rows), kind=kind))
+        if kind == "candidates":
+            totals["candidate_rows"] += len(rows)
+        elif path.name not in ("master_extras.csv", "master_dropped.csv",
+                               "master_key_collisions.csv"):
             totals["master_rows"] += len(rows)
             totals["master_states"] += 1
 

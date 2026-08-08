@@ -65,6 +65,11 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
     `vote_field` selects by highest vote. A tie leaves the winner blank rather
     than picking one - two people cannot both have won, and a coin toss recorded
     as fact is worse than a gap.
+
+    Every candidate keeps a `candidate_rank` - 1 for the highest vote, shared on
+    a tie, blank where no vote was recorded - so the long form carries the
+    contest and the seat row can state the runner-up and the margin without
+    anybody having to reconstruct them.
     """
     grouped = collections.OrderedDict()
     for row in rows:
@@ -100,9 +105,71 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
         seat["winner"] = (won or {}).get("candidate_name") or \
             (won or {}).get("winner") or ""
         seat["winner_basis"] = basis if seat["winner"] else ""
+
+        for candidate in candidates:
+            candidate["elected"] = int(candidate is won)
+        rank(candidates, vote_field)
         seat["seat_members"] = candidates
+        seat.update(margin(candidates, vote_field))
         out.append(seat)
     return out
+
+
+def rank(candidates, vote_field):
+    """Place each candidate in the contest, in the row itself.
+
+    Ties share a rank and the next rank skips, as a results table prints it. A
+    candidate with no recorded vote gets no rank rather than last place: 328
+    Bihar rows state no vote at all, and ranking them last would assert they
+    lost when the source says nothing.
+    """
+    if not vote_field:
+        return
+    counted = sorted(
+        ((votes_of(c.get(vote_field)), c) for c in candidates),
+        key=lambda pair: -(pair[0] if pair[0] is not None else -1))
+    place, previous, seen = 0, object(), 0
+    for votes, candidate in counted:
+        if votes is None:
+            candidate["candidate_rank"] = ""
+            continue
+        seen += 1
+        if votes != previous:
+            place, previous = seen, votes
+        candidate["candidate_rank"] = place
+
+
+def margin(candidates, vote_field):
+    """The seat-level view of the contest: who came second, and by how much.
+
+    The wide table is where this belongs. It is one row per seat, and "who won
+    and by how much" is a fact about the seat; the full field of candidates is
+    a fact about the contest and lives in the long form.
+    """
+    blank = {"runner_up": "", "winner_votes": "", "runner_up_votes": "",
+             "margin": ""}
+    if not vote_field:
+        return blank
+    ranked = [(c.get("candidate_rank"), votes_of(c.get(vote_field)), c)
+              for c in candidates if c.get("candidate_rank")]
+    first = [c for r, _, c in ranked if r == 1]
+    second = [c for r, _, c in ranked if r == 2]
+    if len(first) != 1:
+        return blank
+    top = votes_of(first[0].get(vote_field))
+    out = dict(blank, winner_votes=top)
+    if len(second) == 1:
+        runner = votes_of(second[0].get(vote_field))
+        out.update(runner_up=name_of(second[0]), runner_up_votes=runner,
+                   margin=top - runner)
+    elif not second:
+        # Nobody else polled a vote. Unopposed, or the only recorded candidate.
+        out["margin"] = top
+    return out
+
+
+def name_of(candidate):
+    return candidate.get("candidate_name") or candidate.get("winner") or ""
 
 
 def varies(rows, key_fields, reservation_fields=("caste_reservation",

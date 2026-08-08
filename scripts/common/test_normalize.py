@@ -131,3 +131,69 @@ def test_unopposed_and_vacant():
     assert strip_unopposed("Sunita Rani") == ("Sunita Rani", False)
     assert is_vacant("Vacant") and is_vacant("fjDr in") and is_vacant("")
     assert not is_vacant("Sunita Rani")
+
+
+# Every value the six Bihar files print, with the number of rows carrying it.
+# The vocabulary is closed and paired - each caste appears plain and with
+# (महिला) - which is what licenses the adapter reading a plain label as
+# not-woman rather than as silent. The counts are asserted against the files
+# themselves below, so they cannot quietly become decoration.
+BIHAR = [
+    ("अनारक्षित  ", "NONE", None, 243_751),
+    ("अनारक्षित(महिला)", "NONE", 1, 192_931),
+    ("अनुसूचित जाति", "SC", None, 64_538),
+    ("पिछड़ा वर्ग", "BC", None, 60_984),
+    ("पिछड़ा वर्ग(महिला)", "BC", 1, 38_430),
+    ("अनुसूचित जाति(महिला)", "SC", 1, 38_239),
+    ("अनुसूचित जनजाति ", "ST", None, 5_009),
+    ("अनुसूचित जनजाति(महिला)", "ST", 1, 1_395),
+    # 328 rows state no category at all. Not read as unreserved: an unstated
+    # reservation and an open seat are different things.
+    ("--select--", None, None, 328),
+]
+
+
+@pytest.mark.parametrize("raw,caste,woman,_", BIHAR)
+def test_bihar_reservation_column(raw, caste, woman, _):
+    assert caste_of(raw) == caste
+    assert woman_of(raw) == woman
+
+
+def test_the_bihar_vocabulary_is_closed_and_counted():
+    """Asserted against the sibling's own files, so the vocabulary above is a
+    claim about the data rather than a comment. Skipped where the sibling is
+    not checked out; the adapter's DECLARED counts cover that case."""
+    import collections
+    import csv
+    import pathlib
+    import unicodedata
+
+    root = pathlib.Path(__file__).resolve().parents[2].parent / \
+        "local_elections_bihar" / "data"
+    if not root.exists():
+        pytest.skip("local_elections_bihar is not checked out")
+    csv.field_size_limit(10 ** 7)
+    seen = collections.Counter()
+    for path in sorted(root.glob("*.csv")):
+        with path.open(encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                seen[row["reservation_status"]] += 1
+    # Compared under NFC, because ड़ has two spellings - U+095C, and U+0921
+    # followed by the nukta U+093C - that draw identically and compare unequal.
+    # normalize.py is already safe here (it NFKC-folds every input); this is
+    # only about the literals above matching what the files hold.
+    def nfc(text):
+        return unicodedata.normalize("NFC", text)
+
+    assert {nfc(k): v for k, v in seen.items()} == \
+        {nfc(raw): n for raw, _, _, n in BIHAR}
+
+
+def test_a_backward_class_seat_reserved_for_a_woman_reads_as_both():
+    """Bihar writes "पिछड़ा वर्ग(महिला)". The backward-class phrase was tested
+    before the woman marker - because "अन्य पिछड़ा वर्ग" contains "अन्य" - and
+    that returned None for all 38,430 of them: the caste read, the gender was
+    dropped, and nothing flagged it because None is what a silent cell returns
+    too. The guard is still needed, just not first."""
+    assert woman_of("पिछड़ा वर्ग(महिला)") == 1
+    assert woman_of("अन्य पिछड़ा वर्ग") is None

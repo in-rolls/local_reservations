@@ -116,23 +116,70 @@ def test_varies_measures_without_raising():
     assert ("A", "X") in got
 
 
-def test_the_candidate_rows_are_kept_beside_the_seat():
-    """Collapsing is what makes the master countable; it is not a reason to
-    throw the candidates away. They ride alongside, joinable on row_id."""
+def test_the_candidate_rows_are_a_table_of_their_own():
+    """The long form is not an appendage. Each candidate row carries the place,
+    the office and the seat's reservation, so it reads without reconstructing
+    the seat first, and `row_id` joins it back to the wide table."""
     import master
 
     seats = collapse.to_seats(
         rows(("A", "X", "SC", "0", "10", "One"),
              ("A", "X", "SC", "0", "30", "Two")),
         KEY, vote_field="valid_vote")
-    kept = master.candidates(seats[0], "abc123")
+    seat = {"row_id": "abc123", "state": "Bihar", "district": "A",
+            "gram_panchayat": "X", "tier": "gp_head",
+            "caste_reservation": "SC", "woman_reserved": "0"}
+    kept = master.candidates(seats[0], seat)
     assert [c["candidate_name"] for c in kept] == ["One", "Two"]
-    assert [c["candidate_no"] for c in kept] == [1, 2]
+    assert [c["candidate_no"] for c in kept] == ["1", "2"]
     assert {c["row_id"] for c in kept} == {"abc123"}
+    assert {c["district"] for c in kept} == {"A"}
+    assert {c["caste_reservation"] for c in kept} == {"SC"}
+    # every declared column present, and each candidate distinctly identified
+    assert all(set(c) == set(master.CANDIDATE_COLUMNS) for c in kept)
+    assert len({c["candidate_id"] for c in kept}) == 2
+
+
+def test_the_seat_states_who_came_second_and_by_how_much():
+    """Winner and runner-up are facts about the seat, so they belong in the wide
+    table; the full field of candidates is a fact about the contest."""
+    seats = collapse.to_seats(
+        rows(("A", "X", "SC", "0", "10", "One"),
+             ("A", "X", "SC", "0", "30", "Two"),
+             ("A", "X", "SC", "0", "25", "Three")),
+        KEY, vote_field="valid_vote")
+    assert seats[0]["winner"] == "Two"
+    assert seats[0]["runner_up"] == "Three"
+    assert seats[0]["winner_votes"] == 30
+    assert seats[0]["runner_up_votes"] == 25
+    assert seats[0]["margin"] == 5
+    assert [c["candidate_rank"] for c in seats[0]["seat_members"]] == [3, 1, 2]
+
+
+def test_a_candidate_with_no_recorded_vote_gets_no_rank():
+    """Ranking them last would assert they lost, which the source does not say."""
+    seats = collapse.to_seats(
+        rows(("A", "X", "SC", "0", "30", "One"),
+             ("A", "X", "SC", "0", "--", "Two")),
+        KEY, vote_field="valid_vote")
+    ranks = {c["candidate_name"]: c["candidate_rank"]
+             for c in seats[0]["seat_members"]}
+    assert ranks == {"One": 1, "Two": ""}
+
+
+def test_a_tie_for_second_leaves_the_runner_up_blank():
+    seats = collapse.to_seats(
+        rows(("A", "X", "SC", "0", "30", "One"),
+             ("A", "X", "SC", "0", "10", "Two"),
+             ("A", "X", "SC", "0", "10", "Three")),
+        KEY, vote_field="valid_vote")
+    assert seats[0]["winner"] == "One"
+    assert seats[0]["runner_up"] == ""
+    assert seats[0]["margin"] == ""
 
 
 def test_a_seat_level_source_contributes_no_candidate_rows():
     """Haryana states seats directly. Nothing to keep, and nothing to invent."""
     import master
 
-    assert master.candidates({"gram_panchayat": "X"}, "abc123") == []
+    assert master.candidates({"gram_panchayat": "X"}, {"row_id": "abc"}) == []

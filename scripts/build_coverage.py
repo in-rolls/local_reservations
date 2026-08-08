@@ -55,7 +55,7 @@ SIBLINGS = {
     },
     "Bihar": {
         "repo": "local_elections_bihar", "years": "2016",
-        "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari",
+        "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari_head, kachahari_member",
         "files": ["data/mukhiya.csv", "data/ward_member.csv", "data/sarpanch.csv",
                   "data/panch.csv", "data/panchayat_samiti_member.csv",
                   "data/zila_parishad_member.csv"],
@@ -207,8 +207,12 @@ def sibling_rows(spec):
         if not path.exists() or path.suffix != ".csv":
             unread += 1
             continue
-        with path.open(encoding="utf-8", errors="replace") as fh:
-            total += max(sum(1 for _ in fh) - 1, 0)
+        # Records, not lines. Bihar's addresses contain embedded newlines, so
+        # counting lines reported 692,314 where the six files hold 645,605
+        # records - a 7% overstatement printed in the coverage table as a fact.
+        csv.field_size_limit(10 ** 7)
+        with path.open(encoding="utf-8", errors="replace", newline="") as fh:
+            total += max(sum(1 for _ in csv.reader(fh)) - 1, 0)
     # Parquet cannot be read from the standard library, so say so rather than
     # printing a dash that reads as "nothing here". The authoritative counts
     # come from the master build, which reads these through an adapter.

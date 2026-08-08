@@ -26,6 +26,8 @@ recorded on every row.
 
 import argparse
 import collections
+import gzip
+import io
 import csv
 import pathlib
 import subprocess
@@ -118,7 +120,7 @@ def build(only=None):
             got["row_id"] = M.row_id(got, seen[key])
             rows.append(got)
             extras += M.extras(row, got["row_id"])
-            candidates += M.candidates(row, got["row_id"])
+            candidates += M.candidates(row, got)
             counts["output"] += 1
 
     # computed over the whole master rather than per file, because a seat stated
@@ -151,18 +153,18 @@ def write(rows, extras, dropped, candidates):
 
     written = []
     for state, subset in sorted(by_state.items()):
-        slug = state.lower().replace(" ", "_").replace("&", "and")
-        path = OUT / f"master_{slug}.csv"
-        with path.open("w", newline="", encoding="utf-8") as fh:
-            writer = csv.DictWriter(fh, fieldnames=M.MASTER_COLUMNS,
-                                    extrasaction="ignore", lineterminator="\n")
-            writer.writeheader()
-            writer.writerows(subset)
-        written.append((path, len(subset)))
+        written.append(write_gz(f"master_{slug_of(state)}.csv.gz",
+                                M.MASTER_COLUMNS, subset))
+
+    by_state = collections.defaultdict(list)
+    for row in candidates:
+        by_state[row["state"]].append(row)
+    for state, subset in sorted(by_state.items()):
+        written.append(write_gz(f"candidates_{slug_of(state)}.csv.gz",
+                                M.CANDIDATE_COLUMNS, subset))
 
     for name, columns, data in (
             ("master_extras.csv", ["row_id", "column", "value"], extras),
-            ("master_candidates.csv", M.CANDIDATE_COLUMNS, candidates),
             ("master_dropped.csv",
              ["dataset_id", "reason", "detail", "source_path"], dropped),
             ("master_key_collisions.csv",
@@ -174,6 +176,35 @@ def write(rows, extras, dropped, candidates):
             writer.writeheader()
             writer.writerows(data)
     return written
+
+
+def slug_of(state):
+    return state.lower().replace(" ", "_").replace("&", "and")
+
+
+def write_gz(name, columns, rows):
+    """A per-state table, gzipped.
+
+    Not a space optimisation. `candidates_bihar.csv` is 208 MB and GitHub
+    refuses any file over 100 MB outright, so the corpus could not be pushed at
+    all; gzipped it is 26 MB. Every tool that reads these reads them compressed
+    without being told - pandas and polars sniff the extension, and the standard
+    library needs `gzip.open` in place of `open`.
+
+    `mtime=0` matters: gzip stamps the current time into its header by default,
+    so the same rows would hash differently on every build and the manifest
+    would report a change that never happened.
+    """
+    buffer = io.StringIO()
+    writer = csv.DictWriter(buffer, fieldnames=columns, extrasaction="ignore",
+                            lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    path = OUT / name
+    with path.open("wb") as raw:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as fh:
+            fh.write(buffer.getvalue().encode("utf-8"))
+    return (path, len(rows))
 
 
 def collisions(rows):
@@ -209,8 +240,7 @@ def render_readme(rows, dropped, candidates, counts, written):
            "hidden behind a promise the data does not support.", "",
            "| State | Seats |", "|---|---|"]
     for state, n in sorted(states.items()):
-        slug = state.lower().replace(" ", "_").replace("&", "and")
-        out.append(f"| [{state}](master_{slug}.csv) | {n:,} |")
+        out.append(f"| [{state}](master_{slug_of(state)}.csv.gz) | {n:,} |")
     out += ["", "| Tier | Seats |", "|---|---|"]
     for tier, n in tiers.most_common():
         out.append(f"| `{tier}` | {n:,} |")
@@ -246,12 +276,9 @@ def render_readme(rows, dropped, candidates, counts, written):
     out += ["", "## Files", "",
             "| File | Rows | What |", "|---|---|---|"]
     for path, n in written:
-        out.append(f"| [`{path.name}`]({path.name}) | {n:,} | one state |")
-    out.append(
-        f"| [`master_candidates.csv`](master_candidates.csv) | "
-        f"{len(candidates):,} | every candidate who stood, for the states whose "
-        f"sources are candidate-level. The master is one row per seat so that it "
-        f"can be counted; the long form is not discarded, it lives here |")
+        what = ("one state, one row per candidate" if path.name.startswith(
+            "candidates_") else "one state, one row per seat")
+        out.append(f"| [`{path.name}`]({path.name}) | {n:,} | {what} |")
     out += [f"| [`master_extras.csv`](master_extras.csv) | — | the "
             f"state-specific columns, long-form as (row_id, column, value), so "
             f"the master stays a fixed schema without losing anything |",
@@ -291,8 +318,8 @@ def main():
           f"{len(rows) - unique:,} do not, listed in master_key_collisions.csv")
     print(f"  {len(extras):,} extra values held long-form in master_extras.csv")
     if candidates:
-        print(f"  {len(candidates):,} candidate rows kept in "
-              f"master_candidates.csv, joinable on row_id")
+        print(f"  {len(candidates):,} candidate rows in candidates_<state>.csv, "
+              f"joinable to the seat on row_id")
     tiers = collections.Counter(r["tier"] for r in rows)
     print("  " + "  ".join(f"{k}={v:,}" for k, v in tiers.most_common()))
     return 0
