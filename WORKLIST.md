@@ -58,42 +58,39 @@ Closable, but not from here. These are not waiting on effort; they are waiting o
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 63,890 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts, roughly 63,890 rows missing - sec.ap.gov.in refuses connections from outside India; needs an India egress |
-| 6,520 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts, roughly 6,520 rows missing - sec.ap.gov.in refuses connections from outside India; needs an India egress |
+| 63,890 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts, roughly 63,890 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
+| 6,520 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts, roughly 6,520 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
 
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.
 
-## Undetermined (6)
+## Undetermined (2)
 
 We have not established whether these are properties of the sources or gaps in our collecting. That question is itself the work - asserting "no results document exists" is a claim about everything a state published, not about the file in hand.
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 7,340 | Jammu & Kashmir | 2010 | `gp_ward` | no winner is recorded | no document stage declared for this slice |
-| 2,326 | Jammu & Kashmir | 2016 | `gp_ward` | no winner is recorded | no document stage declared for this slice |
-| 1,432 | Jammu & Kashmir | 2018 | `gp_ward` | no winner is recorded | no document stage declared for this slice |
 | 793 | Goa | 2022 | `gp_ward` | the roster is incomplete | measured against a complete cycle of the same state |
 | 684 | Goa | 2017 | `gp_ward` | the roster is incomplete | measured against a complete cycle of the same state |
-| 410 | Jammu & Kashmir | 2016 | `gp_head` | no winner is recorded | no document stage declared for this slice |
-
-**no winner is recorded** — Whether this is a source property depends on what stage of document it is. A pre-poll reservation roster names no winner and never will; for anything else, a results notification may exist that we have not looked for. Asserting the first without checking is a claim about every document a state published.
-  *Closes with:* declaring reference.DOCUMENT_STAGE for this slice - pre_poll settles it as a source property, and anything else means going to look.
 
 **the roster is incomplete** — The document holds fewer seats than the state has. Whether a complete roster was ever published is a different question from whether this file is complete, and only the second is settled.
   *Closes with:* establishing whether a full roster exists for this cycle.
 
-## Accepted properties of the sources (6)
+## Accepted properties of the sources (10)
 
 The document says what it says. Nothing to do, but a reader needs to know before using the numbers.
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
 | 54,763 | Andhra Pradesh | 2020 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
+| 7,340 | Jammu & Kashmir | 2010 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 5,589 | Andhra Pradesh | 2020 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
+| 2,326 | Jammu & Kashmir | 2016 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 1,432 | Jammu & Kashmir | 2018 | `gp_ward` | lists only the reserved seats | shares here are a property of the document |
+| 1,432 | Jammu & Kashmir | 2018 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 793 | Goa | 2022 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 684 | Goa | 2017 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
+| 410 | Jammu & Kashmir | 2016 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
 | 210 | Andhra Pradesh | 2020 | `gp_head` | the source has no ward column | sarpanch rows carrying no wards at all |
 
 **no winner is recorded** — Whether this is a source property depends on what stage of document it is. A pre-poll reservation roster names no winner and never will; for anything else, a results notification may exist that we have not looked for. Asserting the first without checking is a claim about every document a state published.

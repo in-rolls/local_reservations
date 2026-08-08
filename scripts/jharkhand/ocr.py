@@ -99,7 +99,14 @@ def ocr(path):
             if turn:
                 from PIL import Image
                 with Image.open(rendered[0]) as image:
-                    image.rotate(-turn, expand=True).save(rendered[0])
+                    # The DPI has to be written back. Pillow drops the PNG's
+                    # resolution on save, Tesseract then estimates it from the
+                    # pixel size, and estimates it wrong: the same Godda page
+                    # yields 14 rows with the tag and none without it. Every
+                    # earlier attempt at this page failed for that reason and
+                    # looked like a limit of the scan.
+                    dpi = image.info.get("dpi", (DPI, DPI))
+                    image.rotate(-turn, expand=True).save(rendered[0], dpi=dpi)
             pages.append(subprocess.run(
                 ["tesseract", str(rendered[0]), "stdout", "-l", LANG,
                  "--psm", PSM],

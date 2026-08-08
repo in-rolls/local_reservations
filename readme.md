@@ -17,8 +17,8 @@ hand-maintained, so it is no longer hand-maintained.
 |---|---|---|
 | [Open gaps](WORKLIST.md) | 25 | 28,946 |
 | [Blocked](WORKLIST.md) | 2 | 70,410 |
-| [Undetermined](WORKLIST.md) | 6 | 12,985 |
-| [Accepted properties of the sources](WORKLIST.md) | 6 | 63,471 |
+| [Undetermined](WORKLIST.md) | 2 | 1,477 |
+| [Accepted properties of the sources](WORKLIST.md) | 10 | 74,979 |
 
 <!-- worklist:end -->
 

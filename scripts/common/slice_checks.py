@@ -130,7 +130,10 @@ def coverage_vs_published(s):
     total = spec.get("total")
     if not total:
         return result(SKIP, s.n, "",
-                      spec.get("source", "no published total for this slice")[:110])
+                      # not truncated: the reason is the useful part, and a
+                      # 110-character cut removed it from six of the most
+                      # informative rows in slice_checks.csv
+                      spec.get("source", "no published total for this slice"))
     counted = s.rows
     if spec.get("basis") == "elected":
         # an "elected" figure excludes seats nobody holds

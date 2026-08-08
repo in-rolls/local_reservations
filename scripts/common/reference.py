@@ -63,7 +63,7 @@ PUBLISHED = {
         "total": None, "basis": "per-district", "unit": "gram panchayats",
         "source": "Each gazette states its own district total in its FORMAT-I "
                   "abstract, which is a better denominator than a state figure "
-                  "because only 5 of 13 districts are held. scripts/ap/"
+                  "because only 6 of 13 districts are held. scripts/ap/"
                   "validate.py reads it per district. Anantapur states each "
                   "seat twice, in a sarpanch-only proforma and again as the "
                   "first column of the ward table; the file holds their union "
@@ -139,6 +139,13 @@ DOCUMENT_STAGE = {
     ("Jharkhand", "2015", "zp_member"): "result",
     ("Andhra Pradesh", "2020", "gp_head"): "pre_poll",
     ("Andhra Pradesh", "2020", "gp_ward"): "pre_poll",
+    # J&K's files are reservation *proposals*: they carry SC/ST/OC populations
+    # and the reservation being proposed, and no winner column appears in any
+    # of the 105 documents. A pre-poll roster names no winner and never will.
+    ("Jammu & Kashmir", "2010", "gp_ward"): "pre_poll",
+    ("Jammu & Kashmir", "2016", "gp_head"): "pre_poll",
+    ("Jammu & Kashmir", "2016", "gp_ward"): "pre_poll",
+    ("Jammu & Kashmir", "2018", "gp_ward"): "pre_poll",
 }
 
 
@@ -149,8 +156,18 @@ DOCUMENT_STAGE = {
 # connections from two independent egresses, which is the network path rather
 # than the sites being down.
 SOURCE_ACCESS = {
+    # Blocked at the state election commission, not everywhere. The Wayback
+    # Machine crawled sec.ap.gov.in in 2022 and served six of the thirteen
+    # gazettes from anywhere - that is how West Godavari was recovered - and the
+    # district collectorate portals answer directly: chittoor.ap.gov.in and
+    # kurnool.ap.gov.in both return 200, as does cdn.s3waas.gov.in where they
+    # host their PDFs. Those portals publish documents under opaque names across
+    # seven years, so finding the 2020 rosters means crawling each district's
+    # list rather than fetching a known URL. A project, but not a wall.
     "Andhra Pradesh": ("blocked", "sec.ap.gov.in refuses connections from "
-                                  "outside India; needs an India egress"),
+                                  "outside India; the archive holds 6 of 13 "
+                                  "and the district portals answer, so the "
+                                  "rest is a crawl rather than an egress"),
     "Jharkhand": ("reachable", ""),
     "Goa": ("reachable", ""),
     "Jammu & Kashmir": ("reachable", ""),

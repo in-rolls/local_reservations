@@ -2,7 +2,7 @@ state,year,tier,check_id,appeals_to,status,observed,expected,detail
 Andhra Pradesh,2020,gp_head,rows_in_band,declared,pass,5589,500..13200,
 Andhra Pradesh,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,5589,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a stat"
+Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,5589,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a state figure because only 6 of 13 districts are held. scripts/ap/validate.py reads it per district. Anantapur states each seat twice, in a sarpanch-only proforma and again as the first column of the ward table; the file holds their union deduplicated, and the two agree on 98.4% of the seats stated by both."
 Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,49.3%,target 50%,"over the 5,457 rows whose gender the source states; 48.2% over all 5,589"
 Andhra Pradesh,2020,gp_head,women_share_by_block,external,warn,338 of 571 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
@@ -67,7 +67,7 @@ Goa,2022,gp_ward,provenance_resolves,internal,pass,0,0,9 documents
 Jammu & Kashmir,2010,gp_ward,rows_in_band,declared,pass,7340,500..35000,
 Jammu & Kashmir,2010,gp_ward,caste_scheme_respected,declared,pass,"NONE,SC,ST","NONE,SC,ST",sc_st_only
 Jammu & Kashmir,2010,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Jammu & Kashmir,2010,gp_ward,coverage_vs_published,external,skip,7340,,"No reliable published total, and the holdings are an ad-hoc subset of districts rather than a full corpus. Mea"
+Jammu & Kashmir,2010,gp_ward,coverage_vs_published,external,skip,7340,,"No reliable published total, and the holdings are an ad-hoc subset of districts rather than a full corpus. Measuring against a made-up denominator would be worse than not measuring."
 Jammu & Kashmir,2010,gp_ward,women_share_vs_statute,external,pass,48.3%,floor 33%,
 Jammu & Kashmir,2010,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jammu & Kashmir,2010,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
@@ -106,7 +106,7 @@ Jammu & Kashmir,2016,gp_ward,provenance_resolves,internal,pass,0,0,12 documents
 Jammu & Kashmir,2018,gp_ward,rows_in_band,declared,pass,1432,500..35000,
 Jammu & Kashmir,2018,gp_ward,caste_scheme_respected,declared,pass,"NONE,ST","NONE,SC,ST",sc_st_only
 Jammu & Kashmir,2018,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Jammu & Kashmir,2018,gp_ward,coverage_vs_published,external,skip,1432,,"As above, and these documents list only the reserved wards, so a completeness figure would not mean what it lo"
+Jammu & Kashmir,2018,gp_ward,coverage_vs_published,external,skip,1432,,"As above, and these documents list only the reserved wards, so a completeness figure would not mean what it looks like."
 Jammu & Kashmir,2018,gp_ward,women_share_vs_statute,external,skip,1181/1432,,"the document is a reserved_only listing, so its share is a property of the document rather than of the state"
 Jammu & Kashmir,2018,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jammu & Kashmir,2018,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
