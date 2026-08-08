@@ -7,7 +7,7 @@ warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 99% above
 warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 62% above the 60% tolerated,1585,0.623, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,neither a number nor a Roman numeral,1432,1.0,Number & Name of Panch Constit | PC-II | PC-V,data/jk/2018/2018_Anantnag.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 37% above the 35% tolerated,934,0.3671, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,2
-warn,ap/ward_reservation_2020.csv,column,serial,not an integer,279,0.0061,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
+warn,ap/ward_reservation_2020.csv,column,serial,not an integer,268,0.0059,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jk/ward_reservation_2010.csv,column,ward_no,neither a number nor a Roman numeral,268,0.0365,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,length outside 1..6,235,0.1641,Number & Name of Panch Constit | PC-VIII | PC-VIII,data/jk/2018/2018_Anantnag.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_no,length outside 1..6,203,0.0277,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1

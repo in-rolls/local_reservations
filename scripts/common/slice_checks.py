@@ -33,6 +33,10 @@ PASS, WARN, FAIL, SKIP = "pass", "warn", "fail", "skip"
 # Above this many rows, "no rule declared" stops being an acceptable answer.
 SKIP_FLOOR = 1000
 
+# Below this share of rows carrying a stated gender, a women's share cannot be
+# estimated from the slice at all - see women_share_vs_statute.
+STATED_FLOOR = 0.90
+
 CHECKS = []
 
 
@@ -150,19 +154,29 @@ def women_share_vs_statute(s):
     if not kind:
         return result(SKIP, f"{s.women}/{s.n}", "", "no statutory rule declared")
 
-    # Where the source states how many wards a record should have, check the
-    # statute on the records we know we read whole. Andhra Pradesh's wards come
-    # to 43.5% overall against a half share - but 46.9% across the records whose
-    # list is verified complete, and 37.3% across the truncated ones. The
-    # deficit is our parse, not the state's reservation, and averaging the two
-    # together says neither thing.
+    # Measure only where the source stated a gender. Where a document marks
+    # both the women's and the open seats, a code whose marker did not survive
+    # the scan is unknown, not male - and woman_reserved is 0 there by default,
+    # which drags the share down.
+    #
+    # But the filter cannot be trusted when much is missing, because the two
+    # markers are not lost at equal rates: Prakasam loses (G) about twice as
+    # often as (W), so its stated rows read 66% women where the truth is near
+    # half. Neither the raw share nor the filtered one estimates it, so below
+    # STATED_FLOOR the honest answer is that this slice cannot be measured.
     rows, note = s.rows, ""
-    verified = [r for r in s.rows if r.get("ward_list_complete") == "1"]
-    if verified and len(verified) < s.n:
-        whole = s.women / max(s.n, 1)
-        rows, note = verified, (f"over the {len(verified):,} rows whose list is "
-                                f"verified complete; {whole:.1%} over all "
-                                f"{s.n:,}, the gap being truncated records")
+    if "gender_stated" in s.rows[0]:
+        stated = [r for r in s.rows if r.get("gender_stated") == "1"]
+        share_stated = len(stated) / max(s.n, 1)
+        if share_stated < STATED_FLOOR:
+            return result(SKIP, f"{s.women / max(s.n, 1):.1%}", f"{kind} {value:.0%}",
+                          f"the source states a gender on only "
+                          f"{share_stated:.0%} of rows, and the missing markers "
+                          f"are not missing at random")
+        if len(stated) < s.n:
+            rows = stated
+            note = (f"over the {len(stated):,} rows whose gender the source "
+                    f"states; {s.women / max(s.n, 1):.1%} over all {s.n:,}")
     women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
     share = women / max(len(rows), 1)
     # "not less than one third" is the wording of the 73rd Amendment, so a

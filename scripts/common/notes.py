@@ -113,29 +113,31 @@ def seat_id_drawn_as_an_image(s):
     return found(affected) if affected else None
 
 
-@note("ward_completeness_unverifiable",
-      "no ward count to check the ward list against",
+@note("gender_not_stated",
+      "the source states a caste but no gender",
       OPEN_GAP,
-      because="Where the record states no count, a short ward list is "
-              "indistinguishable from a whole one. It is not indistinguishable "
-              "in aggregate: these rows run 38% women in Anantapur and 31% in "
-              "Nellore against a statutory half, while East Godavari's "
-              "verified-complete rows read 50% and Krishna's 49%. A shortfall "
-              "that size is a parse, not a reservation.",
-      closes_with="reading the ward count in Anantapur's PROFORMA-III and in "
-                  "the Nellore and Prakasam layouts, then re-checking the "
-                  "women's share by district - East Godavari at 50% is the "
-                  "target to match")
-def ward_completeness_unverifiable(s):
-    if "ward_list_complete" not in s.rows[0] or s.tier != "gp_ward":
+      because="Where a document marks both the women's and the open seats, a "
+              "code whose marker did not survive the scan is unknown, not male "
+              "- and woman_reserved defaults to 0, which silently turns a "
+              "woman's seat into an open one. Worse, the two markers are not "
+              "lost at equal rates: Prakasam loses (G) about twice as often as "
+              "(W), so its surviving rows read 66% women against a statutory "
+              "half. Neither the raw share nor the filtered one estimates the "
+              "truth there.",
+      closes_with="a second reading of the affected pages - the codes are "
+                  "printed, they simply did not survive this scan. Anantapur "
+                  "fell from 25% unmarked to 4% once the hyphen and run-on "
+                  "forms of the marker were recognised, so the remainder is "
+                  "likely reachable the same way")
+def gender_not_stated(s):
+    if "gender_stated" not in s.rows[0]:
         return None
-    blank = sum(1 for r in s.rows if r.get("ward_list_complete") not in ("0", "1"))
-    if not blank:
+    unstated = [r for r in s.rows if r.get("gender_stated") != "1"]
+    if not unstated:
         return None
-    women = sum(1 for r in s.rows
-                if r.get("ward_list_complete") not in ("0", "1")
-                and str(r.get("woman_reserved")) == "1")
-    return found(blank, f"{blank / s.n:.0%} of rows, {women / blank:.0%} women")
+    worst = collections.Counter(r.get("district", "") for r in unstated)
+    where = ", ".join(f"{d} {n:,}" for d, n in worst.most_common(3))
+    return found(len(unstated), where)
 
 
 @note("ward_list_incomplete",

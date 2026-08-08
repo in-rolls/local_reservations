@@ -171,6 +171,12 @@ COLUMNS = [
                 "sarpanch-only list and the ward table's first column - so "
                 "where both carry a seat this is 2 and validate.py checks that "
                 "the two agree rather than assuming it."),
+    column("gender_stated", "boolean", max_blank=0.0, severity=WARN,
+           note="Whether the source actually stated this seat's gender. Where a "
+                "document marks only the women's seats a bare code is a man; "
+                "where it marks both, a bare code is a marker that did not "
+                "survive the scan, and woman_reserved=0 there is a guess. "
+                "Filter on this before computing a women's share."),
     column("printings_agree", "boolean", severity=WARN,
            note="Whether the gazette's separate statements of this seat say "
                 "the same thing. Blank where the seat is stated only once - "

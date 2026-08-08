@@ -48,7 +48,7 @@ COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
            "ward_no", "tier", "tier_local", "reservation", "caste_reservation",
            "woman_reserved", "ward_count", "wards_parsed",
            "ward_list_complete", "printings", "printings_agree",
-           "ocr_repaired", "reservation_raw",
+           "gender_stated", "ocr_repaired", "reservation_raw",
            "script", "text_source"]
 
 # District codes in the filenames.
@@ -63,10 +63,33 @@ DISTRICTS = {
 # S<->5, B<->8, and the bracket around "W" appearing as ( { [ or mismatched.
 CATEGORY = re.compile(
     r"(?<![A-Za-z0-9])(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]|[Gg][Nn])"
-    # the gender marker is "(W)" in most districts but Anantapur writes the
-    # open seats explicitly too - UR(G), SC/G, BC/W - and a slash is as common
-    # a separator there as a bracket
-    r"\s*(?:[({\[/]\s*[WwVvGg]\s*[)}\]]?)?",
+    # The gender marker is "(W)" in most districts, but Anantapur, Nellore and
+    # Prakasam mark the open seats explicitly too - UR(G), SC/G, BC/W - and the
+    # OCR renders the bracket three ways. Two of them were being dropped:
+    #
+    #   UR(W)   bracket     35,971 across the five districts
+    #   UR-W    hyphen       1,937   <- matched only "UR", marker lost
+    #   URW     run on       1,393   <- likewise
+    #
+    # Losing the marker does not blank the gender, it silently records the seat
+    # as not reserved for a woman. That is 6,422 ward rows across the three
+    # districts that mark both, and it is why Anantapur read 38% women against a
+    # statutory half while East Godavari - which marks women only, so a bare
+    # code really is a man - read 50%.
+    #
+    # Both added forms only ever extend a match that already happened at the
+    # same position, so no new matches are created; and the run-on form must be
+    # adjacent, so "UR WARD" cannot become a woman-reserved seat.
+    r"(?:\s*[({\[/¢]\s*[WwVvGg]\s*[)}\]]?"
+    r"|\s*[-\u2013\u2014]\s*[WwGg](?![A-Za-z])"
+    r"|[WwGg](?![A-Za-z])"
+    # A trailing bracket with nothing readable in it is a mangled "(G)":
+    # Prakasam renders it URC), sc(c), uri), Scie). Left unmatched, those rows
+    # look like a marker that vanished, and filtering them out as "gender not
+    # stated" then over-selects the women's seats - Prakasam read 66% women
+    # that way. (G) is damaged far more often than (W) here, so the two cannot
+    # be treated symmetrically.
+    r"|\s*[({\[/¢]?\s*[CcGgei€]{1,2}\s*[)}\]])?",
     re.X)
 
 # A gram panchayat name: at least one run of letters. Used to tell a real record
@@ -91,6 +114,9 @@ def repair(token):
     fixed = fixed.replace("{", "(").replace("[", "(").replace("}", ")").replace("]", ")")
     if "(" in fixed and ")" not in fixed:
         fixed += ")"
+    # a closing bracket carrying no W is an open seat whose marker was mangled
+    if re.search(r"[)}\]]$", fixed) and not re.search(r"[WwVv]", fixed):
+        fixed = re.sub(r"^([A-Za-z]{2}).*$", r"\1(G)", fixed)
     return fixed, fixed.upper().replace(" ", "") != original.upper().replace(" ", "")
 
 
@@ -148,7 +174,11 @@ def as_category(text, limit=1):
     `limit` is deliberately tight. Beyond one edit the guess stops being
     recoverable and the row is better dropped than silently misfiled.
     """
-    squashed = re.sub(r"[^A-Za-z()]", "", (text or "").upper())
+    # a hyphen or a run-on is the same marker as a bracket, so normalise before
+    # measuring distance or "UR-W" reads as two edits from UR(W) and is rejected
+    text = re.sub(r"[-\u2013\u2014]\s*([WwGg])(?![A-Za-z])", r"(\1)", text or "")
+    text = re.sub(r"(?<=[A-Za-z])([WwGg])$", r"(\1)", text)
+    squashed = re.sub(r"[^A-Za-z()]", "", text.upper())
     squashed = squashed.replace("{", "(").replace("[", "(")
     if not squashed:
         return None
@@ -514,7 +544,41 @@ def parse_pdf(path):
                 woman_reserved=woman, ocr_repaired=int(repaired),
                 reservation_raw=raw, script=script,
             ), path, page_no, ROOT))
+    unstated = mark_gender_stated(rows)
+    if unstated:
+        print(f"  {district}: {unstated:,} of {len(rows):,} rows state a caste "
+              f"but no gender", file=sys.stderr)
     return dedupe(rows)
+
+
+GENDER_MARKER = re.compile(r"[({\[/\u00a2-]\s*[WwVvGg]\s*[)}\]]?$|[WwGg]$")
+OPEN_MARKER = re.compile(r"[({\[/\u00a2-]\s*[Gg]\s*[)}\]]?$|[Gg]$")
+
+
+def mark_gender_stated(rows):
+    """Say whether the source actually stated the seat's gender.
+
+    Two conventions run through these gazettes and they cannot be told apart
+    row by row. East Godavari and Krishna mark only the women's seats, so a bare
+    UR really is a seat not reserved for a woman. Anantapur, Nellore and
+    Prakasam mark both - UR(G) as well as UR(W) - so there a bare UR is a code
+    whose marker did not survive the scan, and calling it a man's seat is an
+    invention rather than a reading.
+
+    The difference is worth 6,422 rows. Anantapur read 38% women against a
+    statutory half until the hyphen and run-on forms of the marker were
+    recognised; what is left is genuinely absent from the page, and the honest
+    answer is that we do not know, not that it was a man.
+
+    The convention is decided per document, by whether it ever marks an open
+    seat - a state that writes (G) at all writes it everywhere.
+    """
+    marks_open = sum(1 for r in rows if OPEN_MARKER.search(r["reservation_raw"].strip()))
+    both = marks_open > 0.05 * max(len(rows), 1)
+    for row in rows:
+        stated = bool(GENDER_MARKER.search(row["reservation_raw"].strip()))
+        row["gender_stated"] = 1 if (stated or not both) else 0
+    return sum(1 for r in rows if not r["gender_stated"])
 
 
 def dedupe(rows):

@@ -42,6 +42,39 @@ def test_recognises_a_damaged_code(raw, expected):
     assert as_category(raw) == expected
 
 
+# The gender marker is bracketed three ways and two were being dropped, which
+# does not blank the gender - it silently records the seat as not reserved for a
+# woman. 6,422 ward rows across the three districts that mark both, and it is
+# why Anantapur read 38% women against a statutory half.
+MARKERS = [
+    ("UR(W)", "UR(W)"),
+    ("UR-W", "UR(W)"),          # Anantapur, hyphen for the bracket
+    ("BC-w", "BC(W)"),
+    ("URW", "UR(W)"),           # run on, no separator at all
+    ("SC-G", "SC(G)"),
+]
+
+
+@pytest.mark.parametrize("raw,expected", MARKERS)
+def test_the_gender_marker_survives_every_separator(raw, expected):
+    assert as_category(raw) == expected
+
+
+RUN_ON_SAFE = [
+    ("URW", "URW"),        # adjacent - a real run-on marker
+    ("UR WARD", "UR"),     # separated by a space, so WARD is not a marker
+    ("URWA", "UR"),        # a longer word cannot supply the marker either
+]
+
+
+@pytest.mark.parametrize("text,expected", RUN_ON_SAFE)
+def test_a_run_on_marker_must_be_adjacent_and_alone(text, expected):
+    """The run-on form was added because Anantapur prints URW for UR(W) 1,393
+    times. It must not turn "UR WARD" into a woman-reserved seat, so it is only
+    read when nothing separates it from the code and no letter follows it."""
+    assert ap.CATEGORY.search(text).group(0) == expected
+
+
 NOT_A_CODE = ["Amancherla", "Agali", "Kunavaram", "Buchireddypalem", ""]
 
 

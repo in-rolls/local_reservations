@@ -79,20 +79,32 @@ def test_a_partial_listing_is_not_measured_against_the_statute():
     assert "partial" in got["detail"]
 
 
-def test_the_statute_is_measured_on_records_read_whole():
-    """Andhra Pradesh's wards are 43.5% women overall but 46.9% across records
-    whose ward list is verified complete, and 37.3% across truncated ones. The
-    deficit is our parse, not the state's reservation - averaging them together
-    states neither."""
-    rows = ([{"woman_reserved": "1", "ward_list_complete": "1"}] * 5
-            + [{"woman_reserved": "0", "ward_list_complete": "1"}] * 5
-            + [{"woman_reserved": "0", "ward_list_complete": "0"}] * 10)
+def test_the_statute_is_measured_only_where_a_gender_was_stated():
+    """A code whose gender marker did not survive the scan is unknown, not male,
+    but woman_reserved is 0 there by default. Andhra Pradesh's wards read 46.8%
+    over every row and 50.9% over the rows whose gender the source states."""
+    rows = ([{"woman_reserved": "1", "gender_stated": "1"}] * 9
+            + [{"woman_reserved": "0", "gender_stated": "1"}] * 9
+            + [{"woman_reserved": "0", "gender_stated": "0"}] * 2)
     got = sc.women_share_vs_statute(
         make(rows, state="Andhra Pradesh", year="2020", tier="gp_head"))
     assert got["observed"] == "50.0%"
     assert got["status"] == sc.PASS
-    assert "verified complete" in got["detail"]
-    assert "25.0% over all 20" in got["detail"]
+    assert "whose gender the source states" in got["detail"]
+    assert "45.0% over all 20" in got["detail"]
+
+
+def test_no_share_is_estimated_when_too_many_genders_are_unstated():
+    """The filter cannot be trusted when much is missing, because the markers
+    are not lost at equal rates - Prakasam loses (G) about twice as often as
+    (W), so its stated rows read 66% women against a statutory half. Neither
+    number estimates the truth, so the slice is not measured."""
+    rows = ([{"woman_reserved": "1", "gender_stated": "1"}] * 6
+            + [{"woman_reserved": "0", "gender_stated": "0"}] * 4)
+    got = sc.women_share_vs_statute(
+        make(rows, state="Andhra Pradesh", year="2020", tier="gp_head"))
+    assert got["status"] == sc.SKIP
+    assert "not missing at random" in got["detail"]
 
 
 def test_a_floor_is_not_a_target():
