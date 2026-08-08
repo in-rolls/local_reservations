@@ -8,21 +8,21 @@ The document holds more than our parse recovered. Each line says what would clos
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 11,113 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 9 of 24 districts |
-| 4,354 | Jharkhand | 2015 | `block_member` | some districts are not held | 21 of 24 districts |
-| 4,214 | Jharkhand | 2015 | `gp_head` | some districts are not held | 23 of 24 districts |
+| 18,522 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 9 of 24 districts, roughly 18,522 rows missing |
 | 4,107 | Jharkhand | 2015 | `block_member` | the row does not say which panchayat | Giridih 466, Palamu 354, Ranchi 349 |
 | 2,156 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Chatra 1,475, Jamtara 227, Latehar 166 |
 | 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
 | 1,141 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Chatra 415, Latehar 213, Jamtara 192 |
+| 622 | Jharkhand | 2015 | `block_member` | some districts are not held | 21 of 24 districts, roughly 622 rows missing |
 | 363 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 6 rows |
+| 362 | Jharkhand | 2015 | `zp_member` | some districts are not held | 8 of 24 districts, roughly 362 rows missing |
 | 290 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 206 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 24 rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
-| 181 | Jharkhand | 2015 | `zp_member` | some districts are not held | 8 of 24 districts |
+| 183 | Jharkhand | 2015 | `gp_head` | some districts are not held | 23 of 24 districts, roughly 183 rows missing |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
 | 139 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
@@ -59,8 +59,8 @@ Closable, but not from here. These are not waiting on effort; they are waiting o
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 54,763 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
-| 5,589 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts - sec.ap.gov.in refuses connections from outside India; needs an India egress |
+| 63,890 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts, roughly 63,890 rows missing - sec.ap.gov.in refuses connections from outside India; needs an India egress |
+| 6,520 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts, roughly 6,520 rows missing - sec.ap.gov.in refuses connections from outside India; needs an India egress |
 
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.

@@ -15,8 +15,8 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 26 | 33,231 |
-| [Blocked](WORKLIST.md) | 2 | 60,352 |
+| [Open gaps](WORKLIST.md) | 26 | 33,058 |
+| [Blocked](WORKLIST.md) | 2 | 70,410 |
 | [Undetermined](WORKLIST.md) | 6 | 12,985 |
 | [Accepted properties of the sources](WORKLIST.md) | 6 | 63,471 |
 

@@ -166,15 +166,24 @@ def ward_list_incomplete(s):
               "every share here describes the districts we hold.",
       closes_with="harvesting the remaining districts' notifications")
 def districts_missing(s):
+    """Rows affected is an estimate of what is *missing*, not what we have.
+
+    Counting every row of a partial state made the gap grow each time a
+    district was added - West Godavari brought 9,070 wards and the entry went up
+    by 9,921, which reads as a regression for what is plainly progress. The
+    estimate is the average district's row count times the number of districts
+    still unheld, so it falls as they are collected.
+    """
     expected = reference.districts_expected(s.state, s.year)
     got = len({r.get("district") for r in s.rows if r.get("district")})
     if not (expected and got and got < expected):
         return None
+    estimate = round(s.n / got * (expected - got))
+    detail = f"{got} of {expected} districts, roughly {estimate:,} rows missing"
     access, why = reference.source_access(s.state)
     if access == "blocked":
-        return found(s.n, f"{got} of {expected} districts - {why}",
-                     status=BLOCKED)
-    return found(s.n, f"{got} of {expected} districts")
+        return found(estimate, f"{detail} - {why}", status=BLOCKED)
+    return found(estimate, detail)
 
 
 @note("panchayat_not_named",
