@@ -323,6 +323,98 @@ def fill_block_names(rows):
     return filled, len(lookup) - len(resolved)
 
 
+# The office named by its head noun rather than its whole phrase. Ranchi splits
+# the post across lines and interleaves it with the name - "ftyk ifj\"kn" on one
+# line, a name fragment next, "lnL;" on the third - so the full phrase never
+# appears contiguously. One district also writes "iapk;r lfefr ds lnL;" with an
+# extra word. Order matters: gram panchayat and panchayat samiti share a word.
+# Most specific first. "eqf[k;k" has to be tested before "xzke iapk;r",
+# because a post reading "xzke iapk;r eqf[k;k" - the panchayat's head - would
+# otherwise match the ward member's token and file a head as a ward. Ranchi
+# produced no mukhiya rows at all until this order was fixed, while reading
+# 2,125 rows as ward members.
+TIER_HEADS = [
+    ("eqf[k;k", "mukhiya"),
+    ('ftyk ifj"kn', "zila_parishad"),
+    ("iapk;r lfefr", "panchayat_samiti"),
+    ("xzke iapk;r", "ward_member"),
+]
+
+STACKED_CASTE = re.compile(r"vuk[fj]+\{kr|vuq\S*\s*tu\s*tkfr|vuq\S*\s*tkfr|fiNM\+k")
+STACKED_GENDER = re.compile(r"(efgyk|vU;)(?!\s*fiNM)")
+
+
+def parse_stacked(path, district):
+    """Read a document whose rows are stacked three lines deep.
+
+    Ranchi's gazette puts the name and the post in cells tall enough to wrap, so
+    a record spans three lines: the reservation, the gender and the seat
+    identifier sit on the middle one while the name and post are spread above
+    and below it. Neither the table reader nor the single-line text reader finds
+    anything, and Ranchi - Jharkhand's largest district - came out with nothing
+    at all across 253 pages.
+
+    Anchored on the reservation line, because that is the one line guaranteed to
+    carry a whole record's worth of fields.
+
+    A row is emitted only where the post explicitly names an office. About a
+    thousand rows here say only "lnL;" - member - with the office too far away
+    to attribute, and the seat identifier cannot settle it: a panchayat samiti
+    seat and a ward seat have the same shape, which is exactly why
+    split_seat_id has to be told the tier rather than infer it. Guessing would
+    put block seats and ward seats in one bucket.
+    """
+    rows = []
+    with pdfplumber.open(str(path)) as pdf:
+        for page in pdf.pages:
+            lines = (page.extract_text(layout=True) or "").split("\n")
+            for index, line in enumerate(lines):
+                caste_at = STACKED_CASTE.search(line)
+                if not caste_at:
+                    continue
+                gender_at = STACKED_GENDER.search(line, caste_at.end())
+                if not gender_at:
+                    continue
+                seat = line[gender_at.end():].strip()
+                if not seat:
+                    continue
+                left = [line[:caste_at.start()]]
+                for other in (index - 1, index + 1):
+                    if 0 <= other < len(lines) and not STACKED_CASTE.search(lines[other]):
+                        left.append(lines[other][:caste_at.start()])
+                joined = clean(" ".join(left))
+                if "in vkjf{kr" in joined:      # the column header
+                    continue
+
+                tier = next((v for k, v in TIER_HEADS if k in joined), None)
+                if not tier:
+                    continue
+                caste = caste_of(line[caste_at.start():gender_at.start()])
+                woman = woman_of(gender_at.group(1))
+                if caste is None or woman is None:
+                    continue
+                name = joined
+                for key, _ in TIER_HEADS:
+                    name = name.replace(key, " ")
+                name = clean(re.sub(r"lnL;|\bds\b", " ", name))
+                if emit.is_header_text(name):
+                    continue
+                # The identifier settles head against ward where the post text
+                # cannot. A mukhiya seat is "XX jkaph @01@01&yijk" - three
+                # parts, no ward number, one per panchayat - while a ward is
+                # "XX jk¡ph @01@01@yijk& ¼2½". 88 rows whose post read only
+                # "gram panchayat" were heads filed as ward members until this
+                # looked at what the seat itself says.
+                if tier == "ward_member" and not split_seat_id(
+                        seat, "ward_member").get("seat_no"):
+                    tier = "mukhiya"
+                rows.append(emit.stamp(seat_row(
+                    district, "", tier, caste, woman, seat, name,
+                    f"{line[caste_at.start():gender_at.start()].strip()} | "
+                    f"{gender_at.group(1)}"), path, page.page_number, ROOT))
+    return rows
+
+
 def parse_pdf(path, district):
     rows = []
     block = ""
@@ -388,7 +480,12 @@ def main():
         # two thirds of the state.
         for path in sorted(folder.rglob("*.pdf")):
             try:
-                rows += parse_pdf(path, district)
+                got = parse_pdf(path, district)
+                if not got:
+                    # a document whose rows are stacked three lines deep finds
+                    # nothing above; Ranchi is entirely of this shape
+                    got = parse_stacked(path, district)
+                rows += got
             except Exception as exc:  # noqa: BLE001 - report, keep going
                 failed.append((path.name, type(exc).__name__))
             print(f"\r  {district:18s} rows={len(rows)}", end="", file=sys.stderr)
