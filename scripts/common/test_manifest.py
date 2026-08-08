@@ -25,14 +25,23 @@ def run(script, *args):
 def test_two_builds_from_one_tree_are_byte_identical():
     """No wall-clock timestamp anywhere. The manifest is dated by the git
     commit, because a manifest that changes when nothing else did cannot be
-    checked into a repository or diffed across a release."""
-    if not MANIFEST.exists():
-        return
-    before = MANIFEST.read_bytes()
-    run(BUILD)
-    after = MANIFEST.read_bytes()
-    MANIFEST.write_bytes(before)
-    assert before == after
+    checked into a repository or diffed across a release.
+
+    Both builds happen here rather than comparing against whatever is on disk:
+    the committed manifest was built from an earlier HEAD, so comparing to it
+    tests that the commit has not moved, which is a different and much less
+    interesting claim.
+    """
+    original = MANIFEST.read_bytes() if MANIFEST.exists() else None
+    try:
+        run(BUILD)
+        first = MANIFEST.read_bytes()
+        run(BUILD)
+        second = MANIFEST.read_bytes()
+    finally:
+        if original is not None:
+            MANIFEST.write_bytes(original)
+    assert first == second
 
 
 def test_the_manifest_records_the_exact_column_order():
