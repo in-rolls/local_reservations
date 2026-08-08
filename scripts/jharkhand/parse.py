@@ -280,30 +280,47 @@ def fill_image_seats(rows):
     with IMAGE_SEATS.open(encoding="utf-8") as fh:
         found = {(r["source_pdf"], r["source_page"], r["serial"]): r
                  for r in csv.DictReader(fh) if r["serial"]}
+    # rows whose serial the OCR could not read are still usable by name
+    with IMAGE_SEATS.open(encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            found.setdefault((r["source_pdf"], r["source_page"],
+                              f'~{r["gram_panchayat"]}{r["ward_no"]}'), r)
     if not found:
         return 0, 0
+
+    # the same rows again, grouped by page, for the fallback below
+    by_page = collections.defaultdict(list)
+    for got in found.values():
+        by_page[(got["source_pdf"], got["source_page"])].append(got)
 
     filled = rejected = 0
     for row in rows:
         if (row.get("gram_panchayat") or "").strip():
             continue
-        serial = re.match(r"^\s*(\d{1,3})\b", row.get("winner") or "")
-        if not serial:
-            continue
-        got = found.get((row.get("source_pdf", ""),
-                         str(row.get("source_page", "")), serial.group(1)))
-        if not got:
-            continue
-        # the parsed name is Kruti Dev and the OCR's is Unicode, so they are
-        # comparable only after transliteration - and if they disagree the
-        # serials did not line up and the seat would be filed against the
-        # wrong person
+        page = (row.get("source_pdf", ""), str(row.get("source_page", "")))
         printed = krutidev.to_unicode(re.sub(r"^\s*\d{1,3}\s*", "",
                                              row.get("winner") or ""))
-        if got["name_ocr"] and printed:
-            if _similar(printed, got["name_ocr"]) < 0.5:
-                rejected += 1
-                continue
+        serial = re.match(r"^\s*(\d{1,3})\b", row.get("winner") or "")
+        got = found.get(page + (serial.group(1),)) if serial else None
+        if got and got["name_ocr"] and printed \
+                and _similar(printed, got["name_ocr"]) < 0.5:
+            got = None
+        if not got and printed:
+            # On a page that mixes typeset rows with pasted-in pictures, the
+            # serials the OCR reads are not a consecutive run, so anchoring
+            # them lands on the wrong numbers - page 21 came out 45-49 where
+            # the rows are 1-5. The name is the reliable key there; the serial
+            # is only a cheaper one where it works.
+            best, score = None, 0.0
+            for candidate in by_page.get(page, ()):
+                if not candidate["name_ocr"]:
+                    continue
+                similarity = _similar(printed, candidate["name_ocr"])
+                if similarity > score:
+                    best, score = candidate, similarity
+            got = best if score >= 0.6 else None
+        if not got:
+            continue
         row["gram_panchayat"] = got["gram_panchayat"]
         row["ward_no"] = got["ward_no"]
         row["block_no"] = got["block_no"] or row.get("block_no", "")

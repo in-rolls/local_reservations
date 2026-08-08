@@ -71,8 +71,14 @@ def image_pages(path):
             words = page.extract_words()
             if not words or not page.images:
                 continue
+            # Pages 21 and 25 are mixed - some rows typeset, some pasted in as
+            # pictures - so their words reach the right edge and the threshold
+            # skipped them, leaving 54 rows unidentified. Any page carrying a
+            # crop of images is read; the join is on the serial number and
+            # confirmed by the name, and only fills rows that named no
+            # panchayat, so reading a page that did not need it costs nothing.
             rightmost = max(w["x1"] for w in words)
-            if rightmost < TEXT_REACHES * page.width and len(page.images) > 5:
+            if len(page.images) > 5 or rightmost < TEXT_REACHES * page.width:
                 found.append((number, page.width))
     return found
 

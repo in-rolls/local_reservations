@@ -9,7 +9,7 @@ The document holds more than our parse recovered. Each line says what would clos
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
 | 18,522 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 9 of 24 districts, roughly 18,522 rows missing |
-| 2,156 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Chatra 1,475, Jamtara 227, Latehar 166 |
+| 2,130 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Chatra 1,475, Jamtara 227, Latehar 166 |
 | 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
 | 1,090 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Chatra 415, Latehar 213, Jamtara 192 |
@@ -24,11 +24,11 @@ The document holds more than our parse recovered. Each line says what would clos
 | 183 | Jharkhand | 2015 | `gp_head` | some districts are not held | 23 of 24 districts, roughly 183 rows missing |
 | 159 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 5 rows |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
-| 139 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
+| 146 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 63 | Jammu & Kashmir | 2016 | `gp_head` | the row does not say which panchayat | Jammu 49, JAMMU 14 |
 | 51 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
-| 43 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
+| 17 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 13 | Jammu & Kashmir | 2018 | `gp_ward` | the row does not say which panchayat | Ganderbal 2, Anantnag 1, Bandipora 1 |
 | 10 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
 | 4 | Goa | 2017 | `gp_ward` | the row does not say which panchayat | North Goa 4 |
