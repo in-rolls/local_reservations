@@ -134,7 +134,16 @@ def split_seat_id(text, tier):
         s = (s[:roman.start()] + " " + s[roman.end():])
     s = s.strip().strip("&-/@ ").strip()
 
-    parts = [p.strip(" &-/") for p in s.split("@")]
+    # Some districts separate the parts with "/" and others with "@" - Ranchi
+    # writes both, sometimes on the same page. Splitting on "@" alone left the
+    # block and panchayat blank on rows whose ward number parsed perfectly well,
+    # which reads as a seat that exists but sits nowhere.
+    #
+    # "/" cannot be split on blindly: in Kruti Dev it also begins the letter ध,
+    # so "[kjkSa/kh" - the block Kharaundhi - would come apart in the middle of
+    # its own name. A separator is never followed by "k", and the letter always
+    # is.
+    parts = [p.strip(" &-") for p in re.split(r"@|/(?!k)", s)]
     parts = [p for p in parts if p]
 
     def kind(p):

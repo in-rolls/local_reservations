@@ -13,13 +13,13 @@ The document holds more than our parse recovered. Each line says what would clos
 | 2,745 | Jharkhand | 2015 | `gp_head` | some districts are not held | 18 of 24 districts |
 | 1,827 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
-| 541 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 139 rows |
 | 510 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 27 rows |
 | 418 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 8 rows |
+| 278 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 139 rows |
 | 249 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 22 rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 205 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
-| 167 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 106 rows |
+| 178 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 106 rows |
 | 133 | Jharkhand | 2015 | `zp_member` | some districts are not held | 5 of 24 districts |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 114 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 49 rows |
