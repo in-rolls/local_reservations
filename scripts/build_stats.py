@@ -46,14 +46,19 @@ CHECK_COLUMNS = ["state", "year", "tier", "check_id", "appeals_to", "status",
 
 
 def slices():
-    """Group every parsed row by state x year x tier."""
+    """Group every pooled row by state x year x tier.
+
+    Pooled, not parsed: the checks have to see the sibling states too, or the
+    two thirds of the master that comes from adapters is unchecked while the
+    report reads as though everything passed.
+    """
     grouped = collections.defaultdict(list)
     files = collections.defaultdict(set)
-    for path, rows in datasets.parsed():
+    for dataset_id, rows in datasets.pooled():
         for row in rows:
             key = (row.get("state", ""), row.get("year", ""), row.get("tier", ""))
             grouped[key].append(row)
-            files[key].add(path.name)
+            files[key].add(dataset_id)
     return grouped, files
 
 

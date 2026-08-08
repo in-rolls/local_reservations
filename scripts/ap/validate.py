@@ -31,9 +31,14 @@ OCR = DATA / "ocr"
 
 # Andhra Pradesh reserves half of all sarpanch seats for women.
 WOMEN_SHARE = 0.50
+# Kept in step with scripts/ap/parse.py, which is the file that decides what a
+# row's district is. This map fell behind when West Godavari was recovered from
+# the archive, and the validator then reported "0 of 900 stated, nothing
+# parsed" for a district that had parsed 851 seats perfectly well - a failure
+# that says the data is broken when the lookup is.
 DISTRICTS = {
     "atp": "Anantapur", "est": "East Godavari", "kri": "Krishna",
-    "nlr": "Nellore", "pkm": "Prakasam",
+    "nlr": "Nellore", "pkm": "Prakasam", "wg": "West Godavari",
 }
 
 

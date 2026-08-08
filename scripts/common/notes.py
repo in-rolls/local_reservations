@@ -214,6 +214,27 @@ def panchayat_not_named(s):
                                          for d, n in worst.most_common(3)))
 
 
+@note("seat_not_numbered",
+      "the row does not say which seat",
+      OPEN_GAP,
+      because="A block or district constituency is numbered within its body and "
+              "has no panchayat, so the number is the whole of its identity. "
+              "Without it the row is a real reservation for a seat nobody can "
+              "point at - the same problem as an unnamed panchayat, one tier "
+              "up, and it needs its own line or it is attributed to nothing.",
+      closes_with="reading the constituency number from the seat identifier on "
+                  "the affected pages")
+def seat_not_numbered(s):
+    if s.tier not in ("block_member", "block_head", "zp_member", "zp_head"):
+        return None
+    missing = [r for r in s.rows if not (r.get("seat_no") or "").strip()]
+    if not missing:
+        return None
+    worst = collections.Counter(r.get("district", "") for r in missing)
+    return found(len(missing), ", ".join(f"{d} {n:,}"
+                                         for d, n in worst.most_common(3)))
+
+
 @note("seat_key_not_unique",
       "some rows do not identify a distinct seat",
       OPEN_GAP,
@@ -221,10 +242,17 @@ def panchayat_not_named(s):
               "cannot be told apart. Usually one of those four did not parse.",
       closes_with="parsing whichever identifier is blank on the colliding rows")
 def seat_key_not_unique(s):
-    # Rows that name no panchayat are counted by panchayat_not_named instead.
-    # Lumping them here says two seats are duplicates when what is true is that
-    # we cannot tell them apart - a different problem with a different fix.
-    named = [r for r in s.rows if canon.unit_name(r)]
+    # Rows that identify nothing are counted by panchayat_not_named or
+    # seat_not_numbered instead. Lumping them here says two seats are
+    # duplicates when what is true is that we cannot tell them apart.
+    #
+    # "Identifies something" is not "names a panchayat": a block or district
+    # seat never has one, so filtering on the panchayat excluded 94% of
+    # Jharkhand's block rows from this check and left 707 collisions
+    # attributed to nothing at all.
+    named = [r for r in s.rows
+             if canon.unit_name(r) or (r.get("ward_no") or "").strip()
+             or (r.get("seat_no") or "").strip()]
     counts = collections.Counter(
         (r.get("district", ""), r.get("block", ""), canon.unit_name(r),
          r.get("ward_no", ""), r.get("seat_no", "")) for r in named)

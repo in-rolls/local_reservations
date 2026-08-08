@@ -27,13 +27,14 @@ import hashlib
 
 import canon
 import dictionary
+import reference
 
 MASTER_COLUMNS = [
     # grain
     "dataset_id", "row_id", "seat_key", "seat_key_unique",
     # place
     "state", "year", "district", "block", "gram_panchayat", "gp_term",
-    "ward_no", "ward_name",
+    "ward_no", "ward_name", "seat_no",
     # office
     "tier", "tier_local",
     # reservation
@@ -119,6 +120,12 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         "district": row.get("district", ""), "block": row.get("block", ""),
         "gram_panchayat": canon.unit_name(row), "gp_term": gp_term(row),
         "ward_no": row.get("ward_no", ""), "ward_name": row.get("ward_name", ""),
+        # A block or district seat is numbered within its body and has no
+        # panchayat, so this is the whole of its identity. It was named in
+        # SEAT_FIELDS but never in MASTER_COLUMNS, so every seat key was built
+        # with an empty slot where it belonged and Jharkhand's 181 zila
+        # parishad seats all collided with each other.
+        "seat_no": row.get("seat_no", ""),
         "tier": tier, "tier_local": row.get("tier_local", ""),
         "caste_reservation": row.get("caste_reservation", ""),
         "caste_reservation_local": local,
@@ -126,9 +133,14 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         "woman_reserved": row.get("woman_reserved", ""),
         "reservation": row.get("reservation", ""),
         "reservation_raw": row.get("reservation_raw", ""),
-        # absent means all_seats by convention everywhere but J&K, and a
-        # convention that lives only in a docstring is one nobody can filter on
-        "listing_scope": row.get("listing_scope") or "all_seats",
+        # The row's own value first, then what reference declares for the
+        # slice, and only then the convention. Writing "all_seats" without
+        # asking reference overwrote Goa 2017 and 2022 - declared partial
+        # listings - and the statutory check then measured half a roster
+        # against the statute and failed a state that had done nothing wrong.
+        "listing_scope": (row.get("listing_scope")
+                          or reference.listing_scope(state, row.get("year", ""),
+                                                     tier)),
         "unit_of_observation": unit_of_observation,
         "seat_candidates": seat_candidates,
         "winner": row.get("winner", ""),
@@ -143,7 +155,11 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
     }
     out["quality_flags"] = quality_flags(dict(row, **out))
     out["seat_key"] = seat_key(dict(row, gram_panchayat=out["gram_panchayat"]))
-    return out
+    # Every value is a string, as it will be once written. An adapter that sets
+    # woman_reserved to the integer 1 produces a row that behaves differently
+    # in memory than after a round trip through the CSV, and the checks - which
+    # were written against rows read back from disk - then fail on .strip().
+    return {k: "" if v is None else str(v) for k, v in out.items()}
 
 
 def extras(row, row_id_value):

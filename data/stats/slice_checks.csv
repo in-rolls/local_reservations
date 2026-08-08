@@ -3,7 +3,7 @@ Andhra Pradesh,2020,gp_head,rows_in_band,declared,pass,5589,500..13200,
 Andhra Pradesh,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,5589,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a state figure because only 6 of 13 districts are held. scripts/ap/validate.py reads it per district. Anantapur states each seat twice, in a sarpanch-only proforma and again as the first column of the ward table; the file holds their union deduplicated, and the two agree on 98.4% of the seats stated by both."
-Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,49.3%,target 50%,"over the 5,457 rows whose gender the source states; 48.2% over all 5,589"
+Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,48.2%,target 50%,
 Andhra Pradesh,2020,gp_head,women_share_by_block,external,warn,338 of 571 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
@@ -16,7 +16,7 @@ Andhra Pradesh,2020,gp_ward,rows_in_band,declared,pass,54763,5000..130000,
 Andhra Pradesh,2020,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Andhra Pradesh,2020,gp_ward,coverage_vs_published,external,skip,54763,,no published total for this slice
-Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,48.1%,target 50%,"over the 53,009 rows whose gender the source states; 46.6% over all 54,763"
+Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,46.6%,target 50%,
 Andhra Pradesh,2020,gp_ward,women_share_by_block,external,warn,194 of 565 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
@@ -64,6 +64,58 @@ Goa,2022,gp_ward,seat_key_unique,internal,pass,0,0,
 Goa,2022,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
 Goa,2022,gp_ward,year_constant,internal,pass,2022,2022,
 Goa,2022,gp_ward,provenance_resolves,internal,pass,0,0,9 documents
+Haryana,2016,gp_head,rows_in_band,declared,pass,6079,4000..8000,
+Haryana,2016,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC","BC,NONE,SC,ST",sc_st_bca_only
+Haryana,2016,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Haryana,2016,gp_head,coverage_vs_published,external,skip,6079,,no published total for this slice
+Haryana,2016,gp_head,women_share_vs_statute,external,skip,2047/6079,,no statutory rule declared
+Haryana,2016,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Haryana,2016,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Haryana,2016,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Haryana,2016,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Haryana,2016,gp_head,seat_key_unique,internal,warn,29,0,"largest group 3 at ('Bhiwani', 'Badhra', 'Dohka Moji', '', '')"
+Haryana,2016,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Haryana,2016,gp_head,year_constant,internal,pass,2016,2016,
+Haryana,2016,gp_head,provenance_resolves,internal,pass,0,0,21 documents
+Haryana,2016,gp_ward,rows_in_band,declared,pass,61618,40000..80000,
+Haryana,2016,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC","BC,NONE,SC,ST",sc_st_bca_only
+Haryana,2016,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Haryana,2016,gp_ward,coverage_vs_published,external,skip,61618,,no published total for this slice
+Haryana,2016,gp_ward,women_share_vs_statute,external,skip,22768/61618,,no statutory rule declared
+Haryana,2016,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Haryana,2016,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
+Haryana,2016,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Haryana,2016,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Haryana,2016,gp_ward,seat_key_unique,internal,warn,1553,0,"largest group 19 at ('Kaithal', 'Siwan', 'Siwan', '', '')"
+Haryana,2016,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
+Haryana,2016,gp_ward,year_constant,internal,pass,2016,2016,
+Haryana,2016,gp_ward,provenance_resolves,internal,pass,0,0,21 documents
+Haryana,2022,gp_head,rows_in_band,declared,pass,6159,4000..8000,
+Haryana,2022,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC","BC,NONE,SC,ST",sc_st_bca_only
+Haryana,2022,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Haryana,2022,gp_head,coverage_vs_published,external,skip,6159,,no published total for this slice
+Haryana,2022,gp_head,women_share_vs_statute,external,skip,2987/6159,,no statutory rule declared
+Haryana,2022,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Haryana,2022,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Haryana,2022,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Haryana,2022,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Haryana,2022,gp_head,seat_key_unique,internal,warn,3,0,"largest group 3 at ('Palwal', 'Prithla', 'jktiky', '', '')"
+Haryana,2022,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Haryana,2022,gp_head,year_constant,internal,pass,2022,2022,
+Haryana,2022,gp_head,provenance_resolves,internal,pass,0,0,143 documents
+Haryana,2022,gp_ward,rows_in_band,declared,pass,61362,40000..80000,
+Haryana,2022,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC","BC,NONE,SC,ST",sc_st_bca_only
+Haryana,2022,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Haryana,2022,gp_ward,coverage_vs_published,external,skip,61362,,no published total for this slice
+Haryana,2022,gp_ward,women_share_vs_statute,external,skip,29044/61362,,no statutory rule declared
+Haryana,2022,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Haryana,2022,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
+Haryana,2022,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Haryana,2022,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Haryana,2022,gp_ward,seat_key_unique,internal,warn,2244,0,"largest group 35 at ('Palwal', 'Prithla', 'jktiky', '', '')"
+Haryana,2022,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
+Haryana,2022,gp_ward,year_constant,internal,pass,2022,2022,
+Haryana,2022,gp_ward,provenance_resolves,internal,pass,0,0,143 documents
 Jammu & Kashmir,2010,gp_ward,rows_in_band,declared,pass,7340,500..35000,
 Jammu & Kashmir,2010,gp_ward,caste_scheme_respected,declared,pass,"NONE,SC,ST","NONE,SC,ST",sc_st_only
 Jammu & Kashmir,2010,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
@@ -79,11 +131,11 @@ Jammu & Kashmir,2010,gp_ward,year_constant,internal,pass,2010,2010,
 Jammu & Kashmir,2010,gp_ward,provenance_resolves,internal,pass,0,0,54 documents
 Jammu & Kashmir,2016,gp_head,rows_in_band,declared,pass,410,100..4500,
 Jammu & Kashmir,2016,gp_head,caste_scheme_respected,declared,pass,"NONE,SC,ST","NONE,SC,ST",sc_st_only
-Jammu & Kashmir,2016,gp_head,blank_share_within_tolerance,declared,warn,halqa 15%>10%,,1 column(s) over tolerance
+Jammu & Kashmir,2016,gp_head,blank_share_within_tolerance,declared,warn,gram_panchayat 15%>10%,,1 column(s) over tolerance
 Jammu & Kashmir,2016,gp_head,coverage_vs_published,external,skip,410,,As above.
 Jammu & Kashmir,2016,gp_head,women_share_vs_statute,external,pass,33.4%,floor 33%,
 Jammu & Kashmir,2016,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
-Jammu & Kashmir,2016,gp_head,caste_share_vs_population,external,pass,SC seats 68.2% vs others 14.2%,SC-reserved seats sit where more SC people live,
+Jammu & Kashmir,2016,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jammu & Kashmir,2016,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jammu & Kashmir,2016,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
 Jammu & Kashmir,2016,gp_head,seat_key_unique,internal,warn,114,0,"largest group 49 at ('Jammu', 'Publication Jammu B', '', '', '')"
@@ -96,7 +148,7 @@ Jammu & Kashmir,2016,gp_ward,blank_share_within_tolerance,declared,pass,,,0 colu
 Jammu & Kashmir,2016,gp_ward,coverage_vs_published,external,skip,2326,,As above.
 Jammu & Kashmir,2016,gp_ward,women_share_vs_statute,external,pass,31.8%,floor 33%,
 Jammu & Kashmir,2016,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
-Jammu & Kashmir,2016,gp_ward,caste_share_vs_population,external,pass,SC seats 74.5% vs others 7.2%,SC-reserved seats sit where more SC people live,
+Jammu & Kashmir,2016,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jammu & Kashmir,2016,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jammu & Kashmir,2016,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
 Jammu & Kashmir,2016,gp_ward,seat_key_unique,internal,warn,418,0,"largest group 8 at ('Jammu', 'Publication Jammu B', '', '1', '')"
@@ -118,7 +170,7 @@ Jammu & Kashmir,2018,gp_ward,year_constant,internal,pass,2018,2018,
 Jammu & Kashmir,2018,gp_ward,provenance_resolves,internal,pass,0,0,13 documents
 Jharkhand,2015,block_member,rows_in_band,declared,pass,4354,1000..5500,
 Jharkhand,2015,block_member,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,block_member,blank_share_within_tolerance,declared,warn,gram_panchayat 94%>10%; gp_no 94%>60%,,2 column(s) over tolerance
+Jharkhand,2015,block_member,blank_share_within_tolerance,declared,warn,gram_panchayat 94%>10%,,1 column(s) over tolerance
 Jharkhand,2015,block_member,coverage_vs_published,external,warn,4354 (80%),5423 seats,seats
 Jharkhand,2015,block_member,women_share_vs_statute,external,pass,51.9%,floor 50%,
 Jharkhand,2015,block_member,women_share_by_block,external,skip,,,only applies where the share is an exact split
@@ -131,7 +183,7 @@ Jharkhand,2015,block_member,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,block_member,provenance_resolves,internal,pass,0,0,38 documents
 Jharkhand,2015,gp_head,rows_in_band,declared,pass,4214,1000..4400,
 Jharkhand,2015,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 88%>35%; gram_panchayat 26%>10%; gp_no 85%>60%; seat_no 96%>90%,,4 column(s) over tolerance
+Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 88%>35%; gram_panchayat 26%>10%; seat_no 96%>90%,,3 column(s) over tolerance
 Jharkhand,2015,gp_head,coverage_vs_published,external,pass,4214 (97%),4345 gram panchayats,seats
 Jharkhand,2015,gp_head,women_share_vs_statute,external,pass,51.9%,floor 50%,
 Jharkhand,2015,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
@@ -168,3 +220,55 @@ Jharkhand,2015,zp_member,seat_key_unique,internal,warn,18,0,"largest group 2 at 
 Jharkhand,2015,zp_member,tier_local_maps_to_one_tier,internal,pass,zila_parishad,zp_member,
 Jharkhand,2015,zp_member,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,zp_member,provenance_resolves,internal,pass,0,0,8 documents
+Rajasthan,2005,gp_head,rows_in_band,declared,pass,9178,8000..14000,
+Rajasthan,2005,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2005,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2005,gp_head,coverage_vs_published,external,skip,9178,,no published total for this slice
+Rajasthan,2005,gp_head,women_share_vs_statute,external,skip,3072/9178,,no statutory rule declared
+Rajasthan,2005,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2005,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2005,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2005,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2005,gp_head,seat_key_unique,internal,warn,41,0,"largest group 3 at ('ALWAR', 'RAJGARH', '', '', '')"
+Rajasthan,2005,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2005,gp_head,year_constant,internal,pass,2005,2005,
+Rajasthan,2005,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2010,gp_head,rows_in_band,declared,pass,9166,8000..14000,
+Rajasthan,2010,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2010,gp_head,blank_share_within_tolerance,declared,warn,reservation_raw 0%>0%,,1 column(s) over tolerance
+Rajasthan,2010,gp_head,coverage_vs_published,external,skip,9166,,no published total for this slice
+Rajasthan,2010,gp_head,women_share_vs_statute,external,skip,4360/9166,,no statutory rule declared
+Rajasthan,2010,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2010,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2010,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2010,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2010,gp_head,seat_key_unique,internal,pass,0,0,
+Rajasthan,2010,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2010,gp_head,year_constant,internal,pass,2010,2010,
+Rajasthan,2010,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2015,gp_head,rows_in_band,declared,pass,9862,8000..14000,
+Rajasthan,2015,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2015,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2015,gp_head,coverage_vs_published,external,skip,9862,,no published total for this slice
+Rajasthan,2015,gp_head,women_share_vs_statute,external,skip,4770/9862,,no statutory rule declared
+Rajasthan,2015,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2015,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2015,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2015,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2015,gp_head,seat_key_unique,internal,pass,0,0,
+Rajasthan,2015,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2015,gp_head,year_constant,internal,pass,2015,2015,
+Rajasthan,2015,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2020,gp_head,rows_in_band,declared,pass,11314,8000..14000,
+Rajasthan,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2020,gp_head,coverage_vs_published,external,skip,11314,,no published total for this slice
+Rajasthan,2020,gp_head,women_share_vs_statute,external,skip,5495/11314,,no statutory rule declared
+Rajasthan,2020,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2020,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2020,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2020,gp_head,seat_key_unique,internal,warn,6,0,"largest group 2 at ('CHURU', 'CHURU', 'ribiya', '', '')"
+Rajasthan,2020,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2020,gp_head,year_constant,internal,pass,2020,2020,
+Rajasthan,2020,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"

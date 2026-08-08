@@ -39,7 +39,7 @@ ORDER = [notes_module.OPEN_GAP, notes_module.BLOCKED,
 
 def gather():
     grouped = collections.defaultdict(list)
-    for _, rows in datasets.parsed():
+    for _, rows in datasets.pooled():
         for row in rows:
             grouped[(row.get("state", ""), row.get("year", ""),
                      row.get("tier", ""))].append(row)

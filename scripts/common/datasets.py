@@ -13,11 +13,16 @@ Directories that hold derived output rather than a state's parse are excluded
 here, in one place.
 """
 
+import collections
 import csv
 import pathlib
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA = ROOT / "data"
+
+sys.path.insert(0, str(ROOT / "scripts"))
+import master  # noqa: E402
 
 # A parsed dataset is one carrying these columns. Filenames are not evidence -
 # Jharkhand's filenames name the wrong tier.
@@ -48,8 +53,42 @@ def read(path):
 
 
 def parsed(exclude=DERIVED):
-    """Yield (path, rows) for every parsed dataset that has rows."""
+    """Yield (path, rows) for every parsed dataset that has rows.
+
+    This repository's own parses only. Kept as it is because the per-state
+    readmes and the coverage table are about what lives in data/<state>/.
+    """
     for path in paths(exclude):
         rows = read(path)
         if rows:
             yield path, rows
+
+
+def pooled():
+    """Every row in the pooled master, this repository's and its siblings'.
+
+    The checks and the worklist read this rather than parsed(), because
+    otherwise they cannot see a single sibling row. Two thirds of the master
+    comes from adapters, and a worklist that says "generated from the rows and
+    cannot go stale" while being blind to most of the rows is worse than one
+    that admits its scope: it reports a small number of problems and reads as
+    though that is all there are.
+
+    Yields (dataset_id, rows) rather than (path, rows) - a pooled slice has no
+    single file behind it, and pretending otherwise is what would make
+    provenance checks resolve against the wrong root.
+    """
+    import build_master              # noqa: PLC0415 - avoids a circular import
+    grouped = collections.defaultdict(list)
+    for slice_ in list(build_master.local_slices()) + \
+            list(build_master.sibling_slices()):
+        for row in slice_["rows"]:
+            got = master.to_master(
+                row, slice_["dataset_id"], slice_["source_repo"],
+                slice_["source_commit"], slice_["provenance_level"],
+                slice_.get("unit_of_observation", "seat"),
+                row.get("seat_candidates", ""))
+            if got is not None:
+                grouped[slice_["dataset_id"]].append(got)
+    for dataset_id, rows in sorted(grouped.items()):
+        yield dataset_id, rows

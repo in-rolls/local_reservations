@@ -20,6 +20,10 @@ the worklist rather than papered over.
 
 import csv
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from normalize import label  # noqa: E402
 
 REPO = "local_elections_haryana"
 URL = "https://github.com/in-rolls/local_elections_haryana"
@@ -77,7 +81,13 @@ def convert(row, year, tier, tier_local, path, root):
         "caste_reservation": "BC" if local == "BC_A" else local,
         "caste_reservation_local": local,
         "woman_reserved": row.get("woman_reserved", ""),
-        "reservation": row.get("reservation", ""),
+        # Rebuilt from the pooled category, not carried across. Haryana prints
+        # "BC-A Other than Woman" against a caste_reservation of BC, so the
+        # label as printed disagrees with the two fields it is meant to
+        # summarise - 12,521 rows of it. The printed form survives in
+        # reservation_raw and caste_reservation_local.
+        "reservation": label("BC" if local == "BC_A" else local,
+                             str(row.get("woman_reserved")) == "1"),
         "reservation_raw": row.get("reservation_raw", ""),
         "winner": row.get("winner", ""), "winner_basis": "published",
         "vacant": row.get("vacant", ""), "unopposed": row.get("unopposed", ""),

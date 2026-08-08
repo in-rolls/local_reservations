@@ -231,6 +231,9 @@ ROW_BANDS = {
     ("Jammu & Kashmir", "gp_ward"): (500, 35000),
     ("Andhra Pradesh", "gp_head"): (500, 13200),
     ("Andhra Pradesh", "gp_ward"): (5000, 130000),
+    ("Haryana", "gp_head"): (4000, 8000),
+    ("Haryana", "gp_ward"): (40000, 80000),
+    ("Rajasthan", "gp_head"): (8000, 14000),
 }
 
 ROMAN = re.compile(r"^[IVXLC]+$", re.I)

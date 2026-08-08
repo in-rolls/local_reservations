@@ -1,10 +1,10 @@
 {
-  "built_from_commit": "635d0d27cc81a5ed886f3819a902976836208ba9",
-  "committed_utc": "2026-08-08T12:10:10-07:00",
+  "built_from_commit": "1a36cba11023d84de8afe0a676086ebd43cf140b",
+  "committed_utc": "2026-08-08T12:25:37-07:00",
   "dirty": false,
   "files": [
     {
-      "bytes": 20400671,
+      "bytes": 20461031,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -19,7 +19,7 @@
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "86f47b14bed8b8fce3e4488bec461b2f0038c7c8b5a2540b1068b06e1c1bf310",
+      "sha256": "f98d1ca753c0fe51551a9942bfdec7876445372be0c9b824f761018bb1ef4dab",
       "states": [
         "Andhra Pradesh"
       ],
@@ -39,14 +39,14 @@
       "sha256": "b5c506be6b0734ebc8204fcdb146d1e391920ebca7208cdc00a4ee055715b72e"
     },
     {
-      "bytes": 18835544,
+      "bytes": 18737559,
       "kind": "master",
       "path": "data/master/master_extras.csv",
-      "rows": 601263,
-      "sha256": "95c1cfcefd58bbe924795a9a55bb821f39de8132fc1a1669dc9e871d65308384"
+      "rows": 597142,
+      "sha256": "eab0c6975eb7bc37bd55c45f513439667154e6d9cbbcff8eee9b6bb0196cc61e"
     },
     {
-      "bytes": 942222,
+      "bytes": 942224,
       "dataset_ids": [
         "goa/gp_ward/2012",
         "goa/gp_ward/2017",
@@ -54,7 +54,8 @@
       ],
       "kind": "master",
       "listing_scopes": [
-        "all_seats"
+        "all_seats",
+        "partial"
       ],
       "path": "data/master/master_goa.csv",
       "provenance_level": [
@@ -62,7 +63,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "c575d8c4c4229f2482ef23dc2e5a692e4b9d058dc73dd5fcbe37c2cba17143a7",
+      "sha256": "7d5a6f5921bf8d810cd0b236605a9d386275594fc8e2d02f82338b4c799a46c6",
       "states": [
         "Goa"
       ],
@@ -76,7 +77,7 @@
       ]
     },
     {
-      "bytes": 45761666,
+      "bytes": 45871850,
       "dataset_ids": [
         "haryana/gp_head/2016",
         "haryana/gp_head/2022",
@@ -93,7 +94,7 @@
       ],
       "rows": 135218,
       "rows_identifying_a_distinct_seat": 131389,
-      "sha256": "f5d760931fa23d7967094a8acbffa69c720a19d280463ab8fd2b7086eb78478d",
+      "sha256": "060dc05cac1ff7a93f19075da70617e1a36877d8fc5d06caf280c9e1e179c958",
       "states": [
         "Haryana"
       ],
@@ -107,7 +108,7 @@
       ]
     },
     {
-      "bytes": 3746705,
+      "bytes": 3758221,
       "dataset_ids": [
         "jammu_and_kashmir/gp_head/2016",
         "jammu_and_kashmir/gp_ward/2010",
@@ -125,7 +126,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "9884bdfb95693d9982bfd02fe51c1672430a3e13789fe921cd9db48065d89d96",
+      "sha256": "a4c73c06578b1fd98c4fe484b6f3e2c31b7a77cfbdfaa4d9b1858c03e07df726",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -140,7 +141,7 @@
       ]
     },
     {
-      "bytes": 8868539,
+      "bytes": 8895732,
       "dataset_ids": [
         "jharkhand/block_member/2015",
         "jharkhand/gp_head/2015",
@@ -157,7 +158,7 @@
       ],
       "rows": 19862,
       "rows_identifying_a_distinct_seat": 15447,
-      "sha256": "60bef68a7c7c2fa6c5f7b3e0333c39dac53d10643c2f8452e054db123dd7d47a",
+      "sha256": "0732c77e3fef73098c04710428e94ec4cae99dcafda76b7964faa6c6ceb43754",
       "states": [
         "Jharkhand"
       ],
@@ -192,10 +193,10 @@
       "kind": "master",
       "path": "data/master/master_key_collisions.csv",
       "rows": 9543,
-      "sha256": "4f1a48d6eac2233af1372d483a27353358706ca632b7f98e509609d25c9eaf6d"
+      "sha256": "7a918b37eafab6e7dac39407fc94d83752571d42221502dca8892a43ef00802a"
     },
     {
-      "bytes": 12275613,
+      "bytes": 12315141,
       "dataset_ids": [
         "rajasthan/gp_head/2005",
         "rajasthan/gp_head/2010",
@@ -212,7 +213,7 @@
       ],
       "rows": 39520,
       "rows_identifying_a_distinct_seat": 39473,
-      "sha256": "8de67bd662aa52febe2a9a4f7823cb33f24a61dc53060354d3ba8b98be66be9d",
+      "sha256": "8c5bbb71369408f66672fd7964fdf82eb17ba9ed65d7a2278c8b0e89aac228cf",
       "states": [
         "Rajasthan"
       ],
@@ -460,6 +461,7 @@
     "gp_term",
     "ward_no",
     "ward_name",
+    "seat_no",
     "tier",
     "tier_local",
     "caste_reservation",

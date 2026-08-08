@@ -1,5 +1,7 @@
 state,slices,rows,years,tiers,women_share,caste_scheme
 Andhra Pradesh,2,60352,2020,"gp_head,gp_ward",0.4672,sc_st_bc
 Goa,3,2948,"2012,2017,2022",gp_ward,0.3277,sc_st_bc
+Haryana,4,135218,"2016,2022","gp_head,gp_ward",0.4204,sc_st_bca_only
 Jammu & Kashmir,4,11508,"2010,2016,2018","gp_head,gp_ward",0.487,sc_st_only
 Jharkhand,4,19862,2015,"block_member,gp_head,gp_ward,zp_member",0.5245,sc_st_bc
+Rajasthan,4,39520,"2005,2010,2015,2020",gp_head,0.4478,sc_st_obc

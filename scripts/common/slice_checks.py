@@ -295,8 +295,27 @@ def year_constant(s):
 
 @check("provenance_resolves", "internal")
 def provenance_resolves(s):
+    """Every row must point at a document that is actually there.
+
+    A sibling's source_path is relative to that sibling's root, not to this
+    repository, so resolving it here reported every Haryana row as missing its
+    document. And a slice whose provenance_level is `dataset` records no
+    document at all - Rajasthan and Bihar were scraped, not read off a page - so
+    there is nothing to resolve and saying so is the honest result.
+    """
+    level = (s.rows[0].get("provenance_level") or "page") if s.rows else "page"
+    if level in ("dataset", "none"):
+        return result(SKIP, "", "",
+                      f"provenance_level is {level}: this source records no "
+                      f"document, so there is no path to resolve")
+
+    repo = (s.rows[0].get("source_repo") or "") if s.rows else ""
+    root = s.root if repo in ("", "local_elections") else s.root.parent / repo
+    if not root.exists():
+        return result(SKIP, "", "", f"{repo} is not checked out here")
+
     missing = {p for p in {r.get("source_path", "") for r in s.rows}
-               if not p or not (s.root / p).exists()}
+               if not p or not (root / p).exists()}
     return result(FAIL if missing else PASS, len(missing), 0,
                   f"e.g. {sorted(missing)[:1]}" if missing else
                   f"{len({r.get('source_path') for r in s.rows})} documents")
