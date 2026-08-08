@@ -80,6 +80,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `coverage_vs_published` | external | ! 4354 (80%) | &check; 4214 (97%) | &ndash; 11113 | ! 181 (33%) |
 | `label_agrees` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
 | `provenance_resolves` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
+| `reservation_constant_within_seat` | internal | &ndash; | &ndash; | &ndash; | &ndash; |
 | `rows_in_band` | declared | &check; 4354 | &check; 4214 | &check; 11113 | &check; 181 |
 | `seat_key_unique` | internal | ! 913 | ! 1238 | ! 2246 | ! 18 |
 | `tier_local_maps_to_one_tier` | internal | &check; panchayat_samiti | &check; mukhiya | &check; ward_member | &check; zila_parishad |

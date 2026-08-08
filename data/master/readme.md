@@ -50,6 +50,7 @@
 | [`master_jammu_and_kashmir.csv`](master_jammu_and_kashmir.csv) | 11,508 | one state |
 | [`master_jharkhand.csv`](master_jharkhand.csv) | 19,862 | one state |
 | [`master_rajasthan.csv`](master_rajasthan.csv) | 39,520 | one state |
+| [`master_candidates.csv`](master_candidates.csv) | 0 | every candidate who stood, for the states whose sources are candidate-level. The master is one row per seat so that it can be counted; the long form is not discarded, it lives here |
 | [`master_extras.csv`](master_extras.csv) | — | the state-specific columns, long-form as (row_id, column, value), so the master stays a fixed schema without losing anything |
 | [`master_key_collisions.csv`](master_key_collisions.csv) | 9,543 | rows that do not identify a distinct seat |
 | [`master_dropped.csv`](master_dropped.csv) | 0 | every input row that did not become an output row, with a reason. `make master` fails if these do not add up |

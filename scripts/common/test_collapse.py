@@ -114,3 +114,25 @@ def test_varies_measures_without_raising():
         KEY)
     assert len(got) == 1
     assert ("A", "X") in got
+
+
+def test_the_candidate_rows_are_kept_beside_the_seat():
+    """Collapsing is what makes the master countable; it is not a reason to
+    throw the candidates away. They ride alongside, joinable on row_id."""
+    import master
+
+    seats = collapse.to_seats(
+        rows(("A", "X", "SC", "0", "10", "One"),
+             ("A", "X", "SC", "0", "30", "Two")),
+        KEY, vote_field="valid_vote")
+    kept = master.candidates(seats[0], "abc123")
+    assert [c["candidate_name"] for c in kept] == ["One", "Two"]
+    assert [c["candidate_no"] for c in kept] == [1, 2]
+    assert {c["row_id"] for c in kept} == {"abc123"}
+
+
+def test_a_seat_level_source_contributes_no_candidate_rows():
+    """Haryana states seats directly. Nothing to keep, and nothing to invent."""
+    import master
+
+    assert master.candidates({"gram_panchayat": "X"}, "abc123") == []

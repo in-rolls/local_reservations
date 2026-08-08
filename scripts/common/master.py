@@ -51,7 +51,14 @@ MASTER_COLUMNS = [
 
 # Columns that the master carries under its own name, so an adapter's leftovers
 # can be identified as extras rather than silently dropped.
-CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated"}
+CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated", "seat_members"}
+
+# The companion table for candidate-level sources. Not part of the master,
+# because the master has to be one row per seat to be countable, and not
+# discarded either, because it is real data about a real contest.
+CANDIDATE_COLUMNS = ["row_id", "candidate_no", "candidate_name", "gender",
+                     "age", "category", "educ", "party", "votes", "result",
+                     "father_husband_name"]
 
 SEAT_FIELDS = ["state", "year", "tier", "district", "block", "gram_panchayat",
                "ward_no", "seat_no"]
@@ -160,6 +167,29 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
     # in memory than after a round trip through the CSV, and the checks - which
     # were written against rows read back from disk - then fail on .strip().
     return {k: "" if v is None else str(v) for k, v in out.items()}
+
+
+def candidates(row, row_id_value):
+    """The candidate rows a collapsed seat stood on, long-form.
+
+    Collapsing Bihar, UP 2021 and Uttarakhand to seats discards 426,486 rows of
+    real data - names, votes, party, the candidate's own caste. None of it is a
+    reservation fact, which is why it is not in the master; all of it is real,
+    which is why it is not thrown away.
+
+    The master stays one row per seat because it has to be countable. Every
+    other state contributes one row per seat, so Bihar entering long form would
+    be 71% of the pooled table against a true share of India's gram panchayat
+    seats nearer 45% - weighting a state by how contested its seats happened to
+    be, which is not a fact about reservation. The candidates ride alongside
+    instead, joinable on row_id, the same arrangement as the extras.
+    """
+    out = []
+    for position, member in enumerate(row.get("seat_members") or (), 1):
+        out.append(dict({c: str(member.get(c, "") or "")
+                         for c in CANDIDATE_COLUMNS},
+                        row_id=row_id_value, candidate_no=position))
+    return out
 
 
 def extras(row, row_id_value):

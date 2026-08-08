@@ -94,7 +94,7 @@ def sibling_slices(only=None):
 
 
 def build(only=None):
-    rows, extras, dropped = [], [], []
+    rows, extras, dropped, candidates = [], [], [], []
     seen = collections.Counter()
     counts = collections.Counter()
 
@@ -118,6 +118,7 @@ def build(only=None):
             got["row_id"] = M.row_id(got, seen[key])
             rows.append(got)
             extras += M.extras(row, got["row_id"])
+            candidates += M.candidates(row, got["row_id"])
             counts["output"] += 1
 
     # computed over the whole master rather than per file, because a seat stated
@@ -125,7 +126,7 @@ def build(only=None):
     for row in rows:
         row["seat_key_unique"] = int(seen[row["seat_key"]] == 1)
 
-    return rows, extras, dropped, counts
+    return rows, extras, dropped, candidates, counts
 
 
 def reconcile(counts, dropped):
@@ -142,7 +143,7 @@ def reconcile(counts, dropped):
             f"unaccounted for")
 
 
-def write(rows, extras, dropped):
+def write(rows, extras, dropped, candidates):
     OUT.mkdir(parents=True, exist_ok=True)
     by_state = collections.defaultdict(list)
     for row in rows:
@@ -161,6 +162,7 @@ def write(rows, extras, dropped):
 
     for name, columns, data in (
             ("master_extras.csv", ["row_id", "column", "value"], extras),
+            ("master_candidates.csv", M.CANDIDATE_COLUMNS, candidates),
             ("master_dropped.csv",
              ["dataset_id", "reason", "detail", "source_path"], dropped),
             ("master_key_collisions.csv",
@@ -188,7 +190,7 @@ def collisions(rows):
     return sorted(out, key=lambda r: (-r["rows"], r["seat_key"]))
 
 
-def render_readme(rows, dropped, counts, written):
+def render_readme(rows, dropped, candidates, counts, written):
     unique = sum(1 for r in rows if r["seat_key_unique"])
     states = collections.Counter(r["state"] for r in rows)
     tiers = collections.Counter(r["tier"] for r in rows)
@@ -245,6 +247,11 @@ def render_readme(rows, dropped, counts, written):
             "| File | Rows | What |", "|---|---|---|"]
     for path, n in written:
         out.append(f"| [`{path.name}`]({path.name}) | {n:,} | one state |")
+    out.append(
+        f"| [`master_candidates.csv`](master_candidates.csv) | "
+        f"{len(candidates):,} | every candidate who stood, for the states whose "
+        f"sources are candidate-level. The master is one row per seat so that it "
+        f"can be counted; the long form is not discarded, it lives here |")
     out += [f"| [`master_extras.csv`](master_extras.csv) | — | the "
             f"state-specific columns, long-form as (row_id, column, value), so "
             f"the master stays a fixed schema without losing anything |",
@@ -267,10 +274,10 @@ def main():
     ap.add_argument("--only", nargs="*", help="build only these sibling states")
     args = ap.parse_args()
 
-    rows, extras, dropped, counts = build(args.only)
+    rows, extras, dropped, candidates, counts = build(args.only)
     reconcile(counts, dropped)
-    written = write(rows, extras, dropped)
-    (OUT / "readme.md").write_text(render_readme(rows, dropped, counts, written),
+    written = write(rows, extras, dropped, candidates)
+    (OUT / "readme.md").write_text(render_readme(rows, dropped, candidates, counts, written),
                                    encoding="utf-8")
 
     print(f"\n{counts['output']:,} rows -> {OUT.relative_to(ROOT)}/")
@@ -283,6 +290,9 @@ def main():
           f"({unique / max(len(rows), 1):.1%}); "
           f"{len(rows) - unique:,} do not, listed in master_key_collisions.csv")
     print(f"  {len(extras):,} extra values held long-form in master_extras.csv")
+    if candidates:
+        print(f"  {len(candidates):,} candidate rows kept in "
+              f"master_candidates.csv, joinable on row_id")
     tiers = collections.Counter(r["tier"] for r in rows)
     print("  " + "  ".join(f"{k}={v:,}" for k, v in tiers.most_common()))
     return 0

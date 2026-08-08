@@ -100,6 +100,7 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
         seat["winner"] = (won or {}).get("candidate_name") or \
             (won or {}).get("winner") or ""
         seat["winner_basis"] = basis if seat["winner"] else ""
+        seat["seat_members"] = candidates
         out.append(seat)
     return out
 
