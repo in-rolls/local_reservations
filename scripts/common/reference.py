@@ -142,6 +142,25 @@ DOCUMENT_STAGE = {
 }
 
 
+# Whether the documents that would close a state's coverage can be fetched from
+# here at all. Recorded because "nobody has done it" and "nobody here can do it"
+# are different things, and a worklist that mixes them is a worklist nobody
+# trusts. Verified by request, not assumed: the state SEC domains below refuse
+# connections from two independent egresses, which is the network path rather
+# than the sites being down.
+SOURCE_ACCESS = {
+    "Andhra Pradesh": ("blocked", "sec.ap.gov.in refuses connections from "
+                                  "outside India; needs an India egress"),
+    "Jharkhand": ("reachable", ""),
+    "Goa": ("reachable", ""),
+    "Jammu & Kashmir": ("reachable", ""),
+}
+
+
+def source_access(state):
+    return SOURCE_ACCESS.get(state, ("unknown", ""))
+
+
 def document_stage(state, year, tier):
     return DOCUMENT_STAGE.get((state, year, tier))
 

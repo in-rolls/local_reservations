@@ -15,9 +15,10 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 20 | 67,855 |
+| [Open gaps](WORKLIST.md) | 18 | 17,134 |
+| [Blocked](WORKLIST.md) | 2 | 50,431 |
 | [Undetermined](WORKLIST.md) | 6 | 12,985 |
-| [Accepted properties of the sources](WORKLIST.md) | 6 | 53,331 |
+| [Accepted properties of the sources](WORKLIST.md) | 6 | 53,548 |
 
 <!-- worklist:end -->
 
@@ -45,8 +46,8 @@ are still in the legacy font they were printed in.
 
 | State | Year | Tier | Rows | Women | Districts | vs published | Notes | Where |
 |---|---|---|---|---|---|---|---|---|
-| Andhra Pradesh | 2020 | `gp_head` | 4,738 | 49% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 92% of rows with a stated count | [data/ap/](data/ap/) |
-| Andhra Pradesh | 2020 | `gp_ward` | 45,476 | 47% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 93% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `gp_head` | 4,738 | 49% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 94% of rows with a stated count | [data/ap/](data/ap/) |
+| Andhra Pradesh | 2020 | `gp_ward` | 45,693 | 47% | 5 | — | no winner published; partial: 5 of 13 districts; ward list complete for 94% of rows with a stated count | [data/ap/](data/ap/) |
 | Goa | 2012 | `gp_ward` | 1,471 | 32% | 2 | 99% of 186 panchayats | — | [data/goa/](data/goa/) |
 | Goa | 2017 | `gp_ward` | 684 | 27% | 2 | — | no winner published | [data/goa/](data/goa/) |
 | Goa | 2022 | `gp_ward` | 793 | 39% | 2 | — | no winner published | [data/goa/](data/goa/) |
@@ -74,7 +75,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | State | Tier | Years | Rows | Status | Where |
 |---|---|---|---|---|---|
 | Andaman & Nicobar Islands | - | - | - | not held | - |
-| Andhra Pradesh | gp_head, gp_ward | 2020 | 50,214 | parsed | [data/ap/](data/ap/) |
+| Andhra Pradesh | gp_head, gp_ward | 2020 | 50,431 | parsed | [data/ap/](data/ap/) |
 | Arunachal Pradesh | - | - | - | not held | - |
 | Assam | - | - | - | documents, no parser | [data/assam/](data/assam/) - 1 digital-text |
 | Bihar | gp_head, gp_ward, block_member, zp_member, kachahari | 2016 | 692,314 | parsed | [local_elections_bihar](https://github.com/in-rolls/local_elections_bihar) |

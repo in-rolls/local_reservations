@@ -33,8 +33,8 @@ START, END = "<!-- worklist:start -->", "<!-- worklist:end -->"
 COLUMNS = ["status", "note_id", "state", "year", "tier", "rows_affected",
            "share", "text", "detail", "because", "closes_with"]
 
-ORDER = [notes_module.OPEN_GAP, notes_module.UNDETERMINED,
-         notes_module.SOURCE_PROPERTY]
+ORDER = [notes_module.OPEN_GAP, notes_module.BLOCKED,
+         notes_module.UNDETERMINED, notes_module.SOURCE_PROPERTY]
 
 
 def gather():
@@ -59,6 +59,11 @@ SECTIONS = {
         "Open gaps",
         "The document holds more than our parse recovered. Each line says what "
         "would close it. Sorted by rows affected."),
+    notes_module.BLOCKED: (
+        "Blocked",
+        "Closable, but not from here. These are not waiting on effort; they "
+        "are waiting on access, and keeping them apart from the open gaps is "
+        "what stops the open list from looking permanently hopeless."),
     notes_module.UNDETERMINED: (
         "Undetermined",
         "We have not established whether these are properties of the sources or "

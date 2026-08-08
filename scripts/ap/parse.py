@@ -231,6 +231,12 @@ LOOSE = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]?(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]"
                    r"(?![A-Za-z])")
 
 
+# A cell that no longer looks like a code at all. Used only after the looser
+# pattern has found nothing, and only up to the shortfall the record declares.
+ORPHAN = re.compile(r"(?<![A-Za-z])[A-Za-z]{2}(?:\s*[({\[/]\s*[WwGg]\s*[)}\]]?)?"
+                    r"(?![A-Za-z])")
+
+
 def recover_wards(region, spans, shortfall):
     """Find wards the strict pattern missed, up to the number declared missing.
 
@@ -253,7 +259,23 @@ def recover_wards(region, spans, shortfall):
         code = as_category(m.group(0))
         if code:
             found.append((m.start(), code))
-    return found if len(found) <= shortfall else []
+    if found:
+        return found if len(found) <= shortfall else []
+
+    # Nothing that still looks like a code. Some cells are mangled past the
+    # pattern entirely - Prakasam's "Ss" for SC, "es" for something now
+    # unreadable - and those are not truncation, they are one cell the scan
+    # lost. Any short token is considered, but only because the record states
+    # how many wards it has: at most `shortfall` are taken, each still has to
+    # be within one edit of a real code, and finding more candidates than are
+    # missing means the shortfall is not understood and none are taken.
+    for m in ORPHAN.finditer(region):
+        if any(m.start() < end and start < m.end() for start, end in spans):
+            continue
+        code = as_category(m.group(0))
+        if code:
+            found.append((m.start(), code))
+    return found if 0 < len(found) <= shortfall else []
 
 
 def apply_layout(record):

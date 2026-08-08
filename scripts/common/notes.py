@@ -33,6 +33,10 @@ import reference
 SOURCE_PROPERTY = "source property"
 OPEN_GAP = "open gap"
 UNDETERMINED = "undetermined"
+# Closable, but not from here. Kept apart from OPEN_GAP because "nobody has done
+# this" and "nobody here can do this" are different claims, and a worklist that
+# mixes them is one nobody trusts.
+BLOCKED = "blocked"
 
 NOTES = []
 
@@ -164,9 +168,13 @@ def ward_list_incomplete(s):
 def districts_missing(s):
     expected = reference.districts_expected(s.state, s.year)
     got = len({r.get("district") for r in s.rows if r.get("district")})
-    if expected and got and got < expected:
-        return found(s.n, f"{got} of {expected} districts")
-    return None
+    if not (expected and got and got < expected):
+        return None
+    access, why = reference.source_access(s.state)
+    if access == "blocked":
+        return found(s.n, f"{got} of {expected} districts - {why}",
+                     status=BLOCKED)
+    return found(s.n, f"{got} of {expected} districts")
 
 
 @note("seat_key_not_unique",
