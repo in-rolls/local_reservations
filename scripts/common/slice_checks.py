@@ -286,6 +286,35 @@ def tier_local_maps_to_one_tier(s):
                   f"does not map here: {bad}" if bad else "")
 
 
+@check("reservation_constant_within_seat", "internal")
+def reservation_constant_within_seat(s):
+    """Every candidate for a seat contests the same seat, so they carry the
+    same reservation. Two values under one key means the key is wrong.
+
+    This is what makes a candidate-to-seat collapse safe, and it is the only
+    check that can: a wrong key changes the row count by design, so nothing
+    downstream can tell a good collapse from a bad one. Run against the sources
+    before the collapse was written, it found 9 seats in Uttarakhand.
+
+    Only meaningful on a collapsed slice; elsewhere every row is already a seat
+    and the check is trivially true, so it skips rather than claiming a pass it
+    has not earned.
+    """
+    if not s.rows or s.rows[0].get("unit_of_observation") != "seat_from_candidates":
+        return result(SKIP, "", "",
+                      "the source is seat-level, so there is nothing to collapse")
+    counts = collections.defaultdict(set)
+    for row in s.rows:
+        counts[(row.get("district", ""), row.get("block", ""),
+                canon.unit_name(row), row.get("ward_no", ""),
+                row.get("seat_no", ""))].add(
+            (row.get("caste_reservation", ""), row.get("woman_reserved", "")))
+    varies = {k: v for k, v in counts.items() if len(v) > 1}
+    return result(FAIL if varies else PASS, len(varies), 0,
+                  f"e.g. {list(varies)[:1]}" if varies else
+                  f"{len(counts):,} seats, all internally consistent")
+
+
 @check("year_constant", "internal")
 def year_constant(s):
     years = {r.get("year") for r in s.rows}
