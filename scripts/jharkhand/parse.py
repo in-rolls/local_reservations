@@ -57,8 +57,16 @@ COLUMNS = ["state", "year", "district", "block", "block_no",
 TIERS = {
     "eqf[k;k": "mukhiya",
     "xzke iapk;r lnL;": "ward_member",
+    # "member *of the* gram panchayat" - the same post with `ds` in it, 1,870
+    # occurrences, and Koderma's notification uses only this spelling. It read
+    # as no post at all, so a district with 1,211 ward seats contributed none
+    # and its absence was indistinguishable from a district that holds no ward
+    # documents. 401 panchayat samiti rows are spelt the same way.
+    "xzke iapk;r ds lnL;": "ward_member",
     "iapk;r lfefr lnL;": "panchayat_samiti",
+    "iapk;r lfefr ds lnL;": "panchayat_samiti",
     'ftyk ifj"kn lnL;': "zila_parishad",
+    'ftyk ifj"kn ds lnL;': "zila_parishad",
 }
 TIER_BY_KEY = {_undouble(k): v for k, v in TIERS.items()}
 
@@ -97,9 +105,13 @@ SEAT_NUMBERED = re.compile(r"^(\d+)[\s/]+(.*\S)$")
 # token is a reliable anchor in the layout text:
 #
 #   tudjkt nsoh    eqf[k;k vukjf{kr    efgyk    I x<+ok@01@01&lq.Mh
+# `\s+` between the words, not a literal space: the typesetter breaks the post
+# across a line in 3,588 places - "xzke iapk;r\nds lnL;" and "xzke iapk;r ds\nlnL;"
+# - and a literal match sees neither.
 RE_TEXT_ROW = re.compile(
-    r"^(?P<name>.*?)\s*(?P<post>" + "|".join(re.escape(k) for k in TIERS) + r")"
-    r"\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
+    r"^(?P<name>.*?)\s*(?P<post>"
+    + "|".join(r"\s+".join(re.escape(w) for w in k.split()) for k in TIERS)
+    + r")\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
 
 # Godda's ten notifications carry a text layer that is not Kruti Dev and not
 # text either - `pdftotext` returns "Y r" ftr na AvW ro". They were OCR'd along
@@ -573,6 +585,35 @@ def parse_pdf(path, district):
     return rows
 
 
+def identity(row):
+    """What makes two readings of the same seat the same row.
+
+    Not the raw identifier: the two readers take the page apart differently and
+    render it differently. The office, the place and who was elected are what
+    both agree on.
+    """
+    return (row.get("tier_local"), row.get("block"), row.get("gram_panchayat"),
+            row.get("ward_no"), row.get("seat_no"), row.get("winner"))
+
+
+def merge(first, second):
+    """The first reader's rows, plus the second's for tiers it found none of.
+
+    Per tier, not per row. The second reader is a fallback because it is the
+    less precise one - it anchors on a post token in loosely-laid-out text - and
+    merging it row by row let it add 1,812 mukhiya seats to a state with 4,345
+    gram panchayats, 542 of them in a Chatra that has about 180. Where the
+    precise reader found a tier, its answer stands.
+
+    What this does fix is the case it was written for: Ranchi's notification
+    yields 3,453 ward rows and no mukhiya at all from the ruled-table reader,
+    and the stacked reader finds the 95 mukhiya and 35 zila parishad seats.
+    Taking whichever answered first dropped whichever tier the other held.
+    """
+    have = {r.get("tier_local") for r in first}
+    return list(first) + [r for r in second if r.get("tier_local") not in have]
+
+
 def dev_seat(text):
     """The panchayat and the seat number out of a Devanagari identifier."""
     got = RE_DEV_SEAT.search(clean(text))
@@ -651,15 +692,18 @@ def main():
         for path in sorted(folder.rglob("*.pdf")):
             try:
                 got = parse_pdf(path, district)
-                if not got:
-                    # a document whose rows are stacked three lines deep finds
-                    # nothing above; Ranchi is entirely of this shape
-                    got = parse_stacked(path, district)
-                if not got:
-                    # and a document whose OCR came back in Devanagari rather
-                    # than Kruti Dev, which is all ten of Godda's
-                    got = [r for number, text in stacked_pages(path)
-                           for r in dev_rows(text, path, district, number)]
+                # Merged, not chosen between. Ranchi's notification is read
+                # by both readers and each finds tiers the other misses: the
+                # ruled-table reader gets 3,453 ward rows and no mukhiya at
+                # all, the stacked reader 2,171 ward rows plus the 95 mukhiya
+                # and 35 zila parishad seats. Taking whichever answered first,
+                # as this did, silently dropped whichever tier the other one
+                # held - and it only became visible when a change to the post
+                # vocabulary flipped which reader answered first.
+                got = merge(got, parse_stacked(path, district))
+                got = merge(got, [r for number, text in stacked_pages(path)
+                                  for r in dev_rows(text, path, district,
+                                                    number)])
                 rows += got
             except Exception as exc:  # noqa: BLE001 - report, keep going
                 failed.append((path.name, type(exc).__name__))
