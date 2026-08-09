@@ -12,8 +12,8 @@ Goa,2017,gp_ward,ward,684,2,10,152,11,186,0.2719,0.0073,0.0965,0.1418,0.7544,par
 Goa,2022,gp_ward,ward,793,2,9,101,11,307,0.3871,0.0164,0.14,0.1955,0.6482,partial,latin,0.0,0.0,0.0,0.0,1.0,0,9,149,,per-taluka,wards,,floor,0.3333333333333333,400..1800,goa/gp_ward/2022
 Haryana,2016,gp_head,sarpanch,6079,21,126,6063,0,2047,0.3367,0.2027,0.0,0.001,0.7963,all_seats,latin,0.0,0.0,0.0,1.0,0.0005,29,21,21,,,,,,,4000..8000,haryana/gp_head/2016
 Haryana,2016,gp_ward,ward,61618,21,126,6107,24,22768,0.3695,0.2282,0.0,0.0954,0.6763,all_seats,latin,0.0,0.0,0.0,0.0165,0.0004,1553,21,21,,,,,,,40000..80000,haryana/gp_ward/2016
-Haryana,2022,gp_head,sarpanch,6159,22,143,6157,0,2987,0.485,0.2315,0.0,0.0796,0.6889,all_seats,"krutidev,latin",0.0,0.0,0.0,1.0,0.0114,3,143,143,,,,,,,4000..8000,haryana/gp_head/2022
-Haryana,2022,gp_ward,ward,61362,22,143,6158,23,29044,0.4733,0.2274,0.0,0.1002,0.6725,all_seats,"krutidev,latin",0.0,0.0,0.0002,0.0273,0.0108,2244,143,143,,,,,,,40000..80000,haryana/gp_ward/2022
+Haryana,2022,gp_head,sarpanch,6159,22,143,6157,0,2987,0.485,0.2315,0.0,0.0796,0.6889,all_seats,"devanagari,latin",0.0,0.0,0.0,1.0,0.0114,3,143,143,,,,,,,4000..8000,haryana/gp_head/2022
+Haryana,2022,gp_ward,ward,61362,22,143,6159,23,29044,0.4733,0.2274,0.0,0.1002,0.6725,all_seats,"devanagari,latin",0.0,0.0,0.0002,0.0273,0.0108,2237,143,143,,,,,,,40000..80000,haryana/gp_ward/2022
 Jammu & Kashmir,2010,gp_ward,ward,7340,10,54,1433,205,3547,0.4832,0.2033,0.1644,0.0,0.6323,all_seats,latin,0.0,0.0,0.0279,0.0,1.0,510,54,327,,unknown,panch constituencies,,floor,0.3333333333333333,500..35000,jammu_and_kashmir/gp_ward/2010
 Jammu & Kashmir,2016,gp_head,sarpanch,410,5,32,320,0,137,0.3341,0.0707,0.0561,0.0,0.8732,all_seats,latin,0.0,0.0,0.1537,1.0,1.0,114,12,168,,unknown,halqas,,floor,0.3333333333333333,100..4500,jammu_and_kashmir/gp_head/2016
 Jammu & Kashmir,2016,gp_ward,ward,2326,5,33,321,35,739,0.3177,0.1101,0.0937,0.0,0.7962,all_seats,latin,0.0,0.0,0.0653,0.0,1.0,418,12,177,,unknown,panch constituencies,,floor,0.3333333333333333,500..35000,jammu_and_kashmir/gp_ward/2016

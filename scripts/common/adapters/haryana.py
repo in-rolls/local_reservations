@@ -12,6 +12,15 @@ Two things worth naming:
 of the Backward Classes list only, so the local label is finer than the pooled
 one and both are kept. 12,515 rows carry it.
 
+889 of the 2022 ward rows are typeset in Kruti Dev while their district and
+block are Latin - the panchayat's name and the winner's, in Palwal, Fatehabad
+and Jhajjar. Kruti Dev is a deterministic byte mapping rather than damage, so
+those names convert exactly: `cueanksjh` is बनमंदोरी and `ujsUnz dqekj` is
+नरेन्द्र कुमार. Left as printed they could not be joined to any other source on
+name, which is the whole point of holding a name. The conversion happens here,
+on read, rather than in the sibling: this repository does not write to its
+siblings, and `reservation_raw` keeps what the file actually said.
+
 There is no `source_page`. The parser recorded which notification each row came
 from but not the page within it, so provenance_level is `document`: a row can be
 traced to a PDF and not to a page. That is recoverable by re-parsing and is on
@@ -23,7 +32,14 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+import krutidev  # noqa: E402
 from normalize import label  # noqa: E402
+
+# Names typeset in Kruti Dev, converted on read. Only these: the district and
+# the block are already Latin in every row, and running Latin through the
+# converter turns a real word into real-looking Devanagari for a word that was
+# never Kruti Dev - the mistake the Jharkhand parser carries a comment about.
+TRANSLITERATE = ("gram_panchayat", "ward_name", "winner")
 
 REPO = "local_elections_haryana"
 URL = "https://github.com/in-rolls/local_elections_haryana"
@@ -71,6 +87,12 @@ def slices(root):
 
 def convert(row, year, tier, tier_local, path, root):
     local = row.get("caste_reservation", "")
+    if row.get("script") == "krutidev":
+        row = dict(row)
+        for column in TRANSLITERATE:
+            value = row.get(column) or ""
+            if value and not krutidev.looks_converted(value):
+                row[column] = krutidev.to_unicode(value)
     return {
         "state": STATE, "year": year, "tier": tier, "tier_local": tier_local,
         "district": row.get("district", ""), "block": row.get("block", ""),
@@ -92,7 +114,10 @@ def convert(row, year, tier, tier_local, path, root):
         "winner": row.get("winner", ""), "winner_basis": "published",
         "relation_name": row.get("father_husband", ""),
         "vacant": row.get("vacant", ""), "unopposed": row.get("unopposed", ""),
-        "script": row.get("script", "latin"),
+        # converted above, so the row is Devanagari now whatever it was printed
+        # in; the printed form survives in reservation_raw
+        "script": "devanagari" if row.get("script") == "krutidev"
+        else row.get("script", "latin"),
         "printings_agree": row.get("printings_agree", ""),
         "source_path": str((path.parent / "pdfs" /
                             row.get("source_pdf", "")).relative_to(root)),

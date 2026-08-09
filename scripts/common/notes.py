@@ -235,17 +235,29 @@ def panchayat_not_named(s):
 @note("seat_not_numbered",
       "the row does not say which seat",
       OPEN_GAP,
-      because="A block or district constituency is numbered within its body and "
-              "has no panchayat, so the number is the whole of its identity. "
-              "Without it the row is a real reservation for a seat nobody can "
-              "point at - the same problem as an unnamed panchayat, one tier "
-              "up, and it needs its own line or it is attributed to nothing.",
-      closes_with="reading the constituency number from the seat identifier on "
-                  "the affected pages")
+      because="A seat is numbered within the body that elects it - a ward "
+              "within its panchayat, a constituency within its block or "
+              "district - and without that number the row is a real "
+              "reservation for a seat nobody can point at.\n\n"
+              "This used to skip panchayat wards, on the reasoning that a ward "
+              "has a panchayat to identify it while a block constituency has "
+              "nothing but its number. That is wrong: a panchayat has many "
+              "wards, so a ward without a number is no more identified than a "
+              "block seat without one. 2,692 Haryana rows sat in that blind "
+              "spot, surfacing as `seat_key_not_unique` with the unhelpful "
+              "detail 'largest group 35 rows' - seven real seats in Atela with "
+              "different winners and different reservations, keyed alike "
+              "because none of them says which ward it is.",
+      closes_with="reading the number from the seat identifier, or from the "
+                  "okMZ ua0 column the Haryana gazettes print it in, on the "
+                  "affected pages")
 def seat_not_numbered(s):
-    if s.tier not in ("block_member", "block_head", "zp_member", "zp_head"):
+    # a ward is numbered in ward_no, a block or district seat in seat_no
+    column = "ward_no" if s.tier in ("gp_ward", "ulb_ward") else "seat_no"
+    if s.tier not in ("gp_ward", "ulb_ward", "block_member", "block_head",
+                      "zp_member", "zp_head"):
         return None
-    missing = [r for r in s.rows if not (r.get("seat_no") or "").strip()]
+    missing = [r for r in s.rows if not (r.get(column) or "").strip()]
     if not missing:
         return None
     worst = collections.Counter(r.get("district", "") for r in missing)

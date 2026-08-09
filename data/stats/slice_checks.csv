@@ -204,7 +204,7 @@ Haryana,2022,gp_head,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2022,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2022,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2022,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2022,gp_head,seat_key_unique,internal,warn,3,0,"largest group 3 at ('Palwal', 'Prithla', 'jktiky', '', '')"
+Haryana,2022,gp_head,seat_key_unique,internal,warn,3,0,"largest group 3 at ('Palwal', 'Prithla', 'राजपाल', '', '')"
 Haryana,2022,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Haryana,2022,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2022,gp_head,year_constant,internal,pass,2022,2022,
@@ -219,7 +219,7 @@ Haryana,2022,gp_ward,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2022,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2022,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2022,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2022,gp_ward,seat_key_unique,internal,warn,2244,0,"largest group 35 at ('Palwal', 'Prithla', 'jktiky', '', '')"
+Haryana,2022,gp_ward,seat_key_unique,internal,warn,2237,0,"largest group 35 at ('Palwal', 'Prithla', 'राजपाल', '', '')"
 Haryana,2022,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
 Haryana,2022,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2022,gp_ward,year_constant,internal,pass,2022,2022,
