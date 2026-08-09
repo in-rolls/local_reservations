@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "68e9e4a6af026996f1f5803961ffb9b26fffea8c",
-  "committed_utc": "2026-08-08T21:22:44-07:00",
+  "built_from_commit": "508e1ce73b33688207f8dd5940f40dbe912bb21e",
+  "committed_utc": "2026-08-08T22:49:23-07:00",
   "dirty": false,
   "files": [
     {
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "bytes": 1328381,
+      "bytes": 1328387,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -106,7 +106,7 @@
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "8ffc4144deb84e8e86ac4e329354fb2330534bc2fe5ab1e6445ec557e131e636",
+      "sha256": "9456e4b6076aa3e7d3efb7ddf635f7917109b2735c7a4eb0394d4922460b30c8",
       "states": [
         "Andhra Pradesh"
       ],
@@ -167,14 +167,14 @@
       "sha256": "85e624940b4d51be6adcebf0e64409032b7ff66775ad1f1bd7d5ee54e0e86d4f"
     },
     {
-      "bytes": 78724408,
+      "bytes": 124143808,
       "kind": "master",
       "path": "data/master/master_extras.csv",
-      "rows": 2300645,
-      "sha256": "8500dd1825cc2b8ec4a96e7fe58fb9c5dbb45fedb4e40151724b00a8ad906962"
+      "rows": 3364281,
+      "sha256": "9ae535d2a797e64137e82beae0551f620ff77dc363bdb115ed1d6b99ff1a0277"
     },
     {
-      "bytes": 86294,
+      "bytes": 86290,
       "dataset_ids": [
         "goa/gp_ward/2012",
         "goa/gp_ward/2017",
@@ -191,7 +191,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "486346525e20309ccaec4b7a5485cc626e6e676fec1fdcc416e353b41a6cf26b",
+      "sha256": "3437eda53858ee5f23bffa6c0e7647f8d2abfdee22ac27dc70dd4249b477ee73",
       "states": [
         "Goa"
       ],
@@ -236,7 +236,7 @@
       ]
     },
     {
-      "bytes": 306923,
+      "bytes": 306924,
       "dataset_ids": [
         "jammu_and_kashmir/gp_head/2016",
         "jammu_and_kashmir/gp_ward/2010",
@@ -254,7 +254,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "4f22bce560c7fa0c12a861f202c5ced442ced833f0ac7328f80d14da094a83d9",
+      "sha256": "5cccba36e2ae85434eaa0637e7d355eb685bc7b5150560af37eb7e2eb8fb6434",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -269,7 +269,7 @@
       ]
     },
     {
-      "bytes": 636332,
+      "bytes": 672490,
       "dataset_ids": [
         "jharkhand/block_member/2015",
         "jharkhand/gp_head/2015",
@@ -284,9 +284,9 @@
       "provenance_level": [
         "page"
       ],
-      "rows": 19862,
-      "rows_identifying_a_distinct_seat": 15447,
-      "sha256": "0ec1c205415aaaa0a989d9ddfe6ffd622a941ad4bece5ed32a8ed1dc67bbce2a",
+      "rows": 20917,
+      "rows_identifying_a_distinct_seat": 16027,
+      "sha256": "588aeb83618bf619b513b5fd4c311694c4c579347ad905b04ad84210b6a47ecb",
       "states": [
         "Jharkhand"
       ],
@@ -301,7 +301,7 @@
       ]
     },
     {
-      "bytes": 636380,
+      "bytes": 636368,
       "dataset_ids": [
         "karnataka/gp_head/1993",
         "karnataka/gp_head/2000",
@@ -319,7 +319,7 @@
       ],
       "rows": 26548,
       "rows_identifying_a_distinct_seat": 26466,
-      "sha256": "57fe372759c7bc7306abbcf171d2deec963e9945b7dba6c817e8122d7b963078",
+      "sha256": "8b101fdd0d31144ecf4b9c3fe1b6da697684814fd18705d3f03524a9165ad430",
       "states": [
         "Karnataka"
       ],
@@ -373,7 +373,7 @@
       ]
     },
     {
-      "bytes": 873966,
+      "bytes": 912237,
       "dataset_ids": [
         "bihar/gp_ward/2016",
         "bihar/kachahari_member/2016",
@@ -405,8 +405,8 @@
       ],
       "kind": "master",
       "path": "data/master/master_key_collisions.csv",
-      "rows": 10094,
-      "sha256": "bfa0b33bf57913665380a10be10655f3339c40a9216cd53224b78ecbc2bbd1df"
+      "rows": 10569,
+      "sha256": "33f8bdeff0c6ad41987b932227880fe75dfc9da7b39bb09b393b538e998b94c0"
     },
     {
       "bytes": 1166856,
@@ -441,7 +441,7 @@
       ]
     },
     {
-      "bytes": 2035062,
+      "bytes": 2035032,
       "dataset_ids": [
         "telangana/gp_head/2019",
         "telangana/gp_ward/2019"
@@ -456,7 +456,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "9c1188c15f6697ef64eb961a006be496e8dd35d62c2c1239603fcc51c2332595",
+      "sha256": "bbac3fe2a8ab357f2d5c798b730c02fadec501a1d2c5a213e26a5537be62743c",
       "states": [
         "Telangana"
       ],
@@ -627,11 +627,11 @@
       ]
     },
     {
-      "bytes": 1274271,
+      "bytes": 1333254,
       "kind": "parsed",
       "path": "data/jharkhand/mukhiya_reservation_2015.csv",
-      "rows": 4214,
-      "sha256": "37bbba3afe47e693eb45f77a06e5974b78267242d0198dd78f24137a81dd79b1",
+      "rows": 4378,
+      "sha256": "7f4205732a5c0f90a6b42957cd0741d758d582502f711b2ac9fcc9b6da198225",
       "states": [
         "Jharkhand"
       ],
@@ -643,11 +643,11 @@
       ]
     },
     {
-      "bytes": 1307414,
+      "bytes": 1331209,
       "kind": "parsed",
       "path": "data/jharkhand/panchayat_samiti_reservation_2015.csv",
-      "rows": 4354,
-      "sha256": "1200ad5f10feb6d67393d1506fbf057bded6609b43e2a29379c5ee6fc184651f",
+      "rows": 4422,
+      "sha256": "950842b2e8a3a1cd8207614899634e62c6ae82c7595dbdac28ad978b6da48519",
       "states": [
         "Jharkhand"
       ],
@@ -659,11 +659,11 @@
       ]
     },
     {
-      "bytes": 3665518,
+      "bytes": 3963308,
       "kind": "parsed",
       "path": "data/jharkhand/ward_member_reservation_2015.csv",
-      "rows": 11113,
-      "sha256": "dd7053b2e9dc10225107d7d6e6912d795ad3996381cf01df9f02c0d7d239a9ab",
+      "rows": 11925,
+      "sha256": "31151f8a6f1415c54e7143a01f1c85a94c0a42bc8883b611bf25e1293c19578c",
       "states": [
         "Jharkhand"
       ],
@@ -675,11 +675,11 @@
       ]
     },
     {
-      "bytes": 51023,
+      "bytes": 54521,
       "kind": "parsed",
       "path": "data/jharkhand/zila_parishad_reservation_2015.csv",
-      "rows": 181,
-      "sha256": "ace25656d167578dc7aaf4d8509171531c7e71dc7210319a8e957d7a6f872994",
+      "rows": 192,
+      "sha256": "bbb13b2ae73d96a3d96a7afbba1b39f4c11ba67d9b58290bdc9d862e4b21f35c",
       "states": [
         "Jharkhand"
       ],
@@ -847,11 +847,11 @@
       ]
     },
     {
-      "bytes": 1945340,
+      "bytes": 1993418,
       "kind": "parsed",
       "path": "data/telangana/gp_head_2019.csv",
       "rows": 12018,
-      "sha256": "85d19b18cbc07f1e29171e747d235444acd0b7c1e5cfc5568d630df1c1a7859a",
+      "sha256": "a26cda192ef0adb51caa5109bf16d2f402826d3adc238632a8bae7f815a9acac",
       "states": [
         "Telangana"
       ],
@@ -863,11 +863,11 @@
       ]
     },
     {
-      "bytes": 8961587,
+      "bytes": 9011416,
       "kind": "parsed",
       "path": "data/telangana/gp_ward_2019.csv",
       "rows": 49823,
-      "sha256": "71f39438131a2b7973fe46bc5b6ad4a99296526789498c115274f575d7d83892",
+      "sha256": "412c660c1bcc627edd9c0a187e3b03767e35e64d55fe675319b54333d03d0cde",
       "states": [
         "Telangana"
       ],
@@ -980,8 +980,8 @@
   ],
   "totals": {
     "candidate_rows": 1134117,
-    "master_rows": 815736,
+    "master_rows": 816791,
     "master_states": 12,
-    "parsed_rows": 183059
+    "parsed_rows": 184114
   }
 }
