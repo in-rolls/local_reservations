@@ -144,6 +144,10 @@ RE_DEV_ROW = re.compile(
 # leading digits often enough - "-(0)" for ward 10, "-()" for 11 - that 168 of
 # 1,032 rows carry no readable number, and those are left blank rather than
 # renumbered by position: a row lost to OCR would shift every seat after it.
+# Any Devanagari codepoint. Used only to decide which of the two identifier
+# readers a row needs, never to decide what a row says.
+DEVANAGARI = re.compile(r"[\u0900-\u097F]")
+
 RE_DEV_SEAT = re.compile(
     r"(?P<panchayat>[^/\]]+?)\s*-\s*\(\s*(?P<number>\d*)\s*\)\s*$")
 
@@ -287,6 +291,18 @@ def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
     itself.
     """
     seat = split_seat_id(raw, tier)
+    # `split_seat_id` reads the Kruti Dev identifier. A page that came back from
+    # OCR carries the same identifier in Devanagari, and the splitter returns
+    # nothing for it - so Chatra's 1,475 ward rows had no panchayat while the
+    # name sat in the string they were built from: "|/ चतरा / ,/,/ मोनिया-(2)"
+    # is ward 2 of मोनिया. The two readers disagree about the alphabet, not
+    # about where the name is.
+    if not seat.get("gram_panchayat") and DEVANAGARI.search(raw or ""):
+        name, ward = dev_seat(raw)
+        if name:
+            seat = dict(seat, gram_panchayat=name)
+            if ward and not seat.get("seat_no"):
+                seat["seat_no"] = ward
     number = seat.get("seat_no", "")
     return {
         # Which of the two the block came from, so fill_block_names() can build

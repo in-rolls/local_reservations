@@ -1,18 +1,18 @@
 severity,file,scope,column,rule,count,share,examples,first_source,first_page
 warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 39% above the 35% tolerated,5562,0.3859, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 95% above the 60% tolerated,4313,0.9467, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 95% above the 10% tolerated,4308,0.9456, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 96% above the 90% tolerated,4244,0.9582, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 88% above the 35% tolerated,3896,0.8797, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 84% above the 60% tolerated,3736,0.8435, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,column,gram_panchayat,blank share 18% above the 10% tolerated,2529,0.1755, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 82% above the 10% tolerated,3721,0.8167, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,neither a number nor a Roman numeral,1432,1.0,Number & Name of Panch Constit | PC-II | PC-V,data/jk/2018/2018_Anantnag.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,gram_panchayat,blank share 27% above the 10% tolerated,1181,0.2667, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,6
+warn,jharkhand/mukhiya_reservation_2015.csv,column,gram_panchayat,blank share 18% above the 10% tolerated,818,0.1847, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,6
 warn,jharkhand/ward_member_reservation_2015.csv,row,ward_no,ward row has no ward number,335,0.0232, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Chandankiyari_GPS_GPM_GPVM.pdf,17
 warn,ap/ward_reservation_2020.csv,column,serial,not an integer,276,0.005,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jk/ward_reservation_2010.csv,column,ward_no,neither a number nor a Roman numeral,268,0.0365,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,length outside 1..6,235,0.1641,Number & Name of Panch Constit | PC-VIII | PC-VIII,data/jk/2018/2018_Anantnag.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_no,length outside 1..6,203,0.0277,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
+warn,jharkhand/zila_parishad_reservation_2015.csv,column,gram_panchayat,blank share 79% above the 10% tolerated,158,0.79, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 warn,ap/ward_reservation_2020.csv,column,block,length outside 2..40,112,0.002,K | K | K,data/ap/2020_res_gp/est_res_gp.pdf,66
 warn,jharkhand/ward_member_reservation_2015.csv,column,gp_no,outside 1..99,96,0.0067,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,91
 warn,jharkhand/ward_member_reservation_2015.csv,column,block,length outside 2..40,90,0.0062,ए | ए | ए,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,98
@@ -44,6 +44,7 @@ warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,outside 1..99,
 warn,telangana/gp_head_2019.csv,column,gram_panchayat,length outside 2..45,2,0.0002,Nazrulnagar ( Name To Be Chang | Ab Thanda @ Addabata Thanda@Ma,data/telangana/2019_gp_sarpanch.csv,
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6
 warn,jharkhand/mukhiya_reservation_2015.csv,column,gram_panchayat,length outside 2..45,1,0.0002,", |परिषर्दू जिससे पद संबंधित ह",data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,125
+warn,jharkhand/ward_member_reservation_2015.csv,column,gram_panchayat,length outside 2..45,1,0.0001,प,data/jharkhand/2015/3. LATEHAR MUKHIYA PSS/LATEHAR MUKHIYA PSS GPS ZP.pdf,18
 warn,jk/sarpanch_reservation_2016.csv,column,pop_oc,not an integer,1,0.0024,2 2 9,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/sarpanch_reservation_2016.csv,column,pop_oc,outside 0..100000,1,0.0024,-273,data/jk/2016/Publication Jammu B.pdf,38
 warn,jk/sarpanch_reservation_2016.csv,column,pop_total,not an integer,1,0.0024,2 2 9,data/jk/2016/Annex B Doda.pdf,6
@@ -67,7 +68,6 @@ info,jharkhand/panchayat_samiti_reservation_2015.csv,column,ward_no,not present 
 info,jharkhand/ward_member_reservation_2015.csv,column,seat_no,not present in this source (entirely blank),1,0.0001,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
 info,jharkhand/zila_parishad_reservation_2015.csv,column,block,not present in this source (entirely blank),1,0.005,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 info,jharkhand/zila_parishad_reservation_2015.csv,column,block_no,not present in this source (entirely blank),1,0.005,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-info,jharkhand/zila_parishad_reservation_2015.csv,column,gram_panchayat,not present in this source (entirely blank),1,0.005,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 info,jharkhand/zila_parishad_reservation_2015.csv,column,gp_no,not present in this source (entirely blank),1,0.005,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 info,jharkhand/zila_parishad_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.005,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 info,jk/sarpanch_reservation_2016.csv,column,ward_no,not present in this source (entirely blank),1,0.0024,,data/jk/2016/Annex A Doda.pdf,1
