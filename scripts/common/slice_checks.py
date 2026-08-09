@@ -24,6 +24,7 @@ import pathlib
 
 import canon
 import dictionary
+import normalize
 import reference
 
 FAIL_STATUSES = ("fail",)
@@ -147,7 +148,13 @@ def coverage_vs_published(s):
     if spec.get("basis") == "elected":
         # an "elected" figure excludes seats nobody holds
         counted = [r for r in counted if str(r.get("vacant", "")) != "1"]
-    if spec.get("unit") in ("panchayats", "bodies"):
+    # Matched on substring, not equality. Jharkhand declares its unit as
+    # "gram panchayats" and the test read "panchayats", so it fell through to
+    # counting rows: 4,378 mukhiya rows against 4,345 gram panchayats reported
+    # as 101% coverage, when the parse names 3,155 distinct panchayats - 73%.
+    # A completeness figure above 100% should never have been possible to print
+    # without something drawing attention to it.
+    if "panchayat" in (spec.get("unit") or "") or spec.get("unit") == "bodies":
         # keyed on the district too: two blocks in different districts share a
         # name often enough that (block, panchayat) merges real bodies, and
         # Kerala leaves `block` empty on every panchayat-ward row
@@ -274,6 +281,35 @@ def label_agrees(s):
     return result(FAIL if bad else PASS, len(bad), 0,
                   "the label is written separately from the two fields it "
                   "summarises, so they can disagree")
+
+
+@check("winner_caste_is_not_the_seats", "internal")
+def winner_caste_is_not_the_seats(s):
+    """Where a source states both, they must not be the same column twice.
+
+    A reservation is a property of the seat; the winner's category is a property
+    of a person. The one way a parser silently destroys that distinction is by
+    filling both from the same field, and the result looks perfectly well-formed
+    - two populated columns, every count balancing, and the finding that a
+    scheduled-caste person can win an unreserved seat quietly impossible.
+
+    Uttar Pradesh 2005 states both and they agree on 19,324 of 51,872 rows.
+    Exact agreement on every row would not be a tidy dataset, it would be one
+    column copied.
+    """
+    both = [r for r in s.rows if (r.get("winner_caste") or "").strip()
+            and (r.get("caste_reservation") or "").strip()]
+    if len(both) < 100:
+        return result(SKIP, len(both), "",
+                      "this source states the seat's reservation only")
+    same = sum(1 for r in both if normalize.caste_of(r["winner_caste"])
+               == r["caste_reservation"])
+    share = 100.0 * same / len(both)
+    return result(FAIL if share > 99 else PASS,
+                  f"{same:,}/{len(both):,} agree ({share:.0f}%)",
+                  "under 99%",
+                  "the winner's own category and the seat's reservation are "
+                  "different facts; identical columns mean one was copied")
 
 
 @check("alias_family_exclusive", "internal")

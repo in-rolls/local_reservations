@@ -101,6 +101,40 @@ RE_TEXT_ROW = re.compile(
     r"^(?P<name>.*?)\s*(?P<post>" + "|".join(re.escape(k) for k in TIERS) + r")"
     r"\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
 
+# Godda's ten notifications carry a text layer that is not Kruti Dev and not
+# text either - `pdftotext` returns "Y r" ftr na AvW ro". They were OCR'd along
+# with the rest of the scanned districts, and the OCR came back in **Unicode
+# Devanagari**, so every token this parser anchors on missed and all ten files
+# contributed nothing to any tier. The district read as absent from the corpus:
+# no mukhiya, no panchayat samiti, no ward member, no zila parishad, and no
+# error anywhere, because a file that yields no rows looks exactly like a file
+# with no rows in it.
+DEV_TIERS = {
+    "ग्राम पंचायत के सदस्य": "ward_member",
+    "ग्राम पंचायत सदस्य": "ward_member",
+    "पंचायत समिति के सदस्य": "panchayat_samiti",
+    "पंचायत समिति सदस्य": "panchayat_samiti",
+    "जिला परिषद के सदस्य": "zila_parishad",
+    "जिला परिषद सदस्य": "zila_parishad",
+    # tested last: the longer posts do not contain it, but a substring match
+    # against a shorter token first would still be a trap worth avoiding
+    "मुखिया": "mukhiya",
+}
+
+RE_DEV_ROW = re.compile(
+    r"^(?P<name>.*?)\s*(?P<post>"
+    + "|".join(re.escape(k) for k in DEV_TIERS) + r")"
+    r"\s+(?P<caste>.+?)\s+(?P<woman>महिला|अन्य)\s+(?P<seat>\S.*)$")
+
+# "[2 गोड्डा /,/0/ छोटा बडामानगढ-(6)" - the identifier survives the scan far
+# worse than the row does. What is reliably there is the panchayat, which is the
+# run of text before the final bracket, and the number inside it. OCR eats
+# leading digits often enough - "-(0)" for ward 10, "-()" for 11 - that 168 of
+# 1,032 rows carry no readable number, and those are left blank rather than
+# renumbered by position: a row lost to OCR would shift every seat after it.
+RE_DEV_SEAT = re.compile(
+    r"(?P<panchayat>[^/\]]+?)\s*-\s*\(\s*(?P<number>\d*)\s*\)\s*$")
+
 
 def split_seat_id(text, tier):
     """Pull the district, block, gram panchayat and constituency number apart.
@@ -215,13 +249,21 @@ def tier_of(cell):
     return TIER_BY_KEY.get(_undouble(clean(cell)))
 
 
+# Folder names as filed, and the district they name. Only where the folder is
+# wrong: "9. GOODA MUKHIYA PSS GPS ZP" is Godda, and left as filed it would
+# pool as a 25th district that does not exist and fail to join to any other
+# source on name.
+FOLDER_TYPOS = {"Gooda": "Godda"}
+
+
 def district_of(folder):
     """"1. GARHWA MUKHIYA PSS" -> "Garhwa". The folder names are the only
     readable place-names in this corpus."""
     name = re.sub(r"^\s*\d+\s*[.)]?\s*", "", folder.name)
     name = re.sub(r"\b(MUKHIYA|PSS|GPS|ZP)\b", "", name, flags=re.I)
     name = re.sub(r"[()&]", " ", name)
-    return " ".join(name.split()).title()
+    name = " ".join(name.split()).title()
+    return FOLDER_TYPOS.get(name, name)
 
 
 def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
@@ -531,6 +573,48 @@ def parse_pdf(path, district):
     return rows
 
 
+def dev_seat(text):
+    """The panchayat and the seat number out of a Devanagari identifier."""
+    got = RE_DEV_SEAT.search(clean(text))
+    if not got:
+        return "", ""
+    name = re.sub(r"^[\W\d_]+", "", got.group("panchayat")).strip()
+    return name, got.group("number")
+
+
+def dev_rows(text, path, district, page_number):
+    """Rows off an OCR'd page that came back in Devanagari rather than Kruti Dev.
+
+    Kept separate from `_from_text` rather than folded into it. The two read
+    different alphabets from different pipelines, and the seat identifier
+    survives an OCR pass in a different state from a font-encoded one - this one
+    cannot use `split_seat_id` at all, because there is no roman district
+    numeral and no `izk0fu0{ks0` label to anchor on.
+    """
+    out = []
+    for line in text.split("\n"):
+        found = RE_DEV_ROW.match(clean(line))
+        if not found:
+            continue
+        tier = DEV_TIERS.get(found.group("post"))
+        caste = caste_of(found.group("caste"))
+        woman = woman_of(found.group("woman"))
+        if not tier or caste is None or woman is None:
+            continue
+        panchayat, number = dev_seat(found.group("seat"))
+        row = seat_row(district, "", tier, caste, woman, "",
+                       clean(found.group("name")),
+                       f"{found.group('caste')} | {found.group('woman')}")
+        row["gram_panchayat"] = panchayat
+        row["ward_no"] = number if tier == "ward_member" else ""
+        row["seat_no"] = "" if tier == "ward_member" else number
+        row["seat_id_raw"] = clean(found.group("seat"))
+        # not Kruti Dev, so `krutidev.to_unicode` must not touch these names
+        row["script"] = "devanagari"
+        out.append(emit.stamp(row, path, page_number, ROOT))
+    return out
+
+
 def _from_text(page, path, district, block):
     """Read a page that has no ruled table, using the post token as the anchor."""
     out = []
@@ -571,6 +655,11 @@ def main():
                     # a document whose rows are stacked three lines deep finds
                     # nothing above; Ranchi is entirely of this shape
                     got = parse_stacked(path, district)
+                if not got:
+                    # and a document whose OCR came back in Devanagari rather
+                    # than Kruti Dev, which is all ten of Godda's
+                    got = [r for number, text in stacked_pages(path)
+                           for r in dev_rows(text, path, district, number)]
                 rows += got
             except Exception as exc:  # noqa: BLE001 - report, keep going
                 failed.append((path.name, type(exc).__name__))

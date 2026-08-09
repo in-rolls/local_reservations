@@ -203,6 +203,14 @@ def convert(row):
         "source_page": "",
         # the presidency is an office the ward member also holds, not a tier
         "lgi_role": (row.get("Role") or "").strip(),
+        # Who was elected. Kerala states all five for every row, and keeping
+        # only the party threw away the gender of 65,296 elected members in a
+        # corpus whose subject is who reserved seats put in office.
+        "winner_gender": (row.get("Female/Male") or "").strip(),
+        "winner_age": (row.get("Age") or "").strip(),
+        "winner_education": (row.get("Educational Qualification") or "").strip(),
+        "winner_occupation": (row.get("Occupation") or "").strip(),
+        "winner_marital_status": (row.get("Marital Status") or "").strip(),
         # 0 where the district panchayat's name could not be recovered
         "district_inferred": row.get("_district_inferred", ""),
         "party": (row.get("Party") or "").strip(),

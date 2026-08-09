@@ -90,6 +90,7 @@ def convert(row, year, tier, tier_local, path, root):
                              str(row.get("woman_reserved")) == "1"),
         "reservation_raw": row.get("reservation_raw", ""),
         "winner": row.get("winner", ""), "winner_basis": "published",
+        "relation_name": row.get("father_husband", ""),
         "vacant": row.get("vacant", ""), "unopposed": row.get("unopposed", ""),
         "script": row.get("script", "latin"),
         "printings_agree": row.get("printings_agree", ""),

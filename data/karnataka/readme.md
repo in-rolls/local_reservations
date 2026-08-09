@@ -76,6 +76,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `rows_in_band` | declared | &check; 5264 | &check; 5320 | &check; 5320 | &check; 5322 | &check; 5322 |
 | `seat_key_unique` | internal | ! 18 | ! 16 | ! 16 | ! 16 | ! 16 |
 | `tier_local_maps_to_one_tier` | internal | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha |
+| `winner_caste_is_not_the_seats` | internal | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 |
 | `women_share_by_block` | external | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; |
 | `women_share_vs_statute` | external | &ndash; 1676/5264 | &ndash; 1908/5320 | &ndash; 1917/5320 | &ndash; 1708/5322 | &ndash; 1777/5322 |
 | `year_constant` | internal | &check; 1993 | &check; 2000 | &check; 2002 | &check; 2005 | &check; 2007 |

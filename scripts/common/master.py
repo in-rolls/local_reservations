@@ -5,6 +5,24 @@ declared rather than a union of whatever each state happens to carry. The 23
 state-specific extras stay out and go to master_extras.csv long-form, so nothing
 is lost and the table does not become mostly blank.
 
+**What is deliberately not carried.** Three sources publish contact details for
+named individuals - Bihar a mobile number, postal address and email for each of
+645,605 candidates, Kerala an address, phone, mobile and photograph for each of
+its 65,296 elected members, Uttar Pradesh 2010 an address. Those columns are
+read and dropped, and this is the one place in the repository where dropping
+data is not a defect to be fixed. Everything else a source states about a person
+is kept: name, relation, gender, age, caste, education, occupation, marital
+status, party, votes.
+
+**A reservation is a property of the seat, never of the person who won it.**
+`caste_reservation` and `woman_reserved` say what the seat was reserved for.
+The winner's own category and gender are `winner_caste` and `winner_gender` on a
+seat row, and `candidate_caste` and `candidate_gender` in the candidate table.
+They are different facts and the data says so: Uttar Pradesh 2005 states both,
+and they agree on 19,324 of 51,872 rows. A scheduled-caste person winning an
+unreserved seat is the thing most of these data exist to measure, and collapsing
+the two columns would delete it.
+
 Three columns exist because one could not carry the fact:
 
   tier / tier_local              the same office is printed under different

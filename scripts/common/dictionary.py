@@ -94,9 +94,19 @@ COLUMNS = [
     # ------------------------------------------------------- the assignment
     column("caste_reservation", "enum", required=True, allowed=CASTES,
            max_blank=0.0,
-           note="Orthogonal to woman_reserved: a seat can be both."),
+           note="**The seat's reservation, never the winner's caste.** The "
+                "two are different facts and this corpus keeps them apart: a "
+                "scheduled-caste person can win an unreserved seat, and in "
+                "Uttar Pradesh 2005 the winner's own category matches the "
+                "seat's on only 19,324 of 51,872 rows. The winner's category, "
+                "where a source states it, is `winner_caste` on a seat row and "
+                "`candidate_caste` on a candidate row. "
+                "Orthogonal to woman_reserved: a seat can be both."),
     column("woman_reserved", "boolean", required=True, max_blank=0.0,
-           note="1 if reserved for a woman."),
+           note="1 if **the seat** is reserved for a woman - not whether a "
+                "woman won it. The winner's own gender is `candidate_gender` "
+                "in the candidate table. A woman can and does win a seat that "
+                "is not reserved for one."),
     column("reservation", "enum", required=True, allowed=RESERVATION_LABELS,
            max_blank=0.0,
            note="The two fields above, joined. Written separately from them, so "
@@ -232,6 +242,26 @@ COLUMNS = [
            note="The document a row was read from, where the parse kept it but "
                 "the pooled schema has no column for it."),
     column("party", "string", length=(1, 80), severity=INFO),
+    # Who the elected person was. A reservation says what a seat was reserved
+    # for; these say who took it, and the whole point of holding both is that
+    # they differ. Kerala states five of these for all 65,296 of its rows and
+    # this repository kept only the party until it was checked.
+    column("relation_name", "string", length=(1, 90), severity=INFO,
+           note="Father's or husband's name, as the source prints it."),
+    column("winner_age", "string", length=(1, 12), severity=INFO),
+    column("winner_education", "string", length=(1, 90), severity=INFO),
+    column("winner_occupation", "string", length=(1, 90), severity=INFO),
+    column("winner_marital_status", "string", length=(1, 24), severity=INFO),
+    column("winner_gender", "string", length=(1, 24), severity=INFO,
+           note="The elected person's own gender. Not woman_reserved, which "
+                "says whether the seat was reserved for a woman."),
+    column("winner_caste", "string", length=(1, 60), severity=INFO,
+           note="The elected person's **own** category, where the source "
+                "states it alongside the seat's. Not caste_reservation: that "
+                "is what the seat was reserved for. Uttar Pradesh 2005 and "
+                "2010 are the only seat-level slices that carry both, and they "
+                "disagree on 63% of rows - which is what makes them worth "
+                "holding separately rather than a redundancy."),
     column("lgi_role", "string", length=(1, 40), severity=INFO,
            note="Kerala's Role column. An office the ward member also holds - "
                 "President, Vice President - not a tier."),

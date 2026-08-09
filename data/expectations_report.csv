@@ -1,43 +1,43 @@
 severity,file,scope,column,rule,count,share,examples,first_source,first_page
-warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 39% above the 35% tolerated,4386,0.3947, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 94% above the 60% tolerated,4111,0.9442, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 94% above the 10% tolerated,4107,0.9433, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 96% above the 90% tolerated,4029,0.9561, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 88% above the 35% tolerated,3723,0.8835, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 85% above the 60% tolerated,3586,0.851, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,column,gram_panchayat,blank share 19% above the 10% tolerated,2130,0.1917, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
+warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 43% above the 35% tolerated,5077,0.4257, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
+warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 96% above the 90% tolerated,4193,0.9577, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 95% above the 60% tolerated,4179,0.945, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 94% above the 10% tolerated,4174,0.9439, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,jharkhand/mukhiya_reservation_2015.csv,column,block,blank share 88% above the 35% tolerated,3867,0.8833, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 84% above the 60% tolerated,3693,0.8435, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
+warn,jharkhand/ward_member_reservation_2015.csv,column,gram_panchayat,blank share 20% above the 10% tolerated,2382,0.1997, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
 warn,jk/ward_reservation_2018.csv,column,ward_no,neither a number nor a Roman numeral,1432,1.0,Number & Name of Panch Constit | PC-II | PC-V,data/jk/2018/2018_Anantnag.pdf,1
-warn,jharkhand/mukhiya_reservation_2015.csv,column,gram_panchayat,blank share 26% above the 10% tolerated,1090,0.2587, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,6
+warn,jharkhand/mukhiya_reservation_2015.csv,column,gram_panchayat,blank share 26% above the 10% tolerated,1145,0.2615, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,6
 warn,ap/ward_reservation_2020.csv,column,serial,not an integer,276,0.005,5S | 5S | 5S,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jk/ward_reservation_2010.csv,column,ward_no,neither a number nor a Roman numeral,268,0.0365,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
 warn,jk/ward_reservation_2018.csv,column,ward_no,length outside 1..6,235,0.1641,Number & Name of Panch Constit | PC-VIII | PC-VIII,data/jk/2018/2018_Anantnag.pdf,1
 warn,jk/ward_reservation_2010.csv,column,ward_no,length outside 1..6,203,0.0277,No & Name of Panch Constituenc | Number & Name of Panch Constit | 2. Kalsyian,data/jk/2010/Akhnoor.pdf,1
-warn,jharkhand/ward_member_reservation_2015.csv,row,ward_no,ward row has no ward number,171,0.0154, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Chandankiyari_GPS_GPM_GPVM.pdf,17
+warn,jharkhand/ward_member_reservation_2015.csv,row,ward_no,ward row has no ward number,171,0.0143, |  | ,data/jharkhand/2015/15. BOKARO ZP PSS MUKHIYA GPS/Chandankiyari_GPS_GPM_GPVM.pdf,17
 warn,ap/ward_reservation_2020.csv,column,block,length outside 2..40,112,0.002,K | K | K,data/ap/2020_res_gp/est_res_gp.pdf,66
-warn,jharkhand/ward_member_reservation_2015.csv,column,block_no,outside 1..99,78,0.007,5८5 | 5८7 | 520,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,101
+warn,jharkhand/ward_member_reservation_2015.csv,column,gp_no,outside 1..99,96,0.0081,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,91
+warn,jharkhand/ward_member_reservation_2015.csv,column,block,length outside 2..40,90,0.0075,ए | ए | ए,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,98
+warn,jharkhand/ward_member_reservation_2015.csv,column,block_no,outside 1..99,88,0.0074,5८5 | 5८7 | 520,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,101
 warn,jk/ward_reservation_2010.csv,column,ward_name,length outside 2..40,78,0.0106,"Sungal Lower Moh Parwana and M | Sungal Lower Moh Karala,Vidhuw | Nai Basti Sungal Lower Moh Tat",data/jk/2010/Akhnoor.pdf,9
-warn,jharkhand/ward_member_reservation_2015.csv,column,gp_no,outside 1..99,74,0.0067,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,91
 warn,jk/sarpanch_reservation_2016.csv,column,halqa,blank share 15% above the 10% tolerated,63,0.1537, |  | ,data/jk/2016/Publication Jammu B.pdf,1
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,winner,length outside 2..60,46,0.0106,| | तारा कुमारी सदस्य ५ रामगढ़ / 0 | प्रवेज आलम सदस्य भा रामगढ़ /05,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,19
-warn,jharkhand/mukhiya_reservation_2015.csv,column,block_no,outside 1..99,44,0.0104,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,1
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block_no,outside 1..99,32,0.0073,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,1
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,seat_no,outside 1..999,31,0.0071,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,11
-warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,outside 1..99,29,0.0069,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,12
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,winner,length outside 2..60,46,0.0104,| | तारा कुमारी सदस्य ५ रामगढ़ / 0 | प्रवेज आलम सदस्य भा रामगढ़ /05,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,19
+warn,jharkhand/mukhiya_reservation_2015.csv,column,block_no,outside 1..99,45,0.0103,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block_no,outside 1..99,35,0.0079,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,seat_no,outside 1..999,32,0.0072,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA PSS.pdf,11
+warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,outside 1..99,31,0.0071,0 | 0 | 0,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,12
 warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,27,0.0048,5S | 1g | 1s,data/ap/2020_res_gp/atp_res_gp.pdf,78
-warn,jharkhand/ward_member_reservation_2015.csv,column,block,length outside 2..40,23,0.0021,ए | ए | ए,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,98
 warn,ap/ward_reservation_2020.csv,column,serial,outside 1..9999,22,0.0004,0 | 0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
+warn,jharkhand/mukhiya_reservation_2015.csv,column,block,length outside 2..40,22,0.005,ए | ए | ए,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,15
+warn,jharkhand/ward_member_reservation_2015.csv,column,winner,length outside 2..60,22,0.0018,राजीव कुमार यादव | सदस्य | अन् | हीरालाल टुडू सदस्य । संतरी हाँ | झरना रानी सिंह सदस्य |. ब्रज क,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,88
 warn,goa/ward_reservation_2012.csv,column,votes,not an integer,19,0.0129,Unopposed | Unopposed | Unopposed,data/goa/2012/panres_2012_Bardez.pdf,5
-warn,jharkhand/ward_member_reservation_2015.csv,column,winner,length outside 2..60,19,0.0017,राजीव कुमार यादव | सदस्य | अन् | हीरालाल टुडू सदस्य । संतरी हाँ | झरना रानी सिंह सदस्य |. ब्रज क,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,88
+warn,jharkhand/mukhiya_reservation_2015.csv,column,winner,length outside 2..60,15,0.0034,व्यत्ति का नाम पद आरक्षित / पद | स्थक्ति-चत मास पद आरक्षित / पद | गौतम कुमार पान सदस्य सीमा वास्,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,13
 warn,ap/ward_reservation_2020.csv,column,gram_panchayat,length outside 2..45,12,0.0002,Pe [Fee Noor Ward Reservation  | Pe [Fee Noor Ward Reservation  | Pe [Fee Noor Ward Reservation ,data/ap/2020_res_gp/wg_res_gp.pdf,15
-warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,outside 1..999,12,0.0028,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,10
-warn,jharkhand/mukhiya_reservation_2015.csv,column,winner,length outside 2..60,11,0.0026,व्यत्ति का नाम पद आरक्षित / पद | स्थक्ति-चत मास पद आरक्षित / पद | गौतम कुमार पान सदस्य सीमा वास्,data/jharkhand/2015/12. DUMKA MUKHIYA PSS/DUMKA MUKHIYA.pdf,13
+warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,outside 1..999,12,0.0027,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,10
 warn,ap/sarpanch_reservation_2020.csv,column,block,length outside 2..40,10,0.0018,K | h | a,data/ap/2020_res_gp/est_res_gp.pdf,66
 warn,jk/ward_reservation_2010.csv,column,halqa,length outside 2..45,9,0.0012,2 | 2 | 2,data/jk/2010/Surankote.pdf,4
-warn,jharkhand/mukhiya_reservation_2015.csv,column,block,length outside 2..40,7,0.0017,ए | ए | ए,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,15
 warn,telangana/gp_ward_2019.csv,column,gram_panchayat,length outside 2..45,6,0.0001,Ab Thanda @ Addabata Thanda@Ma | Ab Thanda @ Addabata Thanda@Ma | Ab Thanda @ Addabata Thanda@Ma,data/telangana/2019_ward/2019_ward_Warangal Rural.csv,
 warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45,5,0.0009,Chigicherla De (G) zee Dharmav | Chilamakuru B.C (G) _ S.C (W)  | Kunavaram 16 8 8 16 0 0 0 0 0 ,data/ap/2020_res_gp/atp_res_gp.pdf,7
-warn,jharkhand/zila_parishad_reservation_2015.csv,column,seat_no,outside 1..999,5,0.0276,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block,length outside 2..40,4,0.0009,ए | ए | ए,data/jharkhand/2015/23. SERAIKELA KHARSAWAN MUKHIYA PSS/SERAIKELA KHARSAWAN PSS/Prapatra 23 Nimdih Panchayat Samiti.doc.pdf,1
+warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,block,length outside 2..40,5,0.0011,ए | ए | ए,data/jharkhand/2015/23. SERAIKELA KHARSAWAN MUKHIYA PSS/SERAIKELA KHARSAWAN PSS/Prapatra 23 Nimdih Panchayat Samiti.doc.pdf,1
+warn,jharkhand/zila_parishad_reservation_2015.csv,column,seat_no,outside 1..999,5,0.026,0 | 0 | 0,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 warn,jk/ward_reservation_2018.csv,column,ward_name,length outside 2..40,3,0.0021,"vii-BRADINARD,KHATAN, GANIE,BI | i-DARDKHOWER/KOLI/ BARA /AHENG | ii-DARDKHOWER/ KHATANA /PASWAL",data/jk/2018/Srinagar.pdf,1
 warn,ap/sarpanch_reservation_2020.csv,column,serial,outside 1..9999,2,0.0004,0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,outside 1..99,2,0.0005,0 | 0,data/jharkhand/2015/5. HAZARIBAG MUKHIYA PSS/HAZARIBAG PSS/PS_Barhi_Form 23.pdf,3
@@ -65,11 +65,11 @@ info,goa/ward_reservation_2022.csv,column,votes,not present in this source (enti
 info,jharkhand/mukhiya_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0002,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 info,jharkhand/panchayat_samiti_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0002,,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
 info,jharkhand/ward_member_reservation_2015.csv,column,seat_no,not present in this source (entirely blank),1,0.0001,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,82
-info,jharkhand/zila_parishad_reservation_2015.csv,column,block,not present in this source (entirely blank),1,0.0055,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-info,jharkhand/zila_parishad_reservation_2015.csv,column,block_no,not present in this source (entirely blank),1,0.0055,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-info,jharkhand/zila_parishad_reservation_2015.csv,column,gram_panchayat,not present in this source (entirely blank),1,0.0055,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-info,jharkhand/zila_parishad_reservation_2015.csv,column,gp_no,not present in this source (entirely blank),1,0.0055,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
-info,jharkhand/zila_parishad_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0055,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
+info,jharkhand/zila_parishad_reservation_2015.csv,column,block,not present in this source (entirely blank),1,0.0052,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
+info,jharkhand/zila_parishad_reservation_2015.csv,column,block_no,not present in this source (entirely blank),1,0.0052,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
+info,jharkhand/zila_parishad_reservation_2015.csv,column,gram_panchayat,not present in this source (entirely blank),1,0.0052,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
+info,jharkhand/zila_parishad_reservation_2015.csv,column,gp_no,not present in this source (entirely blank),1,0.0052,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
+info,jharkhand/zila_parishad_reservation_2015.csv,column,ward_no,not present in this source (entirely blank),1,0.0052,,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,2
 info,jk/sarpanch_reservation_2016.csv,column,ward_no,not present in this source (entirely blank),1,0.0024,,data/jk/2016/Annex A Doda.pdf,1
 info,jk/sarpanch_reservation_2016.csv,column,ward_name,not present in this source (entirely blank),1,0.0024,,data/jk/2016/Annex A Doda.pdf,1
 info,jk/ward_reservation_2010.csv,column,pop_sc,not present in this source (entirely blank),1,0.0001,,data/jk/2010/(Mahore).pdf,1

@@ -51,7 +51,7 @@ PREFIX = re.compile(r"^(UR|SC|ST|BC)\((G|W)\)\s*(.*)$")
 
 COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
            "tier", "tier_local", "reservation", "caste_reservation",
-           "woman_reserved", "winner", "winner_basis", "unopposed",
+           "woman_reserved", "winner", "winner_basis", "party", "unopposed",
            "reservation_raw", "script", "source_path", "source_page"]
 
 DECLARED = {"gp_head": 12018, "gp_ward": 49823}
@@ -84,6 +84,8 @@ def sarpanch_rows():
         gram_panchayat=(r.get("Grampanchayat Name") or "").strip(),
         ward_no="", tier="gp_head", tier_local="sarpanch",
         winner=(r.get("Name Of The Contesting Candidate") or "").strip(),
+        # the elected sarpanch's party, which the ward files do not state
+        party=(r.get("Party Affiliation") or "").strip(),
         unopposed="", source_path=SARPANCH) for r in raw]
 
 
@@ -117,7 +119,7 @@ def ward_rows():
                 # the header calls this Category; it holds the ward number
                 ward_no=(row.get("Category") or "").strip(),
                 tier="gp_ward", tier_local="ward member",
-                winner=winner.strip(),
+                winner=winner.strip(), party="",
                 unopposed=int(status.lower() == "unanimous"),
                 source_path=f"{WARDS}/{path.name}"))
     return out

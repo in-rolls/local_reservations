@@ -130,6 +130,108 @@ PUBLISHED = {
         "total": None, "basis": "unknown", "unit": "gram panchayats",
         "source": "As 1993.",
     },
+    # Uttarakhand states its own denominator and this repository was throwing
+    # it away. Every row carries two columns that are constant within a
+    # (year, post, district) group: `घोषित परिणाम`, the number of results
+    # declared, and `निर्विरोध निर्वाचित`, how many were unopposed. They are
+    # district-level totals printed onto each row, which is why they read as
+    # noise until you check whether they vary - they do not.
+    #
+    # This is the best kind of denominator available anywhere here: stated by
+    # the same document the seats were read from, so it needs no outside source
+    # and no assumption that a commission's website matches its notification.
+    # Against it the parse holds 29,592 of 29,606 seats - 12 of the 15 slices
+    # match exactly, and the three that do not are short by 3, 10 and 1.
+    ("Uttarakhand", "2008", "block_member"): {
+        "total": 2946, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "128 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2008", "gp_head"): {
+        "total": 6378, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "852 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2008", "zp_member"): {
+        "total": 371, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "0 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2010", "block_member"): {
+        "total": 219, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "1 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2010", "gp_head"): {
+        "total": 314, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "1 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2010", "zp_member"): {
+        "total": 42, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "0 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2014", "block_member"): {
+        "total": 2885, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "169 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2014", "gp_head"): {
+        "total": 6621, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "1,011 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2014", "zp_member"): {
+        "total": 386, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "3 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2015", "block_member"): {
+        "total": 221, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "0 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2015", "gp_head"): {
+        "total": 308, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "0 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2015", "zp_member"): {
+        "total": 47, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 1 districts. "
+                  "0 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2019", "block_member"): {
+        "total": 2674, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "300 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2019", "gp_head"): {
+        "total": 5847, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "1,514 of them were elected unopposed.",
+    },
+    ("Uttarakhand", "2019", "zp_member"): {
+        "total": 347, "basis": "seats", "unit": "seats",
+        "source": "The notification's own column 'घोषित परिणाम' (results "
+                  "declared), summed over its 12 districts. "
+                  "9 of them were elected unopposed.",
+    },
     # Kerala 2020. Body counts rather than seat counts, which is what the
     # State Election Commission publishes and what the reporting of the result
     # repeats: 941 grama panchayats, 152 block panchayats, 14 district

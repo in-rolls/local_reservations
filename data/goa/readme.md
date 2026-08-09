@@ -81,6 +81,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `rows_in_band` | declared | &check; 1471 | &check; 684 | &check; 793 |
 | `seat_key_unique` | internal | &check; 0 | &check; 0 | &check; 0 |
 | `tier_local_maps_to_one_tier` | internal | &check; ward | &check; ward | &check; ward |
+| `winner_caste_is_not_the_seats` | internal | &ndash; 0 | &ndash; 0 | &ndash; 0 |
 | `women_share_by_block` | external | &ndash; | &ndash; | &ndash; |
 | `women_share_vs_statute` | external | &check; 32.2% | &ndash; 186/684 | &ndash; 307/793 |
 | `year_constant` | internal | &check; 2012 | &check; 2017 | &check; 2022 |

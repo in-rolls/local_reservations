@@ -144,6 +144,21 @@ def seat_row(row, year, relative):
         "reservation_raw": (row.get("gp_reservation_status") or "").strip(),
         "winner": (row.get("elected_sarpanch_name") or "").strip(),
         "winner_basis": "published",
+        # The winner's *own* category, which the file states beside the seat's
+        # and which is not the same fact: they agree on 19,324 of 51,872 rows
+        # in 2005. Dropping it would have left this corpus unable to
+        # distinguish "a seat reserved for a scheduled caste" from "a
+        # scheduled-caste person won", which is most of what these data are
+        # for.
+        "winner_caste": (row.get("candidate_res_status_fin")
+                         or row.get("candidate_res_status") or "").strip(),
+        "winner_gender": (row.get("cand_sex_fin")
+                          or row.get("sex") or "").strip(),
+        "winner_age": (row.get("age_fin") or row.get("age_t2")
+                       or row.get("age") or "").strip(),
+        "winner_education": (row.get("educ_fin_eng") or row.get("educ_fin")
+                             or row.get("education") or "").strip(),
+        "relation_name": (row.get("husband_spouse_name") or "").strip(),
         "script": "latin",
         "source_path": relative,
         # 2010 names the file each row came from; 2005 gives only a page number,

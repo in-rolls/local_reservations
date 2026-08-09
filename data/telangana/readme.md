@@ -19,8 +19,8 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`gp_head_2019.csv`](gp_head_2019.csv) | 12,018 | 18 | 1 |
-| [`gp_ward_2019.csv`](gp_ward_2019.csv) | 49,823 | 18 | 30 |
+| [`gp_head_2019.csv`](gp_head_2019.csv) | 12,018 | 19 | 1 |
+| [`gp_ward_2019.csv`](gp_ward_2019.csv) | 49,823 | 19 | 30 |
 
 ## Stats
 
@@ -67,6 +67,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `rows_in_band` | declared | &check; 12018 | &check; 49823 |
 | `seat_key_unique` | internal | ! 14 | ! 26 |
 | `tier_local_maps_to_one_tier` | internal | &check; sarpanch | &check; ward member |
+| `winner_caste_is_not_the_seats` | internal | &ndash; 0 | &ndash; 0 |
 | `women_share_by_block` | external | &ndash; | &ndash; |
 | `women_share_vs_statute` | external | &ndash; 6011/12018 | &ndash; 25454/49823 |
 | `year_constant` | internal | &check; 2019 | &check; 2019 |
