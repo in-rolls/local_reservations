@@ -15,17 +15,16 @@ The document holds more than our parse recovered. Each line says what would clos
 | 1,678 | Haryana | 2022 | `gp_ward` | the row does not say which seat | Karnal 1,320, Palwal 355, Gurugram 2 |
 | 1,553 | Haryana | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 19 rows |
 | 1,300 | Uttar Pradesh | 2005 | `gp_head` | the source states a caste but no gender | सुल्तानपुर 70, गोरखपुर 67, फतेहपुर 64 |
-| 1,189 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 12 rows |
+| 1,161 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 12 rows |
 | 1,014 | Haryana | 2016 | `gp_ward` | the row does not say which seat | Mewat 617, Kaithal 359, Sirsa 37 |
-| 818 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Chatra 231, Jamtara 156, Pakur 106 |
 | 624 | Jharkhand | 2015 | `block_member` | the row does not say which seat | Hazaribag 334, Ramgarh 145, Dumka 36 |
 | 510 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 27 rows |
-| 471 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Koderma 277, East Singhbhum 80, Latehar 56 |
+| 445 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 9 rows |
 | 418 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 8 rows |
+| 411 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Koderma 277, East Singhbhum 80, Bokaro 23 |
 | 399 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 24 rows |
 | 335 | Jharkhand | 2015 | `gp_ward` | the row does not say which seat | Koderma 302, Lohardaga 19, Bokaro 11 |
 | 314 | Bihar | 2016 | `kachahari_member` | the source states a caste but no gender | GAYA 85, PASCHIM CHAMPARAN 54, PATNA 45 |
-| 295 | Jharkhand | 2015 | `gp_head` | some rows do not identify a distinct seat | largest group 5 rows |
 | 280 | Jharkhand | 2015 | `zp_member` | some districts are not held | 10 of 24 districts, roughly 280 rows missing |
 | 278 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
@@ -36,6 +35,7 @@ The document holds more than our parse recovered. Each line says what would clos
 | 151 | Uttar Pradesh | 2005 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 123 | Uttar Pradesh | 2005 | `gp_head` | the row does not say which panchayat | सुल्तानपुर 17, फैजाबाद 12, प्रतापगढ़ 10 |
+| 113 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Pakur 106, Latehar 3, Ranchi 2 |
 | 105 | Uttar Pradesh | 2010 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 63 | Jammu & Kashmir | 2016 | `gp_head` | the row does not say which panchayat | Jammu 49, JAMMU 14 |
 | 51 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
@@ -71,7 +71,7 @@ The document holds more than our parse recovered. Each line says what would clos
   *Closes with:* harvesting the remaining districts' notifications.
 
 **some rows do not identify a distinct seat** — Two rows sharing a district, block, panchayat and ward number cannot be told apart. Usually one of those four did not parse.
-  *Closes with:* parsing whichever identifier is blank on the colliding rows.
+  *Closes with:* parsing whichever identifier is blank on the colliding rows. For the Jharkhand scans that means re-OCR: Surya keeps the block and panchayat numbers - the 1 and 2 of 'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those numbers are exactly what these rows are short of.
 
 **some ward lists are shorter than the record says** — The line was cut at the page's right edge, so wards are missing rather than blank. This is measurable rather than hidden only because the record states its own count - and it biases the women's share downward, 37% across truncated records against 47% across whole ones.
   *Closes with:* re-reading the truncated records at a wider render, or from the second proforma where one exists.
@@ -85,7 +85,7 @@ This used to skip panchayat wards, on the reasoning that a ward has a panchayat 
   *Closes with:* reading the number from the seat identifier, or from the okMZ ua0 column the Haryana gazettes print it in, on the affected pages.
 
 **the row does not say which panchayat** — The reservation and the winner were read but the seat column was not, so the row is a real seat whose identity is unknown. This is most of what looks like a key collision: two rows that both name no panchayat are not duplicates, they are two different seats we cannot tell apart. Jharkhand's OCR'd districts name it on 34% of rows against 92% for the districts that came as text.
-  *Closes with:* a better read of the seat column on the scanned pages - the identifier is printed, it is the scan that did not carry it.
+  *Closes with:* re-OCR of the scanned districts with Surya rather than tesseract. Measured on a Chatra page: Surya returns '<td>IVचतरा/1/2/जोगीडीह—(7)</td>' where tesseract returns '|/ चतरा / ,/,/ मोनिया-(2)'. The identifier is printed; it is the scan that did not carry it, and a better scan does. ~85 s/page on Apple Silicon via savitr, so thousands of pages is an overnight run, not an interactive one..
 
 **the seat identifier is an image, not text** — On three pages of the Lohardaga notification the whole seat column is 40 embedded images. The text layer holds only the district's roman numeral, so the block, panchayat and ward number are unreachable by parsing - and those rows then collide with each other on the seat key.
   *Closes with:* Devanagari OCR of the seat column on pages 22-24 of LOHARDAGA ZP PSS MUKHIYA GPS.pdf. The images render clean Unicode, easier than the Kruti Dev the rest of the state is in, and split_seat_id already parses the shape they use.

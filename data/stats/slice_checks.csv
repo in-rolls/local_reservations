@@ -301,15 +301,15 @@ Jharkhand,2015,block_member,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,block_member,provenance_resolves,internal,pass,0,0,42 documents
 Jharkhand,2015,gp_head,rows_in_band,declared,pass,4429,1000..5000,
 Jharkhand,2015,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 88%>35%; gram_panchayat 18%>10%; gp_no 84%>60%; seat_no 96%>90%,,4 column(s) over tolerance
-Jharkhand,2015,gp_head,coverage_vs_published,external,warn,3456 (80%),4345 gram panchayats,seats
+Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 89%>35%; gp_no 84%>60%; seat_no 96%>90%,,3 column(s) over tolerance
+Jharkhand,2015,gp_head,coverage_vs_published,external,pass,4054 (93%),4345 gram panchayats,seats
 Jharkhand,2015,gp_head,women_share_vs_statute,external,pass,52.0%,floor 50%,
 Jharkhand,2015,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_head,seat_key_unique,internal,warn,1095,0,"largest group 231 at ('Chatra', '', '', '', '')"
+Jharkhand,2015,gp_head,seat_key_unique,internal,warn,556,0,"largest group 106 at ('Pakur', '', '', '', '')"
 Jharkhand,2015,gp_head,tier_local_maps_to_one_tier,internal,pass,mukhiya,gp_head,
 Jharkhand,2015,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_head,year_constant,internal,pass,2015,2015,
@@ -324,7 +324,7 @@ Jharkhand,2015,gp_ward,caste_share_vs_population,external,skip,0,,no population 
 Jharkhand,2015,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,1480,0,"largest group 261 at ('Koderma', '', '', '', '')"
+Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,1452,0,"largest group 261 at ('Koderma', '', '', '', '')"
 Jharkhand,2015,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward_member,gp_ward,
 Jharkhand,2015,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_ward,year_constant,internal,pass,2015,2015,

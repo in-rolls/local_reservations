@@ -181,7 +181,14 @@ def split_seat_id(text, tier):
     # put its number - "I x<+ok 05@01 & cjMhgk" against "...&¼01½". Reading the
     # ampersand as introducing a number only, the name was dropped and 1,141
     # mukhiya rows named no panchayat at all.
-    trailing = re.search(r"&\s*([^&@/\d][^&@/]*?)\s*$", s)
+    # The name may contain "/" and the ampersand is the last separator, so
+    # everything after it is the name: excluding "/" from the run truncated
+    # 709 mukhiya names to nothing - "I x<+ok 15@11& e/ks;k" is मधोया, whose
+    # third letter is written "/k" - and left 86 more with the separator still
+    # on the front, as "- खरौंधा" and "03-खरौन्धी". The leading character is
+    # still guarded, because some districts put the panchayat's *number* after
+    # the ampersand rather than its name.
+    trailing = re.search(r"&\s*([^&@/\d][^&@]*?)\s*$", s)
     if trailing and re.search(r"\w", trailing.group(1)):
         out["trailing_name"] = trailing.group(1).strip()
         s = s[:trailing.start()].strip()
@@ -223,6 +230,27 @@ def split_seat_id(text, tier):
     def numbered(p):
         found = SEAT_NUMBERED.match(p)
         return (found.group(1), found.group(2)) if found else ("", p)
+
+    def devanagari_tail():
+        """The panchayat off the end of an OCR'd identifier with no ampersand.
+
+        The scanned districts print the same identifier without the ampersand
+        the typeset ones use - "... |! दुमका /0,/05 चरकापाथर" is चरकापाथर, whose
+        name is simply the last part. None of the shape rules match, because the
+        shapes were written against Kruti Dev and the leading junk here is
+        whatever the scan made of the district's roman numeral.
+
+        A last resort, and deliberately narrow: it runs only where nothing else
+        named the panchayat, requires Devanagari letters, and requires at least
+        three of them, so a stray mark cannot become a place.
+        """
+        if not parts or tier in ("panchayat_samiti", "zila_parishad"):
+            return ""
+        tail = re.sub(r"^[\W\d_]+", "", parts[-1]).strip()
+        return tail if DEVANAGARI.search(tail) and len(tail) >= 3 else ""
+
+    if not out.get("gram_panchayat") and devanagari_tail():
+        out["gram_panchayat"] = devanagari_tail()
 
     if shape == "TMM":            # district@NN block@NN gram panchayat
         out["block_no"], out["block"] = numbered(parts[1])

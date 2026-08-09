@@ -214,8 +214,13 @@ def districts_missing(s):
               "different seats we cannot tell apart. Jharkhand's OCR'd "
               "districts name it on 34% of rows against 92% for the districts "
               "that came as text.",
-      closes_with="a better read of the seat column on the scanned pages - the "
-                  "identifier is printed, it is the scan that did not carry it")
+      closes_with="re-OCR of the scanned districts with Surya rather than "
+                  "tesseract. Measured on a Chatra page: Surya returns "
+                  "'<td>IVचतरा/1/2/जोगीडीह—(7)</td>' where tesseract returns "
+                  "'|/ चतरा / ,/,/ मोनिया-(2)'. The identifier is printed; it "
+                  "is the scan that did not carry it, and a better scan does. "
+                  "~85 s/page on Apple Silicon via savitr, so thousands of "
+                  "pages is an overnight run, not an interactive one.")
 def panchayat_not_named(s):
     # A seat above panchayat level has no panchayat to name: a block member's
     # constituency is numbered within its block and a district member's across
@@ -270,7 +275,11 @@ def seat_not_numbered(s):
       OPEN_GAP,
       because="Two rows sharing a district, block, panchayat and ward number "
               "cannot be told apart. Usually one of those four did not parse.",
-      closes_with="parsing whichever identifier is blank on the colliding rows")
+      closes_with="parsing whichever identifier is blank on the colliding "
+                  "rows. For the Jharkhand scans that means re-OCR: Surya "
+                  "keeps the block and panchayat numbers - the 1 and 2 of "
+                  "'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those "
+                  "numbers are exactly what these rows are short of")
 def seat_key_not_unique(s):
     # Rows that identify nothing are counted by panchayat_not_named or
     # seat_not_numbered instead. Lumping them here says two seats are
