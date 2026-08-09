@@ -209,7 +209,8 @@ UTTARAKHAND = [
     ("अनु0ज0जा0महिला", "ST", 1), ("अनु0 ज0जाति महिला", "ST", 1),
     ("अ0पि0वर्ग", "BC", None), ("अ0पि0व0महिला", "BC", 1),
     ("अन्य पि0वर्ग", "BC", None), ("अन्य पि0वर्ग महिला", "BC", 1),
-    ("म्हिला", None, 1),
+    # a bare gender with no caste is an unreserved seat reserved for a woman
+    ("म्हिला", "NONE", 1),
     # the reservation cell that also carries a ward range
     ("अनु0जाति वार्ड न० ०१-०७ तक", "SC", None),
 ]
@@ -236,3 +237,27 @@ def test_uttar_pradesh_writes_female_not_woman():
     assert woman_of("Female") == 1
     assert woman_of("Other Backward Class - Female") == 1
     assert caste_of("Other Backward Class - Female") == "BC"
+
+
+BARE_GENDER = ["Woman", "Female", "महिला", "म्हिला"]
+
+
+@pytest.mark.parametrize("raw", BARE_GENDER)
+def test_a_bare_gender_is_an_unreserved_seat_reserved_for_a_woman(raw):
+    """The same fact in four spellings, and it used to get two answers: CODES
+    knew "Woman" and returned NONE, and nothing knew "Female" or "महिला". The
+    adapters then blanked the whole reservation rather than the caste alone -
+    11,166 Uttar Pradesh seats in 2005, 8,402 in 2010, 62,917 candidate rows in
+    2021 and 35,361 in Uttarakhand read as "no reservation stated" while the
+    source said "reserved for a woman", and every count balanced."""
+    assert caste_of(raw) == "NONE"
+    assert woman_of(raw) == 1
+
+
+def test_a_bare_caste_is_not_turned_into_a_womans_seat():
+    """The rule runs only where no caste matched, so it cannot reach back and
+    change one that did."""
+    assert (caste_of("Scheduled Caste"), woman_of("Scheduled Caste")) == \
+        ("SC", None)
+    assert (caste_of("SC Woman"), woman_of("SC Woman")) == ("SC", 1)
+    assert caste_of("Unknown") is None

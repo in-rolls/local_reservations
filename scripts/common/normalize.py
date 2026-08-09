@@ -173,6 +173,17 @@ def caste_of(text):
         return "BC"
     if "unreserv" in letters or "general" in letters or "open" in letters:
         return "NONE"
+
+    # A cell that states a gender and no caste is an unreserved seat reserved
+    # for a woman. `CODES` already answered NONE for the spelling "Woman", and
+    # answered nothing for "Female" and "महिला" - the same fact, three
+    # spellings, two different answers. The adapters then blanked the whole
+    # reservation on those rows rather than the caste alone: 11,166 seats in
+    # Uttar Pradesh 2005, 8,402 in 2010, 62,917 candidate rows in 2021 and
+    # 35,361 in Uttarakhand read as "no reservation stated" while their source
+    # plainly said "reserved for a woman". Every count balanced throughout.
+    if woman_of(s) == 1:
+        return "NONE"
     return None
 
 
