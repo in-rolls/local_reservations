@@ -46,11 +46,19 @@ KD_OTHER_THAN = "flok;"                         # sivay - "other than"
 # Jharkhand's six scanned districts are the same PROFORMA-23 form as its text
 # ones, just photographed. Janjati has to be tested before jati for the same
 # reason its Kruti Dev spelling does: the first contains the second.
-DEV_ST = re.compile(r"अनु\S*\s*जन\s*जाति|जनजाति")
-DEV_SC = re.compile(r"अनु\S*\s*जाति")
-DEV_BC = re.compile(r"पिछ\S*\s*वर्ग")
+# Uttarakhand abbreviates with a Devanagari zero standing in for a full stop -
+# अनु0जा0महिला for अनुसूचित जाति महिला, अ0पि0व0महिला for अन्य पिछड़ा वर्ग
+# महिला - in ten spellings across four categories, 1,228 rows of which read as
+# no category at all before these patterns covered them. One of them read as
+# the wrong category: अनु0ज0जाति is *jan*jati abbreviated, and the jati pattern
+# matched it first, filing a scheduled tribe seat as a scheduled caste one.
+# Hence the standalone ज before जा here, tested with the rest of janjati.
+DEV_ST = re.compile(r"अनु\S*\s*जन\s*जाति|जनजाति|ज[०0]\s*जा")
+DEV_SC = re.compile(r"अनु\S*\s*जाति|अनु[०0\s]*जा")
+DEV_BC = re.compile(r"पिछ\S*\s*वर्ग|पि[०0]\s*व")
 DEV_NONE = re.compile(r"अनारक्षित|अनारछित")
-DEV_WOMAN = "महिला"
+# म्हिला is महिला with the vowel sign misplaced, 75 rows of it
+DEV_WOMAN = re.compile(r"महिला|म्हिला")
 DEV_OTHER = "अन्य"
 
 VACANT = ("rikt", "riet", "vacant", "fjDr", "[kkyh", "रिक्त")
@@ -196,7 +204,7 @@ def woman_of(text):
     # of those across the six files: the caste read correctly, the woman marker
     # was dropped, and nothing would have flagged it because None is also what a
     # genuinely silent cell returns.
-    if DEV_WOMAN in s:
+    if DEV_WOMAN.search(s):
         return 1
     # "अन्य पिछड़ा वर्ग" is a caste, not a gender, so the backward-class phrase
     # is still ruled out before "अन्य" is read as "other than woman".
@@ -210,6 +218,12 @@ def woman_of(text):
         return CODES[letters][1]
     if "wom" in letters:
         return 0 if "otherthan" in letters else 1
+    # Uttar Pradesh's normalised English column writes "Female" and "Other
+    # Backward Class - Female" rather than "Woman" - 24,000 seats of it in 2005
+    # alone, every one of them reading as gender-not-stated until now. Tested
+    # before any "male", which "female" contains.
+    if "femal" in letters:
+        return 1
     if "unreserv" in letters or "general" in letters or "open" in letters:
         return 0
     return None

@@ -202,7 +202,10 @@ def write_gz(name, columns, rows):
     writer.writerows(rows)
     path = OUT / name
     with path.open("wb") as raw:
-        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as fh:
+        # level 6, not gzip's default 9: on the 208 MB candidate table 9 costs
+        # minutes for about 3% of the size, and this runs on every build
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0,
+                           compresslevel=6) as fh:
             fh.write(buffer.getvalue().encode("utf-8"))
     return (path, len(rows))
 

@@ -183,3 +183,21 @@ def test_a_seat_level_source_contributes_no_candidate_rows():
     import master
 
     assert master.candidates({"gram_panchayat": "X"}, {"row_id": "abc"}) == []
+
+
+def test_a_stated_runner_up_needs_no_votes():
+    """Uttar Pradesh's 2021 file marks विजेता and उपविजेता and records no vote
+    total at all, only a percentage. A stated second place with no margin is
+    the honest shape of that - better than turning a share back into a count."""
+    marked = rows(("A", "X", "SC", "0", "", "One"),
+                  ("A", "X", "SC", "0", "", "Two"),
+                  ("A", "X", "SC", "0", "", "Three"))
+    marked[0]["result"] = "विजेता"
+    marked[1]["result"] = "उपविजेता"
+    got = collapse.to_seats(marked, KEY, winner_field="result",
+                            winner_value="विजेता", runner_up_value="उपविजेता")
+    assert got[0]["winner"] == "One"
+    assert got[0]["winner_basis"] == "published"
+    assert got[0]["runner_up"] == "Two"
+    assert got[0]["margin"] == ""
+    assert got[0]["seat_candidates"] == 3

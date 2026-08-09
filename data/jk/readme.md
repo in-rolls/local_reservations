@@ -77,7 +77,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `alias_family_exclusive` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
 | `blank_share_within_tolerance` | declared | &check; | ! gram_panchayat 15%>10% | &check; | &check; |
 | `caste_scheme_respected` | declared | &check; NONE,SC,ST | &check; NONE,SC,ST | &check; NONE,SC,ST | &check; NONE,ST |
-| `caste_share_vs_population` | external | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 |
+| `caste_share_vs_population` | external | &ndash; 0 | &check; SC seats 68.2% vs othe | &check; SC seats 74.5% vs othe | &ndash; 0 |
 | `coverage_vs_published` | external | &ndash; 7340 | &ndash; 410 | &ndash; 2326 | &ndash; 1432 |
 | `label_agrees` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
 | `provenance_resolves` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |

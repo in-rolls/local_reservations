@@ -17,10 +17,14 @@ Siblings are read where they sit and never vendored - the pack here is already
 1.9 GiB - and the commit they were read at is recorded on every row.
 """
 
-from . import bihar, haryana, rajasthan
+from . import (bihar, haryana, kerala, rajasthan, uttar_pradesh,
+               uttarakhand)
 
 REGISTRY = {
     "Bihar": bihar,
     "Haryana": haryana,
+    "Kerala": kerala,
     "Rajasthan": rajasthan,
+    "Uttar Pradesh": uttar_pradesh,
+    "Uttarakhand": uttarakhand,
 }

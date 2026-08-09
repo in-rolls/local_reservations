@@ -22,6 +22,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 DATA = ROOT / "data"
 
 sys.path.insert(0, str(ROOT / "scripts"))
+import canon  # noqa: E402
 import master  # noqa: E402
 
 # A parsed dataset is one carrying these columns. Filenames are not evidence -
@@ -64,6 +65,32 @@ def parsed(exclude=DERIVED):
             yield path, rows
 
 
+def as_written(row):
+    """A parsed row with every value the string it will be once written.
+
+    `to_master` already does this for the columns it keeps, for a stated reason:
+    an adapter that sets woman_reserved to the integer 1 makes a row that
+    behaves differently in memory than after a round trip through the CSV, and
+    the checks were written against rows read back from disk. The columns it
+    drops need the same treatment, or the first check to call .strip() on one of
+    them dies - which is exactly what happened.
+
+    `seat_members` is dropped rather than stringified: it is the whole candidate
+    list, it belongs in the candidate table, and str() of it would be a
+    kilobyte of nothing per row.
+
+    The panchayat's alias columns are dropped too. `to_master` has already
+    coalesced them into `gram_panchayat`, and carrying `halqa` back alongside it
+    re-creates exactly the ambiguity `alias_family_exclusive` exists to forbid -
+    Jammu & Kashmir writes the same name in both, and `canon.unit_name` raises
+    on a row that names the panchayat twice, as it should.
+    """
+    aliases = set(canon.UNIT_COLUMNS) - {"gram_panchayat"}
+    return {k: "" if v is None else str(v) for k, v in row.items()
+            if k not in aliases
+            and not isinstance(v, (list, dict, tuple, set))}
+
+
 def pooled():
     """Every row in the pooled master, this repository's and its siblings'.
 
@@ -77,6 +104,18 @@ def pooled():
     Yields (dataset_id, rows) rather than (path, rows) - a pooled slice has no
     single file behind it, and pretending otherwise is what would make
     provenance checks resolve against the wrong root.
+
+    Each row is the master projection **over** the row it came from, not instead
+    of it. The projection keeps 36 declared columns and drops everything else to
+    master_extras.csv, and the checks need what it drops: `caste_share_vs_
+    population` reads pop_sc and pop_total, `no_ward_column_in_the_source` reads
+    ward_count, `seat_id_drawn_as_an_image` reads seat_from_image. Yielding the
+    projection alone silently turned the strongest external check available -
+    reserved seats sitting where the reserved population lives - from 2 passes
+    into 2 skips, and a skip on a large slice is meant to escalate to a failure
+    but cannot when the column it needs is simply absent. It went unnoticed for
+    a whole phase, including through a verification step that promised no
+    existing number would move.
     """
     import build_master              # noqa: PLC0415 - avoids a circular import
     grouped = collections.defaultdict(list)
@@ -89,6 +128,7 @@ def pooled():
                 slice_.get("unit_of_observation", "seat"),
                 row.get("seat_candidates", ""))
             if got is not None:
-                grouped[slice_["dataset_id"]].append(got)
+                grouped[slice_["dataset_id"]].append(
+                    dict(as_written(row), **got))
     for dataset_id, rows in sorted(grouped.items()):
         yield dataset_id, rows

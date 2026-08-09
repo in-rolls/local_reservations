@@ -8,7 +8,7 @@ The documents or tables are here and nobody has parsed them into this repository
 
 Recorded years: 2018 delimitation-and-reservation gazettes, 20 districts.
 
-41 files on disk.
+222 files on disk.
 
 Inventory: 39 scan, 1 mixed, 1 archive, 603 pages total.
 

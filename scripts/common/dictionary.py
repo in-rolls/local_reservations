@@ -210,6 +210,52 @@ COLUMNS = [
                 "the document is there, not what it is called."),
     column("source_page", "integer", required=True, range=(1, 2000),
            max_blank=0.0),
+
+    # ---------------------------------------------- what a state also carries
+    # Declared so `master.extras` keeps them. An extra a state carries and this
+    # list does not name is dropped silently, which is how Karnataka's Census
+    # populations - the strongest external check available - would have gone
+    # missing while every count still balanced.
+    column("pop_female", "integer", range=(0, 10 ** 7), severity=INFO,
+           note="Census female population of the panchayat, from Karnataka."),
+    column("gp_code", "string", length=(1, 40), severity=INFO,
+           note="The panchayat's own identifier in the source, kept out of the "
+                "join key and recoverable."),
+    column("district_code", "string", length=(1, 12), severity=INFO),
+    column("block_code", "string", length=(1, 12), severity=INFO),
+    column("panchayat_code", "string", length=(1, 12), severity=INFO),
+    column("seat_id_printed", "string", length=(1, 80), severity=INFO,
+           note="The compound identifier as printed - Bihar's "
+                "'Piprasi/SEMRA LABEDAHA/01'. Not a join key: it names no "
+                "district, so two blocks sharing a name would merge."),
+    column("original_filename", "string", length=(1, 80), severity=INFO,
+           note="The document a row was read from, where the parse kept it but "
+                "the pooled schema has no column for it."),
+    column("party", "string", length=(1, 80), severity=INFO),
+    column("lgi_role", "string", length=(1, 40), severity=INFO,
+           note="Kerala's Role column. An office the ward member also holds - "
+                "President, Vice President - not a tier."),
+    column("body", "string", length=(1, 80), severity=INFO,
+           note="The local body a seat belongs to, where it is not a gram "
+                "panchayat."),
+    column("vote_percentage", "string", length=(1, 12), severity=INFO,
+           note="Uttar Pradesh 2021 records a share of the poll and no vote "
+                "total, so this cannot become a count."),
+    column("movable_property", "string", length=(1, 24), severity=INFO),
+    column("immovable_property", "string", length=(1, 24), severity=INFO),
+    column("criminal_history", "string", length=(1, 40), severity=INFO),
+
+    # ------------------------------------------- what a row cannot be trusted
+    column("duplicate_candidacy", "integer", range=(0, 20), severity=INFO,
+           note="The source stated this contest more than once, with vote "
+                "counts that disagree. Folded on (serial, name) keeping the "
+                "higher count; this says it happened."),
+    column("serial_not_unique", "integer", range=(0, 1), severity=INFO,
+           note="One serial number carrying two different candidates. Not "
+                "resolvable from the file, so both are kept."),
+    column("shared_place_name", "integer", range=(0, 1), severity=INFO,
+           note="Two places in one block printed under one name, told apart "
+                "only by being reserved differently."),
 ]
 
 BY_NAME = {c["name"]: c for c in COLUMNS}
@@ -243,6 +289,16 @@ ROW_BANDS = {
     ("Bihar", "kachahari_member"): (80000, 125000),
     ("Bihar", "block_member"): (8000, 13000),
     ("Bihar", "zp_member"): (500, 1400),
+    ("Uttar Pradesh", "gp_head"): (45000, 60000),
+    ("Uttarakhand", "gp_head"): (200, 9000),
+    ("Uttarakhand", "block_member"): (150, 4000),
+    ("Uttarakhand", "zp_member"): (30, 500),
+    ("Kerala", "gp_ward"): (14000, 18000),
+    ("Kerala", "block_member"): (1500, 2500),
+    ("Kerala", "zp_member"): (250, 400),
+    ("Karnataka", "gp_head"): (4000, 7000),
+    ("Telangana", "gp_head"): (10000, 14000),
+    ("Telangana", "gp_ward"): (40000, 60000),
 }
 
 ROMAN = re.compile(r"^[IVXLC]+$", re.I)

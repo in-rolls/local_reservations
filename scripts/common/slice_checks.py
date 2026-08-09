@@ -147,8 +147,12 @@ def coverage_vs_published(s):
     if spec.get("basis") == "elected":
         # an "elected" figure excludes seats nobody holds
         counted = [r for r in counted if str(r.get("vacant", "")) != "1"]
-    if spec.get("unit") == "panchayats":
-        n = len({(r.get("block"), canon.unit_name(r)) for r in counted})
+    if spec.get("unit") in ("panchayats", "bodies"):
+        # keyed on the district too: two blocks in different districts share a
+        # name often enough that (block, panchayat) merges real bodies, and
+        # Kerala leaves `block` empty on every panchayat-ward row
+        n = len({(r.get("district"), r.get("block"), canon.unit_name(r))
+                 for r in counted})
     else:
         n = len(counted)
     share = 100.0 * n / total
@@ -239,7 +243,17 @@ def caste_share_vs_population(s):
     rest = [r for r in with_pop if r.get("caste_reservation") != "SC"]
     if not sc or not rest:
         return result(SKIP, "", "", "no SC-reserved seats with populations")
-    return result(PASS if mean(sc) > mean(rest) else FAIL,
+    holds = mean(sc) > mean(rest)
+    # Where a state rotates, a panchayat reserved once is unavailable next
+    # time, so each later cycle draws from a pool the earlier ones have already
+    # taken the highest-share panchayats out of and the correlation decays by
+    # construction. The first cycle is still held to the full standard.
+    rotation = reference.rotates(s.state, s.tier)
+    if not holds and rotation and s.year != rotation["from"]:
+        return result(WARN, f"SC seats {mean(sc):.1%} vs others {mean(rest):.1%}",
+                      f"a later cycle of a rotating reservation, from "
+                      f"{rotation['from']}", rotation["evidence"])
+    return result(PASS if holds else FAIL,
                   f"SC seats {mean(sc):.1%} vs others {mean(rest):.1%}",
                   "SC-reserved seats sit where more SC people live")
 
@@ -315,13 +329,26 @@ def reservation_constant_within_seat(s):
     if not s.rows or s.rows[0].get("unit_of_observation") != "seat_from_candidates":
         return result(SKIP, "", "",
                       "the source is seat-level, so there is nothing to collapse")
+    # A row already flagged `shared_place_name` is one the adapter has said, in
+    # so many words, that this key cannot identify: two panchayats in one block
+    # printed under one name, told apart only by being reserved differently.
+    # Nine of Uttarakhand's gram panchayat seats are like that. Failing them
+    # here would be the check re-reporting a limit that has already been
+    # recorded, and the pressure would be to merge two real seats to quiet it.
+    named = [r for r in s.rows
+             if str(r.get("shared_place_name") or "0") in ("0", "")]
+    excluded = len(s.rows) - len(named)
     counts = collections.defaultdict(set)
-    for row in s.rows:
+    for row in named:
         counts[(row.get("district", ""), row.get("block", ""),
                 canon.unit_name(row), row.get("ward_no", ""),
                 row.get("seat_no", ""))].add(
             (row.get("caste_reservation", ""), row.get("woman_reserved", "")))
     varies = {k: v for k, v in counts.items() if len(v) > 1}
+    if not varies and excluded:
+        return result(PASS, 0, 0,
+                      f"{excluded} row(s) excluded as shared_place_name - "
+                      f"places this key cannot tell apart, already flagged")
     return result(FAIL if varies else PASS, len(varies), 0,
                   f"e.g. {list(varies)[:1]}" if varies else
                   f"{len(counts):,} seats, all internally consistent")

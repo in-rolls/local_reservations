@@ -82,6 +82,24 @@ def no_ward_column_in_the_source(s):
     return found(none, "sarpanch rows carrying no wards at all") if none else None
 
 
+@note("no_reservation_in_the_source",
+      "the source records no reservation",
+      SOURCE_PROPERTY,
+      because="Kerala's 2005 file is an unpivoted table of Ward No, Elected "
+              "Members, Front and Votes, with header rows left in the body. "
+              "There is no reservation column in it to parse, which is a "
+              "property of that source rather than work outstanding.")
+def no_reservation_in_the_source(s):
+    if not s.rows:
+        return None
+    stated = sum(1 for r in s.rows
+                 if (r.get("caste_reservation") or "").strip()
+                 or str(r.get("woman_reserved") or "").strip())
+    if stated:
+        return None
+    return found(s.n, "no row in this slice states a reservation")
+
+
 # ----------------------------------------------------------------- open gaps
 
 @note("names_not_transliterated",

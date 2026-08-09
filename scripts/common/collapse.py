@@ -58,7 +58,8 @@ def votes_of(value):
 
 def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
                                                    "woman_reserved"),
-             vote_field=None, winner_field=None, winner_value=None):
+             vote_field=None, winner_field=None, winner_value=None,
+             runner_up_value=None):
     """One row per seat, from many rows per candidate.
 
     `winner_field`/`winner_value` name an explicit winner marker; failing that,
@@ -111,6 +112,9 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
         rank(candidates, vote_field)
         seat["seat_members"] = candidates
         seat.update(margin(candidates, vote_field))
+        if runner_up_value and winner_field and not seat["runner_up"]:
+            seat.update(stated_runner_up(candidates, winner_field,
+                                         runner_up_value))
         out.append(seat)
     return out
 
@@ -166,6 +170,22 @@ def margin(candidates, vote_field):
         # Nobody else polled a vote. Unopposed, or the only recorded candidate.
         out["margin"] = top
     return out
+
+
+def stated_runner_up(candidates, winner_field, runner_up_value):
+    """Who the source says came second, where it says so rather than counting.
+
+    Uttar Pradesh's 2021 file marks विजेता and उपविजेता and records no vote
+    total at all, only a percentage, so the runner-up is stated and the margin
+    is not derivable. A stated second place with no margin is the honest shape
+    of that, and better than turning a percentage into a vote count.
+    """
+    marked = [c for c in candidates
+              if str(c.get(winner_field, "")).strip() == runner_up_value]
+    if len(marked) != 1:
+        return {}
+    marked[0].setdefault("candidate_rank", 2)
+    return {"runner_up": name_of(marked[0])}
 
 
 def name_of(candidate):

@@ -197,3 +197,42 @@ def test_a_backward_class_seat_reserved_for_a_woman_reads_as_both():
     too. The guard is still needed, just not first."""
     assert woman_of("पिछड़ा वर्ग(महिला)") == 1
     assert woman_of("अन्य पिछड़ा वर्ग") is None
+
+
+# Uttarakhand abbreviates with a Devanagari zero where a full stop would go, in
+# ten spellings across four categories. 1,228 rows read as no category at all
+# before these were covered, and two read as the wrong one.
+UTTARAKHAND = [
+    ("अनु0जाति", "SC", None), ("अनु0जाति महिला", "SC", 1),
+    ("अनु0जा0महिला", "SC", 1), ("अनु0 जाति", "SC", None),
+    ("अनु0जनजाति", "ST", None), ("अनु0ज0जा0", "ST", None),
+    ("अनु0ज0जा0महिला", "ST", 1), ("अनु0 ज0जाति महिला", "ST", 1),
+    ("अ0पि0वर्ग", "BC", None), ("अ0पि0व0महिला", "BC", 1),
+    ("अन्य पि0वर्ग", "BC", None), ("अन्य पि0वर्ग महिला", "BC", 1),
+    ("म्हिला", None, 1),
+    # the reservation cell that also carries a ward range
+    ("अनु0जाति वार्ड न० ०१-०७ तक", "SC", None),
+]
+
+
+@pytest.mark.parametrize("raw,caste,woman", UTTARAKHAND)
+def test_uttarakhand_abbreviations(raw, caste, woman):
+    assert caste_of(raw) == caste
+    assert woman_of(raw) == woman
+
+
+def test_an_abbreviated_janjati_is_not_a_jati():
+    """अनु0ज0जाति is *jan*jati with the syllable abbreviated away. The jati
+    pattern matched it first and filed a scheduled tribe seat as a scheduled
+    caste one - the same ordering trap the Kruti Dev patterns already carry a
+    comment about, in a spelling they did not cover."""
+    assert caste_of("अनु0ज0जाति") == "ST"
+    assert caste_of("अनु0जाति") == "SC"
+
+
+def test_uttar_pradesh_writes_female_not_woman():
+    """UP's normalised English column says "Female". 24,000 seats in 2005 alone
+    read as gender-not-stated, and "wom" does not appear in the word."""
+    assert woman_of("Female") == 1
+    assert woman_of("Other Backward Class - Female") == 1
+    assert caste_of("Other Backward Class - Female") == "BC"

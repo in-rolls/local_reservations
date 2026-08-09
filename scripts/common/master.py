@@ -139,6 +139,10 @@ def quality_flags(row):
     # one serial number carrying two different candidates, unresolvable
     if str(row.get("serial_not_unique") or "0") not in ("0", ""):
         flags.append("serial_not_unique")
+    # two places in one block printed under one name, told apart only by the
+    # fact that they are reserved differently
+    if str(row.get("shared_place_name") or "0") not in ("0", ""):
+        flags.append("shared_place_name")
     if row.get("script") in ("krutidev", "devanagari"):
         flags.append("name_untransliterated")
     return ";".join(flags)

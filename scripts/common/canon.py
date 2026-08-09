@@ -51,6 +51,16 @@ TIER_OF_LOCAL = {
     "zila_parishad": "zp_member",
     "zila_parishad_member": "zp_member",
     "zila_pramukh": "zp_head",
+    # Karnataka's gram panchayat president
+    "adhyaksha": "gp_head",
+    # Kerala names the body rather than the seat
+    "grama_panchayat_member": "gp_ward",
+    "block_panchayat_member": "block_member",
+    "district_panchayat_member": "zp_member",
+    # Uttarakhand
+    "kshetra_panchayat_sadasya": "block_member",
+    "zila_panchayat_sadasya": "zp_member",
+    "pradhan_(gram_panchayat)": "gp_head",
 }
 
 # Printed name -> canonical office, where the state has to decide it. Keep this
@@ -60,6 +70,7 @@ TIER_BY_STATE = {
     ("Bihar", "sarpanch"): "kachahari_head",
     ("Bihar", "panch"): "kachahari_member",
     ("Andhra Pradesh", "sarpanch"): "gp_head",
+    ("Telangana", "sarpanch"): "gp_head",
     ("Jammu & Kashmir", "sarpanch"): "gp_head",
     ("Haryana", "sarpanch"): "gp_head",
     ("Rajasthan", "sarpanch"): "gp_head",
@@ -101,6 +112,8 @@ def tier_of(local, state):
 # not a parsing failure; Goa suddenly reserving none would be a parsing failure.
 CASTE_SCHEME = {
     "Andhra Pradesh": "sc_st_bc",
+    # the same commission's house style as Andhra Pradesh, and the same scheme
+    "Telangana": "sc_st_bc",
     "Goa": "sc_st_bc",
     "Jharkhand": "sc_st_bc",
     # Haryana reserves for Block A of the Backward Classes list in panchayats
@@ -111,6 +124,7 @@ CASTE_SCHEME = {
     "Uttar Pradesh": "sc_st_obc",
     "Uttarakhand": "sc_st_obc",
     # No backward-class reservation exists in local bodies in either.
+    "Karnataka": "sc_st_bca_bcb",
     "Kerala": "sc_st_only",
     "Jammu & Kashmir": "sc_st_only",
 }
@@ -121,6 +135,10 @@ SCHEME_CATEGORIES = {
     "sc_st_bca_only": {"SC", "ST", "BC", "NONE"},
     "sc_st_obc": {"SC", "ST", "BC", "NONE"},
     "sc_st_only": {"SC", "ST", "NONE"},
+    # Karnataka reserves separately for Backward Class A and Backward Class B,
+    # which is finer than the single BC other states print. Both fold to BC
+    # here and caste_reservation_local says which.
+    "sc_st_bca_bcb": {"SC", "ST", "BC", "NONE"},
 }
 
 
