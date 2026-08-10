@@ -7,8 +7,8 @@
     "ward_member": 4532,
     "zila_parishad": 46
    },
-   "complete": 4661,
-   "complete_share": 0.8616,
+   "complete": 4920,
+   "complete_share": 0.9094,
    "rows": 5410
   },
   "REGRESSION": {
@@ -18,8 +18,8 @@
     "ward_member": 9627,
     "zila_parishad": 129
    },
-   "complete": 12740,
-   "complete_share": 0.8027,
+   "complete": 12759,
+   "complete_share": 0.8039,
    "rows": 15871
   },
   "VALIDATE": {

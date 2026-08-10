@@ -47,7 +47,7 @@ jharkhand-bench-record:
 # the repository cannot share - see requirements-ocr.txt.
 jharkhand-ocr:
 	$(OCR_PY) scripts/jharkhand/ocr.py
-	$(OCR_PY) scripts/jharkhand/ocr_seats.py
+	$(PY) scripts/jharkhand/ocr_seats.py
 
 jk:
 	$(PY) scripts/jk/parse.py

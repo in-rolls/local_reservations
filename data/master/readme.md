@@ -6,7 +6,7 @@
 
 ## What a row is
 
-**One row per seat as a source document states it** — which is not the same as one row per seat, and the master does not claim it is. 815,223 rows (99.1%) identify a distinct seat; the other 7,206 are in [master_key_collisions.csv](master_key_collisions.csv) rather than hidden behind a promise the data does not support.
+**One row per seat as a source document states it** — which is not the same as one row per seat, and the master does not claim it is. 815,516 rows (99.2%) identify a distinct seat; the other 6,913 are in [master_key_collisions.csv](master_key_collisions.csv) rather than hidden behind a promise the data does not support.
 
 | State | Seats |
 |---|---|
@@ -68,7 +68,7 @@
 | [`candidates_uttar_pradesh.parquet`](candidates_uttar_pradesh.parquet) | 373,096 | one state, one row per candidate |
 | [`candidates_uttarakhand.parquet`](candidates_uttarakhand.parquet) | 116,514 | one state, one row per candidate |
 | [`master_extras.parquet`](master_extras.parquet) | — | the state-specific columns, long-form as (row_id, column, value), so the master stays a fixed schema without losing anything |
-| [`master_key_collisions.csv`](master_key_collisions.csv) | 7,206 | rows that do not identify a distinct seat |
+| [`master_key_collisions.csv`](master_key_collisions.csv) | 6,913 | rows that do not identify a distinct seat |
 | [`master_dropped.csv`](master_dropped.csv) | 9,571 | every input row that did not become an output row, with a reason. `make master` fails if these do not add up |
 
 ## Scope

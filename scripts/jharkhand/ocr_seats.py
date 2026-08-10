@@ -11,26 +11,46 @@ easier to read than the Kruti Dev the rest of the state is printed in:
     XVII लोहरदगा /6/1/ अलौदी - (6)
          district  block/gp  panchayat  ward
 
-**The names are OCR'd; the numbers are not.** Tesseract reads the Devanagari
-reliably and the Latin digits badly - 10 comes back as 20, 11 as 2, 12 as 22 -
-and a wrong ward number is worse than none, because it silently points at
-another seat. So the ward number is derived from the document's own ordering
-instead: wards run consecutively within a panchayat, so the longest clean run
-the OCR did read anchors the rest.
+Koderma is the same defect on a larger scale: pages 30-35 of its notification
+carry 33 to 51 images each against 32 to 50 rows that identify nothing, and
+every one of those rows reads "VI" because the roman numeral is all the text
+layer kept. It was missed here for years because this file used to match a
+bespoke regex written against Lohardaga's "/6/1/ अलौदी - (6)", while Koderma
+prints the same identifier as "कोडरमा/5/9 – योगियाटिल्हा", with @ and & where
+Lohardaga has slashes.
+
+So the identifier is no longer matched here at all. It goes through
+`parse.split_seat_id`, the same reader every other path in this state uses,
+which already knows all five ways the typesetters bracket a number.
+
+**This used to say the numbers could not be read.** Under tesseract they could
+not - "10 comes back as 20, 11 as 2, 12 as 22" - so the ward number was derived
+from the document's own ordering, the largest piece of guesswork in this
+repository. Surya reads them: a Koderma page returns 48 of 48 identifiers with
+the gram panchayat numbers running 8,9,10...23 unbroken. The ordering fallback
+is gone, and with it the risk that a row lost to OCR shifts every seat after it.
 
 Writes data/jharkhand/2015/image_seats.csv, which parse.py reads. Cached and
 committed, because OCR is slow and its output should be reviewable rather than
 regenerated silently on every parse.
+
+Runs under the repository's interpreter, unlike ocr.py: finding the pages needs
+pdfplumber and reading them needs the model, and those two cannot share an
+interpreter, so the model is reached by handing a directory of rendered pages to
+surya_pages.py under savitr's.
 """
 
 import argparse
-import collections
 import csv
+import os
 import pathlib
 import re
 import subprocess
 import sys
 import tempfile
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import parse  # noqa: E402  - for split_seat_id and the HTML cell reader
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
@@ -52,10 +72,6 @@ CROP_FROM = 0.0
 TEXT_REACHES = 0.75
 DPI = 400
 
-LINE = re.compile(r"/(\S*)/(\S*)/\s*(\S+)\s*-\s*\((\S*)\)")
-ROMAN = re.compile(r"([IVXLC]{2,6})")
-# serial, then the name up to the post - both sides of the join
-HEAD = re.compile(r"^\W*(\d{1,3})\s*[|.]?\s*([\u0900-\u097F][\u0900-\u097F\s]{2,40}?)\s*(?:ग्राम|\|)")
 
 
 def image_pages(path):
@@ -83,110 +99,96 @@ def image_pages(path):
     return found
 
 
-def ocr_page(path, number, width):
-    """Render the seat column and read it.
-
-    Uses tempfile rather than a fixed /tmp path: a hardcoded one is not always
-    readable by another process, and tesseract then returns nothing at all
-    rather than an error, which reads exactly like a page with no text on it.
-    """
+def render(path, number, width, into):
+    """One page, as a PNG the model can read."""
     left = int(CROP_FROM * width / 72 * DPI)
-    with tempfile.TemporaryDirectory() as scratch:
-        stem = pathlib.Path(scratch) / "page"
-        subprocess.run(
-            ["pdftoppm", "-f", str(number), "-l", str(number), "-r", str(DPI),
-             "-x", str(left), "-W", str(int(width / 72 * DPI) - left),
-             "-png", str(path), str(stem)],
-            capture_output=True, timeout=300)
-        rendered = sorted(pathlib.Path(scratch).glob("page-*.png"))
-        if not rendered:
-            return []
-        # hin alone mangles the roman numeral and the digits; eng alone cannot
-        # read the Devanagari. psm 4 is single column, which a ruled table is.
-        text = subprocess.run(
-            ["tesseract", str(rendered[0]), "stdout", "-l", "hin+eng",
-             "--psm", "4"],
-            capture_output=True, text=True, encoding="utf-8", errors="replace",
-            timeout=600).stdout
-    return [line.strip() for line in text.split("\n") if LINE.search(line)]
+    stem = into / f"{path.stem}__{number}"
+    subprocess.run(
+        ["pdftoppm", "-f", str(number), "-l", str(number), "-r", str(DPI),
+         "-x", str(left), "-W", str(int(width / 72 * DPI) - left),
+         "-png", "-singlefile", str(path), str(stem)],
+        capture_output=True, timeout=300)
+    return stem.with_suffix(".png")
 
 
-def anchor_wards(values):
-    """Ward numbers from the ordering, not from the digits.
+def read_page(text):
+    """The name and the seat identifier off one OCR'd page.
 
-    Within a panchayat the wards are consecutive, so any run the OCR did read
-    correctly fixes the whole sequence. Take the longest run of values that
-    increase by one at consecutive positions and extrapolate from it. Falling
-    back to the OCR would mean shipping a number that points at another seat.
+    Taken from the table structure - first cell and last - rather than by a
+    regex over a line. Matching a line is what kept this file Lohardaga-shaped:
+    the pattern wanted "/6/1/ अलौदी - (6)" and Koderma prints "@" and "&".
     """
-    numbers = [int(v) if v.isdigit() else None for v in values]
-    best = (0, 0, 0)          # length, index, value
-    for start in range(len(numbers)):
-        if numbers[start] is None:
+    out = []
+    for row in parse.HTML_ROW.findall(text):
+        cells = parse.html_cells(row)
+        if len(cells) < 2 or not parse.DEVANAGARI.search(cells[-1]):
             continue
-        length = 1
-        while (start + length < len(numbers)
-               and numbers[start + length] == numbers[start] + length):
-            length += 1
-        if length > best[0]:
-            best = (length, start, numbers[start])
-    if not best[0]:
-        return [""] * len(values)
-    _, index, value = best
-    first = value - index
-    if first < 1:
-        first = 1
-    return [str(first + offset) for offset in range(len(values))]
+        out.append((cells[0], cells[-1]))
+    return out
+
+
+def ocr_all(pages, into):
+    """Hand a directory of rendered pages to savitr's interpreter, once.
+
+    A subprocess rather than an import: this script needs pdfplumber to find the
+    pages at all, and pdfplumber cannot be installed beside surya-ocr.
+    """
+    if not pages:
+        return
+    python = os.environ.get("OCR_PY", str(ROOT / "ocrenv" / "bin" / "python"))
+    if not pathlib.Path(python).exists():
+        sys.exit(f"no OCR interpreter at {python}. Set OCR_PY, and see "
+                 f"requirements-ocr.txt for what it needs.")
+    done = subprocess.run([python, str(pathlib.Path(__file__).parent
+                                       / "surya_pages.py"), str(into)])
+    if done.returncode:
+        sys.exit(f"{python} failed reading {into}")
+
+
+SERIAL = re.compile(r"^\s*(\d{1,3})\b")
 
 
 def read(path):
+    """Every drawn seat on every image page of one document.
+
+    The tier passed to split_seat_id is "ward_member" because that is the shape
+    these pages carry - a panchayat and a bracketed ward number - and because the
+    splitter needs a tier to know whether a trailing name is a block or a gram
+    panchayat. A row that turns out to be a head is filled by name and its ward
+    number is ignored on the other side of the join.
+    """
+    found = image_pages(path)
+    if not found:
+        return []
+    with tempfile.TemporaryDirectory() as scratch:
+        into = pathlib.Path(scratch)
+        rendered = {number: render(path, number, width, into)
+                    for number, width in found}
+        ocr_all(found, into)
+        pages = {number: (png.with_suffix(".txt").read_text(encoding="utf-8")
+                          if png.with_suffix(".txt").exists() else "")
+                 for number, png in rendered.items()}
+
     rows = []
-    for number, width in image_pages(path):
-        lines = ocr_page(path, number, width)
-        parsed = []
-        for line in lines:
-            found = LINE.search(line)
-            roman = ROMAN.search(line)
-            head = HEAD.match(line)
-            parsed.append({
-                "serial": head.group(1) if head else "",
-                "name_ocr": head.group(2).strip() if head else "",
-                "district_roman": roman.group(1) if roman else "",
-                "block_no": found.group(1),
-                "gp_no": found.group(2),
-                "gram_panchayat": found.group(3),
-                "ward_no_ocr": found.group(4),
-            })
-        # the block number is the same all down a page, so the majority wins
-        block = collections.Counter(
-            p["block_no"] for p in parsed if p["block_no"].isdigit())
-        block_no = block.most_common(1)[0][0] if block else ""
-
-        # panchayats appear in runs; number them within the page and fix each
-        # run's ward sequence
-        start = 0
-        for index in range(len(parsed) + 1):
-            same = (index < len(parsed)
-                    and parsed[index]["gram_panchayat"]
-                    == parsed[start]["gram_panchayat"])
-            if same:
+    for number, text in sorted(pages.items()):
+        for name, identifier in read_page(text):
+            seat = parse.split_seat_id(identifier, "ward_member")
+            if not seat.get("gram_panchayat"):
                 continue
-            group = parsed[start:index]
-            wards = anchor_wards([p["ward_no_ocr"] for p in group])
-            for offset, item in enumerate(group):
-                item["ward_no"] = wards[offset]
-            start = index
-
-        # Serials run consecutively down a page, so the ones the OCR did read
-        # fix the ones it did not - the same anchoring the ward numbers use.
-        # Without it only 69 of 109 rows could be joined back to a parsed row.
-        serials = anchor_wards([p["serial"] for p in parsed])
-        for item, serial in zip(parsed, serials):
-            item["serial"] = serial
-
-        for item in parsed:
-            rows.append(dict(item, source_pdf=path.name, source_page=number,
-                             block_no=block_no))
+            serial = SERIAL.match(name)
+            rows.append({
+                # the serial is a cheaper join key where the page prints one;
+                # where it does not, fill_image_seats falls back to the name
+                "serial": serial.group(1) if serial else "",
+                "name_ocr": re.sub(r"^\s*\d{1,3}[\s.|)]*", "", name).strip(),
+                "district_roman": seat.get("district_roman", ""),
+                "block_no": seat.get("block_no", ""),
+                "gp_no": seat.get("gp_no", ""),
+                "gram_panchayat": seat.get("gram_panchayat", ""),
+                "ward_no": seat.get("seat_no", ""),
+                "ward_no_ocr": seat.get("seat_no", ""),
+                "source_pdf": path.name, "source_page": number,
+            })
     return rows
 
 

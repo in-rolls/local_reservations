@@ -17,14 +17,13 @@ The document holds more than our parse recovered. Each line says what would clos
 | 1,300 | Uttar Pradesh | 2005 | `gp_head` | the source states a caste but no gender | सुल्तानपुर 70, गोरखपुर 67, फतेहपुर 64 |
 | 1,014 | Haryana | 2016 | `gp_ward` | the row does not say which seat | Mewat 617, Kaithal 359, Sirsa 37 |
 | 655 | Jharkhand | 2015 | `block_member` | the row does not say which seat | Hazaribag 379, Ramgarh 147, Dumka 33 |
-| 655 | Jharkhand | 2015 | `gp_ward` | the row does not say which seat | Godda 322, Koderma 302, Lohardaga 19 |
-| 615 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Godda 322, Koderma 261, Lohardaga 17 |
 | 510 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 27 rows |
-| 422 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 51 rows |
+| 424 | Jharkhand | 2015 | `block_member` | some rows do not identify a distinct seat | largest group 51 rows |
 | 418 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 8 rows |
+| 377 | Jharkhand | 2015 | `gp_ward` | the row does not say which seat | Godda 322, Koderma 43, Bokaro 11 |
+| 339 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Godda 322, Bokaro 14, Koderma 2 |
 | 314 | Bihar | 2016 | `kachahari_member` | the source states a caste but no gender | GAYA 85, PASCHIM CHAMPARAN 54, PATNA 45 |
 | 280 | Jharkhand | 2015 | `zp_member` | some districts are not held | 10 of 24 districts, roughly 280 rows missing |
-| 278 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
@@ -34,13 +33,12 @@ The document holds more than our parse recovered. Each line says what would clos
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 124 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Pakur 106, Dumka 14, Ranchi 2 |
 | 123 | Uttar Pradesh | 2005 | `gp_head` | the row does not say which panchayat | सुल्तानपुर 17, फैजाबाद 12, प्रतापगढ़ 10 |
+| 105 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 12 rows |
 | 105 | Uttar Pradesh | 2010 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
-| 92 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 12 rows |
 | 63 | Jammu & Kashmir | 2016 | `gp_head` | the row does not say which panchayat | Jammu 49, JAMMU 14 |
 | 51 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 40 | Bihar | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 2 rows |
 | 38 | Rajasthan | 2005 | `gp_head` | some rows do not identify a distinct seat | largest group 2 rows |
-| 36 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
 | 34 | Karnataka | 1993 | `gp_head` | the row does not say which panchayat | CHIKMAGALUR 7, MYSORE 7, TUMKUR 3 |
 | 33 | Karnataka | 2000 | `gp_head` | the row does not say which panchayat | CHIKMAGALUR 7, MYSORE 5, TUMKUR 3 |
 | 33 | Karnataka | 2002 | `gp_head` | the row does not say which panchayat | CHIKMAGALUR 7, MYSORE 5, TUMKUR 3 |
@@ -53,6 +51,7 @@ The document holds more than our parse recovered. Each line says what would clos
 | 14 | Telangana | 2019 | `gp_head` | some rows do not identify a distinct seat | largest group 2 rows |
 | 13 | Jammu & Kashmir | 2018 | `gp_ward` | the row does not say which panchayat | Ganderbal 2, Anantnag 1, Bandipora 1 |
 | 12 | Bihar | 2016 | `gp_ward` | the source states a caste but no gender | SIWAN 5, PASCHIM CHAMPARAN 4, SITAMARHI 1 |
+| 12 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
 | 12 | Uttarakhand | 2008 | `gp_head` | some rows do not identify a distinct seat | largest group 2 rows |
 | 10 | Haryana | 2022 | `gp_ward` | the row does not say which panchayat | Jhajjar 10 |
 | 8 | Bihar | 2016 | `kachahari_member` | some rows do not identify a distinct seat | largest group 2 rows |
@@ -63,6 +62,7 @@ The document holds more than our parse recovered. Each line says what would clos
 | 4 | Goa | 2017 | `gp_ward` | the row does not say which panchayat | North Goa 4 |
 | 3 | Haryana | 2022 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 3 | Rajasthan | 2005 | `gp_head` | the row does not say which panchayat | ALWAR 3 |
+| 2 | Jharkhand | 2015 | `gp_ward` | the seat identifier is an image, not text | — |
 | 1 | Bihar | 2016 | `gp_head` | the source states a caste but no gender | KISHANGANJ 1 |
 | 1 | Jharkhand | 2015 | `gp_head` | the seat identifier is an image, not text | — |
 | 1 | Uttarakhand | 2014 | `block_member` | the row does not say which seat | नैनीताल 1 |

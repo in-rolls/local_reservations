@@ -454,8 +454,15 @@ def fill_image_seats(rows):
         if not got:
             continue
         row["gram_panchayat"] = got["gram_panchayat"]
-        row["ward_no"] = got["ward_no"]
+        # Only where the picture actually stated one. Assigning it flat blanked
+        # a ward number the text layer had read correctly whenever the OCR had
+        # not - 542 of the 1,235 drawn seats state no number, because a gram
+        # panchayat head has no ward and a zila parishad constituency has none
+        # either. Clearing a right value to record a missing one is the one
+        # move here that is unambiguously a loss.
+        row["ward_no"] = got["ward_no"] or row.get("ward_no", "")
         row["block_no"] = got["block_no"] or row.get("block_no", "")
+        row["gp_no"] = got.get("gp_no") or row.get("gp_no", "")
         row["seat_from_image"] = 1
         filled += 1
     return filled, rejected
