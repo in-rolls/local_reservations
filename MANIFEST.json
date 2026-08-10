@@ -1,7 +1,7 @@
 {
-  "built_from_commit": "3eaa3cb81017162f1104af8cb1dbc10a1a778b56",
-  "committed_utc": "2026-08-10T09:47:05-07:00",
-  "dirty": true,
+  "built_from_commit": "627f8c577d1d00c48e588bc6f1f03c5e7d1139ad",
+  "committed_utc": "2026-08-10T12:17:13-07:00",
+  "dirty": false,
   "files": [
     {
       "bytes": 17803458,
