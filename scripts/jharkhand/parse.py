@@ -95,7 +95,14 @@ RE_BLOCK = re.compile(r"iz\[k\.M\s*&\s*(\S[^\n]{0,40}?)(?:\s*ftyk\b|$)")
 # Four tiers print four layouts and the typesetters bracket the number five
 # ways, so the parts are found by searching rather than by position, and
 # anything that does not resolve is left blank rather than guessed.
-SEAT_LABEL = re.compile(r"izk0\s*fu0\s*\{ks0\s*la0")
+# "territorial constituency no." - the label the identifier's number sits after.
+# Both spellings, because the same words reach us in two encodings: Kruti Dev
+# from a text layer, Unicode Devanagari from a scan. Reading only the first left
+# the label itself standing as the last part of the identifier, so 18 rows were
+# published with a gram panchayat of "प्रा0नि0क्षे0 सं0" - a caption, not a place
+# - and the real name next to it was dropped.
+SEAT_LABEL = re.compile(r"izk0\s*fu0\s*\{ks0\s*la0"
+                        r"|प्रा0\s*नि0\s*क्षे0\s*सं0")
 # The trailing alternative is the panchayat samiti form - "XII दुमका/04/
 # काठीकुण्ड-01" - where the others all bracket the number. Three documents (Gola
 # PSS, both Dumka notifications) resolved no seat number at all for want of it,
