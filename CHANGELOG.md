@@ -26,7 +26,14 @@ The first tagged release, and the first time the whole corpus is pinned by hash.
 - **Koderma's 261 unnamed rows were not a naming failure.** On pages 30–35 of its
   notification the seat column is *drawn*, 33–51 embedded images a page, so the
   text layer keeps only the district's roman numeral and every row reads `VI`.
-  This is the same defect already documented for Lohardaga.
+  This is the same defect already documented for Lohardaga, and it is now read:
+  drawn seats recovered across the state go from 135 to **1,235**.
+
+- **18 rows named a caption rather than a place.** The identifier puts its number
+  after "territorial constituency no.", and only the Kruti Dev spelling of that
+  label was recognised, so on a Devanagari page the caption itself was published
+  as the gram panchayat. A reader joining on the name got a match that was not a
+  place. `बगदा` and its neighbours are now read correctly.
 
 ### Changed
 
@@ -66,6 +73,30 @@ The first tagged release, and the first time the whole corpus is pinned by hash.
   | recovery rate | 28.6% | 91.4% |
 
   No document scored worse. Chatra went from 4/133 to 133/133.
+
+  **Checked against known answers, not only against itself.** Parseability is
+  not accuracy: a wrong digit parses as happily as a right one, which is how
+  tesseract's reading of सलैया's panchayat as 8 rather than 18 passed every
+  check for so long. The digital-text districts are the only pages here whose
+  answers are already known — a typesetter wrote them, so their block, panchayat
+  and ward numbers come out of the file rather than out of a camera. Rendered to
+  images and re-read, Surya got **245 of 245 digits right**. Those pages are
+  cleaner than a photocopy of the same form, so this bounds scan accuracy from
+  above rather than measuring it; it is a necessary result, not a sufficient one.
+
+  What moved in the corpus:
+
+  | | before | after |
+  |---|---|---|
+  | Jharkhand rows | 23,599 | 26,555 |
+  | `gp_ward` rows that cannot be told apart | 1,161 | 92 |
+  | open gaps, excluding the missing-district estimate | 3,828 | 3,032 |
+  | districts holding more heads than gram panchayats | 292 | 131 |
+  | seats uniquely keyed, whole corpus | 99.1% | 99.2% |
+
+  Mukhiya falls from 4,429 to 3,654 and that is the correction, not a loss. The
+  old figure was 102% of the 4,345 gram panchayats Jharkhand has, which cannot
+  happen; Latehar alone claimed 407 heads for about 116 panchayats.
 
 - **`data/jharkhand/ocr/` is now committed** (~4 MB). It was ignored while
   tesseract produced it, on the grounds that anyone could regenerate it from the
