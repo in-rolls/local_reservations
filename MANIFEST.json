@@ -1,10 +1,10 @@
 {
-  "built_from_commit": "5144d09693c341032af525caefda4a2e00e31fe1",
-  "committed_utc": "2026-08-09T11:26:30-07:00",
+  "built_from_commit": "d7993fd0a48839ed1a5731808d09cb19665769b9",
+  "committed_utc": "2026-08-09T22:35:52-07:00",
   "dirty": false,
   "files": [
     {
-      "bytes": 26645785,
+      "bytes": 17803458,
       "dataset_ids": [
         "bihar/block_member/2016",
         "bihar/gp_head/2016",
@@ -14,9 +14,9 @@
         "bihar/zp_member/2016"
       ],
       "kind": "candidates",
-      "path": "data/master/candidates_bihar.csv.gz",
+      "path": "data/master/candidates_bihar.parquet",
       "rows": 644507,
-      "sha256": "2715bceadc345c24040153268146fa1fc98668430f58c4e275c85cd8bd79a687",
+      "sha256": "40e9b6911d8c875c1e069020f9d5b2651e25dc19915691a1a22c67317d49912c",
       "states": [
         "Bihar"
       ],
@@ -29,18 +29,18 @@
         "zp_member"
       ],
       "years": [
-        "2016"
+        2016
       ]
     },
     {
-      "bytes": 14843481,
+      "bytes": 10432991,
       "dataset_ids": [
         "uttar_pradesh/gp_head/2021"
       ],
       "kind": "candidates",
-      "path": "data/master/candidates_uttar_pradesh.csv.gz",
+      "path": "data/master/candidates_uttar_pradesh.parquet",
       "rows": 373096,
-      "sha256": "4d7b789da2703725956a0f8858d674c97426959e497496bdac8601b1143bcf43",
+      "sha256": "4e978b22fe4586a007679f4ac5776cd0bd0a0c1038bd2755fe062e8852e0fd26",
       "states": [
         "Uttar Pradesh"
       ],
@@ -48,11 +48,11 @@
         "gp_head"
       ],
       "years": [
-        "2021"
+        2021
       ]
     },
     {
-      "bytes": 4560698,
+      "bytes": 3135960,
       "dataset_ids": [
         "uttarakhand/block_member/2008",
         "uttarakhand/block_member/2010",
@@ -71,9 +71,9 @@
         "uttarakhand/zp_member/2019"
       ],
       "kind": "candidates",
-      "path": "data/master/candidates_uttarakhand.csv.gz",
+      "path": "data/master/candidates_uttarakhand.parquet",
       "rows": 116514,
-      "sha256": "f20d27e849c386a0679ad3579c6d36e72ad0a8f6ae5728d184c0615a853c7153",
+      "sha256": "c068f74b03cc9e4e75cbe98ed7abce2e49f3a531ce25fe0e63ad5ec93d9c97f9",
       "states": [
         "Uttarakhand"
       ],
@@ -83,15 +83,15 @@
         "zp_member"
       ],
       "years": [
-        "2008",
-        "2010",
-        "2014",
-        "2015",
-        "2019"
+        2008,
+        2010,
+        2014,
+        2015,
+        2019
       ]
     },
     {
-      "bytes": 1328369,
+      "bytes": 992168,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -100,13 +100,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_andhra_pradesh.csv.gz",
+      "path": "data/master/master_andhra_pradesh.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "d642aa9d30c040d80df7f002179eb9d857699ce8757699be72f607177cda6216",
+      "sha256": "d36c274418c0f41c6be28ff16490c62f93a42dbed331fba5276b541d19e323c7",
       "states": [
         "Andhra Pradesh"
       ],
@@ -115,11 +115,11 @@
         "gp_ward"
       ],
       "years": [
-        "2020"
+        2020
       ]
     },
     {
-      "bytes": 9249500,
+      "bytes": 6542549,
       "dataset_ids": [
         "bihar/block_member/2016",
         "bihar/gp_head/2016",
@@ -132,13 +132,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_bihar.csv.gz",
+      "path": "data/master/master_bihar.parquet",
       "provenance_level": [
         "dataset"
       ],
       "rows": 219117,
       "rows_identifying_a_distinct_seat": 219069,
-      "sha256": "30770b86c32dcc5526f0d3af5dbbf69bf4d6144e053726fe781a16602942c9c4",
+      "sha256": "41c1737a62e6f61e3ea1acd6b6170e9d614905e8c35b6604dde72b003fdf9997",
       "states": [
         "Bihar"
       ],
@@ -151,7 +151,7 @@
         "zp_member"
       ],
       "years": [
-        "2016"
+        2016
       ]
     },
     {
@@ -167,14 +167,14 @@
       "sha256": "85e624940b4d51be6adcebf0e64409032b7ff66775ad1f1bd7d5ee54e0e86d4f"
     },
     {
-      "bytes": 124552278,
+      "bytes": 14360823,
       "kind": "master",
-      "path": "data/master/master_extras.csv",
+      "path": "data/master/master_extras.parquet",
       "rows": 3374537,
-      "sha256": "db3c1990114b20809339dd600dbba5e93baa2f10c6b3c5e77ee083423cee2ebd"
+      "sha256": "50b5b05c04fe63ed6b9735d3209d83eed0c605d13fe6665a51be0a665587ecbb"
     },
     {
-      "bytes": 86291,
+      "bytes": 85685,
       "dataset_ids": [
         "goa/gp_ward/2012",
         "goa/gp_ward/2017",
@@ -185,13 +185,13 @@
         "all_seats",
         "partial"
       ],
-      "path": "data/master/master_goa.csv.gz",
+      "path": "data/master/master_goa.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "55674e6a6421ce0205b1dc0e7cd135281a1a577267465c057c6e12a6f3f3e082",
+      "sha256": "29de055c2ba8fb973808592a3d9aa0e5d2ab5e74aa45059caa09ef71b69f87a1",
       "states": [
         "Goa"
       ],
@@ -199,13 +199,13 @@
         "gp_ward"
       ],
       "years": [
-        "2012",
-        "2017",
-        "2022"
+        2012,
+        2017,
+        2022
       ]
     },
     {
-      "bytes": 3575459,
+      "bytes": 2290382,
       "dataset_ids": [
         "haryana/gp_head/2016",
         "haryana/gp_head/2022",
@@ -216,13 +216,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_haryana.csv.gz",
+      "path": "data/master/master_haryana.parquet",
       "provenance_level": [
         "document"
       ],
       "rows": 135218,
       "rows_identifying_a_distinct_seat": 131396,
-      "sha256": "431801b9025b00a12bf80a10ffdcccb1e0822eab674253bcf4bf321d9037389a",
+      "sha256": "4b315a86cf2fcb0f8ab4d2b44e8f59f7b7c97f20a63e9216c35f5aea9d0604f3",
       "states": [
         "Haryana"
       ],
@@ -231,12 +231,12 @@
         "gp_ward"
       ],
       "years": [
-        "2016",
-        "2022"
+        2016,
+        2022
       ]
     },
     {
-      "bytes": 306903,
+      "bytes": 298354,
       "dataset_ids": [
         "jammu_and_kashmir/gp_head/2016",
         "jammu_and_kashmir/gp_ward/2010",
@@ -248,13 +248,13 @@
         "all_seats",
         "reserved_only"
       ],
-      "path": "data/master/master_jammu_and_kashmir.csv.gz",
+      "path": "data/master/master_jammu_and_kashmir.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "c004ce117b404cd8d7f6a9f32cc3b7db75b70c966a09db18c15acc7fc2915baa",
+      "sha256": "b79a4f8b14320f89e746c378414860ae74b6ee4c78a94f68f67b4f3dc960a015",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -263,13 +263,13 @@
         "gp_ward"
       ],
       "years": [
-        "2010",
-        "2016",
-        "2018"
+        2010,
+        2016,
+        2018
       ]
     },
     {
-      "bytes": 775125,
+      "bytes": 672466,
       "dataset_ids": [
         "jharkhand/block_member/2015",
         "jharkhand/gp_head/2015",
@@ -280,13 +280,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_jharkhand.csv.gz",
+      "path": "data/master/master_jharkhand.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 23599,
       "rows_identifying_a_distinct_seat": 20811,
-      "sha256": "1dd72865b80e260ff0a5377be4407a307d9ce35dfb4bc3800b97c0d5590d4a2d",
+      "sha256": "634bd44dead671b31968777e3a13134e5128374df686cb53af4453bc341753fc",
       "states": [
         "Jharkhand"
       ],
@@ -297,11 +297,11 @@
         "zp_member"
       ],
       "years": [
-        "2015"
+        2015
       ]
     },
     {
-      "bytes": 636351,
+      "bytes": 506026,
       "dataset_ids": [
         "karnataka/gp_head/1993",
         "karnataka/gp_head/2000",
@@ -313,13 +313,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_karnataka.csv.gz",
+      "path": "data/master/master_karnataka.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 26548,
       "rows_identifying_a_distinct_seat": 26466,
-      "sha256": "3581f0885faa176c3b263aa257893a17c4acd4aecb13989e88799150157b06c4",
+      "sha256": "095aa57735dcc6c7e5024d4d49b765dbb1f2d620edb27eda4b172e29faeed39f",
       "states": [
         "Karnataka"
       ],
@@ -327,15 +327,15 @@
         "gp_head"
       ],
       "years": [
-        "1993",
-        "2000",
-        "2002",
-        "2005",
-        "2007"
+        1993,
+        2000,
+        2002,
+        2005,
+        2007
       ]
     },
     {
-      "bytes": 1987263,
+      "bytes": 1439024,
       "dataset_ids": [
         "kerala/block_member/2010",
         "kerala/block_member/2015",
@@ -351,13 +351,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_kerala.csv.gz",
+      "path": "data/master/master_kerala.parquet",
       "provenance_level": [
         "dataset"
       ],
       "rows": 55725,
       "rows_identifying_a_distinct_seat": 55725,
-      "sha256": "d8aaf6782f92341d9e34e6ee3ba36dc687c33d01d0e904dbecaf348e5b41bf10",
+      "sha256": "0ab157048c9420626f1544587b158d211611d67f894148f4f85f1ea5c538e7d0",
       "states": [
         "Kerala"
       ],
@@ -367,13 +367,13 @@
         "zp_member"
       ],
       "years": [
-        "2010",
-        "2015",
-        "2020"
+        2010,
+        2015,
+        2020
       ]
     },
     {
-      "bytes": 780807,
+      "bytes": 1009089,
       "dataset_ids": [
         "bihar/gp_ward/2016",
         "bihar/kachahari_member/2016",
@@ -400,16 +400,20 @@
         "telangana/gp_ward/2019",
         "uttar_pradesh/gp_head/2005",
         "uttar_pradesh/gp_head/2010",
+        "uttarakhand/block_member/2008",
+        "uttarakhand/block_member/2019",
         "uttarakhand/gp_head/2008",
-        "uttarakhand/gp_head/2019"
+        "uttarakhand/gp_head/2019",
+        "uttarakhand/zp_member/2008",
+        "uttarakhand/zp_member/2019"
       ],
       "kind": "master",
       "path": "data/master/master_key_collisions.csv",
-      "rows": 8460,
-      "sha256": "d803b7922ed558b1a7777fdbff43f7acfd27af47b9d8d01182f037370069c728"
+      "rows": 10316,
+      "sha256": "5c353c2cf797b442afc34f32b41a8b649f97e01f7ba7e648f8d43d63aaa588ae"
     },
     {
-      "bytes": 1166856,
+      "bytes": 1114004,
       "dataset_ids": [
         "rajasthan/gp_head/2005",
         "rajasthan/gp_head/2010",
@@ -420,13 +424,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_rajasthan.csv.gz",
+      "path": "data/master/master_rajasthan.parquet",
       "provenance_level": [
         "dataset"
       ],
       "rows": 39520,
       "rows_identifying_a_distinct_seat": 39473,
-      "sha256": "34f02973908b2d4361e929bca09e25bc7560d1618d22cca93c1f52395bd61b46",
+      "sha256": "00fe36b5d796093152e6a75d5edd3335bf0d4cb8cb33cc1e3d110ce0bcd36d2b",
       "states": [
         "Rajasthan"
       ],
@@ -434,14 +438,14 @@
         "gp_head"
       ],
       "years": [
-        "2005",
-        "2010",
-        "2015",
-        "2020"
+        2005,
+        2010,
+        2015,
+        2020
       ]
     },
     {
-      "bytes": 2035042,
+      "bytes": 1691967,
       "dataset_ids": [
         "telangana/gp_head/2019",
         "telangana/gp_ward/2019"
@@ -450,13 +454,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_telangana.csv.gz",
+      "path": "data/master/master_telangana.parquet",
       "provenance_level": [
         "page"
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "dfc73d57239f56c5a60cdb785a2d175a171f8cff54afbc8b8b5ab57dfdbad195",
+      "sha256": "383970f1475cc60ea703efb16cc0441493f12b8362dd9e4abf6ad25017bee900",
       "states": [
         "Telangana"
       ],
@@ -465,11 +469,11 @@
         "gp_ward"
       ],
       "years": [
-        "2019"
+        2019
       ]
     },
     {
-      "bytes": 6596589,
+      "bytes": 5782460,
       "dataset_ids": [
         "uttar_pradesh/gp_head/2005",
         "uttar_pradesh/gp_head/2010",
@@ -479,7 +483,7 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_uttar_pradesh.csv.gz",
+      "path": "data/master/master_uttar_pradesh.parquet",
       "provenance_level": [
         "dataset",
         "document",
@@ -487,7 +491,7 @@
       ],
       "rows": 153505,
       "rows_identifying_a_distinct_seat": 153142,
-      "sha256": "d6519482e0dabb25b8436a9a1a43a488b59eccc6f5e4f92b4e056557f17f37fd",
+      "sha256": "15666570bfb4ffa53446d53ef1c59c7c77c6a27cad0eb023801558e57c1d517f",
       "states": [
         "Uttar Pradesh"
       ],
@@ -495,13 +499,13 @@
         "gp_head"
       ],
       "years": [
-        "2005",
-        "2010",
-        "2021"
+        2005,
+        2010,
+        2021
       ]
     },
     {
-      "bytes": 1529157,
+      "bytes": 1241303,
       "dataset_ids": [
         "uttarakhand/block_member/2008",
         "uttarakhand/block_member/2010",
@@ -523,13 +527,13 @@
       "listing_scopes": [
         "all_seats"
       ],
-      "path": "data/master/master_uttarakhand.csv.gz",
+      "path": "data/master/master_uttarakhand.parquet",
       "provenance_level": [
         "dataset"
       ],
       "rows": 29592,
-      "rows_identifying_a_distinct_seat": 29574,
-      "sha256": "afa97c1fcb8fffd802e8a4536e8bb99d617a0276cc30c1798dc6e50ed613715b",
+      "rows_identifying_a_distinct_seat": 27718,
+      "sha256": "5c199217057fbd3f78957e5fcd79656a4f6856c2b60a1c0ea98525d7db29a625",
       "states": [
         "Uttarakhand"
       ],
@@ -539,11 +543,11 @@
         "zp_member"
       ],
       "years": [
-        "2008",
-        "2010",
-        "2014",
-        "2015",
-        "2019"
+        2008,
+        2010,
+        2014,
+        2015,
+        2019
       ]
     },
     {
@@ -579,11 +583,11 @@
       ]
     },
     {
-      "bytes": 264160,
+      "bytes": 265489,
       "kind": "parsed",
       "path": "data/goa/ward_reservation_2012.csv",
       "rows": 1471,
-      "sha256": "92d9d3a6116e1120868a09da08dcfde7eabe7a74aeab81f46de14a2aa2b4526c",
+      "sha256": "542b014d959b8048a72285f1829bb47d4dfc4a9400ed0d45bee4bb225542e7e2",
       "states": [
         "Goa"
       ],
@@ -595,11 +599,11 @@
       ]
     },
     {
-      "bytes": 88249,
+      "bytes": 88943,
       "kind": "parsed",
       "path": "data/goa/ward_reservation_2017.csv",
       "rows": 684,
-      "sha256": "52d1219fb824587d362e172b4451b69a2a23136176328b7db95c709bf5875c64",
+      "sha256": "ccf8d4831595969c368563561d656471d5676b5f2c787506bea875a74648fd93",
       "states": [
         "Goa"
       ],
@@ -611,11 +615,11 @@
       ]
     },
     {
-      "bytes": 173217,
+      "bytes": 174020,
       "kind": "parsed",
       "path": "data/goa/ward_reservation_2022.csv",
       "rows": 793,
-      "sha256": "ed996ac86789d1f3ffb9591baef10c5f36ab8653487216aa0f7918dc011b628f",
+      "sha256": "fa8c3085c4b225818d47ee07b2c3f38bc89892f98ffd39c3ec96973368d7d097",
       "states": [
         "Goa"
       ],
@@ -983,5 +987,6 @@
     "master_rows": 819473,
     "master_states": 12,
     "parsed_rows": 186796
-  }
+  },
+  "written_by": "pyarrow 23.0.1"
 }
