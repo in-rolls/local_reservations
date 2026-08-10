@@ -3,7 +3,7 @@ PY ?= python3
 # needs >=12.2, so it gets its own venv. Only `make jharkhand-ocr` uses this.
 OCR_PY ?= ./ocrenv/bin/python
 
-.PHONY: help inventory probe goa jharkhand jharkhand-ocr jk ap test coverage state-readmes stats worklist master manifest verify release-check expect dictionary
+.PHONY: help inventory probe goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk ap test coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -11,6 +11,7 @@ help:
 	@echo "make goa         parse + validate Goa ward reservation"
 	@echo "make jharkhand   parse + validate Jharkhand, one file per tier"
 	@echo "make jharkhand-ocr  re-read the Jharkhand scans with Surya (~6h)"
+	@echo "make jharkhand-bench  gates for a Jharkhand parser change"
 	@echo "make jk          parse + validate Jammu & Kashmir"
 	@echo "make ap          parse + validate Andhra Pradesh"
 	@echo "make coverage    regenerate the readme table and check every link"
@@ -31,6 +32,15 @@ goa:
 jharkhand:
 	$(PY) scripts/jharkhand/parse.py
 	$(PY) scripts/jharkhand/validate.py
+
+# The gates a parser change has to clear, against data/stats/jharkhand_bench.json.
+# `make jharkhand-bench-record` stores what the code does now; run it only when
+# you have decided the current numbers are the ones to defend.
+jharkhand-bench:
+	$(PY) scripts/jharkhand/bench.py
+
+jharkhand-bench-record:
+	$(PY) scripts/jharkhand/bench.py --record
 
 # Not part of `make jharkhand`, and not a dependency of anything. Its output is
 # committed, it takes about six hours, and it needs an interpreter the rest of
