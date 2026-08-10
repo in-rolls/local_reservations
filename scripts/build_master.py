@@ -46,25 +46,52 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "master"
 
 
-def git_commit(directory):
-    """The sibling's commit, and whether it has uncommitted changes.
+def git_commit(directory, paths=None):
+    """The commit these rows came from, and whether it has uncommitted changes.
 
-    A dirty sibling makes source_commit meaningless - the rows did not come from
+    A dirty source makes source_commit meaningless - the rows did not come from
     that commit - so it is recorded rather than assumed away.
+
+    `paths` narrows the question from "what is HEAD" to "when did the inputs last
+    change", and for this repository that distinction is the difference between a
+    build that settles and one that cannot. Stamping HEAD meant every row of the
+    six states parsed here changed whenever any commit landed - including the
+    commit that recorded the rows themselves, and the manifest rebuild after it.
+    `make release-check` could therefore never pass: it rebuilds the master,
+    which dirtied the tree it was about to check for cleanliness, and committing
+    that dirtied it again.
+
+    Asking when the sources and parsers last changed is also the more useful
+    answer. A row says which version of the inputs produced it, rather than which
+    unrelated commit happened to be checked out when someone ran the build.
     """
+    scope = list(paths or [])
     try:
-        sha = subprocess.run(["git", "-C", str(directory), "rev-parse", "HEAD"],
-                             capture_output=True, text=True, timeout=30).stdout.strip()
-        dirty = subprocess.run(["git", "-C", str(directory), "status", "--porcelain"],
-                               capture_output=True, text=True, timeout=60).stdout.strip()
+        if scope:
+            sha = subprocess.run(
+                ["git", "-C", str(directory), "log", "-1", "--format=%H", "--"]
+                + scope, capture_output=True, text=True, timeout=30).stdout.strip()
+        else:
+            sha = subprocess.run(
+                ["git", "-C", str(directory), "rev-parse", "HEAD"],
+                capture_output=True, text=True, timeout=30).stdout.strip()
+        dirty = subprocess.run(
+            ["git", "-C", str(directory), "status", "--porcelain", "--"] + scope,
+            capture_output=True, text=True, timeout=60).stdout.strip()
     except (subprocess.SubprocessError, OSError):
         return "", False
     return (sha[:12] + ("-dirty" if dirty else "")), bool(dirty)
 
 
+# What a locally parsed row is actually built from: the parsers, and the parsed
+# data they wrote. Not data/master, which is this script's own output - counting
+# it would put the build back in the loop it is here to break.
+LOCAL_INPUTS = ["scripts", "data", ":(exclude)data/master"]
+
+
 def local_slices():
     """The states parsed in this repository."""
-    commit, _ = git_commit(ROOT)
+    commit, _ = git_commit(ROOT, LOCAL_INPUTS)
     grouped = collections.defaultdict(list)
     for _, rows in datasets.parsed():
         for row in rows:
