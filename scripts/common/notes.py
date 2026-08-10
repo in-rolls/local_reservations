@@ -211,16 +211,27 @@ def districts_missing(s):
               "was not, so the row is a real seat whose identity is unknown. "
               "This is most of what looks like a key collision: two rows that "
               "both name no panchayat are not duplicates, they are two "
-              "different seats we cannot tell apart. Jharkhand's OCR'd "
-              "districts name it on 34% of rows against 92% for the districts "
-              "that came as text.",
-      closes_with="re-OCR of the scanned districts with Surya rather than "
-                  "tesseract. Measured on a Chatra page: Surya returns "
-                  "'<td>IVचतरा/1/2/जोगीडीह—(7)</td>' where tesseract returns "
-                  "'|/ चतरा / ,/,/ मोनिया-(2)'. The identifier is printed; it "
-                  "is the scan that did not carry it, and a better scan does. "
-                  "~85 s/page on Apple Silicon via savitr, so thousands of "
-                  "pages is an overnight run, not an interactive one.")
+              "different seats we cannot tell apart.\n\n"
+              "This note used to say the gap was Jharkhand's scans, naming 34% "
+              "of OCR'd rows against 92% of typeset ones, and to prescribe "
+              "re-OCR. Both halves were wrong by the time anyone read them "
+              "again: the scanned districts now name the panchayat on 99.9% of "
+              "ward rows against 96.2% for the districts that came as digital "
+              "text, and 519 of the 524 rows still unnamed are in digital-text "
+              "documents. Re-OCR would reach five of them. A closes_with is a "
+              "claim about the present, and this one outlived the two commits "
+              "that made it false.",
+      closes_with="three different things, only one of which is a parse. "
+                  "Koderma's 261 rows are the Lohardaga defect again: on pages "
+                  "30-35 the seat column is drawn rather than typed, 33 to 51 "
+                  "embedded images a page against 32 to 50 rows that name "
+                  "nothing, and the text layer keeps only the district's roman "
+                  "numeral, which is why every one of them reads 'VI'. That "
+                  "closes the way Lohardaga's did, through ocr_seats.py. "
+                  "Pakur's 106 carry no identifier at all. East Singhbhum's 80 "
+                  "were the parse, and are fixed: the name was there in full "
+                  "and split down the middle, because ध is written '/' in Kruti "
+                  "Dev and 'e/; ckxcsM+k' is मध्य बागबेड़ा.")
 def panchayat_not_named(s):
     # A seat above panchayat level has no panchayat to name: a block member's
     # constituency is numbered within its block and a district member's across

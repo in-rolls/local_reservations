@@ -30,6 +30,7 @@ Writes data/jharkhand/<tier>_reservation_2015.{csv,jsonl}.
 import argparse
 import collections
 import csv
+import html
 import pathlib
 import re
 import sys
@@ -95,7 +96,14 @@ RE_BLOCK = re.compile(r"iz\[k\.M\s*&\s*(\S[^\n]{0,40}?)(?:\s*ftyk\b|$)")
 # ways, so the parts are found by searching rather than by position, and
 # anything that does not resolve is left blank rather than guessed.
 SEAT_LABEL = re.compile(r"izk0\s*fu0\s*\{ks0\s*la0")
-SEAT_TAIL = re.compile(r"(?:¼\s*(\d+)\s*½|\(\s*(\d+)\s*\)|&\s*(\d+))\s*$")
+# The trailing alternative is the panchayat samiti form - "XII दुमका/04/
+# काठीकुण्ड-01" - where the others all bracket the number. Three documents (Gola
+# PSS, both Dumka notifications) resolved no seat number at all for want of it,
+# on tesseract and on Surya alike, so it is a parser gap rather than a scan one.
+# Tried last and anchored to the end, so a bracketed number still wins and a
+# hyphen inside a place name cannot be mistaken for the separator.
+SEAT_TAIL = re.compile(
+    r"(?:¼\s*(\d+)\s*½|\(\s*(\d+)\s*\)|&\s*(\d+)|[-–—]\s*(\d+))\s*$")
 SEAT_ROMAN = re.compile(r"(?<![A-Za-z])([IVXLC]{1,6})(?![A-Za-z])")
 SEAT_NUMBERED = re.compile(r"^(\d+)[\s/]+(.*\S)$")
 
@@ -121,22 +129,33 @@ RE_TEXT_ROW = re.compile(
 # no mukhiya, no panchayat samiti, no ward member, no zila parishad, and no
 # error anywhere, because a file that yields no rows looks exactly like a file
 # with no rows in it.
-DEV_TIERS = {
-    "ग्राम पंचायत के सदस्य": "ward_member",
-    "ग्राम पंचायत सदस्य": "ward_member",
-    "पंचायत समिति के सदस्य": "panchayat_samiti",
-    "पंचायत समिति सदस्य": "panchayat_samiti",
-    "जिला परिषद के सदस्य": "zila_parishad",
-    "जिला परिषद सदस्य": "zila_parishad",
-    # tested last: the longer posts do not contain it, but a substring match
-    # against a shorter token first would still be a trap worth avoiding
-    "मुखिया": "mukhiya",
-}
+#
+# The offices a Devanagari page names, matched by containment because the state
+# does not print them one way. A scan of the whole corpus finds "ग्राम पंचायत के
+# सदस्य" and "ग्राम पचायत के सदस्य" without its anusvara, "वार्ड सदस्य", the
+# abbreviation "पं०स०स०", and "जिला परिषद् सदस्य" with a virama the others lack.
+# Matching the cell exactly recognised the first of those and dropped 1,052 rows
+# that were spelt any of the other ways.
+#
+# Ordered by office, not by length, and for the same reason TIER_HEADS is: the
+# head of a gram panchayat is printed "ग्राम पंचायत के मुखिया", so a rule that
+# looked for the longest match, or for the ward token first, would file 174
+# heads as ward members.
+DEV_POSTS = (
+    ("मुखिया", "mukhiya"),
+    ("जिला परिषद", "zila_parishad"),
+    ("पंचायत समिति", "panchayat_samiti"),
+    ("पं०स०स०", "panchayat_samiti"),
+    ("पं0स0स0", "panchayat_samiti"),
+    ("ग्राम पंचायत", "ward_member"),
+    ("ग्राम पचायत", "ward_member"),
+    ("वार्ड", "ward_member"),
+)
 
-RE_DEV_ROW = re.compile(
-    r"^(?P<name>.*?)\s*(?P<post>"
-    + "|".join(re.escape(k) for k in DEV_TIERS) + r")"
-    r"\s+(?P<caste>.+?)\s+(?P<woman>महिला|अन्य)\s+(?P<seat>\S.*)$")
+
+def dev_post(cell):
+    """The office a post cell names, or None if it names none."""
+    return next((tier for token, tier in DEV_POSTS if token in cell), None)
 
 # "[2 गोड्डा /,/0/ छोटा बडामानगढ-(6)" - the identifier survives the scan far
 # worse than the row does. What is reliably there is the panchayat, which is the
@@ -208,9 +227,24 @@ def split_seat_id(text, tier):
     #
     # "/" cannot be split on blindly: in Kruti Dev it also begins the letter ध,
     # so "[kjkSa/kh" - the block Kharaundhi - would come apart in the middle of
-    # its own name. A separator is never followed by "k", and the letter always
-    # is.
-    parts = [p.strip(" &-") for p in re.split(r"@|/(?!k)", s)]
+    # its own name.
+    #
+    # Guarding only on a following "k" was too narrow. ध is written "/k" in
+    # खरौंधी but "/;" in "e/; ckxcsM+k" - मध्य बागबेड़ा, where the next letter is
+    # य - so East Singhbhum's names split down the middle and 80 rows named no
+    # panchayat while the name sat in the string, in two halves. What actually
+    # distinguishes the two is whether a number is involved: a separator has a
+    # digit or a space on one side of it, a conjunct does not.
+    #
+    # That narrower rule applies to Kruti Dev only. The ambiguity is an artefact
+    # of the encoding - in Unicode Devanagari ध is ध and "/" is only ever a
+    # separator - and requiring the digit there cost 69 rows, because OCR leaves
+    # commas against the separator ("3,/धसनियाँ") where a digit should be. So the
+    # scanned pages keep the rule they were tuned on and the typeset ones get the
+    # one their encoding needs.
+    slash = r"@|/(?!k)" if DEVANAGARI.search(s) \
+        else r"@|(?<=[\s\d])/(?!k)|/(?=[\s\d])"
+    parts = [p.strip(" &-") for p in re.split(slash, s)]
     parts = [p for p in parts if p]
 
     def kind(p):
@@ -516,7 +550,15 @@ def parse_stacked(path, district):
     rows = []
     block = ""
     for page_number, text in stacked_pages(path):
-        if True:
+        # An OCR'd page is Surya's HTML, which html_rows reads structurally.
+        # Read as flat text it collapses into one "row" whose winner is a
+        # screenful of <td> tags, and two of those were enough to cost 115 real
+        # mukhiya seats in Latehar: merge() works per tier, so a tier holding
+        # any rows at all is treated as answered and the true rows are dropped.
+        # "<td", not "<td>": Surya writes the cell tag bare on most pages and
+        # as <td style="width: 15%;"> on others, and testing for the bare form
+        # let one Latehar page through, which was enough to cost the tier.
+        if "<td" not in text:
             header = RE_BLOCK.search(text)
             if header:
                 block = clean(header.group(1))
@@ -667,37 +709,69 @@ def dev_seat(text):
     return name, got.group("number")
 
 
-def dev_rows(text, path, district, page_number):
-    """Rows off an OCR'd page that came back in Devanagari rather than Kruti Dev.
+HTML_ROW = re.compile(r"<tr[^>]*>(.*?)</tr>", re.S | re.I)
+HTML_CELL = re.compile(r"<td[^>]*>(.*?)</td>", re.S | re.I)
+HTML_TAG = re.compile(r"<[^>]+>")
 
-    Kept separate from `_from_text` rather than folded into it. The two read
-    different alphabets from different pipelines, and the seat identifier
-    survives an OCR pass in a different state from a font-encoded one - this one
-    cannot use `split_seat_id` at all, because there is no roman district
-    numeral and no `izk0fu0{ks0` label to anchor on.
+
+def html_cells(row):
+    return [clean(html.unescape(HTML_TAG.sub(" ", cell)))
+            for cell in HTML_CELL.findall(row)]
+
+
+def html_rows(text, path, district, page_number):
+    """Rows off a Surya page, which comes back as an HTML table.
+
+    The whole reason to re-OCR was that tesseract dropped the numbers out of the
+    seat identifier. Surya keeps them *and* keeps the district's roman numeral -
+    "IV/चतरा /5/18/सलैया –(1)" - which the Devanagari line reader could not.
+    So these rows go through `seat_row` like any other, and `split_seat_id` reads
+    the block and gram panchayat numbers that the Devanagari reader below has no
+    way to reach. That is where the recovery actually lands: 28.6% of identifiers
+    resolving to a complete seat identity, against 91.4%.
+
+    Cells are located by anchoring on the post rather than by position. The
+    ruled-table reader can index cells[1..4] because pdfplumber gives it the
+    columns the rules define; Surya decides for itself whether the serial number
+    is a column, and a fixed offset would silently read the caste out of the
+    post's cell on the pages where it does.
     """
     out = []
-    for line in text.split("\n"):
-        found = RE_DEV_ROW.match(clean(line))
-        if not found:
+    for raw_row in HTML_ROW.findall(text):
+        cells = html_cells(raw_row)
+        if len(cells) < 4:
             continue
-        tier = DEV_TIERS.get(found.group("post"))
-        caste = caste_of(found.group("caste"))
-        woman = woman_of(found.group("woman"))
-        if not tier or caste is None or woman is None:
+        at = next((i for i, cell in enumerate(cells)
+                   if dev_post(cell)), None)
+        if at is None or at + 2 >= len(cells):
             continue
-        panchayat, number = dev_seat(found.group("seat"))
-        row = seat_row(district, "", tier, caste, woman, "",
-                       clean(found.group("name")),
-                       f"{found.group('caste')} | {found.group('woman')}")
-        row["gram_panchayat"] = panchayat
-        row["ward_no"] = number if tier == "ward_member" else ""
-        row["seat_no"] = "" if tier == "ward_member" else number
-        row["seat_id_raw"] = clean(found.group("seat"))
+        tier = dev_post(cells[at])
+        caste, woman = caste_of(cells[at + 1]), woman_of(cells[at + 2])
+        if caste is None or woman is None:
+            continue
+        # the identifier is the last cell; the winner is whatever precedes the
+        # post, which is the name column on every form in this state
+        seat = cells[-1]
+        winner = cells[at - 1] if at else ""
+        row = seat_row(district, "", tier, caste, woman, seat, winner,
+                       f"{cells[at + 1]} | {cells[at + 2]}")
         # not Kruti Dev, so `krutidev.to_unicode` must not touch these names
         row["script"] = "devanagari"
         out.append(emit.stamp(row, path, page_number, ROOT))
     return out
+
+
+def ocr_rows(text, path, district, page_number):
+    """Rows off an OCR'd page.
+
+    One reader, not two with a fallback. Surya returns 565 of this corpus' 594
+    pages as a table, and the 29 that are not are covers and preamble carrying
+    no seats at all - measured, by running this reader over them and counting
+    what it found. The Devanagari line reader this used to fall through to had
+    nothing left to find, and keeping it "just in case" is how two readers end
+    up disagreeing about the same page.
+    """
+    return html_rows(text, path, district, page_number)
 
 
 def _from_text(page, path, district, block):
@@ -746,7 +820,7 @@ def main():
                 # vocabulary flipped which reader answered first.
                 got = merge(got, parse_stacked(path, district))
                 got = merge(got, [r for number, text in stacked_pages(path)
-                                  for r in dev_rows(text, path, district,
+                                  for r in ocr_rows(text, path, district,
                                                     number)])
                 rows += got
             except Exception as exc:  # noqa: BLE001 - report, keep going

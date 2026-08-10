@@ -284,54 +284,54 @@ Jammu & Kashmir,2018,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_w
 Jammu & Kashmir,2018,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jammu & Kashmir,2018,gp_ward,year_constant,internal,pass,2018,2018,
 Jammu & Kashmir,2018,gp_ward,provenance_resolves,internal,pass,0,0,13 documents
-Jharkhand,2015,block_member,rows_in_band,declared,pass,4556,1000..5500,
+Jharkhand,2015,block_member,rows_in_band,declared,pass,4963,1000..5500,
 Jharkhand,2015,block_member,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,block_member,blank_share_within_tolerance,declared,warn,gram_panchayat 82%>10%; gp_no 95%>60%,,2 column(s) over tolerance
-Jharkhand,2015,block_member,coverage_vs_published,external,warn,4556 (84%),5423 seats,seats
-Jharkhand,2015,block_member,women_share_vs_statute,external,pass,51.9%,floor 50%,
+Jharkhand,2015,block_member,blank_share_within_tolerance,declared,warn,gram_panchayat 76%>10%; gp_no 91%>60%,,2 column(s) over tolerance
+Jharkhand,2015,block_member,coverage_vs_published,external,pass,4963 (92%),5423 seats,seats
+Jharkhand,2015,block_member,women_share_vs_statute,external,pass,52.1%,floor 50%,
 Jharkhand,2015,block_member,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,block_member,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,block_member,seat_key_unique,internal,warn,756,0,"largest group 141 at ('Ramgarh', '', '', '', '')"
+Jharkhand,2015,block_member,seat_key_unique,internal,warn,537,0,"largest group 51 at ('Hazaribag', '', 'सदर', '', '')"
 Jharkhand,2015,block_member,tier_local_maps_to_one_tier,internal,pass,panchayat_samiti,block_member,
 Jharkhand,2015,block_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,block_member,year_constant,internal,pass,2015,2015,
-Jharkhand,2015,block_member,provenance_resolves,internal,pass,0,0,42 documents
-Jharkhand,2015,gp_head,rows_in_band,declared,pass,4429,1000..5000,
+Jharkhand,2015,block_member,provenance_resolves,internal,pass,0,0,48 documents
+Jharkhand,2015,gp_head,rows_in_band,declared,pass,3654,1000..5000,
 Jharkhand,2015,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 89%>35%; gp_no 84%>60%; seat_no 96%>90%,,3 column(s) over tolerance
-Jharkhand,2015,gp_head,coverage_vs_published,external,pass,4054 (93%),4345 gram panchayats,seats
+Jharkhand,2015,gp_head,blank_share_within_tolerance,declared,warn,block 81%>35%; gp_no 85%>60%; seat_no 94%>90%,,3 column(s) over tolerance
+Jharkhand,2015,gp_head,coverage_vs_published,external,warn,3436 (79%),4345 gram panchayats,seats
 Jharkhand,2015,gp_head,women_share_vs_statute,external,pass,52.0%,floor 50%,
 Jharkhand,2015,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_head,seat_key_unique,internal,warn,556,0,"largest group 106 at ('Pakur', '', '', '', '')"
+Jharkhand,2015,gp_head,seat_key_unique,internal,warn,268,0,"largest group 106 at ('Pakur', '', '', '', '')"
 Jharkhand,2015,gp_head,tier_local_maps_to_one_tier,internal,pass,mukhiya,gp_head,
 Jharkhand,2015,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_head,year_constant,internal,pass,2015,2015,
-Jharkhand,2015,gp_head,provenance_resolves,internal,pass,0,0,81 documents
-Jharkhand,2015,gp_ward,rows_in_band,declared,pass,14414,1000..20000,
+Jharkhand,2015,gp_head,provenance_resolves,internal,pass,0,0,75 documents
+Jharkhand,2015,gp_ward,rows_in_band,declared,pass,17738,1000..20000,
 Jharkhand,2015,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,gp_ward,blank_share_within_tolerance,declared,warn,block 39%>35%,,1 column(s) over tolerance
-Jharkhand,2015,gp_ward,coverage_vs_published,external,skip,14414,,no published total for this slice
+Jharkhand,2015,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Jharkhand,2015,gp_ward,coverage_vs_published,external,skip,17738,,no published total for this slice
 Jharkhand,2015,gp_ward,women_share_vs_statute,external,pass,52.7%,floor 50%,
 Jharkhand,2015,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Jharkhand,2015,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Jharkhand,2015,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,1452,0,"largest group 261 at ('Koderma', '', '', '', '')"
+Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,703,0,"largest group 322 at ('Godda', '', '', '', '')"
 Jharkhand,2015,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward_member,gp_ward,
 Jharkhand,2015,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_ward,year_constant,internal,pass,2015,2015,
 Jharkhand,2015,gp_ward,provenance_resolves,internal,pass,0,0,33 documents
 Jharkhand,2015,zp_member,rows_in_band,declared,pass,200,50..600,
 Jharkhand,2015,zp_member,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
-Jharkhand,2015,zp_member,blank_share_within_tolerance,declared,warn,gram_panchayat 79%>10%,,1 column(s) over tolerance
+Jharkhand,2015,zp_member,blank_share_within_tolerance,declared,warn,gram_panchayat 78%>10%,,1 column(s) over tolerance
 Jharkhand,2015,zp_member,coverage_vs_published,external,warn,200 (37%),545 seats,seats
 Jharkhand,2015,zp_member,women_share_vs_statute,external,pass,53.0%,floor 50%,
 Jharkhand,2015,zp_member,women_share_by_block,external,skip,,,only applies where the share is an exact split
@@ -339,7 +339,7 @@ Jharkhand,2015,zp_member,caste_share_vs_population,external,skip,0,,no populatio
 Jharkhand,2015,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,zp_member,seat_key_unique,internal,warn,24,0,"largest group 8 at ('Lohardaga', '', '', '', '')"
+Jharkhand,2015,zp_member,seat_key_unique,internal,warn,8,0,"largest group 8 at ('Lohardaga', '', '', '', '')"
 Jharkhand,2015,zp_member,tier_local_maps_to_one_tier,internal,pass,zila_parishad,zp_member,
 Jharkhand,2015,zp_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,zp_member,year_constant,internal,pass,2015,2015,
@@ -699,9 +699,9 @@ Uttarakhand,2008,block_member,caste_share_vs_population,external,skip,0,,no popu
 Uttarakhand,2008,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2008,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2008,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2008,block_member,seat_key_unique,internal,warn,567,0,"largest group 40 at ('बागेश्\u200dवर', 'बागेश्वर', '', '', '')"
+Uttarakhand,2008,block_member,seat_key_unique,internal,pass,0,0,
 Uttarakhand,2008,block_member,tier_local_maps_to_one_tier,internal,pass,kshetra panchayat sadasya,block_member,
-Uttarakhand,2008,block_member,reservation_constant_within_seat,internal,fail,17,0,"e.g. [('पिथौरागढ', 'डीडीहाट', '', '', '')]"
+Uttarakhand,2008,block_member,reservation_constant_within_seat,internal,pass,0,0,"2,943 seats, all internally consistent"
 Uttarakhand,2008,block_member,year_constant,internal,pass,2008,2008,
 Uttarakhand,2008,block_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2008,gp_head,rows_in_band,declared,pass,6368,200..9000,
@@ -729,9 +729,9 @@ Uttarakhand,2008,zp_member,caste_share_vs_population,external,skip,0,,no populat
 Uttarakhand,2008,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2008,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2008,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2008,zp_member,seat_key_unique,internal,warn,115,0,"largest group 49 at ('पौडी गढवाल', '', '', '', '')"
+Uttarakhand,2008,zp_member,seat_key_unique,internal,pass,0,0,
 Uttarakhand,2008,zp_member,tier_local_maps_to_one_tier,internal,pass,zila panchayat sadasya,zp_member,
-Uttarakhand,2008,zp_member,reservation_constant_within_seat,internal,fail,4,0,"e.g. [('चमोली', '', '', '', '')]"
+Uttarakhand,2008,zp_member,reservation_constant_within_seat,internal,pass,0,0,"371 seats, all internally consistent"
 Uttarakhand,2008,zp_member,year_constant,internal,pass,2008,2008,
 Uttarakhand,2008,zp_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2010,block_member,rows_in_band,declared,pass,219,150..4000,
@@ -791,7 +791,7 @@ Uttarakhand,2014,block_member,winner_caste_is_not_the_seats,internal,skip,0,,thi
 Uttarakhand,2014,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
 Uttarakhand,2014,block_member,seat_key_unique,internal,pass,0,0,
 Uttarakhand,2014,block_member,tier_local_maps_to_one_tier,internal,pass,kshetra panchayat sadasya,block_member,
-Uttarakhand,2014,block_member,reservation_constant_within_seat,internal,pass,0,0,"2,885 seats, all internally consistent"
+Uttarakhand,2014,block_member,reservation_constant_within_seat,internal,pass,0,0,"1 row(s) excluded as shared_place_name - places this key cannot tell apart, already flagged"
 Uttarakhand,2014,block_member,year_constant,internal,pass,2014,2014,
 Uttarakhand,2014,block_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2014,gp_head,rows_in_band,declared,pass,6621,200..9000,
@@ -879,9 +879,9 @@ Uttarakhand,2019,block_member,caste_share_vs_population,external,skip,0,,no popu
 Uttarakhand,2019,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2019,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2019,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2019,block_member,seat_key_unique,internal,warn,1020,0,"largest group 40 at ('उधमसिंह नगर', 'गदरपुर', '', '', '')"
+Uttarakhand,2019,block_member,seat_key_unique,internal,pass,0,0,
 Uttarakhand,2019,block_member,tier_local_maps_to_one_tier,internal,pass,kshetra panchayat sadasya,block_member,
-Uttarakhand,2019,block_member,reservation_constant_within_seat,internal,fail,33,0,"e.g. [('अल्\u200dमोडा', 'सल्ट', '', '', '')]"
+Uttarakhand,2019,block_member,reservation_constant_within_seat,internal,pass,0,0,"1 row(s) excluded as shared_place_name - places this key cannot tell apart, already flagged"
 Uttarakhand,2019,block_member,year_constant,internal,pass,2019,2019,
 Uttarakhand,2019,block_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2019,gp_head,rows_in_band,declared,pass,5846,200..9000,
@@ -909,8 +909,8 @@ Uttarakhand,2019,zp_member,caste_share_vs_population,external,skip,0,,no populat
 Uttarakhand,2019,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2019,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2019,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2019,zp_member,seat_key_unique,internal,warn,154,0,"largest group 42 at ('अल्\u200dमोडा', '', '', '', '')"
+Uttarakhand,2019,zp_member,seat_key_unique,internal,warn,18,0,"largest group 18 at ('रूद्रप्रयाग', '', '', '', '')"
 Uttarakhand,2019,zp_member,tier_local_maps_to_one_tier,internal,pass,zila panchayat sadasya,zp_member,
-Uttarakhand,2019,zp_member,reservation_constant_within_seat,internal,fail,6,0,"e.g. [('अल्\u200dमोडा', '', '', '', '')]"
+Uttarakhand,2019,zp_member,reservation_constant_within_seat,internal,pass,0,0,"19 row(s) excluded as shared_place_name - places this key cannot tell apart, already flagged"
 Uttarakhand,2019,zp_member,year_constant,internal,pass,2019,2019,
 Uttarakhand,2019,zp_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"

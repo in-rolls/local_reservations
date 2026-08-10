@@ -8,4 +8,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/ap/ocr/
-data/jharkhand/ocr/
+# data/jharkhand/ocr/ is committed. It was ignored while tesseract produced it -
+# forty minutes and reproducible from the committed PDFs by anyone. Surya
+# produces it in about four hours and only on an Apple-Silicon Mac, so ignoring
+# it would leave one machine able to rebuild the state.

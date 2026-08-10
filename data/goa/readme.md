@@ -20,9 +20,9 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
-| [`ward_reservation_2012.csv`](ward_reservation_2012.csv) | 1,471 | 18 | 12 |
-| [`ward_reservation_2017.csv`](ward_reservation_2017.csv) | 684 | 18 | 10 |
-| [`ward_reservation_2022.csv`](ward_reservation_2022.csv) | 793 | 18 | 9 |
+| [`ward_reservation_2012.csv`](ward_reservation_2012.csv) | 1,471 | 19 | 12 |
+| [`ward_reservation_2017.csv`](ward_reservation_2017.csv) | 684 | 19 | 10 |
+| [`ward_reservation_2022.csv`](ward_reservation_2022.csv) | 793 | 19 | 9 |
 
 ## Stats
 
@@ -71,7 +71,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | Check | Appeals to | 2012 `gp_ward` | 2017 `gp_ward` | 2022 `gp_ward` |
 |---|---|---|---|---|
 | `alias_family_exclusive` | internal | &check; 0 | &check; 0 | &check; 0 |
-| `blank_share_within_tolerance` | declared | &check; | &check; | &check; |
+| `blank_share_within_tolerance` | declared | ! unopposed 99%>0% | &check; | &check; |
 | `caste_scheme_respected` | declared | &check; BC,NONE,ST | &check; BC,NONE,SC,ST | &check; BC,NONE,SC,ST |
 | `caste_share_vs_population` | external | &ndash; 0 | &ndash; 0 | &ndash; 0 |
 | `coverage_vs_published` | external | &check; 185 (99%) | &ndash; 684 | &ndash; 793 |

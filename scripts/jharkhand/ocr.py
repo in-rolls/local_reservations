@@ -8,12 +8,50 @@ They are easier to read than the text districts, not harder. A scan OCRs into
 Unicode Devanagari, while the typeset documents are Kruti Dev and have to be
 transliterated afterwards.
 
+**Surya, not tesseract, and the reason is the digits.** Tesseract reads this
+form's Devanagari reliably and its numerals badly: the separators of a seat
+identifier survive and the numbers between them come back as commas, so
+"IV/चतरा /5/18/सलैया –(1)" was read as "[४/चतरा /5,//8,//सलैया -(7)". That is
+worse than a blank, because 18 arriving as 8 is a plausible wrong value that
+points at a different seat - the same failure ocr_seats.py records as "10 comes
+back as 20, 11 as 2, 12 as 22".
+
+Measured on a seeded sample of 22 pages across 10 documents, scored by whether
+the identifier yields a complete seat identity through split_seat_id:
+
+    tesseract   106/370   28.6%
+    surya       350/383   91.4%
+
+with no document worse and Chatra going from 4/133 to 133/133.
+
+Surya emits HTML. The cache keeps it as HTML rather than flattening it, because
+the table's cell boundaries are exactly what the whitespace layout of the old
+text cache made everyone guess at.
+
 Cached to data/jharkhand/ocr/<stem>.txt, form-feed separated so page numbers
-survive, and gitignored: 604 pages take about forty minutes and the output is
-reproducible from the committed PDFs.
+survive, and **committed**, unlike the tesseract cache it replaces. That cache
+was gitignored on the grounds that it was reproducible from the committed PDFs
+in about forty minutes; this one takes ~4 hours and an Apple-Silicon Mac, so
+ignoring it would mean only one machine in the world could rebuild Jharkhand.
+
+Reproducing it, once:
+
+    python3 -m venv ocrenv
+    ./ocrenv/bin/pip install -r requirements-ocr.txt
+    ./ocrenv/bin/python -m mlx_vlm convert --hf-path datalab-to/surya-ocr-2 \
+        --mlx-path ~/surya-mlx-4bit -q --q-bits 4
+    SURYA_MLX_PATH=~/surya-mlx-4bit make jharkhand-ocr
+
+savitr is deliberately not in requirements.txt. It needs Apple Silicon for MLX,
+and it pins pillow<11 where pdfplumber needs >=12.2, so the two cannot share an
+interpreter - which is why the OCR gets its own requirements file and its own
+venv. Nothing else in the repository imports it, and the parser reads the
+committed cache rather than calling it, so only someone regenerating the cache
+needs any of this.
 """
 
 import argparse
+import os
 import pathlib
 import subprocess
 import sys
@@ -23,12 +61,19 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 CACHE = ROOT / "data" / "jharkhand" / "ocr"
 
-DPI = 300
-# psm 4 is one column of text of variable sizes, which is what a ruled table is.
-# psm 6 reads the table rules as pipe characters and is markedly worse - the
-# same finding as Andhra Pradesh.
-PSM = "4"
-LANG = "hin"
+# 200, not the 300 tesseract wanted: Surya's own preprocessing resizes to its
+# input resolution, so the extra pixels cost render time and buy nothing.
+DPI = 200
+
+# Base Surya, converted to MLX once - see the module docstring for the command.
+# NOT savitr's default terse model, which is distilled to emit voter rows from
+# electoral rolls and would do exactly that to a reservation gazette.
+#
+# Overridable because the default is a path inside one person's home directory,
+# and a recipe only one machine can follow is not a recipe.
+MODEL = pathlib.Path(os.environ.get(
+    "SURYA_MLX_PATH",
+    pathlib.Path.home() / "Documents/GitHub/savitr/models/surya-mlx-4bit"))
 
 
 # A tier name in one of the two encodings we can actually read. Any of these
@@ -81,6 +126,27 @@ def rotation(image):
     return degrees if confidence >= 2.0 else 0.0
 
 
+_ENGINE = None
+
+
+def engine():
+    """The Surya model, loaded once. Importing savitr costs seconds and loading
+    the weights costs more, so a per-page load would dominate a 593-page run."""
+    global _ENGINE
+    if _ENGINE is None:
+        try:
+            from savitr import MLXSuryaOCR
+        except ImportError:
+            sys.exit("savitr is not importable. This script runs under its own "
+                     "interpreter - see the module docstring.")
+        if not MODEL.exists():
+            sys.exit(f"no Surya model at {MODEL}. Convert it once with:\n"
+                     f"  python -m mlx_vlm convert --hf-path datalab-to/surya-ocr-2"
+                     f" --mlx-path {MODEL} -q --q-bits 4")
+        _ENGINE = MLXSuryaOCR(str(MODEL))
+    return _ENGINE
+
+
 def ocr(path):
     pages = []
     total = page_count(path)
@@ -107,11 +173,8 @@ def ocr(path):
                     # looked like a limit of the scan.
                     dpi = image.info.get("dpi", (DPI, DPI))
                     image.rotate(-turn, expand=True).save(rendered[0], dpi=dpi)
-            pages.append(subprocess.run(
-                ["tesseract", str(rendered[0]), "stdout", "-l", LANG,
-                 "--psm", PSM],
-                capture_output=True, text=True, encoding="utf-8",
-                errors="replace", timeout=600).stdout)
+            text, _ = engine().ocr_image(str(rendered[0]))
+            pages.append(text)
         print(f"\r  {path.name[:44]:44s} {number}/{total}", end="",
               file=sys.stderr)
     print(file=sys.stderr)

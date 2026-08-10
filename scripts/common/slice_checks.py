@@ -371,8 +371,20 @@ def reservation_constant_within_seat(s):
     # Nine of Uttarakhand's gram panchayat seats are like that. Failing them
     # here would be the check re-reporting a limit that has already been
     # recorded, and the pressure would be to merge two real seats to quiet it.
+    #
+    # A row that states no number at all is the same case, and is already
+    # counted by seat_not_numbered. Rudraprayag prints eighteen zila parishad
+    # constituencies by name and numbers none of them - त्रिजुगीनारायण,
+    # गुप्तकाशी, कालीमठ - so they share one key and disagree about the
+    # reservation, which is true and is exactly what that gap says. The only way
+    # to quiet it here would be to invent numbers, and the Uttarakhand adapter
+    # refuses to guess one for the same reason this check exists.
+    numbered = s.tier in ("gp_ward", "ulb_ward", "block_member", "block_head",
+                          "zp_member", "zp_head")
     named = [r for r in s.rows
-             if str(r.get("shared_place_name") or "0") in ("0", "")]
+             if str(r.get("shared_place_name") or "0") in ("0", "")
+             and not (numbered and not (r.get("ward_no") or "").strip()
+                      and not (r.get("seat_no") or "").strip())]
     excluded = len(s.rows) - len(named)
     counts = collections.defaultdict(set)
     for row in named:

@@ -1,0 +1,24 @@
+# Only for regenerating data/jharkhand/ocr/, which is committed. Nothing in the
+# repository imports any of this: the parser reads the cache, not the model.
+#
+# It is a separate file rather than an extra in requirements.txt because these
+# cannot share an interpreter with the parser. surya-ocr pins pillow<11 and
+# pdfplumber needs >=12.2, so installing both leaves whichever was installed
+# second broken - the OCR run silently produced nothing the first time this was
+# tried. Install into its own venv:
+#
+#   python3 -m venv ocrenv && ./ocrenv/bin/pip install -r requirements-ocr.txt
+#
+# Apple Silicon only. MLX is a Metal runtime; there is no CPU fallback.
+
+savitr==0.2.0
+
+# Held at the version surya-ocr allows. pip will resolve to 12.x if this floats,
+# because something else in the tree asks for it, and surya then fails at import
+# rather than at install.
+pillow==10.4.0
+
+# The conversion step - `mlx_vlm convert` - is what turns datalab-to/surya-ocr-2
+# into the local 4-bit model, so it is needed once even though the OCR itself
+# only calls savitr.
+mlx-vlm==0.6.10
