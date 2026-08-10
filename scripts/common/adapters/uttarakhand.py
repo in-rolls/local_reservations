@@ -24,6 +24,7 @@ Provenance is `dataset`: the parse recorded no document and no page.
 
 import csv
 import pathlib
+import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
@@ -158,6 +159,49 @@ def split_shared_names(candidates):
             candidate["shared_place_name"] = 1
 
 
+# A block or zila constituency is printed as its number and its name run
+# together, and the state prints that four different ways across 10,135 rows:
+#
+#   7,132   17-गुलडिया / 04. कछियौला   number, separator, name
+#   1,395   2 गराली                    number, space, name
+#     442   कुणीधार-4                  name, hyphen, number - the order reversed
+#       8   18कुण्डादानकोट              number, no separator at all
+#      19   पटरानी                     no number anywhere
+#
+# The whole string used to go into seat_no, which the dictionary declares an
+# integer, and into ward_name as well, so the two columns were byte-identical
+# and neither was usable as a number.
+#
+# The order these are tried in matters, and so does giving up. Extracting a
+# number is not worth guessing at: seat_no is part of SEAT_FIELDS, so a wrong
+# reading does not just mis-number a seat, it merges it with a different one.
+CONSTITUENCY = (
+    re.compile(r"^\s*(?P<no>\d+)\s*[-.]\s*(?P<name>.+?)\s*$"),
+    re.compile(r"^\s*(?P<no>\d+)\s+(?P<name>.+?)\s*$"),
+    re.compile(r"^\s*(?P<no>\d+)(?P<name>\D.*?)\s*$"),
+    # reversed: the number trails the name. Anchored to the end so the internal
+    # zeros of a Devanagari abbreviation - बा0ल0ढनौलासेरा-21 is बा० ल० - cannot
+    # be mistaken for it.
+    re.compile(r"^\s*(?P<name>.+?)\s*[-–]\s*(?P<no>\d+)\s*$"),
+)
+
+
+def constituency(value):
+    for pattern in CONSTITUENCY:
+        found = pattern.match(value or "")
+        if found:
+            return str(int(found.group("no"))), found.group("name")
+    return "", (value or "")
+
+
+def constituency_no(value):
+    return constituency(value)[0]
+
+
+def constituency_name(value):
+    return constituency(value)[1]
+
+
 def convert(row, relative):
     """One candidate, with the seat's stated result carried alongside."""
     post = (row.get(POST) or "").strip()
@@ -180,8 +224,8 @@ def convert(row, relative):
         # a block or district seat is a numbered ward of that body and has no
         # panchayat, so the ward is the whole of its identity
         "gram_panchayat": panchayat,
-        "ward_name": block_ward or zp_ward,
-        "seat_no": block_ward or zp_ward,
+        "ward_name": constituency_name(block_ward or zp_ward),
+        "seat_no": constituency_no(block_ward or zp_ward),
         "caste_reservation": caste or "",
         "caste_reservation_local": stated,
         # The vocabulary pairs every category with a महिला form, so a label

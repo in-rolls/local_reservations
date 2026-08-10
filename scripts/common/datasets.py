@@ -5,7 +5,7 @@ parsed dataset by testing for the schema columns: build_coverage.parsed_datasets
 build_coverage.datasets, expectations.datasets and
 build_state_readmes.dataset_files. Four copies of a rule is four chances for one
 of them to disagree, and the pooled master is about to write files that match
-that rule exactly - `data/master/master_haryana.csv` carries every schema column
+that rule exactly - `data/master/master_haryana.parquet` carries every schema column
 by construction, so each of those globs would have reported it as a state called
 "Master" and counted every row twice.
 
@@ -107,7 +107,7 @@ def pooled():
 
     Each row is the master projection **over** the row it came from, not instead
     of it. The projection keeps 36 declared columns and drops everything else to
-    master_extras.csv, and the checks need what it drops: `caste_share_vs_
+    master_extras.parquet, and the checks need what it drops: `caste_share_vs_
     population` reads pop_sc and pop_total, `no_ward_column_in_the_source` reads
     ward_count, `seat_id_drawn_as_an_image` reads seat_from_image. Yielding the
     projection alone silently turned the strongest external check available -

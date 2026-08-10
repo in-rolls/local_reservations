@@ -24,6 +24,9 @@ import pathlib
 import subprocess
 import sys
 
+import pyarrow as pa
+import pyarrow.parquet as pq
+
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
 import adapters  # noqa: E402
 import datasets  # noqa: E402
@@ -73,11 +76,14 @@ def digest(path):
 
 
 def read(path):
-    """Rows from a CSV, gzipped or not.
+    """Rows from a published table - parquet, or CSV for the two diagnostics.
 
-    The per-state tables are gzipped because GitHub refuses a file over 100 MB
-    and Bihar's candidate table is 208 MB uncompressed.
+    Every parquet column is a string by construction (see
+    `build_master.write_parquet`), so this returns the same shape either way and
+    nothing downstream has to know which format it got.
     """
+    if path.suffix == ".parquet":
+        return pq.read_table(path).to_pylist()
     opener = gzip.open if path.suffix == ".gz" else open
     with opener(path, "rt", encoding="utf-8", errors="replace") as fh:
         return list(csv.DictReader(fh))
@@ -113,14 +119,19 @@ def build():
     files, totals = [], collections.Counter()
 
     master_dir = ROOT / "data" / "master"
-    for path in sorted(list(master_dir.glob("master_*.csv*")) +
-                       list(master_dir.glob("candidates_*.csv*"))):
+    for path in sorted(list(master_dir.glob("master_*.parquet")) +
+                       list(master_dir.glob("master_*.csv*")) +
+                       list(master_dir.glob("candidates_*.parquet"))):
         rows = read(path)
         kind = "candidates" if path.name.startswith("candidates_") else "master"
         files.append(dict(describe(path, rows), kind=kind))
         if kind == "candidates":
             totals["candidate_rows"] += len(rows)
-        elif path.name not in ("master_extras.csv", "master_dropped.csv",
+        # Not every master_* file is a state. Miss one of these three and its
+        # rows land in the headline count and it is counted as a state - the
+        # extras table alone would add 3.4M rows and a thirteenth state, with
+        # every check still passing.
+        elif path.name not in ("master_extras.parquet", "master_dropped.csv",
                                "master_key_collisions.csv"):
             totals["master_rows"] += len(rows)
             totals["master_states"] += 1
@@ -153,6 +164,11 @@ def build():
         # be byte-identical or verification fails for no reason
         "committed_utc": here["committed_utc"],
         "dirty": here["dirty"],
+        # Parquet stamps `created_by: parquet-cpp-arrow version <x>` into every
+        # footer, so upgrading pyarrow changes every SHA-256 below without a
+        # single value changing. Recorded so that reads as what it is instead of
+        # looking like the corpus moved.
+        "written_by": f"pyarrow {pa.__version__}",
         "master_columns": M.MASTER_COLUMNS,
         "totals": dict(totals),
         "sibling_repos": siblings,
@@ -169,7 +185,10 @@ def render(manifest):
            + (" **(dirty)**" if manifest["dirty"] else "")
            + " — necessarily the parent of the commit holding this file",
            f"- {manifest['totals'].get('master_rows', 0):,} pooled seats, "
-           f"{manifest['totals'].get('parsed_rows', 0):,} parsed rows", "",
+           f"{manifest['totals'].get('parsed_rows', 0):,} parsed rows",
+           f"- written by **{manifest.get('written_by', '—')}** — parquet "
+           f"records its writer in every footer, so a different version changes "
+           f"every hash below without changing a value", "",
            "## Siblings", "",
            "The master is built from repositories that move on their own "
            "schedule, so a row's origin is only reproducible with the commit it "

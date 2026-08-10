@@ -26,17 +26,19 @@ recorded on every row.
 
 import argparse
 import collections
-import gzip
-import io
 import csv
 import pathlib
 import subprocess
 import sys
 
+import pyarrow as pa
+import pyarrow.parquet as pq
+
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
 import adapters  # noqa: E402
 import canon  # noqa: E402
 import datasets  # noqa: E402
+import dictionary  # noqa: E402
 import emit  # noqa: E402
 import master as M  # noqa: E402
 
@@ -153,18 +155,23 @@ def write(rows, extras, dropped, candidates):
 
     written = []
     for state, subset in sorted(by_state.items()):
-        written.append(write_gz(f"master_{slug_of(state)}.csv.gz",
-                                M.MASTER_COLUMNS, subset))
+        written.append(write_parquet(f"master_{slug_of(state)}.parquet",
+                                     M.MASTER_COLUMNS, subset))
 
     by_state = collections.defaultdict(list)
     for row in candidates:
         by_state[row["state"]].append(row)
     for state, subset in sorted(by_state.items()):
-        written.append(write_gz(f"candidates_{slug_of(state)}.csv.gz",
-                                M.CANDIDATE_COLUMNS, subset))
+        written.append(write_parquet(f"candidates_{slug_of(state)}.parquet",
+                                     M.CANDIDATE_COLUMNS, subset))
 
+    write_parquet("master_extras.parquet", ["row_id", "column", "value"],
+                  extras)
+
+    # These two stay CSV. Both are under 1 MB and neither is the published
+    # product: they exist to be opened by a person chasing a defect, and a
+    # format you cannot grep is the wrong one for that.
     for name, columns, data in (
-            ("master_extras.csv", ["row_id", "column", "value"], extras),
             ("master_dropped.csv",
              ["dataset_id", "reason", "detail", "source_path"], dropped),
             ("master_key_collisions.csv",
@@ -182,32 +189,90 @@ def slug_of(state):
     return state.lower().replace(" ", "_").replace("&", "and")
 
 
-def write_gz(name, columns, rows):
-    """A per-state table, gzipped.
+def write_parquet(name, columns, rows):
+    """A published table.
 
-    Not a space optimisation. `candidates_bihar.csv` is 208 MB and GitHub
-    refuses any file over 100 MB outright, so the corpus could not be pushed at
-    all; gzipped it is 26 MB. Every tool that reads these reads them compressed
-    without being told - pandas and polars sniff the extension, and the standard
-    library needs `gzip.open` in place of `open`.
+    Not a space optimisation, though it is one. `candidates_bihar.csv` is 208 MB
+    and GitHub refuses any file over 100 MB outright, so the corpus could not be
+    pushed at all. The reason to prefer parquet over the gzipped CSV it replaces
+    is that reading a state table drops from 0.80 s to 0.06 s: these tables exist
+    to be grouped across, and a consumer pays that cost every time.
 
-    `mtime=0` matters: gzip stamps the current time into its header by default,
-    so the same rows would hash differently on every build and the manifest
-    would report a change that never happened.
+    **Types come from dictionary.py, never from inference.** The dictionary
+    already declares what every column is, and it is what `make expect` checks
+    against, so a file that types its columns differently would contradict the
+    repository's own definition of them. Inference is the thing to avoid, not
+    types: it would read a ward number of `07` as the integer 7 in the states
+    that print leading zeros and leave it a string in the states that do not,
+    and the same column would then have different types in different files.
+
+    Typing buys something CSV cannot express at all: **null is not blank**.
+    `woman_reserved` being unknown and `woman_reserved` being false are
+    different facts here - that distinction is what `gender_stated` exists to
+    protect - and in a CSV they are both the empty string.
+
+    A value that will not cast **stops the build**. That is the whole point: the
+    alternative is a silent null, and a seat whose number quietly became missing
+    looks exactly like a seat that never had one. Two such columns were found
+    the first time this ran - Uttarakhand writing "17-गुलडिया" into `seat_no`
+    and Goa writing "Unopposed" into `votes` - and both were real defects in the
+    sources' parsers rather than reasons to loosen the type.
+
+    The parquet analogue of gzip's timestamp problem, and the reason
+    `requirements.txt` pins pyarrow: two writes of the same table are
+    byte-identical, but the footer records `created_by: parquet-cpp-arrow
+    version <x>`. Upgrading pyarrow therefore changes every SHA-256 in the
+    manifest with no data change, and `make verify` would report the whole
+    corpus altered. The manifest records the writer version so that reads as
+    what it is rather than as data drift.
     """
-    buffer = io.StringIO()
-    writer = csv.DictWriter(buffer, fieldnames=columns, extrasaction="ignore",
-                            lineterminator="\n")
-    writer.writeheader()
-    writer.writerows(rows)
+    table = pa.table({column: cast(name, column, rows) for column in columns})
     path = OUT / name
-    with path.open("wb") as raw:
-        # level 6, not gzip's default 9: on the 208 MB candidate table 9 costs
-        # minutes for about 3% of the size, and this runs on every build
-        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0,
-                           compresslevel=6) as fh:
-            fh.write(buffer.getvalue().encode("utf-8"))
+    pq.write_table(table, path, compression="zstd")
     return (path, len(rows))
+
+
+# What the dictionary's declared dtype means in parquet. `enum` becomes a
+# dictionary-encoded string, which is what an enum is. `roman_or_integer` stays
+# a string because J&K and Goa number wards in Roman numerals. Anything the
+# dictionary does not declare - row_id, the provenance columns, the sibling
+# commit - is a string.
+ARROW_TYPES = {"integer": pa.int64(), "boolean": pa.bool_(),
+               "enum": pa.dictionary(pa.int32(), pa.string())}
+
+TRUE, FALSE = {"1", "true", "True", "yes"}, {"0", "false", "False", "no"}
+
+
+def cast(filename, column, rows):
+    """One column, in the type the dictionary declares for it.
+
+    Blank becomes null, which is the point of doing this at all. A value that is
+    neither blank nor castable raises: see write_parquet.
+    """
+    declared = dictionary.BY_NAME.get(column, {}).get("dtype")
+    arrow = ARROW_TYPES.get(declared, pa.string())
+    values = []
+    for row in rows:
+        raw = row.get(column, "")
+        text = "" if raw is None else str(raw).strip()
+        if text == "":
+            values.append(None)
+        elif arrow == pa.int64():
+            if not text.lstrip("-").isdigit():
+                raise SystemExit(
+                    f"{filename}: {column} is declared {declared} in "
+                    f"dictionary.py but holds {text!r}. Fix the parser or the "
+                    f"declaration - casting it would silently drop the value.")
+            values.append(int(text))
+        elif arrow == pa.bool_():
+            if text not in TRUE and text not in FALSE:
+                raise SystemExit(
+                    f"{filename}: {column} is declared {declared} in "
+                    f"dictionary.py but holds {text!r}.")
+            values.append(text in TRUE)
+        else:
+            values.append(text)
+    return pa.array(values, type=arrow)
 
 
 def collisions(rows):
@@ -243,7 +308,7 @@ def render_readme(rows, dropped, candidates, counts, written):
            "hidden behind a promise the data does not support.", "",
            "| State | Seats |", "|---|---|"]
     for state, n in sorted(states.items()):
-        out.append(f"| [{state}](master_{slug_of(state)}.csv.gz) | {n:,} |")
+        out.append(f"| [{state}](master_{slug_of(state)}.parquet) | {n:,} |")
     out += ["", "| Tier | Seats |", "|---|---|"]
     for tier, n in tiers.most_common():
         out.append(f"| `{tier}` | {n:,} |")
@@ -282,7 +347,7 @@ def render_readme(rows, dropped, candidates, counts, written):
         what = ("one state, one row per candidate" if path.name.startswith(
             "candidates_") else "one state, one row per seat")
         out.append(f"| [`{path.name}`]({path.name}) | {n:,} | {what} |")
-    out += [f"| [`master_extras.csv`](master_extras.csv) | — | the "
+    out += [f"| [`master_extras.parquet`](master_extras.parquet) | — | the "
             f"state-specific columns, long-form as (row_id, column, value), so "
             f"the master stays a fixed schema without losing anything |",
             f"| [`master_key_collisions.csv`](master_key_collisions.csv) | "
@@ -319,10 +384,11 @@ def main():
     print(f"  {unique:,} rows identify a distinct seat "
           f"({unique / max(len(rows), 1):.1%}); "
           f"{len(rows) - unique:,} do not, listed in master_key_collisions.csv")
-    print(f"  {len(extras):,} extra values held long-form in master_extras.csv")
+    print(f"  {len(extras):,} extra values held long-form in "
+          f"master_extras.parquet")
     if candidates:
-        print(f"  {len(candidates):,} candidate rows in candidates_<state>.csv, "
-              f"joinable to the seat on row_id")
+        print(f"  {len(candidates):,} candidate rows in "
+              f"candidates_<state>.parquet, joinable to the seat on row_id")
     tiers = collections.Counter(r["tier"] for r in rows)
     print("  " + "  ".join(f"{k}={v:,}" for k, v in tiers.most_common()))
     return 0

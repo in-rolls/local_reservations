@@ -121,7 +121,7 @@ Bihar,2016,zp_member,year_constant,internal,pass,2016,2016,
 Bihar,2016,zp_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Goa,2012,gp_ward,rows_in_band,declared,pass,1471,400..1800,
 Goa,2012,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,ST","BC,NONE,SC,ST",sc_st_bc
-Goa,2012,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Goa,2012,gp_ward,blank_share_within_tolerance,declared,warn,unopposed 99%>0%,,1 column(s) over tolerance
 Goa,2012,gp_ward,coverage_vs_published,external,pass,185 (99%),186 panchayats,seats
 Goa,2012,gp_ward,women_share_vs_statute,external,pass,32.2%,floor 33%,
 Goa,2012,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
@@ -699,9 +699,9 @@ Uttarakhand,2008,block_member,caste_share_vs_population,external,skip,0,,no popu
 Uttarakhand,2008,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2008,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2008,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2008,block_member,seat_key_unique,internal,pass,0,0,
+Uttarakhand,2008,block_member,seat_key_unique,internal,warn,567,0,"largest group 40 at ('बागेश्\u200dवर', 'बागेश्वर', '', '', '')"
 Uttarakhand,2008,block_member,tier_local_maps_to_one_tier,internal,pass,kshetra panchayat sadasya,block_member,
-Uttarakhand,2008,block_member,reservation_constant_within_seat,internal,pass,0,0,"2,943 seats, all internally consistent"
+Uttarakhand,2008,block_member,reservation_constant_within_seat,internal,fail,17,0,"e.g. [('पिथौरागढ', 'डीडीहाट', '', '', '')]"
 Uttarakhand,2008,block_member,year_constant,internal,pass,2008,2008,
 Uttarakhand,2008,block_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2008,gp_head,rows_in_band,declared,pass,6368,200..9000,
@@ -729,9 +729,9 @@ Uttarakhand,2008,zp_member,caste_share_vs_population,external,skip,0,,no populat
 Uttarakhand,2008,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2008,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2008,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2008,zp_member,seat_key_unique,internal,pass,0,0,
+Uttarakhand,2008,zp_member,seat_key_unique,internal,warn,115,0,"largest group 49 at ('पौडी गढवाल', '', '', '', '')"
 Uttarakhand,2008,zp_member,tier_local_maps_to_one_tier,internal,pass,zila panchayat sadasya,zp_member,
-Uttarakhand,2008,zp_member,reservation_constant_within_seat,internal,pass,0,0,"371 seats, all internally consistent"
+Uttarakhand,2008,zp_member,reservation_constant_within_seat,internal,fail,4,0,"e.g. [('चमोली', '', '', '', '')]"
 Uttarakhand,2008,zp_member,year_constant,internal,pass,2008,2008,
 Uttarakhand,2008,zp_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2010,block_member,rows_in_band,declared,pass,219,150..4000,
@@ -879,9 +879,9 @@ Uttarakhand,2019,block_member,caste_share_vs_population,external,skip,0,,no popu
 Uttarakhand,2019,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2019,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2019,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2019,block_member,seat_key_unique,internal,pass,0,0,
+Uttarakhand,2019,block_member,seat_key_unique,internal,warn,1020,0,"largest group 40 at ('उधमसिंह नगर', 'गदरपुर', '', '', '')"
 Uttarakhand,2019,block_member,tier_local_maps_to_one_tier,internal,pass,kshetra panchayat sadasya,block_member,
-Uttarakhand,2019,block_member,reservation_constant_within_seat,internal,pass,0,0,"2,674 seats, all internally consistent"
+Uttarakhand,2019,block_member,reservation_constant_within_seat,internal,fail,33,0,"e.g. [('अल्\u200dमोडा', 'सल्ट', '', '', '')]"
 Uttarakhand,2019,block_member,year_constant,internal,pass,2019,2019,
 Uttarakhand,2019,block_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Uttarakhand,2019,gp_head,rows_in_band,declared,pass,5846,200..9000,
@@ -909,8 +909,8 @@ Uttarakhand,2019,zp_member,caste_share_vs_population,external,skip,0,,no populat
 Uttarakhand,2019,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2019,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2019,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2019,zp_member,seat_key_unique,internal,pass,0,0,
+Uttarakhand,2019,zp_member,seat_key_unique,internal,warn,154,0,"largest group 42 at ('अल्\u200dमोडा', '', '', '', '')"
 Uttarakhand,2019,zp_member,tier_local_maps_to_one_tier,internal,pass,zila panchayat sadasya,zp_member,
-Uttarakhand,2019,zp_member,reservation_constant_within_seat,internal,pass,0,0,"347 seats, all internally consistent"
+Uttarakhand,2019,zp_member,reservation_constant_within_seat,internal,fail,6,0,"e.g. [('अल्\u200dमोडा', '', '', '', '')]"
 Uttarakhand,2019,zp_member,year_constant,internal,pass,2019,2019,
 Uttarakhand,2019,zp_member,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"

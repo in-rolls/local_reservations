@@ -252,7 +252,7 @@ def convert(row, tier, tier_local, filename):
         "source_path": f"data/{filename}",
         "source_page": "",
         # the codes Bihar numbers its places by, kept out of the join key and
-        # off the master, recoverable from master_extras.csv
+        # off the master, recoverable from master_extras.parquet
         "district_code": district_code, "block_code": block_code,
         "panchayat_code": panchayat_code,
         "seat_id_printed": (row.get("number") or "").strip(),

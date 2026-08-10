@@ -2,7 +2,7 @@
 
 The master's point is that you can group by it, so its columns are fixed and
 declared rather than a union of whatever each state happens to carry. The 23
-state-specific extras stay out and go to master_extras.csv long-form, so nothing
+state-specific extras stay out and go to master_extras.parquet long-form, so nothing
 is lost and the table does not become mostly blank.
 
 **What is deliberately not carried.** Three sources publish contact details for

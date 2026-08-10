@@ -6,22 +6,22 @@
 
 ## What a row is
 
-**One row per seat as a source document states it** — which is not the same as one row per seat, and the master does not claim it is. 811,013 rows (99.0%) identify a distinct seat; the other 8,460 are in [master_key_collisions.csv](master_key_collisions.csv) rather than hidden behind a promise the data does not support.
+**One row per seat as a source document states it** — which is not the same as one row per seat, and the master does not claim it is. 809,157 rows (98.7%) identify a distinct seat; the other 10,316 are in [master_key_collisions.csv](master_key_collisions.csv) rather than hidden behind a promise the data does not support.
 
 | State | Seats |
 |---|---|
-| [Andhra Pradesh](master_andhra_pradesh.csv.gz) | 60,352 |
-| [Bihar](master_bihar.csv.gz) | 219,117 |
-| [Goa](master_goa.csv.gz) | 2,948 |
-| [Haryana](master_haryana.csv.gz) | 135,218 |
-| [Jammu & Kashmir](master_jammu_and_kashmir.csv.gz) | 11,508 |
-| [Jharkhand](master_jharkhand.csv.gz) | 23,599 |
-| [Karnataka](master_karnataka.csv.gz) | 26,548 |
-| [Kerala](master_kerala.csv.gz) | 55,725 |
-| [Rajasthan](master_rajasthan.csv.gz) | 39,520 |
-| [Telangana](master_telangana.csv.gz) | 61,841 |
-| [Uttar Pradesh](master_uttar_pradesh.csv.gz) | 153,505 |
-| [Uttarakhand](master_uttarakhand.csv.gz) | 29,592 |
+| [Andhra Pradesh](master_andhra_pradesh.parquet) | 60,352 |
+| [Bihar](master_bihar.parquet) | 219,117 |
+| [Goa](master_goa.parquet) | 2,948 |
+| [Haryana](master_haryana.parquet) | 135,218 |
+| [Jammu & Kashmir](master_jammu_and_kashmir.parquet) | 11,508 |
+| [Jharkhand](master_jharkhand.parquet) | 23,599 |
+| [Karnataka](master_karnataka.parquet) | 26,548 |
+| [Kerala](master_kerala.parquet) | 55,725 |
+| [Rajasthan](master_rajasthan.parquet) | 39,520 |
+| [Telangana](master_telangana.parquet) | 61,841 |
+| [Uttar Pradesh](master_uttar_pradesh.parquet) | 153,505 |
+| [Uttarakhand](master_uttarakhand.parquet) | 29,592 |
 
 | Tier | Seats |
 |---|---|
@@ -52,23 +52,23 @@
 
 | File | Rows | What |
 |---|---|---|
-| [`master_andhra_pradesh.csv.gz`](master_andhra_pradesh.csv.gz) | 60,352 | one state, one row per seat |
-| [`master_bihar.csv.gz`](master_bihar.csv.gz) | 219,117 | one state, one row per seat |
-| [`master_goa.csv.gz`](master_goa.csv.gz) | 2,948 | one state, one row per seat |
-| [`master_haryana.csv.gz`](master_haryana.csv.gz) | 135,218 | one state, one row per seat |
-| [`master_jammu_and_kashmir.csv.gz`](master_jammu_and_kashmir.csv.gz) | 11,508 | one state, one row per seat |
-| [`master_jharkhand.csv.gz`](master_jharkhand.csv.gz) | 23,599 | one state, one row per seat |
-| [`master_karnataka.csv.gz`](master_karnataka.csv.gz) | 26,548 | one state, one row per seat |
-| [`master_kerala.csv.gz`](master_kerala.csv.gz) | 55,725 | one state, one row per seat |
-| [`master_rajasthan.csv.gz`](master_rajasthan.csv.gz) | 39,520 | one state, one row per seat |
-| [`master_telangana.csv.gz`](master_telangana.csv.gz) | 61,841 | one state, one row per seat |
-| [`master_uttar_pradesh.csv.gz`](master_uttar_pradesh.csv.gz) | 153,505 | one state, one row per seat |
-| [`master_uttarakhand.csv.gz`](master_uttarakhand.csv.gz) | 29,592 | one state, one row per seat |
-| [`candidates_bihar.csv.gz`](candidates_bihar.csv.gz) | 644,507 | one state, one row per candidate |
-| [`candidates_uttar_pradesh.csv.gz`](candidates_uttar_pradesh.csv.gz) | 373,096 | one state, one row per candidate |
-| [`candidates_uttarakhand.csv.gz`](candidates_uttarakhand.csv.gz) | 116,514 | one state, one row per candidate |
-| [`master_extras.csv`](master_extras.csv) | — | the state-specific columns, long-form as (row_id, column, value), so the master stays a fixed schema without losing anything |
-| [`master_key_collisions.csv`](master_key_collisions.csv) | 8,460 | rows that do not identify a distinct seat |
+| [`master_andhra_pradesh.parquet`](master_andhra_pradesh.parquet) | 60,352 | one state, one row per seat |
+| [`master_bihar.parquet`](master_bihar.parquet) | 219,117 | one state, one row per seat |
+| [`master_goa.parquet`](master_goa.parquet) | 2,948 | one state, one row per seat |
+| [`master_haryana.parquet`](master_haryana.parquet) | 135,218 | one state, one row per seat |
+| [`master_jammu_and_kashmir.parquet`](master_jammu_and_kashmir.parquet) | 11,508 | one state, one row per seat |
+| [`master_jharkhand.parquet`](master_jharkhand.parquet) | 23,599 | one state, one row per seat |
+| [`master_karnataka.parquet`](master_karnataka.parquet) | 26,548 | one state, one row per seat |
+| [`master_kerala.parquet`](master_kerala.parquet) | 55,725 | one state, one row per seat |
+| [`master_rajasthan.parquet`](master_rajasthan.parquet) | 39,520 | one state, one row per seat |
+| [`master_telangana.parquet`](master_telangana.parquet) | 61,841 | one state, one row per seat |
+| [`master_uttar_pradesh.parquet`](master_uttar_pradesh.parquet) | 153,505 | one state, one row per seat |
+| [`master_uttarakhand.parquet`](master_uttarakhand.parquet) | 29,592 | one state, one row per seat |
+| [`candidates_bihar.parquet`](candidates_bihar.parquet) | 644,507 | one state, one row per candidate |
+| [`candidates_uttar_pradesh.parquet`](candidates_uttar_pradesh.parquet) | 373,096 | one state, one row per candidate |
+| [`candidates_uttarakhand.parquet`](candidates_uttarakhand.parquet) | 116,514 | one state, one row per candidate |
+| [`master_extras.parquet`](master_extras.parquet) | — | the state-specific columns, long-form as (row_id, column, value), so the master stays a fixed schema without losing anything |
+| [`master_key_collisions.csv`](master_key_collisions.csv) | 10,316 | rows that do not identify a distinct seat |
 | [`master_dropped.csv`](master_dropped.csv) | 9,571 | every input row that did not become an output row, with a reason. `make master` fails if these do not add up |
 
 ## Scope

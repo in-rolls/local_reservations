@@ -1,0 +1,11 @@
+# pyarrow is pinned, not floated. Parquet writes `created_by: parquet-cpp-arrow
+# version <x>` into every footer, so a different version rewrites every
+# SHA-256 in MANIFEST.json without a single value changing, and `make verify`
+# would report the whole corpus altered. MANIFEST.json records the version it
+# was written with.
+pyarrow==23.0.1
+
+# the Haryana, Jharkhand and Uttarakhand gazettes are digital text
+pdfplumber
+
+pytest

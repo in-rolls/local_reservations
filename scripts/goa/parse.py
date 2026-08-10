@@ -50,7 +50,10 @@ DISTRICT = {
 
 COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
            "tier", "tier_local", "reservation", "caste_reservation", "woman_reserved",
-           "winner", "votes", "reservation_raw", "script", "source_pdf"]
+           "winner", "votes", "unopposed", "reservation_raw", "script",
+           "source_pdf"]
+
+RE_UNOPPOSED = re.compile(r"^unopp", re.I)
 
 RE_WARD_LINE = re.compile(r"^\s*Ward\s+([IVXLC]+|\d+)\s*$", re.I)
 RE_CATEGORY_LINE = re.compile(r"^\s*\(([^)]{1,25})\)\s*$")
@@ -97,6 +100,19 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
     if not parsed:
         return None
     caste, woman, script = parsed
+    # Goa prints the word in the votes column instead of a count. There is
+    # already a column for that fact, and leaving it in votes meant 19 seats
+    # were unopposed while `unopposed` was blank on every one of them - so a
+    # consumer filtering on the flag found none of them, and anyone reading
+    # votes as a number found a word.
+    #
+    # Matched on the `unopp` stem rather than the whole word: the 2012 gazette
+    # spells it "Unopposed" 16 times and "Unoppsoed" 3 times. Anything else
+    # non-numeric is left alone deliberately, so build_master's cast fails on it
+    # and a new variant is found rather than silently becoming a null.
+    unopposed = ""
+    if RE_UNOPPOSED.match(str(votes).strip()):
+        votes, unopposed = "", 1
     made = {
         "state": "Goa", "year": year,
         "district": DISTRICT.get(taluka.lower(), ""), "block": taluka,
@@ -104,6 +120,7 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
         "tier": "gp_ward", "tier_local": "ward",
         "reservation": label(caste, woman), "caste_reservation": caste,
         "woman_reserved": woman, "winner": winner, "votes": votes,
+        "unopposed": unopposed,
         "reservation_raw": clean(raw), "script": script, "source_pdf": source,
     }
     # Every other state stamps provenance; Goa's parser predates emit.stamp, so

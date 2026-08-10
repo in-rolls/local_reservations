@@ -254,8 +254,18 @@ def panchayat_not_named(s):
               "different winners and different reservations, keyed alike "
               "because none of them says which ward it is.",
       closes_with="reading the number from the seat identifier, or from the "
-                  "okMZ ua0 column the Haryana gazettes print it in, on the "
-                  "affected pages")
+                  "okMZ ua0 column the Haryana gazettes print it in - those "
+                  "PDFs are digital text, not scans, so it is a re-parse and "
+                  "not an OCR job, and it is confined to a few files "
+                  "(Karnal__Indri.pdf alone holds 639 of the unnumbered rows).\n\n"
+                  "NOT by renumbering the rows by their position. That was "
+                  "tested and refused: 5,899 of Haryana's 6,159 panchayats do "
+                  "number their wards, and 95% of those run 1..N in row order "
+                  "- but 182 have gaps, "
+                  "['1','2','3','5','6','7','8','9'] skipping 4, because a "
+                  "ward whose result was not declared is simply absent. "
+                  "Filling by position would misnumber every ward after a gap "
+                  "and the row would look entirely correct.")
 def seat_not_numbered(s):
     # a ward is numbered in ward_no, a block or district seat in seat_no
     column = "ward_no" if s.tier in ("gp_ward", "ulb_ward") else "seat_no"
