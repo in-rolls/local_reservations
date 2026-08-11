@@ -2,57 +2,57 @@
  "splits": {
   "DIAGNOSE": {
    "by_tier": {
-    "mukhiya": 375,
-    "panchayat_samiti": 457,
-    "ward_member": 4532,
+    "mukhiya": 394,
+    "panchayat_samiti": 458,
+    "ward_member": 4523,
     "zila_parishad": 46
    },
-   "complete": 4920,
-   "complete_share": 0.9094,
-   "rows": 5410
+   "complete": 4913,
+   "complete_share": 0.9063,
+   "rows": 5421
   },
   "REGRESSION": {
    "by_tier": {
-    "mukhiya": 2690,
-    "panchayat_samiti": 3425,
-    "ward_member": 9627,
-    "zila_parishad": 129
+    "mukhiya": 997,
+    "panchayat_samiti": 1173,
+    "ward_member": 2462,
+    "zila_parishad": 55
    },
-   "complete": 12759,
-   "complete_share": 0.8039,
-   "rows": 15871
+   "complete": 3476,
+   "complete_share": 0.7416,
+   "rows": 4687
   },
   "VALIDATE": {
    "by_tier": {
-    "mukhiya": 589,
-    "panchayat_samiti": 1081,
-    "ward_member": 3579,
-    "zila_parishad": 25
+    "mukhiya": 2664,
+    "panchayat_samiti": 3476,
+    "ward_member": 11325,
+    "zila_parishad": 125
    },
-   "complete": 3899,
-   "complete_share": 0.7393,
-   "rows": 5274
+   "complete": 13511,
+   "complete_share": 0.7681,
+   "rows": 17590
   }
  },
  "tiers": {
   "mukhiya": {
-   "coverage": 0.841,
-   "coverage_distance": 0.159,
-   "impossible_excess": 131,
-   "rows": 3654
+   "coverage": 0.9333,
+   "coverage_distance": 0.0667,
+   "impossible_excess": 9,
+   "rows": 4055
   },
   "panchayat_samiti": {
-   "coverage": 0.9152,
-   "coverage_distance": 0.0848,
-   "rows": 4963
+   "coverage": 0.9417,
+   "coverage_distance": 0.0583,
+   "rows": 5107
   },
   "ward_member": {
-   "rows": 17738
+   "rows": 18310
   },
   "zila_parishad": {
-   "coverage": 0.367,
-   "coverage_distance": 0.633,
-   "rows": 200
+   "coverage": 0.4147,
+   "coverage_distance": 0.5853,
+   "rows": 226
   }
  }
 }

@@ -62,8 +62,25 @@ NO_PANCHAYAT = ("panchayat_samiti", "zila_parishad")
 
 
 def scanned():
-    """Documents that came through OCR, by filename."""
-    return {p.stem + ".pdf" for p in (JH / "ocr").glob("*.txt")}
+    """Documents whose published rows come from the model, by filename.
+
+    Not "documents that have been OCR'd" - every document has now, and defining
+    the split that way emptied it the moment the last one finished, so the gate
+    that guards against collateral damage silently guarded nothing.
+
+    The question the splits need is which reader a document's rows come from,
+    which is the one parse.model_read_it asks: twenty-nine documents render as
+    Latin because their Kruti Dev is neither embedded nor installed, the model
+    transcribes the wreckage, and their rows still come from the text layer.
+    Those are what an OCR change cannot touch, so those are REGRESSION.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "jh_parse", pathlib.Path(__file__).resolve().parent / "parse.py")
+    parse = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(parse)
+    return {p.stem + ".pdf" for p in (JH / "ocr").glob("*.txt")
+            if parse.model_read_it(p)}
 
 
 def rows():

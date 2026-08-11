@@ -685,13 +685,38 @@ def stacked_pages(path):
     # - which decodes to "grgo-s r€-.Ff{ 6rzr rorRrf,". Testing the length let
     # that through and the OCR cache went unread, so three districts stayed
     # empty while their text sat in data/jharkhand/ocr.
+    cached = OCR_CACHE / f"{path.stem}.txt"
+    if cached.exists() and model_read_it(cached):
+        return list(enumerate(cached.read_text(encoding="utf-8").split("\f"), 1))
+
     joined = "\n".join(t for _, t in pages)
     if any(key in joined for key, _ in TIER_HEADS):
         return pages
-    cached = OCR_CACHE / f"{path.stem}.txt"
     if not cached.exists():
         return pages
     return list(enumerate(cached.read_text(encoding="utf-8").split("\f"), 1))
+
+
+def model_read_it(cached):
+    """Did the OCR actually read this document, or only transcribe its wreckage?
+
+    Every Jharkhand document has now been read twice, and the model wins on most
+    of them - Deoghar goes from 844 rows to 2,311. On twenty-nine it returns
+    nothing usable, because the *render* is broken before the model sees it:
+    those PDFs set their Devanagari in Kruti Dev without embedding it, so poppler
+    has no such font to draw with and puts the raw Latin codepoints on the page.
+    The model then faithfully transcribes Latin. Palamu's "पंचायत समिति सदस्य"
+    arrives as "i p k r l fefr l nL;", and its rendered page is visibly wrecked
+    to a human too.
+
+    Preferring OCR everywhere would have cost 3,206 rows. Keeping the text layer
+    everywhere would have cost about 1,500. So the choice is per document, and
+    the discriminator is whether the output is Devanagari at all - which splits
+    this corpus at 3.1% against 10.6%, a gap wide enough that no document sits
+    near the line.
+    """
+    text = cached.read_text(encoding="utf-8")
+    return len(DEVANAGARI.findall(text)) / max(len(text), 1) > 0.10
 
 
 LEADING_SERIAL = re.compile(r"^\s*\d{1,3}\s*[.)|]?\s+(?=\S)")

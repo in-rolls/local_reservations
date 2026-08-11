@@ -185,6 +185,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="substring of the path to OCR")
     ap.add_argument("--force", action="store_true", help="ignore the cache")
+    ap.add_argument("--all", action="store_true",
+                    help="read the typeset documents too, not only the scans")
     args = ap.parse_args()
 
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -195,8 +197,16 @@ def main():
         cached = CACHE / f"{path.stem}.txt"
         if cached.exists() and not args.force:
             continue
-        if has_text(path):
-            continue          # already readable, nothing to gain
+        # "Already readable" turned out to be too generous. A typeset page's
+        # text layer is Kruti Dev, which converts exactly but arrives with
+        # everything the encoding costs: the block header comes back as
+        # "iiiizz[[zz[[kkkk....MMMM" with its characters tripled and no mapping
+        # recovers it, "I x<+ok" converts the district's roman numeral into
+        # "प्", and on the one page compared the extraction found 24 rows where
+        # the model found 25. Five separate defects on this branch came from
+        # reading these documents as text. --all reads them as pictures instead.
+        if has_text(path) and not args.all:
+            continue
         text = ocr(path)
         cached.write_text(text, encoding="utf-8")
         done += 1
