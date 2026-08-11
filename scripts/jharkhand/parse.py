@@ -68,6 +68,15 @@ TIERS = {
     "iapk;r lfefr ds lnL;": "panchayat_samiti",
     'ftyk ifj"kn lnL;': "zila_parishad",
     'ftyk ifj"kn ds lnL;': "zila_parishad",
+    # "mukhiya *of the* gram panchayat", 206 rows across Sahebganj, Giridih and
+    # Pakur. The same office as the bare "eqf[k;k" and the reason it has to be
+    # here rather than only in tier_of: RE_TEXT_ROW builds its post alternation
+    # from these keys, so with only the short form it matched "eqf[k;k" and left
+    # "xzke iapk;r" welded to the end of the winner's name - "ज्योती देवी ग्राम
+    # पंचायत" - which then failed to dedupe against the table reader's cleaner
+    # reading of the same seat. 501 seats were published twice.
+    "xzke iapk;r eqf[k;k": "mukhiya",
+    "xzke iapk;r ds eqf[k;k": "mukhiya",
 }
 TIER_BY_KEY = {_undouble(k): v for k, v in TIERS.items()}
 
@@ -125,7 +134,10 @@ SEAT_NUMBERED = re.compile(r"^(\d+)[\s/]+(.*\S)$")
 # - and a literal match sees neither.
 RE_TEXT_ROW = re.compile(
     r"^(?P<name>.*?)\s*(?P<post>"
-    + "|".join(r"\s+".join(re.escape(w) for w in k.split()) for k in TIERS)
+    # Longest first: "eqf[k;k" is a suffix of "xzke iapk;r eqf[k;k", and a
+    # regex alternation takes the first branch that matches, not the longest.
+    + "|".join(r"\s+".join(re.escape(w) for w in k.split())
+               for k in sorted(TIERS, key=len, reverse=True))
     + r")\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
 
 # Godda's ten notifications carry a text layer that is not Kruti Dev and not
@@ -330,8 +342,35 @@ def clean(cell):
     return re.sub(r"\s+", " ", (cell or "").replace("\n", " ")).strip()
 
 
+# The post cell as the typesetters decorate it. "in" is पद, the word "post", and
+# it appears both as a prefix - "in & xzke iapk;r eqf[k;k" - and as a trailing
+# label. "xzke iapk;r eqf[k;k" is a gram panchayat's head, the same office as the
+# bare "eqf[k;k"; the state prints it both ways and TIERS carried only one, so
+# 217 rows in the Pakur, Giridih and Sahebganj notifications resolved to no post
+# at all and their whole page fell through to the looser text reader.
+POST_PREFIX = re.compile(r"^\s*in\s*&\s*")
+POST_SUFFIX = re.compile(r"\s+in\s*$")
+POST_OF_GP = re.compile(r"^\s*xzke\s+iapk;r\s+(?:ds\s+)?")
+
+
 def tier_of(cell):
-    return TIER_BY_KEY.get(_undouble(clean(cell)))
+    """The office a post cell names.
+
+    Exact against TIER_BY_KEY, and the decorations are stripped rather than
+    matched loosely: "neoqf[k;k" is a *deputy* mukhiya and a substring match
+    would file it as the head. Each fallback still has to land on a whole key,
+    which is why the header cells - "eqf[k;k ftlls in lacaf/kr gS" - stay
+    unmatched, as they must.
+    """
+    text = _undouble(clean(cell))
+    found = TIER_BY_KEY.get(text)
+    if found:
+        return found
+    bare = POST_SUFFIX.sub("", POST_PREFIX.sub("", text))
+    found = TIER_BY_KEY.get(bare)
+    if found:
+        return found
+    return TIER_BY_KEY.get(POST_OF_GP.sub("", bare))
 
 
 # Folder names as filed, and the district they name. Only where the folder is
@@ -655,6 +694,42 @@ def stacked_pages(path):
     return list(enumerate(cached.read_text(encoding="utf-8").split("\f"), 1))
 
 
+LEADING_SERIAL = re.compile(r"^\s*\d{1,3}\s*[.)|]?\s+(?=\S)")
+
+
+def table_row(cells):
+    """One ruled-table row, located by its post rather than by position.
+
+    The columns were indexed flat - post at 1, caste at 2, gender at 3, the seat
+    at 4 - which holds only for documents that print no serial number. Eight of
+    them do print one, so every field shifted by one, `tier_of` saw a person's
+    name, the row was rejected here, and the looser text reader downstream picked
+    it up with the serial welded onto the winner: "1 pk¡nh igkfM+u iz[k.M& f" is
+    a serial, a name, and the block header that followed it on the same line.
+    2,212 rows carried a winner that was not anybody's name.
+
+    Anchoring on the post is the same fix html_rows already applies to the OCR'd
+    pages, and for the same reason: the layout decides whether a serial is a
+    column, and a fixed offset silently reads the wrong field where it is.
+
+    Falls back to the flat offsets when nothing resolves to a post, so a document
+    that parses correctly today cannot change.
+    """
+    at = next((i for i, cell in enumerate(cells) if tier_of(cell)), None)
+    if at is None or at + 2 >= len(cells):
+        return None
+    tier = tier_of(cells[at])
+    caste, woman = caste_of(cells[at + 1]), woman_of(cells[at + 2])
+    if caste is None or woman is None:
+        return None
+    # The seat identifier is the cell after the gender where the form carries
+    # one, and Pakur's does not - its table stops at the gender, and the block is
+    # a page header instead. Reading past the end there invented a seat.
+    seat = cells[at + 3] if at + 3 < len(cells) else ""
+    winner = LEADING_SERIAL.sub("", cells[at - 1]) if at else ""
+    return tier, caste, woman, seat, winner, f"{cells[at + 1]} | {cells[at + 2]}"
+
+
 def parse_pdf(path, district):
     rows = []
     block = ""
@@ -669,20 +744,76 @@ def parse_pdf(path, district):
                     cells = [clean(c) for c in raw]
                     if len(cells) < 5:
                         continue
-                    tier = tier_of(cells[1])
-                    if not tier:
+                    got = table_row(cells)
+                    if not got:
                         continue          # header, spacer, or an unknown post
-                    caste, woman = caste_of(cells[2]), woman_of(cells[3])
-                    if caste is None or woman is None:
-                        continue
+                    tier, caste, woman, seat, winner, label_raw = got
                     rows.append(emit.stamp(seat_row(
-                        district, block, tier, caste, woman, cells[4],
-                        cells[0], f"{cells[2]} | {cells[3]}"),
+                        district, block, tier, caste, woman, seat,
+                        winner, label_raw),
                         path, page.page_number, ROOT))
 
-            if len(rows) == before:
-                rows += _from_text(page, path, district, block)
+            # The text reader runs on every page, not only where the table
+            # reader found nothing, and its rows are added where the table did
+            # not already produce that seat.
+            #
+            # It used to be all-or-nothing per page, which was survivable only
+            # while the table reader failed on whole pages at a time. Once it
+            # started succeeding on most rows of a page, the pages where a few
+            # rows still failed - Deoghar and Dhanbad split the gender onto its
+            # own extracted line, so `woman_of` sees an empty cell - stopped
+            # falling back at all, and 31 real winners disappeared.
+            rows[before:] = union(rows[before:],
+                                  _from_text(page, path, district, block))
     return rows
+
+
+def page_key(row):
+    """What makes two readings of one page the same seat.
+
+    The identifier *and* the winner, not the identifier alone. Keying on the
+    identifier by itself cost 266 rows: on Koderma's image pages the seat column
+    is a picture, so the text layer keeps only the district's roman numeral and
+    every row on the page reads "VI". Two hundred and sixty-one distinct seats
+    collapsed into one.
+
+    The winner is safe to key on because both readers now strip the leading
+    serial, so they render the same person identically - which was itself a bug
+    worth 963 duplicate seats before it was fixed.
+    """
+    return (row.get("tier_local"), (row.get("seat_id_raw") or "").strip(),
+            (row.get("winner") or "").strip())
+
+
+def union(table, text):
+    """Both readers' rows for one page, each seat once.
+
+    The text reader used to run only where the table reader found nothing on the
+    whole page. That held while the table reader failed by the page; once it
+    started succeeding on most rows, pages with a few stragglers stopped falling
+    back and 31 real winners vanished. So both always run.
+
+    Where they disagree about a seat, the row that names a winner wins. The
+    table reader returns an empty name on layouts that put the name somewhere it
+    does not look, and an empty name is not a competing answer - it is the
+    absence of one.
+    """
+    best = {}
+    for row in list(table) + list(text):
+        best.setdefault(page_key(row), row)
+    rows = list(best.values())
+
+    # A row the table reader could not name is superseded by a text row for the
+    # same printed seat. An empty name is not a competing answer, it is the
+    # absence of one - but only where the page prints an identifier to match on,
+    # because "VI" and "" identify nothing and would merge the whole page.
+    named = {(r.get("tier_local"), (r.get("seat_id_raw") or "").strip())
+             for r in rows if (r.get("winner") or "").strip()}
+    return [r for r in rows
+            if (r.get("winner") or "").strip()
+            or not (r.get("seat_id_raw") or "").strip()
+            or (r.get("tier_local"),
+                (r.get("seat_id_raw") or "").strip()) not in named]
 
 
 def identity(row):
@@ -800,7 +931,12 @@ def _from_text(page, path, district, block):
         woman = woman_of(found.group("woman"))
         if not tier or caste is None or woman is None:
             continue
-        winner = clean(found.group("name"))
+        # Stripped here as well as in the table reader, so the two produce the
+        # same string for the same person. They did not, and the page-level
+        # dedupe keys on the winner: "1 रेखा देवी" and "रेखा देवी" read as two
+        # women and 963 seats were published twice, putting panchayat samiti at
+        # 109% of the seats Jharkhand has.
+        winner = LEADING_SERIAL.sub("", clean(found.group("name")))
         out.append(emit.stamp(seat_row(
             district, block, tier, caste, woman, found.group("seat"), winner,
             f"{found.group('caste')} | {found.group('woman')}"),
@@ -857,14 +993,33 @@ def main():
     # district is not in this list: it comes from the folder name and is
     # already English, so running it through the converter turned "Garhwa" into
     # "घ्ंतीूं" - real-looking Devanagari for a word that was never Kruti Dev.
+    #
+    # `winner` was missing from this list while `script` was set to devanagari
+    # regardless, so 17,115 rows shipped a person's name in Kruti Dev under a
+    # label saying it was Unicode. The cost is not cosmetic: अनिता देवी appears
+    # 92 times as `vfurk nsoh` and 55 times as अनिता देवी, so the same woman
+    # counts as two people depending on whether her district was scanned or
+    # typeset, and anything joining or grouping on name is wrong.
+    #
+    # Verified against Surya rather than against the table itself - the model
+    # reads the rendered glyphs and owes nothing to this mapping. On Garhwa's
+    # first page all 23 converted names appear in Surya's reading, and the
+    # fixed vocabulary settles it beyond the names: "O;fDr dk uke" becomes
+    # व्यक्ति का नाम, which a wrong table would not produce.
     converted = 0
     for row in rows:
-        for column in ("block", "gram_panchayat"):
+        for column in ("block", "gram_panchayat", "winner"):
             value = row.get(column) or ""
             if value and not krutidev.looks_converted(value):
                 row[column] = krutidev.to_unicode(value)
                 converted += 1
-        row["script"] = "devanagari"
+        # Describes what the row holds, not what this loop attempted. A value
+        # the converter could not turn into Devanagari - a stray Latin token,
+        # an empty page - must not be labelled as though it had been.
+        names = [row.get(c) or "" for c in ("gram_panchayat", "winner")]
+        row["script"] = ("devanagari"
+                         if any(krutidev.looks_converted(n) for n in names)
+                         else "krutidev")
     print(f"transliterated {converted:,} names from Kruti Dev to Unicode",
           file=sys.stderr)
     print(f"block names joined on (district, block_no): {filled:,} rows filled, "

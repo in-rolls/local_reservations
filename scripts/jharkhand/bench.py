@@ -125,17 +125,23 @@ def measure():
         # the same arithmetic on ward_member reports 16,200 and means nothing -
         # a number that cannot indicate a defect is decoration, and decoration
         # that a gate reads can only fire spuriously.
+        #
+        # Counted as rows sharing one seat identifier, which took three goes to
+        # get right. Rows-minus-distinct-*names* called two genuinely different
+        # panchayats an impossibility - Giridih prints नीमाडीह in block 01 and
+        # again in block 05 - and reported 160. Rows-minus-distinct-*identifiers*
+        # charged every row that states no identifier as a duplicate of every
+        # other and reported 53. The true count is 1. A gate that cannot tell 1
+        # from 160 is not evidence, and both wrong versions were mine.
         if tier == "mukhiya":
-            excess = 0
-            per_district = collections.defaultdict(list)
+            per_district = collections.defaultdict(collections.Counter)
             for row in subset:
-                per_district[row.get("district", "")].append(row)
-            for district_rows in per_district.values():
-                names = {canon.unit_name(r) for r in district_rows
-                         if canon.unit_name(r)}
-                if names:
-                    excess += max(0, len(district_rows) - len(names))
-            entry["impossible_excess"] = excess
+                seat = (row.get("seat_id_raw") or "").strip()
+                if seat:
+                    per_district[row.get("district", "")][seat] += 1
+            entry["impossible_excess"] = sum(
+                n - 1 for seats in per_district.values()
+                for n in seats.values() if n > 1)
         if tier in PUBLISHED and subset:
             coverage = len(subset) / PUBLISHED[tier]
             entry["coverage"] = round(coverage, 4)
