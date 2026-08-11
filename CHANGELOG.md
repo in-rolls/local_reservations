@@ -7,6 +7,55 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.1.1
+
+### Corrected
+
+- **17,115 winner names shipped as mojibake, labelled as Unicode.** Jharkhand's
+  parser transliterated `block` and `gram_panchayat` from Kruti Dev and never
+  `winner`, then stamped `script = devanagari` on the row regardless. So
+  अनिता देवी appeared 92 times as `vfurk nsoh` and 55 times as अनिता देवी — the
+  same woman, counted as two people, in a column that said the encoding was
+  clean. **If you joined v0.1.0 on winner name, redo it.** She is now one person,
+  147 times, and `script` describes the row rather than asserting about it.
+
+- **A caption was published as a place name.** The seat identifier puts its
+  number after "territorial constituency no.", and only the Kruti Dev spelling of
+  that label was recognised, so on a Devanagari page the caption itself became
+  the gram panchayat. 18 rows named `प्रा0नि0क्षे0 सं0` instead of a place.
+
+- **501 seats were published twice.** Two readers of the same page rendered one
+  person differently — `1 रेखा देवी` against `रेखा देवी` — and the dedupe keyed
+  on the name. Panchayat samiti read 109% of the seats Jharkhand has.
+
+### Changed
+
+- **Jharkhand is read per document by whichever reader worked.** All 117
+  documents were OCR'd with Surya and scored against their own text layer. The
+  model wins on 88 and fails on 29 — those PDFs set Devanagari in Kruti Dev
+  without embedding it, so the page renders as raw Latin codepoints and the model
+  transcribes the wreckage. Preferring OCR everywhere would have cost 3,206 rows;
+  the text layer everywhere would have cost about 1,500.
+
+  | | v0.1.0 | v0.1.1 |
+  |---|---|---|
+  | Jharkhand rows | 23,599 | 27,698 |
+  | mukhiya, of published | 84.1% | 93.3% |
+  | panchayat samiti | 91.5% | 94.2% |
+  | `gp_ward` seats that cannot be told apart | 8.1% | 3.2% |
+  | seat identifiers still drawn as pictures | 1.9% | 0.7% |
+
+  **The trade, so nobody has to find it themselves:** rows naming no panchayat
+  rise from 2.9% to 3.5% of `gp_ward`, and rows with no seat number from 2.3% to
+  3.9%. 4,099 seats were recovered that did not exist in the corpus before, and a
+  larger share of *those* are incompletely identified.
+
+### Known and not fixed
+
+- **`seat_id_raw` is still Kruti Dev on 66% of rows** — `I x<+ok@01@01&lq.Mh`.
+  It is the raw record, and for the 29 documents whose render is broken it is the
+  only form available. Installing the font and re-rendering those would close it.
+
 ## Unreleased — v0.1.0
 
 The first tagged release, and the first time the whole corpus is pinned by hash.
