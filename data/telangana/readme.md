@@ -62,6 +62,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `caste_share_vs_population` | external | &ndash; 0 | &ndash; 0 |
 | `coverage_vs_published` | external | &check; 12018 (94%) | ! 49823 (44%) |
 | `label_agrees` | internal | &check; 0 | &check; 0 |
+| `plausible_vs_registry` | external | &check; 94% | &ndash; |
 | `provenance_resolves` | internal | &check; 0 | &check; 0 |
 | `reservation_constant_within_seat` | internal | &ndash; | &ndash; |
 | `rows_in_band` | declared | &check; 12018 | &check; 49823 |

@@ -329,6 +329,106 @@ PUBLISHED = {
 # note. Jharkhand had 24 districts in 2015; Goa's 12 talukas sit under 2
 # districts; AP had 13 districts in 2020; J&K's holdings are a subset by
 # construction so it has no target.
+# How many panchayats each state has, from the Local Government Directory as
+# reproduced in NIRD's Rural Development Statistics 2019-20, section 9:
+# https://nirdpr.org.in/nird_docs/RDS/RDS2019-20/data/sec-9.pdf
+#
+# Extracted rather than typed, because thirty-two hand-copied numbers would
+# produce a typo that reads as a data defect:
+#
+#   pdftotext -layout sec-9.pdf - | awk '/District Panchayats.*Village/,0' \
+#     | grep -E "^ *[0-9]+ +[A-Z]"
+#
+# **This is not a denominator and PUBLISHED is.** A state creates panchayats, so
+# a registry snapshot from 2019-20 is an upper bound on a 2005 cycle and says
+# nothing about how complete that cycle's parse is: Rajasthan reads 81% of it in
+# 2005, 87% in 2015 and 100% in 2020, which is the state growing rather than the
+# parser improving. PUBLISHED holds figures contemporaneous with each election
+# and is what coverage is measured against.
+#
+# What this is for is the other direction - noticing that a slice holds more
+# panchayats than the state has, or a small fraction of them with nothing saying
+# why. Jharkhand's mukhiya count read 102% of its gram panchayats for months and
+# nothing objected.
+#
+# (district panchayats, intermediate panchayats, village panchayats); None where
+# the tier does not exist in that state.
+REGISTRY_ASOF = "2019-20"
+REGISTRY = {
+    "Andaman & Nicobar Islands": (2, 7, 70),
+    "Andhra Pradesh": (13, 660, 13371),
+    "Arunachal Pradesh": (25, 177, 1785),
+    "Assam": (26, 191, 2197),
+    "Bihar": (38, 534, 8387),
+    "Chhattisgarh": (27, 146, 11664),
+    "Dadra & Nagar Haveli and Daman & Diu": (3, None, 38),
+    "Goa": (2, None, 191),
+    "Gujarat": (33, 248, 14308),
+    "Haryana": (21, 126, 6197),
+    "Himachal Pradesh": (12, 78, 3226),
+    "Jammu & Kashmir": (20, 275, 4289),
+    "Jharkhand": (24, 263, 4364),
+    "Karnataka": (30, 227, 6009),
+    "Kerala": (14, 152, 941),
+    "Ladakh": (2, 31, 192),
+    "Lakshadweep": (1, None, 10),
+    "Madhya Pradesh": (51, 313, 22812),
+    "Maharashtra": (34, 351, 27881),
+    "Manipur": (6, None, 161),
+    "Odisha": (30, 314, 6798),
+    "Puducherry": (None, 10, 108),
+    "Punjab": (22, 150, 13263),
+    "Rajasthan": (33, 352, 11316),
+    "Sikkim": (4, None, 185),
+    "Tamil Nadu": (36, 388, 12525),
+    "Telangana": (32, 540, 12771),
+    "Tripura": (8, 35, 591),
+    "Uttar Pradesh": (75, 824, 58757),
+    "Uttarakhand": (13, 95, 7791),
+    "West Bengal": (22, 342, 3340),
+}
+
+# Which registry column a tier is counted in.
+#
+# Head tiers only, and that restriction is the whole point: the register counts
+# *bodies*, and a body elects exactly one head. A body elects many members, so
+# comparing 19,781 gram panchayat wards against 4,364 gram panchayats would read
+# as 453% and mean nothing.
+REGISTRY_TIER = {"gp_head": 2, "block_head": 1, "zp_head": 0}
+
+
+# Why a slice holds far fewer bodies than the state has. Without these the
+# registry check reports four mysteries; with them it reports four facts.
+REGISTRY_SCOPE = {
+    ("Uttarakhand", "2010"): "Haridwar alone, which polls on its own cycle - "
+                             "the state's other twelve districts voted in 2008 "
+                             "and 2014, and this slice is complete for the "
+                             "district it covers",
+    ("Uttarakhand", "2015"): "Haridwar alone, which polls on its own cycle - "
+                             "the state's other twelve districts voted in 2014 "
+                             "and 2019, and this slice is complete for the "
+                             "district it covers",
+    ("Andhra Pradesh", "2020"): "6 of 13 districts; sec.ap.gov.in refuses "
+                                "connections from outside India and the "
+                                "archive holds no more",
+    ("Jammu & Kashmir", "2016"): "an ad-hoc subset of districts rather than a "
+                                 "corpus, which is why no published total is "
+                                 "declared for it either",
+}
+
+
+def registry_scope(state, year):
+    """A recorded reason this slice covers less of the state than the register."""
+    return REGISTRY_SCOPE.get((state, str(year)))
+
+
+def registry(state, tier):
+    """How many bodies of this tier the state has, or None if unrecorded."""
+    at = REGISTRY_TIER.get(tier)
+    counts = REGISTRY.get(state)
+    return counts[at] if counts and at is not None else None
+
+
 DISTRICT_COUNT = {
     ("Goa", "2012"): 2, ("Goa", "2017"): 2, ("Goa", "2022"): 2,
     ("Jharkhand", "2015"): 24,

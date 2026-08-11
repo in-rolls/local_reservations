@@ -402,6 +402,62 @@ def reservation_constant_within_seat(s):
                   f"{len(counts):,} seats, all internally consistent")
 
 
+@check("plausible_vs_registry", "external")
+def plausible_vs_registry(s):
+    """Does this slice hold more bodies than the state has?
+
+    Against the Local Government Directory count, not against a figure published
+    for this election - `coverage_vs_published` owns that comparison and is the
+    stronger one wherever a contemporaneous total exists.
+
+    This is the weaker question and it is asked because nothing was asking it.
+    Jharkhand's mukhiya count read 102% of the gram panchayats the state has and
+    survived months of checks, because every check compared the parse against
+    itself. A gram panchayat elects one head; a state with 4,364 of them cannot
+    return 4,429.
+
+    **Only the ceiling is a failure.** A state creates panchayats over time, so a
+    2019-20 registry is an upper bound on a 2005 cycle and falling short of it
+    proves nothing: Rajasthan reads 81% of the current count in 2005 and 100% in
+    2020, which is the state growing. Falling short is reported, never failed.
+    """
+    counts = reference.registry(s.state, s.tier)
+    if not counts:
+        return result(SKIP, "", "",
+                      "the register counts bodies, and only a head tier has "
+                      "one seat per body")
+    # A head tier has one row per body by construction, so more rows than the
+    # state has bodies is the defect this exists to name.
+    seats = len(s.rows)
+    share = seats / counts
+    detail = (f"{seats:,} against {counts:,} in the register "
+              f"({reference.REGISTRY_ASOF})")
+    if share > 1.05:
+        return result(FAIL, f"{share:.0%}", "<=105%",
+                      detail + " - more than the state has, so some rows are "
+                               "not distinct bodies")
+    # 101% is not a rounding error for a tier with one seat per body, but the
+    # register is dated and a later cycle can outgrow it, so this warns rather
+    # than fails. Written at 105% first, which let Jharkhand's 4,429 mukhiya
+    # against 4,364 gram panchayats through - the exact count this check exists
+    # to notice.
+    if share > 1.00:
+        return result(WARN, f"{share:.0%}", "<=100%",
+                      detail + " - above the register, which is either growth "
+                               "since it was compiled or rows that are not "
+                               "distinct bodies")
+    if share < 0.60:
+        why = reference.registry_scope(s.state, s.year)
+        if why:
+            return result(PASS, f"{share:.0%}", "", f"{detail} - {why}")
+        return result(WARN, f"{share:.0%}", ">=60%",
+                      detail + " - a small share with no recorded reason. "
+                               "Either the slice covers part of the state, in "
+                               "which case say so in REGISTRY_SCOPE, or rows "
+                               "are missing")
+    return result(PASS, f"{share:.0%}", "", detail)
+
+
 @check("year_constant", "internal")
 def year_constant(s):
     years = {r.get("year") for r in s.rows}

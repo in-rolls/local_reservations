@@ -80,6 +80,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `caste_share_vs_population` | external | &ndash; 0 | &check; SC seats 68.2% vs othe | &check; SC seats 74.5% vs othe | &ndash; 0 |
 | `coverage_vs_published` | external | &ndash; 7340 | &ndash; 410 | &ndash; 2326 | &ndash; 1432 |
 | `label_agrees` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
+| `plausible_vs_registry` | external | &ndash; | &check; 10% | &ndash; | &ndash; |
 | `provenance_resolves` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
 | `reservation_constant_within_seat` | internal | &ndash; | &ndash; | &ndash; | &ndash; |
 | `rows_in_band` | declared | &check; 7340 | &check; 410 | &check; 2326 | &check; 1432 |
