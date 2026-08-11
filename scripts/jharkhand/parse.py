@@ -697,6 +697,12 @@ def stacked_pages(path):
     return list(enumerate(cached.read_text(encoding="utf-8").split("\f"), 1))
 
 
+def model_read(path):
+    """Whether this document's OCR is worth preferring over its text layer."""
+    cached = OCR_CACHE / f"{path.stem}.txt"
+    return cached.exists() and model_read_it(cached)
+
+
 def model_read_it(cached):
     """Did the OCR actually read this document, or only transcribe its wreckage?
 
@@ -919,9 +925,14 @@ def html_rows(text, path, district, page_number):
         caste, woman = caste_of(cells[at + 1]), woman_of(cells[at + 2])
         if caste is None or woman is None:
             continue
-        # the identifier is the last cell; the winner is whatever precedes the
-        # post, which is the name column on every form in this state
-        seat = cells[-1]
+        # The cell after the gender, not the last cell. Pakur's form stops at
+        # the gender - serial, name, post, caste, gender, and no seat column at
+        # all - so taking the last cell published "महिला" as 134 seats'
+        # identifier, and split_seat_id then read that word as their gram
+        # panchayat. "रिक्त" and "निर्विरोध" arrived the same way. The winner is
+        # whatever precedes the post, which is the name column on every form
+        # here.
+        seat = cells[at + 3] if at + 3 < len(cells) else ""
         winner = cells[at - 1] if at else ""
         row = seat_row(district, "", tier, caste, woman, seat, winner,
                        f"{cells[at + 1]} | {cells[at + 2]}")
@@ -984,19 +995,29 @@ def main():
         # two thirds of the state.
         for path in sorted(folder.rglob("*.pdf")):
             try:
-                got = parse_pdf(path, district)
-                # Merged, not chosen between. Ranchi's notification is read
-                # by both readers and each finds tiers the other misses: the
-                # ruled-table reader gets 3,453 ward rows and no mukhiya at
-                # all, the stacked reader 2,171 ward rows plus the 95 mukhiya
-                # and 35 zila parishad seats. Taking whichever answered first,
-                # as this did, silently dropped whichever tier the other one
-                # held - and it only became visible when a change to the post
-                # vocabulary flipped which reader answered first.
-                got = merge(got, parse_stacked(path, district))
-                got = merge(got, [r for number, text in stacked_pages(path)
-                                  for r in ocr_rows(text, path, district,
-                                                    number)])
+                read_by_model = [r for number, text in stacked_pages(path)
+                                 for r in ocr_rows(text, path, district, number)]
+                # Merged, not chosen between. Ranchi's notification is read by
+                # both readers and each finds tiers the other misses: the
+                # ruled-table reader gets 3,453 ward rows and no mukhiya at all,
+                # the stacked reader 2,171 ward rows plus the 95 mukhiya and 35
+                # zila parishad seats. Taking whichever answered first silently
+                # dropped whichever tier the other one held.
+                #
+                # Which goes first decides which wins, because merge() works per
+                # tier. The text layer led, and so the model's reading was
+                # discarded for every tier the text layer also found - Ranchi
+                # published 4,245 rows of which 61 had a Devanagari seat
+                # identifier, because only zila parishad, the one tier the text
+                # layer missed, came from the model at all. Where the page
+                # renders properly the model is the better reader, so it leads.
+                if model_read(path):
+                    got = merge(read_by_model, parse_pdf(path, district))
+                    got = merge(got, parse_stacked(path, district))
+                else:
+                    got = parse_pdf(path, district)
+                    got = merge(got, parse_stacked(path, district))
+                    got = merge(got, read_by_model)
                 rows += got
             except Exception as exc:  # noqa: BLE001 - report, keep going
                 failed.append((path.name, type(exc).__name__))

@@ -50,6 +50,18 @@ here is usually the thing that was wrong.
   3.9%. 4,099 seats were recovered that did not exist in the corpus before, and a
   larger share of *those* are incompletely identified.
 
+### How to read "94% of published"
+
+Not as precision. Coverage compares rows we hold against the seat count a state publishes, and
+a reader that **invents** rows scores better on it than one that does not. Jharkhand's mukhiya
+count read 102% of the gram panchayats the state has before any of this work — impossible, and
+it looked like excellent coverage.
+
+Both readers here get pages wrong in both directions. On one Ranchi page the model returned
+nothing, the text layer returned four rows, and the page holds three. So coverage is a
+floor-and-ceiling sanity check, not an accuracy measure, and the honest error bar on any
+per-state figure in this release is wider than the figure's own precision suggests.
+
 ### Known and not fixed
 
 - **`seat_id_raw` is still Kruti Dev on 66% of rows** — `I x<+ok@01@01&lq.Mh`.
