@@ -41,8 +41,23 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "scripts" / "common"))
 import ocr_engine  # noqa: E402
 
-DOCUMENTS = ROOT / "data" / "karnataka" / "tzp_2016_elected"
-CACHE = ROOT / "data" / "karnataka" / "ocr"
+DATA = ROOT / "data" / "karnataka"
+CACHE = DATA / "ocr"
+
+# All three sets go through Surya. The elected-member notifications have no
+# text layer at all; the other two have one and it is Nudi/Baraha ASCII-encoded
+# Kannada - "£ÀªÀÄÆ£É-1" for "ನಮೂನೆ-1" - with the zilla gazettes tripling their
+# characters on top of that. The only maintained decoder found was
+# aravindavk/ascii2unicode: GPL, no LICENSE file, absent from PyPI and
+# self-described as Linux-only. Reading the picture is cheaper than adopting
+# that, and it is the same call Jharkhand's Kruti Dev pages got.
+SETS = ["tzp_2016_elected", "tzp_2016_reservation", "gp_2015"]
+
+# Procedure, not data: a rule book, a returning-officer manual, a presiding-
+# officer manual, and a general guide to the election. 402 of gp_2015's 544
+# pages, about two hours of OCR, and not one row among them.
+SKIP = ("Rules_Book", "GP_RO_Manual", "GP_PRO_Manual",
+        "Karnataka_panchayatraj_chunavane")
 
 MODEL = os.environ.get("SURYA_MLX_PATH")
 
@@ -54,12 +69,20 @@ def main():
     ap.add_argument("--limit", type=int)
     args = ap.parse_args()
 
-    CACHE.mkdir(parents=True, exist_ok=True)
-    documents = sorted(DOCUMENTS.glob("*.pdf"))
+    documents = [p for name in SETS
+                 for p in sorted((DATA / name).glob("*.pdf"))
+                 if not any(token in p.name for token in SKIP)]
     if args.only:
         documents = [p for p in documents if args.only.lower() in p.name.lower()]
     if args.limit:
         documents = documents[:args.limit]
+
+    CACHE.mkdir(parents=True, exist_ok=True)
+    # One flat cache. Every filename already carries its set - the harvester
+    # names files after the archive path they came from - so a stem collision
+    # across the three is not possible.
+    stems = [p.stem for p in documents]
+    assert len(set(stems)) == len(stems), "cache stems are not unique"
 
     done = skipped = 0
     for path in documents:
