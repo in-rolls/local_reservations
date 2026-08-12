@@ -107,7 +107,12 @@ def rows_of_document(stem, text):
                 continue
             caste, caste_local, woman = parsed
             number, name = tables.seat(cells[layout["seat"]])
-            serial, _ = tables.seat(cells[layout["serial"]] + "-")
+            # the four-column form prints no serial; numbered() then has
+            # nothing to fall back on, which is correct - that form always
+            # carries the constituency number in the seat cell itself
+            serial = None
+            if "serial" in layout:
+                serial, _ = tables.seat(cells[layout["serial"]] + "-")
             printed_party = cells[layout["party"]]
             row = {
                 "state": "Karnataka", "year": YEAR,
@@ -220,6 +225,24 @@ def winner_address(cell):
     return _split(cell)[2]
 
 
+def silent_pages(files):
+    """(document, page) for every page that produced no row.
+
+    A document that yields nothing is obvious; a page that yields nothing
+    inside a document that otherwise parses is not, and both of the readings
+    this parser got wrong were on such a page. The OCR already marks a page it
+    could not read; this marks a page nobody could parse, which is a different
+    failure and just as quiet.
+    """
+    out = []
+    for path in files:
+        text = path.read_text(encoding="utf-8")
+        for page_no, page in enumerate(text.split("\f"), 1):
+            if not tables.table_rows(page):
+                out.append((path.stem, page_no, "ocr-unread" in page))
+    return out
+
+
 def gaps(rows):
     """Missing and repeated constituency numbers, per document."""
     by_document = collections.defaultdict(list)
@@ -288,9 +311,17 @@ def main():
         rows.extend(rows_of_document(
             path.stem, path.read_text(encoding="utf-8")))
 
+    # Which of two readings of one seat survives, when they disagree. A row
+    # whose party resolved against the fixed list is a row whose cells were
+    # read cleanly, so it is better evidence than one that came first.
+    def read_cleanly(row):
+        return (bool(row["party"]), bool(row["winner"]),
+                bool(row["caste_reservation"]))
+
     kept, conflicts = tables.dedupe(
         rows, key=lambda r: (r["source_pdf"], r["seat_no"])
-        if r["seat_no"] else None)
+        if r["seat_no"] else None,
+        better=read_cleanly)
 
     # before the column is dropped: kept holds the same objects as rows, so
     # popping first left the check with almost nothing to read and it reported
@@ -318,6 +349,19 @@ def main():
           f"({partied / max(len(kept), 1):.1%})")
     print(f"  woman-reserved {women:>5} "
           f"({women / max(len(kept), 1):.1%}; the Act requires 50%)")
+
+    quiet = silent_pages(files)
+    total_pages = sum(len(f.read_text(encoding="utf-8").split("\f"))
+                      for f in files)
+    unread = sum(1 for _, _, was_unread in quiet if was_unread)
+    print(f"\n{total_pages - len(quiet)} of {total_pages} pages produced rows; "
+          f"{len(quiet)} did not ({unread} of those the OCR had already marked "
+          f"unread)")
+    for stem, page_no, was_unread in quiet[:8]:
+        print(f"  {stem[-38:]:40s} p{page_no}"
+              + ("  (ocr-unread)" if was_unread else ""))
+    if len(quiet) > 8:
+        print(f"  ... and {len(quiet) - 8} more")
 
     missing = gaps(kept)
     print(f"\nseat numbers contiguous in {documents - len(missing)} of "

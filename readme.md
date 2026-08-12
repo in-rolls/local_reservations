@@ -15,7 +15,7 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 52 | 39,335 |
+| [Open gaps](WORKLIST.md) | 52 | 39,402 |
 | [Blocked](WORKLIST.md) | 2 | 70,410 |
 | [Parked](WORKLIST.md) | 10 | 13,079 |
 | [Undetermined](WORKLIST.md) | 2 | 1,477 |
@@ -65,6 +65,8 @@ are still in the legacy font they were printed in.
 | Karnataka | 2002 | `gp_head` | 5,320 | 36% | 27 | — | no winner published | [data/karnataka/](data/karnataka/) |
 | Karnataka | 2005 | `gp_head` | 5,322 | 32% | 27 | — | no winner published | [data/karnataka/](data/karnataka/) |
 | Karnataka | 2007 | `gp_head` | 5,322 | 33% | 27 | — | no winner published | [data/karnataka/](data/karnataka/) |
+| Karnataka | 2016 | `block_member` | 3,478 | 51% | 30 | — | — | [data/karnataka/](data/karnataka/) |
+| Karnataka | 2016 | `zp_member` | 888 | 48% | 26 | — | — | [data/karnataka/](data/karnataka/) |
 | Telangana | 2019 | `gp_head` | 12,018 | 50% | 30 | 94% of 12,728 seats | — | [data/telangana/](data/telangana/) |
 | Telangana | 2019 | `gp_ward` | 49,823 | 51% | 30 | 44% of 112,242 seats | — | [data/telangana/](data/telangana/) |
 
@@ -96,7 +98,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | Himachal Pradesh | - | - | - | documents, no parser | [data/himachal/](data/himachal/) - 1 scan |
 | Jammu & Kashmir | gp_head, gp_ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
 | Jharkhand | block_member, gp_head, gp_ward, zp_member | 2015 | 29,111 | parsed | [data/jharkhand/](data/jharkhand/) |
-| Karnataka | gp_head | 1993, 2000, 2002, 2005, 2007 | 26,548 | parsed | [data/karnataka/](data/karnataka/) |
+| Karnataka | block_member, gp_head, zp_member | 1993, 2000, 2002, 2005, 2007, 2016 | 30,914 | parsed | [data/karnataka/](data/karnataka/) |
 | Kerala | gp_ward, block_member, zp_member, ulb_ward | 2010, 2015, 2020 | 65,296 | parsed | [local_elections_kerala](https://github.com/in-rolls/local_elections_kerala) |
 | Ladakh | - | - | - | not held | - |
 | Lakshadweep | - | - | - | not held | - |

@@ -27,10 +27,10 @@ The document holds more than our parse recovered. Each line says what would clos
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
+| 147 | Karnataka | 2016 | `block_member` | the row does not say which seat | Davanagere 38, Koppal 30, Chamarajanagar 20 |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 129 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Pakur 126, Palamu 1, Seraikela Kharsawan 1 |
 | 97 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Lohardaga 57, Godda 25, Ranchi 14 |
-| 80 | Karnataka | 2016 | `block_member` | the row does not say which seat | Davanagere 38, Chamarajanagar 20, Chitradurga 17 |
 | 63 | Jammu & Kashmir | 2016 | `gp_head` | the row does not say which panchayat | Jammu 49, JAMMU 14 |
 | 55 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
 | 51 | Jammu & Kashmir | 2016 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |

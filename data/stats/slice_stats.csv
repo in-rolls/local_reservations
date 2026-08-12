@@ -27,7 +27,8 @@ Karnataka,2000,gp_head,adhyaksha,5320,27,167,5287,0,1908,0.3586,0.182,0.0534,0.3
 Karnataka,2002,gp_head,adhyaksha,5320,27,167,5287,0,1917,0.3603,0.1829,0.0534,0.3331,0.4306,all_seats,latin,0.0,0.0,0.0062,1.0,1.0,16,1,1,,unknown,gram panchayats,,,,4000..7000,karnataka/gp_head/2002
 Karnataka,2005,gp_head,adhyaksha,5322,27,167,5289,0,1708,0.3209,0.1813,0.0823,0.3356,0.4008,all_seats,latin,0.0,0.0,0.0062,1.0,1.0,16,1,1,,unknown,gram panchayats,,,,4000..7000,karnataka/gp_head/2005
 Karnataka,2007,gp_head,adhyaksha,5322,27,167,5289,0,1777,0.3339,0.18,0.0836,0.332,0.4044,all_seats,latin,0.0,0.0,0.0062,1.0,1.0,16,1,1,,unknown,gram panchayats,,,,4000..7000,karnataka/gp_head/2007
-Karnataka,2016,block_member,taluk panchayat member,1500,12,70,0,0,756,0.504,0.1887,0.1093,0.19,0.512,all_seats,kannada,0.0,0.0,1.0,1.0,0.0033,522,70,195,,,,,,,2500..4200,karnataka/block_member/2016
+Karnataka,2016,block_member,taluk panchayat member,3478,30,166,0,0,1762,0.5066,0.1961,0.0978,0.1949,0.5112,all_seats,kannada,0.0,0.0,1.0,1.0,0.0014,145,166,459,,,,,,,2500..4200,karnataka/block_member/2016
+Karnataka,2016,zp_member,zilla panchayat member,888,26,0,0,0,425,0.4786,0.1937,0.0946,0.2095,0.5023,all_seats,kannada,0.0,1.0,1.0,1.0,0.0,0,26,102,,,,,,,600..1200,karnataka/zp_member/2016
 Kerala,2010,block_member,block panchayat member,2078,14,151,0,18,1095,0.5269,0.1064,0.0144,0.0,0.8792,all_seats,latin,0.0,0.0,1.0,0.0,0.0,0,1,1,,,,,,,1500..2500,kerala/block_member/2010
 Kerala,2010,gp_ward,grama panchayat member,16641,14,0,978,23,8594,0.5164,0.1059,0.015,0.0,0.879,all_seats,latin,0.0,1.0,0.0,0.0,0.0,0,1,1,,,,,,,14000..18000,kerala/gp_ward/2010
 Kerala,2010,zp_member,district panchayat member,331,14,0,0,32,169,0.5106,0.1057,0.0151,0.0,0.8792,all_seats,latin,0.0,1.0,1.0,0.0,0.0,0,1,1,,,,,,,250..400,kerala/zp_member/2010

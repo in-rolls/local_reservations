@@ -192,10 +192,34 @@ def merge_continuations(rows, width):
 
 # Which column is what, by how many columns the table has. Ballari and a few
 # others print the taluk's name as a second column; most districts do not.
+# Four shapes, and the fourth is not a narrowing of the others. Bidar, Koppal,
+# Raichur and Yadgir - four contiguous northern districts - print no serial at
+# all and put the winner *before* the reservation, where every other district
+# puts it after. 15 documents and about 300 rows returned nothing at all until
+# this existed, and none of them was an OCR failure: the model read them and
+# the reader had no shape to put them in.
+#
+# Positional mapping is exactly what makes a swapped pair dangerous, which is
+# why looks_right() exists - a winner column read as the reservation fails it
+# on the first page, because people's names do not canonicalise to a list of
+# four categories.
+# A width can have more than one order, so this maps a width to *candidates*
+# and looks_right() picks between them. Bidar and Raichur both print four
+# columns and they are not the same four:
+#
+#     Bidar    seat | winner      | reservation | party
+#     Raichur  seat | reservation | winner      | party
+#
+# Asserting one order per width filed ten documents as unreadable when the OCR
+# had read them perfectly well. Using the guard to choose rather than only to
+# veto costs nothing - a wrong order fails looks_right on the first page,
+# because people's names do not canonicalise to a list of four categories.
 LAYOUTS = {
-    5: {"serial": 0, "seat": 1, "reservation": 2, "winner": 3, "party": 4},
-    6: {"serial": 0, "taluk": 1, "seat": 2, "reservation": 3, "winner": 4,
-        "party": 5},
+    4: [{"seat": 0, "winner": 1, "reservation": 2, "party": 3},
+        {"seat": 0, "reservation": 1, "winner": 2, "party": 3}],
+    5: [{"serial": 0, "seat": 1, "reservation": 2, "winner": 3, "party": 4}],
+    6: [{"serial": 0, "taluk": 1, "seat": 2, "reservation": 3, "winner": 4,
+         "party": 5}],
 }
 
 
@@ -231,15 +255,15 @@ def table_rows(page):
     if not widths:
         return []
     width = max(set(widths), key=widths.count)
-    layout = LAYOUTS[width]
     merged = merge_continuations(rows, width)
     data = [r for r in merged if len(r) == width]
-    if not looks_right(data, layout):
-        return []
-    return [(r, layout) for r in data]
+    for layout in LAYOUTS[width]:
+        if looks_right(data, layout):
+            return [(r, layout) for r in data]
+    return []
 
 
-def dedupe(rows, key):
+def dedupe(rows, key, better=None):
     """(kept, conflicts). A seat stated twice identically is one seat.
 
     Surya sometimes emits a page's table twice - Siruguppa's first page came
@@ -247,6 +271,13 @@ def dedupe(rows, key):
     number alone would also hide a real disagreement, so two rows that share a
     seat number and differ in what they say are kept apart and reported: that
     is a page read two ways, which is a finding, not a duplicate.
+
+    `better` decides which of two disagreeing rows survives. Without it the
+    first wins, and on Bidar's second page the first is the wrong one: seats 16
+    and 17 each arrive as a garbled row - the winner read as "ವಿಶ್ವದ ಗಣಕಾಲವು",
+    the party unresolvable - before the real ಮೆನ್ನಳ್ಳಿ and ನಾಗೂರಾ rows whose
+    parties resolve cleanly. Order is not evidence, and keeping the first there
+    kept the garbage and dropped the reading that is plainly right.
     """
     kept, seen, conflicts = [], {}, []
     for row in rows:
@@ -258,5 +289,9 @@ def dedupe(rows, key):
             seen[identity] = row
             kept.append(row)
         elif seen[identity] != row:
-            conflicts.append((seen[identity], row))
+            held = seen[identity]
+            conflicts.append((held, row))
+            if better and better(row) > better(held):
+                kept[kept.index(held)] = row
+                seen[identity] = row
     return kept, conflicts
