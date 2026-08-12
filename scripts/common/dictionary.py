@@ -239,6 +239,15 @@ COLUMNS = [
            note="The compound identifier as printed - Bihar's "
                 "'Piprasi/SEMRA LABEDAHA/01'. Not a join key: it names no "
                 "district, so two blocks sharing a name would merge."),
+    column("seat_no_from_serial", "boolean", severity=INFO,
+           note="Set where the constituency number was taken from the row's "
+                "serial column because the seat cell printed only a name. "
+                "Karnataka's 2016 notifications come in two shapes - one "
+                "prints '1-ನೀರಬೂದಿಹಾಳ', the other a number column and a bare "
+                "name - and 442 of the first 1,737 rows are the second. Only "
+                "adopted where the serials run 1..N once across the whole "
+                "document, since some restart per page and would otherwise "
+                "renumber half a taluk onto seats that already exist."),
     column("source_url", "string", length=(8, 300), severity=INFO,
            note="Where the document was fetched from. source_path says which "
                 "file on disk a row came from and source_page which page of "
@@ -363,6 +372,20 @@ ROW_BANDS = {
     ("Kerala", "block_member"): (1500, 2500),
     ("Kerala", "zp_member"): (250, 400),
     ("Karnataka", "gp_head"): (4000, 7000),
+    # The state went to the polls for 3,884 taluk panchayat and 1,083 zilla
+    # panchayat seats in February 2016, in two phases, and declared 3,882 of
+    # the taluk results. Those are the numbers these bands are set against
+    # rather than against what the parse happens to hold.
+    #
+    # The archive holds 169 of Karnataka's 176 taluks and 26 of its 30 zilla
+    # panchayats - one more 404s and three were never captured - so a complete
+    # parse of what we have lands near 3,700 and 940, not at the published
+    # totals. The lower bounds allow for that and for a taluk or two lost
+    # entirely; the upper bounds sit just above what the state published,
+    # because past that a row count has stopped being coverage and started
+    # being double counting.
+    ("Karnataka", "block_member"): (2500, 4200),
+    ("Karnataka", "zp_member"): (600, 1200),
     ("Telangana", "gp_head"): (10000, 14000),
     ("Telangana", "gp_ward"): (40000, 60000),
 }

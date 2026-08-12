@@ -447,6 +447,22 @@ Karnataka,2007,gp_head,reservation_constant_within_seat,internal,skip,,,"the sou
 Karnataka,2007,gp_head,plausible_vs_registry,external,pass,89%,,"5,322 against 6,009 in the register (2019-20)"
 Karnataka,2007,gp_head,year_constant,internal,pass,2007,2007,
 Karnataka,2007,gp_head,provenance_resolves,internal,pass,0,0,1 documents
+Karnataka,2016,block_member,rows_in_band,declared,fail,1500,2500..4200,
+Karnataka,2016,block_member,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bca_bcb
+Karnataka,2016,block_member,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Karnataka,2016,block_member,coverage_vs_published,external,skip,1500,,no published total for this slice
+Karnataka,2016,block_member,women_share_vs_statute,external,skip,756/1500,,no statutory rule declared
+Karnataka,2016,block_member,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Karnataka,2016,block_member,caste_share_vs_population,external,skip,0,,no population columns in this source
+Karnataka,2016,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Karnataka,2016,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
+Karnataka,2016,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Karnataka,2016,block_member,seat_key_unique,internal,warn,522,0,"largest group 30 at ('Chitradurga', 'Chellakere', '', '', '')"
+Karnataka,2016,block_member,tier_local_maps_to_one_tier,internal,pass,taluk panchayat member,block_member,
+Karnataka,2016,block_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
+Karnataka,2016,block_member,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
+Karnataka,2016,block_member,year_constant,internal,pass,2016,2016,
+Karnataka,2016,block_member,provenance_resolves,internal,pass,0,0,70 documents
 Kerala,2010,block_member,rows_in_band,declared,pass,2078,1500..2500,
 Kerala,2010,block_member,caste_scheme_respected,declared,pass,"NONE,SC,ST","NONE,SC,ST",sc_st_only
 Kerala,2010,block_member,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance

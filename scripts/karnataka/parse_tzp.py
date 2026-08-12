@@ -107,6 +107,7 @@ def rows_of_document(stem, text):
                 continue
             caste, caste_local, woman = parsed
             number, name = tables.seat(cells[layout["seat"]])
+            serial, _ = tables.seat(cells[layout["serial"]] + "-")
             printed_party = cells[layout["party"]]
             row = {
                 "state": "Karnataka", "year": YEAR,
@@ -130,8 +131,36 @@ def rows_of_document(stem, text):
                 "taluk_printed": (cells[layout["taluk"]]
                                   if "taluk" in layout else ""),
             }
+            row["_serial"] = serial
             out.append(emit.stamp(row, source, page_no, ROOT, archive))
-    return out
+    return numbered(out)
+
+
+def numbered(rows):
+    """Fill in the constituency number where the seat cell does not carry one.
+
+    Three layouts, not two. Badami prints a running serial and then the
+    constituency as "1-ನೀರಬೂದಿಹಾಳ"; Chamarajanagara prints the constituency
+    number in the first column and the bare name in the second. 522 of the
+    first 1,500 rows came from the second kind and had no seat number at all -
+    which the contiguity check could not see, because it only looked at
+    documents that had numbers to check.
+
+    The serial is only adopted where it behaves like a constituency number:
+    running 1..N once across the whole document. That test matters because it
+    is not always true - Siruguppa restarts its serial at 1 on page 3 while the
+    constituency there is 16, and taking the serial for that document would
+    have renumbered half a taluk onto seats that already exist.
+    """
+    if all(r["seat_no"] for r in rows) or not rows:
+        return rows
+    serials = [r.get("_serial") for r in rows]
+    if None not in serials and serials == list(range(1, len(serials) + 1)):
+        for row in rows:
+            if not row["seat_no"]:
+                row["seat_no"] = row["_serial"]
+                row["seat_no_from_serial"] = 1
+    return rows
 
 
 # A winner's cell holds up to three things and the gazette marks the joins.
@@ -243,7 +272,7 @@ COLUMNS = ["state", "year", "tier", "tier_local", "district", "block",
            "caste_reservation_local", "woman_reserved", "reservation",
            "reservation_raw", "winner", "relation_name", "winner_address",
            "party",
-           "party_local", "script", "text_source"]
+           "party_local", "script", "text_source", "seat_no_from_serial"]
 
 
 def main():
@@ -271,6 +300,7 @@ def main():
                     if tables.clean(r.get("taluk_printed", ""))})
     for row in kept:
         row.pop("taluk_printed", None)
+        row.pop("_serial", None)
     by_tier = collections.Counter(r["tier"] for r in kept)
     for tier in sorted(by_tier):
         subset = [r for r in kept if r["tier"] == tier]
