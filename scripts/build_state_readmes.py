@@ -57,6 +57,34 @@ name nobody, which is a property of the document rather than a gap in the
 parse. Ward numbers arrive in five different shapes, including one with a soft
 hyphen inside it (`Ward­IV`), so they are normalised rather than read
 literally.""",
+    "karnataka": """Two very different sources sit under this state. The
+1993-2007 gram panchayat rows come from a Stata file, a reservation history
+that names no winner in any cycle because it is a roster rather than a result.
+The 2016 taluk and zilla panchayat rows come from 195 notifications harvested
+from the web archive's copy of `karsec.gov.in`; every one of them is a copier
+scan with no text layer, read with Surya, and they carry the party the winner
+represented, which almost nothing else in this corpus does.
+
+**Two further groups of documents were harvested, are committed here, and are
+deliberately not parsed.** Saying so is the point of this paragraph: they are
+not a gap and nobody needs to look at them again.
+
+`tzp_2016_reservation` is 211 files of seat-level reservation for the same 2016
+seats the notifications cover - and the notifications' own third column already
+states the reservation, so reading these would produce a second opinion on a
+field we have rather than a new field.
+
+`gp_2015` is 33 files in which nobody is named. Form-1 counts nomination papers
+received, Form-2 those valid after scrutiny, Form-3 the candidates left in the
+fray, Form-5 turnout, and the file called `Result.pdf` is Form-4 - the final
+count including unopposed wins, but as district x taluk x 26 numeric columns.
+The one thing in it worth knowing about is that those per-taluk counts of seats
+and members elected by category are the shape of an external denominator, and
+they come from the commission that ran the election rather than from the LGD
+register. That is a different job from parsing seats.
+
+Both groups keep their manifests, so any file can be traced to the URL and
+capture it came from, and re-read by anyone who disagrees with this.""",
     "jharkhand": """Place names are printed in Kruti Dev, a legacy font
 encoding rather than Unicode, and are shipped as they were printed - `script`
 says so on every row. They are not transliterated, so joining these to another

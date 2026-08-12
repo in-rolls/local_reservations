@@ -49,18 +49,44 @@ import ocr_engine  # noqa: E402
 DATA = ROOT / "data" / "karnataka"
 CACHE = DATA / "ocr"
 
-# All three sets go through Surya. The elected-member notifications have no
-# text layer at all; the other two have one and it is Nudi/Baraha ASCII-encoded
-# Kannada - "£ÀªÀÄÆ£É-1" for "ನಮೂನೆ-1" - with the zilla gazettes tripling their
-# characters on top of that. The only maintained decoder found was
-# aravindavk/ascii2unicode: GPL, no LICENSE file, absent from PyPI and
-# self-described as Linux-only. Reading the picture is cheaper than adopting
-# that, and it is the same call Jharkhand's Kruti Dev pages got.
-SETS = ["tzp_2016_elected", "tzp_2016_reservation", "gp_2015"]
+# One set of the three. The notifications have no text layer at all - every one
+# of the 195 is a copier scan - so Surya reads them directly.
+SETS = ["tzp_2016_elected"]
 
-# Procedure, not data: a rule book, a returning-officer manual, a presiding-
-# officer manual, and a general guide to the election. 402 of gp_2015's 544
-# pages, about two hours of OCR, and not one row among them.
+# The other two are held, committed, provenanced, and deliberately not read.
+# This is a decision, not an oversight, and it is written here because this is
+# the file somebody re-runs when they wonder why the cache is smaller than the
+# harvest.
+#
+# The harvest ranked all three by file count and that was the wrong ranking:
+# 211 documents can be worth less than 195, and 33 can be worth nothing at all.
+NOT_PARSED = {
+    "tzp_2016_reservation": (
+        "211 files, 415 pages. Seat-level reservation for the 2016 taluk and "
+        "zilla seats - the same seats the elected-member notifications cover, "
+        "whose own third column already states the reservation. Reading these "
+        "would produce a second opinion on a field we have, not a new one. "
+        "About three hours of OCR for a cross-check."),
+    "gp_2015": (
+        "33 files, 544 pages. Nobody is named anywhere in them. Form-1 counts "
+        "nomination papers received, Form-2 those valid after scrutiny, Form-3 "
+        "the candidates left in the fray, Form-5 turnout, and the file called "
+        "Result.pdf is Form-4 - the final count including unopposed wins, as "
+        "district x taluk x 26 numeric columns. 402 of the 544 pages are a "
+        "rule book and three officer manuals on top of that.\n"
+        "One thing in here is worth knowing about without rediscovering it: "
+        "Form-4's per-taluk counts of seats and members elected by category "
+        "are the shape of an external denominator, of the kind "
+        "plausible_vs_registry wants, and they come from the commission that "
+        "ran the election rather than from the LGD register. That is a "
+        "different job from parsing seats and nobody should stumble into it."),
+}
+
+# The second reason a document goes unread, and not the same as NOT_PARSED
+# above: these are individual files inside a set we do read. Procedure, not
+# data - a rule book, a returning-officer manual, a presiding-officer manual
+# and a general guide to the election. Kept in force because a future run that
+# re-enables gp_2015 should still skip them.
 SKIP = ("Rules_Book", "GP_RO_Manual", "GP_PRO_Manual",
         "Karnataka_panchayatraj_chunavane")
 

@@ -46,12 +46,22 @@ we get it" but "what is in it".
 | Odisha | 6 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member — **district totals, not seat-level** |
 | Tamil Nadu | 11 | 1 | 0 | 74 | gazettes, but **municipal/corporation**, not village panchayat |
 | Chandigarh, Puducherry, Delhi | 7 | 2 | 0 | 707 | mostly urban local bodies |
-| Karnataka | 0 | 1 | 0 | 7 | `Karnataka_GP_ReservationHistory.dta` — already processed |
+| **Karnataka** | 0 | 439 | 0 | 1,545 | **2016 taluk & zilla panchayat winners with party**; plus `Karnataka_GP_ReservationHistory.dta`. See the note below — 244 of the 439 are deliberately unread |
 | Assam, Himachal | 1 | 1 | 0 | 11 | one file each; Assam's is municipal |
 
 Bold rows are the ones holding **GP-level reservation in machine-readable form
 already on disk**. That is the shortest path to new coverage in this repo, and it
 needs no network access at all.
+
+**Karnataka's 439 documents are three groups and only one is parsed.** The 195
+elected-member notifications carry seat, reservation, winner and party for the
+2016 taluk and zilla panchayat cycle. The other two - 211 reservation gazettes
+and 33 gram panchayat 2015 files - are held, provenanced and deliberately not
+read: the gazettes restate a reservation the notifications already print, and
+the 2015 files name nobody, being nomination counts, turnout and district x
+taluk totals. That is a decision rather than a backlog; the reasoning is in
+[data/karnataka/readme.md](data/karnataka/readme.md) so it does not have to be
+made twice.
 
 ### Four states buildable now, without acquisition
 
