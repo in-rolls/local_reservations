@@ -7,6 +7,90 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.0
+
+### Added
+
+- **Karnataka's 2016 taluk and zilla panchayat members: 4,366 seats across
+  30 districts and 166 taluks.** Two tiers the corpus held no row for, and the
+  state's first winners — everything Karnataka had before was a gram panchayat
+  reservation roster for 1993–2007, which names nobody by construction. 3,478
+  taluk panchayat seats against the 3,884 the state polled, and 888 zilla
+  panchayat against 1,083; the archive holds 169 of 176 taluks and 26 of 30
+  zilla panchayats, so the rest was never captured rather than lost here.
+
+- **A `party` column with something in it.** These notifications print the
+  party the winner represented, which almost nothing else in the corpus does:
+  Congress 1,852, BJP 1,460, JD(S) 632, Independent 178, JD(U) 5. It is
+  canonicalised against a fixed list and left **blank rather than guessed**
+  where the cell does not settle the question — a reading truncated to
+  ಭಾರತೀಯ fits both of the two largest parties. 237 rows are blank on that
+  basis, and `party_local` keeps what the page actually said.
+
+- **Every row says where its document came from.** `source_url` and
+  `source_capture` join from the harvest manifest, so a row refetches the exact
+  bytes it was read from. `source_path` and `source_page` already said which
+  file and which page; nothing said which URL.
+
+- **`scripts/archive_sweep.py`** asks all 31 state election commissions what
+  the web archive holds for them — 23 resolve, ~14,000 PDFs. Karnataka's 828
+  are what this release came from, and they were found by accident before this
+  existed.
+
+### What to know before using the Karnataka rows
+
+- **50.1% of seats are reserved for women**, against the 50% the Karnataka
+  Panchayat Raj Act requires. That comes from a column nothing here was tuned
+  against and is the best evidence available that the reservation is read
+  correctly. Caste: 2,224 unreserved, 864 BC, 854 SC, 424 ST, with BC split
+  A/B in `caste_reservation_local` because Karnataka reserves for them
+  separately.
+
+- **6.6% of rows have no resolved party.** That is the honest measure of how
+  many cells did not read cleanly, not a claim that those seats were
+  independent — `Independent` is a value in its own right, 178 of them.
+
+- **Three of 195 documents contribute nothing, and 25 of 586 pages.** Both are
+  printed by the parser rather than left to be inferred from a row count.
+
+- **~100 rows carry no constituency number**, so they share a seat key within
+  their taluk. Those documents print only a name where others print `1-name`;
+  where a document's serials run 1..N they are adopted and flagged
+  `seat_no_from_serial`, and where they do not, the number is left empty rather
+  than invented. Carried on the worklist.
+
+- **24 documents lose a seat**, usually where a row straddles a page break, and
+  Bidar loses two more to three washed-out rows at the top of a page. Every gap
+  is reported: a taluk's constituencies are numbered consecutively, so a lost
+  row shows as a hole rather than as a plausibly short table.
+
+### Changed
+
+- **Uttar Pradesh and Rajasthan are `parked`, not open gaps.** Their remaining
+  entries are real and are deliberately not being worked; open gaps fell from
+  60 entries to 51. Rajasthan's 2020 is the clearest case — quota_raj declares
+  `winner_name_2020` and never fills it, 0 of 7,882 rows where 2015 is filled
+  on all 7,882 — so no amount of parsing here closes it.
+
+- **All archive traffic is rate-limited properly.** `requests-ratelimiter` and
+  urllib3's `Retry`, in one adapter, honouring `Retry-After`. The Internet
+  Archive firewalls an IP for an hour if 429s are ignored for a minute, and the
+  previous hand-rolled sleep loop never read the header.
+
+- **Karnataka's other 244 harvested documents are deliberately not parsed.**
+  211 reservation gazettes restate a reservation these notifications already
+  print; 33 gram panchayat 2015 files name nobody, being nomination counts,
+  turnout and district totals. Recorded in `data/karnataka/readme.md` and
+  `SOURCES.md` so the decision is not made twice.
+
+### Corrected
+
+- **The archive sweep could report a state as holding nothing when the archive
+  had simply not answered.** Gujarat came back as 614 PDFs and then 0, Odisha
+  817 then 0, Mizoram 0 then 168. An unanswered question and an empty answer
+  now cannot share a value, and a state whose query fails carries its previous
+  number forward marked stale.
+
 ## Unreleased — v0.1.1
 
 ### Corrected
