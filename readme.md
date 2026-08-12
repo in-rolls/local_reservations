@@ -15,10 +15,11 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 60 | 41,020 |
+| [Open gaps](WORKLIST.md) | 51 | 39,255 |
 | [Blocked](WORKLIST.md) | 2 | 70,410 |
-| [Undetermined](WORKLIST.md) | 8 | 39,339 |
-| [Accepted properties of the sources](WORKLIST.md) | 10 | 74,979 |
+| [Parked](WORKLIST.md) | 10 | 13,079 |
+| [Undetermined](WORKLIST.md) | 2 | 1,477 |
+| [Accepted properties of the sources](WORKLIST.md) | 15 | 101,527 |
 
 <!-- worklist:end -->
 

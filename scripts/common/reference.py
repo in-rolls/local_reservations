@@ -466,6 +466,96 @@ LISTING_SCOPE = {
 }
 
 
+# What was actually done to answer a question, beside the answer itself.
+#
+# DOCUMENT_STAGE below records a conclusion and nothing else, so an absent entry
+# means either "nobody has looked" or "somebody looked and could not tell", and
+# a present one is an assertion with no visible basis. Both matter: not every
+# document has a winner, and the useful distinction is not whether a slice has
+# one but whether anyone established why.
+#
+# Keyed by (state, year, tier, question). `searched` has to be specific enough
+# for a reader to judge - a URL and what was queried, not "looked online" -
+# because an entry that merely asserts diligence is worse than no entry, it
+# looks like evidence.
+#
+#   settled        the answer is known; a DOCUMENT_STAGE entry states it
+#   nothing_found  searched properly and nothing surfaced. Not proof the
+#                  document does not exist, so the slice stays undetermined -
+#                  but nobody needs to repeat the search
+#   inconclusive   partial, and worth resuming; say what was not covered
+_KARNATAKA_SEARCH = {
+    "on": "2026-08-11",
+    "searched": "the Wayback CDX for karsec.gov.in - 828 archived PDFs, whose "
+                "earliest election material is the 2015 gram panchayat phase "
+                "files and the 2016 taluk/zilla gazettes",
+    "found": "nothing for any cycle before 2015; these five predate the "
+             "commission's web presence. The documents we do hold are "
+             "Karnataka_GP_ReservationHistory.dta, a reservation history "
+             "carrying the roster and populations, which names no winner by "
+             "construction",
+    "outcome": "settled",
+}
+
+INVESTIGATED = {
+    ("Karnataka", "1993", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
+    ("Karnataka", "2000", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
+    ("Karnataka", "2002", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
+    ("Karnataka", "2005", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
+    ("Karnataka", "2007", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
+
+    # Not a parse defect, which is what it looked like: 2005, 2010 and 2015 all
+    # carry a winner on essentially every row and 2020 on none.
+    ("Rajasthan", "2020", "gp_head", "results_notification"): {
+        "on": "2026-08-11",
+        "searched": "quota_raj's own extract - data/raj/raj_15_20.parquet, "
+                    "which declares winner_name_2020 and winner_female_2020",
+        "found": "both columns present and entirely empty, 0 of 7,882 rows, "
+                 "where winner_name_2015 is filled on all 7,882. The field was "
+                 "declared and never populated, so whether Rajasthan published "
+                 "2020 results is a question for quota_raj rather than for this "
+                 "repository",
+        "outcome": "inconclusive",
+    },
+}
+
+
+# States whose remaining gaps are real and are deliberately not being worked on.
+# Not "finished" - the rows below say what is still wrong - but "we have looked
+# at this and chosen to spend the effort elsewhere", which is a decision worth
+# writing down rather than rediscovering.
+PARKED = {
+    "Uttar Pradesh": {
+        "on": "2026-08-11",
+        "why": "1,718 rows across five entries, the largest being 1,300 of "
+               "2005's gp_head with a caste stated and no gender. Real, and "
+               "small against 153,505 UP rows; the state also sits at 85-88% "
+               "of the register, so the bigger question there is the ~9,000 "
+               "gram panchayats the sibling does not hold at all, which is a "
+               "harvest rather than a parse",
+    },
+    "Rajasthan": {
+        "on": "2026-08-11",
+        "why": "47 rows of seat-key collisions, plus 11,314 of 2020 with no "
+               "winner - and that one is not ours to close: quota_raj declares "
+               "winner_name_2020 and never fills it, 0 of 7,882, where 2015 is "
+               "filled on every row. Both wait on the sibling",
+    },
+}
+
+
+def parked(state):
+    """Why this state's gaps are deliberately not being worked, or None."""
+    return PARKED.get(state)
+
+
+def investigated(state, year, tier, question):
+    """What was done to answer this question here, or None if nobody has."""
+    return INVESTIGATED.get((state, str(year), tier, question))
+
+
+
+
 # What stage of document a slice came from. This decides whether "no winner
 # recorded" is a fact about the document or a gap in our collecting: a pre-poll
 # reservation roster names no winner and never will, while for anything else a
@@ -491,6 +581,16 @@ DOCUMENT_STAGE = {
     ("Jammu & Kashmir", "2016", "gp_head"): "pre_poll",
     ("Jammu & Kashmir", "2016", "gp_ward"): "pre_poll",
     ("Jammu & Kashmir", "2018", "gp_ward"): "pre_poll",
+    # Karnataka_GP_ReservationHistory.dta is a reservation history: the roster
+    # per cycle plus populations, with no winner column in any year. See
+    # INVESTIGATED for the search that established no results notification
+    # exists for these cycles either - they predate the commission's web
+    # presence, whose earliest archived material is 2015.
+    ("Karnataka", "1993", "gp_head"): "pre_poll",
+    ("Karnataka", "2000", "gp_head"): "pre_poll",
+    ("Karnataka", "2002", "gp_head"): "pre_poll",
+    ("Karnataka", "2005", "gp_head"): "pre_poll",
+    ("Karnataka", "2007", "gp_head"): "pre_poll",
 }
 
 

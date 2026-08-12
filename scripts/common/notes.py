@@ -37,6 +37,12 @@ UNDETERMINED = "undetermined"
 # this" and "nobody here can do this" are different claims, and a worklist that
 # mixes them is one nobody trusts.
 BLOCKED = "blocked"
+# Closable from here, and deliberately not being closed. A third claim again:
+# BLOCKED is waiting on access, OPEN_GAP is waiting on effort, and this is a
+# decision that the effort is better spent elsewhere for now. Recording it is
+# what stops the same state being re-triaged every time somebody reads the list,
+# and what stops "still open" being mistaken for "nobody noticed".
+PARKED = "parked"
 
 NOTES = []
 
@@ -356,7 +362,14 @@ def no_winner_recorded(s):
     if stage == "pre_poll":
         return found(s.n, "a pre-poll roster names no winner",
                      status=SOURCE_PROPERTY)
-    return found(s.n, "no document stage declared for this slice")
+    # "Nobody has looked" and "somebody looked and found nothing" are the same
+    # absence to DOCUMENT_STAGE and are not the same claim. Saying which costs
+    # one line here and saves the next person repeating the search.
+    done = reference.investigated(s.state, s.year, s.tier, "results_notification")
+    if done:
+        return found(s.n, f"searched {done['on']}: {done['searched']} - "
+                          f"{done['found']}")
+    return found(s.n, "no document stage declared, and nobody has looked")
 
 
 @note("partial_listing",
@@ -379,10 +392,16 @@ def for_slice(a_slice):
         got = spec["detect"](a_slice)
         if not got:
             continue
+        status = got.get("status") or spec["status"]
+        # A parked state's gaps are still real and still described; they move out
+        # of the queue rather than out of the file. Source properties are left
+        # alone - there is nothing there to decide not to do.
+        parked = reference.parked(a_slice.state)
+        if parked and status in (OPEN_GAP, UNDETERMINED):
+            status = PARKED
         out.append({
             "note_id": spec["id"], "text": spec["text"],
-            # a detector may settle an undetermined note on the spot
-            "status": got.get("status") or spec["status"],
+            "status": status,
             "because": spec["because"], "closes_with": spec["closes_with"],
             "rows_affected": got["rows_affected"], "detail": got["detail"],
         })
