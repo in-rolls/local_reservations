@@ -208,7 +208,8 @@ COLUMNS = [
                 "text layer, which for AP is itself faulty OCR."),
 
     # ------------------------------------------------------------ provenance
-    column("script", "enum", allowed=["latin", "krutidev", "devanagari"],
+    column("script", "enum",
+           allowed=["latin", "krutidev", "devanagari", "kannada"],
            max_blank=0.0,
            note="Which typesetting the row was read from."),
     column("source_pdf", "string", required=True, length=(4, 80), max_blank=0.0),
@@ -241,7 +242,19 @@ COLUMNS = [
     column("original_filename", "string", length=(1, 80), severity=INFO,
            note="The document a row was read from, where the parse kept it but "
                 "the pooled schema has no column for it."),
-    column("party", "string", length=(1, 80), severity=INFO),
+    column("party", "string", length=(1, 80), severity=INFO,
+           note="The party the winner represented. Kerala prints it and so do "
+                "Karnataka's 2016 taluk and zilla notifications; almost "
+                "nothing else in the corpus does. Karnataka's is "
+                "canonicalised against a fixed list and left blank where the "
+                "cell does not settle which party - a reading truncated to "
+                "\u0ca6\u0cbe\u0cb0\u0ca4\u0cc0\u0caf fits both of the "
+                "two largest, so it is empty rather than guessed. "
+                "party_local keeps what the page actually said."),
+    column("party_local", "string", length=(1, 80), severity=INFO,
+           note="The party exactly as the document printed it, before any "
+                "canonicalisation, so a row can be audited against its page. "
+                "Kept for the same reason as reservation_raw."),
     # Who the elected person was. A reservation says what a seat was reserved
     # for; these say who took it, and the whole point of holding both is that
     # they differ. Kerala states five of these for all 65,296 of its rows and
