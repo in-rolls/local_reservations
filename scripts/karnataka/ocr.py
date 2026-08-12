@@ -24,8 +24,13 @@ The table is worth more than the tier count suggests. Column 5 is
 almost nothing else in the corpus carries.
 
 Cached to data/karnataka/ocr/<stem>.txt, form-feed separated so page numbers
-survive, and committed: the run takes ~2.7 hours on Apple Silicon, so leaving
-it out would mean only one machine could rebuild Karnataka.
+survive, and committed: the run takes about ten hours on Apple Silicon, so
+leaving it out would mean only one machine could rebuild Karnataka.
+
+That ten hours is measured, not estimated. A first estimate of 2.7 came from
+timing page 1 of Badami, which is mostly prose over a three-row table; Surya
+decodes autoregressively, so a page carrying twenty rows costs several times
+as much. 17 seconds a page became 61.
 
     python3 -m venv ocrenv
     ./ocrenv/bin/pip install -r requirements-ocr.txt
@@ -93,7 +98,10 @@ def main():
         # deskew=False: these are flatbed copier scans, all portrait. The
         # orientation pass costs a tesseract call per page and Jharkhand needed
         # it only for one district printed sideways.
-        text = ocr_engine.ocr(path, model=MODEL, deskew=False)
+        # wants_table: every page of every one of these is a table, so a page
+        # that comes back without one has been misread however clean it looks.
+        text = ocr_engine.ocr(path, model=MODEL, deskew=False,
+                              wants_table=True)
         target.write_text(text, encoding="utf-8")
         done += 1
 
