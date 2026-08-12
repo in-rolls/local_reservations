@@ -60,6 +60,11 @@ TIER_OF_LOCAL = {
     # Uttarakhand
     "kshetra_panchayat_sadasya": "block_member",
     "zila_panchayat_sadasya": "zp_member",
+    # Karnataka. The taluk panchayat is the block-level body and the zilla
+    # panchayat the district-level one; only the names differ from Bihar's
+    # panchayat samiti and zila parishad.
+    "taluk_panchayat_member": "block_member",
+    "zilla_panchayat_member": "zp_member",
     "pradhan_(gram_panchayat)": "gp_head",
 }
 
