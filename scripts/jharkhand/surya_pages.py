@@ -13,8 +13,9 @@ call per page would spend most of the run in startup.
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import ocr  # noqa: E402  - the model path, stated in one place
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT / "scripts" / "common"))
+import ocr_engine  # noqa: E402  - the model path, stated in one place
 
 
 def main():
@@ -25,7 +26,7 @@ def main():
     if not pages:
         print(f"no PNGs in {directory}", file=sys.stderr)
         return 1
-    engine = ocr.engine()
+    engine = ocr_engine.engine()
     for index, page in enumerate(pages, 1):
         out = page.with_suffix(".txt")
         if out.exists():
