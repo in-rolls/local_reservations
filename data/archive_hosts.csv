@@ -1,32 +1,32 @@
-state,resolved,candidates_tried
-Andhra Pradesh,sec.ap.gov.in,sec.ap.gov.in
-Arunachal Pradesh,,arunachalsec.gov.in sec.arunachalpradesh.gov.in arunachalpradeshsec.gov.in sec.arunachal.gov.in arunachalsec.nic.in
-Assam,,assamsec.gov.in sec.assam.gov.in assamsec.gov.in sec.assam.gov.in assamsec.nic.in
-Bihar,sec.bihar.gov.in,biharsec.gov.in sec.bihar.gov.in
-Chhattisgarh,cgsec.gov.in,cgsec.gov.in
-Goa,sec.goa.gov.in,goasec.gov.in sec.goa.gov.in goasec.gov.in sec.goa.gov.in
-Gujarat,sec.gujarat.gov.in,gujaratsec.gov.in sec.gujarat.gov.in
-Haryana,secharyana.gov.in,secharyana.gov.in
-Himachal Pradesh,,hpsec.gov.in sec.himachalpradesh.gov.in himachalpradeshsec.gov.in sec.hp.gov.in hpsec.nic.in
-Jammu & Kashmir,,jksec.gov.in sec.jammukashmir.gov.in jammukashmirsec.gov.in sec.jk.gov.in jksec.nic.in
-Jharkhand,sec.jharkhand.gov.in,jharkhandsec.gov.in sec.jharkhand.gov.in
-Karnataka,karsec.gov.in,karsec.gov.in
-Kerala,sec.kerala.gov.in,keralasec.gov.in sec.kerala.gov.in
-Madhya Pradesh,mplocalelection.gov.in,mplocalelection.gov.in
-Maharashtra,mahasec.maharashtra.gov.in,mahasec.maharashtra.gov.in
-Manipur,,manipursec.gov.in sec.manipur.gov.in manipursec.gov.in sec.manipur.gov.in manipursec.nic.in
-Meghalaya,,meghalayasec.gov.in sec.meghalaya.gov.in meghalayasec.gov.in sec.meghalaya.gov.in meghalayasec.nic.in
-Mizoram,sec.mizoram.gov.in,mizoramsec.gov.in sec.mizoram.gov.in
-NCT of Delhi,sec.delhi.gov.in,delhisec.gov.in sec.nctofdelhi.gov.in nctofdelhisec.gov.in sec.delhi.gov.in
-Nagaland,,nagalandsec.gov.in sec.nagaland.gov.in nagalandsec.gov.in sec.nagaland.gov.in nagalandsec.nic.in
-Odisha,sec.odisha.gov.in,odishasec.gov.in sec.odisha.gov.in
-Puducherry,sec.puducherry.gov.in,pysec.gov.in sec.puducherry.gov.in
-Punjab,sec.punjab.gov.in,punjabsec.gov.in sec.punjab.gov.in
-Rajasthan,sec.rajasthan.gov.in,sec.rajasthan.gov.in
-Sikkim,,sikkimsec.gov.in sec.sikkim.gov.in sikkimsec.gov.in sec.sikkim.gov.in sikkimsec.nic.in
-Tamil Nadu,tnsec.tn.gov.in,tnsec.tn.gov.in
-Telangana,tsec.gov.in,tsec.gov.in
-Tripura,sec.tripura.gov.in,tripurasec.gov.in sec.tripura.gov.in
-Uttar Pradesh,sec.uttarpradesh.gov.in,upsec.gov.in sec.uttarpradesh.gov.in
-Uttarakhand,sec.uk.gov.in,uksec.gov.in sec.uttarakhand.gov.in uttarakhandsec.gov.in sec.uk.gov.in
-West Bengal,wbsec.gov.in,wbsec.gov.in
+state,resolved,status,candidates_tried
+Andhra Pradesh,sec.ap.gov.in,ok,sec.ap.gov.in
+Arunachal Pradesh,,no host,arunachalsec.gov.in sec.arunachalpradesh.gov.in arunachalpradeshsec.gov.in sec.arunachal.gov.in arunachalsec.nic.in
+Assam,,no host,assamsec.gov.in sec.assam.gov.in assamsec.gov.in sec.assam.gov.in assamsec.nic.in
+Bihar,sec.bihar.gov.in,ok,biharsec.gov.in sec.bihar.gov.in
+Chhattisgarh,cgsec.gov.in,ok,cgsec.gov.in
+Goa,sec.goa.gov.in,ok,goasec.gov.in sec.goa.gov.in
+Gujarat,sec.gujarat.gov.in,ok,gujaratsec.gov.in sec.gujarat.gov.in
+Haryana,secharyana.gov.in,ok,secharyana.gov.in
+Himachal Pradesh,,no host,hpsec.gov.in sec.himachalpradesh.gov.in himachalpradeshsec.gov.in sec.hp.gov.in hpsec.nic.in
+Jammu & Kashmir,,no host,jksec.gov.in sec.jammukashmir.gov.in jammukashmirsec.gov.in sec.jk.gov.in jksec.nic.in
+Jharkhand,sec.jharkhand.gov.in,ok,jharkhandsec.gov.in sec.jharkhand.gov.in
+Karnataka,karsec.gov.in,ok,karsec.gov.in
+Kerala,sec.kerala.gov.in,ok,keralasec.gov.in sec.kerala.gov.in
+Madhya Pradesh,mplocalelection.gov.in,ok,mplocalelection.gov.in
+Maharashtra,mahasec.maharashtra.gov.in,ok,mahasec.maharashtra.gov.in
+Manipur,,no host,manipursec.gov.in sec.manipur.gov.in manipursec.gov.in sec.manipur.gov.in manipursec.nic.in
+Meghalaya,,no host,meghalayasec.gov.in sec.meghalaya.gov.in meghalayasec.gov.in sec.meghalaya.gov.in meghalayasec.nic.in
+Mizoram,sec.mizoram.gov.in,ok,mizoramsec.gov.in sec.mizoram.gov.in
+NCT of Delhi,sec.delhi.gov.in,ok,delhisec.gov.in sec.nctofdelhi.gov.in nctofdelhisec.gov.in sec.delhi.gov.in
+Nagaland,,no host,nagalandsec.gov.in sec.nagaland.gov.in nagalandsec.gov.in sec.nagaland.gov.in nagalandsec.nic.in
+Odisha,sec.odisha.gov.in,ok,odishasec.gov.in sec.odisha.gov.in
+Puducherry,sec.puducherry.gov.in,ok,pysec.gov.in sec.puducherry.gov.in
+Punjab,sec.punjab.gov.in,ok,punjabsec.gov.in sec.punjab.gov.in
+Rajasthan,sec.rajasthan.gov.in,ok,sec.rajasthan.gov.in
+Sikkim,,no host,sikkimsec.gov.in sec.sikkim.gov.in sikkimsec.gov.in sec.sikkim.gov.in sikkimsec.nic.in
+Tamil Nadu,tnsec.tn.gov.in,ok,tnsec.tn.gov.in
+Telangana,tsec.gov.in,ok,tsec.gov.in
+Tripura,sec.tripura.gov.in,ok,tripurasec.gov.in sec.tripura.gov.in
+Uttar Pradesh,sec.uttarpradesh.gov.in,ok,upsec.gov.in sec.uttarpradesh.gov.in
+Uttarakhand,sec.uk.gov.in,ok,uksec.gov.in sec.uttarakhand.gov.in uttarakhandsec.gov.in sec.uk.gov.in
+West Bengal,wbsec.gov.in,ok,wbsec.gov.in

@@ -26,7 +26,6 @@ import csv
 import pathlib
 import re
 import sys
-import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -37,6 +36,7 @@ SLICE_START, SLICE_END = "<!-- slices:start -->", "<!-- slices:end -->"
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "common"))
 import datasets  # noqa: E402
+import fetch  # noqa: E402
 import reference  # noqa: E402
 
 
@@ -378,23 +378,28 @@ def check_links(text, base=None):
     `base` is the directory the links are written relative to - the state
     readmes live a level down, so their `../../SOURCES.md` resolves against
     data/<state>/ and not against the repository root.
+
+    A request that could not be answered is **not** reported as a dead link.
+    It used to be: any exception became one, so a rate limit or a timeout read
+    as "the state took its gazette down". Those come back as `unanswered` and
+    are the caller's to weigh, because a link this run could not check is not
+    the same as a link that is gone.
     """
     base = base or ROOT
-    dead = []
+    dead, unanswered = [], []
     for target in sorted(set(links_in(text))):
         if target.startswith(("http://", "https://")):
             try:
-                request = urllib.request.Request(
-                    target, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-                with urllib.request.urlopen(request, timeout=30) as response:
-                    if response.status != 200:
-                        dead.append((target, response.status))
-            except Exception as exc:  # noqa: BLE001 - any failure is a dead link
-                dead.append((target, type(exc).__name__))
+                response = fetch.get(target, timeout=30)
+            except fetch.Unanswered as exc:
+                unanswered.append((target, str(exc)))
+                continue
+            if response.status_code != 200:
+                dead.append((target, response.status_code))
         else:
             if not (base / target).resolve().exists():
                 dead.append((target, "missing on disk"))
-    return dead
+    return dead, unanswered
 
 
 def main():
@@ -434,16 +439,27 @@ def main():
     print("  " + "  ".join(f"{k}={v}" for k, v in status.most_common()))
 
     if args.check:
-        dead = check_links(README.read_text(encoding="utf-8"))
+        dead, unanswered = check_links(README.read_text(encoding="utf-8"))
         for path in sorted(DATA.glob("*/readme.md")):
-            dead += [(f"{path.parent.name}/{t}", why) for t, why in
-                     check_links(path.read_text(encoding="utf-8"), path.parent)]
+            more_dead, more_unanswered = check_links(
+                path.read_text(encoding="utf-8"), path.parent)
+            label = path.parent.name
+            dead += [(f"{label}/{t}", why) for t, why in more_dead]
+            unanswered += [(f"{label}/{t}", why) for t, why in more_unanswered]
+        if unanswered:
+            # not a failure: a link we could not check is not a link that is
+            # gone, and calling it one would put a state's gazette on the
+            # dead list because we were asking too fast
+            print(f"\n{len(unanswered)} link(s) could not be checked:")
+            for target, why in unanswered:
+                print(f"   {target}  -> {why}")
         if dead:
             print(f"\n{len(dead)} dead link(s):")
             for target, why in dead:
                 print(f"   {target}  -> {why}")
             return 1
-        print("  all links resolve")
+        unchecked = f" ({len(unanswered)} unchecked)" if unanswered else ""
+        print(f"  all links resolve{unchecked}")
         if unmapped:
             return 1
     return 0

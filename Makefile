@@ -18,12 +18,16 @@ help:
 	@echo "make expect      triage every column against the data dictionary"
 	@echo "make dictionary  regenerate DICTIONARY.md from the declarations"
 	@echo "make test        unit tests for the shared normalizer"
+	@echo "make sweep       what the web archive holds, per state commission"
 
 inventory:
 	$(PY) scripts/inventory.py
 
 probe:
 	$(PY) scripts/probe_sources.py --skip-unreachable
+
+sweep:
+	$(PY) scripts/archive_sweep.py
 
 goa:
 	$(PY) scripts/goa/parse.py

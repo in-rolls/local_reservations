@@ -8,4 +8,11 @@ pyarrow==23.0.1
 # the Haryana, Jharkhand and Uttarakhand gazettes are digital text
 pdfplumber
 
+# the archive states 60 CDX requests a minute, and firewalls an IP for an hour
+# if 429s are ignored for one. requests-ratelimiter paces the traffic and
+# urllib3's Retry reads Retry-After; scripts/common/fetch.py wires the two into
+# one adapter. Floated, not pinned: unlike pyarrow they touch no output byte.
+requests
+requests-ratelimiter
+
 pytest

@@ -19,9 +19,11 @@ import re
 import subprocess
 import sys
 import tempfile
-import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts" / "common"))
+import fetch  # noqa: E402
+
 DATA = ROOT / "data"
 TEXT_THRESHOLD = 800  # chars/page; same cut inventory.py uses
 
@@ -50,9 +52,22 @@ HEADERS = {"User-Agent": "Mozilla/5.0"}
 
 
 def get(url, timeout=45):
-    request = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=timeout) as response:
-        return response.read()
+    """The bytes, or `fetch.Unanswered` carrying why."""
+    return fetch.body(url, timeout=timeout, headers=HEADERS)
+
+
+def why_not(exc):
+    """What an unanswered request is evidence of.
+
+    A connection that never opens is the signature of the geo-block these
+    sources sit behind. A status the server chose - a 429, a 503 - is evidence
+    of nothing except our own pacing, and recording it as "needs an India
+    egress" would put a claim about the Indian internet next to a rate limit
+    we caused.
+    """
+    if exc.status:
+        return f"unanswered-http-{exc.status}"
+    return "needs-india-egress"
 
 
 def first_document(page_html, base_url):
@@ -98,10 +113,10 @@ def probe(row):
                chars_per_page="", format="", topic_match="")
     try:
         page = get(row["url"])
-    except Exception as exc:  # noqa: BLE001 - unreachable is the finding
+    except fetch.Unanswered as exc:  # unreachable is the finding
         out["reachable"] = "no"
-        out["format"] = "needs-india-egress"
-        out["note"] = f"{row['note']} [{type(exc).__name__}]"
+        out["format"] = why_not(exc)
+        out["note"] = f"{row['note']} [{exc}]"
         return out
 
     out["reachable"] = "yes"
@@ -113,8 +128,8 @@ def probe(row):
     out["doc_url"] = doc
     try:
         payload = get(doc, timeout=120)
-    except Exception as exc:  # noqa: BLE001
-        out["format"] = f"document-fetch-failed [{type(exc).__name__}]"
+    except fetch.Unanswered as exc:
+        out["format"] = f"document-fetch-failed [{why_not(exc)}]"
         return out
 
     if doc.lower().endswith(".pdf"):
