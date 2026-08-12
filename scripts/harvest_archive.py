@@ -82,7 +82,32 @@ def crawled(url, timestamp, timeout=300):
     return fetch.body(wayback, timeout=timeout)
 
 
-def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf"):
+def held(out):
+    """What the manifest says we already have, by filename.
+
+    Resumability. Without this a resumed run re-downloads every file it already
+    holds purely to compare the bytes, which for the 211-file Karnataka set is
+    four minutes of somebody else's bandwidth to learn nothing. A file whose
+    bytes on disk still hash to what the manifest recorded is skipped; --verify
+    re-fetches everything and compares, which is the check this makes optional
+    rather than mandatory.
+    """
+    manifest = out / "manifest.csv"
+    if not manifest.exists():
+        return {}
+    with manifest.open(encoding="utf-8") as fh:
+        recorded = {r["file"]: r for r in csv.DictReader(fh)}
+    good = {}
+    for name, row in recorded.items():
+        target = out / name
+        if target.exists() and hashlib.sha256(
+                target.read_bytes()).hexdigest() == row.get("sha256"):
+            good[name] = row
+    return good
+
+
+def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf",
+            verify=False):
     found = listing(host, match, suffix)
     if found is None:
         print(f"  {host}: the archive did not answer - nothing fetched")
@@ -98,10 +123,16 @@ def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf"):
         return []
 
     out.mkdir(parents=True, exist_ok=True)
+    already = {} if verify else held(out)
     rows, fetched, matched, differed, failed = [], 0, 0, [], []
+    skipped = 0
     for url, timestamp in found:
         name = local_name(url)
         target = out / name
+        if name in already:
+            rows.append(already[name])
+            skipped += 1
+            continue
         try:
             body = crawled(url, timestamp)
         except fetch.Unanswered as exc:
@@ -126,19 +157,19 @@ def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf"):
 
     manifest = out / "manifest.csv"
     if rows:
-        held = {}
+        merged = {}
         if manifest.exists():
             with manifest.open(encoding="utf-8") as fh:
-                held = {r["file"]: r for r in csv.DictReader(fh)}
-        held.update({r["file"]: r for r in rows})
+                merged = {r["file"]: r for r in csv.DictReader(fh)}
+        merged.update({r["file"]: r for r in rows})
         with manifest.open("w", newline="", encoding="utf-8") as fh:
             writer = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n",
                                     extrasaction="ignore")
             writer.writeheader()
-            writer.writerows([held[k] for k in sorted(held)])
+            writer.writerows([merged[k] for k in sorted(merged)])
 
-    print(f"  {fetched} new, {matched} already held and identical -> "
-          f"{out.relative_to(ROOT)}")
+    print(f"  {fetched} new, {matched} re-checked and identical, "
+          f"{skipped} already held -> {out.relative_to(ROOT)}")
     if differed:
         print(f"  DIFFERENT from our copy, not overwritten: {differed}")
     if failed:
@@ -157,11 +188,13 @@ def main():
     ap.add_argument("--limit", type=int, help="stop after N files")
     ap.add_argument("--dry-run", action="store_true",
                     help="list what would be fetched and fetch nothing")
+    ap.add_argument("--verify", action="store_true",
+                    help="re-fetch everything and compare against our copies")
     args = ap.parse_args()
 
     out = args.out if args.out.is_absolute() else ROOT / args.out
     rows = harvest(args.host, args.match, out, dry_run=args.dry_run,
-                   limit=args.limit, suffix=args.suffix)
+                   limit=args.limit, suffix=args.suffix, verify=args.verify)
     return 0 if rows is not None else 1
 
 

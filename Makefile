@@ -19,6 +19,7 @@ help:
 	@echo "make dictionary  regenerate DICTIONARY.md from the declarations"
 	@echo "make test        unit tests for the shared normalizer"
 	@echo "make sweep       what the web archive holds, per state commission"
+	@echo "make karnataka-ocr  read the Kannada scans; resumable, ~10 hours"
 
 inventory:
 	$(PY) scripts/inventory.py
@@ -28,6 +29,13 @@ probe:
 
 sweep:
 	$(PY) scripts/archive_sweep.py
+
+# Both resume. The OCR skips documents it has already cached and, within a
+# document, pages it has already read; the harvest skips files whose bytes on
+# disk still hash to what the manifest recorded. Re-running either is how you
+# resume it - there is no separate command and no state to clean up.
+karnataka-ocr:
+	./ocrenv/bin/python scripts/karnataka/ocr.py
 
 goa:
 	$(PY) scripts/goa/parse.py

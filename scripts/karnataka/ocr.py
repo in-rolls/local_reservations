@@ -100,9 +100,14 @@ def main():
         # it only for one district printed sideways.
         # wants_table: every page of every one of these is a table, so a page
         # that comes back without one has been misread however clean it looks.
+        # partial: a page at a time, so an interrupted run costs one page and
+        # not one document. Document size stops mattering - the biggest file
+        # here is 14 pages, but the same code has to survive a 150-page one.
+        partial = CACHE / ".partial" / f"{path.stem}.jsonl"
         text = ocr_engine.ocr(path, model=MODEL, deskew=False,
-                              wants_table=True)
+                              wants_table=True, partial=partial)
         target.write_text(text, encoding="utf-8")
+        partial.unlink(missing_ok=True)
         done += 1
 
     print(f"{done} read, {skipped} already cached -> "

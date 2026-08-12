@@ -114,8 +114,10 @@ def main():
         # reading these documents as text. --all reads them as pictures instead.
         if has_text(path) and not args.all:
             continue
-        text = ocr_engine.ocr(path, model=MODEL)
+        partial = CACHE / ".partial" / f"{path.stem}.jsonl"
+        text = ocr_engine.ocr(path, model=MODEL, partial=partial)
         cached.write_text(text, encoding="utf-8")
+        partial.unlink(missing_ok=True)
         done += 1
         print(f"  {path.name}: {len(text.split(chr(12)))} pages -> "
               f"{cached.relative_to(ROOT)}")

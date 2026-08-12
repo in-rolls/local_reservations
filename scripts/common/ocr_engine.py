@@ -13,6 +13,7 @@ Named `ocr_engine` and not `surya`: this directory goes on sys.path[0], and a
 module called `surya` here would shadow the real surya package for savitr.
 """
 
+import json
 import pathlib
 import re
 import subprocess
@@ -134,7 +135,7 @@ def unusable(text, wants_table=False):
 
 
 def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
-        retry_crops=RETRY_CROPS, wants_table=False):
+        retry_crops=RETRY_CROPS, wants_table=False, partial=None):
     """Every page of a PDF as Surya's HTML, form-feed separated.
 
     HTML rather than flattened text, because the table's cell boundaries are
@@ -144,10 +145,34 @@ def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
     a page that needed one carries an `<!-- ocr-retry crop=... -->` marker so
     no row is ever silently the product of a repair. A page that survives the
     whole ladder is marked unread rather than left as a convincing blank.
+
+    `partial` makes a document resumable a page at a time. Callers already skip
+    documents whose cache exists, so a killed run costs at most one document -
+    but at 61 seconds a page a long one is still several minutes, and a run
+    this size will be interrupted. Pages land in a JSON-lines file as they are
+    read, flushed to disk each time; a resumed run reads back the ones it has
+    and does the rest. A line truncated by the kill fails to parse and its page
+    is simply redone.
     """
+    done = {}
+    if partial and partial.exists():
+        for line in partial.read_text(encoding="utf-8").splitlines():
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue  # killed mid-write; that page gets read again
+            done[record["page"]] = record["text"]
+    handle = None
+    if partial:
+        partial.parent.mkdir(parents=True, exist_ok=True)
+        handle = partial.open("a", encoding="utf-8")
+
     pages = []
     total = page_count(path)
     for number in range(1, total + 1):
+        if number in done:
+            pages.append(done[number])
+            continue
         with tempfile.TemporaryDirectory() as scratch:
             stem = pathlib.Path(scratch) / "p"
             subprocess.run(
@@ -188,9 +213,14 @@ def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
                     text = ("<!-- ocr-unread reason=degenerate-after-retries "
                             f"tried={len(retry_crops)} -->\n{text}")
             pages.append(text)
+        if handle:
+            handle.write(json.dumps({"page": number, "text": text}) + "\n")
+            handle.flush()
         if progress:
             print(f"\r  {path.name[:44]:44s} {number}/{total}", end="",
                   file=sys.stderr, flush=True)
+    if handle:
+        handle.close()
     if progress:
         print(file=sys.stderr)
     return "\f".join(pages)
