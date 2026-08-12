@@ -78,8 +78,20 @@ CLOSE = 0.75
 MARGIN = 0.20
 
 
-def clean(text):
-    text = re.sub(r"<br\s*/?>", " ", text or "")
+LINE_BREAK = "\u2028"
+
+
+def clean(text, keep_breaks=False):
+    """Cell text. `keep_breaks` preserves <br/> as a line separator.
+
+    The gazette stacks the winner's name over their address inside one cell and
+    Surya marks the stack with <br/>. Flattening it to a space threw away the
+    only reliable boundary between the two - and looking for the address in
+    words instead missed "ಬಿನ್" and "ಮನೆ ನಂ.", which left names of 220
+    characters in a column the dictionary bounds at 60.
+    """
+    replacement = LINE_BREAK if keep_breaks else " "
+    text = re.sub(r"<br\s*/?>", replacement, text or "")
     text = re.sub(r"<[^>]+>", " ", text)
     text = text.replace("‌", "").replace("‍", "")
     return re.sub(r"\s+", " ", text).strip()

@@ -19,7 +19,8 @@ import json
 import pathlib
 import re
 
-PROVENANCE = ["source_path", "source_page", "source_pdf"]
+PROVENANCE = ["source_path", "source_page", "source_pdf", "source_url",
+              "source_capture"]
 
 # Phrases that are table headers, not places. A header row that survives into
 # the data is invisible in a row count and only shows up as a duplicate key -
@@ -54,8 +55,31 @@ def is_header_text(value):
     return text.lower() in HEADER_TEXT or bool(HEADER_SHAPE.match(text))
 
 
-def stamp(row, path, page=None, root=None):
-    """Attach provenance to a row. `path` is the source document."""
+def archived(directory):
+    """{filename: (url, capture)} from a harvest manifest, or {} if there is
+    none.
+
+    Where a document came from is provenance the rows never carried. A reader
+    outside this repository can already see which file and which page a row was
+    read from, and has no way at all to get back to the original - the URL sits
+    in a manifest beside the PDF and nothing joins them. This is that join,
+    done once at parse time.
+    """
+    manifest = pathlib.Path(directory) / "manifest.csv"
+    if not manifest.exists():
+        return {}
+    with manifest.open(encoding="utf-8") as fh:
+        return {r["file"]: (r.get("url", ""), r.get("wayback_timestamp", ""))
+                for r in csv.DictReader(fh)}
+
+
+def stamp(row, path, page=None, root=None, archive=None):
+    """Attach provenance to a row. `path` is the source document.
+
+    `archive` is an `archived()` lookup; where it names this file, the row also
+    carries where the file was fetched from and when it was captured. Together
+    those refetch the exact bytes, which a live URL no longer guarantees.
+    """
     path = pathlib.Path(path)
     root = pathlib.Path(root) if root else None
     try:
@@ -66,6 +90,8 @@ def stamp(row, path, page=None, root=None):
     row["source_pdf"] = path.name
     if page is not None:
         row["source_page"] = page
+    if archive and path.name in archive:
+        row["source_url"], row["source_capture"] = archive[path.name]
     return row
 
 

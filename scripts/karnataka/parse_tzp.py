@@ -98,6 +98,7 @@ def rows_of_document(stem, text):
     office, district, taluk = located
     tier, tier_local = TIERS[office]
     source = DOCUMENTS / f"{stem}.pdf"
+    archive = emit.archived(DOCUMENTS)
     out = []
     for page_no, page in enumerate(text.split("\f"), 1):
         for cells, layout in tables.table_rows(page):
@@ -119,6 +120,7 @@ def rows_of_document(stem, text):
                                 f"{'Woman' if woman else 'Other than Woman'}"),
                 "reservation_raw": cells[layout["reservation"]],
                 "winner": winner_name(cells[layout["winner"]]),
+                "relation_name": winner_relation(cells[layout["winner"]]),
                 "winner_address": winner_address(cells[layout["winner"]]),
                 "party": tables.party(printed_party),
                 "party_local": printed_party,
@@ -128,23 +130,65 @@ def rows_of_document(stem, text):
                 "taluk_printed": (cells[layout["taluk"]]
                                   if "taluk" in layout else ""),
             }
-            out.append(emit.stamp(row, source, page_no, ROOT))
+            out.append(emit.stamp(row, source, page_no, ROOT, archive))
     return out
 
 
-# The winner's cell is a name over an address - "ಸಾ:" for ಸಾಲು, the village,
-# and "ತಾ:" for ತಾಲೂಕು. Splitting on the first of those markers keeps the name
-# usable without throwing the address away.
-ADDRESS = re.compile(r"\s*(?:ಸಾ\s*[:.]|ಮು\s*[:.]|ವಾಸ\s*[:.]|ತಾ\s*[:.])")
+# A winner's cell holds up to three things and the gazette marks the joins.
+#
+#   ಮಲ್ಲಮ್ಮ ಶಿದ್ರಾಮಪ್ಪ ಯತ್ನಟ್ಟಿ <br/> ಸಾ: ಯಂಡಿಗೇರಿ ತಾ: ಬದಾಮಿ
+#   ಶುಭಲತಾ ಶೆಟ್ಟಿ  ಕೋಂ ರಘುನಾಥ ಶೆಟ್ಟಿ,  ಮ.ನಂಬ್ರ 1-99, ಗುರುಪುರ
+#
+# RELATION is who they are named as belonging to - ಬಿನ್ and ತಂದೆ son-of, ಕೋಂ
+# and ಗಂಡ wife-of - and the corpus already has relation_name for exactly that.
+# Reading it as part of the address was the first mistake here and reading it
+# as part of the *name* was the second: it left 296 rows with a winner over the
+# 60 characters the dictionary allows, the longest 129.
+#
+# The line break is tried first because it is the only marker that is always
+# right where it appears; the words are the fallback for cells that came back
+# without one.
+# ಜಿನ್ and ಕಂದ are not words; they are ಬಿನ್ and ಗಂಡ through the same consonant
+# confusion that turns ಸೂ into ಕೂ elsewhere in these scans. Listed rather than
+# fuzzy-matched because there are four real markers and a token-by-token
+# similarity pass would be a lot of machinery for a closed set of six strings.
+RELATION = re.compile(
+    r"\s*(?:ಬಿನ್|ಜಿನ್|ತಂದೆ|ತೆಂದೆ|ಕೋಂ|ಗಂಡ|ಕಂದ|ಬಿ\s*[/.]\s*ಒ|ಸಿ\s*[/.]\s*ಒ)\s")
+ADDRESS = re.compile(
+    r"\s*(?:ಸಾ\s*[:.]|ಮು\s*[:.]|ವಾಸ\s*[:.]|ತಾ\s*[:.]|ಗ್ರಾಮ\b|"
+    r"ಮ\s*[.]?\s*ನಂ|ಮನೆ\s*ನಂ|ವಾರ್ಡ್)")
+
+
+def _split(cell):
+    """(name, relation, address) from one winner cell."""
+    text = tables.clean(cell, keep_breaks=True)
+    head, _, tail = text.partition(tables.LINE_BREAK)
+    tail = tail.replace(tables.LINE_BREAK, " ")
+
+    parts = ADDRESS.split(head, 1)
+    if len(parts) > 1:
+        head, tail = parts[0], f"{parts[1]} {tail}"
+
+    parts = RELATION.split(head, 1)
+    name = parts[0]
+    relation = parts[1] if len(parts) > 1 else ""
+    if relation:
+        bits = ADDRESS.split(relation, 1)
+        if len(bits) > 1:
+            relation, tail = bits[0], f"{bits[1]} {tail}"
+    return (name.strip(" ,.-"), relation.strip(" ,.-"), tail.strip(" ,.-"))
 
 
 def winner_name(cell):
-    return ADDRESS.split(tables.clean(cell), 1)[0].strip(" ,.")
+    return _split(cell)[0]
+
+
+def winner_relation(cell):
+    return _split(cell)[1]
 
 
 def winner_address(cell):
-    parts = ADDRESS.split(tables.clean(cell), 1)
-    return parts[1].strip(" ,.") if len(parts) > 1 else ""
+    return _split(cell)[2]
 
 
 def gaps(rows):
@@ -197,7 +241,8 @@ def disagreements(rows):
 COLUMNS = ["state", "year", "tier", "tier_local", "district", "block",
            "seat_no", "ward_name", "caste_reservation",
            "caste_reservation_local", "woman_reserved", "reservation",
-           "reservation_raw", "winner", "winner_address", "party",
+           "reservation_raw", "winner", "relation_name", "winner_address",
+           "party",
            "party_local", "script", "text_source"]
 
 

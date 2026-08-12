@@ -239,6 +239,19 @@ COLUMNS = [
            note="The compound identifier as printed - Bihar's "
                 "'Piprasi/SEMRA LABEDAHA/01'. Not a join key: it names no "
                 "district, so two blocks sharing a name would merge."),
+    column("source_url", "string", length=(8, 300), severity=INFO,
+           note="Where the document was fetched from. source_path says which "
+                "file on disk a row came from and source_page which page of "
+                "it; neither says where the file came from, which is the one "
+                "question a reader outside this repository is most likely to "
+                "ask. Recorded from the harvest manifest, so it is what was "
+                "actually requested rather than what a URL pattern would "
+                "reconstruct."),
+    column("source_capture", "string", length=(8, 20), severity=INFO,
+           note="The web archive's capture timestamp, YYYYMMDDhhmmss. With "
+                "source_url this refetches the exact bytes the row was read "
+                "from - a live URL may since have changed or gone. Blank for "
+                "documents that were not fetched from an archive."),
     column("original_filename", "string", length=(1, 80), severity=INFO,
            note="The document a row was read from, where the parse kept it but "
                 "the pooled schema has no column for it."),
