@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "3d531e35955c1d2c4c8dcf950f4522df43b96b4b",
-  "committed_utc": "2026-08-12T22:25:09-07:00",
+  "built_from_commit": "9a8b9b4c192460f825f34c5a987e2fc5a1d100e3",
+  "committed_utc": "2026-08-12T22:34:42-07:00",
   "dirty": true,
   "files": [
     {
@@ -106,7 +106,7 @@
       ],
       "rows": 60352,
       "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "bc23e347c6c65f2edddf479641b7f593b25dfd5657e52ba29435778fb5a28182",
+      "sha256": "6266b7ada9c6758af5b125a76e2a4ecb61accb7ca2908ceacf3007233c6359b2",
       "states": [
         "Andhra Pradesh"
       ],
@@ -191,7 +191,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "7f306b96787c3285fa144fb207b18a6ff0828148f63da4a5a0bc18b805dcf61b",
+      "sha256": "4babbf46747a232da1d66934f49538341ec6d4bffcb573c143c804a464e2c68e",
       "states": [
         "Goa"
       ],
@@ -254,7 +254,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "d0e01ea613aa53c35ad901f3ba819fa810dd7b937b498cbc4aaf5a39b58e6e9d",
+      "sha256": "41d7727e8c8a75859098474a2554329d60046b7ecc87da897c43ad2069667285",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -286,7 +286,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27588,
-      "sha256": "9149a1ae3b87559274fad232ebf1e76cd75668372469a1e72fec8072d17c0a75",
+      "sha256": "b5fbfaf45ef109e1b0983f603b06d4b1aa722330fc7e951938190fe2e21c5472",
       "states": [
         "Jharkhand"
       ],
@@ -321,7 +321,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30687,
-      "sha256": "507d70d3fad7c7c4073df861735519d486255ab3f679585994e0ccc7ae62ffa2",
+      "sha256": "0d26b21f709de8db8b3e7fcfa283364af4626cd0237330be9a7283cfff0d3e4d",
       "states": [
         "Karnataka"
       ],
@@ -463,7 +463,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "86a6a24f033ec64fadd045a54734cfd220ab6a5f19a3e8a8ba9135dfcce8bda9",
+      "sha256": "3a24ef8d382be54ec034ecab3a6bb9d9727774277fd1ea8c044f6f9857957f4a",
       "states": [
         "Telangana"
       ],
