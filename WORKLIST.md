@@ -8,7 +8,7 @@ The document holds more than our parse recovered. Each line says what would clos
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 23,378 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 11 of 24 districts, roughly 23,378 rows missing |
+| 23,378 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 11 of 24 districts, roughly 23,378 rows missing. Searched 2026-08-13: not one of the eleven districts that hold a document has a single ward-tier mention in it; they are mukhiya and panchayat samiti notifications and nothing else. Hazaribag and Seraikela Kharsawan hold no document at all. The archive has six PDFs for the commission, captured in 2026, none of them a result or a reservation notification. |
 | 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
 | 1,278 | Haryana | 2022 | `gp_ward` | some rows do not identify a distinct seat | largest group 35 rows |

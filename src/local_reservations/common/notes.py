@@ -203,6 +203,12 @@ def districts_missing(s):
         return None
     estimate = round(s.n / got * (expected - got))
     detail = f"{got} of {expected} districts, roughly {estimate:,} rows missing"
+    # "Not held" is a claim about the world, and it is worth saying whether
+    # anyone has tested it. Where the search has been done, say when and what
+    # it turned up, so the next person does not repeat it.
+    done = reference.investigated(s.state, s.year, s.tier, "missing_districts")
+    if done:
+        detail += f". Searched {done['on']}: {done['found'].splitlines()[0]}"
     access, why = reference.source_access(s.state)
     if access == "blocked":
         return found(estimate, f"{detail} - {why}", status=BLOCKED)

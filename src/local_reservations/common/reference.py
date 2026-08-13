@@ -497,7 +497,28 @@ _KARNATAKA_SEARCH = {
     "outcome": "settled",
 }
 
+_JHARKHAND_WARDS = {
+    "on": "2026-08-13",
+    "searched": "every document held for the thirteen districts without ward "
+                "rows, read through its own text layer rather than the OCR "
+                "cache, counting the ward tier's own name - and the Wayback "
+                "CDX for sec.jharkhand.gov.in",
+    "found": "not one of the eleven districts that hold a document has a "
+             "single ward-tier mention in it; they are mukhiya and panchayat "
+             "samiti notifications and nothing else. Hazaribag and Seraikela "
+             "Kharsawan hold no document at all. The archive has six PDFs for "
+             "the commission, captured in 2026, none of them a result or a "
+             "reservation notification.\n"
+             "One document invited a wrong conclusion and is worth naming: "
+             "DHANBAD ZP PSS MUKHIYA GPS.pdf says GPS - gram panchayat "
+             "sadasya, the ward tier - in its own filename and contains none. "
+             "295 panchayat samiti, 256 mukhiya, 29 zila parishad rows, all "
+             "already parsed. The commission mislabelled it",
+    "outcome": "nothing_found",
+}
+
 INVESTIGATED = {
+    ("Jharkhand", "2015", "gp_ward", "missing_districts"): _JHARKHAND_WARDS,
     ("Karnataka", "1993", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2000", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2002", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
