@@ -53,11 +53,9 @@ import collections
 import csv
 import pathlib
 import re
-import sys
 
-from local_reservations.common import collapse
-from local_reservations.common import normalize
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common import collapse, normalize
+from local_reservations.common.normalize import label
 
 REPO = "local_elections_bihar"
 URL = "https://github.com/in-rolls/local_elections_bihar"
@@ -147,7 +145,7 @@ def key_of(row, fields):
 def slices(root):
     root = pathlib.Path(root)
     csv.field_size_limit(10 ** 7)
-    for filename, (tier, tier_local, fields) in sorted(FILES.items()):
+    for filename, (tier, tier_local, _fields) in sorted(FILES.items()):
         path = root / "data" / filename
         if not path.exists():
             continue
@@ -175,7 +173,7 @@ def slices(root):
                 any(m.get("duplicate_candidacy") for m in members))
             seat["serial_not_unique"] = int(
                 any(m.get("serial_not_unique") for m in members))
-            for row in [seat] + members:
+            for row in [seat, *members]:
                 row.pop("_key", None)
                 row.pop("_serial", None)
         yield {

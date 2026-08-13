@@ -1,8 +1,10 @@
 """Measure the Jharkhand parse against a recorded baseline.
 
-    uv run python -m local_reservations.tools.jharkhand/bench.py --record    # store what the code does now
+    uv run python -m local_reservations.tools.jharkhand/bench.py --record    # store
+    what the code does now
     ...make a change...
-    uv run python -m local_reservations.tools.jharkhand/bench.py             # print the gates
+    uv run python -m local_reservations.tools.jharkhand/bench.py             # print the
+    gates
 
 Written because this branch's OCR change passed every check it had and still
 shipped a 1,094-row regression into a tier nobody was watching. The gates that
@@ -236,7 +238,7 @@ def main():
     ok, lines = gates(before, now)
     print("\n".join(lines))
     print(f"\n{'OK' if ok else 'FAILED'}: "
-          f"{sum(1 for l in lines if '[FAIL]' in l)} gate(s) failed")
+          f"{sum(1 for line_ in lines if '[FAIL]' in line_)} gate(s) failed")
     return 0 if ok else 1
 
 

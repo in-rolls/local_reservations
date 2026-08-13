@@ -4,7 +4,6 @@ import pytest
 
 from local_reservations.common import master as M
 
-
 BASE = {
     "state": "Goa", "year": "2012", "tier": "gp_ward", "tier_local": "ward",
     "district": "North Goa", "block": "Bardez", "gram_panchayat": "Anjuna",
@@ -37,7 +36,7 @@ def test_a_halqa_lands_in_the_same_column_and_says_so():
 def test_naming_the_panchayat_twice_raises():
     """The coalesce assumes exactly one is populated. If two were it would
     silently prefer one and drop the other, and nobody would see which."""
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r"\w"):
         convert(halqa="Kupwara A")
 
 

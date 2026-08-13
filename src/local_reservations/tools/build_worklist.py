@@ -15,12 +15,10 @@ Writes data/worklist.csv and WORKLIST.md.
 import argparse
 import collections
 import csv
-import pathlib
 import sys
 
-from local_reservations.common import datasets
-from local_reservations.common import notes as notes_module  # noqa: E402
-from local_reservations.common import slice_checks
+from local_reservations.common import datasets, slice_checks
+from local_reservations.common import notes as notes_module
 from local_reservations.paths import ROOT
 
 WORKLIST_CSV = ROOT / "data" / "worklist.csv"

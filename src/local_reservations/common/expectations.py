@@ -19,7 +19,6 @@ Exits non-zero if anything is `error` severity.
 import argparse
 import collections
 import csv
-import pathlib
 import re
 import statistics
 import sys
@@ -99,7 +98,7 @@ def check_column(findings, path, rows, name, values):
     if dtype in ("integer", "boolean"):
         bad = [(r, v) for r, v in values if not is_integer(v)]
         findings.add(severity, path, "column", name,
-                     f"not an integer", bad, total)
+                     "not an integer", bad, total)
         if dtype == "boolean":
             bad = [(r, v) for r, v in values if v.strip() not in ("0", "1")]
             findings.add(severity, path, "column", name, "not 0 or 1", bad, total)
@@ -178,9 +177,9 @@ def check_rows(findings, path, rows):
             flag = (r.get("ward_list_complete") or "").strip()
             count, got = (r.get("ward_count") or "").strip(), \
                          (r.get("wards_parsed") or "").strip()
-            if flag and count.isdigit() and got.isdigit():
-                if (flag == "1") != (int(got) == int(count)):
-                    bad.append((r, f"flag={flag} {got}/{count}"))
+            if (flag and count.isdigit() and got.isdigit()
+                    and (flag == "1") != (int(got) == int(count))):
+                bad.append((r, f"flag={flag} {got}/{count}"))
         findings.add(D.ERROR, path, "row", "ward_list_complete",
                      "flag disagrees with wards_parsed vs ward_count", bad, total)
 

@@ -13,7 +13,6 @@ how the first pass looked fine at 10 of 24 districts.
 
 import argparse
 import csv
-import pathlib
 import re
 import subprocess
 import sys
@@ -63,7 +62,7 @@ def _mentions_mukhiya(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verbose", action="store_true")
-    args = ap.parse_args()
+    ap.parse_args()
 
     failures = 0
     failures += shared_battery(

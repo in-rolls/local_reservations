@@ -5,7 +5,6 @@ rules are checked by expectations.py and described here from the same
 declarations, so a rule cannot change without the documentation changing too.
 """
 
-import pathlib
 import sys
 
 from local_reservations.common import dictionary as D

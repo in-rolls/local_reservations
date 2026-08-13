@@ -63,7 +63,7 @@ BRACKETS = [
 ]
 
 
-@pytest.mark.parametrize("raw,expected", BRACKETS)
+@pytest.mark.parametrize(("raw", "expected"), BRACKETS)
 def test_the_number_survives_every_bracket_style(raw, expected):
     """Five typesetters, five ways of bracketing the same number."""
     assert split_seat_id(raw, "ward_member")["seat_no"] == expected
@@ -91,7 +91,8 @@ def test_zila_parishad_names_only_the_district():
     there is no block or panchayat in it to find."""
     got = split_seat_id("XIV /kuckn & ¼ 1 ½", "zila_parishad")
     assert got["seat_no"] == "1"
-    assert "block" not in got and "gram_panchayat" not in got
+    assert "block" not in got
+    assert "gram_panchayat" not in got
 
 
 def test_mukhiya_identifier_is_only_a_name():

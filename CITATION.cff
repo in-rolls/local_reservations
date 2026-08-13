@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "local-reservations"
+authors:
+  - family-names: "Sood"
+    given-names: "Gaurav"
+repository-code: "https://github.com/in-rolls/local-reservations"
+license: MIT

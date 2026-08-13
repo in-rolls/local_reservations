@@ -37,7 +37,7 @@ DAMAGED = [
 ]
 
 
-@pytest.mark.parametrize("raw,expected", DAMAGED)
+@pytest.mark.parametrize(("raw", "expected"), DAMAGED)
 def test_recognises_a_damaged_code(raw, expected):
     assert as_category(raw) == expected
 
@@ -55,7 +55,7 @@ MARKERS = [
 ]
 
 
-@pytest.mark.parametrize("raw,expected", MARKERS)
+@pytest.mark.parametrize(("raw", "expected"), MARKERS)
 def test_the_gender_marker_survives_every_separator(raw, expected):
     assert as_category(raw) == expected
 
@@ -67,7 +67,7 @@ RUN_ON_SAFE = [
 ]
 
 
-@pytest.mark.parametrize("text,expected", RUN_ON_SAFE)
+@pytest.mark.parametrize(("text", "expected"), RUN_ON_SAFE)
 def test_a_run_on_marker_must_be_adjacent_and_alone(text, expected):
     """The run-on form was added because Anantapur prints URW for UR(W) 1,393
     times. It must not turn "UR WARD" into a woman-reserved seat, so it is only

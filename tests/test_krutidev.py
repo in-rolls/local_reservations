@@ -10,7 +10,6 @@ import pytest
 
 from local_reservations.common import krutidev
 
-
 # The reservation vocabulary, whose meanings are pinned in test_normalize.py
 PHRASES = [
     ("vuqlwfpr tkfr", "अनुसूचित जाति"),
@@ -26,7 +25,7 @@ PHRASES = [
 ]
 
 
-@pytest.mark.parametrize("raw,expected", PHRASES)
+@pytest.mark.parametrize(("raw", "expected"), PHRASES)
 def test_the_reservation_vocabulary_converts(raw, expected):
     assert krutidev.to_unicode(raw) == expected
 
@@ -53,7 +52,7 @@ PLACES = [
 ]
 
 
-@pytest.mark.parametrize("raw,expected", PLACES)
+@pytest.mark.parametrize(("raw", "expected"), PLACES)
 def test_place_names_convert(raw, expected):
     assert krutidev.to_unicode(raw) == expected
 
@@ -79,7 +78,8 @@ def test_the_o_matra_is_one_codepoint_not_two():
     screen would show why."""
     got = krutidev.to_unicode("cksdkjks")
     assert got == "बोकारो"
-    assert "ो" in got and "ाे" not in got
+    assert "ो" in got
+    assert "ाे" not in got
 
 
 def test_longest_match_wins():

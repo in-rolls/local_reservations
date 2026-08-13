@@ -7,8 +7,8 @@ anything, rather than the arithmetic inside any one of them.
 import pytest
 
 from local_reservations.common import slice_checks as sc
-from local_reservations.paths import ROOT
 
+# Slice wants a root; these fixtures never read from it.
 ROOT = "."
 
 

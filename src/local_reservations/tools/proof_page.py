@@ -27,7 +27,6 @@ import subprocess
 import sys
 import webbrowser
 
-from local_reservations.common import krutidev
 from local_reservations.paths import ROOT
 
 OUT = pathlib.Path("/tmp/proof_page.html")
@@ -73,7 +72,8 @@ def render(pdf, page, dpi):
 
 def cell(value):
     """A published value, and - where it is a font encoding - what it decodes
-    from, so the conversion itself can be checked rather than assumed."""
+    from, so the conversion itself can be checked rather than assumed.
+    """
     value = (value or "").strip()
     if not value:
         return "<td class='blank'>—</td>"

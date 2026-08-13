@@ -27,8 +27,7 @@ image-only column and the line disappears from WORKLIST.md on the next build.
 
 import collections
 
-from local_reservations.common import canon
-from local_reservations.common import reference
+from local_reservations.common import canon, reference
 
 SOURCE_PROPERTY = "source property"
 OPEN_GAP = "open gap"

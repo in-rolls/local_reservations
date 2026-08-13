@@ -33,11 +33,9 @@ unjoinable to the same panchayat printed without one in 2005 and 2010.
 import csv
 import pathlib
 import re
-import sys
 
-from local_reservations.common import collapse
-from local_reservations.common import normalize
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common import collapse, normalize
+from local_reservations.common.normalize import label
 
 REPO = "local_elections_up"
 URL = "https://github.com/in-rolls/local_elections_up"

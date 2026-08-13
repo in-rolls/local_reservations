@@ -13,7 +13,7 @@ reports few problems and reads as though there are few.
 
 import collections
 import csv
-import pathlib
+
 from local_reservations.paths import ROOT
 
 WORKLIST = ROOT / "data" / "worklist.csv"

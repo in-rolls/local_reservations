@@ -31,10 +31,8 @@ Provenance is `dataset`: the file records no document and no page.
 
 import argparse
 import csv
-import pathlib
-import sys
 
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common.normalize import label
 from local_reservations.paths import ROOT
 
 SOURCE = "data/karnataka/Karnataka_GP_ReservationHistory.dta"
@@ -119,10 +117,10 @@ def main():
 
     try:
         import pandas
-    except ImportError:
+    except ImportError as exc:
         raise SystemExit("pandas is needed to read the Stata file; the CSVs it "
                          "writes are committed, so this only has to run when "
-                         "the source changes")
+                         "the source changes") from exc
 
     frame = pandas.read_stata(ROOT / SOURCE, convert_categoricals=False)
     OUT.mkdir(parents=True, exist_ok=True)

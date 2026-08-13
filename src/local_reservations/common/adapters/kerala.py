@@ -46,10 +46,9 @@ Provenance is `dataset`: the scrape recorded no document and no page.
 import collections
 import csv
 import pathlib
-import sys
 
 from local_reservations.common import normalize
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common.normalize import label
 
 REPO = "local_elections_kerala"
 URL = "https://github.com/in-rolls/local_elections_kerala"

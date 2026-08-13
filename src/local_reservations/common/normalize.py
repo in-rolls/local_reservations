@@ -262,7 +262,8 @@ def normalize_reservation(raw):
 
 def is_vacant(name):
     """True when nobody holds the seat - unfilled, or the election was
-    countermanded. Official "elected" totals exclude these."""
+    countermanded. Official "elected" totals exclude these.
+    """
     # Both sides are lowercased. Kruti Dev is case-sensitive mojibake, so
     # folding only one side silently stops "fjDr" from ever matching.
     n = _squash(name).lstrip("*").strip().lower()

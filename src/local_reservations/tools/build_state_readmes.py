@@ -19,13 +19,11 @@ from what would be generated now.
 import argparse
 import collections
 import csv
-import pathlib
 import sys
-
-from local_reservations.tools import build_coverage as coverage  # noqa: E402
 
 from local_reservations.common import datasets
 from local_reservations.paths import ROOT
+from local_reservations.tools import build_coverage as coverage
 
 STATS = DATA_STATS = None
 
@@ -230,7 +228,8 @@ def source_documents(directory):
 
 def source_files(directory):
     """Files actually held, not counting the readme this script writes - which
-    would otherwise make every directory report one file more than it has."""
+    would otherwise make every directory report one file more than it has.
+    """
     return sorted(p for p in (DATA / directory).rglob("*")
                   if p.is_file() and p.name != "readme.md"
                   and not p.name.startswith("."))
@@ -346,7 +345,7 @@ def render_parsed(directory, state, entries):
     out.append("```")
     out.append("")
     out.append(f"Parses from the committed documents and rewrites the files "
-               f"above, then runs `src/local_reservations/states/{directory}/validate.py`.")
+               f"above, then runs `src/local_reservations/states/{directory}/validate.py`.")  # noqa: E501
     out.append("")
 
     grid = render_checks(state)
@@ -382,7 +381,8 @@ def render_parsed(directory, state, entries):
 def render_sibling(directory, state, years, tiers, url):
     """A state parsed in its own repository. What sits here is the source
     material it was parsed from, which is worth saying plainly - the directory
-    otherwise looks like a state nobody has got to yet."""
+    otherwise looks like a state nobody has got to yet.
+    """
     kinds, pages = raw_inventory(directory)
     files = source_files(directory)
     name = url.rsplit("/", 1)[-1]
@@ -442,7 +442,7 @@ def render_unparsed(directory, state, status, where):
     out.append("")
     out.append("See [../../SOURCES.md](../../SOURCES.md) for where this state "
                "publishes its reservation data and what parsing it involves. "
-               "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "
+               "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "  # noqa: E501
                "`local_reservations/common/emit.py` so every row carries its source "
                "document and page, and is paired with a `validate.py` that "
                "checks the result against something outside the data — a "

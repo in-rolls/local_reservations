@@ -15,14 +15,15 @@ here, in one place.
 
 import collections
 import csv
-import pathlib
-import sys
+
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data"
 
-from local_reservations.common import canon
-from local_reservations.common import master
+from local_reservations.common import (  # noqa: E402 - after DATA, which it needs
+    canon,
+    master,
+)
 
 # A parsed dataset is one carrying these columns. Filenames are not evidence -
 # Jharkhand's filenames name the wrong tier.
@@ -43,7 +44,7 @@ def paths(exclude=DERIVED):
         for path in sorted(directory.glob("*.csv")):
             with path.open(encoding="utf-8", errors="replace") as fh:
                 header = next(csv.reader(fh), [])
-            if REQUIRED <= set(header):
+            if set(header) >= REQUIRED:
                 yield path
 
 
@@ -116,7 +117,9 @@ def pooled():
     a whole phase, including through a verification step that promised no
     existing number would move.
     """
-    from local_reservations.tools import build_master              # noqa: PLC0415 - avoids a circular import
+    from local_reservations.tools import (
+        build_master,
+    )
     grouped = collections.defaultdict(list)
     for slice_ in list(build_master.local_slices()) + \
             list(build_master.sibling_slices()):
@@ -129,5 +132,4 @@ def pooled():
             if got is not None:
                 grouped[slice_["dataset_id"]].append(
                     dict(as_written(row), **got))
-    for dataset_id, rows in sorted(grouped.items()):
-        yield dataset_id, rows
+    yield from sorted(grouped.items())

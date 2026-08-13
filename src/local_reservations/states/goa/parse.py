@@ -24,15 +24,16 @@ Writes data/goa/ward_reservation_<year>.csv.
 
 import argparse
 import collections
-import csv
-import pathlib
 import re
 import sys
 
 import pdfplumber
 
 from local_reservations.common import emit
-from local_reservations.common.normalize import label, normalize_reservation  # noqa: E402
+from local_reservations.common.normalize import (
+    label,
+    normalize_reservation,
+)
 from local_reservations.paths import ROOT
 
 GOA = ROOT / "data" / "goa"
@@ -130,7 +131,8 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
 
 def parse_2012(path):
     """Ruled 8-column table: Sl | Taluka | Panchayat | Ward | Category |
-    Elected Representative | Address | Votes."""
+    Elected Representative | Address | Votes.
+    """
     taluka = taluka_of(path, "")
     panchayat = None
     out = []
@@ -144,7 +146,7 @@ def parse_2012(path):
                     if cells[2]:
                         panchayat = cells[2]
                     ward, category = cells[3], cells[4]
-                    if not ward or not category or category.lower().startswith("category"):
+                    if not ward or not category or category.lower().startswith("category"):  # noqa: E501
                         continue
                     winner = cells[5] if len(cells) > 5 else ""
                     votes = cells[7] if len(cells) > 7 else ""
@@ -202,7 +204,8 @@ def _column_bounds(page):
     if not ward or not panch:
         return None
     ward_x = (min(w["x0"] for w in ward) - 6, max(w["x1"] for w in ward) + 42)
-    panch_x = (min(w["x0"] for w in panch) - 6, min(ward_x[0], min(w["x0"] for w in panch) + 90))
+    panch_x = (min(w["x0"] for w in panch) - 6, min(ward_x[0],
+            min(w["x0"] for w in panch) + 90))
     right = min((w["x0"] for w in cands), default=None)
     if right:
         ward_x = (ward_x[0], min(ward_x[1], right - 4))
@@ -215,7 +218,8 @@ def _cells_in_column(page, bounds, tolerance=4):
     for w in page.extract_words():
         if bounds[0] <= w["x0"] < bounds[1]:
             rows[round(w["top"] / tolerance)].append(w)
-    return [(key * tolerance, " ".join(x["text"] for x in sorted(v, key=lambda w: w["x0"])))
+    return [(key * tolerance, " ".join(x["text"] for x in sorted(v,
+            key=lambda w: w["x0"])))
             for key, v in sorted(rows.items())]
 
 
@@ -255,7 +259,8 @@ def parse_2017(path):
             merged, buffer, top = [], "", None
             for y, text in wards:
                 if top is not None and y - top > 26:
-                    merged.append((top, buffer)); buffer, top = "", None
+                    merged.append((top, buffer))
+                    buffer, top = "", None
                 if top is None:
                     top = y
                 buffer = f"{buffer} {text}".strip()
@@ -306,7 +311,7 @@ def main():
         for path in sources(year):
             try:
                 got = PARSERS[year](path)
-            except Exception as exc:  # noqa: BLE001 - report and continue
+            except Exception as exc:
                 print(f"  ERROR {path.name}: {exc}", file=sys.stderr)
                 got = []
             if not got:

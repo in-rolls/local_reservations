@@ -26,7 +26,7 @@ class Server:
         test = self
 
         class Handler(http.server.BaseHTTPRequestHandler):
-            def do_GET(self):  # noqa: N802 - the stdlib's spelling
+            def do_GET(self):
                 test.seen.append(time.monotonic())
                 index = min(len(test.seen) - 1, len(test.replies) - 1)
                 status, headers, body = test.replies[index]
@@ -100,9 +100,8 @@ def test_a_404_is_an_answer_because_a_dead_link_is_a_finding(without_the_wait):
     with Server([(404, {}, b"gone")]) as server:
         assert fetch.get(server.url, timeout=5).status_code == 404
     # ... but body() refuses to hand back a 404's bytes as if they were data
-    with Server([(404, {}, b"gone")]) as server:
-        with pytest.raises(fetch.Unanswered):
-            fetch.body(server.url, timeout=5)
+    with Server([(404, {}, b"gone")]) as server, pytest.raises(fetch.Unanswered):
+        fetch.body(server.url, timeout=5)
 
 
 def test_a_429_is_retried_and_the_retry_after_header_is_obeyed():

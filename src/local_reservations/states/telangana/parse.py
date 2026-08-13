@@ -30,12 +30,10 @@ Provenance is `dataset`: the tables record no document and no page.
 
 import argparse
 import csv
-import pathlib
 import re
-import sys
 
 from local_reservations.common import normalize
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common.normalize import label
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "telangana"

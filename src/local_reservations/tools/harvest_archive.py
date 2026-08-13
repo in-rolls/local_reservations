@@ -1,4 +1,4 @@
-"""Fetch archived documents for any host, as crawled, with a manifest.
+r"""Fetch archived documents for any host, as crawled, with a manifest.
 
     uv run python -m local_reservations.tools.harvest_archive.py --host karsec.gov.in \\
         --match TZP_Elected_Members --out data/karnataka/tzp_2016_elected \\
@@ -38,8 +38,8 @@ import sys
 import urllib.parse
 
 from local_reservations.common import fetch
-from local_reservations.tools.archive_sweep import cdx  # noqa: E402
 from local_reservations.paths import ROOT
+from local_reservations.tools.archive_sweep import cdx
 
 FIELDS = ["file", "url", "wayback_timestamp", "sha256", "bytes"]
 
@@ -75,7 +75,8 @@ def local_name(url):
 
 def crawled(url, timestamp, timeout=300):
     """The bytes as crawled. `id_` asks the archive for the original response
-    without its own banner, so a PDF is the PDF the commission published."""
+    without its own banner, so a PDF is the PDF the commission published.
+    """
     wayback = f"http://web.archive.org/web/{timestamp}id_/{url}"
     return fetch.body(wayback, timeout=timeout)
 

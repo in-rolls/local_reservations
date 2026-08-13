@@ -24,12 +24,12 @@ row straddles a page break, and that is reported rather than smoothed over.
 
 import argparse
 import collections
-import pathlib
 import re
 import sys
 
+import tables
+
 from local_reservations.common import emit
-import tables  # noqa: E402
 from local_reservations.paths import ROOT
 
 CACHE = ROOT / "data" / "karnataka" / "ocr"

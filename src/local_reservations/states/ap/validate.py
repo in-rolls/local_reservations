@@ -16,9 +16,8 @@ count of mended cells is part of the result, not an implementation detail.
 import argparse
 import collections
 import csv
-import pathlib
+import itertools
 import re
-import subprocess
 import sys
 
 from local_reservations.common import checks
@@ -52,7 +51,7 @@ def load(tier):
 def _is_column_numbering(numbers):
     """A run like 1 2 3 4 5 ... is the header's column numbers, not data."""
     values = [int(n) for n in numbers]
-    return len(values) >= 6 and all(b - a == 1 for a, b in zip(values, values[1:]))
+    return len(values) >= 6 and all(b - a == 1 for a, b in itertools.pairwise(values))
 
 
 def abstract_total(path, district):
@@ -93,7 +92,7 @@ def pct(part, whole):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verbose", action="store_true")
-    args = ap.parse_args()
+    ap.parse_args()
 
     sarpanch, ward = load("sarpanch"), load("ward")
     if not sarpanch:

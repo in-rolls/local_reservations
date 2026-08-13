@@ -11,11 +11,10 @@ It prints the tag command rather than running it.
 """
 
 import json
-import pathlib
 import subprocess
 import sys
-from local_reservations.paths import ROOT
 
+from local_reservations.paths import ROOT
 
 # Everything in the repository that is written by a generator rather than by
 # hand. `make coverage` rebuilds them all, so a stale one leaves the tree dirty

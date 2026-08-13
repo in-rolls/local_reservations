@@ -19,13 +19,9 @@ single number.
 import argparse
 import collections
 import csv
-import pathlib
 import sys
 
-from local_reservations.common import canon
-from local_reservations.common import datasets
-from local_reservations.common import reference
-from local_reservations.common import slice_checks
+from local_reservations.common import canon, datasets, reference, slice_checks
 from local_reservations.paths import ROOT
 
 STATS = ROOT / "data" / "stats"

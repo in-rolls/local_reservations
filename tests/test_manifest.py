@@ -7,9 +7,9 @@ changed byte is decoration.
 
 import hashlib
 import json
-import pathlib
 import subprocess
 import sys
+
 from local_reservations.paths import ROOT
 
 BUILD = ROOT / "src" / "local_reservations" / "tools" / "build_manifest.py"

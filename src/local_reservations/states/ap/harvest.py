@@ -18,9 +18,9 @@ overwrite. Writes data/ap/2020_res_gp/ and appends to its manifest.
 import argparse
 import csv
 import hashlib
-import pathlib
 import sys
 import urllib.request
+
 from local_reservations.paths import ROOT
 
 OUT = ROOT / "data" / "ap" / "2020_res_gp"
@@ -76,7 +76,7 @@ def main():
             continue
         try:
             body = fetch(url, timestamp)
-        except Exception as exc:  # noqa: BLE001 - report and carry on
+        except Exception as exc:
             print(f" FAILED {type(exc).__name__}")
             continue
         digest = hashlib.sha256(body).hexdigest()

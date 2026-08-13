@@ -23,10 +23,10 @@ the ceiling for everything else.
 
 import collections
 import csv
-import pathlib
 import re
 
 import pytest
+
 from local_reservations.paths import ROOT
 
 DEVANAGARI = re.compile(r"[ऀ-ॿ]")
@@ -74,7 +74,7 @@ def test_winners_are_not_left_in_a_font_encoding(path):
     legitimately carry a dash or a Latin token, and because the point is to
     notice a whole district reverting rather than to police individual values.
     """
-    values = [v for v in winners(path)]
+    values = list(winners(path))
     if len(values) < 100:
         pytest.skip("too few winners to measure")
     unconverted = [v for v in values if not DEVANAGARI.search(v)]

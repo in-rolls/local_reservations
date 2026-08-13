@@ -31,13 +31,15 @@ Writes data/ap/{sarpanch,ward}_reservation_2020.{csv,jsonl}.
 
 import argparse
 import collections
-import pathlib
 import re
 import subprocess
 import sys
 
 from local_reservations.common import emit
-from local_reservations.common.normalize import label, normalize_reservation  # noqa: E402
+from local_reservations.common.normalize import (
+    label,
+    normalize_reservation,
+)
 from local_reservations.paths import ROOT
 
 AP = ROOT / "data" / "ap" / "2020_res_gp"
@@ -108,11 +110,13 @@ MAX_WARDS = 20
 
 def repair(token):
     """Return (clean token, was_repaired). Only the closed category vocabulary
-    is repaired - never a name, where a wrong guess would be undetectable."""
+    is repaired - never a name, where a wrong guess would be undetectable.
+    """
     original = token
     fixed = re.sub(r"\s+", " ", token).strip()
     fixed = "".join(CANONICAL.get(c, c) for c in fixed)
-    fixed = fixed.replace("{", "(").replace("[", "(").replace("}", ")").replace("]", ")")
+    fixed = fixed.replace("{", "(").replace("[", "(").replace("}", ")").replace("]",
+            ")")
     if "(" in fixed and ")" not in fixed:
         fixed += ")"
     # a closing bracket carrying no W is an open seat whose marker was mangled

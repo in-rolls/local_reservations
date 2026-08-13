@@ -28,7 +28,6 @@ import argparse
 import collections
 import csv
 import json
-import pathlib
 import re
 import sys
 import urllib.parse
@@ -123,7 +122,8 @@ def cdx(host, prefix=True, limit=5000):
 def resolve(state):
     """The first candidate host with anything archived, every candidate tried,
     and whether any query failed - a host is only "not found" if every
-    candidate was actually asked."""
+    candidate was actually asked.
+    """
     tried, failed = [], False
     for host in candidates(state):
         tried.append(host)
@@ -180,7 +180,8 @@ def sweep(state):
 
 def previous():
     """What the last run recorded, by state, so a failed query can carry the
-    answer forward instead of overwriting it with a worse one."""
+    answer forward instead of overwriting it with a worse one.
+    """
     if not OUT.exists():
         return {}
     with OUT.open(encoding="utf-8") as fh:

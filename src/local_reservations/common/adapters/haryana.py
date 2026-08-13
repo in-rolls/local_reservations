@@ -29,10 +29,9 @@ the worklist rather than papered over.
 
 import csv
 import pathlib
-import sys
 
 from local_reservations.common import krutidev
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common.normalize import label
 
 # Names typeset in Kruti Dev, converted on read. Only these: the district and
 # the block are already Latin in every row, and running Latin through the

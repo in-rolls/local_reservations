@@ -25,15 +25,16 @@ Writes data/jk/{ward,sarpanch}_reservation_<year>.{csv,jsonl}.
 
 import argparse
 import collections
-import pathlib
 import re
 import sys
 
 import pdfplumber
 
-from local_reservations.common import canon
-from local_reservations.common import emit
-from local_reservations.common.normalize import label, normalize_reservation  # noqa: E402
+from local_reservations.common import canon, emit
+from local_reservations.common.normalize import (
+    label,
+    normalize_reservation,
+)
 from local_reservations.paths import ROOT
 
 JK = ROOT / "data" / "jk"
@@ -125,7 +126,8 @@ def district_from_document(text):
 
 def block_from_filename(path):
     """2010 names each file for its block. Verified rather than assumed: on the
-    2,236 rows where the page also states a block, the two agree every time."""
+    2,236 rows where the page also states a block, the two agree every time.
+    """
     return re.sub(r"[()]", "", path.stem).strip()
 
 
@@ -166,7 +168,8 @@ def map_columns(table_rows):
     def is_number_row(row):
         """The row of column numbers ("2 3 4 5 ...") sits under the header and
         would otherwise be joined into it, leaving every header ending in a
-        digit so that suffix matches like "...sc" never fire."""
+        digit so that suffix matches like "...sc" never fire.
+        """
         filled = [clean(c) for c in row if clean(c)]
         return bool(filled) and all(c.isdigit() for c in filled)
 
@@ -247,7 +250,7 @@ def parse_mapped(path, year):
                 # drop the rows that *are* the header, or "Name of District"
                 # ends up recorded as a district and the header's explanatory
                 # sentence as a reservation value
-                body = extracted[found_here["header_depth"]:] if found_here else extracted
+                body = extracted[found_here["header_depth"]:] if found_here else extracted  # noqa: E501
                 for cells in body:
                     def cell(key):
                         i = mapping.get(key)
@@ -319,7 +322,7 @@ def fill_place(rows, path):
     try:
         with pdfplumber.open(str(path)) as pdf:
             district = district_from_document(pdf.pages[0].extract_text() or "")
-    except Exception:  # noqa: BLE001 - a document that will not open names nothing
+    except Exception:
         district = ""
     declared = ""
     if not district:
@@ -414,7 +417,7 @@ def main():
                     # fall back to fixed indices for the years whose tables
                     # carry no usable header
                     got = parse_generic(path, year, LAYOUTS[year])
-            except Exception as exc:  # noqa: BLE001 - report and continue
+            except Exception as exc:
                 failed.append((path.name, type(exc).__name__))
                 got = []
             if not got:

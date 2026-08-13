@@ -8,13 +8,11 @@ business.
 """
 
 import json
-import pathlib
 
 import pytest
 
 from local_reservations.common import ocr_engine
 from local_reservations.paths import ROOT
-
 
 GOOD = "<table><tr><td>ಒಂದು</td><td>ಎರಡು</td></tr></table>"
 EMPTY = "<div><img/></div>"

@@ -27,19 +27,14 @@ recorded on every row.
 import argparse
 import collections
 import csv
-import pathlib
 import subprocess
 import sys
 
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from local_reservations.common import adapters
-from local_reservations.common import canon
-from local_reservations.common import datasets
-from local_reservations.common import dictionary
-from local_reservations.common import emit
-from local_reservations.common import master as M  # noqa: E402
+from local_reservations.common import adapters, datasets, dictionary
+from local_reservations.common import master as M
 from local_reservations.paths import ROOT
 
 OUT = ROOT / "data" / "master"
@@ -68,14 +63,14 @@ def git_commit(directory, paths=None):
     try:
         if scope:
             sha = subprocess.run(
-                ["git", "-C", str(directory), "log", "-1", "--format=%H", "--"]
-                + scope, capture_output=True, text=True, timeout=30).stdout.strip()
+                ["git", "-C", str(directory), "log", "-1", "--format=%H", "--",
+                        *scope], capture_output=True, text=True, timeout=30).stdout.strip()  # noqa: E501
         else:
             sha = subprocess.run(
                 ["git", "-C", str(directory), "rev-parse", "HEAD"],
                 capture_output=True, text=True, timeout=30).stdout.strip()
         dirty = subprocess.run(
-            ["git", "-C", str(directory), "status", "--porcelain", "--"] + scope,
+            ["git", "-C", str(directory), "status", "--porcelain", "--", *scope],
             capture_output=True, text=True, timeout=60).stdout.strip()
     except (subprocess.SubprocessError, OSError):
         return "", False
@@ -373,9 +368,9 @@ def render_readme(rows, dropped, candidates, counts, written):
         what = ("one state, one row per candidate" if path.name.startswith(
             "candidates_") else "one state, one row per seat")
         out.append(f"| [`{path.name}`]({path.name}) | {n:,} | {what} |")
-    out += [f"| [`master_extras.parquet`](master_extras.parquet) | — | the "
-            f"state-specific columns, long-form as (row_id, column, value), so "
-            f"the master stays a fixed schema without losing anything |",
+    out += ["| [`master_extras.parquet`](master_extras.parquet) | — | the "
+            "state-specific columns, long-form as (row_id, column, value), so "
+            "the master stays a fixed schema without losing anything |",
             f"| [`master_key_collisions.csv`](master_key_collisions.csv) | "
             f"{len(rows) - unique:,} | rows that do not identify a distinct "
             f"seat |",
@@ -398,7 +393,8 @@ def main():
     rows, extras, dropped, candidates, counts = build(args.only)
     reconcile(counts, dropped)
     written = write(rows, extras, dropped, candidates)
-    (OUT / "readme.md").write_text(render_readme(rows, dropped, candidates, counts, written),
+    (OUT / "readme.md").write_text(render_readme(rows, dropped, candidates, counts,
+            written),
                                    encoding="utf-8")
 
     print(f"\n{counts['output']:,} rows -> {OUT.relative_to(ROOT)}/")

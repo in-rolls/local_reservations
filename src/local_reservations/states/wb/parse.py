@@ -32,11 +32,9 @@ one. A parser that drops or invents a row fails it.
 import argparse
 import collections
 import csv
-import pathlib
 import re
-import sys
 
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common.normalize import label
 from local_reservations.paths import ROOT
 
 CACHE = ROOT / "data" / "wb" / "ocr"
@@ -95,7 +93,7 @@ def column_edges(lines):
         marks = [MARKER.match(w["text"]) for w in line]
         if not all(marks) or len(marks) < 5:
             continue
-        found = {m.group(1): w["x"] for m, w in zip(marks, line)}
+        found = {m.group(1): w["x"] for m, w in zip(marks, line, strict=False)}
         if {"2", "3", "4", "5"} <= set(found):
             return ((found["1"] + found["2"]) / 2 if "1" in found else 0,
                     (found["2"] + found["3"]) / 2,

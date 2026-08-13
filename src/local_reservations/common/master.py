@@ -43,9 +43,7 @@ rather than hidden behind a claim the data does not support.
 
 import hashlib
 
-from local_reservations.common import canon
-from local_reservations.common import dictionary
-from local_reservations.common import reference
+from local_reservations.common import canon, dictionary, reference
 
 MASTER_COLUMNS = [
     # grain
@@ -168,7 +166,8 @@ def quality_flags(row):
 
 def gp_term(row):
     """Which word the source used for the panchayat, since the master keeps one
-    column and the term itself is information about the state."""
+    column and the term itself is information about the state.
+    """
     for column in canon.UNIT_COLUMNS:
         if (row.get(column) or "").strip():
             return column
@@ -255,7 +254,7 @@ def candidates(row, seat):
         got = dict(shared, candidate_no=position, row_id=seat.get("row_id", ""))
         got.update({c: member.get(c, "") for c in CANDIDATE_FIELDS})
         got["candidate_id"] = hashlib.sha1(
-            f"{seat.get('row_id', '')}|{position}".encode("utf-8")
+            f"{seat.get('row_id', '')}|{position}".encode()
         ).hexdigest()[:12]
         out.append({c: "" if got.get(c) is None else str(got.get(c, ""))
                     for c in CANDIDATE_COLUMNS})

@@ -52,7 +52,6 @@ needs any of this.
 
 import argparse
 import os
-import pathlib
 import subprocess
 import sys
 

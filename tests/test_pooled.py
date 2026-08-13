@@ -13,8 +13,6 @@ instead: a pooled row carries the master's columns **over** the row it came
 from, not instead of it.
 """
 
-import pathlib
-import sys
 
 import pytest
 

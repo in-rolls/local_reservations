@@ -15,10 +15,10 @@ Writes data/inventory.csv, one row per document.
 import argparse
 import collections
 import csv
-import pathlib
 import re
 import subprocess
 import sys
+
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data"
@@ -61,7 +61,8 @@ def classify(path):
     size = path.stat().st_size
     if suffix != ".pdf":
         kind = {".csv": "tabular", ".xlsx": "tabular", ".xls": "tabular",
-                ".dta": "tabular", ".zip": "archive", ".docx": "doc"}.get(suffix, "other")
+                ".dta": "tabular", ".zip": "archive", ".docx": "doc"}.get(suffix,
+                "other")
         return {"kind": kind, "pages": "", "producer": "", "chars_per_page": "",
                 "format": "tabular" if kind == "tabular" else kind, "bytes": size}
 
@@ -72,7 +73,7 @@ def classify(path):
     elif density >= TEXT_THRESHOLD:
         fmt = "digital-text"
     elif density > 50:
-        fmt = "mixed"       # a text layer exists but is thin - partial OCR or cover pages
+        fmt = "mixed"       # a text layer exists but is thin - partial OCR or cover pages  # noqa: E501
     else:
         fmt = "scan"
     return {"kind": "pdf", "pages": pages, "producer": producer,
@@ -113,7 +114,7 @@ def main():
         count = collections.Counter(r["format"] for r in sub)
         pages = sum(int(r["pages"]) for r in sub if str(r["pages"]).isdigit())
         print(f"{state:16s} {len(sub):5d} {count['digital-text']:5d} "
-              f"{count['scan']:5d} {count['mixed']:5d} {count['tabular']:7d} {pages:7d}")
+              f"{count['scan']:5d} {count['mixed']:5d} {count['tabular']:7d} {pages:7d}")  # noqa: E501
 
 
 if __name__ == "__main__":

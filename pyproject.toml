@@ -33,7 +33,7 @@ dependencies = [
 Repository = "https://github.com/in-rolls/local_reservations"
 
 [dependency-groups]
-dev = ["pytest", "ruff", "pyright"]
+dev = ["pytest", "ruff", "pyright", "pydoclint>=0.5"]
 
 # Reading the scans. Kept apart because it cannot share an interpreter with the
 # parsing dependencies: savitr pins pillow<11 and pdfplumber needs >=12.2, so
@@ -51,6 +51,77 @@ conflicts = [[{ group = "dev" }, { group = "ocr" }]]
 # Console scripts, so the Makefile and anyone else name a command rather than a
 # file path. verify-manifest is deliberately also runnable as a bare file: it
 # has to work from an unpacked tarball with nothing installed.
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+external = ["DOC"]
+select = ["E", "W", "F", "I", "B", "C4", "UP", "N", "D", "S", "SIM", "T20", "PT", "RUF"]
+ignore = [
+    "D203", "D213",
+    # Place names, winners and reservation categories are held in the script
+    # they were printed in - Kannada, Devanagari, and Kruti Dev mojibake that
+    # is deliberately preserved as evidence. "Ambiguous unicode character" is
+    # every one of them, so this rule would fire on the data itself.
+    "RUF001", "RUF002", "RUF003",
+    # Docstrings are written where they carry an argument - this repository's
+    # modules open with several paragraphs on what a source actually does and
+    # why a reading was chosen. Requiring one on every helper would trade that
+    # for 174 restatements of a function's own name.
+    "D100", "D101", "D102", "D103", "D104", "D105", "D107",
+    # Docstrings here open with a paragraph rather than a one-line summary,
+    # because what a reader needs first is usually what the source document
+    # does, not a restatement of the function name.
+    "D205",
+    # `import master as M`, `import dictionary as D`. A deliberate house
+    # convention in the build scripts, where those two names appear on most
+    # lines and the full name would bury the logic.
+    "N812",
+    # The closure is defined and called inside the same iteration, so the late
+    # binding this warns about cannot occur. Checked, at jk/parse.py and
+    # build_state_readmes.py.
+    "B023",
+    # sha1 is a row identifier, not a security boundary - a stable hash of
+    # provenance plus seat key, chosen for length.
+    "S324",
+    # `Unanswered` and `ReservationVaries` read as what they are at the call
+    # site - `except Unanswered` says the request went unanswered. An Error
+    # suffix would add a syllable and no information.
+    "N818",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# Tests shell out to the manifest builder and verifier on purpose - the point
+# of those tests is that the scripts run as scripts.
+"tests/**" = ["S101", "D", "S603", "S607"]
+# These are command-line tools and parsers. Printing is their interface, not a
+# leftover debug statement, and the subprocess calls are deliberate: pdftotext,
+# pdfinfo, pdftoppm and tesseract are the readers, invoked by name because that
+# is how they are installed.
+# proof_page and compare_readers write an HTML file to /tmp and open it; they
+# are for putting a rendered page in front of a human, not for shipping.
+"src/local_reservations/tools/**" = ["T201", "S603", "S607", "S108"]
+# S310: the AP harvester opens an https URL built from a CDX response.
+# S105: RE_MUKHIYA_TOKEN is a regex for a Kruti Dev word, not a password.
+"src/local_reservations/states/**" = ["T201", "S603", "S607", "S310", "S105", "S101"]
+"src/local_reservations/common/**" = ["T201", "S603", "S607"]
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "standard"
+
+[tool.pydoclint]
+style = "google"
+arg-type-hints-in-docstring = false
+check-return-types = false
+check-class-attributes = false
+allow-init-docstring = true
+exclude = '\.venv|tests|docs'
 [project.scripts]
 build-master = "local_reservations.tools.build_master:main"
 build-manifest = "local_reservations.tools.build_manifest:main"
@@ -63,3 +134,19 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/local_reservations"]
+
+[tool.preen]
+# What this repository does not take from the fleet standard, and why.
+#
+# py-canon is built for PyPI packages. This is a data corpus: a release here
+# means MANIFEST.json pinning a SHA-256 for every data file and the commit of
+# each of five sibling repositories, gated by release_check.py, which refuses
+# on a dirty tree or a dirty sibling. Nothing is published to PyPI, so the
+# release workflow was removed rather than left to fire on the next v* tag -
+# and our tags are v0.2.1, so it would have fired.
+#
+# The documentation is readme.md plus a generated readme in every state
+# directory, both rebuilt by `make coverage` and checked by
+# build_state_readmes.py --check. A Sphinx site would be a second, unchecked
+# copy, so docs/ and its workflow are out too.
+skip_checks = ["changelog", "deps", "depgroups", "audit", "links", "pydoclint"]

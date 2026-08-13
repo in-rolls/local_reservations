@@ -26,9 +26,9 @@ The cache is committed, so the parse runs without tesseract installed.
 """
 
 import argparse
-import pathlib
 import subprocess
 import sys
+
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "wb" / "2018"

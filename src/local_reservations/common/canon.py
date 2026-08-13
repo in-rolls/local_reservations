@@ -159,9 +159,8 @@ def allowed_castes(state):
 # The panchayat's name arrives under whichever term the state prints. The
 # mapping lives in dictionary.py so there is one place that decides it; this
 # reads it rather than repeating the list, which is how the two drifted before.
-UNIT_COLUMNS = ["gram_panchayat"] + sorted(
-    alias for alias, canonical in dictionary.ALIAS_OF.items()
-    if canonical == "gram_panchayat")
+UNIT_COLUMNS = ["gram_panchayat", *sorted(alias for alias,
+        canonical in dictionary.ALIAS_OF.items() if canonical == "gram_panchayat")]
 
 
 def unit_name(row):

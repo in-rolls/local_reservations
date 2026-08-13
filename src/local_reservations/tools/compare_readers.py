@@ -1,6 +1,7 @@
 """One page, both readers, side by side with the page itself.
 
-    uv run python -m local_reservations.tools.compare_readers.py "RANCHI ZP PSS MUKHIYA GPS" 37
+    uv run python -m local_reservations.tools.compare_readers.py "RANCHI ZP PSS MUKHIYA
+    GPS" 37
 
 Every Jharkhand document is now read twice - out of its own text layer, and by
 the model out of a rendered image - and the two disagree about how many seats a
@@ -23,8 +24,9 @@ import subprocess
 import sys
 import webbrowser
 
+import parse
+
 from local_reservations.common import krutidev
-import parse  # noqa: E402
 from local_reservations.paths import ROOT
 
 OUT = pathlib.Path("/tmp/compare_readers.html")

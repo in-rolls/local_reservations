@@ -7,10 +7,7 @@ counts stay plausible whichever way it goes.
 
 import pytest
 
-from local_reservations.common import canon
-from local_reservations.common import datasets
-from local_reservations.common import dictionary
-
+from local_reservations.common import canon, datasets, dictionary
 
 # --------------------------------------------------------------- the tiers
 
@@ -54,7 +51,7 @@ def test_every_mapping_lands_on_a_declared_tier():
 
 
 def test_rural_and_urban_partition_the_tiers():
-    assert canon.RURAL_TIERS | canon.URBAN_TIERS == set(canon.TIER)
+    assert set(canon.TIER) == canon.RURAL_TIERS | canon.URBAN_TIERS
     assert not canon.RURAL_TIERS & canon.URBAN_TIERS
 
 
@@ -78,7 +75,7 @@ def test_no_local_name_maps_to_two_tiers_within_a_state():
         for row in rows:
             key = (row["state"], row.get("tier_local", ""))
             if key in seen:
-                assert seen[key] == row["tier"], f"{key} -> {seen[key]} and {row['tier']}"
+                assert seen[key] == row["tier"], f"{key} -> {seen[key]} and {row['tier']}"  # noqa: E501
             else:
                 seen[key] = row["tier"]
 
@@ -124,12 +121,12 @@ def test_two_names_in_one_row_raises():
     """The coalesce assumes exactly one is ever populated. If two were, it would
     silently prefer one and drop the other, and nobody would see which - so this
     is the one place the assumption is enforced rather than trusted."""
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r"\w"):
         canon.unit_name({"gram_panchayat": "Agali", "halqa": "Kupwara A"})
 
 
 def test_no_shipped_row_names_the_panchayat_twice():
-    for path, rows in datasets.parsed():
+    for _path, rows in datasets.parsed():
         for row in rows:
             canon.unit_name(row)
 

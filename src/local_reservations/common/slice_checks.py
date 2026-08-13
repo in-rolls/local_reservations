@@ -22,10 +22,7 @@ noticed. So a skipped check on a slice over SKIP_FLOOR rows now fails.
 import collections
 import pathlib
 
-from local_reservations.common import canon
-from local_reservations.common import dictionary
-from local_reservations.common import normalize
-from local_reservations.common import reference
+from local_reservations.common import canon, dictionary, normalize, reference
 
 FAIL_STATUSES = ("fail",)
 
@@ -205,10 +202,7 @@ def women_share_vs_statute(s):
     # "not less than one third" is the wording of the 73rd Amendment, so a
     # higher share is compliance. Haryana's half is an exact split. Passing the
     # wrong one of these turned J&K's compliant 48% into a failure once.
-    if kind == "floor":
-        ok = share >= value - 0.02
-    else:
-        ok = abs(share - value) <= 0.05
+    ok = share >= value - 0.02 if kind == "floor" else abs(share - value) <= 0.05
     return result(PASS if ok else FAIL, f"{share:.1%}",
                   f"{kind} {value:.0%}", note)
 
@@ -238,7 +232,8 @@ def women_share_by_block(s):
 @check("caste_share_vs_population", "external")
 def caste_share_vs_population(s):
     """Where the source prints populations, an SC-reserved seat should sit in a
-    place with more SC people. The strongest check available in J&K."""
+    place with more SC people. The strongest check available in J&K.
+    """
     with_pop = [r for r in s.rows if (r.get("pop_sc") or "").isdigit()
                 and (r.get("pop_total") or "").isdigit()
                 and int(r["pop_total"]) > 0]

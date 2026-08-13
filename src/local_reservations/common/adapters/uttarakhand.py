@@ -25,11 +25,9 @@ Provenance is `dataset`: the parse recorded no document and no page.
 import csv
 import pathlib
 import re
-import sys
 
-from local_reservations.common import collapse
-from local_reservations.common import normalize
-from local_reservations.common.normalize import label  # noqa: E402
+from local_reservations.common import collapse, normalize
+from local_reservations.common.normalize import label
 
 REPO = "local_elections_uttarakhand"
 URL = "https://github.com/in-rolls/local_elections_uttarakhand"

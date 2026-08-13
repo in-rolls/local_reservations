@@ -18,9 +18,7 @@ honest rather than about hitting a number:
 """
 
 import argparse
-import collections
 import csv
-import pathlib
 import sys
 
 from local_reservations.common import checks
@@ -52,7 +50,7 @@ def pct(part, whole):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verbose", action="store_true")
-    args = ap.parse_args()
+    ap.parse_args()
     failures = 0
     failures += shared_battery(
         "Jammu & Kashmir - shared checks",

@@ -31,16 +31,19 @@ import argparse
 import collections
 import csv
 import html
-import pathlib
 import re
 import sys
 
 import pdfplumber
 
-from local_reservations.common import canon
-from local_reservations.common import emit
-from local_reservations.common import krutidev
-from local_reservations.common.normalize import _undouble, caste_of, is_vacant, label, woman_of  # noqa: E402
+from local_reservations.common import canon, emit, krutidev
+from local_reservations.common.normalize import (
+    _undouble,
+    caste_of,
+    is_vacant,
+    label,
+    woman_of,
+)
 from local_reservations.paths import ROOT
 
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
@@ -381,7 +384,8 @@ FOLDER_TYPOS = {"Gooda": "Godda"}
 
 def district_of(folder):
     """"1. GARHWA MUKHIYA PSS" -> "Garhwa". The folder names are the only
-    readable place-names in this corpus."""
+    readable place-names in this corpus.
+    """
     name = re.sub(r"^\s*\d+\s*[.)]?\s*", "", folder.name)
     name = re.sub(r"\b(MUKHIYA|PSS|GPS|ZP)\b", "", name, flags=re.I)
     name = re.sub(r"[()&]", " ", name)
@@ -478,7 +482,7 @@ def fill_image_seats(rows):
         printed = krutidev.to_unicode(re.sub(r"^\s*\d{1,3}\s*", "",
                                              row.get("winner") or ""))
         serial = re.match(r"^\s*(\d{1,3})\b", row.get("winner") or "")
-        got = found.get(page + (serial.group(1),)) if serial else None
+        got = found.get((*page, serial.group(1))) if serial else None
         if got and got["name_ocr"] and printed \
                 and _similar(printed, got["name_ocr"]) < 0.5:
             got = None
@@ -630,7 +634,7 @@ def parse_stacked(path, district):
                 seat = line[gender_at.end():].strip()
                 left = [line[:caste_at.start()]]
                 for other in (index - 1, index + 1):
-                    if 0 <= other < len(lines) and not STACKED_CASTE.search(lines[other]):
+                    if 0 <= other < len(lines) and not STACKED_CASTE.search(lines[other]):  # noqa: E501
                         left.append(lines[other][:caste_at.start()])
                 joined = clean(" ".join(left))
                 if "in vkjf{kr" in joined:      # the column header
@@ -1018,7 +1022,7 @@ def main():
                     got = merge(got, parse_stacked(path, district))
                     got = merge(got, read_by_model)
                 rows += got
-            except Exception as exc:  # noqa: BLE001 - report, keep going
+            except Exception as exc:
                 failed.append((path.name, type(exc).__name__))
             print(f"\r  {district:18s} rows={len(rows)}", end="", file=sys.stderr)
     print(file=sys.stderr)

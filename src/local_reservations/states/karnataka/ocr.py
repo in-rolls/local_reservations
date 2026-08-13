@@ -39,7 +39,6 @@ as much. 17 seconds a page became 61.
 
 import argparse
 import os
-import pathlib
 import sys
 
 from local_reservations.common import ocr_engine

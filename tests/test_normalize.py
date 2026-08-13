@@ -7,10 +7,15 @@ perfectly plausible value, so nothing raises and nothing looks wrong.
 
 import pytest
 
-from local_reservations.common.normalize import (caste_of, is_krutidev,
-                                                  is_vacant, label,
-                                                  normalize_reservation,
-                                                  strip_unopposed, woman_of)
+from local_reservations.common.normalize import (
+    caste_of,
+    is_krutidev,
+    is_vacant,
+    label,
+    normalize_reservation,
+    strip_unopposed,
+    woman_of,
+)
 from local_reservations.paths import ROOT
 
 # ---------------------------------------------------------------- Jharkhand
@@ -85,7 +90,7 @@ NON_CATEGORIES = ["", None, "Sarpanch", "Panch", "iap", "5", "--", "Independent"
                   "Reserved for"]
 
 
-@pytest.mark.parametrize("raw,caste", JHARKHAND_CASTE)
+@pytest.mark.parametrize(("raw", "caste"), JHARKHAND_CASTE)
 def test_jharkhand_caste_column(raw, caste):
     assert caste_of(raw) == caste
 
@@ -95,7 +100,7 @@ def test_jharkhand_gender_column():
     assert woman_of("vU;") == 0
 
 
-@pytest.mark.parametrize("raw,caste,woman", GOA + AP + HARYANA + JK)
+@pytest.mark.parametrize(("raw", "caste", "woman"), GOA + AP + HARYANA + JK)
 def test_single_cell_states(raw, caste, woman):
     result = normalize_reservation(raw)
     assert result is not None, f"{raw!r} was not recognised as a category"
@@ -110,8 +115,10 @@ def test_rejects_non_categories(raw):
 
 def test_wrapped_cell_is_whitespace_insensitive():
     """pdfplumber joins a wrapped cell with a newline; that must not matter."""
-    assert normalize_reservation("Scheduled Caste\nOther than Women") == ("SC", 0, "latin")
-    assert normalize_reservation("vuqlwfpr tkfr efgyk\nds flok;") == ("SC", 0, "krutidev")
+    assert normalize_reservation("Scheduled Caste\nOther than Women") == ("SC", 0,
+            "latin")
+    assert normalize_reservation("vuqlwfpr tkfr efgyk\nds flok;") == ("SC", 0,
+            "krutidev")
 
 
 def test_script_detection():
@@ -132,7 +139,9 @@ def test_labels():
 def test_unopposed_and_vacant():
     assert strip_unopposed("*Sunita Rani") == ("Sunita Rani", True)
     assert strip_unopposed("Sunita Rani") == ("Sunita Rani", False)
-    assert is_vacant("Vacant") and is_vacant("fjDr in") and is_vacant("")
+    assert is_vacant("Vacant")
+    assert is_vacant("fjDr in")
+    assert is_vacant("")
     assert not is_vacant("Sunita Rani")
 
 
@@ -156,7 +165,7 @@ BIHAR = [
 ]
 
 
-@pytest.mark.parametrize("raw,caste,woman,_", BIHAR)
+@pytest.mark.parametrize(("raw", "caste", "woman", "_"), BIHAR)
 def test_bihar_reservation_column(raw, caste, woman, _):
     assert caste_of(raw) == caste
     assert woman_of(raw) == woman
@@ -220,7 +229,7 @@ UTTARAKHAND = [
 ]
 
 
-@pytest.mark.parametrize("raw,caste,woman", UTTARAKHAND)
+@pytest.mark.parametrize(("raw", "caste", "woman"), UTTARAKHAND)
 def test_uttarakhand_abbreviations(raw, caste, woman):
     assert caste_of(raw) == caste
     assert woman_of(raw) == woman

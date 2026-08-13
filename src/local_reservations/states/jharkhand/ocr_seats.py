@@ -49,7 +49,8 @@ import subprocess
 import sys
 import tempfile
 
-import parse  # noqa: E402  - for split_seat_id and the HTML cell reader
+import parse
+
 from local_reservations.paths import ROOT
 
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
@@ -202,7 +203,7 @@ def main():
             continue
         try:
             got = read(path)
-        except Exception as exc:  # noqa: BLE001 - report and continue
+        except Exception as exc:
             print(f"  {path.name}: {type(exc).__name__}", file=sys.stderr)
             continue
         if got:

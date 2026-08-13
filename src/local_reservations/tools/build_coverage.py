@@ -23,9 +23,9 @@ the same way the validate scripts gate the data.
 import argparse
 import collections
 import csv
-import pathlib
 import re
 import sys
+
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data"
@@ -34,10 +34,11 @@ README = ROOT / "readme.md"
 START, END = "<!-- coverage:start -->", "<!-- coverage:end -->"
 SLICE_START, SLICE_END = "<!-- slices:start -->", "<!-- slices:end -->"
 
-from local_reservations.common import datasets
-from local_reservations.common import fetch
-from local_reservations.common import reference
-
+from local_reservations.common import (  # noqa: E402 - after DATA, which it needs
+    datasets,
+    fetch,
+    reference,
+)
 
 # States split into their own repositories.
 # States parsed in a repository of their own, with the files that hold the
@@ -54,7 +55,7 @@ SIBLINGS = {
     },
     "Bihar": {
         "repo": "local_elections_bihar", "years": "2016",
-        "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari_head, kachahari_member",
+        "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari_head, kachahari_member",  # noqa: E501
         "files": ["data/mukhiya.csv", "data/ward_member.csv", "data/sarpanch.csv",
                   "data/panch.csv", "data/panchayat_samiti_member.csv",
                   "data/zila_parishad_member.csv"],
@@ -289,7 +290,7 @@ def slices():
     for (state, year, tier), rows in sorted(grouped.items()):
         total = len(rows)
         women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
-        districts = {r.get("district") for r in rows if (r.get("district") or "").strip()}
+        districts = {r.get("district") for r in rows if (r.get("district") or "").strip()}  # noqa: E501
         out.append({
             "state": state, "year": year, "tier": tier, "rows": total,
             "women": 100.0 * women / max(total, 1),

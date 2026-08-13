@@ -1,6 +1,7 @@
 """Import a state's parser by name.
 
-This used to load `src/local_reservations/states/<state>/parse.py` from a path with importlib, and
+This used to load `src/local_reservations/states/<state>/parse.py` from a path with
+importlib, and
 the reason was real: every state calls its parser `parse.py`, so a plain
 `import parse` resolved to whichever one reached sys.path first, and the next
 test module got that same module back out of the cache - testing another

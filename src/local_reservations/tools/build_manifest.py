@@ -20,16 +20,14 @@ import csv
 import gzip
 import hashlib
 import json
-import pathlib
 import subprocess
 import sys
 
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from local_reservations.common import adapters
-from local_reservations.common import datasets
-from local_reservations.common import master as M  # noqa: E402
+from local_reservations.common import adapters, datasets
+from local_reservations.common import master as M
 from local_reservations.paths import ROOT
 
 MANIFEST_JSON = ROOT / "MANIFEST.json"
@@ -203,8 +201,8 @@ def render(manifest):
         out.append(f"| `{f['path']}` | {f['rows']:,} | {f['bytes']:,} | "
                    f"`{f['sha256'][:16]}…` |")
     out += ["", "## Schema", "",
-            f"`master_columns` records the exact ordered column list, so a "
-            f"consumer can detect a schema change without diffing a header:",
+            "`master_columns` records the exact ordered column list, so a "
+            "consumer can detect a schema change without diffing a header:",
             "", "```", ", ".join(manifest["master_columns"]), "```", ""]
     return "\n".join(out) + "\n"
 
@@ -222,7 +220,7 @@ def main():
     text = json.dumps(manifest, indent=2, sort_keys=True) + "\n"
 
     if args.check:
-        current = MANIFEST_JSON.read_text(encoding="utf-8") if MANIFEST_JSON.exists() else ""
+        current = MANIFEST_JSON.read_text(encoding="utf-8") if MANIFEST_JSON.exists() else ""  # noqa: E501
         if current != text:
             print("MANIFEST.json is out of date - run `make manifest`")
             return 1

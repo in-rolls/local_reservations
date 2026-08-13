@@ -66,7 +66,8 @@ def rotation(image):
 
 def engine(model=None):
     """The Surya model, loaded once. Importing savitr costs seconds and loading
-    the weights costs more, so a per-page load would dominate a 600-page run."""
+    the weights costs more, so a per-page load would dominate a 600-page run.
+    """
     global _ENGINE
     if _ENGINE is None:
         model = pathlib.Path(model or DEFAULT_MODEL)
