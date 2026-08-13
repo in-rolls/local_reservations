@@ -9,13 +9,12 @@ The document holds more than our parse recovered. Each line says what would clos
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
 | 23,378 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 11 of 24 districts, roughly 23,378 rows missing |
-| 2,237 | Haryana | 2022 | `gp_ward` | some rows do not identify a distinct seat | largest group 35 rows |
 | 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
 | 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
-| 1,678 | Haryana | 2022 | `gp_ward` | the row does not say which seat | Karnal 1,320, Palwal 355, Gurugram 2 |
-| 1,553 | Haryana | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 19 rows |
-| 1,014 | Haryana | 2016 | `gp_ward` | the row does not say which seat | Mewat 617, Kaithal 359, Sirsa 37 |
+| 1,278 | Haryana | 2022 | `gp_ward` | some rows do not identify a distinct seat | largest group 35 rows |
 | 734 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 14 rows |
+| 719 | Haryana | 2022 | `gp_ward` | the row does not say which seat | Karnal 371, Palwal 345, Gurugram 2 |
+| 692 | Haryana | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 6 rows |
 | 644 | Jharkhand | 2015 | `block_member` | the row does not say which seat | Hazaribag 428, Ramgarh 147, East Singhbhum 43 |
 | 510 | Jammu & Kashmir | 2010 | `gp_ward` | some rows do not identify a distinct seat | largest group 27 rows |
 | 504 | Jharkhand | 2015 | `gp_ward` | the row does not say which seat | Deoghar 252, Ranchi 115, Lohardaga 57 |
@@ -26,6 +25,7 @@ The document holds more than our parse recovered. Each line says what would clos
 | 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
+| 164 | Haryana | 2016 | `gp_ward` | the row does not say which seat | Mewat 124, Sirsa 34, Kaithal 5 |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
 | 147 | Karnataka | 2016 | `block_member` | the row does not say which seat | Davanagere 38, Koppal 30, Chamarajanagar 20 |
 | 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
@@ -53,8 +53,8 @@ The document holds more than our parse recovered. Each line says what would clos
 | 8 | Bihar | 2016 | `kachahari_member` | some rows do not identify a distinct seat | largest group 2 rows |
 | 8 | Jharkhand | 2015 | `zp_member` | the row does not say which seat | Lohardaga 8 |
 | 6 | Uttarakhand | 2019 | `gp_head` | some rows do not identify a distinct seat | largest group 2 rows |
+| 5 | Haryana | 2022 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 4 | Goa | 2017 | `gp_ward` | the row does not say which panchayat | North Goa 4 |
-| 3 | Haryana | 2022 | `gp_head` | some rows do not identify a distinct seat | largest group 3 rows |
 | 1 | Bihar | 2016 | `gp_head` | the source states a caste but no gender | KISHANGANJ 1 |
 | 1 | Jharkhand | 2015 | `gp_head` | the seat identifier is an image, not text | — |
 | 1 | Jharkhand | 2015 | `zp_member` | place names are in a legacy font | — |
@@ -64,14 +64,14 @@ The document holds more than our parse recovered. Each line says what would clos
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.
 
-**some rows do not identify a distinct seat** — Two rows sharing a district, block, panchayat and ward number cannot be told apart. Usually one of those four did not parse.
-  *Closes with:* parsing whichever identifier is blank on the colliding rows. For the Jharkhand scans that means re-OCR: Surya keeps the block and panchayat numbers - the 1 and 2 of 'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those numbers are exactly what these rows are short of.
-
 **some ward lists are shorter than the record says** — The line was cut at the page's right edge, so wards are missing rather than blank. This is measurable rather than hidden only because the record states its own count - and it biases the women's share downward, 37% across truncated records against 47% across whole ones.
   *Closes with:* re-reading the truncated records at a wider render, or from the second proforma where one exists.
 
 **the source states a caste but no gender** — Where a document marks both the women's and the open seats, a code whose marker did not survive the scan is unknown, not male - and woman_reserved defaults to 0, which silently turns a woman's seat into an open one. Worse, the two markers are not lost at equal rates: Prakasam loses (G) about twice as often as (W), so its surviving rows read 66% women against a statutory half. Neither the raw share nor the filtered one estimates the truth there.
   *Closes with:* a second reading of the affected pages - the codes are printed, they simply did not survive this scan. Anantapur fell from 25% unmarked to 4% once the hyphen and run-on forms of the marker were recognised, so the remainder is likely reachable the same way.
+
+**some rows do not identify a distinct seat** — Two rows sharing a district, block, panchayat and ward number cannot be told apart. Usually one of those four did not parse.
+  *Closes with:* parsing whichever identifier is blank on the colliding rows. For the Jharkhand scans that means re-OCR: Surya keeps the block and panchayat numbers - the 1 and 2 of 'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those numbers are exactly what these rows are short of.
 
 **the row does not say which seat** — A seat is numbered within the body that elects it - a ward within its panchayat, a constituency within its block or district - and without that number the row is a real reservation for a seat nobody can point at.
 

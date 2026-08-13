@@ -7,6 +7,58 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.1
+
+### Corrected
+
+**Haryana ward reservations were wrong in three ways, and every version up to
+and including v0.2.0 shipped them.** The gazettes are clean — this was ours.
+
+- **1,678 rows named a person "Ward 1".** Karnal and Palwal 2022 print each
+  notification twice, Hindi then English, and the English ward column reads
+  `Ward 1` where the Hindi reads `1`. The parser tested `isdigit()`, which is
+  false there, so the cell stayed put and every field after it shifted one
+  place right: the ward label landed in `winner` and the winner's name in
+  `father_husband`. **If you counted distinct winners in Haryana 2022, 1,678 of
+  them were column labels.**
+
+- **1,014 rows carried the neighbouring seat's reservation.** Where a category
+  wraps, the ward digit and the category are top-aligned in their cells while
+  the name sits lower, so one printed line comes out as two rows. `split_row`
+  anchors on the office cell, so the half holding the ward was discarded — and
+  the continuation logic, which is correct for tails that belong to the row
+  *above*, then attached that category to the **previous** seat. Ajit Nagar's
+  ward 1 was published as Unreserved; the gazette says Backward Class. **If you
+  used Kaithal, Mewat or Sirsa 2016 ward reservations, redo it.**
+
+- **Rows were deleted by a typo in the gazette.** `normalize_reservation`
+  returned `None` for `Unresreved`, and a `None` reservation does not blank a
+  field — it discards the whole row, the elected member's name with it. Ambala
+  prints that misspelling 79 times. Barnala shipped five of its nine panches
+  and every count said the table was full.
+
+  2016: 61,618 → 61,879 ward rows, 1,014 → 164 without a ward number
+  2022: 1,678 → 719 without a ward number, 639 → 0 named "Ward N"
+  Pooled seats: 829,351 → 829,593
+
+### What made these invisible
+
+None of the three appeared on any gap list, because a gap list counts rows that
+have a problem and these rows had been deleted or silently rewritten. The check
+that finds them is the one Karnataka already had and Haryana did not: **a
+panchayat's wards are numbered 1..N, so a seat nobody read shows up as a hole.**
+`validate.py` now runs it, along with checks that no ward number repeats, that
+every seat states one, and that no winner is a column label.
+
+It reports what is still wrong rather than hiding it: 159 panchayats in 2016
+and 344 in 2022 still have a gap. Some of those are real — a seat can go
+unfilled — and some are still ours.
+
+Duplicate ward keys rose by 10 in 2022, which is not a regression. Those rows
+had no ward number before and so collided with nothing; numbering them
+correctly revealed that Chirao and Babain each hold two panchayats sharing a
+name — a separate defect that was invisible while the rows were unnumbered.
+
 ## Unreleased — v0.2.0
 
 ### Added

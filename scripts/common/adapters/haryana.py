@@ -52,9 +52,15 @@ TIERS = {"gp_reservation": ("gp_head", "sarpanch"),
 # What the sibling's committed files hold. A mismatch means the sibling moved
 # under us, and silently pooling a different number of rows is exactly the
 # failure this repository keeps meeting.
+# Moved once, deliberately, for the v0.2.1 correction: the sibling's parser was
+# deleting rows whose category it could not read and shifting every field right
+# where the English printing writes "Ward 1" for "1". 2016 gained 261 ward rows
+# and 11 panchayats; 2022 lost 30 ward rows, which is what stopping a
+# double-read costs. Changing these numbers is meant to be a decision, which is
+# why the build refuses until somebody makes it.
 DECLARED = {
-    ("2016", "gp_head"): 6079, ("2016", "gp_ward"): 61618,
-    ("2022", "gp_head"): 6159, ("2022", "gp_ward"): 61362,
+    ("2016", "gp_head"): 6090, ("2016", "gp_ward"): 61879,
+    ("2022", "gp_head"): 6159, ("2022", "gp_ward"): 61332,
 }
 
 
