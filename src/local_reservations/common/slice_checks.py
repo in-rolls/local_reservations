@@ -66,7 +66,16 @@ class Slice:
         return sum(1 for r in self.rows if (r.get(column) or "").strip())
 
 
-def result(status, observed="", expected="", detail=""):
+def result(status: str, observed: object = "", expected: object = "",
+           detail: str = "") -> dict[str, str]:
+    """One check's verdict.
+
+    `observed` and `expected` are typed as object rather than str because
+    callers pass counts, shares and bands as often as strings - they are
+    stringified here so a check never has to remember to. Without the
+    annotation the defaults make them look like str-only, which is 26 of the
+    32 things pyright had to say about this package.
+    """
     return {"status": status, "observed": str(observed),
             "expected": str(expected), "detail": detail}
 

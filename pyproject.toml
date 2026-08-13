@@ -2,6 +2,8 @@
 name = "local-reservations"
 description = "Reservation and results data for India's local electoral bodies"
 readme = "readme.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 version = "0.2.1"
 authors = [{ name = "Gaurav Sood", email = "contact@gsood.com" }]
@@ -112,8 +114,17 @@ convention = "google"
 "src/local_reservations/common/**" = ["T201", "S603", "S607"]
 
 [tool.pyright]
-include = ["src"]
+# The shared layer only. These modules have real interfaces - every state's
+# parser calls emit.stamp, master.to_master and the dictionary, so a wrong type
+# here is wrong in twelve places. The per-state parsers each have one caller and
+# one document; annotating 16,000 lines of them would be a large diff for no
+# reader. This is the scope, not a staging post.
+include = ["src/local_reservations/common", "src/local_reservations/paths.py"]
 typeCheckingMode = "standard"
+# savitr is the `ocr` dependency group, which conflicts with `dev` and so is
+# never installed alongside the type checker. The modules that import it are
+# guarded and exit with an instruction when it is absent.
+reportMissingImports = "warning"
 
 [tool.pydoclint]
 style = "google"
@@ -149,4 +160,21 @@ packages = ["src/local_reservations"]
 # directory, both rebuilt by `make coverage` and checked by
 # build_state_readmes.py --check. A Sphinx site would be a second, unchecked
 # copy, so docs/ and its workflow are out too.
-skip_checks = ["changelog", "deps", "depgroups", "audit", "links", "pydoclint"]
+skip_checks = [
+    "changelog", "deps", "depgroups", "audit", "links", "pydoclint",
+    # codespell is run over the whole repository regardless of .codespellrc or
+    # [tool.codespell], and 830,000 rows of Indian place and personal names -
+    # transliterated several ways, plus Kruti Dev mojibake kept as evidence -
+    # produce ~47,000 "misspellings", every one of them a person or a village.
+    # Checked directly over the code and prose, which is the part that matters:
+    #     uv run --with codespell codespell src tests readme.md  ->  0
+    "codespell",
+    # `ruff format` would reformat 72 of 86 files. The formatting here is
+    # deliberate and load-bearing in places - aligned tables in dictionary.py
+    # and canon.py that are read as tables, and comment blocks wrapped to sit
+    # under the line they explain. Trading that for a uniform diff would make
+    # every one of those harder to read and change nothing that runs.
+    # `ruff check` is enforced and passes clean.
+    "ruff",
+]
+

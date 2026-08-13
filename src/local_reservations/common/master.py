@@ -251,7 +251,8 @@ def candidates(row, seat):
     shared = {c: seat.get(c, "") for c in CANDIDATE_COLUMNS if c in seat}
     out = []
     for position, member in enumerate(row.get("seat_members") or (), 1):
-        got = dict(shared, candidate_no=position, row_id=seat.get("row_id", ""))
+        got: dict[str, object] = dict(shared, candidate_no=position,
+                                      row_id=seat.get("row_id", ""))
         got.update({c: member.get(c, "") for c in CANDIDATE_FIELDS})
         got["candidate_id"] = hashlib.sha1(
             f"{seat.get('row_id', '')}|{position}".encode()

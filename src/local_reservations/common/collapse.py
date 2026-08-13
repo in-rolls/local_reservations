@@ -164,8 +164,16 @@ def margin(candidates, vote_field):
     out = dict(blank, winner_votes=top)
     if len(second) == 1:
         runner = votes_of(second[0].get(vote_field))
+        # votes_of returns None where the source recorded no count, and its
+        # own docstring is emphatic that None is not zero - Bihar writes 24
+        # seats with no numeric vote and one reading "986+1 (BY LOT)". So the
+        # subtraction was a TypeError waiting for the first of those to reach
+        # a two-candidate seat. A margin between an unknown and a number is
+        # unknown, which is what blank already means here.
+        margin = (top - runner if top is not None and runner is not None
+                  else "")
         out.update(runner_up=name_of(second[0]), runner_up_votes=runner,
-                   margin=top - runner)
+                   margin=margin)
     elif not second:
         # Nobody else polled a vote. Unopposed, or the only recorded candidate.
         out["margin"] = top
