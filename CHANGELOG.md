@@ -7,6 +7,57 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.2
+
+No data changed. Every value in every master table was compared against v0.2.1
+column by column; only `source_commit`, the build's own provenance stamp, moved.
+
+### Changed
+
+- **The scripts are a package.** `scripts/` became
+  `src/local_reservations/{common,states,tools}`, tests moved to `tests/`, and
+  no file manipulates `sys.path` any more. 32 of 74 did, and it was not
+  cosmetic: it is why a module named `http.py` in the shared layer would have
+  shadowed the standard library's `http` package and broken `requests`, and why
+  one named `surya.py` would have shadowed the real `surya` package.
+
+- **One repository root.** 42 modules each worked it out by counting parent
+  directories, which is a silent assertion about where a file sits. It is now
+  `local_reservations.paths.ROOT`, found by walking up for a marker. The proof
+  it was needed: a test located a sibling repository by counting parents and,
+  after the move, did not fail but **skipped** — reporting a checked-out
+  sibling as absent.
+
+- **pyproject + uv.lock.** The `pyarrow==23.0.1` pin was documented as
+  load-bearing and enforced by nothing. Parquet stamps its writer into every
+  footer, so a different version rewrites every hash in MANIFEST.json without
+  changing a value.
+
+- **The OCR dependencies are a conflicting dependency group.** savitr pins
+  `pillow<11` where pdfplumber needs `>=12.2`; `uv sync --group ocr` replaces
+  the hand-made `ocrenv/`, and uv refuses to install both rather than leaving
+  whichever came second broken.
+
+- **Fleet tooling via preen**, minus the parts built for shipping a package.
+  The release workflow was removed rather than left in place: it fires on `v*`
+  tags and can publish to PyPI, and this repository's tags are data releases
+  gated by `release_check.py`. ruff went from 741 findings to zero.
+
+### Corrected
+
+- **A `TypeError` that had not fired yet.** `collapse.py` computed a
+  two-candidate seat's margin as `top - runner`, where `votes_of()` returns
+  `None` where a source recorded no count — its own docstring insists None is
+  not zero, and Bihar writes 24 seats with no numeric vote plus one reading
+  `"986+1 (BY LOT)"`. Found by pyright; a margin against an unknown is now
+  blank, which is what blank already meant there.
+
+- **An undeclared dependency that was silently dropping rows.** The first build
+  inside a locked environment reported `quota_raj: pandas is not importable, so
+  the parquet slices are skipped` and produced 39,520 fewer Rajasthan rows. The
+  system interpreter happened to have pandas; nothing said the corpus needed
+  it. It is declared now.
+
 ## Unreleased — v0.2.1
 
 ### Corrected
