@@ -23,6 +23,10 @@ hand-maintained, so it is no longer hand-maintained.
 
 <!-- worklist:end -->
 
+**[CHANGELOG.md](CHANGELOG.md)** says what moved between releases and why,
+corrections first — if a number you used has changed, that is where it is
+recorded, along with which analyses to redo.
+
 Every release is pinned by **[MANIFEST.json](MANIFEST.json)** — a SHA-256 for
 every file, the exact master column order, and the commit each sibling
 repository was read at. Verify a checkout with `python3

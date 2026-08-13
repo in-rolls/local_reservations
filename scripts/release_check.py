@@ -17,6 +17,22 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
+# Everything in the repository that is written by a generator rather than by
+# hand. `make coverage` rebuilds them all, so a stale one leaves the tree dirty
+# and this script already refuses - but it refused with "uncommitted changes",
+# which does not tell anyone that the readme was out of date. Naming them turns
+# a puzzle into an instruction.
+GENERATED = ["readme.md", "WORKLIST.md", "MANIFEST.json", "MANIFEST.md",
+             "DICTIONARY.md"]
+
+
+def dirty_files():
+    """Paths git reports as changed, relative to the repository root."""
+    out = subprocess.run(
+        ["git", "-C", str(ROOT), "status", "--porcelain"],
+        capture_output=True, text=True).stdout
+    return [line[3:].strip() for line in out.splitlines() if line.strip()]
+
 
 def main():
     version = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -24,7 +40,22 @@ def main():
 
     problems = []
     if manifest.get("dirty"):
+        changed = dirty_files()
+        stale = [f for f in changed
+                 if f in GENERATED or f.startswith("data/")]
         problems.append("this repository has uncommitted changes")
+        for path in changed[:8]:
+            note = ""
+            if path in GENERATED:
+                note = "  <- generated; `make coverage` rebuilt it, so it was "\
+                       "out of date"
+            problems.append(f"    {path}{note}")
+        if len(changed) > 8:
+            problems.append(f"    ... and {len(changed) - 8} more")
+        if stale:
+            problems.append("  commit these: a release pins file hashes, so a "
+                            "generated file that is not committed is not the "
+                            "one the manifest describes")
     for sibling in manifest.get("sibling_repos", []):
         if sibling.get("dirty"):
             problems.append(f"{sibling['repo']} has uncommitted changes")
