@@ -61,7 +61,7 @@ Inventory for this directory: 108 digital-text, 28 scan, 8 mixed, 1 tabular, 4,9
 make jharkhand
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/jharkhand/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/jharkhand/validate.py`.
 
 ## What is checked
 

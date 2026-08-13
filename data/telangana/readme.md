@@ -45,7 +45,7 @@ Inventory for this directory: 34 tabular, 3 scan, 1 digital-text, 1 other, 460 p
 make telangana
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/telangana/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/telangana/validate.py`.
 
 ## What is checked
 

@@ -62,7 +62,7 @@ Inventory for this directory: 19 scan, 19 digital-text, 809 pages total.
 make ap
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/ap/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/ap/validate.py`.
 
 ## What is checked
 

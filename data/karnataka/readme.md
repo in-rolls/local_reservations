@@ -91,7 +91,7 @@ Inventory for this directory: 1 scan, 1 tabular, 7 pages total.
 make karnataka
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/karnataka/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/karnataka/validate.py`.
 
 ## What is checked
 

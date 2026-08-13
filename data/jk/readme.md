@@ -62,7 +62,7 @@ Inventory for this directory: 105 digital-text, 8 scan, 1,488 pages total.
 make jk
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/jk/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/jk/validate.py`.
 
 ## What is checked
 

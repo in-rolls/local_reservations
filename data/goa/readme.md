@@ -57,7 +57,7 @@ Inventory for this directory: 37 digital-text, 4 scan, 687 pages total.
 make goa
 ```
 
-Parses from the committed documents and rewrites the files above, then runs `scripts/goa/validate.py`.
+Parses from the committed documents and rewrites the files above, then runs `src/local_reservations/states/goa/validate.py`.
 
 ## What is checked
 
