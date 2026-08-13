@@ -3,7 +3,7 @@
 # SHA-256 in MANIFEST.json without a single value changing, and `make verify`
 # would report the whole corpus altered. MANIFEST.json records the version it
 # was written with.
-pyarrow==23.0.1
+pyarrow==25.0.0
 
 # the Haryana, Jharkhand and Uttarakhand gazettes are digital text
 pdfplumber
