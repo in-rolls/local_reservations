@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "ae31ff10bf8c0b9d554a1a074819cd271e8e7abf",
-  "committed_utc": "2026-08-12T17:02:03-07:00",
+  "built_from_commit": "fb1d5ed76170d56af731a136787001c870f16378",
+  "committed_utc": "2026-08-12T17:07:57-07:00",
   "dirty": false,
   "files": [
     {
@@ -959,7 +959,7 @@
     "provenance_level",
     "quality_flags"
   ],
-  "release": "",
+  "release": "v0.2.0",
   "schema_version": 1,
   "sibling_repos": [
     {
