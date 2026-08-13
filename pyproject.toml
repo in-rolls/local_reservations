@@ -1,0 +1,65 @@
+[project]
+name = "local-reservations"
+description = "Reservation and results data for India's local electoral bodies"
+readme = "readme.md"
+requires-python = ">=3.12"
+version = "0.2.1"
+authors = [{ name = "Gaurav Sood", email = "contact@gsood.com" }]
+keywords = ["india", "panchayat", "elections", "reservation", "local government"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+# pyarrow is pinned, not floated, and the pin is load-bearing rather than
+# cautious. Parquet writes `created_by: parquet-cpp-arrow version <x>` into
+# every footer, so a different version rewrites every SHA-256 in MANIFEST.json
+# without a single value changing, and `make verify` would report the whole
+# corpus altered. Until now nothing enforced it; uv.lock does.
+dependencies = [
+    "pyarrow==23.0.1",
+    "pdfplumber",
+    "requests",
+    "requests-ratelimiter",
+    # quota_raj publishes its Rajasthan slices as pandas parquet. This was
+    # never declared and the system interpreter happened to have it; the first
+    # run inside a locked environment skipped 39,520 rows with a one-line
+    # warning, which is exactly the failure a lockfile is for.
+    "pandas",
+]
+
+[project.urls]
+Repository = "https://github.com/in-rolls/local_reservations"
+
+[dependency-groups]
+dev = ["pytest", "ruff", "pyright"]
+
+# Reading the scans. Kept apart because it cannot share an interpreter with the
+# parsing dependencies: savitr pins pillow<11 and pdfplumber needs >=12.2, so
+# installing both leaves whichever came second broken - which happened, and the
+# OCR run silently produced nothing. This replaces the hand-made ocrenv/.
+# Apple Silicon only; MLX is a Metal runtime with no CPU fallback.
+ocr = ["savitr==0.2.0", "pillow==10.4.0", "mlx-vlm==0.6.10"]
+
+[tool.uv]
+# Declared rather than discovered. uv resolves every group together unless told
+# they conflict, so without this it would fail to resolve at all and the reason
+# would not be obvious from the error.
+conflicts = [[{ group = "dev" }, { group = "ocr" }]]
+
+# Console scripts, so the Makefile and anyone else name a command rather than a
+# file path. verify-manifest is deliberately also runnable as a bare file: it
+# has to work from an unpacked tarball with nothing installed.
+[project.scripts]
+build-master = "local_reservations.tools.build_master:main"
+build-manifest = "local_reservations.tools.build_manifest:main"
+verify-manifest = "local_reservations.tools.verify_manifest:main"
+release-check = "local_reservations.tools.release_check:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/local_reservations"]

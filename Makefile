@@ -1,7 +1,9 @@
-PY ?= python3
-# The OCR cannot run under $(PY): surya-ocr pins pillow<11 where pdfplumber
-# needs >=12.2, so it gets its own venv. Only `make jharkhand-ocr` uses this.
-OCR_PY ?= ./ocrenv/bin/python
+PY ?= uv run python
+# The OCR cannot share an environment with the parsers: savitr pins pillow<11
+# where pdfplumber needs >=12.2. That used to mean a hand-made ocrenv/; it is
+# now a uv dependency group declared as conflicting, so uv refuses to install
+# both together rather than leaving whichever came second broken.
+OCR_PY ?= uv run --group ocr python
 
 .PHONY: help inventory probe goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk ap test coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
@@ -22,85 +24,85 @@ help:
 	@echo "make karnataka-ocr  read the Kannada scans; resumable, ~10 hours"
 
 inventory:
-	$(PY) scripts/inventory.py
+	$(PY) -m local_reservations.tools.inventory
 
 probe:
-	$(PY) scripts/probe_sources.py --skip-unreachable
+	$(PY) -m local_reservations.tools.probe_sources --skip-unreachable
 
 sweep:
-	$(PY) scripts/archive_sweep.py
+	$(PY) -m local_reservations.tools.archive_sweep
 
 # Both resume. The OCR skips documents it has already cached and, within a
 # document, pages it has already read; the harvest skips files whose bytes on
 # disk still hash to what the manifest recorded. Re-running either is how you
 # resume it - there is no separate command and no state to clean up.
 karnataka-ocr:
-	./ocrenv/bin/python scripts/karnataka/ocr.py
+	uv run --group ocr python -m local_reservations.states.karnataka.ocr
 
 goa:
-	$(PY) scripts/goa/parse.py
-	$(PY) scripts/goa/validate.py
+	$(PY) -m local_reservations.states.goa.parse
+	$(PY) -m local_reservations.states.goa.validate
 
 jharkhand:
-	$(PY) scripts/jharkhand/parse.py
-	$(PY) scripts/jharkhand/validate.py
+	$(PY) -m local_reservations.states.jharkhand.parse
+	$(PY) -m local_reservations.states.jharkhand.validate
 
 # The gates a parser change has to clear, against data/stats/jharkhand_bench.json.
 # `make jharkhand-bench-record` stores what the code does now; run it only when
 # you have decided the current numbers are the ones to defend.
 jharkhand-bench:
-	$(PY) scripts/jharkhand/bench.py
+	$(PY) -m local_reservations.states.jharkhand.bench
 
 jharkhand-bench-record:
-	$(PY) scripts/jharkhand/bench.py --record
+	$(PY) -m local_reservations.states.jharkhand.bench --record
 
 # Not part of `make jharkhand`, and not a dependency of anything. Its output is
 # committed, it takes about six hours, and it needs an interpreter the rest of
 # the repository cannot share - see requirements-ocr.txt.
 jharkhand-ocr:
-	$(OCR_PY) scripts/jharkhand/ocr.py
-	$(PY) scripts/jharkhand/ocr_seats.py
+	$(OCR_PY) -m local_reservations.states.jharkhand.ocr
+	$(PY) -m local_reservations.states.jharkhand.ocr_seats
 
 jk:
-	$(PY) scripts/jk/parse.py
-	$(PY) scripts/jk/validate.py
+	$(PY) -m local_reservations.states.jk.parse
+	$(PY) -m local_reservations.states.jk.validate
 
 ap:
-	$(PY) scripts/ap/parse.py
-	$(PY) scripts/ap/validate.py
+	$(PY) -m local_reservations.states.ap.parse
+	$(PY) -m local_reservations.states.ap.validate
 
 master:
-	$(PY) scripts/build_master.py
+	$(PY) -m local_reservations.tools.build_master
 
 manifest:
-	$(PY) scripts/build_manifest.py
+	$(PY) -m local_reservations.tools.build_manifest
 
 verify:
-	$(PY) scripts/verify_manifest.py
+	$(PY) -m local_reservations.tools.verify_manifest
 
 # Prepares and checks a release. It deliberately does not tag: a tag is one of
 # the few things you cannot take back, so this prints the command and a human
 # runs it.
 release-check: test master stats worklist coverage manifest verify
-	@$(PY) scripts/release_check.py $(VERSION)
+	@$(PY) -m local_reservations.tools.release_check $(VERSION)
 
 stats:
-	$(PY) scripts/build_stats.py --quiet
+	$(PY) -m local_reservations.tools.build_stats --quiet
 
 worklist:
-	$(PY) scripts/build_worklist.py
+	$(PY) -m local_reservations.tools.build_worklist
 
 coverage: stats worklist state-readmes
-	$(PY) scripts/build_coverage.py --check
+	$(PY) -m local_reservations.tools.build_coverage --check
 
 state-readmes:
-	$(PY) scripts/build_state_readmes.py
+	$(PY) -m local_reservations.tools.build_state_readmes
 
 expect:
-	cd scripts/common && $(PY) expectations.py
+	$(PY) -m local_reservations.common.expectations
 
 dictionary:
-	cd scripts/common && $(PY) make_dictionary.py
+	$(PY) -m local_reservations.common.make_dictionary
 
 test:
-	cd scripts/common && $(PY) -m pytest -q
+	$(PY) -m pytest tests -q

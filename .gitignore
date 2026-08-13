@@ -17,3 +17,8 @@ data/ap/ocr/
 # here is either an interrupted run or a run in progress.
 */ocr/.partial/
 data/*/ocr/.partial/
+
+# uv's environment; the lockfile is committed, the venv is not
+.venv/
+# the hand-made OCR venv, replaced by the `ocr` dependency group
+ocrenv/
