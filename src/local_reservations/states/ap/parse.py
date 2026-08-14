@@ -603,6 +603,21 @@ def mark_gender_stated(rows):
     majority marked 2,431 rows unknown that the page had stated perfectly
     clearly. Krishna's ward count moves between pages of one document for the
     same reason: these gazettes are assembled from sheets typeset separately.
+
+    **Finer than a page was tried, and is wrong.** A page can disagree with
+    itself - Nellore page 33 carries UR(G) seventeen times and UR-W fourteen -
+    so the obvious next move is to let each panchayat decide from its own
+    cells: one that marks women with -W and never prints a (G) is using a
+    convention where a bare code states an open seat, and 119 rows would stop
+    being unknown.
+
+    They should stay unknown. Read MITTATHMAKUR off page 33 and the gazette
+    says UR-W, UR, UR, UR-W, ST-W, **SC-W**, SC, SC; this parser reads its
+    sixth ward as a bare SC, because the scan drops that -W exactly as readily
+    as it drops a (W). The rule would publish that seat as confidently
+    not-a-woman - one wrong in eight on the single row that was checked -
+    where today it says it does not know. An unknown a reader can exclude is
+    worth more than a value that is quietly false.
     """
     by_page = collections.defaultdict(list)
     for row in rows:
