@@ -1,10 +1,10 @@
 state,year,tier,check_id,appeals_to,status,observed,expected,detail
-Andhra Pradesh,2020,gp_head,rows_in_band,declared,pass,5589,500..13200,
+Andhra Pradesh,2020,gp_head,rows_in_band,declared,pass,5590,500..13200,
 Andhra Pradesh,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,5589,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a state figure because only 6 of 13 districts are held. scripts/ap/validate.py reads it per district. Anantapur states each seat twice, in a sarpanch-only proforma and again as the first column of the ward table; the file holds their union deduplicated, and the two agree on 98.4% of the seats stated by both."
-Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,49.3%,target 50%,"over the 5,457 rows whose gender the source states; 48.2% over all 5,589"
-Andhra Pradesh,2020,gp_head,women_share_by_block,external,warn,338 of 571 blocks off,within 6pp of 50%,
+Andhra Pradesh,2020,gp_head,coverage_vs_published,external,skip,5590,,"Each gazette states its own district total in its FORMAT-I abstract, which is a better denominator than a state figure because only 6 of 13 districts are held. scripts/ap/validate.py reads it per district. Anantapur states each seat twice, in a sarpanch-only proforma and again as the first column of the ward table; the file holds their union deduplicated, and the two agree on 98.4% of the seats stated by both."
+Andhra Pradesh,2020,gp_head,women_share_vs_statute,external,pass,50.0%,target 50%,"over the 5,487 rows whose gender the source states; 49.1% over all 5,590"
+Andhra Pradesh,2020,gp_head,women_share_by_block,external,warn,325 of 571 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Andhra Pradesh,2020,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
@@ -12,15 +12,15 @@ Andhra Pradesh,2020,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['g
 Andhra Pradesh,2020,gp_head,seat_key_unique,internal,pass,0,0,
 Andhra Pradesh,2020,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Andhra Pradesh,2020,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
-Andhra Pradesh,2020,gp_head,plausible_vs_registry,external,pass,42%,,"5,589 against 13,371 in the register (2019-20) - 6 of 13 districts; sec.ap.gov.in refuses connections from outside India and the archive holds no more"
+Andhra Pradesh,2020,gp_head,plausible_vs_registry,external,pass,42%,,"5,590 against 13,371 in the register (2019-20) - 6 of 13 districts; sec.ap.gov.in refuses connections from outside India and the archive holds no more"
 Andhra Pradesh,2020,gp_head,year_constant,internal,pass,2020,2020,
 Andhra Pradesh,2020,gp_head,provenance_resolves,internal,pass,0,0,6 documents
-Andhra Pradesh,2020,gp_ward,rows_in_band,declared,pass,54763,5000..130000,
+Andhra Pradesh,2020,gp_ward,rows_in_band,declared,pass,54797,5000..130000,
 Andhra Pradesh,2020,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Andhra Pradesh,2020,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Andhra Pradesh,2020,gp_ward,coverage_vs_published,external,skip,54763,,no published total for this slice
-Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,48.1%,target 50%,"over the 53,009 rows whose gender the source states; 46.6% over all 54,763"
-Andhra Pradesh,2020,gp_ward,women_share_by_block,external,warn,194 of 565 blocks off,within 6pp of 50%,
+Andhra Pradesh,2020,gp_ward,coverage_vs_published,external,skip,54797,,no published total for this slice
+Andhra Pradesh,2020,gp_ward,women_share_vs_statute,external,pass,49.1%,target 50%,"over the 53,623 rows whose gender the source states; 48.0% over all 54,797"
+Andhra Pradesh,2020,gp_ward,women_share_by_block,external,warn,145 of 565 blocks off,within 6pp of 50%,
 Andhra Pradesh,2020,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
 Andhra Pradesh,2020,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Andhra Pradesh,2020,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only

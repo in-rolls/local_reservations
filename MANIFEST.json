@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "180bc70d3f9a990eb96338e5927e7c4f3d3ff8a8",
-  "committed_utc": "2026-08-13T13:53:00-07:00",
+  "built_from_commit": "9b35cbe825385ecb4ae97ae1f57e60ab491fc7a4",
+  "committed_utc": "2026-08-13T14:04:04-07:00",
   "dirty": true,
   "files": [
     {
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "bytes": 992168,
+      "bytes": 990991,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -104,9 +104,9 @@
       "provenance_level": [
         "page"
       ],
-      "rows": 60352,
-      "rows_identifying_a_distinct_seat": 60352,
-      "sha256": "8653c5d7e319f14ead1589970b673e0f1fa44ca2b74cdc113d1d731b54d91626",
+      "rows": 60387,
+      "rows_identifying_a_distinct_seat": 60387,
+      "sha256": "856d147334225b34c246c73ba16d4ba3f17f1873f7102cc1402f9c07c42e8778",
       "states": [
         "Andhra Pradesh"
       ],
@@ -167,11 +167,11 @@
       "sha256": "85e624940b4d51be6adcebf0e64409032b7ff66775ad1f1bd7d5ee54e0e86d4f"
     },
     {
-      "bytes": 14440560,
+      "bytes": 14434288,
       "kind": "master",
       "path": "data/master/master_extras.parquet",
-      "rows": 3434521,
-      "sha256": "37ec566d58617b5bd8ce1be1afc1f16193c1c2fead88093fb9bc37549b38955b"
+      "rows": 3436097,
+      "sha256": "7f7415918f16bfac6905cb7516168b517c3acff425afe604de8920526774e5ed"
     },
     {
       "bytes": 85685,
@@ -191,7 +191,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "67d33e46f923f337825cf1a8bd006d5244b88198ea9f91783565fe446d9be737",
+      "sha256": "6f3cddc2adf898c06f532218393bb1efa5284c9bb2fc5bc6886e3ca914578921",
       "states": [
         "Goa"
       ],
@@ -254,7 +254,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "61f3ec1b20126da209746788884805735baeff832d1f81f76dd8cc153595c58d",
+      "sha256": "d46b6e3a2d350f3433e2ace3d1e31d08440b159e8aa844d39817cc5f0cb0e2b3",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -286,7 +286,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27588,
-      "sha256": "e025a197638c772815b5e65249f1b9f92732b6eeaad612eb84f883588e6dd5ac",
+      "sha256": "87cc2b072f0487b3f0c45a4de33780fc2035ca67e22139f571473f64a13b55a6",
       "states": [
         "Jharkhand"
       ],
@@ -321,7 +321,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30687,
-      "sha256": "6817921856031afaeb9459960ebfcdb050e0cbcf19d5fdea72c63b733acddddd",
+      "sha256": "aa8c1e84acd6b3bd033caa9e183224f70a9f2c21937b93f41624e271a097dd0f",
       "states": [
         "Karnataka"
       ],
@@ -463,7 +463,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "75663a3661066f6c8718bf254d07216021d9453f7ff6744c58a0ab6e3c5776e8",
+      "sha256": "ab60e7ede6f8902ac016a20090090fdf706ed037dcd7679b7ad99bbb4ac6f4dd",
       "states": [
         "Telangana"
       ],
@@ -554,11 +554,11 @@
       ]
     },
     {
-      "bytes": 982284,
+      "bytes": 993483,
       "kind": "parsed",
       "path": "data/ap/sarpanch_reservation_2020.csv",
-      "rows": 5589,
-      "sha256": "3ea94fb5d43bbbb629ec1e8dcac80203ccf84e5e2ddebbb122a6981e44dcbb1e",
+      "rows": 5590,
+      "sha256": "f3eb3a3ffdaf43bb6f025d9f495032dae86ec0c6676749425af911a404d5150f",
       "states": [
         "Andhra Pradesh"
       ],
@@ -570,11 +570,11 @@
       ]
     },
     {
-      "bytes": 9473235,
+      "bytes": 9584446,
       "kind": "parsed",
       "path": "data/ap/ward_reservation_2020.csv",
-      "rows": 54763,
-      "sha256": "7bd4bdda469a4dd9c7e9d9139dc942d7efc9e891409ac49fa2c3dc929685691c",
+      "rows": 54797,
+      "sha256": "cca014d3b5bc9abea6dc9a413286a4328ff7797a4e42e8bf61a212dbd2dd79d6",
       "states": [
         "Andhra Pradesh"
       ],
@@ -1019,9 +1019,9 @@
   ],
   "totals": {
     "candidate_rows": 1134117,
-    "master_rows": 829593,
+    "master_rows": 829628,
     "master_states": 12,
-    "parsed_rows": 196674
+    "parsed_rows": 196709
   },
   "written_by": "pyarrow 23.0.1"
 }

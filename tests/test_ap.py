@@ -207,3 +207,42 @@ def test_never_reads_a_ward_out_of_a_place_name():
     """With the word boundary relaxed, "Surareddypalem" contains UR. Nothing is
     recovered from a region that is only a name."""
     assert recover_wards(" Surareddypalem Thakur", [], 3) == []
+
+
+# ------------------------------------------------------- the gender-marker repair
+# The gazette is a ruled grid twenty ward columns wide, and the parser reads it
+# by character column: ward 6 is ward 6 because of where it sits on the line.
+# So a repair that changes a cell's width moves every ward after it.
+
+def test_a_repair_never_changes_the_width_of_a_line():
+    """The bug this guards shipped for one run and every aggregate approved of
+    it: 2,401 gender markers recovered, unstated rows down from 1,754 to 1,122,
+    the women's share moving toward the statutory half - while Alurupadu
+    quietly lost three of its eight wards, because "[URW" -> "UR(W)" is one
+    character wider and slid the rest of the row left."""
+    from local_reservations.states.ap.ocr import apply_repairs
+    line = "| [URW    | sc)     | IBC)    |"
+    fixed = apply_repairs(line, {"[URW": "UR(W)", "sc)": "SC(W)", "IBC)": "BC(W)"})
+    assert len(fixed) == len(line), f"{fixed!r} is not the width of {line!r}"
+    assert "UR(W)" in fixed
+    assert "SC(W)" in fixed
+    assert "BC(W)" in fixed
+
+
+def test_a_repair_with_no_room_is_declined_rather_than_shifted():
+    """A cell that cannot be widened keeps its bare code and stays flagged. An
+    unknown gender is recoverable later; a ward number silently shifted by one
+    is not."""
+    from local_reservations.states.ap.ocr import apply_repairs
+    tight = "a sc) b"
+    assert apply_repairs(tight, {"sc)": "SC(W)"}) == tight
+
+
+def test_only_a_whole_cell_is_repaired():
+    """The match that builds the table is positional; str.replace is not.
+    "sc)" appearing inside another token must not be rewritten."""
+    from local_reservations.states.ap.ocr import apply_repairs
+    text = "URW)x  |URW)  "
+    fixed = apply_repairs(text, {"|URW)": "UR(W)"})
+    assert fixed.startswith("URW)x"), fixed
+    assert "UR(W)" in fixed

@@ -9,9 +9,9 @@ The document holds more than our parse recovered. Each line says what would clos
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
 | 23,378 | Jharkhand | 2015 | `gp_ward` | some districts are not held | 11 of 24 districts, roughly 23,378 rows missing. Searched 2026-08-13: not one of the eleven districts that hold a document has a single ward-tier mention in it; they are mukhiya and panchayat samiti notifications and nothing else. Hazaribag and Seraikela Kharsawan hold no document at all. The archive has six PDFs for the commission, captured in 2026, none of them a result or a reservation notification. |
-| 2,037 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 4% of rows |
-| 1,754 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 972, Prakasam 531, Anantapur 183 |
+| 1,878 | Andhra Pradesh | 2020 | `gp_ward` | some ward lists are shorter than the record says | 3% of rows |
 | 1,278 | Haryana | 2022 | `gp_ward` | some rows do not identify a distinct seat | largest group 35 rows |
+| 1,174 | Andhra Pradesh | 2020 | `gp_ward` | the source states a caste but no gender | Nellore 791, Prakasam 210, Anantapur 106 |
 | 734 | Jharkhand | 2015 | `gp_ward` | some rows do not identify a distinct seat | largest group 14 rows |
 | 719 | Haryana | 2022 | `gp_ward` | the row does not say which seat | Karnal 371, Palwal 345, Gurugram 2 |
 | 692 | Haryana | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 6 rows |
@@ -22,14 +22,14 @@ The document holds more than our parse recovered. Each line says what would clos
 | 418 | Jammu & Kashmir | 2016 | `gp_ward` | some rows do not identify a distinct seat | largest group 8 rows |
 | 314 | Bihar | 2016 | `kachahari_member` | the source states a caste but no gender | GAYA 85, PASCHIM CHAMPARAN 54, PATNA 45 |
 | 267 | Jharkhand | 2015 | `zp_member` | some districts are not held | 11 of 24 districts, roughly 267 rows missing |
-| 224 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 210 | Jammu & Kashmir | 2018 | `gp_ward` | some rows do not identify a distinct seat | largest group 3 rows |
+| 205 | Andhra Pradesh | 2020 | `gp_head` | some ward lists are shorter than the record says | 4% of rows |
 | 205 | Jammu & Kashmir | 2010 | `gp_ward` | the row does not say which panchayat | Udhampur 108, Doda 52, Samba 12 |
 | 164 | Haryana | 2016 | `gp_ward` | the row does not say which seat | Mewat 124, Sirsa 34, Kaithal 5 |
 | 152 | Jammu & Kashmir | 2016 | `gp_ward` | the row does not say which panchayat | Jammu 116, JAMMU 29, Samba 7 |
 | 147 | Karnataka | 2016 | `block_member` | the row does not say which seat | Davanagere 38, Koppal 30, Chamarajanagar 20 |
-| 132 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 98, Anantapur 12, Prakasam 10 |
 | 129 | Jharkhand | 2015 | `gp_head` | the row does not say which panchayat | Pakur 126, Palamu 1, Seraikela Kharsawan 1 |
+| 103 | Andhra Pradesh | 2020 | `gp_head` | the source states a caste but no gender | Nellore 78, Prakasam 7, Anantapur 6 |
 | 97 | Jharkhand | 2015 | `gp_ward` | the row does not say which panchayat | Lohardaga 57, Godda 25, Ranchi 14 |
 | 63 | Jammu & Kashmir | 2016 | `gp_head` | the row does not say which panchayat | Jammu 49, JAMMU 14 |
 | 55 | Jharkhand | 2015 | `block_member` | the seat identifier is an image, not text | — |
@@ -67,11 +67,11 @@ The document holds more than our parse recovered. Each line says what would clos
 **some ward lists are shorter than the record says** — The line was cut at the page's right edge, so wards are missing rather than blank. This is measurable rather than hidden only because the record states its own count - and it biases the women's share downward, 37% across truncated records against 47% across whole ones.
   *Closes with:* re-reading the truncated records at a wider render, or from the second proforma where one exists.
 
-**the source states a caste but no gender** — Where a document marks both the women's and the open seats, a code whose marker did not survive the scan is unknown, not male - and woman_reserved defaults to 0, which silently turns a woman's seat into an open one. Worse, the two markers are not lost at equal rates: Prakasam loses (G) about twice as often as (W), so its surviving rows read 66% women against a statutory half. Neither the raw share nor the filtered one estimates the truth there.
-  *Closes with:* a second reading of the affected pages - the codes are printed, they simply did not survive this scan. Anantapur fell from 25% unmarked to 4% once the hyphen and run-on forms of the marker were recognised, so the remainder is likely reachable the same way.
-
 **some rows do not identify a distinct seat** — Two rows sharing a district, block, panchayat and ward number cannot be told apart. Usually one of those four did not parse.
   *Closes with:* parsing whichever identifier is blank on the colliding rows. For the Jharkhand scans that means re-OCR: Surya keeps the block and panchayat numbers - the 1 and 2 of 'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those numbers are exactly what these rows are short of.
+
+**the source states a caste but no gender** — Where a document marks both the women's and the open seats, a code whose marker did not survive the scan is unknown, not male - and woman_reserved defaults to 0, which silently turns a woman's seat into an open one. Worse, the two markers are not lost at equal rates: Prakasam loses (G) about twice as often as (W), so its surviving rows read 66% women against a statutory half. Neither the raw share nor the filtered one estimates the truth there.
+  *Closes with:* a second reading of the affected pages - the codes are printed, they simply did not survive this scan. Anantapur fell from 25% unmarked to 4% once the hyphen and run-on forms of the marker were recognised, so the remainder is likely reachable the same way.
 
 **the row does not say which seat** — A seat is numbered within the body that elects it - a ward within its panchayat, a constituency within its block or district - and without that number the row is a real reservation for a seat nobody can point at.
 
@@ -97,8 +97,8 @@ Closable, but not from here. These are not waiting on effort; they are waiting o
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 63,890 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts, roughly 63,890 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
-| 6,520 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts, roughly 6,520 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
+| 63,930 | Andhra Pradesh | 2020 | `gp_ward` | some districts are not held | 6 of 13 districts, roughly 63,930 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
+| 6,522 | Andhra Pradesh | 2020 | `gp_head` | some districts are not held | 6 of 13 districts, roughly 6,522 rows missing - sec.ap.gov.in refuses connections from outside India; the archive holds 6 of 13 and the district portals answer, so the rest is a crawl rather than an egress |
 
 **some districts are not held** — The state has more districts than we have documents for, so every share here describes the districts we hold.
   *Closes with:* harvesting the remaining districts' notifications.
@@ -152,9 +152,9 @@ The document says what it says. Nothing to do, but a reader needs to know before
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
-| 54,763 | Andhra Pradesh | 2020 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
+| 54,797 | Andhra Pradesh | 2020 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
 | 7,340 | Jammu & Kashmir | 2010 | `gp_ward` | no winner is recorded | a pre-poll roster names no winner |
-| 5,589 | Andhra Pradesh | 2020 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
+| 5,590 | Andhra Pradesh | 2020 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
 | 5,322 | Karnataka | 2005 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
 | 5,322 | Karnataka | 2007 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
 | 5,320 | Karnataka | 2000 | `gp_head` | no winner is recorded | a pre-poll roster names no winner |
