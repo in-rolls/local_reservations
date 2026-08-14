@@ -1,7 +1,7 @@
 {
-  "built_from_commit": "31aa17da1d7198bedcd96eea839ee58505a5ffc3",
-  "committed_utc": "2026-08-14T00:08:48-07:00",
-  "dirty": true,
+  "built_from_commit": "ade96cf2457603ef039ec901add8043c5d55d1ec",
+  "committed_utc": "2026-08-14T00:14:52-07:00",
+  "dirty": false,
   "files": [
     {
       "bytes": 17803458,
@@ -963,7 +963,7 @@
     "provenance_level",
     "quality_flags"
   ],
-  "release": "",
+  "release": "v0.2.5",
   "schema_version": 1,
   "sibling_repos": [
     {
