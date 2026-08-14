@@ -245,7 +245,10 @@ def convert(row, tier, tier_local, filename):
         "gender_stated": "" if caste is None else 1,
         "reservation": label(caste, woman == 1) if caste else "",
         "reservation_raw": stated.strip(),
-        "script": "devanagari",
+        # Read from the row rather than asserted. Hardcoding this shipped
+        # 304,689 rows saying the wrong thing - see normalize.script_of.
+        "script": normalize.script_of(district, block, panchayat,
+                                      row.get("candidate_name") or ""),
         "source_path": f"data/{filename}",
         "source_page": "",
         # the codes Bihar numbers its places by, kept out of the join key and

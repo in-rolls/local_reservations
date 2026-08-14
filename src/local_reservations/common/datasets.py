@@ -29,8 +29,11 @@ from local_reservations.common import (  # noqa: E402 - after DATA, which it nee
 # Jharkhand's filenames name the wrong tier.
 REQUIRED = {"state", "year", "tier", "reservation", "caste_reservation"}
 
-# Derived output, not a state. These match REQUIRED by construction.
-DERIVED = {"master", "stats"}
+# Derived output, not a state. master and stats match REQUIRED by
+# construction; transliteration is the output of its own stage - a lookup from
+# a name to its Latin reading, keyed on the name rather than on any row, so it
+# has no state, year or tier and never will.
+DERIVED = {"master", "stats", "transliteration"}
 
 
 def state_directories(exclude=DERIVED):
@@ -121,6 +124,7 @@ def pooled():
         build_master,
     )
     grouped = collections.defaultdict(list)
+    latin = master.transliterations(ROOT)
     for slice_ in list(build_master.local_slices()) + \
             list(build_master.sibling_slices()):
         for row in slice_["rows"]:
@@ -128,7 +132,7 @@ def pooled():
                 row, slice_["dataset_id"], slice_["source_repo"],
                 slice_["source_commit"], slice_["provenance_level"],
                 slice_.get("unit_of_observation", "seat"),
-                row.get("seat_candidates", ""))
+                row.get("seat_candidates", ""), latin)
             if got is not None:
                 grouped[slice_["dataset_id"]].append(
                     dict(as_written(row), **got))

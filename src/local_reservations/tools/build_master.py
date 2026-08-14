@@ -122,6 +122,8 @@ def build(only=None):
     rows, extras, dropped, candidates = [], [], [], []
     seen = collections.Counter()
     counts = collections.Counter()
+    # Read once. to_master runs 829,628 times and this is 154,700 entries.
+    latin = M.transliterations(ROOT)
 
     for slice_ in list(local_slices()) + list(sibling_slices(only)):
         for row in slice_["rows"]:
@@ -130,7 +132,7 @@ def build(only=None):
                 row, slice_["dataset_id"], slice_["source_repo"],
                 slice_["source_commit"], slice_["provenance_level"],
                 slice_.get("unit_of_observation", "seat"),
-                row.get("seat_candidates", ""))
+                row.get("seat_candidates", ""), latin)
             if got is None:
                 dropped.append({"dataset_id": slice_["dataset_id"],
                                 "reason": "urban local body, out of scope",

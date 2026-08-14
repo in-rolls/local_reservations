@@ -121,6 +121,43 @@ def is_krutidev(text):
                 or KD_UNRESERVED.search(kd) or KD_SC_TIGHT.search(tight))
 
 
+# Unicode blocks, not guesses about a state's habits.
+_DEVANAGARI = re.compile(r"[\u0900-\u097f]")
+_KANNADA = re.compile(r"[\u0c80-\u0cff]")
+
+
+def script_of(*values):
+    """Which script this row's text is actually in.
+
+    Every adapter used to hardcode this - `"script": "latin"` on one row
+    builder and `"devanagari"` on the next - and the corpus shipped 304,689
+    rows saying the wrong thing: Uttar Pradesh declared latin over 103,729 rows
+    of Devanagari, and Bihar declared devanagari over 200,960 rows reading
+    RAMADHAR YADAV. That is 37% of the corpus asserting something about itself
+    that the text contradicts, and the dictionary's own note for the column
+    says it records "which typesetting the row was read from".
+
+    Devanagari and Kannada are decided by their Unicode blocks, which is exact.
+
+    Kruti Dev is checked last and is **not** exact, and the limit is worth
+    stating: `is_krutidev` recognises this corpus's reservation vocabulary, not
+    Kruti Dev in general, so a *name* set in it - "vfurk nsoh" for अनिता देवी -
+    comes back latin here. It is ASCII, so nothing that asks which Unicode
+    block a character is in can see it, and that is exactly how 17,115
+    Jharkhand winners once shipped as mojibake labelled Unicode. Twenty-three
+    rows in the corpus carry the label today; a caller that knows a document is
+    Kruti Dev should say so rather than rely on this.
+    """
+    joined = " ".join(v for v in values if v)
+    if _KANNADA.search(joined):
+        return "kannada"
+    if _DEVANAGARI.search(joined):
+        return "devanagari"
+    if any(is_krutidev(v) for v in values if v):
+        return "krutidev"
+    return "latin"
+
+
 def caste_of(text):
     """SC / ST / BC / NONE, or None when the cell says nothing about caste."""
     s = _squash(text)

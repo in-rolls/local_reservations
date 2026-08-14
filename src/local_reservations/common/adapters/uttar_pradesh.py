@@ -156,7 +156,12 @@ def seat_row(row, year, relative):
         "winner_education": (row.get("educ_fin_eng") or row.get("educ_fin")
                              or row.get("education") or "").strip(),
         "relation_name": (row.get("husband_spouse_name") or "").strip(),
-        "script": "latin",
+        # Read from the row rather than asserted. Hardcoding this shipped
+        # 304,689 rows saying the wrong thing - see normalize.script_of.
+        "script": normalize.script_of(
+            *(row.get(k) or "" for k in
+              ("elected_sarpanch_name", "gp_name_fin", "gp_name",
+               "district_name", "block_name"))),
         "source_path": relative,
         # 2010 names the file each row came from; 2005 gives only a page number,
         # which without a filename identifies nothing on its own
@@ -190,7 +195,9 @@ def candidate_row(row, year, relative):
         "gender_stated": "" if caste is None else 1,
         "reservation": label(caste, woman == 1) if caste else "",
         "reservation_raw": stated,
-        "script": "devanagari",
+        # Read from the row rather than asserted. Hardcoding this shipped
+        # 304,689 rows saying the wrong thing - see normalize.script_of.
+        "script": normalize.script_of(district, block, panchayat),
         "source_path": relative,
         "source_page": "",
         # the long form

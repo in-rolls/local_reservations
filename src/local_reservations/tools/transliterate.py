@@ -62,8 +62,8 @@ FIELDS = ["script", "source", "latin", "suspect"]
 # What the source cell carries besides the name: a serial number the gazette
 # printed in the same box, a bullet, a stray rule character, a line break where
 # two people share a cell.
-LEADING = re.compile(r"^[\s\-.,;:#*()\[\]|/\\0-9]+")
-TRAILING = re.compile(r"[\s\-.,;:#*()\[\]|/\\]+$")
+LEADING = re.compile("^[\\s\\-.,;:#*()\\[\\]|/\\\\0-9\"\u201c\u201d\u2018\u2019'`]+")
+TRAILING = re.compile("[\\s\\-.,;:#*()\\[\\]|/\\\\\"\u201c\u201d\u2018\u2019'`]+$")
 
 # The gazettes abbreviate with a zero rather than a full stop - "प0" for
 # प्रखंड, "उ0" for उत्तर, in either the Devanagari digit or the Latin one. The

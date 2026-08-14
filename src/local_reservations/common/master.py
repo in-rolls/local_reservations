@@ -51,6 +51,12 @@ MASTER_COLUMNS = [
     # place
     "state", "year", "district", "block", "gram_panchayat", "gp_term",
     "ward_no", "ward_name", "seat_no",
+    # The same places in Latin, so they can be searched and joined against a
+    # register that is not in Devanagari. Derived by a model, never read from a
+    # document - see tools/transliterate.py - and blank wherever that reading
+    # was flagged, on the same principle as party: a value that does not settle
+    # the question is left empty rather than filled with a plausible one.
+    "district_latin", "block_latin", "gram_panchayat_latin",
     # office
     "tier", "tier_local",
     # reservation
@@ -62,8 +68,8 @@ MASTER_COLUMNS = [
     # who came second and by how much. These are facts about the seat, so they
     # belong here; the full field of candidates is a fact about the contest and
     # lives in the candidate table.
-    "winner", "winner_basis", "votes", "runner_up", "runner_up_votes",
-    "margin", "vacant", "unopposed",
+    "winner", "winner_latin", "winner_basis", "votes", "runner_up",
+    "runner_up_votes", "margin", "vacant", "unopposed",
     # provenance
     "script", "source_repo", "source_commit", "source_path", "source_page",
     "provenance_level", "quality_flags",
@@ -159,7 +165,15 @@ def quality_flags(row):
     # fact that they are reserved differently
     if str(row.get("shared_place_name") or "0") not in ("0", ""):
         flags.append("shared_place_name")
-    if row.get("script") in ("krutidev", "devanagari"):
+    # The flag means what its name says: this row's name cannot be read by
+    # someone who does not read the script. A row that now carries a Latin
+    # reading can be, so the flag lifts - otherwise correcting Uttar Pradesh's
+    # script label would have raised it on 153,505 rows in the same commit that
+    # gave every one of them a transliteration, and the flag would have been
+    # measuring the label rather than the difficulty it names.
+    if (row.get("script") in ("krutidev", "devanagari", "kannada")
+            and not (row.get("winner_latin")
+                     or row.get("gram_panchayat_latin"))):
         flags.append("name_untransliterated")
     return ";".join(flags)
 
@@ -174,9 +188,42 @@ def gp_term(row):
     return ""
 
 
+# Which master column carries the Latin reading of which source column. Four
+# of the five go into the master; ward_name is non-Latin on 1.7% of rows, which
+# is the mostly-blank case the declared-columns rule exists for, so it travels
+# as an extra instead.
+LATIN_OF = {"district": "district_latin", "block": "block_latin",
+            "gram_panchayat": "gram_panchayat_latin", "winner": "winner_latin",
+            "ward_name": "ward_name_latin"}
+
+
+def transliterations(root):
+    """{source string: Latin reading} for every reading that was not flagged.
+
+    A flagged one is left out rather than carried with a warning column: the
+    table on disk keeps it and says why, and the pooled corpus holds only
+    readings that passed. Same call `party` got - a value that does not settle
+    the question is blank rather than plausible.
+    """
+    import csv
+    import pathlib as _pathlib
+    out = {}
+    directory = _pathlib.Path(root) / "data" / "transliteration"
+    for path in sorted(directory.glob("*.csv")):
+        with path.open(encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                if not row.get("suspect") and row.get("latin"):
+                    out[row["source"]] = row["latin"]
+    return out
+
+
 def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
-              unit_of_observation="seat", seat_candidates=""):
-    """One parsed row in the pooled schema. Returns None for an urban seat."""
+              unit_of_observation="seat", seat_candidates="", latin=None):
+    """One parsed row in the pooled schema. Returns None for an urban seat.
+
+    `latin` is the transliteration table - {source string: Latin reading} - read
+    once by the caller and passed down, because this runs 829,628 times.
+    """
     state = row.get("state", "")
     tier = row.get("tier", "")
     if not canon.is_rural(tier):
@@ -228,13 +275,30 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         "source_page": row.get("source_page", ""),
         "provenance_level": provenance_level,
     }
+    # The Latin readings, looked up on the source string. A name absent from
+    # the table was either already Latin or its reading was withheld, and both
+    # come out blank - which is the honest answer to "what is this in Latin".
+    # Always set, never conditionally: a declared column that appears on some
+    # rows and not others is not a column, and test_the_projection_does_not_
+    # replace_the_source_row says so. Blank is the honest value where the name
+    # was already Latin or its reading was withheld.
+    for source_column, latin_column in LATIN_OF.items():
+        out[latin_column] = (latin or {}).get(
+            out.get(source_column) or row.get(source_column) or "", "")
+
     out["quality_flags"] = quality_flags(dict(row, **out))
     out["seat_key"] = seat_key(dict(row, gram_panchayat=out["gram_panchayat"]))
     # Every value is a string, as it will be once written. An adapter that sets
     # woman_reserved to the integer 1 produces a row that behaves differently
     # in memory than after a round trip through the CSV, and the checks - which
     # were written against rows read back from disk - then fail on .strip().
-    return {k: "" if v is None else str(v) for k, v in out.items()}
+    # Ordered by MASTER_COLUMNS rather than by insertion. The parquet takes its
+    # column order from this dict, and the manifest records that order and is
+    # tested against the declaration - so a column added in a loop after the
+    # literal would land at the end and the two would disagree.
+    ordered = {k: out[k] for k in MASTER_COLUMNS if k in out}
+    ordered.update({k: v for k, v in out.items() if k not in ordered})
+    return {k: "" if v is None else str(v) for k, v in ordered.items()}
 
 
 def candidates(row, seat):
