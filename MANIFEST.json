@@ -1,6 +1,6 @@
 {
-  "built_from_commit": "22aa2e2bca7f082d5965b1ba588eca20e9dbd5c3",
-  "committed_utc": "2026-08-14T00:51:25-07:00",
+  "built_from_commit": "cc6c67e3145c227ce77ad075ccfd29f468858964",
+  "committed_utc": "2026-08-14T06:20:46-07:00",
   "dirty": true,
   "files": [
     {
@@ -106,7 +106,7 @@
       ],
       "rows": 60387,
       "rows_identifying_a_distinct_seat": 60387,
-      "sha256": "d40176bfa0d9c9f7d9bcce9003e6ea6f299b180dac971a3f5640533ec0f29d64",
+      "sha256": "78142b6d4b5dd1804ed9f563f27e804ab0d0520eff285b33c84863539313bab4",
       "states": [
         "Andhra Pradesh"
       ],
@@ -191,7 +191,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "641e8d477e7c261de79e2073e37aa192669400ce43a822993a986c0b04b44413",
+      "sha256": "9ad5a2b2f72f66fe0f1198dbbbb95e44f819e75c2db995dfe5fe592c6538a2b3",
       "states": [
         "Goa"
       ],
@@ -254,7 +254,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "22e522e83920a2be1cf43024bfb460020fff5d8daaacaa8d82caf51a57f8e938",
+      "sha256": "e1577db6198e2fa630a89c7f6c19c49e1f945565d8cc9e947bf13c0884c2482d",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -286,7 +286,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27588,
-      "sha256": "50849fb7e9fc17ecf8d935aae0972bc78917dcc0236506b1e465e18f114c631f",
+      "sha256": "77469324a309360ce7f2694611032efb3059c00c1cc06d48ca289a6ce5918eb6",
       "states": [
         "Jharkhand"
       ],
@@ -321,7 +321,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30687,
-      "sha256": "9fd851ee505be23c49fe75133f9bba3459872b980993fd4d60e9bbacc7888196",
+      "sha256": "ae424f9fe08bb89c3cb7dc8c685c40db5e0dbcbaea4f28bb28b6b38c7ec6c831",
       "states": [
         "Karnataka"
       ],
@@ -463,7 +463,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "e9c5eeef7dbb5d60f546056015027b3b0a89113a60f163ee7a17b5ca3fa07f7c",
+      "sha256": "86800b0790d4460e2c5ceac88295b3544eeb1be053b37df60bab3ec42db7cb19",
       "states": [
         "Telangana"
       ],
@@ -568,7 +568,7 @@
       ],
       "rows": 819,
       "rows_identifying_a_distinct_seat": 819,
-      "sha256": "814543237b895ccc2d60da69f1be7f095d6fabb0ef10b432590ce4cedef44280",
+      "sha256": "fed55678f1393d1f660419b5efd0220202d0f9bbd681fd2a29b2898e5cde97cc",
       "states": [
         "West Bengal"
       ],
