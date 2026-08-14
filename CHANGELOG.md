@@ -7,6 +7,27 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.5
+
+### Corrected
+
+- **7,248 Bihar rows said `script = devanagari` while every word in the row
+  read Latin.** v0.2.4 stopped adapters hardcoding the value, but it was then
+  derived per *candidate*, and `collapse.to_seats` merges many candidates into
+  one seat — so a seat could carry the script of a name it does not show.
+  `script` is now derived in one place, from the row it labels. **If you
+  filtered Bihar on `script`, redo it.**
+
+  Rows whose script contradicts their own text: 304,823 before v0.2.4, 7,267
+  after it, **0 now**, across all 829,628 rows. A test holds them there.
+
+### Changed
+
+- **Three copies of `page_count` became one**, and three identical copies of
+  `pct` moved to `common/checks.py`. Checked and left alone: `clean` appears in
+  five parsers with five different bodies, because each strips what its own
+  documents carry. Same name is not the same function.
+
 ## Unreleased — v0.2.4
 
 ### Corrected
