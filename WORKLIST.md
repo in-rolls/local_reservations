@@ -134,14 +134,18 @@ Closable from here, and deliberately not being closed. These are real and the li
 This note used to say the gap was Jharkhand's scans, naming 34% of OCR'd rows against 92% of typeset ones, and to prescribe re-OCR. Both halves were wrong by the time anyone read them again: the scanned districts now name the panchayat on 99.9% of ward rows against 96.2% for the districts that came as digital text, and 519 of the 524 rows still unnamed are in digital-text documents. Re-OCR would reach five of them. A closes_with is a claim about the present, and this one outlived the two commits that made it false.
   *Closes with:* three different things, only one of which is a parse. Koderma's 261 rows are the Lohardaga defect again: on pages 30-35 the seat column is drawn rather than typed, 33 to 51 embedded images a page against 32 to 50 rows that name nothing, and the text layer keeps only the district's roman numeral, which is why every one of them reads 'VI'. That closes the way Lohardaga's did, through ocr_seats.py. Pakur's 106 carry no identifier at all. East Singhbhum's 80 were the parse, and are fixed: the name was there in full and split down the middle, because ध is written '/' in Kruti Dev and 'e/; ckxcsM+k' is मध्य बागबेड़ा..
 
-## Undetermined (2)
+## Undetermined (3)
 
 We have not established whether these are properties of the sources or gaps in our collecting. That question is itself the work - asserting "no results document exists" is a claim about everything a state published, not about the file in hand.
 
 | Rows | State | Year | Tier | What | Detail |
 |---|---|---|---|---|---|
+| 819 | West Bengal | 2018 | `zp_member` | no winner is recorded | no document stage declared, and nobody has looked |
 | 793 | Goa | 2022 | `gp_ward` | the roster is incomplete | measured against a complete cycle of the same state |
 | 684 | Goa | 2017 | `gp_ward` | the roster is incomplete | measured against a complete cycle of the same state |
+
+**no winner is recorded** — Whether this is a source property depends on what stage of document it is. A pre-poll reservation roster names no winner and never will; for anything else, a results notification may exist that we have not looked for. Asserting the first without checking is a claim about every document a state published.
+  *Closes with:* declaring reference.DOCUMENT_STAGE for this slice - pre_poll settles it as a source property, and anything else means going to look.
 
 **the roster is incomplete** — The document holds fewer seats than the state has. Whether a complete roster was ever published is a different question from whether this file is complete, and only the second is settled.
   *Closes with:* establishing whether a full roster exists for this cycle.

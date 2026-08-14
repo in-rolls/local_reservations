@@ -70,7 +70,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `tier_local_maps_to_one_tier` | internal | &check; sarpanch | &check; ward member |
 | `winner_caste_is_not_the_seats` | internal | &ndash; 0 | &ndash; 0 |
 | `women_share_by_block` | external | &ndash; | &ndash; |
-| `women_share_vs_statute` | external | &ndash; 6011/12018 | &ndash; 25454/49823 |
+| `women_share_vs_statute` | external | &check; 50.0% | &check; 51.1% |
 | `year_constant` | internal | &check; 2019 | &check; 2019 |
 
 &check; pass &nbsp; ! warn &nbsp; &cross; fail &nbsp; &ndash; skipped, meaning no rule is declared for that slice — which is not the same as passing.

@@ -1,7 +1,7 @@
 {
-  "built_from_commit": "ade96cf2457603ef039ec901add8043c5d55d1ec",
-  "committed_utc": "2026-08-14T00:14:52-07:00",
-  "dirty": false,
+  "built_from_commit": "22aa2e2bca7f082d5965b1ba588eca20e9dbd5c3",
+  "committed_utc": "2026-08-14T00:51:25-07:00",
+  "dirty": true,
   "files": [
     {
       "bytes": 17803458,
@@ -106,7 +106,7 @@
       ],
       "rows": 60387,
       "rows_identifying_a_distinct_seat": 60387,
-      "sha256": "42c6d0fbdc51e195bdbdeacdfa6603df623c3e2da3f0a9bf2ae291d1e91a6882",
+      "sha256": "d40176bfa0d9c9f7d9bcce9003e6ea6f299b180dac971a3f5640533ec0f29d64",
       "states": [
         "Andhra Pradesh"
       ],
@@ -167,11 +167,11 @@
       "sha256": "85e624940b4d51be6adcebf0e64409032b7ff66775ad1f1bd7d5ee54e0e86d4f"
     },
     {
-      "bytes": 14434288,
+      "bytes": 14436724,
       "kind": "master",
       "path": "data/master/master_extras.parquet",
-      "rows": 3436097,
-      "sha256": "7f7415918f16bfac6905cb7516168b517c3acff425afe604de8920526774e5ed"
+      "rows": 3437039,
+      "sha256": "01ece0600f02edb4b227ebe6a6472c1a3a209ca622d105e5376362554eb0cb4a"
     },
     {
       "bytes": 86617,
@@ -191,7 +191,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "3bd56846ba5a0954b4eb937a25d0c74422c8587c96c38722d1041becace99fcf",
+      "sha256": "641e8d477e7c261de79e2073e37aa192669400ce43a822993a986c0b04b44413",
       "states": [
         "Goa"
       ],
@@ -254,7 +254,7 @@
       ],
       "rows": 11508,
       "rows_identifying_a_distinct_seat": 10256,
-      "sha256": "9d27e9791299b99072c47da200dc78bbf969b7ca6f35d53f6a52f1a7c39f1192",
+      "sha256": "22e522e83920a2be1cf43024bfb460020fff5d8daaacaa8d82caf51a57f8e938",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -286,7 +286,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27588,
-      "sha256": "b903496924395d60c4ae0e779f9bb948f6a6dec09db2aeacc87bcea8ea5431d5",
+      "sha256": "50849fb7e9fc17ecf8d935aae0972bc78917dcc0236506b1e465e18f114c631f",
       "states": [
         "Jharkhand"
       ],
@@ -321,7 +321,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30687,
-      "sha256": "a64eeaf059f65b94d10678468b2e00c48e823ec9e641e716ce48a8ccbde66a30",
+      "sha256": "9fd851ee505be23c49fe75133f9bba3459872b980993fd4d60e9bbacc7888196",
       "states": [
         "Karnataka"
       ],
@@ -463,7 +463,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "40b4228bedf98f7591f3ba62cb17512730696688e3b3139a9a86c61239a184e7",
+      "sha256": "e9c5eeef7dbb5d60f546056015027b3b0a89113a60f163ee7a17b5ca3fa07f7c",
       "states": [
         "Telangana"
       ],
@@ -551,6 +551,32 @@
         2014,
         2015,
         2019
+      ]
+    },
+    {
+      "bytes": 30971,
+      "dataset_ids": [
+        "west_bengal/zp_member/2018"
+      ],
+      "kind": "master",
+      "listing_scopes": [
+        "all_seats"
+      ],
+      "path": "data/master/master_west_bengal.parquet",
+      "provenance_level": [
+        "page"
+      ],
+      "rows": 819,
+      "rows_identifying_a_distinct_seat": 819,
+      "sha256": "814543237b895ccc2d60da69f1be7f095d6fabb0ef10b432590ce4cedef44280",
+      "states": [
+        "West Bengal"
+      ],
+      "tiers": [
+        "zp_member"
+      ],
+      "years": [
+        2018
       ]
     },
     {
@@ -916,6 +942,22 @@
       "years": [
         "2019"
       ]
+    },
+    {
+      "bytes": 172735,
+      "kind": "parsed",
+      "path": "data/wb/zp_member_2018.csv",
+      "rows": 819,
+      "sha256": "55c60388211c5a9246b72f1d5e0c9a5690415d3d22e118c97f981c0432877bdc",
+      "states": [
+        "West Bengal"
+      ],
+      "tiers": [
+        "zp_member"
+      ],
+      "years": [
+        "2018"
+      ]
     }
   ],
   "master_columns": [
@@ -963,7 +1005,7 @@
     "provenance_level",
     "quality_flags"
   ],
-  "release": "v0.2.5",
+  "release": "",
   "schema_version": 1,
   "sibling_repos": [
     {
@@ -1023,9 +1065,9 @@
   ],
   "totals": {
     "candidate_rows": 1134117,
-    "master_rows": 829628,
-    "master_states": 12,
-    "parsed_rows": 196709
+    "master_rows": 830447,
+    "master_states": 13,
+    "parsed_rows": 197528
   },
   "written_by": "pyarrow 23.0.1"
 }

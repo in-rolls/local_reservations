@@ -660,8 +660,27 @@ def districts_expected(state, year):
     return DISTRICT_COUNT.get((state, year))
 
 
+# Article 243D(3) of the Constitution: "not less than one-third ... of the
+# total number of seats to be filled by direct election in every Panchayat
+# shall be reserved for women". Every state, every tier, since 1993.
+#
+# Declared as the default because the alternative was worse. Without it,
+# women_share_vs_statute - the strongest external check this corpus has, and
+# the only one comparing against a rule nothing here was tuned against -
+# skipped 50 of its 63 slices for want of an entry, and a skip reads exactly
+# like a pass in a green build.
+#
+# It is deliberately the floor rather than the stronger rule. Twenty states
+# including West Bengal legislate one-half, and several entries above say so,
+# but the amending statutes could not be retrieved to cite - and a share taken
+# from the data it is meant to test is not a check. A weaker rule that is
+# certainly right beats a stronger one that might not be; where a statute is
+# confirmed, adding it to WOMEN_RULE tightens the check for that slice.
+CONSTITUTIONAL_FLOOR = ("floor", 1 / 3)
+
+
 def women_rule(state, year):
-    return WOMEN_RULE.get((state, year), (None, None))
+    return WOMEN_RULE.get((state, year), CONSTITUTIONAL_FLOOR)
 
 
 # States that rotate reservation between cycles, with the cycle the rotation
