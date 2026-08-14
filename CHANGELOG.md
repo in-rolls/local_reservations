@@ -7,6 +7,47 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.6
+
+### Added
+
+- **West Bengal: 819 zila parishad seats across all 20 districts**, from the
+  2018 delimitation-and-reservation gazettes. The thirteenth state, and
+  830,447 pooled seats.
+
+  Three external numbers agree with it, none of which anything here was tuned
+  against: women 49.3% against a statutory half, SC 26.7% and ST 6.1% against
+  roughly 23% and 6% of the state's population. 123 seats are printed in both
+  a draft and a final gazette and 117 agree, which is two independent scans of
+  two independently typeset documents saying the same thing.
+
+  **Known and not hidden:** the gazette states how many members each block
+  elects, and that disagrees with the constituencies enumerated on 20 blocks of
+  about 340. A further 13 blocks state a count that did not survive the scan —
+  Bankura's Indpur reads `Zz` where the page prints 2. Neither is guessed at:
+  the only repair certain to be right is the number of constituencies we
+  enumerated, which is the very thing that check exists to test independently.
+
+### Changed
+
+- **51 slices stopped skipping their strongest check.**
+  `women_share_vs_statute` compares a slice's women's share against a legal
+  requirement, so agreement is evidence rather than circularity. It was running
+  on 10 of 63 slices; the other 53 skipped for want of a declared rule, and a
+  skip reads exactly like a pass in a green build.
+
+  Article 243D(3) of the Constitution is now the default — *not less than
+  one-third of the seats filled by direct election in every Panchayat shall be
+  reserved for women*, every state, every tier, since 1993.
+
+      women_share_vs_statute:  10 pass / 53 skip  ->  61 pass / 3 skip
+
+  Every slice passes at that floor. This is deliberately the floor and not the
+  stronger rule: about twenty states including West Bengal legislate one-half,
+  but those amending statutes could not be retrieved to cite, and a share taken
+  from the data it is meant to test is not a check. Declaring a confirmed
+  statute in `reference.WOMEN_RULE` tightens any slice.
+
 ## Unreleased — v0.2.5
 
 ### Corrected
