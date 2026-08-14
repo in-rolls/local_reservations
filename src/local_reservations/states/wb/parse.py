@@ -238,7 +238,17 @@ def read_page(path, edges):
 def read_document(stem, printing):
     directory = CACHE / printing
     pages = sorted(directory.glob(f"{stem}-*.tsv"))
-    seats, members, unreadable, edges = [], [], [], None
+    seats, members, unreadable = [], [], []
+    # Seeded from the first page that prints the header, not from None.
+    #
+    # column_edges reads the boundaries off the gazette's own (1)(2)(3)(4)(5)
+    # marker row, and page 1 carries the preamble and never prints it. Carrying
+    # edges only forward left page 1 with none, so read_page returned nothing
+    # and three districts lost their first two constituencies - Bankura's
+    # Saltora/ZP-1 and Saltora/ZP-2 sat in the OCR, read perfectly, and were
+    # dropped. Six seats, and all six numbered 1 or 2.
+    edges = next((got for path in pages
+                  if (got := column_edges(words_of(path)))), None)
     for path in pages:
         page = int(path.stem.rsplit("-", 1)[1])
         got, block_members, bad, edges = read_page(path, edges)
@@ -248,6 +258,41 @@ def read_document(stem, printing):
         members += [(page, y, n) for y, n in block_members]
         unreadable += bad
     return seats, members, unreadable
+
+
+def block_key(name):
+    """One key for a block however its name was scanned.
+
+    The block name is printed on every one of its constituency rows and does
+    not survive identically each time: "Beldanga-II" and "Beldanga -II",
+    "Suti-I" and "Suti - I", "Suti - II" and "Suti - Il" with a capital i for
+    the second numeral. Each variant became a block of its own, so a block that
+    elects three members enumerated one and two and failed the gazette's own
+    arithmetic twice over.
+
+    The roman tail is normalised by *length*, not by spelling, which is what
+    keeps Suti-I and Suti-II apart while merging Suti-II with Suti-Il. Checked
+    across all twenty districts: fifteen blocks merge and no two names whose
+    numerals differ are joined.
+    """
+    key = re.sub(r"\s*-\s*", "-", (name or "").strip())
+    key = re.sub(r"[^A-Za-z0-9-]", "", key)
+    key = re.sub(r"[Il1]+$", lambda m: "I" * len(m.group()), key)
+    return key.lower()
+
+
+def block_name(name):
+    """The block's name as the gazette prints it.
+
+    Verified against the page rather than assumed: Murshidabad page 2 prints
+    "Suti-I", "Raghunathganj-I" and "Raghunathganj-II" with no space around the
+    hyphen, so "Suti - I" and "Suti - Il" are the scan's doing and tidying them
+    is a reading rather than an invention. The slash before the ZP number does
+    carry a space in the gazette's own typesetting - "Suti-I/ ZP-11" - which is
+    why only the hyphen is touched.
+    """
+    tidy = re.sub(r"\s*-\s*", "-", (name or "").strip())
+    return re.sub(r"[Il1]+$", lambda m: "I" * len(m.group()), tidy)
 
 
 def members_by_block(seats, members):
@@ -266,7 +311,7 @@ def members_by_block(seats, members):
         if not here:
             continue
         nearest = min(here, key=lambda s: abs(s["y"] - y))
-        out.setdefault(nearest["block"], count)
+        out.setdefault(block_key(nearest["block"]), count)
     return out
 
 
@@ -277,11 +322,21 @@ def district_of(stem):
 
 def rows_for(stem, printing, agree):
     seats, _, _ = read_document(stem, printing)
+    # One spelling per block in the published rows. The scan gives three names
+    # for one place - "Suti-I", "Suti - I" - and the most common is the one the
+    # gazette most often printed, so it is the one to keep. block_key decides
+    # which names are the same place; this decides what to call it.
+    spellings = collections.defaultdict(collections.Counter)
+    for seat in seats:
+        spellings[block_key(seat["block"])][seat["block"]] += 1
+    canonical = {key: block_name(names.most_common(1)[0][0])
+                 for key, names in spellings.items()}
     out = []
     for seat in seats:
         out.append({
             "state": "West Bengal", "year": YEAR,
-            "district": district_of(stem), "block": seat["block"],
+            "district": district_of(stem),
+            "block": canonical.get(block_key(seat["block"]), seat["block"]),
             "seat_no": seat["seat_no"],
             "seat_id_printed": seat["seat_id_printed"],
             "tier": "zp_member", "tier_local": "zilla parishad member",
@@ -338,9 +393,15 @@ def main():
     stems = sorted({p.stem.rsplit("-", 1)[0]
                     for p in (CACHE / "final").glob("*.tsv")})
     skipped = 0
+    # Whether a disagreement means a lost seat or a misfiled one is decided by
+    # this: the constituencies are numbered 1..N across a district, so a
+    # complete run means nothing is missing however the blocks are attributed.
+    seat_numbers = collections.defaultdict(list)
     for stem in stems:
         got = rows_for(stem, "final", agree)
         rows += got
+        seat_numbers[district_of(stem)] = [int(r["seat_no"]) for r in got
+                                           if r["seat_no"].isdigit()]
         # the gazette's own arithmetic: each block states how many members it
         # elects, and the constituencies are enumerated separately
         seats, members, unreadable = read_document(stem, "final")
@@ -355,7 +416,7 @@ def main():
             # that - "Zz" for Indpur's 2.
             seen = collections.Counter()
             for row in got:
-                seen[row["block"]] += 1
+                seen[block_key(row["block"])] += 1
             for block, stated in sorted(stated_by_block.items()):
                 counted = seen.get(block)
                 if counted is None or stated != counted:
@@ -381,9 +442,16 @@ def main():
         if skipped:
             print(f"  {skipped} block(s) whose member count did not survive "
                   f"the scan; not guessed, and left out of the check below")
+        holes = sum(len(set(range(1, max(n) + 1)) - set(n))
+                    for n in seat_numbers.values() if n)
         if failed:
             print(f"  {len(failed)} block(s) where the stated member count and "
-                  f"the constituencies enumerated disagree:")
+                  f"the constituencies enumerated disagree - "
+                  + ("every district's seat numbers still run 1..N with no "
+                     "holes, so these are seats filed under the wrong block, "
+                     "not seats missing"
+                     if not holes else
+                     f"and {holes} seat number(s) are missing outright"))
             for district, block, stated, counted in failed[:12]:
                 print(f"     {district}/{block}: states {stated}, "
                       f"enumerates {counted if counted is not None else 0}")

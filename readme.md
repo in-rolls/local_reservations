@@ -18,7 +18,7 @@ hand-maintained, so it is no longer hand-maintained.
 | [Open gaps](WORKLIST.md) | 52 | 34,988 |
 | [Blocked](WORKLIST.md) | 2 | 70,452 |
 | [Parked](WORKLIST.md) | 10 | 13,079 |
-| [Undetermined](WORKLIST.md) | 3 | 2,296 |
+| [Undetermined](WORKLIST.md) | 3 | 2,302 |
 | [Accepted properties of the sources](WORKLIST.md) | 15 | 101,562 |
 
 <!-- worklist:end -->
@@ -73,7 +73,7 @@ are still in the legacy font they were printed in.
 | Karnataka | 2016 | `zp_member` | 888 | 48% | 26 | — | — | [data/karnataka/](data/karnataka/) |
 | Telangana | 2019 | `gp_head` | 12,018 | 50% | 30 | 94% of 12,728 seats | — | [data/telangana/](data/telangana/) |
 | Telangana | 2019 | `gp_ward` | 49,823 | 51% | 30 | 44% of 112,242 seats | — | [data/telangana/](data/telangana/) |
-| West Bengal | 2018 | `zp_member` | 819 | 49% | 20 | — | no winner published | [data/wb/](data/wb/) |
+| West Bengal | 2018 | `zp_member` | 825 | 49% | 20 | — | no winner published | [data/wb/](data/wb/) |
 
 <!-- slices:end -->
 
@@ -124,7 +124,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | Tripura | - | - | - | not held | - |
 | Uttar Pradesh | gp_head | 2005, 2010, 2015, 2021 | 4 parquet | parsed | [local_elections_up](https://github.com/in-rolls/local_elections_up) |
 | Uttarakhand | gp_head, block_member, zp_member | 2008, 2014, 2019 | 116,514 | parsed | [local_elections_uttarakhand](https://github.com/in-rolls/local_elections_uttarakhand) |
-| West Bengal | zp_member | 2018 | 819 | parsed | [data/wb/](data/wb/) |
+| West Bengal | zp_member | 2018 | 825 | parsed | [data/wb/](data/wb/) |
 
 <!-- coverage:end -->
 
