@@ -7,6 +7,38 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.3
+
+### Corrected
+
+- **Andhra Pradesh under-counted women's seats, and it was a bias rather than a
+  shortfall.** 1,754 ward rows stated a caste and no gender. Nellore, Prakasam
+  and Anantapur mark *both* the women's and the open seats, so a bare `UR`
+  there is unknown rather than male — and the markers are not lost at equal
+  rates, so a women's share computed over those districts was wrong in a
+  direction. **If you computed a women's share for AP 2020, redo it.**
+
+  The cause is the OCR mode. `--psm 4` preserves the layout the parser reads
+  positionally and pays for it by gluing the ruled table's own lines onto the
+  cells: the marker arrives as `IBC)`, `|URW)`, `[URW`, `JURG)`, the opening
+  bracket read as `I`, `|`, `[` or `J`. A second pass at `--psm 11` reads the
+  same page far more cleanly and is matched back **by position** — a cell takes
+  a reading only where exactly one clean token sits in the same place, so it
+  can never assert a gender the document does not state.
+
+      gender unstated                                 1,754 -> 1,174
+      ward_list_complete = 1                         36,858 -> 37,642
+      panchayats parsed short of their stated count      223 -> 203
+
+### Known, and not fixed here
+
+- **`ward_list_complete` can report a panchayat complete against a misread
+  count.** Tesseract reads the "No. of Wards" column wrongly on 23 lines —
+  Alurupadu prints 8 and reads 4 — and the parser truncates the ward list to
+  it. Those rows then satisfy the completeness check while holding half their
+  wards. This predates the correction above and is why Alurupadu now holds 4
+  wards where a misaligned parse used to spill 7 of its 8.
+
 ## Unreleased — v0.2.2
 
 No data changed. Every value in every master table was compared against v0.2.1
