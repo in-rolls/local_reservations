@@ -15,7 +15,7 @@ hand-maintained, so it is no longer hand-maintained.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 52 | 34,988 |
+| [Open gaps](WORKLIST.md) | 52 | 34,067 |
 | [Blocked](WORKLIST.md) | 2 | 70,452 |
 | [Parked](WORKLIST.md) | 10 | 13,079 |
 | [Undetermined](WORKLIST.md) | 3 | 2,302 |
@@ -99,7 +99,7 @@ layout, and nobody has parsed them into this schema yet; **raw, unparsed** — s
 | Dadra & Nagar Haveli and Daman & Diu | - | - | - | not held | - |
 | Goa | gp_ward | 2012, 2017, 2022 | 2,948 | parsed | [data/goa/](data/goa/) |
 | Gujarat | - | - | - | not held | - |
-| Haryana | gp_head, gp_ward | 2016, 2022 | 135,460 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
+| Haryana | gp_head, gp_ward | 2016, 2022 | 135,073 | parsed | [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana) |
 | Himachal Pradesh | - | - | - | documents, no parser | [data/himachal/](data/himachal/) - 1 scan |
 | Jammu & Kashmir | gp_head, gp_ward | 2010, 2016, 2018 | 11,508 | parsed | [data/jk/](data/jk/) |
 | Jharkhand | block_member, gp_head, gp_ward, zp_member | 2015 | 29,111 | parsed | [data/jharkhand/](data/jharkhand/) |

@@ -56,9 +56,14 @@ TIERS = {"gp_reservation": ("gp_head", "sarpanch"),
 # and 11 panchayats; 2022 lost 30 ward rows, which is what stopping a
 # double-read costs. Changing these numbers is meant to be a decision, which is
 # why the build refuses until somebody makes it.
+# 2022 moved again for v0.2.8, and downwards on purpose. Palwal/Prithla prints
+# its notification twice and pdfplumber returned the Hindi pages as two tables
+# over one grid, so every seat there was emitted a second time with the father
+# read as the winner and no ward - 68 panchayats in a block that has 34. The 26
+# affected pages are now read by Surya, and the phantom printing is gone.
 DECLARED = {
     ("2016", "gp_head"): 6090, ("2016", "gp_ward"): 61879,
-    ("2022", "gp_head"): 6159, ("2022", "gp_ward"): 61332,
+    ("2022", "gp_head"): 6123, ("2022", "gp_ward"): 60981,
 }
 
 

@@ -7,6 +7,37 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.8
+
+### Corrected
+
+- **Haryana 2022 was publishing a phantom copy of some seats.** Palwal/Prithla
+  prints its notification twice, English then Hindi, and pdfplumber returned the
+  Hindi pages as *two* tables over one fully-ruled seven-column grid. The
+  right-hand half holds `[father, office, reservation]`, so the parser — which
+  anchors on the office cell — read every one of those rows happily, taking the
+  **father as the winner with no ward number**. Prithla held 68 gram panchayats
+  in a block that has 34, and one of the 68 was a person's name.
+
+  **If you counted Haryana 2022 ward seats or joined on winner, redo it.**
+
+      rows with no ward number   719 -> 259
+      ward-number holes          713 -> 576
+      Haryana rows in the master 135,460 -> 135,073
+
+  The row count falls because the phantom printing is gone, not because seats
+  were lost. 2016 is byte-identical.
+
+  The 26 affected pages are now read with Surya, which returns them as rows of
+  seven with the wrapped cells merged, and the reading is cached and committed
+  so a re-parse never needs the model. 26 pages of 1,606 — the damage was
+  concentrated in two documents rather than spread across the state.
+
+  Verified across languages: page 2's Hindi rows for अमरपुर map onto the parsed
+  English ones exactly. The one disagreement found is real and already carried
+  in the data — a sarpanch seat reads `Backward Class 'A' Women` in English and
+  `पिछड़ा वर्ग क महिला के सिवाय` in Hindi, and the row has `printings_agree = 0`.
+
 ## Unreleased — v0.2.7
 
 ### Added
