@@ -20,7 +20,7 @@ classifiers = [
 # without a single value changing, and `make verify` would report the whole
 # corpus altered. Until now nothing enforced it; uv.lock does.
 dependencies = [
-    "pyarrow==23.0.1",
+    "pyarrow==25.0.0",
     "pdfplumber",
     "requests",
     "requests-ratelimiter",
@@ -42,7 +42,7 @@ dev = ["pytest", "ruff", "pyright", "pydoclint>=0.5"]
 # installing both leaves whichever came second broken - which happened, and the
 # OCR run silently produced nothing. This replaces the hand-made ocrenv/.
 # Apple Silicon only; MLX is a Metal runtime with no CPU fallback.
-ocr = ["savitr==0.2.0", "pillow==10.4.0", "mlx-vlm==0.6.10"]
+ocr = ["savitr==0.2.0", "pillow==12.3.0", "mlx-vlm==0.6.10"]
 
 [tool.uv]
 # Declared rather than discovered. uv resolves every group together unless told

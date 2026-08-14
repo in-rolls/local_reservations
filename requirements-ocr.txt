@@ -16,7 +16,7 @@ savitr==0.2.0
 # Held at the version surya-ocr allows. pip will resolve to 12.x if this floats,
 # because something else in the tree asks for it, and surya then fails at import
 # rather than at install.
-pillow==10.4.0
+pillow==12.3.0
 
 # The conversion step - `mlx_vlm convert` - is what turns datalab-to/surya-ocr-2
 # into the local 4-bit model, so it is needed once even though the OCR itself
