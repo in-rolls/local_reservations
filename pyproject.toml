@@ -20,7 +20,7 @@ classifiers = [
 # without a single value changing, and `make verify` would report the whole
 # corpus altered. Until now nothing enforced it; uv.lock does.
 dependencies = [
-    "pyarrow==23.0.1",
+    "pyarrow==25.0.0",
     "pdfplumber",
     "requests",
     "requests-ratelimiter",
