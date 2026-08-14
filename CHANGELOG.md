@@ -7,6 +7,47 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.7
+
+### Added
+
+- **West Bengal is complete: 825 zila parishad seats**, up from 819. That is
+  the state's published total, and it was not a number available to the parser.
+
+  The six were all numbered ZP-1 or ZP-2, in three districts. `column_edges`
+  reads the column boundaries off the gazette's own `(1)(2)(3)(4)(5)` marker
+  row and the caller carried them only forward, so a page whose markers the OCR
+  did not resolve had none and was skipped whole. Bankura page 1 holds
+  `Saltora/ZP-1` and `Saltora/ZP-2`, both read perfectly, both dropped.
+
+  Three outside numbers hold: 825 published, women **49.5%** against a
+  statutory half, SC **26.7%** and ST **6.2%** against roughly 23% and 6% of
+  the state's population.
+
+### Changed
+
+- **One name per block.** The block name is printed on every one of its
+  constituency rows and did not survive identically each time — `Beldanga-II`
+  and `Beldanga -II`, `Suti - II` and `Suti - Il` with a capital i for the
+  second numeral. Each variant became a block of its own, which is what made
+  the gazette's own arithmetic disagree on 20 blocks. **If you grouped West
+  Bengal rows by `block`, you had up to three groups per block.**
+
+  The published spelling follows the page: Murshidabad page 2 prints `Suti-I`
+  and `Raghunathganj-II` with no space around the hyphen.
+
+- **The parser distinguishes a misfiled seat from a missing one.** Every
+  district enumerates a complete `ZP-1..N` run, so the 12 blocks whose stated
+  member count still disagrees are seats attributed to the wrong block, not
+  seats lost — `Suti-I` states 2 and enumerates 3 while `Suti-II` states 3 and
+  enumerates 2, the totals matching exactly. Previously "20 blocks disagree"
+  read as 20 missing constituencies.
+
+  14 blocks state a member count that did not survive the scan — Bankura's
+  Indpur reads `Zz` where the page prints 2. Left unreadable rather than
+  guessed: the only certain repair is the number of constituencies enumerated,
+  which is the very thing the check tests.
+
 ## Unreleased — v0.2.6
 
 ### Added
