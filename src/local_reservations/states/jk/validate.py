@@ -22,6 +22,7 @@ import csv
 import sys
 
 from local_reservations.common import checks
+from local_reservations.common.checks import pct
 from local_reservations.paths import ROOT
 
 JK = ROOT / "data" / "jk"
@@ -42,9 +43,6 @@ def load(tier, year):
     with path.open(encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
 
-
-def pct(part, whole):
-    return 100.0 * part / whole if whole else 0.0
 
 
 def main():

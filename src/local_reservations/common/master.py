@@ -43,7 +43,7 @@ rather than hidden behind a claim the data does not support.
 
 import hashlib
 
-from local_reservations.common import canon, dictionary, reference
+from local_reservations.common import canon, dictionary, normalize, reference
 
 MASTER_COLUMNS = [
     # grain
@@ -269,7 +269,23 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         "margin": row.get("margin", ""),
         "vacant": row.get("vacant", ""),
         "unopposed": row.get("unopposed", ""),
-        "script": row.get("script", ""),
+        # Derived from the row this label sits on, not asserted upstream.
+        #
+        # Adapters set it per *candidate* and collapse.to_seats then merges
+        # many candidates into one seat, so a seat could carry the script of a
+        # name it does not show: 7,226 Bihar seats said devanagari while every
+        # word in the row read Latin. Deriving it here means the label always
+        # describes the row it labels, which is what makes it checkable at all.
+        #
+        # An upstream krutidev survives, because it is the one value that
+        # cannot be derived: Kruti Dev is ASCII, so no test of which Unicode
+        # block a character belongs to can see it, and only the parser that
+        # read the document knows.
+        "script": ("krutidev" if row.get("script") == "krutidev"
+                   else normalize.script_of(
+                       row.get("winner", ""), row.get("gram_panchayat", ""),
+                       row.get("district", ""), row.get("block", ""),
+                       row.get("ward_name", ""))),
         "source_repo": source_repo, "source_commit": source_commit,
         "source_path": row.get("source_path", ""),
         "source_page": row.get("source_page", ""),

@@ -30,6 +30,7 @@ import subprocess
 import sys
 import tempfile
 
+from local_reservations.common.ocr_engine import page_count
 from local_reservations.paths import ROOT
 
 SOURCE = ROOT / "data" / "ap" / "2020_res_gp"
@@ -63,14 +64,6 @@ REPAIR_PSM = "11"
 # finds no clean reading keeps its bare code and stays flagged.
 REPAIR_TOLERANCE = 25
 
-
-def page_count(path):
-    out = subprocess.run(["pdfinfo", str(path)], capture_output=True,
-                         text=True).stdout
-    for line in out.splitlines():
-        if line.startswith("Pages:"):
-            return int(line.split()[1])
-    return 0
 
 
 CODE = re.compile(r"(UR|SC|ST|BC)", re.I)

@@ -125,3 +125,47 @@ def test_an_undeclared_column_is_not_smuggled_into_extras():
     """Extras are still declared columns. An unknown one means a parser grew a
     field nobody documented, and the dictionary should hear about it first."""
     assert M.extras({"mystery_column": "42"}, "abc") == []
+
+
+def test_every_rows_script_matches_its_own_text():
+    """`script` says which typesetting a row was read from, so it has to be
+    true of that row.
+
+    It was a literal in every adapter, and the corpus shipped 304,689 rows -
+    36.7% - asserting a script their own text contradicted: Uttar Pradesh
+    declared latin over Devanagari, Bihar declared devanagari over RAMADHAR
+    YADAV. Then, once derived, it was derived per *candidate* while
+    collapse.to_seats merges candidates into seats, so 7,226 Bihar seats
+    carried the script of a name they do not show.
+
+    Nothing failed either time. This is the check that does.
+
+    krutidev is exempt and has to be: it is ASCII, so no test of which Unicode
+    block a character belongs to can see it, and only the parser that read the
+    document knows.
+    """
+    import re
+
+    import pyarrow.parquet as pq
+
+    from local_reservations.paths import ROOT
+
+    devanagari = re.compile(r"[ऀ-ॿ]")
+    kannada = re.compile(r"[ಀ-೿]")
+    columns = ["winner", "gram_panchayat", "district", "block", "ward_name"]
+    wrong = []
+    for path in sorted((ROOT / "data" / "master").glob("master_*.parquet")):
+        if path.name == "master_extras.parquet":
+            continue
+        table = pq.read_table(path, columns=[*columns, "script"])
+        held = [table.column(c).to_pylist() for c in columns]
+        for values in zip(*held, table.column("script").to_pylist(), strict=True):
+            script = values[-1]
+            if script == "krutidev":
+                continue
+            text = " ".join(v for v in values[:-1] if v)
+            want = ("kannada" if kannada.search(text)
+                    else "devanagari" if devanagari.search(text) else "latin")
+            if want != script:
+                wrong.append((path.name, want, script, text[:40]))
+    assert not wrong, f"{len(wrong)} rows: {wrong[:3]}"

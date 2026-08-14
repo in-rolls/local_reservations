@@ -31,6 +31,16 @@ SEAT_KEY = ("state", "year", "tier", "district", "block", "gram_panchayat",
             "ward_no")
 
 
+def pct(part, whole):
+    """A percentage, and zero rather than a crash when the denominator is.
+
+    Three states' validators each carried this identically. A share of nothing
+    is the case that turns up whenever a slice is empty, which is exactly when
+    a validator is most likely to be run.
+    """
+    return 100.0 * part / whole if whole else 0.0
+
+
 class Report:
     """Collects check results and decides the exit status.
 

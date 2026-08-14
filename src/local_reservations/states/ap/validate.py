@@ -21,6 +21,7 @@ import re
 import sys
 
 from local_reservations.common import checks
+from local_reservations.common.checks import pct
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "ap"
@@ -84,9 +85,6 @@ def abstract_total(path, district):
                 return big[0]
     return None
 
-
-def pct(part, whole):
-    return 100.0 * part / whole if whole else 0.0
 
 
 def main():

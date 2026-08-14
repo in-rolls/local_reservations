@@ -29,6 +29,7 @@ import argparse
 import subprocess
 import sys
 
+from local_reservations.common.ocr_engine import page_count
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "wb" / "2018"
@@ -50,13 +51,6 @@ def documents():
     for path in sorted((DATA / "draft").glob("*.pdf")):
         yield path, "draft"
 
-
-def page_count(path):
-    got = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True)
-    for line in got.stdout.splitlines():
-        if line.startswith("Pages:"):
-            return int(line.split()[1])
-    return 0
 
 
 def cache_path(path, printing, page):
