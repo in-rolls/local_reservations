@@ -50,6 +50,10 @@ TIER_OF_LOCAL = {
     "panchayat_samiti_member": "block_member",
     "zila_parishad": "zp_member",
     "zila_parishad_member": "zp_member",
+    # West Bengal spells it with two Ls, in its own gazettes and its own Act.
+    # tier_local records what the state calls the seat, so it keeps the state's
+    # spelling and the mapping absorbs the difference.
+    "zilla_parishad_member": "zp_member",
     "zila_pramukh": "zp_head",
     # Karnataka's gram panchayat president
     "adhyaksha": "gp_head",
@@ -132,6 +136,9 @@ CASTE_SCHEME = {
     "Karnataka": "sc_st_bca_bcb",
     "Kerala": "sc_st_only",
     "Jammu & Kashmir": "sc_st_only",
+    # The 2018 delimitation gazettes head column (4) "Constituencies reserved
+    # for ST/SC/BC persons" and print all three.
+    "West Bengal": "sc_st_bc",
 }
 
 # The pooled categories each scheme can produce.

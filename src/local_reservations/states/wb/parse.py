@@ -42,10 +42,27 @@ OUT = ROOT / "data" / "wb"
 YEAR = "2018"
 
 # "Haldibari / ZP-4", "Mathabhanga-II/ZP-5", "Cooch Behar-II / ZP-11"
-SEAT = re.compile(r"^(?P<block>.+?)\s*/\s*ZP\s*-\s*(?P<number>\d+)\s*$", re.I)
+#
+# Searched anywhere on the line rather than matched against column (3)'s band,
+# and that is the one column where position should not decide. The band is
+# carried from the page that printed the header, the table shifts by a few
+# pixels between pages, and "Chanchal-I / ZP-11" put its number at x=1589
+# against a boundary at 1586 - three pixels into column (4), so the seat read
+# as "Chanchal-I /" with no number and the row was dropped. Malda lost six
+# constituencies that way and the OCR had read every one of them.
+#
+# Columns (4) and (5) still go by position, because there the meaning *is*
+# positional: an empty cell is the fact, and nothing in the text says which
+# column a bare "SC" fell in.
+SEAT = re.compile(r"(?P<block>[A-Za-z][\w .'-]*?)\s*/\s*ZP\s*-\s*"
+                  r"(?P<number>\d+)\b", re.I)
 MARKER = re.compile(r"^\(([1-5])\)$")
-# "Dubrajpur 2", "Cooch Behar-II 3" - a block and the members it elects
-MEMBERS = re.compile(r"^(?P<name>[^\d].*?)\s+(?P<count>\d{1,2})$")
+# Column (2) holds a number and nothing else. It used to be matched out of
+# columns (1) and (2) joined - `"^(?P<name>[^\d].*?)\s+(?P<count>\d{1,2})$"` -
+# which found the count only where the OCR happened to put block and number on
+# one line, and read a fifth of what the gazette states. The columns have a
+# boundary of their own and the header prints it; use it.
+COUNT = re.compile(r"^\d{1,2}$")
 
 # OCR renders these in mixed case often enough that matching is done folded.
 CASTE_WORDS = {"sc": "SC", "st": "ST", "bc": "BC", "s.c": "SC", "s.t": "ST"}
@@ -67,11 +84,13 @@ def words_of(path):
                 continue
             try:
                 left, width = int(row["left"]), int(row["width"])
+                top, height = int(row["top"]), int(row["height"])
                 key = (int(row["block_num"]), int(row["par_num"]),
                        int(row["line_num"]))
             except (KeyError, ValueError):
                 continue
-            lines[key].append({"text": text, "x": left + width / 2})
+            lines[key].append({"text": text, "x": left + width / 2,
+                               "y": top + height / 2})
     return [sorted(v, key=lambda w: w["x"]) for _, v in sorted(lines.items())]
 
 
@@ -113,62 +132,142 @@ def read_page(path, edges):
     """
     lines = words_of(path)
     edges = column_edges(lines) or edges
-    seats, members = [], {}
+    seats, members, unreadable, marks = [], [], [], []
     if edges is None:
-        return seats, members, edges
-    _, seat_edge, caste_edge, woman_edge = edges
+        return seats, members, unreadable, edges
+    block_edge, seat_edge, caste_edge, woman_edge = edges
 
     for line in lines:
-        left = " ".join(w["text"] for w in line if w["x"] < seat_edge).strip()
-        seat_text = " ".join(w["text"] for w in line
-                             if seat_edge <= w["x"] < caste_edge).strip()
+        name = " ".join(w["text"] for w in line
+                        if w["x"] < block_edge).strip()
+        count = " ".join(w["text"] for w in line
+                         if block_edge <= w["x"] < seat_edge).strip()
+        # The number is found anywhere on the line; the name is taken from
+        # column (3). Both halves matter. A margin on the band was tried and is
+        # the wrong shape of fix - ZP-11 sat 3px past the boundary and ZP-14
+        # sat 94px past it, and every widening is a guess about a table that
+        # moves. But reading the *name* off the whole line swept columns (1)
+        # and (2) into it and produced "Cooch Behar-I 3 Cooch Behar-I".
+        number_word = next((w for w in line
+                            if re.match(r"^ZP\s*-?\s*\d+$", w["text"], re.I)),
+                           None)
+        if number_word is not None:
+            seat_text = " ".join(
+                w["text"] for w in line
+                if seat_edge <= w["x"] <= number_word["x"]).strip()
+        else:
+            seat_text = " ".join(w["text"] for w in line
+                                 if seat_edge <= w["x"] < caste_edge).strip()
         middle = [w for w in line if caste_edge <= w["x"] < woman_edge]
         right = [w for w in line if w["x"] >= woman_edge]
+        # Columns (4) and (5) are kept with the height they were printed at,
+        # for the same reason column (2) is. A constituency's cell is several
+        # lines - the seat identifier, then the grams that make it up - and the
+        # gazette prints the reservation against the *cell*, which lands it on
+        # the second line: "Barshal,Lachhmanpur, Ban- SC WOMEN" while the seat
+        # is "Gangajalghati /ZP-4" on the line above. Reading them off the
+        # seat's own line found none of them, and West Bengal parsed 819 seats
+        # with every reservation empty - in a reservation corpus - while the
+        # row count and the block structure were exactly right.
+        for word in middle + right:
+            folded = word["text"].strip(".,").lower()
+            if folded in CASTE_WORDS:
+                marks.append((word["y"], "caste", CASTE_WORDS[folded]))
+            elif folded in WOMAN_WORDS and word["x"] >= woman_edge:
+                marks.append((word["y"], "woman", True))
 
-        # columns (1) and (2): the block, and how many members it elects
-        stated = MEMBERS.match(left)
-        if stated:
-            members[stated.group("name").strip()] = int(stated.group("count"))
+        # Column (2): how many members this block elects, kept with the height
+        # it was printed at rather than with the name beside it.
+        #
+        # Joining on the name does not work and should not be made to: column
+        # (1) prints "Alipurduar - II" where column (3) prints "Alipurduar-II",
+        # and the OCR gives "Kaliachak-Il" with a capital i. Normalising until
+        # those meet would also quietly marry a count to the wrong block, and
+        # this check exists to be independent of the enumeration. The gazette
+        # states the relationship geometrically - the count is centred against
+        # its block's rows - so read it that way.
+        if COUNT.match(count):
+            middle_y = sum(w["y"] for w in line
+                           if block_edge <= w["x"] < seat_edge) / max(
+                               1, sum(1 for w in line
+                                      if block_edge <= w["x"] < seat_edge))
+            members.append((middle_y, int(count)))
+        elif 0 < len(count) <= 3 and name and not name.startswith("("):
+            # A count that did not survive the scan, not guessed: Bankura's
+            # Indpur reads "Zz" and Indus reads "Z" where the page prints 2,
+            # and the only repair certain to be right is the number of
+            # constituencies enumerated - the very thing this checks.
+            #
+            # Bounded by length because column (2) also catches the header on
+            # every page: "Number of members to be elected to the Zilla
+            # Parishad" is not a damaged digit, and counting it as one reported
+            # 390 unreadable blocks in a state that has about 340.
+            unreadable.append((name, count))
 
-        got = SEAT.match(seat_text)
+        got = SEAT.search(seat_text)
         if not got:
             continue
         block = re.sub(r"\s+", " ", got.group("block")).strip()
 
-        caste = ""
-        for word in middle:
-            folded = word["text"].strip(".,").lower()
-            if folded in CASTE_WORDS:
-                caste = CASTE_WORDS[folded]
-        woman = any(w["text"].strip(".,").lower() in WOMAN_WORDS for w in right)
-        # a caste word that landed in the women's column is still a caste word,
-        # but only when its own column is empty
-        if not caste:
-            for word in right:
-                folded = word["text"].strip(".,").lower()
-                if folded in CASTE_WORDS:
-                    caste = CASTE_WORDS[folded]
         seats.append({
+            "y": min(w["y"] for w in line),
             "block": block, "seat_no": got.group("number"),
             "seat_id_printed": f"{block}/ZP-{got.group('number')}",
-            "caste": caste or "NONE", "woman": int(woman),
-            "raw": " ".join(w["text"] for w in middle + right),
+            "caste": "NONE", "woman": 0,
+            "raw": "",
         })
-    return seats, members, edges
+    # Each mark belongs to the last seat printed at or above it: a cell runs
+    # from its seat identifier down to the next one.
+    seats.sort(key=lambda s: s["y"])
+    for y, kind, value in sorted(marks):
+        above = [s for s in seats if s["y"] <= y + 12]
+        if not above:
+            continue
+        seat = above[-1]
+        if kind == "caste":
+            seat["caste"] = value
+        else:
+            seat["woman"] = 1
+    for seat in seats:
+        seat["raw"] = " ".join(
+            x for x in (seat["caste"] if seat["caste"] != "NONE" else "",
+                        "WOMEN" if seat["woman"] else "") if x)
+    return seats, members, unreadable, edges
 
 
 def read_document(stem, printing):
     directory = CACHE / printing
     pages = sorted(directory.glob(f"{stem}-*.tsv"))
-    seats, members, edges = [], {}, None
+    seats, members, unreadable, edges = [], [], [], None
     for path in pages:
         page = int(path.stem.rsplit("-", 1)[1])
-        got, block_members, edges = read_page(path, edges)
+        got, block_members, bad, edges = read_page(path, edges)
         for seat in got:
             seat["source_page"] = page
         seats += got
-        members.update(block_members)
-    return seats, members
+        members += [(page, y, n) for y, n in block_members]
+        unreadable += bad
+    return seats, members, unreadable
+
+
+def members_by_block(seats, members):
+    """{block: stated member count}, joined by where the count was printed.
+
+    The gazette centres a block's count against that block's constituency rows,
+    so the count belongs to whichever block's rows bracket it on the page. That
+    is the relationship the document actually states; the block name in column
+    (1) is spelt differently from the one in column (3) often enough that
+    matching on it loses a fifth of the counts and would need a normaliser
+    generous enough to marry a count to the wrong block.
+    """
+    out = {}
+    for page, y, count in members:
+        here = [s for s in seats if s["source_page"] == page]
+        if not here:
+            continue
+        nearest = min(here, key=lambda s: abs(s["y"] - y))
+        out.setdefault(nearest["block"], count)
+    return out
 
 
 def district_of(stem):
@@ -177,7 +276,7 @@ def district_of(stem):
 
 
 def rows_for(stem, printing, agree):
-    seats, _ = read_document(stem, printing)
+    seats, _, _ = read_document(stem, printing)
     out = []
     for seat in seats:
         out.append({
@@ -210,7 +309,7 @@ def agreement():
             continue
         stems = sorted({p.stem.rsplit("-", 1)[0] for p in directory.glob("*.tsv")})
         for stem in stems:
-            seats, _ = read_document(stem, printing)
+            seats, _, _ = read_document(stem, printing)
             for seat in seats:
                 # keyed on the seat number within the district, not on the
                 # printed identifier: the block name is OCR'd out of a scan and
@@ -238,18 +337,30 @@ def main():
     rows, checked, failed = [], 0, []
     stems = sorted({p.stem.rsplit("-", 1)[0]
                     for p in (CACHE / "final").glob("*.tsv")})
+    skipped = 0
     for stem in stems:
         got = rows_for(stem, "final", agree)
         rows += got
         # the gazette's own arithmetic: each block states how many members it
         # elects, and the constituencies are enumerated separately
-        _, members = read_document(stem, "final")
-        if members:
+        seats, members, unreadable = read_document(stem, "final")
+        stated_by_block = members_by_block(seats, members)
+        if stated_by_block:
             checked += 1
-            stated = sum(members.values())
-            counted = len({r["seat_id_printed"] for r in got})
-            if stated and abs(stated - counted) > 0:
-                failed.append((district_of(stem), stated, counted))
+            # Per block, not summed over the district. A district total hides
+            # which block disagrees, and it breaks entirely when one block's
+            # count did not survive the scan: the stated side is then short by
+            # that block while the enumerated side is not, and every district
+            # with one bad digit reads as a parse failure. Bankura had exactly
+            # that - "Zz" for Indpur's 2.
+            seen = collections.Counter()
+            for row in got:
+                seen[row["block"]] += 1
+            for block, stated in sorted(stated_by_block.items()):
+                counted = seen.get(block)
+                if counted is None or stated != counted:
+                    failed.append((district_of(stem), block, stated, counted))
+            skipped += len(unreadable)
 
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"zp_member_{YEAR}.csv"
@@ -267,11 +378,20 @@ def main():
         print(f"  {both:,} seats printed twice; {agreed:,} agree "
               f"({100.0 * agreed / both:.1f}%)" if both else
               "  no district printed twice")
+        if skipped:
+            print(f"  {skipped} block(s) whose member count did not survive "
+                  f"the scan; not guessed, and left out of the check below")
         if failed:
-            print(f"  {len(failed)} district(s) where the stated member count "
-                  f"and the constituencies enumerated disagree:")
-            for district, stated, counted in failed:
-                print(f"     {district}: states {stated}, enumerates {counted}")
+            print(f"  {len(failed)} block(s) where the stated member count and "
+                  f"the constituencies enumerated disagree:")
+            for district, block, stated, counted in failed[:12]:
+                print(f"     {district}/{block}: states {stated}, "
+                      f"enumerates {counted if counted is not None else 0}")
+            if len(failed) > 12:
+                print(f"     ... and {len(failed) - 12} more")
+        else:
+            print("  every block's stated member count matches the "
+                  "constituencies enumerated for it")
 
 
 if __name__ == "__main__":
