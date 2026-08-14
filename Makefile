@@ -24,6 +24,7 @@ help:
 	@echo "make test        unit tests for the shared normalizer"
 	@echo "make sweep       what the web archive holds, per state commission"
 	@echo "make karnataka-ocr  read the Kannada scans; resumable, ~10 hours"
+	@echo "make transliterate  Indic names -> Latin, into a committed table"
 
 inventory:
 	$(PY) -m local_reservations.tools.inventory
@@ -38,6 +39,13 @@ sweep:
 # document, pages it has already read; the harvest skips files whose bytes on
 # disk still hash to what the manifest recorded. Re-running either is how you
 # resume it - there is no separate command and no state to clean up.
+# The third stage: collect -> parse -> transliterate -> pool. Writes a lookup
+# table keyed on the name, which is committed; the pooled build only reads it.
+# --with indicate rather than a dependency group: it pulls torch and is needed
+# only when the table is regenerated, which is rarely.
+transliterate:
+	uv run --with indicate python -m local_reservations.tools.transliterate
+
 karnataka-ocr:
 	uv run --group ocr python -m local_reservations.states.karnataka.ocr
 
