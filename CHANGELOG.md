@@ -7,6 +7,51 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased — v0.2.4
+
+### Corrected
+
+- **304,689 rows said the wrong script — 36.7% of the corpus.** Every adapter
+  hardcoded the value, `"script": "latin"` on one row builder and
+  `"devanagari"` on the next, so Uttar Pradesh declared latin over 103,729 rows
+  of Devanagari and Bihar declared devanagari over 200,960 rows reading
+  `RAMADHAR YADAV`. It is now read from the row. **If you filtered or grouped
+  on `script`, redo it.** 0.88% remain mislabelled, only 22 of them a winner
+  rather than a place name.
+
+  Found by a check written to prove something else: "a row whose script is
+  latin must not acquire a Latin reading" failed on 102,395 UP rows. The join
+  was right; the column was wrong.
+
+- **`name_untransliterated` now lifts where a row has a Latin reading.** It
+  fires on 12,103 rows, of which 4,366 are Karnataka's Kannada. Previously it
+  tracked the script label; now it tracks the difficulty it names.
+
+### Added
+
+- **Latin readings for 227,903 rows** — `winner_latin`, `district_latin`,
+  `block_latin`, `gram_panchayat_latin`, from the transliteration stage added
+  in this release. Names that were only in Devanagari can now be searched,
+  joined and compared against an outside register.
+
+  These are **machine-generated and never replace what a source printed** — the
+  gazette's text stays exactly as it was, and the Latin form sits beside it.
+  158,931 distinct names were transliterated with `indicate`'s offline model,
+  chosen over its LLM backend because it is deterministic and a release pins a
+  SHA-256 for every file. 2.7% of readings were flagged and are **withheld from
+  the master**, kept in `data/transliteration/` with the reason.
+
+  Kannada is deliberately not done: no offline model exists and the LLM backend
+  is not reproducible, so 7,781 strings stay untransliterated rather than put a
+  non-deterministic stage behind a manifest that promises reproducibility.
+
+### Changed
+
+- **Transliteration is a stage, not a step inside a parser** — `collect →
+  parse → transliterate → pool`. It writes a committed lookup keyed on the
+  name, so the work happens once per name rather than once per row, and a
+  correction to one name fixes every row that carries it. `make transliterate`.
+
 ## Unreleased — v0.2.3
 
 ### Corrected
