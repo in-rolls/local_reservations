@@ -517,7 +517,51 @@ _JHARKHAND_WARDS = {
     "outcome": "nothing_found",
 }
 
+_WEST_BENGAL_RESULTS = {
+    "on": "2026-08-14",
+    "searched": "the Wayback CDX for wbsec.gov.in - 5,000 captures, of which "
+                "775 are PDFs - then the 123 that archive_sweep classifies as "
+                "results, the archived copies of the commission's own result "
+                "pages, and the two result files its menu links to",
+    "found": "none of it is a seat-level result.\n"
+             "The 123 'results' PDFs are candidate affidavits filed with "
+             "nomination papers, under /writereaddata/Declarations/"
+             "Municipal2015/. They match because the classifier reads the URL "
+             "and the directory is called Declarations. Two were opened: a "
+             "notarised Rs.20 stamp paper, then PAN and income tax for the "
+             "candidate's whole family, pending criminal cases, assets. "
+             "Municipal, nomination-stage, and silent on reservation.\n"
+             "The result pages - FinalResult_zp_2013.aspx, Detailed_gp.aspx "
+             "and the rest - archive as ASP.NET error pages. The crawler "
+             "captured the URLs; the results came from a query it never made.\n"
+             "The two files the menu links to are district x party seat "
+             "counts: Election2003Total-2018.pdf is three pages, "
+             "ELECTIONRESULT2008-updated_in_2018.pdf is four, for a state with "
+             "tens of thousands of gram panchayat seats.\n"
+             "The menu on one of those error pages named what the commission "
+             "published - 2013/2008/2003 results for ZP, PS and GP, and "
+             "contesting-candidate lists - and following it found the one "
+             "endpoint the archive did capture with data in it: "
+             "/contesting_candidate/details, 462 captures, GET with query "
+             "parameters rather than the POST form the other pages use. 195 "
+             "are PANCHAYAT, for 2013 and 2018, filtered by district and "
+             "party.\n"
+             "They still do not fit. The columns are #, OSN, Party Name, "
+             "Candidate Name, Candidate Address, Declaration File - a district "
+             "by party list of who stood. No constituency, so nothing joins to "
+             "a seat; no reservation, which is what this corpus is; and no "
+             "field saying who won - `final_result=1` is the name of a filter, "
+             "not a column. The one substantive extra, the candidate's home "
+             "address, is the class of data this repository deliberately drops.\n"
+             "So the seat-level results exist and the archive does not hold "
+             "them. Reaching them means the live site, which is a different "
+             "question and was not attempted",
+    "outcome": "nothing_found",
+}
+
 INVESTIGATED = {
+    ("West Bengal", "2018", "zp_member", "results_notification"):
+        _WEST_BENGAL_RESULTS,
     ("Jharkhand", "2015", "gp_ward", "missing_districts"): _JHARKHAND_WARDS,
     ("Karnataka", "1993", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2000", "gp_head", "results_notification"): _KARNATAKA_SEARCH,

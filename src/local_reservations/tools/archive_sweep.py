@@ -39,8 +39,9 @@ OUT = ROOT / "data" / "archive_inventory.csv"
 HOSTS = ROOT / "data" / "archive_hosts.csv"
 
 COLUMNS = ["state", "host", "pdfs", "first_capture", "last_capture",
-           "reservation", "results", "delimitation", "other",
-           "top_directories", "status"]
+           "reservation_by_name", "results_by_name", "delimitation_by_name",
+           "other", "opened", "readable", "confirmed", "top_directories",
+           "status"]
 
 # Two-letter-ish forms the commissions actually use in their hostnames.
 ABBREV = {
@@ -138,6 +139,14 @@ def resolve(state):
 # What a filename says it is. Ordered: a reservation gazette for an elected-
 # members list is still an elected-members list, and "form" matches too much to
 # be trusted before the specific words.
+# **These read the URL, not the document.** The column names say so - they end
+# in _by_name - because the unqualified ones were believed. West Bengal's 123
+# "results" PDFs turned out to be candidate affidavits sitting under a
+# directory called Declarations/, and that number was quoted as the largest
+# untouched holding of named winners in the corpus before anybody opened one.
+#
+# A filename match is a floor with an unmeasured error rate. `sampled` and
+# `confirmed` in the inventory measure it.
 KIND = [
     ("results", r"elected|winner|result|form.?21|form.?25|declaration"),
     ("reservation", r"reserv|roster|rotation|aarakshan|আসন"),
@@ -153,7 +162,72 @@ def classify(url):
     return "other"
 
 
-def sweep(state):
+# Words a document that really is an elected-members list puts on its first
+# page. Deliberately the office names and the table's own headings rather than
+# "result", which is what the filename already matched on.
+CONFIRMS = re.compile(
+    r"elected|winning|winner|returned candidate|declared elected|"
+    r"name of the (?:elected|returned)|sarpanch|mukhiya|pradhan|panch\b|"
+    r"ward member|zilla parishad|panchayat samiti", re.I)
+
+
+def looks_like_results(pdf):
+    """Whether a document's own first page says what its filename claimed.
+
+    Reads text, not the URL. A scan with no text layer returns None - unknown,
+    not no - because "we could not tell" and "it is not a results list" are
+    different answers and this file has already conflated two things once.
+    """
+    try:
+        import subprocess
+        import tempfile
+        with tempfile.NamedTemporaryFile(suffix=".pdf") as handle:
+            handle.write(pdf)
+            handle.flush()
+            text = subprocess.run(
+                ["pdftotext", "-f", "1", "-l", "2", handle.name, "-"],
+                capture_output=True, text=True, errors="replace").stdout
+    except Exception:
+        return None
+    if len(text.strip()) < 120:
+        return None
+    return bool(CONFIRMS.search(text))
+
+
+def sample(rows, kind, want=5):
+    """(opened, readable, confirmed) for documents the filename called `kind`.
+
+    Three numbers and not two, because the three outcomes are different facts
+    and folding them loses the one that matters. West Bengal's affidavits carry
+    no text layer at all - `pdftotext` returns zero characters - so a text
+    check can neither confirm nor contradict them. Reported as two numbers that
+    would have read `0 of 0`, which is indistinguishable from "we did not look"
+    and from "none of them are results".
+
+      opened     the document was fetched
+      readable   it had a text layer to judge
+      confirmed  that text says what the filename claimed
+
+    A low `readable` says the archive is scans and this check cannot speak.
+    """
+    picks = [(u, t) for u, t in rows if classify(u) == kind][:want]
+    opened = readable = confirmed = 0
+    for url, stamp in picks:
+        try:
+            body = fetch.body(f"https://web.archive.org/web/{stamp}id_/{url}",
+                              timeout=120)
+        except fetch.Unanswered:
+            continue
+        opened += 1
+        verdict = looks_like_results(body)
+        if verdict is None:
+            continue
+        readable += 1
+        confirmed += bool(verdict)
+    return opened, readable, confirmed
+
+
+def sweep(state, check=0):
     """(row, candidates tried, status). row is None unless status is "ok"."""
     host, tried, failed = resolve(state)
     if not host:
@@ -166,12 +240,16 @@ def sweep(state):
     stamps = sorted(t for _, t in rows if t)
     directories = collections.Counter(
         "/".join(urllib.parse.unquote(u).split("/")[3:-1])[:44] for u, _ in rows)
+    opened, readable, confirmed = (sample(rows, "results", check) if check
+                                   else (0, 0, 0))
     return {
+        "opened": opened, "readable": readable, "confirmed": confirmed,
         "state": state, "host": host, "pdfs": len(rows),
         "first_capture": stamps[0][:6] if stamps else "",
         "last_capture": stamps[-1][:6] if stamps else "",
-        "reservation": kinds["reservation"], "results": kinds["results"],
-        "delimitation": kinds["delimitation"], "other": kinds["other"],
+        "reservation_by_name": kinds["reservation"],
+        "results_by_name": kinds["results"],
+        "delimitation_by_name": kinds["delimitation"], "other": kinds["other"],
         "top_directories": " | ".join(
             f"{d}({n})" for d, n in directories.most_common(3) if d),
         "status": "ok",
@@ -191,17 +269,23 @@ def previous():
 def main():
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     ap.add_argument("--only", help="one state")
+    ap.add_argument("--check", type=int, default=0, metavar="N",
+                    help="open N of the documents a filename called a result, "
+                         "and record how many say so themselves")
     args = ap.parse_args()
 
     states = [args.only] if args.only else sorted(ABBREV)
     prior = previous()
     found, attempts = [], []
     for state in states:
-        row, tried, status = sweep(state)
+        row, tried, status = sweep(state, args.check)
         if row:
             found.append(row)
             print(f"  {state:<20} {row['host']:<30} {row['pdfs']:>5} PDFs  "
-                  f"res={row['reservation']:<4} res_out={row['results']:<4}",
+                  f"res={row['reservation_by_name']:<4} "
+              f"results={row['results_by_name']:<4} "
+              f"opened={row['opened']} readable={row['readable']} "
+              f"confirmed={row['confirmed']}",
                   flush=True)
         elif status == "query failed" and state in prior:
             row = dict(prior[state], status="carried forward")
@@ -221,9 +305,25 @@ def main():
             "candidates_tried": " ".join(tried)})
 
     # --only rewrites one state and must not drop the other thirty.
+    #
+    # `renamed` carries the older column names forward. Renaming results ->
+    # results_by_name without this silently blanked the counts for every state
+    # not re-swept, because those rows are read back from the file under their
+    # old headings - 22 states reading as zero after a one-state run.
+    renamed = {"reservation": "reservation_by_name",
+               "results": "results_by_name",
+               "delimitation": "delimitation_by_name"}
     if args.only:
-        kept = [r for s, r in sorted(prior.items()) if s != args.only]
-        found = found + [dict(r, status=r.get("status") or "ok") for r in kept]
+        kept = []
+        for state, row in sorted(prior.items()):
+            if state == args.only:
+                continue
+            row = dict(row, status=row.get("status") or "ok")
+            for old, new in renamed.items():
+                if not row.get(new) and row.get(old):
+                    row[new] = row[old]
+            kept.append(row)
+        found = found + kept
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", newline="", encoding="utf-8") as fh:
