@@ -33,21 +33,23 @@ week of work into a month.
 [readme.md](readme.md) still shows as blank. For these the question is not "can
 we get it" but "what is in it".
 
+<!-- holdings:start -->
 | state | text | scan | mixed | pages | what is held |
 |---|---|---|---|---|---|
-| Bihar | 290 | 0 | 0 | 9,193 | PRI winners 2006–2016; also `local_elections_bihar` |
-| Rajasthan | 23 | 9 | 5 | 7,888 | panchayat 2005–2021 |
+| Bihar | 290 | 0 | 0 | 9,193 | PRI winners 2006-2016; also `local_elections_bihar` |
+| Rajasthan | 23 | 9 | 5 | 7,888 | panchayat 2005-2021 |
 | **Jharkhand** | 108 | 28 | 8 | 4,970 | **2015 mukhiya (GP head) reservation by district; 2022 Form-23 ZP members** |
+| **Karnataka** | 236 | 202 | 2 | 1,552 | **2016 taluk & zilla panchayat winners with party**; plus `Karnataka_GP_ReservationHistory.dta`. 244 of the documents are deliberately unread - see data/karnataka/readme.md |
 | **Jammu & Kashmir** | 105 | 8 | 0 | 1,488 | **2010/2016/2018 block-wise, panch-ward reservation with SC/ST/OC population** |
-| **Andhra Pradesh** | 19 | 19 | 0 | 809 | **2020 district gazettes: GP, MPTC, ZPTC, MPP reservation** |
-| **Goa** | 37 | 4 | 0 | 687 | **2012/2017/2022 `panres_<taluka>` panchayat reservation + ward category** |
-| West Bengal | 0 | 39 | 1 | 603 | 2018 SEC delimitation-and-reservation gazettes, per district |
-| Madhya Pradesh | 0 | 2 | 0 | 351 | two large OmniPage-OCR'd volumes |
-| Odisha | 6 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member — **district totals, not seat-level** |
-| Tamil Nadu | 11 | 1 | 0 | 74 | gazettes, but **municipal/corporation**, not village panchayat |
+| **Andhra Pradesh** | 20 | 18 | 0 | 830 | **2020 district gazettes: GP, MPTC, ZPTC, MPP reservation** |
 | Chandigarh, Puducherry, Delhi | 7 | 2 | 0 | 707 | mostly urban local bodies |
-| **Karnataka** | 0 | 439 | 0 | 1,545 | **2016 taluk & zilla panchayat winners with party**; plus `Karnataka_GP_ReservationHistory.dta`. See the note below — 244 of the 439 are deliberately unread |
+| **Goa** | 37 | 4 | 0 | 687 | **2012/2017/2022 `panres_<taluka>` panchayat reservation + ward category** |
+| West Bengal | 0 | 39 | 1 | 603 | 2018 SEC delimitation-and-reservation gazettes, per district - parsed, 825 zilla parishad seats |
+| Odisha | 6 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member - **district totals, not seat-level** |
 | Assam, Himachal | 1 | 1 | 0 | 11 | one file each; Assam's is municipal |
+| Tamil Nadu | 0 | 0 | 0 | 0 | gazettes, but **municipal/corporation**, not village panchayat |
+| Madhya Pradesh | 0 | 0 | 0 | 0 | two large OmniPage-OCR'd volumes |
+<!-- holdings:end -->
 
 Bold rows are the ones holding **GP-level reservation in machine-readable form
 already on disk**. That is the shortest path to new coverage in this repo, and it

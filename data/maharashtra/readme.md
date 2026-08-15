@@ -6,7 +6,7 @@
 
 11 files on disk.
 
-Inventory: 7 tabular, 1 digital-text, 1 scan, 1 mixed, 1 other, 32 pages total.
+Inventory: 7 tabular, 2 other, 1 digital-text, 1 scan, 1 mixed, 32 pages total.
 
 ## What it would take
 

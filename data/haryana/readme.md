@@ -4,6 +4,6 @@
 
 **The parsed data for Haryana is in [local_elections_haryana](https://github.com/in-rolls/local_elections_haryana)** — gp_head, gp_ward, 2016, 2022. It was split into its own repository, so it is counted in the [top-level readme](../../readme.md) but has no rows here.
 
-What is in this directory is source material: 1 file, 1 digital-text, 13 pages.
+What is in this directory is source material: 1 file, 1 digital-text, 1 other, 13 pages.
 
 It is not in this repository's schema, so it does not appear in the per-slice table. Bringing a sibling to that grain means giving its parsed files the shared columns — `state`, `year`, `tier`, `caste_reservation`, `woman_reserved` — which is the schema harmonisation still to be done.

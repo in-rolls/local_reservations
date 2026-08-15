@@ -4,6 +4,6 @@
 
 **The parsed data for Rajasthan is in [quota_raj](https://github.com/in-rolls/quota_raj)** — gp_head, 2005, 2010, 2015, 2020. It was split into its own repository, so it is counted in the [top-level readme](../../readme.md) but has no rows here.
 
-What is in this directory is source material: 66 files, 25 tabular, 23 digital-text, 9 scan, 5 mixed, 2 doc, 2 other, 7,888 pages.
+What is in this directory is source material: 66 files, 25 tabular, 23 digital-text, 9 scan, 5 mixed, 3 other, 2 doc, 7,888 pages.
 
 It is not in this repository's schema, so it does not appear in the per-slice table. Bringing a sibling to that grain means giving its parsed files the shared columns — `state`, `year`, `tier`, `caste_reservation`, `woman_reserved` — which is the schema harmonisation still to be done.

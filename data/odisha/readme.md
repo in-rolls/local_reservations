@@ -6,7 +6,7 @@
 
 6 files on disk.
 
-Inventory: 6 digital-text, 254 pages total.
+Inventory: 6 digital-text, 1 other, 254 pages total.
 
 ## What it would take
 

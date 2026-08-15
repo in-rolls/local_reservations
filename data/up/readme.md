@@ -4,6 +4,6 @@
 
 **The parsed data for Uttar Pradesh is in [local_elections_up](https://github.com/in-rolls/local_elections_up)** — gp_head, 2005, 2010, 2015, 2021. It was split into its own repository, so it is counted in the [top-level readme](../../readme.md) but has no rows here.
 
-What is in this directory is source material: 0 files.
+What is in this directory is source material: 0 files, 1 other.
 
 It is not in this repository's schema, so it does not appear in the per-slice table. Bringing a sibling to that grain means giving its parsed files the shared columns — `state`, `year`, `tier`, `caste_reservation`, `woman_reserved` — which is the schema harmonisation still to be done.

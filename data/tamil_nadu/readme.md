@@ -6,7 +6,7 @@
 
 13 files on disk.
 
-Inventory: 11 digital-text, 1 scan, 1 other, 74 pages total.
+Inventory: 11 digital-text, 2 other, 1 scan, 74 pages total.
 
 ## What it would take
 

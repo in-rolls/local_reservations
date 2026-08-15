@@ -6,7 +6,7 @@
 
 2 files on disk.
 
-Inventory: 2 scan, 351 pages total.
+Inventory: 2 scan, 1 other, 351 pages total.
 
 ## What it would take
 

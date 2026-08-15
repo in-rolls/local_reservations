@@ -1,7 +1,7 @@
 {
-  "built_from_commit": "7fd2f7d451d38221d3629e276fbf7828e05ce587",
-  "committed_utc": "2026-08-14T14:53:03-07:00",
-  "dirty": false,
+  "built_from_commit": "abd14990d952eb3c95e5bc62bdb5a699f3e1299c",
+  "committed_utc": "2026-08-14T15:02:25-07:00",
+  "dirty": true,
   "files": [
     {
       "bytes": 17803458,
@@ -1005,7 +1005,7 @@
     "provenance_level",
     "quality_flags"
   ],
-  "release": "v0.2.8",
+  "release": "",
   "schema_version": 1,
   "sibling_repos": [
     {
@@ -1018,8 +1018,8 @@
       "url": "https://github.com/in-rolls/local_elections_bihar"
     },
     {
-      "commit": "192aface4b80e00761136537f5b0132883d01c1b",
-      "committed_utc": "2026-08-14T14:15:24-07:00",
+      "commit": "64ab98db27eecca16121bbf2a7a329df4d37b5ca",
+      "committed_utc": "2026-08-14T20:37:23-07:00",
       "dirty": false,
       "present": true,
       "repo": "local_elections_haryana",

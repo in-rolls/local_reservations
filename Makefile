@@ -25,6 +25,7 @@ help:
 	@echo "make sweep       what the web archive holds, per state commission"
 	@echo "make karnataka-ocr  read the Kannada scans; resumable, ~10 hours"
 	@echo "make transliterate  Indic names -> Latin, into a committed table"
+	@echo "make sources        rebuild SOURCES.md's holdings table from disk"
 
 inventory:
 	$(PY) -m local_reservations.tools.inventory
@@ -102,8 +103,14 @@ stats:
 worklist:
 	$(PY) -m local_reservations.tools.build_worklist
 
-coverage: stats worklist state-readmes
+coverage: stats worklist state-readmes sources
 	$(PY) -m local_reservations.tools.build_coverage --check
+
+# SOURCES.md is a feasibility survey and most of it is judgement, which stays
+# hand-written. Its holdings table is not: it is a count of what is on disk,
+# and it drifted to "1 scan, 7 pages" for a state holding 649 documents.
+sources:
+	$(PY) -m local_reservations.tools.build_sources
 
 state-readmes:
 	$(PY) -m local_reservations.tools.build_state_readmes

@@ -4,6 +4,6 @@
 
 **The parsed data for Kerala is in [local_elections_kerala](https://github.com/in-rolls/local_elections_kerala)** — gp_ward, block_member, zp_member, ulb_ward, 2010, 2015, 2020. It was split into its own repository, so it is counted in the [top-level readme](../../readme.md) but has no rows here.
 
-What is in this directory is source material: 1043 files, 1042 other, 1 digital-text, 37 pages.
+What is in this directory is source material: 1043 files, 1043 other, 1 digital-text, 37 pages.
 
 It is not in this repository's schema, so it does not appear in the per-slice table. Bringing a sibling to that grain means giving its parsed files the shared columns — `state`, `year`, `tier`, `caste_reservation`, `woman_reserved` — which is the schema harmonisation still to be done.

@@ -53,7 +53,7 @@ Every row carries `source_path` and `source_page` — the document it was read f
 
 All 112 cited documents are present.
 
-Inventory for this directory: 108 digital-text, 28 scan, 8 mixed, 1 tabular, 4,970 pages total.
+Inventory for this directory: 122 other, 108 digital-text, 28 scan, 8 mixed, 6 tabular, 4,970 pages total.
 
 ## Reproducing
 

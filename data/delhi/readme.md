@@ -6,7 +6,7 @@
 
 5 files on disk.
 
-Inventory: 3 tabular, 2 digital-text, 26 pages total.
+Inventory: 3 tabular, 2 digital-text, 1 other, 26 pages total.
 
 ## What it would take
 
