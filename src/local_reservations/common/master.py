@@ -47,38 +47,73 @@ from local_reservations.common import canon, dictionary, normalize, reference
 
 MASTER_COLUMNS = [
     # grain
-    "dataset_id", "row_id", "seat_key", "seat_key_unique",
+    "dataset_id",
+    "row_id",
+    "seat_key",
+    "seat_key_unique",
     # place
-    "state", "year", "district", "block", "gram_panchayat", "gp_term",
-    "ward_no", "ward_name", "seat_no",
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "gp_term",
+    "ward_no",
+    "ward_name",
+    "seat_no",
     # The same places in Latin, so they can be searched and joined against a
     # register that is not in Devanagari. Derived by a model, never read from a
     # document - see tools/transliterate.py - and blank wherever that reading
     # was flagged, on the same principle as party: a value that does not settle
     # the question is left empty rather than filled with a plausible one.
-    "district_latin", "block_latin", "gram_panchayat_latin",
+    "district_latin",
+    "block_latin",
+    "gram_panchayat_latin",
     # office
-    "tier", "tier_local",
+    "tier",
+    "tier_local",
     # reservation
-    "caste_reservation", "caste_reservation_local", "caste_scheme",
-    "woman_reserved", "reservation", "reservation_raw", "listing_scope",
+    "caste_reservation",
+    "caste_reservation_local",
+    "caste_scheme",
+    "woman_reserved",
+    "reservation",
+    "reservation_raw",
+    "listing_scope",
     # what a row is
-    "unit_of_observation", "seat_candidates",
+    "unit_of_observation",
+    "seat_candidates",
     # who won, and - where the source states a contest rather than a seat -
     # who came second and by how much. These are facts about the seat, so they
     # belong here; the full field of candidates is a fact about the contest and
     # lives in the candidate table.
-    "winner", "winner_latin", "winner_basis", "votes", "runner_up",
-    "runner_up_votes", "margin", "vacant", "unopposed",
+    "winner",
+    "winner_latin",
+    "winner_basis",
+    "votes",
+    "runner_up",
+    "runner_up_votes",
+    "margin",
+    "vacant",
+    "unopposed",
     # provenance
-    "script", "source_repo", "source_commit", "source_path", "source_page",
-    "provenance_level", "quality_flags",
+    "script",
+    "source_repo",
+    "source_commit",
+    "source_path",
+    "source_page",
+    "provenance_level",
+    "quality_flags",
 ]
 
 # Columns that the master carries under its own name, so an adapter's leftovers
 # can be identified as extras rather than silently dropped.
-CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated", "seat_members",
-                                 "winner_votes"}
+CARRIED = set(MASTER_COLUMNS) | {
+    "halqa",
+    "gender_stated",
+    "seat_members",
+    "winner_votes",
+}
 
 # The long form, and a table in its own right rather than an appendage. Four of
 # the sources state a contest, not a seat: every candidate who stood, what they
@@ -92,33 +127,73 @@ CARRIED = set(MASTER_COLUMNS) | {"halqa", "gender_stated", "seat_members",
 # is answerable in one table. `row_id` joins it back to the wide one.
 CANDIDATE_COLUMNS = [
     # grain
-    "dataset_id", "candidate_id", "row_id", "seat_key", "candidate_no",
+    "dataset_id",
+    "candidate_id",
+    "row_id",
+    "seat_key",
+    "candidate_no",
     # place
-    "state", "year", "district", "block", "gram_panchayat", "ward_no",
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "ward_no",
     "seat_no",
     # office
-    "tier", "tier_local",
+    "tier",
+    "tier_local",
     # what the seat was reserved for, so the long form stands on its own
-    "caste_reservation", "woman_reserved",
+    "caste_reservation",
+    "woman_reserved",
     # who stood
-    "candidate_name", "relation_name", "candidate_gender", "candidate_woman",
-    "candidate_age", "candidate_caste", "candidate_education", "party",
+    "candidate_name",
+    "relation_name",
+    "candidate_gender",
+    "candidate_woman",
+    "candidate_age",
+    "candidate_caste",
+    "candidate_education",
+    "party",
     # how they did
-    "votes", "candidate_rank", "elected", "result",
+    "votes",
+    "candidate_rank",
+    "elected",
+    "result",
     # provenance, the same as the seat it belongs to
-    "source_repo", "source_commit", "source_path", "source_page",
+    "source_repo",
+    "source_commit",
+    "source_path",
+    "source_page",
 ]
 
 # What an adapter supplies per candidate. Everything else on a candidate row is
 # copied from the seat it belongs to, so an adapter states each fact once.
 CANDIDATE_FIELDS = [
-    "candidate_name", "relation_name", "candidate_gender", "candidate_woman",
-    "candidate_age", "candidate_caste", "candidate_education", "party",
-    "votes", "candidate_rank", "elected", "result",
+    "candidate_name",
+    "relation_name",
+    "candidate_gender",
+    "candidate_woman",
+    "candidate_age",
+    "candidate_caste",
+    "candidate_education",
+    "party",
+    "votes",
+    "candidate_rank",
+    "elected",
+    "result",
 ]
 
-SEAT_FIELDS = ["state", "year", "tier", "district", "block", "gram_panchayat",
-               "ward_no", "seat_no"]
+SEAT_FIELDS = [
+    "state",
+    "year",
+    "tier",
+    "district",
+    "block",
+    "gram_panchayat",
+    "ward_no",
+    "seat_no",
+]
 
 
 def seat_key(row):
@@ -133,10 +208,15 @@ def row_id(row, occurrence):
     `occurrence` disambiguates rows that a source states more than once, which
     it does - the key alone is not unique.
     """
-    material = "|".join([
-        row.get("source_repo", ""), row.get("source_path", ""),
-        str(row.get("source_page", "")), seat_key(row), str(occurrence),
-    ])
+    material = "|".join(
+        [
+            row.get("source_repo", ""),
+            row.get("source_path", ""),
+            str(row.get("source_page", "")),
+            seat_key(row),
+            str(occurrence),
+        ]
+    )
     return hashlib.sha1(material.encode("utf-8")).hexdigest()[:12]
 
 
@@ -171,9 +251,9 @@ def quality_flags(row):
     # script label would have raised it on 153,505 rows in the same commit that
     # gave every one of them a transliteration, and the flag would have been
     # measuring the label rather than the difficulty it names.
-    if (row.get("script") in ("krutidev", "devanagari", "kannada")
-            and not (row.get("winner_latin")
-                     or row.get("gram_panchayat_latin"))):
+    if row.get("script") in ("krutidev", "devanagari", "kannada") and not (
+        row.get("winner_latin") or row.get("gram_panchayat_latin")
+    ):
         flags.append("name_untransliterated")
     return ";".join(flags)
 
@@ -192,9 +272,13 @@ def gp_term(row):
 # of the five go into the master; ward_name is non-Latin on 1.7% of rows, which
 # is the mostly-blank case the declared-columns rule exists for, so it travels
 # as an extra instead.
-LATIN_OF = {"district": "district_latin", "block": "block_latin",
-            "gram_panchayat": "gram_panchayat_latin", "winner": "winner_latin",
-            "ward_name": "ward_name_latin"}
+LATIN_OF = {
+    "district": "district_latin",
+    "block": "block_latin",
+    "gram_panchayat": "gram_panchayat_latin",
+    "winner": "winner_latin",
+    "ward_name": "ward_name_latin",
+}
 
 
 def transliterations(root):
@@ -207,6 +291,7 @@ def transliterations(root):
     """
     import csv
     import pathlib as _pathlib
+
     out = {}
     directory = _pathlib.Path(root) / "data" / "transliteration"
     for path in sorted(directory.glob("*.csv")):
@@ -217,8 +302,16 @@ def transliterations(root):
     return out
 
 
-def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
-              unit_of_observation="seat", seat_candidates="", latin=None):
+def to_master(
+    row,
+    dataset_id,
+    source_repo,
+    source_commit,
+    provenance_level,
+    unit_of_observation="seat",
+    seat_candidates="",
+    latin=None,
+):
     """One parsed row in the pooled schema. Returns None for an urban seat.
 
     `latin` is the transliteration table - {source string: Latin reading} - read
@@ -232,17 +325,22 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
     local = row.get("caste_reservation_local") or row.get("caste_reservation", "")
     out = {
         "dataset_id": dataset_id,
-        "state": state, "year": row.get("year", ""),
-        "district": row.get("district", ""), "block": row.get("block", ""),
-        "gram_panchayat": canon.unit_name(row), "gp_term": gp_term(row),
-        "ward_no": row.get("ward_no", ""), "ward_name": row.get("ward_name", ""),
+        "state": state,
+        "year": row.get("year", ""),
+        "district": row.get("district", ""),
+        "block": row.get("block", ""),
+        "gram_panchayat": canon.unit_name(row),
+        "gp_term": gp_term(row),
+        "ward_no": row.get("ward_no", ""),
+        "ward_name": row.get("ward_name", ""),
         # A block or district seat is numbered within its body and has no
         # panchayat, so this is the whole of its identity. It was named in
         # SEAT_FIELDS but never in MASTER_COLUMNS, so every seat key was built
         # with an empty slot where it belonged and Jharkhand's 181 zila
         # parishad seats all collided with each other.
         "seat_no": row.get("seat_no", ""),
-        "tier": tier, "tier_local": row.get("tier_local", ""),
+        "tier": tier,
+        "tier_local": row.get("tier_local", ""),
         "caste_reservation": row.get("caste_reservation", ""),
         "caste_reservation_local": local,
         "caste_scheme": canon.caste_scheme(state) or "",
@@ -254,9 +352,10 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         # asking reference overwrote Goa 2017 and 2022 - declared partial
         # listings - and the statutory check then measured half a roster
         # against the statute and failed a state that had done nothing wrong.
-        "listing_scope": (row.get("listing_scope")
-                          or reference.listing_scope(state, row.get("year", ""),
-                                                     tier)),
+        "listing_scope": (
+            row.get("listing_scope")
+            or reference.listing_scope(state, row.get("year", ""), tier)
+        ),
         "unit_of_observation": unit_of_observation,
         "seat_candidates": seat_candidates,
         "winner": row.get("winner", ""),
@@ -281,12 +380,19 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
         # cannot be derived: Kruti Dev is ASCII, so no test of which Unicode
         # block a character belongs to can see it, and only the parser that
         # read the document knows.
-        "script": ("krutidev" if row.get("script") == "krutidev"
-                   else normalize.script_of(
-                       row.get("winner", ""), row.get("gram_panchayat", ""),
-                       row.get("district", ""), row.get("block", ""),
-                       row.get("ward_name", ""))),
-        "source_repo": source_repo, "source_commit": source_commit,
+        "script": (
+            "krutidev"
+            if row.get("script") == "krutidev"
+            else normalize.script_of(
+                row.get("winner", ""),
+                row.get("gram_panchayat", ""),
+                row.get("district", ""),
+                row.get("block", ""),
+                row.get("ward_name", ""),
+            )
+        ),
+        "source_repo": source_repo,
+        "source_commit": source_commit,
         "source_path": row.get("source_path", ""),
         "source_page": row.get("source_page", ""),
         "provenance_level": provenance_level,
@@ -300,7 +406,8 @@ def to_master(row, dataset_id, source_repo, source_commit, provenance_level,
     # was already Latin or its reading was withheld.
     for source_column, latin_column in LATIN_OF.items():
         out[latin_column] = (latin or {}).get(
-            out.get(source_column) or row.get(source_column) or "", "")
+            out.get(source_column) or row.get(source_column) or "", ""
+        )
 
     out["quality_flags"] = quality_flags(dict(row, **out))
     out["seat_key"] = seat_key(dict(row, gram_panchayat=out["gram_panchayat"]))
@@ -331,14 +438,19 @@ def candidates(row, seat):
     shared = {c: seat.get(c, "") for c in CANDIDATE_COLUMNS if c in seat}
     out = []
     for position, member in enumerate(row.get("seat_members") or (), 1):
-        got: dict[str, object] = dict(shared, candidate_no=position,
-                                      row_id=seat.get("row_id", ""))
+        got: dict[str, object] = dict(
+            shared, candidate_no=position, row_id=seat.get("row_id", "")
+        )
         got.update({c: member.get(c, "") for c in CANDIDATE_FIELDS})
         got["candidate_id"] = hashlib.sha1(
             f"{seat.get('row_id', '')}|{position}".encode()
         ).hexdigest()[:12]
-        out.append({c: "" if got.get(c) is None else str(got.get(c, ""))
-                    for c in CANDIDATE_COLUMNS})
+        out.append(
+            {
+                c: "" if got.get(c) is None else str(got.get(c, ""))
+                for c in CANDIDATE_COLUMNS
+            }
+        )
     return out
 
 
@@ -355,6 +467,5 @@ def extras(row, row_id_value):
             continue
         if column not in dictionary.BY_NAME:
             continue
-        out.append({"row_id": row_id_value, "column": column,
-                    "value": str(value)})
+        out.append({"row_id": row_id_value, "column": column, "value": str(value)})
     return out

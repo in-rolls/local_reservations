@@ -92,8 +92,16 @@ TIER_BY_STATE = {
 # what it leaves out is recorded rather than quietly dropped. Kerala and
 # Rajasthan both ship urban wards in the same file as rural ones, so this has to
 # be a filter, not an assumption about which file a row came from.
-RURAL_TIERS = {"gp_head", "gp_ward", "block_member", "block_head",
-               "zp_member", "zp_head", "kachahari_head", "kachahari_member"}
+RURAL_TIERS = {
+    "gp_head",
+    "gp_ward",
+    "block_member",
+    "block_head",
+    "zp_member",
+    "zp_head",
+    "kachahari_head",
+    "kachahari_member",
+}
 URBAN_TIERS = {"ulb_ward", "ulb_head"}
 
 
@@ -166,8 +174,14 @@ def allowed_castes(state):
 # The panchayat's name arrives under whichever term the state prints. The
 # mapping lives in dictionary.py so there is one place that decides it; this
 # reads it rather than repeating the list, which is how the two drifted before.
-UNIT_COLUMNS = ["gram_panchayat", *sorted(alias for alias,
-        canonical in dictionary.ALIAS_OF.items() if canonical == "gram_panchayat")]
+UNIT_COLUMNS = [
+    "gram_panchayat",
+    *sorted(
+        alias
+        for alias, canonical in dictionary.ALIAS_OF.items()
+        if canonical == "gram_panchayat"
+    ),
+]
 
 
 def unit_name(row):
@@ -179,6 +193,7 @@ def unit_name(row):
     """
     present = [c for c in UNIT_COLUMNS if (row.get(c) or "").strip()]
     if len(present) > 1:
-        raise ValueError(f"row names the panchayat in {present}: "
-                         f"{ {c: row[c] for c in present} }")
+        raise ValueError(
+            f"row names the panchayat in {present}: { {c: row[c] for c in present} }"
+        )
     return row.get(present[0], "") if present else ""

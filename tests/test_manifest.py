@@ -19,8 +19,12 @@ MANIFEST_MD = ROOT / "MANIFEST.md"
 
 
 def run(script, *args):
-    return subprocess.run([sys.executable, str(script), *args],
-                          capture_output=True, text=True, cwd=str(ROOT))
+    return subprocess.run(
+        [sys.executable, str(script), *args],
+        capture_output=True,
+        text=True,
+        cwd=str(ROOT),
+    )
 
 
 def test_two_builds_from_one_tree_are_byte_identical():
@@ -53,6 +57,7 @@ def test_the_manifest_records_the_exact_column_order():
     if not MANIFEST.exists():
         return
     from local_reservations.common import master as M
+
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     assert manifest["master_columns"] == M.MASTER_COLUMNS
 
@@ -81,6 +86,7 @@ def test_the_verifier_needs_nothing_from_the_repository():
     not pass it.
     """
     import ast
+
     tree = ast.parse(VERIFY.read_text(encoding="utf-8"))
     imported = set()
     for node in ast.walk(tree):
@@ -95,8 +101,10 @@ def test_a_changed_byte_is_caught():
     if not MANIFEST.exists():
         return
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    target = next((ROOT / e["path"] for e in manifest["files"]
-                   if (ROOT / e["path"]).exists()), None)
+    target = next(
+        (ROOT / e["path"] for e in manifest["files"] if (ROOT / e["path"]).exists()),
+        None,
+    )
     if target is None:
         return
     original = target.read_bytes()

@@ -36,18 +36,15 @@ ignoring it would mean only one machine in the world could rebuild Jharkhand.
 
 Reproducing it, once:
 
-    python3 -m venv ocrenv
-    ./ocrenv/bin/pip install -r requirements-ocr.txt
-    ./ocrenv/bin/python -m mlx_vlm convert --hf-path datalab-to/surya-ocr-2 \
+    uv run --no-default-groups --group ocr python -m mlx_vlm convert \
+        --hf-path datalab-to/surya-ocr-2 \
         --mlx-path ~/surya-mlx-4bit -q --q-bits 4
     SURYA_MLX_PATH=~/surya-mlx-4bit make jharkhand-ocr
 
-savitr is deliberately not in requirements.txt. It needs Apple Silicon for MLX,
-and it pins pillow<11 where pdfplumber needs >=12.2, so the two cannot share an
-interpreter - which is why the OCR gets its own requirements file and its own
-venv. Nothing else in the repository imports it, and the parser reads the
-committed cache rather than calling it, so only someone regenerating the cache
-needs any of this.
+savitr is deliberately isolated in the `ocr` dependency group. It needs Apple
+Silicon for MLX and pins pillow<11 where pdfplumber needs >=12.2, so uv declares
+that group as conflicting with `dev`. The parser reads the committed cache
+rather than calling it, so only someone regenerating the cache needs the group.
 """
 
 import argparse
@@ -68,8 +65,16 @@ MODEL = os.environ.get("SURYA_MLX_PATH")
 
 # A tier name in one of the two encodings we can actually read. Any of these
 # means the text layer is usable; none means it is not, whatever its length.
-READABLE = ("eqf[k;k", "xzke iapk;r", "iapk;r lfefr", 'ftyk ifj"kn',
-            "मुखिया", "ग्राम पंचायत", "पंचायत समिति", "जिला परिषद")
+READABLE = (
+    "eqf[k;k",
+    "xzke iapk;r",
+    "iapk;r lfefr",
+    'ftyk ifj"kn',
+    "मुखिया",
+    "ग्राम पंचायत",
+    "पंचायत समिति",
+    "जिला परिषद",
+)
 
 
 def has_text(path):
@@ -81,8 +86,12 @@ def has_text(path):
     readability, and those three districts sat in the worklist as a source
     ceiling on the strength of it.
     """
-    out = subprocess.run(["pdftotext", "-layout", str(path), "-"],
-                         capture_output=True, text=True, errors="replace").stdout
+    out = subprocess.run(
+        ["pdftotext", "-layout", str(path), "-"],
+        capture_output=True,
+        text=True,
+        errors="replace",
+    ).stdout
     return any(token in out for token in READABLE)
 
 
@@ -90,8 +99,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="substring of the path to OCR")
     ap.add_argument("--force", action="store_true", help="ignore the cache")
-    ap.add_argument("--all", action="store_true",
-                    help="read the typeset documents too, not only the scans")
+    ap.add_argument(
+        "--all",
+        action="store_true",
+        help="read the typeset documents too, not only the scans",
+    )
     args = ap.parse_args()
 
     CACHE.mkdir(parents=True, exist_ok=True)
@@ -117,8 +129,10 @@ def main():
         cached.write_text(text, encoding="utf-8")
         partial.unlink(missing_ok=True)
         done += 1
-        print(f"  {path.name}: {len(text.split(chr(12)))} pages -> "
-              f"{cached.relative_to(ROOT)}")
+        print(
+            f"  {path.name}: {len(text.split(chr(12)))} pages -> "
+            f"{cached.relative_to(ROOT)}"
+        )
     print(f"\n{done} document(s) OCR'd into {CACHE.relative_to(ROOT)}")
     return 0
 

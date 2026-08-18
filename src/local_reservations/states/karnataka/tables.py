@@ -101,8 +101,10 @@ def nearest(text, table):
     """The closest key in `table`, or None where nothing is close enough."""
     if not text:
         return None
-    scored = sorted(((difflib.SequenceMatcher(None, text, key).ratio(), key)
-                     for key in table), reverse=True)
+    scored = sorted(
+        ((difflib.SequenceMatcher(None, text, key).ratio(), key) for key in table),
+        reverse=True,
+    )
     best = scored[0]
     runner_up = scored[1][0] if len(scored) > 1 else 0.0
     if best[0] >= CLOSE and best[0] - runner_up >= MARGIN:
@@ -118,13 +120,19 @@ def reservation(cell):
     bracketed = " ".join(re.findall(r"\((.*?)\)", text))
     woman = bool(nearest(bracketed, {WOMAN: 1})) if bracketed else False
     stem = re.sub(r"\(.*?\)", " ", text)
-    marker = BACKWARD_A if BACKWARD_A in _quoted(stem) else (
-        BACKWARD_B if BACKWARD_B in _quoted(stem) else "")
+    marker = (
+        BACKWARD_A
+        if BACKWARD_A in _quoted(stem)
+        else (BACKWARD_B if BACKWARD_B in _quoted(stem) else "")
+    )
     stem = re.sub(r"[\"\'“”‘’]", "", stem)
     stem = re.sub(r"\s+", " ", stem).strip()
     # the quoted letter is what A and B differ by, and it is settled separately
-    stem = re.sub(f"\\s*[{BACKWARD_A}{BACKWARD_B}]\\s*", " ", stem).strip() \
-        if stem.startswith("ಹಿಂದುಳಿದ") else stem
+    stem = (
+        re.sub(f"\\s*[{BACKWARD_A}{BACKWARD_B}]\\s*", " ", stem).strip()
+        if stem.startswith("ಹಿಂದುಳಿದ")
+        else stem
+    )
     stem = re.sub(r"\s+", " ", stem).strip()
     key = nearest(stem, FAMILIES)
     if key is None:
@@ -175,16 +183,17 @@ def merge_continuations(rows, width):
     merged = []
     for cells in rows:
         is_continuation = (
-            merged and len(cells) < width
-            and not re.match(r"^\s*\d", cells[0] if cells else ""))
+            merged
+            and len(cells) < width
+            and not re.match(r"^\s*\d", cells[0] if cells else "")
+        )
         if is_continuation:
             offset = width - len(cells)
             for i, extra in enumerate(cells):
                 if extra:
                     target = offset + i
                     if target < len(merged[-1]):
-                        merged[-1][target] = (
-                            f"{merged[-1][target]} {extra}".strip())
+                        merged[-1][target] = f"{merged[-1][target]} {extra}".strip()
             continue
         merged.append(list(cells))
     return merged
@@ -215,11 +224,14 @@ def merge_continuations(rows, width):
 # veto costs nothing - a wrong order fails looks_right on the first page,
 # because people's names do not canonicalise to a list of four categories.
 LAYOUTS = {
-    4: [{"seat": 0, "winner": 1, "reservation": 2, "party": 3},
-        {"seat": 0, "reservation": 1, "winner": 2, "party": 3}],
+    4: [
+        {"seat": 0, "winner": 1, "reservation": 2, "party": 3},
+        {"seat": 0, "reservation": 1, "winner": 2, "party": 3},
+    ],
     5: [{"serial": 0, "seat": 1, "reservation": 2, "winner": 3, "party": 4}],
-    6: [{"serial": 0, "taluk": 1, "seat": 2, "reservation": 3, "winner": 4,
-         "party": 5}],
+    6: [
+        {"serial": 0, "taluk": 1, "seat": 2, "reservation": 3, "winner": 4, "party": 5}
+    ],
 }
 
 

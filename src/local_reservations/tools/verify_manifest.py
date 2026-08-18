@@ -5,9 +5,9 @@ it has to run from a bare checkout, an unpacked release tarball, or a machine
 where nothing else in this repository works. A verifier that needs the
 repository to be in working order cannot tell you the repository is intact.
 
-    uv run python -m local_reservations.tools.verify_manifest.py            # exit 0 if
+    uv run python -m local_reservations.tools.verify_manifest            # exit 0 if
     every file matches
-    uv run python -m local_reservations.tools.verify_manifest.py --quiet    # only
+    uv run python -m local_reservations.tools.verify_manifest --quiet    # only
     report failures
 """
 
@@ -59,9 +59,11 @@ def main():
         ok += 1
 
     release = manifest.get("release") or "(untagged)"
-    print(f"manifest {release}, schema version "
-          f"{manifest.get('schema_version')}, built from "
-          f"{manifest.get('built_from_commit', '')[:12]}")
+    print(
+        f"manifest {release}, schema version "
+        f"{manifest.get('schema_version')}, built from "
+        f"{manifest.get('built_from_commit', '')[:12]}"
+    )
     if manifest.get("dirty"):
         print("  WARNING: built from a tree with uncommitted changes")
     for sibling in manifest.get("sibling_repos", []):

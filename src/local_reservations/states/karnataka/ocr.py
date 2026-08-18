@@ -32,9 +32,8 @@ timing page 1 of Badami, which is mostly prose over a three-row table; Surya
 decodes autoregressively, so a page carrying twenty rows costs several times
 as much. 17 seconds a page became 61.
 
-    python3 -m venv ocrenv
-    ./ocrenv/bin/pip install -r requirements-ocr.txt
-    ./ocrenv/bin/python scripts/karnataka/ocr.py
+    uv run --no-default-groups --group ocr python \
+        -m local_reservations.states.karnataka.ocr
 """
 
 import argparse
@@ -64,7 +63,8 @@ NOT_PARSED = {
         "zilla seats - the same seats the elected-member notifications cover, "
         "whose own third column already states the reservation. Reading these "
         "would produce a second opinion on a field we have, not a new one. "
-        "About three hours of OCR for a cross-check."),
+        "About three hours of OCR for a cross-check."
+    ),
     "gp_2015": (
         "33 files, 544 pages. Nobody is named anywhere in them. Form-1 counts "
         "nomination papers received, Form-2 those valid after scrutiny, Form-3 "
@@ -77,7 +77,8 @@ NOT_PARSED = {
         "are the shape of an external denominator, of the kind "
         "plausible_vs_registry wants, and they come from the commission that "
         "ran the election rather than from the LGD register. That is a "
-        "different job from parsing seats and nobody should stumble into it."),
+        "different job from parsing seats and nobody should stumble into it."
+    ),
 }
 
 # The second reason a document goes unread, and not the same as NOT_PARSED
@@ -85,8 +86,12 @@ NOT_PARSED = {
 # data - a rule book, a returning-officer manual, a presiding-officer manual
 # and a general guide to the election. Kept in force because a future run that
 # re-enables gp_2015 should still skip them.
-SKIP = ("Rules_Book", "GP_RO_Manual", "GP_PRO_Manual",
-        "Karnataka_panchayatraj_chunavane")
+SKIP = (
+    "Rules_Book",
+    "GP_RO_Manual",
+    "GP_PRO_Manual",
+    "Karnataka_panchayatraj_chunavane",
+)
 
 MODEL = os.environ.get("SURYA_MLX_PATH")
 
@@ -98,13 +103,16 @@ def main():
     ap.add_argument("--limit", type=int)
     args = ap.parse_args()
 
-    documents = [p for name in SETS
-                 for p in sorted((DATA / name).glob("*.pdf"))
-                 if not any(token in p.name for token in SKIP)]
+    documents = [
+        p
+        for name in SETS
+        for p in sorted((DATA / name).glob("*.pdf"))
+        if not any(token in p.name for token in SKIP)
+    ]
     if args.only:
         documents = [p for p in documents if args.only.lower() in p.name.lower()]
     if args.limit:
-        documents = documents[:args.limit]
+        documents = documents[: args.limit]
 
     CACHE.mkdir(parents=True, exist_ok=True)
     # One flat cache. Every filename already carries its set - the harvester
@@ -128,14 +136,14 @@ def main():
         # not one document. Document size stops mattering - the biggest file
         # here is 14 pages, but the same code has to survive a 150-page one.
         partial = CACHE / ".partial" / f"{path.stem}.jsonl"
-        text = ocr_engine.ocr(path, model=MODEL, deskew=False,
-                              wants_table=True, partial=partial)
+        text = ocr_engine.ocr(
+            path, model=MODEL, deskew=False, wants_table=True, partial=partial
+        )
         target.write_text(text, encoding="utf-8")
         partial.unlink(missing_ok=True)
         done += 1
 
-    print(f"{done} read, {skipped} already cached -> "
-          f"{CACHE.relative_to(ROOT)}")
+    print(f"{done} read, {skipped} already cached -> {CACHE.relative_to(ROOT)}")
     return 0
 
 

@@ -65,24 +65,32 @@ REPAIR_PSM = "11"
 REPAIR_TOLERANCE = 25
 
 
-
 CODE = re.compile(r"(UR|SC|ST|BC)", re.I)
 MARKED = re.compile(r"(UR|SC|ST|BC)\s*[\(\[{iI|J]\s*([WG])", re.I)
 
 
 def tokens(image, psm):
     """(left, top, width, height, text) for every word tesseract is sure of."""
-    out = subprocess.run(["tesseract", str(image), "-", "--psm", psm, "tsv"],
-                         capture_output=True, text=True,
-                         errors="replace").stdout
+    out = subprocess.run(
+        ["tesseract", str(image), "-", "--psm", psm, "tsv"],
+        capture_output=True,
+        text=True,
+        errors="replace",
+    ).stdout
     found = []
-    for row in csv.DictReader(io.StringIO(out), delimiter="\t",
-                              quoting=csv.QUOTE_NONE):
+    for row in csv.DictReader(io.StringIO(out), delimiter="\t", quoting=csv.QUOTE_NONE):
         text = (row.get("text") or "").strip()
         conf = row.get("conf") or "-1"
         if text and float(conf) > 0:
-            found.append((int(row["left"]), int(row["top"]), int(row["width"]),
-                          int(row["height"]), text))
+            found.append(
+                (
+                    int(row["left"]),
+                    int(row["top"]),
+                    int(row["width"]),
+                    int(row["height"]),
+                    text,
+                )
+            )
     return found
 
 
@@ -94,8 +102,9 @@ def repairs(image):
     marker would assert a gender the document may not state, which is worse
     than the blank it replaces.
     """
-    first = [t for t in tokens(image, PSM)
-             if CODE.search(t[4]) and not MARKED.search(t[4])]
+    first = [
+        t for t in tokens(image, PSM) if CODE.search(t[4]) and not MARKED.search(t[4])
+    ]
     if not first:
         return {}
     second = [t for t in tokens(image, REPAIR_PSM) if MARKED.search(t[4])]
@@ -106,9 +115,12 @@ def repairs(image):
     out = {}
     for bad in first:
         bx, by = centre(bad)
-        near = [t for t in second
-                if abs(centre(t)[0] - bx) < REPAIR_TOLERANCE
-                and abs(centre(t)[1] - by) < REPAIR_TOLERANCE]
+        near = [
+            t
+            for t in second
+            if abs(centre(t)[0] - bx) < REPAIR_TOLERANCE
+            and abs(centre(t)[1] - by) < REPAIR_TOLERANCE
+        ]
         if len(near) == 1:
             out[bad[4]] = near[0][4]
     return out
@@ -140,7 +152,7 @@ def apply_repairs(text, table):
             spare = len(match.group(1))
             need = len(good) - len(bad)
             if need > spare:
-                return match.group(0)      # no room; leave the cell alone
+                return match.group(0)  # no room; leave the cell alone
             return good + " " * (spare - need)
 
         text = re.sub(pattern, fit, text)
@@ -154,16 +166,30 @@ def ocr_pdf(path, dpi=DPI, psm=PSM):
     with tempfile.TemporaryDirectory() as tmp:
         for page in range(1, pages + 1):
             stem = pathlib.Path(tmp) / f"p{page}"
-            subprocess.run(["pdftoppm", "-f", str(page), "-l", str(page),
-                            "-r", str(dpi), "-png", str(path), str(stem)],
-                           capture_output=True)
+            subprocess.run(
+                [
+                    "pdftoppm",
+                    "-f",
+                    str(page),
+                    "-l",
+                    str(page),
+                    "-r",
+                    str(dpi),
+                    "-png",
+                    str(path),
+                    str(stem),
+                ],
+                capture_output=True,
+            )
             images = sorted(pathlib.Path(tmp).glob(f"p{page}-*.png"))
             if not images:
                 out.append("")
                 continue
             text = subprocess.run(
                 ["tesseract", str(images[0]), "-", "--psm", psm],
-                capture_output=True, text=True).stdout
+                capture_output=True,
+                text=True,
+            ).stdout
             text = apply_repairs(text, repairs(images[0]))
             out.append(text)
             for image in images:
@@ -192,8 +218,10 @@ def main():
             continue
         text = ocr_pdf(path)
         target.write_text(text, encoding="utf-8")
-        print(f"  {path.name:18s} -> {target.name} "
-              f"({len(text.split(chr(12)))} pages, {len(text) // 1024} KB)")
+        print(
+            f"  {path.name:18s} -> {target.name} "
+            f"({len(text.split(chr(12)))} pages, {len(text) // 1024} KB)"
+        )
 
 
 if __name__ == "__main__":

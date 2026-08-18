@@ -41,8 +41,10 @@ def slices(root):
     try:
         import pandas
     except ImportError:
-        print(f"  {REPO}: pandas is not importable, so the parquet slices are "
-              f"skipped", flush=True)
+        print(
+            f"  {REPO}: pandas is not importable, so the parquet slices are skipped",
+            flush=True,
+        )
         return
 
     root = pathlib.Path(root)
@@ -55,12 +57,13 @@ def slices(root):
         if expected is not None and len(frame) != expected:
             raise SystemExit(
                 f"{REPO}: {year} holds {len(frame):,} rows, {expected:,} "
-                f"declared - the sibling changed")
-        rows = [convert(record, year, relative)
-                for record in frame.to_dict("records")]
+                f"declared - the sibling changed"
+            )
+        rows = [convert(record, year, relative) for record in frame.to_dict("records")]
         yield {
             "dataset_id": f"rajasthan/gp_head/{year}",
-            "state": STATE, "rows": rows,
+            "state": STATE,
+            "rows": rows,
             # no source document or page is recorded anywhere in the sibling
             "provenance_level": "dataset",
             "unit_of_observation": "seat",
@@ -81,19 +84,23 @@ def convert(record, year, relative):
     caste = CASTE.get(local, "NONE")
     woman = 1 if str(record.get("female_reserved")) in ("1", "1.0", "True") else 0
     return {
-        "state": STATE, "year": year, "tier": "gp_head",
+        "state": STATE,
+        "year": year,
+        "tier": "gp_head",
         "tier_local": "sarpanch",
         "district": blank(record.get("district_raw")),
         # samiti is the panchayat samiti, which is Rajasthan's block
         "block": blank(record.get("samiti_raw")),
-        "gram_panchayat": blank(record.get("gp_std")
-                                or record.get("gp_raw")),
+        "gram_panchayat": blank(record.get("gp_std") or record.get("gp_raw")),
         "ward_no": "",
-        "caste_reservation": caste, "caste_reservation_local": local or "NONE",
-        "woman_reserved": woman, "reservation": label(caste, woman),
+        "caste_reservation": caste,
+        "caste_reservation_local": local or "NONE",
+        "woman_reserved": woman,
+        "reservation": label(caste, woman),
         "reservation_raw": blank(record.get("reservation_raw")),
         "winner": blank(record.get("winner_name")),
         "winner_basis": "published" if blank(record.get("winner_name")) else "",
         "script": "latin",
-        "source_path": relative, "source_page": "",
+        "source_path": relative,
+        "source_page": "",
     }

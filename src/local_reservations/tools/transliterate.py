@@ -150,9 +150,14 @@ def save(script, table):
         writer = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         for source in sorted(table):
-            writer.writerow({"script": script, "source": source,
-                             "latin": table[source],
-                             "suspect": suspect(source, table[source])})
+            writer.writerow(
+                {
+                    "script": script,
+                    "source": source,
+                    "latin": table[source],
+                    "suspect": suspect(source, table[source]),
+                }
+            )
     return path
 
 
@@ -168,16 +173,19 @@ def transliterate(script, missing, batch=256):
     try:
         from indicate.hindi2english import HindiToEnglish
     except ImportError:
-        sys.exit("indicate is not installed. Run this with "
-                 "`uv run --with indicate python -m "
-                 "local_reservations.tools.transliterate`")
+        sys.exit(
+            "indicate is not installed. Run this with "
+            "`uv run --with indicate python -m "
+            "local_reservations.tools.transliterate`"
+        )
     out = {}
     ordered = sorted(missing)
     for start in range(0, len(ordered), batch):
-        chunk = ordered[start:start + batch]
+        chunk = ordered[start : start + batch]
         asked = [clean(c) for c in chunk]
-        keep = [(source, name) for source, name in zip(chunk, asked, strict=True)
-                if name]
+        keep = [
+            (source, name) for source, name in zip(chunk, asked, strict=True) if name
+        ]
         if not keep:
             continue
         # strict: a batch that comes back a different length than it went in
@@ -185,16 +193,21 @@ def transliterate(script, missing, batch=256):
         readings = HindiToEnglish.transliterate_batch([n for _, n in keep])
         for (source, _), latin in zip(keep, readings, strict=True):
             out[source] = latin.strip()
-        print(f"\r  devanagari {min(start + batch, len(ordered)):,}"
-              f"/{len(ordered):,}", end="", file=sys.stderr, flush=True)
+        print(
+            f"\r  devanagari {min(start + batch, len(ordered)):,}/{len(ordered):,}",
+            end="",
+            file=sys.stderr,
+            flush=True,
+        )
     print(file=sys.stderr)
     return out
 
 
 def main():
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
-    ap.add_argument("--check", action="store_true",
-                    help="report what is missing and write nothing")
+    ap.add_argument(
+        "--check", action="store_true", help="report what is missing and write nothing"
+    )
     ap.add_argument("--limit", type=int, help="stop after N new strings")
     args = ap.parse_args()
 
@@ -202,12 +215,14 @@ def main():
     for script in sorted(found):
         held = load(script)
         missing = sorted(found[script] - set(held))
-        print(f"{script}: {len(found[script]):,} distinct in the corpus, "
-              f"{len(held):,} already transliterated, {len(missing):,} to do")
+        print(
+            f"{script}: {len(found[script]):,} distinct in the corpus, "
+            f"{len(held):,} already transliterated, {len(missing):,} to do"
+        )
         if args.check or not missing:
             continue
         if args.limit:
-            missing = missing[:args.limit]
+            missing = missing[: args.limit]
         held.update(transliterate(script, missing))
         # only keep what the corpus still contains, so a name that leaves the
         # data does not linger in the table forever

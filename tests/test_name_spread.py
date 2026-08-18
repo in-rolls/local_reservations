@@ -63,7 +63,8 @@ def test_no_single_name_dominates(path):
         f"{name!r} holds {share:.1%} of {path.stem} winners ({n:,} of "
         f"{sum(counts.values()):,}). A name column that repeats like this is "
         f"usually holding a label, a header or a placeholder rather than a "
-        f"person - add it to PLACEHOLDERS only if the source really prints it.")
+        f"person - add it to PLACEHOLDERS only if the source really prints it."
+    )
 
 
 @pytest.mark.parametrize("path", FILES, ids=lambda p: p.stem)
@@ -83,4 +84,5 @@ def test_winners_are_not_left_in_a_font_encoding(path):
         f"{share:.0%} of {path.stem} winners carry no Devanagari - "
         f"e.g. {unconverted[:3]}. Kruti Dev is a font encoding, not damage: "
         f"krutidev.to_unicode converts it exactly, and leaving it means the "
-        f"same person counts as two depending on which district they are in.")
+        f"same person counts as two depending on which district they are in."
+    )

@@ -54,8 +54,11 @@ YEAR = "2018"
 # Columns (4) and (5) still go by position, because there the meaning *is*
 # positional: an empty cell is the fact, and nothing in the text says which
 # column a bare "SC" fell in.
-SEAT = re.compile(r"(?P<block>[A-Za-z][\w .'-]*?)\s*/\s*ZP\s*-\s*"
-                  r"(?P<number>\d+)\b", re.I)
+SEAT = re.compile(
+    r"(?P<block>[A-Za-z][\w .'-]*?)\s*/\s*ZP\s*-\s*"
+    r"(?P<number>\d+)\b",
+    re.I,
+)
 MARKER = re.compile(r"^\(([1-5])\)$")
 # Column (2) holds a number and nothing else. It used to be matched out of
 # columns (1) and (2) joined - `"^(?P<name>[^\d].*?)\s+(?P<count>\d{1,2})$"` -
@@ -68,10 +71,24 @@ COUNT = re.compile(r"^\d{1,2}$")
 CASTE_WORDS = {"sc": "SC", "st": "ST", "bc": "BC", "s.c": "SC", "s.t": "ST"}
 WOMAN_WORDS = {"women", "woman", "wornen"}
 
-COLUMNS = ["state", "year", "district", "block", "seat_no", "seat_id_printed",
-           "tier", "tier_local", "reservation", "caste_reservation",
-           "woman_reserved", "reservation_raw", "printings_agree", "script",
-           "source_path", "source_page"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "seat_no",
+    "seat_id_printed",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "reservation_raw",
+    "printings_agree",
+    "script",
+    "source_path",
+    "source_page",
+]
 
 
 def words_of(path):
@@ -85,12 +102,12 @@ def words_of(path):
             try:
                 left, width = int(row["left"]), int(row["width"])
                 top, height = int(row["top"]), int(row["height"])
-                key = (int(row["block_num"]), int(row["par_num"]),
-                       int(row["line_num"]))
+                key = (int(row["block_num"]), int(row["par_num"]), int(row["line_num"]))
             except (KeyError, ValueError):
                 continue
-            lines[key].append({"text": text, "x": left + width / 2,
-                               "y": top + height / 2})
+            lines[key].append(
+                {"text": text, "x": left + width / 2, "y": top + height / 2}
+            )
     return [sorted(v, key=lambda w: w["x"]) for _, v in sorted(lines.items())]
 
 
@@ -114,10 +131,12 @@ def column_edges(lines):
             continue
         found = {m.group(1): w["x"] for m, w in zip(marks, line, strict=False)}
         if {"2", "3", "4", "5"} <= set(found):
-            return ((found["1"] + found["2"]) / 2 if "1" in found else 0,
-                    (found["2"] + found["3"]) / 2,
-                    (found["3"] + found["4"]) / 2,
-                    (found["4"] + found["5"]) / 2)
+            return (
+                (found["1"] + found["2"]) / 2 if "1" in found else 0,
+                (found["2"] + found["3"]) / 2,
+                (found["3"] + found["4"]) / 2,
+                (found["4"] + found["5"]) / 2,
+            )
     return None
 
 
@@ -138,26 +157,27 @@ def read_page(path, edges):
     block_edge, seat_edge, caste_edge, woman_edge = edges
 
     for line in lines:
-        name = " ".join(w["text"] for w in line
-                        if w["x"] < block_edge).strip()
-        count = " ".join(w["text"] for w in line
-                         if block_edge <= w["x"] < seat_edge).strip()
+        name = " ".join(w["text"] for w in line if w["x"] < block_edge).strip()
+        count = " ".join(
+            w["text"] for w in line if block_edge <= w["x"] < seat_edge
+        ).strip()
         # The number is found anywhere on the line; the name is taken from
         # column (3). Both halves matter. A margin on the band was tried and is
         # the wrong shape of fix - ZP-11 sat 3px past the boundary and ZP-14
         # sat 94px past it, and every widening is a guess about a table that
         # moves. But reading the *name* off the whole line swept columns (1)
         # and (2) into it and produced "Cooch Behar-I 3 Cooch Behar-I".
-        number_word = next((w for w in line
-                            if re.match(r"^ZP\s*-?\s*\d+$", w["text"], re.I)),
-                           None)
+        number_word = next(
+            (w for w in line if re.match(r"^ZP\s*-?\s*\d+$", w["text"], re.I)), None
+        )
         if number_word is not None:
             seat_text = " ".join(
-                w["text"] for w in line
-                if seat_edge <= w["x"] <= number_word["x"]).strip()
+                w["text"] for w in line if seat_edge <= w["x"] <= number_word["x"]
+            ).strip()
         else:
-            seat_text = " ".join(w["text"] for w in line
-                                 if seat_edge <= w["x"] < caste_edge).strip()
+            seat_text = " ".join(
+                w["text"] for w in line if seat_edge <= w["x"] < caste_edge
+            ).strip()
         middle = [w for w in line if caste_edge <= w["x"] < woman_edge]
         right = [w for w in line if w["x"] >= woman_edge]
         # Columns (4) and (5) are kept with the height they were printed at,
@@ -187,10 +207,9 @@ def read_page(path, edges):
         # states the relationship geometrically - the count is centred against
         # its block's rows - so read it that way.
         if COUNT.match(count):
-            middle_y = sum(w["y"] for w in line
-                           if block_edge <= w["x"] < seat_edge) / max(
-                               1, sum(1 for w in line
-                                      if block_edge <= w["x"] < seat_edge))
+            middle_y = sum(
+                w["y"] for w in line if block_edge <= w["x"] < seat_edge
+            ) / max(1, sum(1 for w in line if block_edge <= w["x"] < seat_edge))
             members.append((middle_y, int(count)))
         elif 0 < len(count) <= 3 and name and not name.startswith("("):
             # A count that did not survive the scan, not guessed: Bankura's
@@ -209,13 +228,17 @@ def read_page(path, edges):
             continue
         block = re.sub(r"\s+", " ", got.group("block")).strip()
 
-        seats.append({
-            "y": min(w["y"] for w in line),
-            "block": block, "seat_no": got.group("number"),
-            "seat_id_printed": f"{block}/ZP-{got.group('number')}",
-            "caste": "NONE", "woman": 0,
-            "raw": "",
-        })
+        seats.append(
+            {
+                "y": min(w["y"] for w in line),
+                "block": block,
+                "seat_no": got.group("number"),
+                "seat_id_printed": f"{block}/ZP-{got.group('number')}",
+                "caste": "NONE",
+                "woman": 0,
+                "raw": "",
+            }
+        )
     # Each mark belongs to the last seat printed at or above it: a cell runs
     # from its seat identifier down to the next one.
     seats.sort(key=lambda s: s["y"])
@@ -230,8 +253,13 @@ def read_page(path, edges):
             seat["woman"] = 1
     for seat in seats:
         seat["raw"] = " ".join(
-            x for x in (seat["caste"] if seat["caste"] != "NONE" else "",
-                        "WOMEN" if seat["woman"] else "") if x)
+            x
+            for x in (
+                seat["caste"] if seat["caste"] != "NONE" else "",
+                "WOMEN" if seat["woman"] else "",
+            )
+            if x
+        )
     return seats, members, unreadable, edges
 
 
@@ -247,8 +275,7 @@ def read_document(stem, printing):
     # and three districts lost their first two constituencies - Bankura's
     # Saltora/ZP-1 and Saltora/ZP-2 sat in the OCR, read perfectly, and were
     # dropped. Six seats, and all six numbered 1 or 2.
-    edges = next((got for path in pages
-                  if (got := column_edges(words_of(path)))), None)
+    edges = next((got for path in pages if (got := column_edges(words_of(path)))), None)
     for path in pages:
         page = int(path.stem.rsplit("-", 1)[1])
         got, block_members, bad, edges = read_page(path, edges)
@@ -329,29 +356,33 @@ def rows_for(stem, printing, agree):
     spellings = collections.defaultdict(collections.Counter)
     for seat in seats:
         spellings[block_key(seat["block"])][seat["block"]] += 1
-    canonical = {key: block_name(names.most_common(1)[0][0])
-                 for key, names in spellings.items()}
+    canonical = {
+        key: block_name(names.most_common(1)[0][0]) for key, names in spellings.items()
+    }
     out = []
     for seat in seats:
-        out.append({
-            "state": "West Bengal", "year": YEAR,
-            "district": district_of(stem),
-            "block": canonical.get(block_key(seat["block"]), seat["block"]),
-            "seat_no": seat["seat_no"],
-            "seat_id_printed": seat["seat_id_printed"],
-            "tier": "zp_member", "tier_local": "zilla parishad member",
-            "caste_reservation": seat["caste"],
-            "woman_reserved": seat["woman"],
-            "reservation": label(seat["caste"], seat["woman"] == 1),
-            "reservation_raw": seat["raw"],
-            "printings_agree": agree.get(
-                (district_of(stem), seat["seat_no"]), ""),
-            "script": "latin",
-            "source_path": f"data/wb/{YEAR}/"
-                           + ("draft/" if printing == "draft" else "")
-                           + f"{stem}.pdf",
-            "source_page": seat["source_page"],
-        })
+        out.append(
+            {
+                "state": "West Bengal",
+                "year": YEAR,
+                "district": district_of(stem),
+                "block": canonical.get(block_key(seat["block"]), seat["block"]),
+                "seat_no": seat["seat_no"],
+                "seat_id_printed": seat["seat_id_printed"],
+                "tier": "zp_member",
+                "tier_local": "zilla parishad member",
+                "caste_reservation": seat["caste"],
+                "woman_reserved": seat["woman"],
+                "reservation": label(seat["caste"], seat["woman"] == 1),
+                "reservation_raw": seat["raw"],
+                "printings_agree": agree.get((district_of(stem), seat["seat_no"]), ""),
+                "script": "latin",
+                "source_path": f"data/wb/{YEAR}/"
+                + ("draft/" if printing == "draft" else "")
+                + f"{stem}.pdf",
+                "source_page": seat["source_page"],
+            }
+        )
     return out
 
 
@@ -372,7 +403,9 @@ def agreement():
                 # matching on it found 189 of 813 seats
                 key = (district_of(stem), seat["seat_no"])
                 by_printing.setdefault(key, {})[printing] = (
-                    seat["caste"], seat["woman"])
+                    seat["caste"],
+                    seat["woman"],
+                )
     out = {}
     for key, got in by_printing.items():
         if len(got) == 2:
@@ -390,8 +423,7 @@ def main():
 
     agree = agreement()
     rows, checked, failed = [], 0, []
-    stems = sorted({p.stem.rsplit("-", 1)[0]
-                    for p in (CACHE / "final").glob("*.tsv")})
+    stems = sorted({p.stem.rsplit("-", 1)[0] for p in (CACHE / "final").glob("*.tsv")})
     skipped = 0
     # Whether a disagreement means a lost seat or a misfiled one is decided by
     # this: the constituencies are numbered 1..N across a district, so a
@@ -400,8 +432,9 @@ def main():
     for stem in stems:
         got = rows_for(stem, "final", agree)
         rows += got
-        seat_numbers[district_of(stem)] = [int(r["seat_no"]) for r in got
-                                           if r["seat_no"].isdigit()]
+        seat_numbers[district_of(stem)] = [
+            int(r["seat_no"]) for r in got if r["seat_no"].isdigit()
+        ]
         # the gazette's own arithmetic: each block states how many members it
         # elects, and the constituencies are enumerated separately
         seats, members, unreadable = read_document(stem, "final")
@@ -426,40 +459,54 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"zp_member_{YEAR}.csv"
     with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=COLUMNS, extrasaction="ignore",
-                                lineterminator="\n")
+        writer = csv.DictWriter(
+            fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
 
     if not args.quiet:
         agreed = sum(1 for r in rows if r["printings_agree"] == 1)
         both = sum(1 for r in rows if r["printings_agree"] != "")
-        print(f"  {len(rows):,} zila parishad seats across {len(stems)} "
-              f"districts")
-        print(f"  {both:,} seats printed twice; {agreed:,} agree "
-              f"({100.0 * agreed / both:.1f}%)" if both else
-              "  no district printed twice")
+        print(f"  {len(rows):,} zila parishad seats across {len(stems)} districts")
+        print(
+            f"  {both:,} seats printed twice; {agreed:,} agree "
+            f"({100.0 * agreed / both:.1f}%)"
+            if both
+            else "  no district printed twice"
+        )
         if skipped:
-            print(f"  {skipped} block(s) whose member count did not survive "
-                  f"the scan; not guessed, and left out of the check below")
-        holes = sum(len(set(range(1, max(n) + 1)) - set(n))
-                    for n in seat_numbers.values() if n)
+            print(
+                f"  {skipped} block(s) whose member count did not survive "
+                f"the scan; not guessed, and left out of the check below"
+            )
+        holes = sum(
+            len(set(range(1, max(n) + 1)) - set(n)) for n in seat_numbers.values() if n
+        )
         if failed:
-            print(f"  {len(failed)} block(s) where the stated member count and "
-                  f"the constituencies enumerated disagree - "
-                  + ("every district's seat numbers still run 1..N with no "
-                     "holes, so these are seats filed under the wrong block, "
-                     "not seats missing"
-                     if not holes else
-                     f"and {holes} seat number(s) are missing outright"))
+            print(
+                f"  {len(failed)} block(s) where the stated member count and "
+                f"the constituencies enumerated disagree - "
+                + (
+                    "every district's seat numbers still run 1..N with no "
+                    "holes, so these are seats filed under the wrong block, "
+                    "not seats missing"
+                    if not holes
+                    else f"and {holes} seat number(s) are missing outright"
+                )
+            )
             for district, block, stated, counted in failed[:12]:
-                print(f"     {district}/{block}: states {stated}, "
-                      f"enumerates {counted if counted is not None else 0}")
+                print(
+                    f"     {district}/{block}: states {stated}, "
+                    f"enumerates {counted if counted is not None else 0}"
+                )
             if len(failed) > 12:
                 print(f"     ... and {len(failed) - 12} more")
         else:
-            print("  every block's stated member count matches the "
-                  "constituencies enumerated for it")
+            print(
+                "  every block's stated member count matches the "
+                "constituencies enumerated for it"
+            )
 
 
 if __name__ == "__main__":

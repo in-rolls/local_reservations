@@ -70,12 +70,18 @@ TIERS = {
 }
 
 DECLARED_SEATS = {
-    ("2010", "gp_ward"): 16641, ("2010", "block_member"): 2078,
-    ("2010", "zp_member"): 331, ("2010", "ulb_ward"): 2557,
-    ("2015", "gp_ward"): 15921, ("2015", "block_member"): 2062,
-    ("2015", "zp_member"): 331, ("2015", "ulb_ward"): 3489,
-    ("2020", "gp_ward"): 15952, ("2020", "block_member"): 2078,
-    ("2020", "zp_member"): 331, ("2020", "ulb_ward"): 3525,
+    ("2010", "gp_ward"): 16641,
+    ("2010", "block_member"): 2078,
+    ("2010", "zp_member"): 331,
+    ("2010", "ulb_ward"): 2557,
+    ("2015", "gp_ward"): 15921,
+    ("2015", "block_member"): 2062,
+    ("2015", "zp_member"): 331,
+    ("2015", "ulb_ward"): 3489,
+    ("2020", "gp_ward"): 15952,
+    ("2020", "block_member"): 2078,
+    ("2020", "zp_member"): 331,
+    ("2020", "ulb_ward"): 3525,
 }
 
 
@@ -83,12 +89,14 @@ def slices(root):
     path = pathlib.Path(root) / FILE
     if not path.exists():
         return
-    csv.field_size_limit(10 ** 7)
+    csv.field_size_limit(10**7)
     with path.open(encoding="utf-8", errors="replace") as fh:
         raw = list(csv.DictReader(fh))
     if len(raw) != DECLARED:
-        raise SystemExit(f"{REPO}: {FILE} holds {len(raw):,} records, "
-                         f"{DECLARED:,} declared - the sibling changed")
+        raise SystemExit(
+            f"{REPO}: {FILE} holds {len(raw):,} records, "
+            f"{DECLARED:,} declared - the sibling changed"
+        )
 
     name_district(raw)
 
@@ -103,10 +111,12 @@ def slices(root):
         if expected is not None and len(rows) != expected:
             raise SystemExit(
                 f"{REPO}: {year}/{tier} holds {len(rows):,} rows, "
-                f"{expected:,} declared - the parse changed")
+                f"{expected:,} declared - the parse changed"
+            )
         yield {
             "dataset_id": f"kerala/{tier}/{year}",
-            "state": STATE, "rows": rows,
+            "state": STATE,
+            "rows": rows,
             "provenance_level": "dataset",
             "unit_of_observation": "seat",
         }
@@ -132,9 +142,12 @@ def name_district(raw):
                 by_name[key].add((row.get("District") or "").strip())
 
     for year in sorted({(r.get("Year") or "").strip() for r in raw}):
-        rows = [r for r in raw
-                if (r.get("LGI Type") or "").strip() == "District"
-                and (r.get("Year") or "").strip() == year]
+        rows = [
+            r
+            for r in raw
+            if (r.get("LGI Type") or "").strip() == "District"
+            and (r.get("Year") or "").strip() == year
+        ]
         for group in split_on_restart(rows):
             votes = collections.Counter()
             for row in group:
@@ -177,8 +190,10 @@ def convert(row):
     # panchayat; a panchayat ward names one.
     panchayat = (row.get("Grama Panchayat") or "").strip()
     return {
-        "state": STATE, "year": (row.get("Year") or "").strip(),
-        "tier": tier, "tier_local": tier_local,
+        "state": STATE,
+        "year": (row.get("Year") or "").strip(),
+        "tier": tier,
+        "tier_local": tier_local,
         "district": row.get("_district") or (row.get("District") or "").strip(),
         "block": (row.get("Block") or "").strip(),
         "gram_panchayat": panchayat,
@@ -193,8 +208,9 @@ def convert(row):
         "gender_stated": "" if caste is None else 1,
         "reservation": label(caste, woman == 1) if caste else "",
         "reservation_raw": stated,
-        "winner": (row.get("Elected Members")
-                   or row.get("Name of Member") or "").strip(),
+        "winner": (
+            row.get("Elected Members") or row.get("Name of Member") or ""
+        ).strip(),
         "winner_basis": "published",
         "script": "latin",
         "source_path": FILE,

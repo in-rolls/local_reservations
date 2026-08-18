@@ -22,60 +22,82 @@ denominator there would be worse than admitting there isn't one.
 # (state, year, tier) -> {"total": int|None, "basis": str, "source": str}
 PUBLISHED = {
     ("Goa", "2012", "gp_ward"): {
-        "total": 186, "basis": "seats", "unit": "panchayats",
+        "total": 186,
+        "basis": "seats",
+        "unit": "panchayats",
         "source": "Goa SEC: 186 village panchayats went to poll in 2012. The "
-                  "parsed file reproduces this exactly, which is what gives "
-                  "confidence in the other two cycles' parsers.",
+        "parsed file reproduces this exactly, which is what gives "
+        "confidence in the other two cycles' parsers.",
     },
     ("Jharkhand", "2015", "gp_head"): {
-        "total": 4345, "basis": "seats", "unit": "gram panchayats",
+        "total": 4345,
+        "basis": "seats",
+        "unit": "gram panchayats",
         "source": "Jharkhand SEC, 2015 three-tier panchayat election.",
     },
     ("Jharkhand", "2015", "block_member"): {
-        "total": 5423, "basis": "seats", "unit": "seats",
+        "total": 5423,
+        "basis": "seats",
+        "unit": "seats",
         "source": "Jharkhand SEC, 2015.",
     },
     ("Jharkhand", "2015", "zp_member"): {
-        "total": 545, "basis": "seats", "unit": "seats",
+        "total": 545,
+        "basis": "seats",
+        "unit": "seats",
         "source": "Jharkhand SEC, 2015.",
     },
     ("Jammu & Kashmir", "2010", "gp_ward"): {
-        "total": None, "basis": "unknown", "unit": "panch constituencies",
+        "total": None,
+        "basis": "unknown",
+        "unit": "panch constituencies",
         "source": "No reliable published total, and the holdings are an ad-hoc "
-                  "subset of districts rather than a full corpus. Measuring "
-                  "against a made-up denominator would be worse than not "
-                  "measuring.",
+        "subset of districts rather than a full corpus. Measuring "
+        "against a made-up denominator would be worse than not "
+        "measuring.",
     },
     ("Jammu & Kashmir", "2016", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "halqas",
+        "total": None,
+        "basis": "unknown",
+        "unit": "halqas",
         "source": "As above.",
     },
     ("Jammu & Kashmir", "2016", "gp_ward"): {
-        "total": None, "basis": "unknown", "unit": "panch constituencies",
+        "total": None,
+        "basis": "unknown",
+        "unit": "panch constituencies",
         "source": "As above.",
     },
     ("Jammu & Kashmir", "2018", "gp_ward"): {
-        "total": None, "basis": "unknown", "unit": "panch constituencies",
+        "total": None,
+        "basis": "unknown",
+        "unit": "panch constituencies",
         "source": "As above, and these documents list only the reserved wards, "
-                  "so a completeness figure would not mean what it looks like.",
+        "so a completeness figure would not mean what it looks like.",
     },
     # Uttar Pradesh and Uttarakhand: no denominator wired yet. Both states'
     # commissions publish per-cycle totals and neither is reachable in a form
     # that can be cited here without OCRing a scan, which is the same position
     # Bihar is in and is on the worklist for all three.
     ("Uttar Pradesh", "2005", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "No published total recovered for this cycle. The three "
-                  "cycles held here are internally comparable - 51,872, 51,861 "
-                  "and 49,772 panchayats - which is a statement about the "
-                  "parse but not about completeness.",
+        "cycles held here are internally comparable - 51,872, 51,861 "
+        "and 49,772 panchayats - which is a statement about the "
+        "parse but not about completeness.",
     },
     ("Uttar Pradesh", "2010", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As above.",
     },
     ("Uttar Pradesh", "2021", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As above.",
     },
     # Telangana 2019. The commission notified elections to 12,728 sarpanch
@@ -91,16 +113,20 @@ PUBLISHED = {
     # are individually well-formed, they parse cleanly, and every count in them
     # balances.
     ("Telangana", "2019", "gp_head"): {
-        "total": 12728, "basis": "seats", "unit": "seats",
+        "total": 12728,
+        "basis": "seats",
+        "unit": "seats",
         "source": "Telangana SEC notification for the 2019 gram panchayat "
-                  "general election: 12,728 sarpanch posts across 12,751 gram "
-                  "panchayats.",
+        "general election: 12,728 sarpanch posts across 12,751 gram "
+        "panchayats.",
     },
     ("Telangana", "2019", "gp_ward"): {
-        "total": 112242, "basis": "seats", "unit": "seats",
+        "total": 112242,
+        "basis": "seats",
+        "unit": "seats",
         "source": "Telangana SEC notification, 2019: 112,242 ward member "
-                  "posts. The 30 district files held here cover 30 districts "
-                  "of 33 and 44% of the seats.",
+        "posts. The 30 district files held here cover 30 districts "
+        "of 33 and 44% of the seats.",
     },
     # Karnataka: no external denominator. The file is a panel of the same 5,855
     # panchayats across five cycles, so counting its own rows would be circular.
@@ -109,25 +135,35 @@ PUBLISHED = {
     # caste_share_vs_population - reserved seats sitting where the reserved
     # population lives - runs on all five cycles.
     ("Karnataka", "1993", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "A panel of 5,855 panchayats. No independent per-cycle total "
-                  "recovered; the file's Census columns support a stronger "
-                  "check than a coverage share would be.",
+        "recovered; the file's Census columns support a stronger "
+        "check than a coverage share would be.",
     },
     ("Karnataka", "2000", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As 1993.",
     },
     ("Karnataka", "2002", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As 1993.",
     },
     ("Karnataka", "2005", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As 1993.",
     },
     ("Karnataka", "2007", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "As 1993.",
     },
     # Uttarakhand states its own denominator and this repository was throwing
@@ -143,94 +179,124 @@ PUBLISHED = {
     # Against it the parse holds 29,592 of 29,606 seats - 12 of the 15 slices
     # match exactly, and the three that do not are short by 3, 10 and 1.
     ("Uttarakhand", "2008", "block_member"): {
-        "total": 2946, "basis": "seats", "unit": "seats",
+        "total": 2946,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "128 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "128 of them were elected unopposed.",
     },
     ("Uttarakhand", "2008", "gp_head"): {
-        "total": 6378, "basis": "seats", "unit": "seats",
+        "total": 6378,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "852 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "852 of them were elected unopposed.",
     },
     ("Uttarakhand", "2008", "zp_member"): {
-        "total": 371, "basis": "seats", "unit": "seats",
+        "total": 371,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "0 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "0 of them were elected unopposed.",
     },
     ("Uttarakhand", "2010", "block_member"): {
-        "total": 219, "basis": "seats", "unit": "seats",
+        "total": 219,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "1 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "1 of them were elected unopposed.",
     },
     ("Uttarakhand", "2010", "gp_head"): {
-        "total": 314, "basis": "seats", "unit": "seats",
+        "total": 314,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "1 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "1 of them were elected unopposed.",
     },
     ("Uttarakhand", "2010", "zp_member"): {
-        "total": 42, "basis": "seats", "unit": "seats",
+        "total": 42,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "0 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "0 of them were elected unopposed.",
     },
     ("Uttarakhand", "2014", "block_member"): {
-        "total": 2885, "basis": "seats", "unit": "seats",
+        "total": 2885,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "169 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "169 of them were elected unopposed.",
     },
     ("Uttarakhand", "2014", "gp_head"): {
-        "total": 6621, "basis": "seats", "unit": "seats",
+        "total": 6621,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "1,011 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "1,011 of them were elected unopposed.",
     },
     ("Uttarakhand", "2014", "zp_member"): {
-        "total": 386, "basis": "seats", "unit": "seats",
+        "total": 386,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "3 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "3 of them were elected unopposed.",
     },
     ("Uttarakhand", "2015", "block_member"): {
-        "total": 221, "basis": "seats", "unit": "seats",
+        "total": 221,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "0 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "0 of them were elected unopposed.",
     },
     ("Uttarakhand", "2015", "gp_head"): {
-        "total": 308, "basis": "seats", "unit": "seats",
+        "total": 308,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "0 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "0 of them were elected unopposed.",
     },
     ("Uttarakhand", "2015", "zp_member"): {
-        "total": 47, "basis": "seats", "unit": "seats",
+        "total": 47,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 1 districts. "
-                  "0 of them were elected unopposed.",
+        "declared), summed over its 1 districts. "
+        "0 of them were elected unopposed.",
     },
     ("Uttarakhand", "2019", "block_member"): {
-        "total": 2674, "basis": "seats", "unit": "seats",
+        "total": 2674,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "300 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "300 of them were elected unopposed.",
     },
     ("Uttarakhand", "2019", "gp_head"): {
-        "total": 5847, "basis": "seats", "unit": "seats",
+        "total": 5847,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "1,514 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "1,514 of them were elected unopposed.",
     },
     ("Uttarakhand", "2019", "zp_member"): {
-        "total": 347, "basis": "seats", "unit": "seats",
+        "total": 347,
+        "basis": "seats",
+        "unit": "seats",
         "source": "The notification's own column 'घोषित परिणाम' (results "
-                  "declared), summed over its 12 districts. "
-                  "9 of them were elected unopposed.",
+        "declared), summed over its 12 districts. "
+        "9 of them were elected unopposed.",
     },
     # Kerala 2020. Body counts rather than seat counts, which is what the
     # State Election Commission publishes and what the reporting of the result
@@ -242,16 +308,22 @@ PUBLISHED = {
     # cycles and the counts for those years are not the 2020 ones. Carrying
     # 2020's figure back would manufacture a completeness number.
     ("Kerala", "2020", "gp_ward"): {
-        "total": 941, "basis": "seats", "unit": "bodies",
+        "total": 941,
+        "basis": "seats",
+        "unit": "bodies",
         "source": "Kerala SEC, 2020 local body general election: 941 grama "
-                  "panchayats polled.",
+        "panchayats polled.",
     },
     ("Kerala", "2020", "block_member"): {
-        "total": 152, "basis": "seats", "unit": "bodies",
+        "total": 152,
+        "basis": "seats",
+        "unit": "bodies",
         "source": "Kerala SEC, 2020: 152 block panchayats polled.",
     },
     ("Kerala", "2020", "zp_member"): {
-        "total": 14, "basis": "seats", "unit": "bodies",
+        "total": 14,
+        "basis": "seats",
+        "unit": "bodies",
         "source": "Kerala SEC, 2020: 14 district panchayats polled.",
     },
     # Bihar's six tiers, 2016. No denominator, and the reason is specific.
@@ -277,50 +349,68 @@ PUBLISHED = {
     # differ by 81 and 4,790 - a measurable statement about completeness that
     # needs no outside number at all.
     ("Bihar", "2016", "gp_head"): {
-        "total": None, "basis": "unknown", "unit": "gram panchayats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram panchayats",
         "source": "Bihar SEC's published per-tier totals are for the 2021 "
-                  "cycle (8,067 gram panchayats), not 2016. No 2016 total "
-                  "recovered.",
+        "cycle (8,067 gram panchayats), not 2016. No 2016 total "
+        "recovered.",
     },
     ("Bihar", "2016", "gp_ward"): {
-        "total": None, "basis": "unknown", "unit": "panchayat wards",
+        "total": None,
+        "basis": "unknown",
+        "unit": "panchayat wards",
         "source": "As above.",
     },
     ("Bihar", "2016", "kachahari_head"): {
-        "total": None, "basis": "unknown", "unit": "gram kachaharis",
+        "total": None,
+        "basis": "unknown",
+        "unit": "gram kachaharis",
         "source": "As above.",
     },
     ("Bihar", "2016", "kachahari_member"): {
-        "total": None, "basis": "unknown", "unit": "kachahari wards",
+        "total": None,
+        "basis": "unknown",
+        "unit": "kachahari wards",
         "source": "As above.",
     },
     ("Bihar", "2016", "block_member"): {
-        "total": None, "basis": "unknown", "unit": "seats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "seats",
         "source": "As above.",
     },
     ("Bihar", "2016", "zp_member"): {
-        "total": None, "basis": "unknown", "unit": "seats",
+        "total": None,
+        "basis": "unknown",
+        "unit": "seats",
         "source": "As above. The scrape is visibly short here in a way the "
-                  "other five tiers are not: Sheikhpura holds 1 seat and "
-                  "Nawada 2, against 44 for Patna and 55 for Madhubani.",
+        "other five tiers are not: Sheikhpura holds 1 seat and "
+        "Nawada 2, against 44 for Patna and 55 for Madhubani.",
     },
     ("Andhra Pradesh", "2020", "gp_head"): {
-        "total": None, "basis": "per-district", "unit": "gram panchayats",
+        "total": None,
+        "basis": "per-district",
+        "unit": "gram panchayats",
         "source": "Each gazette states its own district total in its FORMAT-I "
-                  "abstract, which is a better denominator than a state figure "
-                  "because only 6 of 13 districts are held. scripts/ap/"
-                  "validate.py reads it per district. Anantapur states each "
-                  "seat twice, in a sarpanch-only proforma and again as the "
-                  "first column of the ward table; the file holds their union "
-                  "deduplicated, and the two agree on 98.4% of the seats "
-                  "stated by both.",
+        "abstract, which is a better denominator than a state figure "
+        "because only 6 of 13 districts are held. scripts/ap/"
+        "validate.py reads it per district. Anantapur states each "
+        "seat twice, in a sarpanch-only proforma and again as the "
+        "first column of the ward table; the file holds their union "
+        "deduplicated, and the two agree on 98.4% of the seats "
+        "stated by both.",
     },
     ("Goa", "2017", "gp_ward"): {
-        "total": None, "basis": "per-taluka", "unit": "wards",
+        "total": None,
+        "basis": "per-taluka",
+        "unit": "wards",
         "source": "Measured against 2012, which is complete, taluka by taluka.",
     },
     ("Goa", "2022", "gp_ward"): {
-        "total": None, "basis": "per-taluka", "unit": "wards",
+        "total": None,
+        "basis": "per-taluka",
+        "unit": "wards",
         "source": "As above.",
     },
 }
@@ -401,19 +491,19 @@ REGISTRY_TIER = {"gp_head": 2, "block_head": 1, "zp_head": 0}
 # registry check reports four mysteries; with them it reports four facts.
 REGISTRY_SCOPE = {
     ("Uttarakhand", "2010"): "Haridwar alone, which polls on its own cycle - "
-                             "the state's other twelve districts voted in 2008 "
-                             "and 2014, and this slice is complete for the "
-                             "district it covers",
+    "the state's other twelve districts voted in 2008 "
+    "and 2014, and this slice is complete for the "
+    "district it covers",
     ("Uttarakhand", "2015"): "Haridwar alone, which polls on its own cycle - "
-                             "the state's other twelve districts voted in 2014 "
-                             "and 2019, and this slice is complete for the "
-                             "district it covers",
+    "the state's other twelve districts voted in 2014 "
+    "and 2019, and this slice is complete for the "
+    "district it covers",
     ("Andhra Pradesh", "2020"): "6 of 13 districts; sec.ap.gov.in refuses "
-                                "connections from outside India and the "
-                                "archive holds no more",
+    "connections from outside India and the "
+    "archive holds no more",
     ("Jammu & Kashmir", "2016"): "an ad-hoc subset of districts rather than a "
-                                 "corpus, which is why no published total is "
-                                 "declared for it either",
+    "corpus, which is why no published total is "
+    "declared for it either",
 }
 
 
@@ -430,7 +520,9 @@ def registry(state, tier):
 
 
 DISTRICT_COUNT = {
-    ("Goa", "2012"): 2, ("Goa", "2017"): 2, ("Goa", "2022"): 2,
+    ("Goa", "2012"): 2,
+    ("Goa", "2017"): 2,
+    ("Goa", "2022"): 2,
     ("Jharkhand", "2015"): 24,
     ("Andhra Pradesh", "2020"): 13,
 }
@@ -445,7 +537,7 @@ WOMEN_RULE = {
     ("Jharkhand", "2015"): ("floor", 0.50),
     ("Jammu & Kashmir", "2010"): ("floor", 1 / 3),
     ("Jammu & Kashmir", "2016"): ("floor", 1 / 3),
-    ("Jammu & Kashmir", "2018"): (None, None),   # reserved-only listing
+    ("Jammu & Kashmir", "2018"): (None, None),  # reserved-only listing
     ("Andhra Pradesh", "2020"): ("target", 0.50),
 }
 
@@ -487,99 +579,97 @@ LISTING_SCOPE = {
 _KARNATAKA_SEARCH = {
     "on": "2026-08-11",
     "searched": "the Wayback CDX for karsec.gov.in - 828 archived PDFs, whose "
-                "earliest election material is the 2015 gram panchayat phase "
-                "files and the 2016 taluk/zilla gazettes",
+    "earliest election material is the 2015 gram panchayat phase "
+    "files and the 2016 taluk/zilla gazettes",
     "found": "nothing for any cycle before 2015; these five predate the "
-             "commission's web presence. The documents we do hold are "
-             "Karnataka_GP_ReservationHistory.dta, a reservation history "
-             "carrying the roster and populations, which names no winner by "
-             "construction",
+    "commission's web presence. The documents we do hold are "
+    "Karnataka_GP_ReservationHistory.dta, a reservation history "
+    "carrying the roster and populations, which names no winner by "
+    "construction",
     "outcome": "settled",
 }
 
 _JHARKHAND_WARDS = {
     "on": "2026-08-13",
     "searched": "every document held for the thirteen districts without ward "
-                "rows, read through its own text layer rather than the OCR "
-                "cache, counting the ward tier's own name - and the Wayback "
-                "CDX for sec.jharkhand.gov.in",
+    "rows, read through its own text layer rather than the OCR "
+    "cache, counting the ward tier's own name - and the Wayback "
+    "CDX for sec.jharkhand.gov.in",
     "found": "not one of the eleven districts that hold a document has a "
-             "single ward-tier mention in it; they are mukhiya and panchayat "
-             "samiti notifications and nothing else. Hazaribag and Seraikela "
-             "Kharsawan hold no document at all. The archive has six PDFs for "
-             "the commission, captured in 2026, none of them a result or a "
-             "reservation notification.\n"
-             "One document invited a wrong conclusion and is worth naming: "
-             "DHANBAD ZP PSS MUKHIYA GPS.pdf says GPS - gram panchayat "
-             "sadasya, the ward tier - in its own filename and contains none. "
-             "295 panchayat samiti, 256 mukhiya, 29 zila parishad rows, all "
-             "already parsed. The commission mislabelled it",
+    "single ward-tier mention in it; they are mukhiya and panchayat "
+    "samiti notifications and nothing else. Hazaribag and Seraikela "
+    "Kharsawan hold no document at all. The archive has six PDFs for "
+    "the commission, captured in 2026, none of them a result or a "
+    "reservation notification.\n"
+    "One document invited a wrong conclusion and is worth naming: "
+    "DHANBAD ZP PSS MUKHIYA GPS.pdf says GPS - gram panchayat "
+    "sadasya, the ward tier - in its own filename and contains none. "
+    "295 panchayat samiti, 256 mukhiya, 29 zila parishad rows, all "
+    "already parsed. The commission mislabelled it",
     "outcome": "nothing_found",
 }
 
 _WEST_BENGAL_RESULTS = {
     "on": "2026-08-14",
     "searched": "the Wayback CDX for wbsec.gov.in - 5,000 captures, of which "
-                "775 are PDFs - then the 123 that archive_sweep classifies as "
-                "results, the archived copies of the commission's own result "
-                "pages, and the two result files its menu links to",
+    "775 are PDFs - then the 123 that archive_sweep classifies as "
+    "results, the archived copies of the commission's own result "
+    "pages, and the two result files its menu links to",
     "found": "none of it is a seat-level result.\n"
-             "The 123 'results' PDFs are candidate affidavits filed with "
-             "nomination papers, under /writereaddata/Declarations/"
-             "Municipal2015/. They match because the classifier reads the URL "
-             "and the directory is called Declarations. Two were opened: a "
-             "notarised Rs.20 stamp paper, then PAN and income tax for the "
-             "candidate's whole family, pending criminal cases, assets. "
-             "Municipal, nomination-stage, and silent on reservation.\n"
-             "The result pages - FinalResult_zp_2013.aspx, Detailed_gp.aspx "
-             "and the rest - archive as ASP.NET error pages. The crawler "
-             "captured the URLs; the results came from a query it never made.\n"
-             "The two files the menu links to are district x party seat "
-             "counts: Election2003Total-2018.pdf is three pages, "
-             "ELECTIONRESULT2008-updated_in_2018.pdf is four, for a state with "
-             "tens of thousands of gram panchayat seats.\n"
-             "The menu on one of those error pages named what the commission "
-             "published - 2013/2008/2003 results for ZP, PS and GP, and "
-             "contesting-candidate lists - and following it found the one "
-             "endpoint the archive did capture with data in it: "
-             "/contesting_candidate/details, 462 captures, GET with query "
-             "parameters rather than the POST form the other pages use. 195 "
-             "are PANCHAYAT, for 2013 and 2018, filtered by district and "
-             "party.\n"
-             "They still do not fit. The columns are #, OSN, Party Name, "
-             "Candidate Name, Candidate Address, Declaration File - a district "
-             "by party list of who stood. No constituency, so nothing joins to "
-             "a seat; no reservation, which is what this corpus is; and no "
-             "field saying who won - `final_result=1` is the name of a filter, "
-             "not a column. The one substantive extra, the candidate's home "
-             "address, is the class of data this repository deliberately drops.\n"
-             "So the seat-level results exist and the archive does not hold "
-             "them. Reaching them means the live site, which is a different "
-             "question and was not attempted",
+    "The 123 'results' PDFs are candidate affidavits filed with "
+    "nomination papers, under /writereaddata/Declarations/"
+    "Municipal2015/. They match because the classifier reads the URL "
+    "and the directory is called Declarations. Two were opened: a "
+    "notarised Rs.20 stamp paper, then PAN and income tax for the "
+    "candidate's whole family, pending criminal cases, assets. "
+    "Municipal, nomination-stage, and silent on reservation.\n"
+    "The result pages - FinalResult_zp_2013.aspx, Detailed_gp.aspx "
+    "and the rest - archive as ASP.NET error pages. The crawler "
+    "captured the URLs; the results came from a query it never made.\n"
+    "The two files the menu links to are district x party seat "
+    "counts: Election2003Total-2018.pdf is three pages, "
+    "ELECTIONRESULT2008-updated_in_2018.pdf is four, for a state with "
+    "tens of thousands of gram panchayat seats.\n"
+    "The menu on one of those error pages named what the commission "
+    "published - 2013/2008/2003 results for ZP, PS and GP, and "
+    "contesting-candidate lists - and following it found the one "
+    "endpoint the archive did capture with data in it: "
+    "/contesting_candidate/details, 462 captures, GET with query "
+    "parameters rather than the POST form the other pages use. 195 "
+    "are PANCHAYAT, for 2013 and 2018, filtered by district and "
+    "party.\n"
+    "They still do not fit. The columns are #, OSN, Party Name, "
+    "Candidate Name, Candidate Address, Declaration File - a district "
+    "by party list of who stood. No constituency, so nothing joins to "
+    "a seat; no reservation, which is what this corpus is; and no "
+    "field saying who won - `final_result=1` is the name of a filter, "
+    "not a column. The one substantive extra, the candidate's home "
+    "address, is the class of data this repository deliberately drops.\n"
+    "So the seat-level results exist and the archive does not hold "
+    "them. Reaching them means the live site, which is a different "
+    "question and was not attempted",
     "outcome": "nothing_found",
 }
 
 INVESTIGATED = {
-    ("West Bengal", "2018", "zp_member", "results_notification"):
-        _WEST_BENGAL_RESULTS,
+    ("West Bengal", "2018", "zp_member", "results_notification"): _WEST_BENGAL_RESULTS,
     ("Jharkhand", "2015", "gp_ward", "missing_districts"): _JHARKHAND_WARDS,
     ("Karnataka", "1993", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2000", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2002", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2005", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2007", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
-
     # Not a parse defect, which is what it looked like: 2005, 2010 and 2015 all
     # carry a winner on essentially every row and 2020 on none.
     ("Rajasthan", "2020", "gp_head", "results_notification"): {
         "on": "2026-08-11",
         "searched": "quota_raj's own extract - data/raj/raj_15_20.parquet, "
-                    "which declares winner_name_2020 and winner_female_2020",
+        "which declares winner_name_2020 and winner_female_2020",
         "found": "both columns present and entirely empty, 0 of 7,882 rows, "
-                 "where winner_name_2015 is filled on all 7,882. The field was "
-                 "declared and never populated, so whether Rajasthan published "
-                 "2020 results is a question for quota_raj rather than for this "
-                 "repository",
+        "where winner_name_2015 is filled on all 7,882. The field was "
+        "declared and never populated, so whether Rajasthan published "
+        "2020 results is a question for quota_raj rather than for this "
+        "repository",
         "outcome": "inconclusive",
     },
 }
@@ -593,18 +683,18 @@ PARKED = {
     "Uttar Pradesh": {
         "on": "2026-08-11",
         "why": "1,718 rows across five entries, the largest being 1,300 of "
-               "2005's gp_head with a caste stated and no gender. Real, and "
-               "small against 153,505 UP rows; the state also sits at 85-88% "
-               "of the register, so the bigger question there is the ~9,000 "
-               "gram panchayats the sibling does not hold at all, which is a "
-               "harvest rather than a parse",
+        "2005's gp_head with a caste stated and no gender. Real, and "
+        "small against 153,505 UP rows; the state also sits at 85-88% "
+        "of the register, so the bigger question there is the ~9,000 "
+        "gram panchayats the sibling does not hold at all, which is a "
+        "harvest rather than a parse",
     },
     "Rajasthan": {
         "on": "2026-08-11",
         "why": "47 rows of seat-key collisions, plus 11,314 of 2020 with no "
-               "winner - and that one is not ours to close: quota_raj declares "
-               "winner_name_2020 and never fills it, 0 of 7,882, where 2015 is "
-               "filled on every row. Both wait on the sibling",
+        "winner - and that one is not ours to close: quota_raj declares "
+        "winner_name_2020 and never fills it, 0 of 7,882, where 2015 is "
+        "filled on every row. Both wait on the sibling",
     },
 }
 
@@ -617,8 +707,6 @@ def parked(state):
 def investigated(state, year, tier, question):
     """What was done to answer this question here, or None if nobody has."""
     return INVESTIGATED.get((state, str(year), tier, question))
-
-
 
 
 # What stage of document a slice came from. This decides whether "no winner
@@ -674,10 +762,13 @@ SOURCE_ACCESS = {
     # host their PDFs. Those portals publish documents under opaque names across
     # seven years, so finding the 2020 rosters means crawling each district's
     # list rather than fetching a known URL. A project, but not a wall.
-    "Andhra Pradesh": ("blocked", "sec.ap.gov.in refuses connections from "
-                                  "outside India; the archive holds 6 of 13 "
-                                  "and the district portals answer, so the "
-                                  "rest is a crawl rather than an egress"),
+    "Andhra Pradesh": (
+        "blocked",
+        "sec.ap.gov.in refuses connections from "
+        "outside India; the archive holds 6 of 13 "
+        "and the district portals answer, so the "
+        "rest is a crawl rather than an egress",
+    ),
     "Jharkhand": ("reachable", ""),
     "Goa": ("reachable", ""),
     "Jammu & Kashmir": ("reachable", ""),
@@ -747,8 +838,8 @@ ROTATES = {
     ("Karnataka", "gp_head"): {
         "from": "1993",
         "evidence": "0.6-4.1% of a cycle's SC-reserved panchayats are SC "
-                    "again in the next, against 18% by chance; 4,372 of 5,322 "
-                    "were SC-reserved exactly once across five cycles.",
+        "again in the next, against 18% by chance; 4,372 of 5,322 "
+        "were SC-reserved exactly once across five cycles.",
     },
 }
 

@@ -44,7 +44,6 @@ def load(tier, year):
         return list(csv.DictReader(fh))
 
 
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verbose", action="store_true")
@@ -52,8 +51,8 @@ def main():
     failures = 0
     failures += shared_battery(
         "Jammu & Kashmir - shared checks",
-        [(f"{y} {t}", load(t, y) or [])
-         for y in YEARS for t in ("sarpanch", "ward")]).finish()
+        [(f"{y} {t}", load(t, y) or []) for y in YEARS for t in ("sarpanch", "ward")],
+    ).finish()
 
     print("\n=== Jammu & Kashmir panchayat reservation ===\n")
 
@@ -68,20 +67,26 @@ def main():
             files = {r["source_pdf"] for r in rows}
             share = pct(women, len(rows))
 
-            print(f"{year} {tier:9s} {len(rows):6d} seats  "
-                  f"{len(districts):2d} districts  {len(files):2d} files  "
-                  f"women {share:4.1f}%   [{scope}]")
+            print(
+                f"{year} {tier:9s} {len(rows):6d} seats  "
+                f"{len(districts):2d} districts  {len(files):2d} files  "
+                f"women {share:4.1f}%   [{scope}]"
+            )
 
             if scope == "all_seats":
                 # one-sided: at or above the floor, allowing 2pp for rounding
                 ok = share / 100 >= WOMEN_FLOOR - 0.02
                 failures += not ok
-                print(f"      [{'PASS' if ok else 'FAIL'}] women's share at or "
-                      f"above the one-third floor")
+                print(
+                    f"      [{'PASS' if ok else 'FAIL'}] women's share at or "
+                    f"above the one-third floor"
+                )
             else:
-                print("      [SKIP] women's share - this listing carries only "
-                      "reserved seats, so the share is a property of the "
-                      "document, not of J&K")
+                print(
+                    "      [SKIP] women's share - this listing carries only "
+                    "reserved seats, so the share is a property of the "
+                    "document, not of J&K"
+                )
 
         # 2016 prints both tiers; they must not be the same size
         sarpanch, ward = load("sarpanch", year), load("ward", year)
@@ -89,16 +94,23 @@ def main():
             ratio = len(ward) / max(len(sarpanch), 1)
             ok = ratio >= 2.5
             failures += not ok
-            print(f"      [{'PASS' if ok else 'FAIL'}] wards per halqa = "
-                  f"{ratio:.1f} (near 1 would mean the sarpanch column was "
-                  f"read as the ward column)")
+            print(
+                f"      [{'PASS' if ok else 'FAIL'}] wards per halqa = "
+                f"{ratio:.1f} (near 1 would mean the sarpanch column was "
+                f"read as the ward column)"
+            )
 
             # the allocation rule, checked against its own inputs
-            withpop = [r for r in ward if r.get("pop_total", "").isdigit()
-                       and r.get("pop_sc", "").isdigit()]
+            withpop = [
+                r
+                for r in ward
+                if r.get("pop_total", "").isdigit() and r.get("pop_sc", "").isdigit()
+            ]
             if withpop:
+
                 def sc_share(r):
                     return int(r["pop_sc"]) / max(int(r["pop_total"]), 1)
+
                 reserved = [r for r in withpop if r["caste_reservation"] == "SC"]
                 other = [r for r in withpop if r["caste_reservation"] != "SC"]
                 if reserved and other:
@@ -106,9 +118,11 @@ def main():
                     b = sum(map(sc_share, other)) / len(other)
                     ok = a > b
                     failures += not ok
-                    print(f"      [{'PASS' if ok else 'FAIL'}] SC-reserved wards "
-                          f"have higher SC population share ({a:.1%} vs {b:.1%} "
-                          f"in {len(reserved)} vs {len(other)} wards)")
+                    print(
+                        f"      [{'PASS' if ok else 'FAIL'}] SC-reserved wards "
+                        f"have higher SC population share ({a:.1%} vs {b:.1%} "
+                        f"in {len(reserved)} vs {len(other)} wards)"
+                    )
         print()
 
     files_on_disk = sum(1 for y in YEARS for _ in (JK / y).glob("*.pdf"))
@@ -117,8 +131,10 @@ def main():
         for tier in ("sarpanch", "ward"):
             used |= {r["source_pdf"] for r in (load(tier, year) or [])}
     print(f"documents used: {len(used)} of {files_on_disk} on disk")
-    print("J&K's holdings are an ad-hoc subset, not a full corpus - see "
-          "SOURCES.md; there is no published seat total to measure against.")
+    print(
+        "J&K's holdings are an ad-hoc subset, not a full corpus - see "
+        "SOURCES.md; there is no published seat total to measure against."
+    )
 
     print(f"\n{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
@@ -136,9 +152,19 @@ def shared_battery(title, datasets):
         if not rows:
             continue
         print(f"\n-- {label}")
-        checks.structural(report, rows, ROOT,
-                          required=("state", "year", "tier", "reservation",
-                                    "caste_reservation", "woman_reserved"))
+        checks.structural(
+            report,
+            rows,
+            ROOT,
+            required=(
+                "state",
+                "year",
+                "tier",
+                "reservation",
+                "caste_reservation",
+                "woman_reserved",
+            ),
+        )
         checks.provenance(report, rows, ROOT)
     return report
 

@@ -23,10 +23,10 @@ from local_reservations.paths import ROOT
 # "vuqlwfpr tutkfr" (janjati/ST) contains "tkfr" (jati/SC), and the corpus also
 # splits it as "tu tkfr", so ST has to be decided before SC in both views.
 JHARKHAND_CASTE = [
-    ("vukjf{kr", "NONE"),          # anarakshit - unreserved
-    ("vukfj{kr", "NONE"),          # same, misspelt
+    ("vukjf{kr", "NONE"),  # anarakshit - unreserved
+    ("vukfj{kr", "NONE"),  # same, misspelt
     ("vuqlwfpr tutkfr", "ST"),
-    ("vuqlwfpr tu tkfr", "ST"),    # split mid-word
+    ("vuqlwfpr tu tkfr", "ST"),  # split mid-word
     ("vuqlwfpr tkfr", "SC"),
     ("vuqlwph tkfr", "SC"),
     ("vuqlqfpr tkfr", "SC"),
@@ -37,17 +37,30 @@ JHARKHAND_CASTE = [
 
 # ---------------------------------------------------------------- Goa codes
 GOA = [
-    ("General", "NONE", 0), ("Women", "NONE", 1), ("W", "NONE", 1),
-    ("OBC", "BC", 0), ("O.B.C.", "BC", 0), ("O.B.C", "BC", 0),
-    ("OBCW", "BC", 1), ("ST", "ST", 0), ("S.T.", "ST", 0), ("ST.", "ST", 0),
-    ("STW", "ST", 1), ("SC", "SC", 0),
+    ("General", "NONE", 0),
+    ("Women", "NONE", 1),
+    ("W", "NONE", 1),
+    ("OBC", "BC", 0),
+    ("O.B.C.", "BC", 0),
+    ("O.B.C", "BC", 0),
+    ("OBCW", "BC", 1),
+    ("ST", "ST", 0),
+    ("S.T.", "ST", 0),
+    ("ST.", "ST", 0),
+    ("STW", "ST", 1),
+    ("SC", "SC", 0),
 ]
 
 # ------------------------------------------------- Andhra Pradesh OCR codes
 AP = [
-    ("UR", "NONE", 0), ("UR (W)", "NONE", 1), ("UR(W)", "NONE", 1),
-    ("SC", "SC", 0), ("sc (w)", "SC", 1), ("BC", "BC", 0),
-    ("Bc (w)", "BC", 1), ("ST", "ST", 0),
+    ("UR", "NONE", 0),
+    ("UR (W)", "NONE", 1),
+    ("UR(W)", "NONE", 1),
+    ("SC", "SC", 0),
+    ("sc (w)", "SC", 1),
+    ("BC", "BC", 0),
+    ("Bc (w)", "BC", 1),
+    ("ST", "ST", 0),
 ]
 
 # ------------------------------------------------------- Haryana, unchanged
@@ -58,18 +71,18 @@ HARYANA = [
     ("Backward Class 'A' Women", "BC", 1),
     ("Unreserved", "NONE", 0),
     ("Scheduled Caste", "SC", 0),
-    ("Scheduled Class (Women)", "SC", 1),      # "Class" is Caste misspelt
-    ("Seheduled Caste Women", "SC", 1),        # c -> e typo
-    ("Scheduled Cast e Women", "SC", 1),       # stray space inside the word
+    ("Scheduled Class (Women)", "SC", 1),  # "Class" is Caste misspelt
+    ("Seheduled Caste Women", "SC", 1),  # c -> e typo
+    ("Scheduled Cast e Women", "SC", 1),  # stray space inside the word
     ("Sc Women", "SC", 1),
     ("BC (A) Other than Women", "BC", 0),
     ("efgyk", "NONE", 1),
     ("efgyk ds flok;", "NONE", 0),
     ("vuqlwfpr tkfr efgyk", "SC", 1),
     ("vuqlwfpr tkfr efgyk ds flok;", "SC", 0),
-    ("eefgyk ds fll ok;", "NONE", 0),          # doubled chars, split word
+    ("eefgyk ds fll ok;", "NONE", 0),  # doubled chars, split word
     ("ljiap vuqlwfpr tkfr efgyk ds", "SC", 0),  # truncated to trailing "ds"
-    ("fiN+Mk oxZ d efgyk", "BC", 1),           # floating "+" diacritic
+    ("fiN+Mk oxZ d efgyk", "BC", 1),  # floating "+" diacritic
 ]
 
 # ------------------------------------------------------------ J&K vocabulary
@@ -78,16 +91,30 @@ HARYANA = [
 # became the single token "scwomen", the caste test missed, and an SC-woman seat
 # was recorded as an open seat reserved for a woman.
 JK = [
-    ("Un Reserved", "NONE", 0), ("Open", "NONE", 0), ("OC", "NONE", 0),
-    ("Gn", "NONE", 0), ("Gn Women", "NONE", 1),
+    ("Un Reserved", "NONE", 0),
+    ("Open", "NONE", 0),
+    ("OC", "NONE", 0),
+    ("Gn", "NONE", 0),
+    ("Gn Women", "NONE", 1),
     ("Res. For Women", "NONE", 1),
-    ("Res. For SC", "SC", 0), ("Res. For SC/Women", "SC", 1),
+    ("Res. For SC", "SC", 0),
+    ("Res. For SC/Women", "SC", 1),
     ("Res. For Women/SC", "SC", 1),
-    ("ST Reserved", "ST", 0), ("ST/W", "ST", 1),
+    ("ST Reserved", "ST", 0),
+    ("ST/W", "ST", 1),
 ]
 
-NON_CATEGORIES = ["", None, "Sarpanch", "Panch", "iap", "5", "--", "Independent",
-                  "Reserved for"]
+NON_CATEGORIES = [
+    "",
+    None,
+    "Sarpanch",
+    "Panch",
+    "iap",
+    "5",
+    "--",
+    "Independent",
+    "Reserved for",
+]
 
 
 @pytest.mark.parametrize(("raw", "caste"), JHARKHAND_CASTE)
@@ -115,10 +142,16 @@ def test_rejects_non_categories(raw):
 
 def test_wrapped_cell_is_whitespace_insensitive():
     """pdfplumber joins a wrapped cell with a newline; that must not matter."""
-    assert normalize_reservation("Scheduled Caste\nOther than Women") == ("SC", 0,
-            "latin")
-    assert normalize_reservation("vuqlwfpr tkfr efgyk\nds flok;") == ("SC", 0,
-            "krutidev")
+    assert normalize_reservation("Scheduled Caste\nOther than Women") == (
+        "SC",
+        0,
+        "latin",
+    )
+    assert normalize_reservation("vuqlwfpr tkfr efgyk\nds flok;") == (
+        "SC",
+        0,
+        "krutidev",
+    )
 
 
 def test_script_detection():
@@ -185,12 +218,13 @@ def test_the_bihar_vocabulary_is_closed_and_counted():
     root = ROOT.parent / "local_elections_bihar" / "data"
     if not root.exists():
         pytest.skip("local_elections_bihar is not checked out")
-    csv.field_size_limit(10 ** 7)
+    csv.field_size_limit(10**7)
     seen = collections.Counter()
     for path in sorted(root.glob("*.csv")):
         with path.open(encoding="utf-8") as fh:
             for row in csv.DictReader(fh):
                 seen[row["reservation_status"]] += 1
+
     # Compared under NFC, because ड़ has two spellings - U+095C, and U+0921
     # followed by the nukta U+093C - that draw identically and compare unequal.
     # normalize.py is already safe here (it NFKC-folds every input); this is
@@ -198,8 +232,9 @@ def test_the_bihar_vocabulary_is_closed_and_counted():
     def nfc(text):
         return unicodedata.normalize("NFC", text)
 
-    assert {nfc(k): v for k, v in seen.items()} == \
-        {nfc(raw): n for raw, _, _, n in BIHAR}
+    assert {nfc(k): v for k, v in seen.items()} == {
+        nfc(raw): n for raw, _, _, n in BIHAR
+    }
 
 
 def test_a_backward_class_seat_reserved_for_a_woman_reads_as_both():
@@ -216,12 +251,18 @@ def test_a_backward_class_seat_reserved_for_a_woman_reads_as_both():
 # ten spellings across four categories. 1,228 rows read as no category at all
 # before these were covered, and two read as the wrong one.
 UTTARAKHAND = [
-    ("अनु0जाति", "SC", None), ("अनु0जाति महिला", "SC", 1),
-    ("अनु0जा0महिला", "SC", 1), ("अनु0 जाति", "SC", None),
-    ("अनु0जनजाति", "ST", None), ("अनु0ज0जा0", "ST", None),
-    ("अनु0ज0जा0महिला", "ST", 1), ("अनु0 ज0जाति महिला", "ST", 1),
-    ("अ0पि0वर्ग", "BC", None), ("अ0पि0व0महिला", "BC", 1),
-    ("अन्य पि0वर्ग", "BC", None), ("अन्य पि0वर्ग महिला", "BC", 1),
+    ("अनु0जाति", "SC", None),
+    ("अनु0जाति महिला", "SC", 1),
+    ("अनु0जा0महिला", "SC", 1),
+    ("अनु0 जाति", "SC", None),
+    ("अनु0जनजाति", "ST", None),
+    ("अनु0ज0जा0", "ST", None),
+    ("अनु0ज0जा0महिला", "ST", 1),
+    ("अनु0 ज0जाति महिला", "ST", 1),
+    ("अ0पि0वर्ग", "BC", None),
+    ("अ0पि0व0महिला", "BC", 1),
+    ("अन्य पि0वर्ग", "BC", None),
+    ("अन्य पि0वर्ग महिला", "BC", 1),
     # a bare gender with no caste is an unreserved seat reserved for a woman
     ("म्हिला", "NONE", 1),
     # the reservation cell that also carries a ward range
@@ -270,7 +311,6 @@ def test_a_bare_gender_is_an_unreserved_seat_reserved_for_a_woman(raw):
 def test_a_bare_caste_is_not_turned_into_a_womans_seat():
     """The rule runs only where no caste matched, so it cannot reach back and
     change one that did."""
-    assert (caste_of("Scheduled Caste"), woman_of("Scheduled Caste")) == \
-        ("SC", None)
+    assert (caste_of("Scheduled Caste"), woman_of("Scheduled Caste")) == ("SC", None)
     assert (caste_of("SC Woman"), woman_of("SC Woman")) == ("SC", 1)
     assert caste_of("Unknown") is None

@@ -45,15 +45,22 @@ def formats():
     if not path.exists():
         return {}
     with path.open(encoding="utf-8") as fh:
-        return {r["path"]: r["format"] for r in csv.DictReader(fh)
-                if r["state"] == "jharkhand"}
+        return {
+            r["path"]: r["format"]
+            for r in csv.DictReader(fh)
+            if r["state"] == "jharkhand"
+        }
 
 
 def _mentions_mukhiya(path):
     """True if the post token survives text extraction from this document."""
     try:
-        text = subprocess.run(["pdftotext", "-layout", str(path), "-"],
-                              capture_output=True, text=True, timeout=90).stdout
+        text = subprocess.run(
+            ["pdftotext", "-layout", str(path), "-"],
+            capture_output=True,
+            text=True,
+            timeout=90,
+        ).stdout
     except (subprocess.SubprocessError, OSError):
         return False
     return RE_MUKHIYA_TOKEN in text
@@ -66,8 +73,8 @@ def main():
 
     failures = 0
     failures += shared_battery(
-        "Jharkhand - shared checks",
-        [(t, load(t) or []) for t in TIERS]).finish()
+        "Jharkhand - shared checks", [(t, load(t) or []) for t in TIERS]
+    ).finish()
     print("\n=== Jharkhand panchayat reservation, 2015 ===\n")
 
     folders = sorted(p.name for p in SOURCE.iterdir() if p.is_dir())
@@ -83,16 +90,20 @@ def main():
         share = 100.0 * women / max(len(rows), 1)
         target = OFFICIAL.get(tier)
 
-        line = (f"{tier:18s} {len(rows):6d} seats  "
-                f"{len(districts):2d}/{len(folders)} districts  women {share:4.1f}%")
+        line = (
+            f"{tier:18s} {len(rows):6d} seats  "
+            f"{len(districts):2d}/{len(folders)} districts  women {share:4.1f}%"
+        )
         if target:
             line += f"   {100.0 * len(rows) / target:5.1f}% of {target} published"
         print(line)
 
         ok = abs(share / 100 - WOMEN_SHARE) <= 0.04
         failures += not ok
-        print(f"      [{'PASS' if ok else 'FAIL'}] women's share within 4pp of "
-              f"{WOMEN_SHARE:.0%}")
+        print(
+            f"      [{'PASS' if ok else 'FAIL'}] women's share within 4pp of "
+            f"{WOMEN_SHARE:.0%}"
+        )
 
     # which districts are missing, and whose fault is it
     rows = load("mukhiya") or []
@@ -112,10 +123,13 @@ def main():
         # Only a district whose mukhiya text we can read and still fail to parse
         # is our bug.
         with_post = [p for p in readable if _mentions_mukhiya(DATA.parent / p)]
-        verdict = ("PARSER GAP" if with_post
-                   else "source ceiling (mukhiya list is a scan)")
-        print(f"   {pretty:22s} {len(docs):3d} docs, {len(readable):3d} text, "
-              f"{len(with_post):3d} with mukhiya text  -> {verdict}")
+        verdict = (
+            "PARSER GAP" if with_post else "source ceiling (mukhiya list is a scan)"
+        )
+        print(
+            f"   {pretty:22s} {len(docs):3d} docs, {len(readable):3d} text, "
+            f"{len(with_post):3d} with mukhiya text  -> {verdict}"
+        )
 
     print(f"\n{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
@@ -133,9 +147,19 @@ def shared_battery(title, datasets):
         if not rows:
             continue
         print(f"\n-- {label}")
-        checks.structural(report, rows, ROOT,
-                          required=("state", "year", "tier", "reservation",
-                                    "caste_reservation", "woman_reserved"))
+        checks.structural(
+            report,
+            rows,
+            ROOT,
+            required=(
+                "state",
+                "year",
+                "tier",
+                "reservation",
+                "caste_reservation",
+                "woman_reserved",
+            ),
+        )
         checks.provenance(report, rows, ROOT)
     return report
 

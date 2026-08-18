@@ -49,11 +49,28 @@ from local_reservations.paths import ROOT
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 OCR_CACHE = ROOT / "data" / "jharkhand" / "ocr"
 
-COLUMNS = ["state", "year", "district", "block", "block_no",
-           "gram_panchayat", "gp_no", "ward_no", "seat_no", "seat_id_raw",
-           "seat_from_image", "tier", "tier_local", "reservation",
-           "caste_reservation",
-           "woman_reserved", "winner", "vacant", "reservation_raw", "script"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "block_no",
+    "gram_panchayat",
+    "gp_no",
+    "ward_no",
+    "seat_no",
+    "seat_id_raw",
+    "seat_from_image",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "winner",
+    "vacant",
+    "reservation_raw",
+    "script",
+]
 
 # Kruti Dev for each post. "neoqf[k;k" is a *deputy* mukhiya, so the match is
 # exact rather than a substring.
@@ -112,16 +129,17 @@ RE_BLOCK = re.compile(r"iz\[k\.M\s*&\s*(\S[^\n]{0,40}?)(?:\s*ftyk\b|$)")
 # the label itself standing as the last part of the identifier, so 18 rows were
 # published with a gram panchayat of "प्रा0नि0क्षे0 सं0" - a caption, not a place
 # - and the real name next to it was dropped.
-SEAT_LABEL = re.compile(r"izk0\s*fu0\s*\{ks0\s*la0"
-                        r"|प्रा0\s*नि0\s*क्षे0\s*सं0")
+SEAT_LABEL = re.compile(
+    r"izk0\s*fu0\s*\{ks0\s*la0"
+    r"|प्रा0\s*नि0\s*क्षे0\s*सं0"
+)
 # The trailing alternative is the panchayat samiti form - "XII दुमका/04/
 # काठीकुण्ड-01" - where the others all bracket the number. Three documents (Gola
 # PSS, both Dumka notifications) resolved no seat number at all for want of it,
 # on tesseract and on Surya alike, so it is a parser gap rather than a scan one.
 # Tried last and anchored to the end, so a bracketed number still wins and a
 # hyphen inside a place name cannot be mistaken for the separator.
-SEAT_TAIL = re.compile(
-    r"(?:¼\s*(\d+)\s*½|\(\s*(\d+)\s*\)|&\s*(\d+)|[-–—]\s*(\d+))\s*$")
+SEAT_TAIL = re.compile(r"(?:¼\s*(\d+)\s*½|\(\s*(\d+)\s*\)|&\s*(\d+)|[-–—]\s*(\d+))\s*$")
 SEAT_ROMAN = re.compile(r"(?<![A-Za-z])([IVXLC]{1,6})(?![A-Za-z])")
 SEAT_NUMBERED = re.compile(r"^(\d+)[\s/]+(.*\S)$")
 
@@ -138,9 +156,12 @@ RE_TEXT_ROW = re.compile(
     r"^(?P<name>.*?)\s*(?P<post>"
     # Longest first: "eqf[k;k" is a suffix of "xzke iapk;r eqf[k;k", and a
     # regex alternation takes the first branch that matches, not the longest.
-    + "|".join(r"\s+".join(re.escape(w) for w in k.split())
-               for k in sorted(TIERS, key=len, reverse=True))
-    + r")\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$")
+    + "|".join(
+        r"\s+".join(re.escape(w) for w in k.split())
+        for k in sorted(TIERS, key=len, reverse=True)
+    )
+    + r")\s+(?P<caste>.+?)\s+(?P<woman>efgyk|vU;)\s+(?P<seat>\S.*)$"
+)
 
 # Godda's ten notifications carry a text layer that is not Kruti Dev and not
 # text either - `pdftotext` returns "Y r" ftr na AvW ro". They were OCR'd along
@@ -178,6 +199,7 @@ def dev_post(cell):
     """The office a post cell names, or None if it names none."""
     return next((tier for token, tier in DEV_POSTS if token in cell), None)
 
+
 # "[2 गोड्डा /,/0/ छोटा बडामानगढ-(6)" - the identifier survives the scan far
 # worse than the row does. What is reliably there is the panchayat, which is the
 # run of text before the final bracket, and the number inside it. OCR eats
@@ -188,8 +210,7 @@ def dev_post(cell):
 # readers a row needs, never to decide what a row says.
 DEVANAGARI = re.compile(r"[\u0900-\u097F]")
 
-RE_DEV_SEAT = re.compile(
-    r"(?P<panchayat>[^/\]]+?)\s*-\s*\(\s*(?P<number>\d*)\s*\)\s*$")
+RE_DEV_SEAT = re.compile(r"(?P<panchayat>[^/\]]+?)\s*-\s*\(\s*(?P<number>\d*)\s*\)\s*$")
 
 
 def split_seat_id(text, tier):
@@ -214,7 +235,7 @@ def split_seat_id(text, tier):
     tail = SEAT_TAIL.search(s)
     if tail:
         out["seat_no"] = next(g for g in tail.groups() if g)
-        s = s[:tail.start()]
+        s = s[: tail.start()]
     s = s.strip().strip("&-/@ ").strip()
 
     # Some districts put the panchayat's name after the ampersand where others
@@ -231,14 +252,14 @@ def split_seat_id(text, tier):
     trailing = re.search(r"&\s*([^&@/\d][^&@]*?)\s*$", s)
     if trailing and re.search(r"\w", trailing.group(1)):
         out["trailing_name"] = trailing.group(1).strip()
-        s = s[:trailing.start()].strip()
+        s = s[: trailing.start()].strip()
 
     # the roman numeral is the district's index and floats: it opens the string
     # in most districts and trails it in East Singhbhum
     roman = SEAT_ROMAN.search(s)
     if roman:
         out["district_roman"] = roman.group(1)
-        s = (s[:roman.start()] + " " + s[roman.end():])
+        s = s[: roman.start()] + " " + s[roman.end() :]
     s = s.strip().strip("&-/@ ").strip()
 
     # Some districts separate the parts with "/" and others with "@" - Ranchi
@@ -263,8 +284,7 @@ def split_seat_id(text, tier):
     # commas against the separator ("3,/धसनियाँ") where a digit should be. So the
     # scanned pages keep the rule they were tuned on and the typeset ones get the
     # one their encoding needs.
-    slash = r"@|/(?!k)" if DEVANAGARI.search(s) \
-        else r"@|(?<=[\s\d])/(?!k)|/(?=[\s\d])"
+    slash = r"@|/(?!k)" if DEVANAGARI.search(s) else r"@|(?<=[\s\d])/(?!k)|/(?=[\s\d])"
     parts = [p.strip(" &-") for p in re.split(slash, s)]
     parts = [p for p in parts if p]
 
@@ -307,19 +327,19 @@ def split_seat_id(text, tier):
     if not out.get("gram_panchayat") and devanagari_tail():
         out["gram_panchayat"] = devanagari_tail()
 
-    if shape == "TMM":            # district@NN block@NN gram panchayat
+    if shape == "TMM":  # district@NN block@NN gram panchayat
         out["block_no"], out["block"] = numbered(parts[1])
         out["gp_no"], out["gram_panchayat"] = numbered(parts[2])
-    elif shape == "TNNT":         # district@NN@NN@gram panchayat
+    elif shape == "TNNT":  # district@NN@NN@gram panchayat
         out["block_no"], out["gp_no"] = parts[1], parts[2]
         out["gram_panchayat"] = parts[3]
-    elif shape == "TNM":          # district@NN@NN gram panchayat
+    elif shape == "TNM":  # district@NN@NN gram panchayat
         out["block_no"] = parts[1]
         out["gp_no"], out["gram_panchayat"] = numbered(parts[2])
-    elif shape == "TMT":          # district@NN block@gram panchayat
+    elif shape == "TMT":  # district@NN block@gram panchayat
         out["block_no"], out["block"] = numbered(parts[1])
         out["gram_panchayat"] = parts[2]
-    elif shape == "NNT":          # the district is missing, the rest is not
+    elif shape == "NNT":  # the district is missing, the rest is not
         out["block_no"], out["gp_no"] = parts[0], parts[1]
         out["gram_panchayat"] = parts[2]
     elif shape == "TNT":
@@ -383,8 +403,9 @@ FOLDER_TYPOS = {"Gooda": "Godda"}
 
 
 def district_of(folder):
-    """"1. GARHWA MUKHIYA PSS" -> "Garhwa". The folder names are the only
-    readable place-names in this corpus.
+    """Extract ``Garhwa`` from a folder such as ``1. GARHWA MUKHIYA PSS``.
+
+    The folder names are the only readable place-names in this corpus.
     """
     name = re.sub(r"^\s*\d+\s*[.)]?\s*", "", folder.name)
     name = re.sub(r"\b(MUKHIYA|PSS|GPS|ZP)\b", "", name, flags=re.I)
@@ -419,9 +440,12 @@ def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
         # Which of the two the block came from, so fill_block_names() can build
         # its lookup from the rows that state it and ignore the rest. Not a
         # declared column, so emit drops it.
-        "block_from": "identifier" if seat.get("block") else
-                      ("page" if page_block else ""),
-        "state": "Jharkhand", "year": "2015", "district": district,
+        "block_from": "identifier"
+        if seat.get("block")
+        else ("page" if page_block else ""),
+        "state": "Jharkhand",
+        "year": "2015",
+        "district": district,
         "block": seat.get("block") or page_block,
         "block_no": seat.get("block_no", ""),
         "gram_panchayat": seat.get("gram_panchayat", ""),
@@ -431,11 +455,15 @@ def seat_row(district, page_block, tier, caste, woman, raw, winner, raw_label):
         "ward_no": number if tier == "ward_member" else "",
         "seat_no": "" if tier == "ward_member" else number,
         "seat_id_raw": clean(raw),
-        "tier": canon.tier_of(tier, "Jharkhand"), "tier_local": tier,
+        "tier": canon.tier_of(tier, "Jharkhand"),
+        "tier_local": tier,
         "reservation": label(caste, woman),
-        "caste_reservation": caste, "woman_reserved": woman,
-        "winner": winner, "vacant": int(is_vacant(winner)),
-        "reservation_raw": raw_label, "script": "krutidev",
+        "caste_reservation": caste,
+        "woman_reserved": woman,
+        "winner": winner,
+        "vacant": int(is_vacant(winner)),
+        "reservation_raw": raw_label,
+        "script": "krutidev",
     }
 
 
@@ -459,13 +487,22 @@ def fill_image_seats(rows):
     if not IMAGE_SEATS.exists():
         return 0, 0
     with IMAGE_SEATS.open(encoding="utf-8") as fh:
-        found = {(r["source_pdf"], r["source_page"], r["serial"]): r
-                 for r in csv.DictReader(fh) if r["serial"]}
+        found = {
+            (r["source_pdf"], r["source_page"], r["serial"]): r
+            for r in csv.DictReader(fh)
+            if r["serial"]
+        }
     # rows whose serial the OCR could not read are still usable by name
     with IMAGE_SEATS.open(encoding="utf-8") as fh:
         for r in csv.DictReader(fh):
-            found.setdefault((r["source_pdf"], r["source_page"],
-                              f'~{r["gram_panchayat"]}{r["ward_no"]}'), r)
+            found.setdefault(
+                (
+                    r["source_pdf"],
+                    r["source_page"],
+                    f"~{r['gram_panchayat']}{r['ward_no']}",
+                ),
+                r,
+            )
     if not found:
         return 0, 0
 
@@ -479,12 +516,17 @@ def fill_image_seats(rows):
         if (row.get("gram_panchayat") or "").strip():
             continue
         page = (row.get("source_pdf", ""), str(row.get("source_page", "")))
-        printed = krutidev.to_unicode(re.sub(r"^\s*\d{1,3}\s*", "",
-                                             row.get("winner") or ""))
+        printed = krutidev.to_unicode(
+            re.sub(r"^\s*\d{1,3}\s*", "", row.get("winner") or "")
+        )
         serial = re.match(r"^\s*(\d{1,3})\b", row.get("winner") or "")
         got = found.get((*page, serial.group(1))) if serial else None
-        if got and got["name_ocr"] and printed \
-                and _similar(printed, got["name_ocr"]) < 0.5:
+        if (
+            got
+            and got["name_ocr"]
+            and printed
+            and _similar(printed, got["name_ocr"]) < 0.5
+        ):
             got = None
         if not got and printed:
             # On a page that mixes typeset rows with pasted-in pictures, the
@@ -541,8 +583,11 @@ def fill_block_names(rows):
         if row.get("block_from") == "identifier" and row["block_no"]:
             lookup[(row["district"], row["block_no"])][row["block"]] += 1
 
-    resolved = {key: names.most_common(1)[0][0]
-                for key, names in lookup.items() if len(names) == 1}
+    resolved = {
+        key: names.most_common(1)[0][0]
+        for key, names in lookup.items()
+        if len(names) == 1
+    }
     filled = 0
     for row in rows:
         if row.get("block_from") == "identifier" or not row["block_no"]:
@@ -578,7 +623,8 @@ TIER_HEADS = [
 
 STACKED_CASTE = re.compile(
     r"vuk[fj]+\{kr|vuq\S*\s*tu\s*tkfr|vuq\S*\s*tkfr|fiNM\+k"
-    r"|अनारक्षित|अनु\S*\s*जन\s*जाति|अनु\S*\s*जाति|पिछ\S*\s*वर्ग")
+    r"|अनारक्षित|अनु\S*\s*जन\s*जाति|अनु\S*\s*जाति|पिछ\S*\s*वर्ग"
+)
 # "अन्य पिछड़ा वर्ग" is a caste, so the gender marker must not match inside it
 STACKED_GENDER = re.compile(r"(efgyk|vU;|महिला|अन्य)(?!\s*(?:fiNM|पिछ))")
 
@@ -631,19 +677,21 @@ def parse_stacked(path, district):
                 # anywhere on the page. Those rows are still a reservation for
                 # a real seat; they simply do not say which, so they are kept
                 # with an empty identifier rather than dropped. 364 rows.
-                seat = line[gender_at.end():].strip()
-                left = [line[:caste_at.start()]]
+                seat = line[gender_at.end() :].strip()
+                left = [line[: caste_at.start()]]
                 for other in (index - 1, index + 1):
-                    if 0 <= other < len(lines) and not STACKED_CASTE.search(lines[other]):  # noqa: E501
-                        left.append(lines[other][:caste_at.start()])
+                    if 0 <= other < len(lines) and not STACKED_CASTE.search(
+                        lines[other]
+                    ):
+                        left.append(lines[other][: caste_at.start()])
                 joined = clean(" ".join(left))
-                if "in vkjf{kr" in joined:      # the column header
+                if "in vkjf{kr" in joined:  # the column header
                     continue
 
                 tier = next((v for k, v in TIER_HEADS if k in joined), None)
                 if not tier:
                     continue
-                caste = caste_of(line[caste_at.start():gender_at.start()])
+                caste = caste_of(line[caste_at.start() : gender_at.start()])
                 woman = woman_of(gender_at.group(1))
                 if caste is None or woman is None:
                     continue
@@ -662,13 +710,30 @@ def parse_stacked(path, district):
                 # only where there is an identifier to read - with none, the
                 # post text is the only evidence and overriding it would turn
                 # every unidentified ward seat into a panchayat head
-                if seat and tier == "ward_member" and not split_seat_id(
-                        seat, "ward_member").get("seat_no"):
+                if (
+                    seat
+                    and tier == "ward_member"
+                    and not split_seat_id(seat, "ward_member").get("seat_no")
+                ):
                     tier = "mukhiya"
-                rows.append(emit.stamp(seat_row(
-                    district, block, tier, caste, woman, seat, name,
-                    f"{line[caste_at.start():gender_at.start()].strip()} | "
-                    f"{gender_at.group(1)}"), path, page_number, ROOT))
+                rows.append(
+                    emit.stamp(
+                        seat_row(
+                            district,
+                            block,
+                            tier,
+                            caste,
+                            woman,
+                            seat,
+                            name,
+                            f"{line[caste_at.start() : gender_at.start()].strip()} | "
+                            f"{gender_at.group(1)}",
+                        ),
+                        path,
+                        page_number,
+                        ROOT,
+                    )
+                )
     return rows
 
 
@@ -681,8 +746,10 @@ def stacked_pages(path):
     Dev the typeset districts use.
     """
     with pdfplumber.open(str(path)) as pdf:
-        pages = [(page.page_number, page.extract_text(layout=True) or "")
-                 for page in pdf.pages]
+        pages = [
+            (page.page_number, page.extract_text(layout=True) or "")
+            for page in pdf.pages
+        ]
     # Readability, not length. Chatra and the Godda blocks carry 86,000 to
     # 375,000 characters of a third legacy font - neither Kruti Dev nor Unicode
     # - which decodes to "grgo-s r€-.Ff{ 6rzr rorRrf,". Testing the length let
@@ -780,12 +847,25 @@ def parse_pdf(path, district):
                         continue
                     got = table_row(cells)
                     if not got:
-                        continue          # header, spacer, or an unknown post
+                        continue  # header, spacer, or an unknown post
                     tier, caste, woman, seat, winner, label_raw = got
-                    rows.append(emit.stamp(seat_row(
-                        district, block, tier, caste, woman, seat,
-                        winner, label_raw),
-                        path, page.page_number, ROOT))
+                    rows.append(
+                        emit.stamp(
+                            seat_row(
+                                district,
+                                block,
+                                tier,
+                                caste,
+                                woman,
+                                seat,
+                                winner,
+                                label_raw,
+                            ),
+                            path,
+                            page.page_number,
+                            ROOT,
+                        )
+                    )
 
             # The text reader runs on every page, not only where the table
             # reader found nothing, and its rows are added where the table did
@@ -797,8 +877,9 @@ def parse_pdf(path, district):
             # rows still failed - Deoghar and Dhanbad split the gender onto its
             # own extracted line, so `woman_of` sees an empty cell - stopped
             # falling back at all, and 31 real winners disappeared.
-            rows[before:] = union(rows[before:],
-                                  _from_text(page, path, district, block))
+            rows[before:] = union(
+                rows[before:], _from_text(page, path, district, block)
+            )
     return rows
 
 
@@ -815,8 +896,11 @@ def page_key(row):
     serial, so they render the same person identically - which was itself a bug
     worth 963 duplicate seats before it was fixed.
     """
-    return (row.get("tier_local"), (row.get("seat_id_raw") or "").strip(),
-            (row.get("winner") or "").strip())
+    return (
+        row.get("tier_local"),
+        (row.get("seat_id_raw") or "").strip(),
+        (row.get("winner") or "").strip(),
+    )
 
 
 def union(table, text):
@@ -841,13 +925,18 @@ def union(table, text):
     # same printed seat. An empty name is not a competing answer, it is the
     # absence of one - but only where the page prints an identifier to match on,
     # because "VI" and "" identify nothing and would merge the whole page.
-    named = {(r.get("tier_local"), (r.get("seat_id_raw") or "").strip())
-             for r in rows if (r.get("winner") or "").strip()}
-    return [r for r in rows
-            if (r.get("winner") or "").strip()
-            or not (r.get("seat_id_raw") or "").strip()
-            or (r.get("tier_local"),
-                (r.get("seat_id_raw") or "").strip()) not in named]
+    named = {
+        (r.get("tier_local"), (r.get("seat_id_raw") or "").strip())
+        for r in rows
+        if (r.get("winner") or "").strip()
+    }
+    return [
+        r
+        for r in rows
+        if (r.get("winner") or "").strip()
+        or not (r.get("seat_id_raw") or "").strip()
+        or (r.get("tier_local"), (r.get("seat_id_raw") or "").strip()) not in named
+    ]
 
 
 def identity(row):
@@ -857,8 +946,14 @@ def identity(row):
     render it differently. The office, the place and who was elected are what
     both agree on.
     """
-    return (row.get("tier_local"), row.get("block"), row.get("gram_panchayat"),
-            row.get("ward_no"), row.get("seat_no"), row.get("winner"))
+    return (
+        row.get("tier_local"),
+        row.get("block"),
+        row.get("gram_panchayat"),
+        row.get("ward_no"),
+        row.get("seat_no"),
+        row.get("winner"),
+    )
 
 
 def merge(first, second):
@@ -894,8 +989,9 @@ HTML_TAG = re.compile(r"<[^>]+>")
 
 
 def html_cells(row):
-    return [clean(html.unescape(HTML_TAG.sub(" ", cell)))
-            for cell in HTML_CELL.findall(row)]
+    return [
+        clean(html.unescape(HTML_TAG.sub(" ", cell))) for cell in HTML_CELL.findall(row)
+    ]
 
 
 def html_rows(text, path, district, page_number):
@@ -920,8 +1016,7 @@ def html_rows(text, path, district, page_number):
         cells = html_cells(raw_row)
         if len(cells) < 4:
             continue
-        at = next((i for i, cell in enumerate(cells)
-                   if dev_post(cell)), None)
+        at = next((i for i, cell in enumerate(cells) if dev_post(cell)), None)
         if at is None or at + 2 >= len(cells):
             continue
         tier = dev_post(cells[at])
@@ -937,8 +1032,16 @@ def html_rows(text, path, district, page_number):
         # here.
         seat = cells[at + 3] if at + 3 < len(cells) else ""
         winner = cells[at - 1] if at else ""
-        row = seat_row(district, "", tier, caste, woman, seat, winner,
-                       f"{cells[at + 1]} | {cells[at + 2]}")
+        row = seat_row(
+            district,
+            "",
+            tier,
+            caste,
+            woman,
+            seat,
+            winner,
+            f"{cells[at + 1]} | {cells[at + 2]}",
+        )
         # not Kruti Dev, so `krutidev.to_unicode` must not touch these names
         row["script"] = "devanagari"
         out.append(emit.stamp(row, path, page_number, ROOT))
@@ -976,10 +1079,23 @@ def _from_text(page, path, district, block):
         # women and 963 seats were published twice, putting panchayat samiti at
         # 109% of the seats Jharkhand has.
         winner = LEADING_SERIAL.sub("", clean(found.group("name")))
-        out.append(emit.stamp(seat_row(
-            district, block, tier, caste, woman, found.group("seat"), winner,
-            f"{found.group('caste')} | {found.group('woman')}"),
-            path, page.page_number, ROOT))
+        out.append(
+            emit.stamp(
+                seat_row(
+                    district,
+                    block,
+                    tier,
+                    caste,
+                    woman,
+                    found.group("seat"),
+                    winner,
+                    f"{found.group('caste')} | {found.group('woman')}",
+                ),
+                path,
+                page.page_number,
+                ROOT,
+            )
+        )
     return out
 
 
@@ -998,8 +1114,11 @@ def main():
         # two thirds of the state.
         for path in sorted(folder.rglob("*.pdf")):
             try:
-                read_by_model = [r for number, text in stacked_pages(path)
-                                 for r in ocr_rows(text, path, district, number)]
+                read_by_model = [
+                    r
+                    for number, text in stacked_pages(path)
+                    for r in ocr_rows(text, path, district, number)
+                ]
                 # Merged, not chosen between. Ranchi's notification is read by
                 # both readers and each finds tiers the other misses: the
                 # ruled-table reader gets 3,453 ward rows and no mukhiya at all,
@@ -1032,8 +1151,11 @@ def main():
     filled, ambiguous = fill_block_names(rows)
     from_images, rejected = fill_image_seats(rows)
     if from_images or rejected:
-        print(f"seats read from images: {from_images:,} filled, "
-              f"{rejected:,} rejected on a name mismatch", file=sys.stderr)
+        print(
+            f"seats read from images: {from_images:,} filled, "
+            f"{rejected:,} rejected on a name mismatch",
+            file=sys.stderr,
+        )
 
     # The names are printed in Kruti Dev, a font encoding rather than damage, so
     # they convert deterministically. Left as printed they cannot be joined to
@@ -1066,13 +1188,19 @@ def main():
         # the converter could not turn into Devanagari - a stray Latin token,
         # an empty page - must not be labelled as though it had been.
         names = [row.get(c) or "" for c in ("gram_panchayat", "winner")]
-        row["script"] = ("devanagari"
-                         if any(krutidev.looks_converted(n) for n in names)
-                         else "krutidev")
-    print(f"transliterated {converted:,} names from Kruti Dev to Unicode",
-          file=sys.stderr)
-    print(f"block names joined on (district, block_no): {filled:,} rows filled, "
-          f"{ambiguous} keys left ambiguous", file=sys.stderr)
+        row["script"] = (
+            "devanagari"
+            if any(krutidev.looks_converted(n) for n in names)
+            else "krutidev"
+        )
+    print(
+        f"transliterated {converted:,} names from Kruti Dev to Unicode", file=sys.stderr
+    )
+    print(
+        f"block names joined on (district, block_no): {filled:,} rows filled, "
+        f"{ambiguous} keys left ambiguous",
+        file=sys.stderr,
+    )
 
     by_tier = collections.defaultdict(list)
     for row in rows:
@@ -1085,13 +1213,16 @@ def main():
         districts = {r["district"] for r in subset}
         blocks = {(r["district"], r["block"]) for r in subset}
         women = sum(r["woman_reserved"] for r in subset)
-        print(f"{tier:18s} {len(subset):6d} seats  {len(blocks):4d} blocks  "
-              f"{len(districts):2d}/{len(folders)} districts  "
-              f"women {women / max(len(subset), 1) * 100:4.1f}%  -> {csv_path.name}")
+        print(
+            f"{tier:18s} {len(subset):6d} seats  {len(blocks):4d} blocks  "
+            f"{len(districts):2d}/{len(folders)} districts  "
+            f"women {women / max(len(subset), 1) * 100:4.1f}%  -> {csv_path.name}"
+        )
 
     print("\nmukhiya reservation split:")
-    for k, v in collections.Counter(r["reservation"]
-                                    for r in by_tier["mukhiya"]).most_common():
+    for k, v in collections.Counter(
+        r["reservation"] for r in by_tier["mukhiya"]
+    ).most_common():
         print(f"   {v:6d}  {v / max(len(by_tier['mukhiya']), 1) * 100:5.1f}%  {k}")
     if failed:
         print(f"\nunreadable: {len(failed)} -> {failed[:5]}")

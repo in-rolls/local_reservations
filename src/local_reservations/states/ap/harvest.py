@@ -26,14 +26,20 @@ from local_reservations.paths import ROOT
 OUT = ROOT / "data" / "ap" / "2020_res_gp"
 MANIFEST = OUT / "manifest.csv"
 
-CDX = ("http://web.archive.org/cdx/search/cdx?url=sec.ap.gov.in/Documents/"
-       "Notifications/SP_and_WM*&limit=500&fl=original,timestamp"
-       "&collapse=urlkey&filter=original:.*res_gp.*")
+CDX = (
+    "http://web.archive.org/cdx/search/cdx?url=sec.ap.gov.in/Documents/"
+    "Notifications/SP_and_WM*&limit=500&fl=original,timestamp"
+    "&collapse=urlkey&filter=original:.*res_gp.*"
+)
 
 # id -> the district it names, for the codes the archive uses
 DISTRICTS = {
-    "atp": "Anantapur", "est": "East Godavari", "kri": "Krishna",
-    "nlr": "Nellore", "pkm": "Prakasam", "wg": "West Godavari",
+    "atp": "Anantapur",
+    "est": "East Godavari",
+    "kri": "Krishna",
+    "nlr": "Nellore",
+    "pkm": "Prakasam",
+    "wg": "West Godavari",
 }
 
 
@@ -53,8 +59,7 @@ def archived():
 def fetch(url, timestamp):
     # id_ asks the archive for the bytes as crawled, without its own banner
     wayback = f"http://web.archive.org/web/{timestamp}id_/{url}"
-    request = urllib.request.Request(wayback,
-                                     headers={"User-Agent": "Mozilla/5.0"})
+    request = urllib.request.Request(wayback, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(request, timeout=300) as response:
         return response.read()
 
@@ -93,23 +98,41 @@ def main():
             target.write_bytes(body)
             fetched += 1
             print(f" fetched {len(body):,} bytes")
-        rows.append({"file": name, "district": DISTRICTS.get(code, ""),
-                     "url": url, "wayback_timestamp": timestamp,
-                     "sha256": digest, "bytes": len(body)})
+        rows.append(
+            {
+                "file": name,
+                "district": DISTRICTS.get(code, ""),
+                "url": url,
+                "wayback_timestamp": timestamp,
+                "sha256": digest,
+                "bytes": len(body),
+            }
+        )
 
     if rows and not args.dry_run:
         with MANIFEST.open("w", newline="", encoding="utf-8") as fh:
             writer = csv.DictWriter(
-                fh, fieldnames=["file", "district", "url", "wayback_timestamp",
-                                "sha256", "bytes"], lineterminator="\n")
+                fh,
+                fieldnames=[
+                    "file",
+                    "district",
+                    "url",
+                    "wayback_timestamp",
+                    "sha256",
+                    "bytes",
+                ],
+                lineterminator="\n",
+            )
             writer.writeheader()
             writer.writerows(sorted(rows, key=lambda r: r["file"]))
 
     print(f"\n{fetched} new, {matched} already held and identical")
     if differed:
         print(f"  DIFFERENT from our copy: {differed}")
-    print("  The archive crawled 6 of the 13 districts. The other 7 were never "
-          "captured and remain blocked on an India egress.")
+    print(
+        "  The archive crawled 6 of the 13 districts. The other 7 were never "
+        "captured and remain blocked on an India egress."
+    )
     return 0
 
 

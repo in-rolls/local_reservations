@@ -9,6 +9,11 @@ here is usually the thing that was wrong.
 
 ## Unreleased — v0.2.8
 
+### Changed
+
+- Adopted the canonical `test` dependency group, uv build backend, Python
+  matrix, and formatting checks used by the shared fleet workflow.
+
 ### Corrected
 
 - **Haryana 2022 was publishing a phantom copy of some seats.** Palwal/Prithla
@@ -245,9 +250,10 @@ column by column; only `source_commit`, the build's own provenance stamp, moved.
   changing a value.
 
 - **The OCR dependencies are a conflicting dependency group.** savitr pins
-  `pillow<11` where pdfplumber needs `>=12.2`; `uv sync --group ocr` replaces
-  the hand-made `ocrenv/`, and uv refuses to install both rather than leaving
-  whichever came second broken.
+  `pillow<11` where pdfplumber needs `>=12.2`;
+  `uv run --no-default-groups --group ocr` replaces the hand-made `ocrenv/`,
+  and uv refuses to install both rather than leaving whichever came second
+  broken.
 
 - **Fleet tooling via preen**, minus the parts built for shipping a package.
   The release workflow was removed rather than left in place: it fires on `v*`
