@@ -37,8 +37,7 @@ DERIVED = {"master", "stats", "transliteration"}
 
 
 def state_directories(exclude=DERIVED):
-    return sorted(p for p in DATA.iterdir()
-                  if p.is_dir() and p.name not in exclude)
+    return sorted(p for p in DATA.iterdir() if p.is_dir() and p.name not in exclude)
 
 
 def paths(exclude=DERIVED):
@@ -89,9 +88,11 @@ def as_written(row):
     on a row that names the panchayat twice, as it should.
     """
     aliases = set(canon.UNIT_COLUMNS) - {"gram_panchayat"}
-    return {k: "" if v is None else str(v) for k, v in row.items()
-            if k not in aliases
-            and not isinstance(v, (list, dict, tuple, set))}
+    return {
+        k: "" if v is None else str(v)
+        for k, v in row.items()
+        if k not in aliases and not isinstance(v, (list, dict, tuple, set))
+    }
 
 
 def pooled():
@@ -123,17 +124,23 @@ def pooled():
     from local_reservations.tools import (
         build_master,
     )
+
     grouped = collections.defaultdict(list)
     latin = master.transliterations(ROOT)
-    for slice_ in list(build_master.local_slices()) + \
-            list(build_master.sibling_slices()):
+    for slice_ in list(build_master.local_slices()) + list(
+        build_master.sibling_slices()
+    ):
         for row in slice_["rows"]:
             got = master.to_master(
-                row, slice_["dataset_id"], slice_["source_repo"],
-                slice_["source_commit"], slice_["provenance_level"],
+                row,
+                slice_["dataset_id"],
+                slice_["source_repo"],
+                slice_["source_commit"],
+                slice_["provenance_level"],
                 slice_.get("unit_of_observation", "seat"),
-                row.get("seat_candidates", ""), latin)
+                row.get("seat_candidates", ""),
+                latin,
+            )
             if got is not None:
-                grouped[slice_["dataset_id"]].append(
-                    dict(as_written(row), **got))
+                grouped[slice_["dataset_id"]].append(dict(as_written(row), **got))
     yield from sorted(grouped.items())

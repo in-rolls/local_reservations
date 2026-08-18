@@ -39,11 +39,28 @@ from local_reservations.paths import ROOT
 
 JK = ROOT / "data" / "jk"
 
-COLUMNS = ["state", "year", "district", "district_declared", "block", "halqa",
-           "ward_no",
-           "ward_name", "tier", "tier_local", "reservation", "caste_reservation",
-           "woman_reserved", "listing_scope", "pop_sc", "pop_st", "pop_oc",
-           "pop_total", "reservation_raw", "script"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "district_declared",
+    "block",
+    "halqa",
+    "ward_no",
+    "ward_name",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "listing_scope",
+    "pop_sc",
+    "pop_st",
+    "pop_oc",
+    "pop_total",
+    "reservation_raw",
+    "script",
+]
 
 # What each year's documents actually list. 2010 and 2016 are full rosters -
 # they carry "Un Reserved" and "Open" rows - but the 2018 files are titled
@@ -51,12 +68,19 @@ COLUMNS = ["state", "year", "district", "district_declared", "block", "halqa",
 # the reserved wards*. Treating that as a roster implies 82% of J&K wards are
 # women-reserved, which is an artefact of the document, not a finding. Any
 # denominator computed from 2018 is wrong unless this column is respected.
-LISTING_SCOPE = {"2010": "all_seats", "2016": "all_seats",
-                 "2018": "reserved_only"}
+LISTING_SCOPE = {"2010": "all_seats", "2016": "all_seats", "2018": "reserved_only"}
 
 # header text that leaks into the data when a header row is not skipped
-HEADER_NOISE = {"name of district", "district name", "name of block",
-                "block name", "name of halqa", "district", "block"}
+HEADER_NOISE = {
+    "name of district",
+    "district name",
+    "name of block",
+    "block name",
+    "name of halqa",
+    "district",
+    "block",
+}
+
 
 def clean(cell):
     return re.sub(r"\s+", " ", (cell or "").replace("\n", " ")).strip()
@@ -75,19 +99,42 @@ def district_from_title(text):
 # distance and the name that follows against this roster. Free-text capture was
 # tried first and returned "JAMMU Name" and "REASI ANNEXURE".
 DISTRICT_ROSTER = [
-    "Jammu", "Samba", "Kathua", "Udhampur", "Reasi", "Rajouri", "Poonch",
-    "Doda", "Ramban", "Kishtwar", "Anantnag", "Kulgam", "Pulwama", "Shopian",
-    "Srinagar", "Budgam", "Ganderbal", "Bandipora", "Baramulla", "Kupwara",
-    "Leh", "Kargil",
+    "Jammu",
+    "Samba",
+    "Kathua",
+    "Udhampur",
+    "Reasi",
+    "Rajouri",
+    "Poonch",
+    "Doda",
+    "Ramban",
+    "Kishtwar",
+    "Anantnag",
+    "Kulgam",
+    "Pulwama",
+    "Shopian",
+    "Srinagar",
+    "Budgam",
+    "Ganderbal",
+    "Bandipora",
+    "Baramulla",
+    "Kupwara",
+    "Leh",
+    "Kargil",
 ]
 
 # Eight of the 2010 blocks name no district anywhere in their document. These
 # come from outside the corpus and are marked as such rather than presented as
 # something the page said - see the district_declared column.
 DISTRICT_OF_BLOCK = {
-    "dachhan": "Kishtwar", "marwah": "Kishtwar", "padder": "Kishtwar",
-    "warwan": "Kishtwar", "inderbal": "Kishtwar", "nagsani": "Kishtwar",
-    "gool": "Ramban", "ramsoo": "Ramban",
+    "dachhan": "Kishtwar",
+    "marwah": "Kishtwar",
+    "padder": "Kishtwar",
+    "warwan": "Kishtwar",
+    "inderbal": "Kishtwar",
+    "nagsani": "Kishtwar",
+    "gool": "Ramban",
+    "ramsoo": "Ramban",
 }
 
 _WORD = re.compile(r"\b([A-Za-z]{5,9})\b")
@@ -98,8 +145,9 @@ def _distance(a, b):
     for i, x in enumerate(a, 1):
         current = [i]
         for j, y in enumerate(b, 1):
-            current.append(min(previous[j] + 1, current[j - 1] + 1,
-                               previous[j - 1] + (x != y)))
+            current.append(
+                min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (x != y))
+            )
         previous = current
     return previous[-1]
 
@@ -114,7 +162,7 @@ def district_from_document(text):
     flat = re.sub(r"\s+", " ", text or "")
     for found in _WORD.finditer(flat):
         if _distance(found.group(1).upper(), "DISTRICT") <= 2:
-            after = flat[found.end():found.end() + 30]
+            after = flat[found.end() : found.end() + 30]
             for name in DISTRICT_ROSTER:
                 if re.match(r"\W{0,3}" + name, after, re.I):
                     return name
@@ -160,6 +208,7 @@ def map_columns(table_rows):
     Headers wrap across two or three rows, so the first few rows are joined
     column-wise before matching.
     """
+
     # A spanning title row ("Pyt-wise/Block-wise Reservation of SC/ST/Women
     # Panches & Sarpanches...") occupies column 0 with every other cell empty.
     # Joining it into the header puts "reserv" and "sc" in column 0, so the
@@ -176,16 +225,21 @@ def map_columns(table_rows):
     # The numeric row is not just noise to skip - it marks where the header
     # ends. Without that boundary the first data row gets joined in as header
     # ("... of panch sc 90"), and then no suffix match fires.
-    boundary = next((i for i, r in enumerate(table_rows[:8]) if is_number_row(r)),
-                    None)
+    boundary = next((i for i, r in enumerate(table_rows[:8]) if is_number_row(r)), None)
     limit = boundary if boundary is not None else 4
-    candidates = [i for i in range(min(limit, len(table_rows)))
-                  if sum(1 for c in table_rows[i] if clean(c)) >= 3]
+    candidates = [
+        i
+        for i in range(min(limit, len(table_rows)))
+        if sum(1 for c in table_rows[i] if clean(c)) >= 3
+    ]
     header_rows = [table_rows[i] for i in candidates]
     if not header_rows:
         return None
-    header_depth = (boundary + 1) if boundary is not None else (
-        (candidates[-1] + 1) if candidates else 0)
+    header_depth = (
+        (boundary + 1)
+        if boundary is not None
+        else ((candidates[-1] + 1) if candidates else 0)
+    )
     width = max(len(r) for r in header_rows)
     joined = []
     for i in range(width):
@@ -206,8 +260,14 @@ def map_columns(table_rows):
     mapping = {
         "district": find("district", exclude=("no.", "no ")),
         "block": find("block name", "name of block", exclude=("no.", "no ")),
-        "halqa": find("halqa", "panchayat name", "pyt. name", "pyt name",
-                      "name of halqua", exclude=("no.", "no ")),
+        "halqa": find(
+            "halqa",
+            "panchayat name",
+            "pyt. name",
+            "pyt name",
+            "name of halqua",
+            exclude=("no.", "no "),
+        ),
         "ward_no": ward_no,
         "ward_name": (ward_no + 1) if ward_no is not None else None,
         # first reservation column is the panch ward, second the sarpanch
@@ -218,11 +278,17 @@ def map_columns(table_rows):
         # so an equality test never fires. Match the triple by suffix instead,
         # and take the first one - the second is the *percentage* block.
         "pop_sc": next(
-            (i for i in range(len(joined) - 2)
-             if joined[i].endswith("sc") and joined[i + 1].endswith("st")
-             and joined[i + 2].endswith("oc")
-             and "%" not in joined[i] and "percent" not in joined[i]),
-            None),
+            (
+                i
+                for i in range(len(joined) - 2)
+                if joined[i].endswith("sc")
+                and joined[i + 1].endswith("st")
+                and joined[i + 2].endswith("oc")
+                and "%" not in joined[i]
+                and "percent" not in joined[i]
+            ),
+            None,
+        ),
     }
     mapping["header_depth"] = header_depth
     return mapping if mapping["ward_res"] is not None else None
@@ -250,8 +316,11 @@ def parse_mapped(path, year):
                 # drop the rows that *are* the header, or "Name of District"
                 # ends up recorded as a district and the header's explanatory
                 # sentence as a reservation value
-                body = extracted[found_here["header_depth"]:] if found_here else extracted  # noqa: E501
+                body = (
+                    extracted[found_here["header_depth"] :] if found_here else extracted
+                )
                 for cells in body:
+
                     def cell(key):
                         i = mapping.get(key)
                         return cells[i] if i is not None and i < len(cells) else ""
@@ -259,11 +328,16 @@ def parse_mapped(path, year):
                     # the district column often holds a serial number instead;
                     # only accept something with letters in it
                     found = cell("district")
-                    if (found and re.search(r"[A-Za-z]{3}", found)
-                            and not emit.is_header_text(found)):
+                    if (
+                        found
+                        and re.search(r"[A-Za-z]{3}", found)
+                        and not emit.is_header_text(found)
+                    ):
                         district = found
-                    for name, value in (("block", cell("block")),
-                                        ("halqa", cell("halqa"))):
+                    for name, value in (
+                        ("block", cell("block")),
+                        ("halqa", cell("halqa")),
+                    ):
                         if value and not emit.is_header_text(value):
                             if name == "block":
                                 block = value
@@ -274,32 +348,54 @@ def parse_mapped(path, year):
                     if not ward_no or not re.match(r"^[IVXLC]+$|^\d+$", ward_no):
                         continue
                     base = {
-                        "state": "Jammu & Kashmir", "year": year,
-                        "district": district, "block": block, "halqa": halqa,
+                        "state": "Jammu & Kashmir",
+                        "year": year,
+                        "district": district,
+                        "block": block,
+                        "halqa": halqa,
                         "listing_scope": LISTING_SCOPE.get(year, "all_seats"),
-                        "pop_sc": "", "pop_st": "", "pop_oc": "", "pop_total": "",
+                        "pop_sc": "",
+                        "pop_st": "",
+                        "pop_oc": "",
+                        "pop_total": "",
                     }
                     sc = mapping.get("pop_sc")
                     if sc is not None and sc + 3 < len(cells):
-                        base.update(pop_sc=cells[sc], pop_st=cells[sc + 1],
-                                    pop_oc=cells[sc + 2], pop_total=cells[sc + 3])
+                        base.update(
+                            pop_sc=cells[sc],
+                            pop_st=cells[sc + 1],
+                            pop_oc=cells[sc + 2],
+                            pop_total=cells[sc + 3],
+                        )
 
-                    for key, tier in (("ward_res", "ward"),
-                                      ("sarpanch_res", "sarpanch")):
+                    for key, tier in (
+                        ("ward_res", "ward"),
+                        ("sarpanch_res", "sarpanch"),
+                    ):
                         raw = cell(key)
                         parsed = normalize_reservation(raw)
                         if not parsed:
                             continue
                         caste, woman, script = parsed
-                        rows.append(emit.stamp(dict(
-                            base,
-                            ward_no=ward_no if tier == "ward" else "",
-                            ward_name=ward_name if tier == "ward" else "",
-                            tier=canon.tier_of(tier, "Jammu & Kashmir"),
-                            tier_local=tier, reservation=label(caste, woman),
-                            caste_reservation=caste, woman_reserved=woman,
-                            reservation_raw=raw, script=script,
-                        ), path, page.page_number, ROOT))
+                        rows.append(
+                            emit.stamp(
+                                dict(
+                                    base,
+                                    ward_no=ward_no if tier == "ward" else "",
+                                    ward_name=ward_name if tier == "ward" else "",
+                                    tier=canon.tier_of(tier, "Jammu & Kashmir"),
+                                    tier_local=tier,
+                                    reservation=label(caste, woman),
+                                    caste_reservation=caste,
+                                    woman_reserved=woman,
+                                    reservation_raw=raw,
+                                    script=script,
+                                ),
+                                path,
+                                page.page_number,
+                                ROOT,
+                            )
+                        )
     return rows
 
 
@@ -337,8 +433,7 @@ def fill_place(rows, path):
         # in the column - and it survived because it was not blank. The roster
         # is closed, so anything outside it is boilerplate, not a place.
         current = (row.get("district") or "").strip()
-        if current and not any(current.lower() == d.lower()
-                               for d in DISTRICT_ROSTER):
+        if current and not any(current.lower() == d.lower() for d in DISTRICT_ROSTER):
             current = ""
         if not current:
             row["district"] = district
@@ -368,24 +463,43 @@ def parse_generic(path, year, layout):
                     block = carry(cells, layout.get("block"), block)
                     halqa = carry(cells, layout.get("halqa"), halqa)
                     ward_no = cells[layout["ward_no"]]
-                    ward_name = (cells[layout["ward_name"]]
-                                 if layout.get("ward_name") is not None else "")
+                    ward_name = (
+                        cells[layout["ward_name"]]
+                        if layout.get("ward_name") is not None
+                        else ""
+                    )
                     parsed = normalize_reservation(cells[layout["reservation"]])
                     if not parsed or not ward_no:
                         continue
                     caste, woman, script = parsed
-                    rows.append(emit.stamp({
-                        "state": "Jammu & Kashmir", "year": year,
-                        "district": district, "block": block, "halqa": halqa,
-                        "ward_no": ward_no, "ward_name": ward_name,
-                        "tier": "gp_ward", "tier_local": "ward",
-                        "reservation": label(caste, woman),
-                        "caste_reservation": caste, "woman_reserved": woman,
-                        "listing_scope": LISTING_SCOPE.get(year, "all_seats"),
-                        "pop_sc": "", "pop_st": "", "pop_oc": "", "pop_total": "",
-                        "reservation_raw": cells[layout["reservation"]],
-                        "script": script,
-                    }, path, page.page_number, ROOT))
+                    rows.append(
+                        emit.stamp(
+                            {
+                                "state": "Jammu & Kashmir",
+                                "year": year,
+                                "district": district,
+                                "block": block,
+                                "halqa": halqa,
+                                "ward_no": ward_no,
+                                "ward_name": ward_name,
+                                "tier": "gp_ward",
+                                "tier_local": "ward",
+                                "reservation": label(caste, woman),
+                                "caste_reservation": caste,
+                                "woman_reserved": woman,
+                                "listing_scope": LISTING_SCOPE.get(year, "all_seats"),
+                                "pop_sc": "",
+                                "pop_st": "",
+                                "pop_oc": "",
+                                "pop_total": "",
+                                "reservation_raw": cells[layout["reservation"]],
+                                "script": script,
+                            },
+                            path,
+                            page.page_number,
+                            ROOT,
+                        )
+                    )
     return rows
 
 
@@ -394,8 +508,14 @@ LAYOUTS = {
     "2010": {"halqa": 1, "ward_no": 2, "ward_name": 3, "reservation": 4},
     # District no | District | Block no | Block | Halqa no | Halqa | Panch no |
     # Panch name | Reservation
-    "2018": {"district": 1, "block": 3, "halqa": 5, "ward_no": 6,
-             "ward_name": 7, "reservation": 8},
+    "2018": {
+        "district": 1,
+        "block": 3,
+        "halqa": 5,
+        "ward_no": 6,
+        "ward_name": 7,
+        "reservation": 8,
+    },
 }
 
 
@@ -424,8 +544,11 @@ def main():
                 empty.append(path.name)
             fill_place(got, path)
             rows += got
-            print(f"\r  {year} {path.name[:40]:40s} rows={len(rows)}",
-                  end="", file=sys.stderr)
+            print(
+                f"\r  {year} {path.name[:40]:40s} rows={len(rows)}",
+                end="",
+                file=sys.stderr,
+            )
         print(file=sys.stderr)
 
         by_tier = collections.defaultdict(list)
@@ -436,13 +559,17 @@ def main():
             csv_path, _ = emit.write(subset, stem, COLUMNS)
             women = sum(r["woman_reserved"] for r in subset)
             districts = {r["district"] for r in subset if r["district"]}
-            print(f"{year} {tier:9s} {len(subset):6d} seats  "
-                  f"{len(districts):2d} districts  "
-                  f"women {women / max(len(subset), 1) * 100:4.1f}%  "
-                  f"-> {csv_path.name}")
+            print(
+                f"{year} {tier:9s} {len(subset):6d} seats  "
+                f"{len(districts):2d} districts  "
+                f"women {women / max(len(subset), 1) * 100:4.1f}%  "
+                f"-> {csv_path.name}"
+            )
         if empty:
-            print(f"     no rows from {len(empty)} of "
-                  f"{len(list(directory.glob('*.pdf')))} files")
+            print(
+                f"     no rows from {len(empty)} of "
+                f"{len(list(directory.glob('*.pdf')))} files"
+            )
         if failed:
             print(f"     unreadable: {failed[:4]}")
 

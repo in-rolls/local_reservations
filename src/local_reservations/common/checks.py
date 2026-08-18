@@ -27,8 +27,7 @@ import subprocess
 from local_reservations.common import dictionary
 
 CASTES = {"SC", "ST", "BC", "NONE"}
-SEAT_KEY = ("state", "year", "tier", "district", "block", "gram_panchayat",
-            "ward_no")
+SEAT_KEY = ("state", "year", "tier", "district", "block", "gram_panchayat", "ward_no")
 
 
 def pct(part, whole):
@@ -79,6 +78,7 @@ class Report:
 
 # ------------------------------------------------------------- structural
 
+
 def structural(report, rows, root, key=SEAT_KEY, required=()):
     """The checks that hold for every state regardless of its quirks."""
     report.section("Structural")
@@ -91,8 +91,11 @@ def structural(report, rows, root, key=SEAT_KEY, required=()):
     report.check(not missing, "required columns present", f"missing {sorted(missing)}")
 
     bad_caste = [r for r in rows if r.get("caste_reservation") not in CASTES]
-    report.check(not bad_caste, "caste_reservation in {SC, ST, BC, NONE}",
-                 f"{len(bad_caste)} rows")
+    report.check(
+        not bad_caste,
+        "caste_reservation in {SC, ST, BC, NONE}",
+        f"{len(bad_caste)} rows",
+    )
 
     bad_woman = [r for r in rows if str(r.get("woman_reserved")) not in ("0", "1")]
     report.check(not bad_woman, "woman_reserved in {0, 1}", f"{len(bad_woman)} rows")
@@ -100,14 +103,22 @@ def structural(report, rows, root, key=SEAT_KEY, required=()):
     # The label is written separately from the two fields it summarises, so the
     # two can silently disagree; that would surface as a contradiction only for
     # whoever reads the label.
-    mismatched = [r for r in rows if r.get("reservation") and
-                  r["reservation"] != _label(r.get("caste_reservation"),
-                                             str(r.get("woman_reserved")) == "1")]
-    report.check(not mismatched, "reservation label agrees with its two fields",
-                 f"{len(mismatched)} rows")
+    mismatched = [
+        r
+        for r in rows
+        if r.get("reservation")
+        and r["reservation"]
+        != _label(r.get("caste_reservation"), str(r.get("woman_reserved")) == "1")
+    ]
+    report.check(
+        not mismatched,
+        "reservation label agrees with its two fields",
+        f"{len(mismatched)} rows",
+    )
 
-    blank = [r for r in rows if not r.get("state") or not r.get("year")
-             or not r.get("tier")]
+    blank = [
+        r for r in rows if not r.get("state") or not r.get("year") or not r.get("tier")
+    ]
     report.check(not blank, "no blank state/year/tier", f"{len(blank)} rows")
 
     # J&K calls it halqa; without the alias the key degrades to
@@ -123,9 +134,12 @@ def structural(report, rows, root, key=SEAT_KEY, required=()):
     present = [f for f in key if f in columns]
     counts = collections.Counter(tuple(r.get(f, "") for f in present) for r in rows)
     duplicates = [k for k, n in counts.items() if n > 1]
-    report.check(not duplicates, f"seat key unique on {present}",
-                 f"{len(duplicates)} duplicated, e.g. {duplicates[:2]}",
-                 hard=False)
+    report.check(
+        not duplicates,
+        f"seat key unique on {present}",
+        f"{len(duplicates)} duplicated, e.g. {duplicates[:2]}",
+        hard=False,
+    )
 
 
 def provenance(report, rows, root):
@@ -133,8 +147,11 @@ def provenance(report, rows, root):
     report.section("Provenance")
     paths = collections.Counter(r.get("source_path", "") for r in rows)
     missing = [p for p in paths if not p or not (pathlib.Path(root) / p).exists()]
-    report.check(not missing, "every source_path exists on disk",
-                 f"{len(missing)} missing, e.g. {missing[:2]}")
+    report.check(
+        not missing,
+        "every source_path exists on disk",
+        f"{len(missing)} missing, e.g. {missing[:2]}",
+    )
 
     # page numbers are cheap to get wrong by an off-by-one and impossible to
     # notice later, so check them against the real page count
@@ -146,34 +163,48 @@ def provenance(report, rows, root):
         total = _page_count(full)
         if not total:
             continue
-        worst = max((int(r["source_page"]) for r in rows
-                     if r.get("source_path") == path
-                     and str(r.get("source_page", "")).isdigit()), default=0)
+        worst = max(
+            (
+                int(r["source_page"])
+                for r in rows
+                if r.get("source_path") == path
+                and str(r.get("source_page", "")).isdigit()
+            ),
+            default=0,
+        )
         if worst > total:
             overruns.append((path, worst, total))
-    report.check(not overruns, "source_page within the document",
-                 f"{len(overruns)} overrun, e.g. {overruns[:2]}")
+    report.check(
+        not overruns,
+        "source_page within the document",
+        f"{len(overruns)} overrun, e.g. {overruns[:2]}",
+    )
 
 
 # --------------------------------------------------------------- coverage
+
 
 def coverage(report, rows, published=None, unit="seats"):
     report.section("Coverage")
     districts = {r.get("district") for r in rows if r.get("district")}
     blocks = {(r.get("district"), r.get("block")) for r in rows if r.get("block")}
-    report.info(f"{len(rows):,} {unit}",
-                f"{len(blocks)} blocks, {len(districts)} districts")
+    report.info(
+        f"{len(rows):,} {unit}", f"{len(blocks)} blocks, {len(districts)} districts"
+    )
     if published:
         share = 100.0 * len(rows) / published
-        report.check(share >= 90, f"{unit} against the published total",
-                     f"{len(rows):,} of {published:,} ({share:.1f}%)",
-                     hard=False)
+        report.check(
+            share >= 90,
+            f"{unit} against the published total",
+            f"{len(rows):,} of {published:,} ({share:.1f}%)",
+            hard=False,
+        )
 
 
 # ------------------------------------------------------------ substantive
 
-def women_share(report, rows, floor=None, target=None, tolerance=0.05,
-                note=""):
+
+def women_share(report, rows, floor=None, target=None, tolerance=0.05, note=""):
     """Check the women's share against the statute.
 
     `floor` for "not less than one third" - the constitutional wording, so a
@@ -184,13 +215,17 @@ def women_share(report, rows, floor=None, target=None, tolerance=0.05,
     women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
     share = women / len(rows) if rows else 0
     if floor is not None:
-        report.check(share >= floor - 0.02,
-                     f"women's share at or above the {floor:.0%} floor",
-                     f"{women}/{len(rows)} = {share:.1%} {note}")
+        report.check(
+            share >= floor - 0.02,
+            f"women's share at or above the {floor:.0%} floor",
+            f"{women}/{len(rows)} = {share:.1%} {note}",
+        )
     elif target is not None:
-        report.check(abs(share - target) <= tolerance,
-                     f"women's share within {tolerance:.0%} of {target:.0%}",
-                     f"{women}/{len(rows)} = {share:.1%} {note}")
+        report.check(
+            abs(share - target) <= tolerance,
+            f"women's share within {tolerance:.0%} of {target:.0%}",
+            f"{women}/{len(rows)} = {share:.1%} {note}",
+        )
 
 
 def share_by_group(report, rows, group, target, tolerance=0.06, label=""):
@@ -205,21 +240,26 @@ def share_by_group(report, rows, group, target, tolerance=0.06, label=""):
         grouped[tuple(row.get(g, "") for g in group)].append(row)
     off = []
     for key, subset in grouped.items():
-        share = sum(1 for r in subset
-                    if str(r.get("woman_reserved")) == "1") / len(subset)
+        share = sum(1 for r in subset if str(r.get("woman_reserved")) == "1") / len(
+            subset
+        )
         if abs(share - target) > tolerance:
             off.append((key, len(subset), share))
-    report.check(len(off) <= 0.1 * max(len(grouped), 1),
-                 f"per-{label or '/'.join(group)} share within "
-                 f"{tolerance:.0%} of {target:.0%}",
-                 f"{len(off)} of {len(grouped)} off", hard=False)
+    report.check(
+        len(off) <= 0.1 * max(len(grouped), 1),
+        f"per-{label or '/'.join(group)} share within {tolerance:.0%} of {target:.0%}",
+        f"{len(off)} of {len(grouped)} off",
+        hard=False,
+    )
     for key, size, share in sorted(off, key=lambda x: -abs(x[2] - target))[:5]:
-        print(f"        {'/'.join(str(k) for k in key if k):34s} "
-              f"n={size:4d}  {share:.0%}")
+        print(
+            f"        {'/'.join(str(k) for k in key if k):34s} n={size:4d}  {share:.0%}"
+        )
     return off
 
 
 # ----------------------------------------------------------------- helpers
+
 
 def _label(caste, woman):
     prefix = {"SC": "SC", "ST": "ST", "BC": "BC", "NONE": ""}.get(caste or "NONE", "")
@@ -233,8 +273,9 @@ def _page_count(path):
     key = str(path)
     if key not in _PAGES:
         try:
-            out = subprocess.run(["pdfinfo", key], capture_output=True,
-                                 text=True, timeout=60).stdout
+            out = subprocess.run(
+                ["pdfinfo", key], capture_output=True, text=True, timeout=60
+            ).stdout
             found = re.search(r"^Pages:\s+(\d+)", out, re.M)
             _PAGES[key] = int(found.group(1)) if found else 0
         except (subprocess.SubprocessError, OSError):

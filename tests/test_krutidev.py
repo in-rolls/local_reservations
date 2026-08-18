@@ -33,22 +33,22 @@ def test_the_reservation_vocabulary_converts(raw, expected):
 # Jharkhand districts and blocks. Checkable against the world rather than
 # against ourselves, which is the only kind of check worth much here.
 PLACES = [
-    ("/kuckn", "धनबाद"),          # Dhanbad
-    ("jkaph", "रांची"),            # Ranchi
-    ("gtkjhckx", "हजारीबाग"),      # Hazaribagh
-    ("nso?kj", "देवघर"),           # Deoghar
-    ("fxfjMhg", "गिरिडीह"),        # Giridih
-    ("yksgjnxk", "लोहरदगा"),       # Lohardaga
-    ("x<+ok", "गढ़वा"),            # Garhwa
-    ("cksdkjks", "बोकारो"),        # Bokaro
-    ("fleMsxk", "सिमडेगा"),        # Simdega
-    ("ikdqM+", "पाकुड़"),          # Pakur
-    ("tkerkM+k", "जामताड़ा"),      # Jamtara
-    ("jkex<+", "रामगढ़"),          # Ramgarh
-    ("[kwaVh", "खूंटी"),           # Khunti
-    ("iwohZ flagHkwe", "पूर्वी सिंहभूम"),   # East Singhbhum
-    ("xksfe;k", "गोमिया"),         # Gomia block
-    ("pkl", "चास"),                # Chas block
+    ("/kuckn", "धनबाद"),  # Dhanbad
+    ("jkaph", "रांची"),  # Ranchi
+    ("gtkjhckx", "हजारीबाग"),  # Hazaribagh
+    ("nso?kj", "देवघर"),  # Deoghar
+    ("fxfjMhg", "गिरिडीह"),  # Giridih
+    ("yksgjnxk", "लोहरदगा"),  # Lohardaga
+    ("x<+ok", "गढ़वा"),  # Garhwa
+    ("cksdkjks", "बोकारो"),  # Bokaro
+    ("fleMsxk", "सिमडेगा"),  # Simdega
+    ("ikdqM+", "पाकुड़"),  # Pakur
+    ("tkerkM+k", "जामताड़ा"),  # Jamtara
+    ("jkex<+", "रामगढ़"),  # Ramgarh
+    ("[kwaVh", "खूंटी"),  # Khunti
+    ("iwohZ flagHkwe", "पूर्वी सिंहभूम"),  # East Singhbhum
+    ("xksfe;k", "गोमिया"),  # Gomia block
+    ("pkl", "चास"),  # Chas block
 ]
 
 
@@ -83,7 +83,7 @@ def test_the_o_matra_is_one_codepoint_not_two():
 
 
 def test_longest_match_wins():
-    """"Hk" is भ, not ह + क. One byte at a time silently produces a different
+    """ "Hk" is भ, not ह + क. One byte at a time silently produces a different
     and perfectly plausible word."""
     assert krutidev.to_unicode("Hk") == "भ"
     assert krutidev.to_unicode("{k") == "क्ष"

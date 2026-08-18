@@ -1,9 +1,9 @@
 """Measure the Jharkhand parse against a recorded baseline.
 
-    uv run python -m local_reservations.tools.jharkhand/bench.py --record    # store
+    uv run python -m local_reservations.states.jharkhand.bench --record    # store
     what the code does now
     ...make a change...
-    uv run python -m local_reservations.tools.jharkhand/bench.py             # print the
+    uv run python -m local_reservations.states.jharkhand.bench             # print the
     gates
 
 Written because this branch's OCR change passed every check it had and still
@@ -56,8 +56,11 @@ TIERS = ("mukhiya", "panchayat_samiti", "ward_member", "zila_parishad")
 # homework.
 PUBLISHED = {"mukhiya": 4345, "panchayat_samiti": 5423, "zila_parishad": 545}
 
-DIAGNOSE = {"CHATRA MUKHIYA PSS GPS ZP.pdf", "LATEHAR MUKHIYA PSS GPS ZP.pdf",
-            "KODERMA MUKHIYA PSS GPS ZP.pdf"}
+DIAGNOSE = {
+    "CHATRA MUKHIYA PSS GPS ZP.pdf",
+    "LATEHAR MUKHIYA PSS GPS ZP.pdf",
+    "KODERMA MUKHIYA PSS GPS ZP.pdf",
+}
 
 NO_PANCHAYAT = ("panchayat_samiti", "zila_parishad")
 
@@ -76,12 +79,15 @@ def scanned():
     Those are what an OCR change cannot touch, so those are REGRESSION.
     """
     import importlib.util
+
     spec = importlib.util.spec_from_file_location(
-        "jh_parse", pathlib.Path(__file__).resolve().parent / "parse.py")
+        "jh_parse", pathlib.Path(__file__).resolve().parent / "parse.py"
+    )
     parse = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(parse)
-    return {p.stem + ".pdf" for p in (JH / "ocr").glob("*.txt")
-            if parse.model_read_it(p)}
+    return {
+        p.stem + ".pdf" for p in (JH / "ocr").glob("*.txt") if parse.model_read_it(p)
+    }
 
 
 def rows():
@@ -111,8 +117,9 @@ def complete(row):
     if not (number or "").strip():
         return False
     if tier in NO_PANCHAYAT:
-        return bool((row.get("block_no") or "").strip()
-                    or (row.get("block") or "").strip())
+        return bool(
+            (row.get("block_no") or "").strip() or (row.get("block") or "").strip()
+        )
     return bool(canon.unit_name(row)) and bool((row.get("block_no") or "").strip())
 
 
@@ -130,7 +137,8 @@ def measure():
             "rows": len(subset),
             "complete": sum(1 for r in subset if complete(r)),
             "complete_share": round(
-                sum(1 for r in subset if complete(r)) / max(len(subset), 1), 4),
+                sum(1 for r in subset if complete(r)) / max(len(subset), 1), 4
+            ),
             "by_tier": dict(per_tier),
         }
 
@@ -158,8 +166,11 @@ def measure():
                 if seat:
                     per_district[row.get("district", "")][seat] += 1
             entry["impossible_excess"] = sum(
-                n - 1 for seats in per_district.values()
-                for n in seats.values() if n > 1)
+                n - 1
+                for seats in per_district.values()
+                for n in seats.values()
+                if n > 1
+            )
         if tier in PUBLISHED and subset:
             coverage = len(subset) / PUBLISHED[tier]
             entry["coverage"] = round(coverage, 4)
@@ -182,63 +193,78 @@ def gates(before, after):
         a = after["splits"].get(split, {})
         was, now = b.get("complete_share", 0), a.get("complete_share", 0)
         label = "in-sample" if split == "DIAGNOSE" else "out-of-sample"
-        gate(f"{label} ({split})", now >= was - 0.001,
-             f"complete {was:.1%} -> {now:.1%}")
+        gate(
+            f"{label} ({split})", now >= was - 0.001, f"complete {was:.1%} -> {now:.1%}"
+        )
 
     b = before["splits"].get("REGRESSION", {})
     a = after["splits"].get("REGRESSION", {})
-    same = (b.get("rows") == a.get("rows")
-            and b.get("complete") == a.get("complete"))
-    gate("no degradation (REGRESSION)", same,
-         f"{b.get('rows', 0):,} rows/{b.get('complete', 0):,} complete -> "
-         f"{a.get('rows', 0):,}/{a.get('complete', 0):,}"
-         + ("" if same else "  <- digital-text documents must not move"))
+    same = b.get("rows") == a.get("rows") and b.get("complete") == a.get("complete")
+    gate(
+        "no degradation (REGRESSION)",
+        same,
+        f"{b.get('rows', 0):,} rows/{b.get('complete', 0):,} complete -> "
+        f"{a.get('rows', 0):,}/{a.get('complete', 0):,}"
+        + ("" if same else "  <- digital-text documents must not move"),
+    )
 
     for tier, entry in after["tiers"].items():
         was = before["tiers"].get(tier, {})
         if "coverage_distance" not in entry or "coverage_distance" not in was:
             continue
-        gate(f"closeness to published ({tier})",
-             entry["coverage_distance"] <= was["coverage_distance"] + 0.001,
-             f"|coverage-1| {was['coverage_distance']:.3f} -> "
-             f"{entry['coverage_distance']:.3f} "
-             f"(coverage {was.get('coverage', 0):.1%} -> {entry['coverage']:.1%})")
+        gate(
+            f"closeness to published ({tier})",
+            entry["coverage_distance"] <= was["coverage_distance"] + 0.001,
+            f"|coverage-1| {was['coverage_distance']:.3f} -> "
+            f"{entry['coverage_distance']:.3f} "
+            f"(coverage {was.get('coverage', 0):.1%} -> {entry['coverage']:.1%})",
+        )
 
     for tier, entry in after["tiers"].items():
         was = before["tiers"].get(tier, {}).get("impossible_excess")
         if was is None:
             continue
-        gate(f"impossible rows ({tier})", entry["impossible_excess"] <= was,
-             f"{was:,} -> {entry['impossible_excess']:,}")
+        gate(
+            f"impossible rows ({tier})",
+            entry["impossible_excess"] <= was,
+            f"{was:,} -> {entry['impossible_excess']:,}",
+        )
     return ok, lines
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--record", action="store_true",
-                    help="store the current measurement as the baseline")
+    ap.add_argument(
+        "--record",
+        action="store_true",
+        help="store the current measurement as the baseline",
+    )
     args = ap.parse_args()
 
     now = measure()
     if args.record:
         BASELINE.parent.mkdir(parents=True, exist_ok=True)
-        BASELINE.write_text(json.dumps(now, indent=1, sort_keys=True) + "\n",
-                            encoding="utf-8")
+        BASELINE.write_text(
+            json.dumps(now, indent=1, sort_keys=True) + "\n", encoding="utf-8"
+        )
         print(f"baseline -> {BASELINE.relative_to(ROOT)}")
         for split, entry in sorted(now["splits"].items()):
-            print(f"  {split:<11} {entry['rows']:>7,} rows  "
-                  f"{entry['complete_share']:>6.1%} complete")
+            print(
+                f"  {split:<11} {entry['rows']:>7,} rows  "
+                f"{entry['complete_share']:>6.1%} complete"
+            )
         return 0
 
     if not BASELINE.exists():
-        print(f"no baseline at {BASELINE.relative_to(ROOT)}; "
-              f"run with --record first")
+        print(f"no baseline at {BASELINE.relative_to(ROOT)}; run with --record first")
         return 2
     before = json.loads(BASELINE.read_text(encoding="utf-8"))
     ok, lines = gates(before, now)
     print("\n".join(lines))
-    print(f"\n{'OK' if ok else 'FAILED'}: "
-          f"{sum(1 for line_ in lines if '[FAIL]' in line_)} gate(s) failed")
+    print(
+        f"\n{'OK' if ok else 'FAILED'}: "
+        f"{sum(1 for line_ in lines if '[FAIL]' in line_)} gate(s) failed"
+    )
     return 0 if ok else 1
 
 

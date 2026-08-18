@@ -62,13 +62,12 @@ WOMAN = {"महिला": 1, "पुरुष": 0}
 
 def unnumber(value):
     got = NUMBERED.match(value or "")
-    return (got.group(1), got.group(2).strip()) if got \
-        else ("", (value or "").strip())
+    return (got.group(1), got.group(2).strip()) if got else ("", (value or "").strip())
 
 
 def slices(root):
     root = pathlib.Path(root)
-    csv.field_size_limit(10 ** 7)
+    csv.field_size_limit(10**7)
 
     for year, relative in sorted(SEAT_FILES.items()):
         rows = read(root / relative, year, DECLARED[year])
@@ -78,7 +77,8 @@ def slices(root):
         check(year, len(seats), SEATS[year], "seats")
         yield {
             "dataset_id": f"uttar_pradesh/gp_head/{year}",
-            "state": STATE, "rows": seats,
+            "state": STATE,
+            "rows": seats,
             # 2010 kept the file and the page it was read from; 2005 kept only
             # the page, so it can be traced to a document and no further
             "provenance_level": "page" if year == "2010" else "document",
@@ -90,15 +90,21 @@ def slices(root):
     if rows is None:
         return
     candidates = [candidate_row(r, year, relative) for r in rows]
-    seats = collapse.to_seats(candidates, ["_key"], winner_field="result",
-                              winner_value=WINNER, runner_up_value=RUNNER_UP)
+    seats = collapse.to_seats(
+        candidates,
+        ["_key"],
+        winner_field="result",
+        winner_value=WINNER,
+        runner_up_value=RUNNER_UP,
+    )
     check(year, len(seats), SEATS[year], "seats")
     for seat in seats:
         for row in [seat] + seat["seat_members"]:
             row.pop("_key", None)
     yield {
         "dataset_id": f"uttar_pradesh/gp_head/{year}",
-        "state": STATE, "rows": seats,
+        "state": STATE,
+        "rows": seats,
         # the scrape recorded neither a document nor a page
         "provenance_level": "dataset",
         "unit_of_observation": "seat_from_candidates",
@@ -116,8 +122,10 @@ def read(path, year, expected):
 
 def check(year, got, expected, what):
     if expected is not None and got != expected:
-        raise SystemExit(f"{REPO}: {year} holds {got:,} {what}, {expected:,} "
-                         f"declared - the sibling changed")
+        raise SystemExit(
+            f"{REPO}: {year} holds {got:,} {what}, {expected:,} "
+            f"declared - the sibling changed"
+        )
 
 
 def seat_row(row, year, relative):
@@ -128,11 +136,13 @@ def seat_row(row, year, relative):
     caste = None if stated.lower() == "unknown" else normalize.caste_of(stated)
     woman = None if caste is None else normalize.woman_of(stated)
     return {
-        "state": STATE, "year": year, "tier": "gp_head", "tier_local": "pradhan",
+        "state": STATE,
+        "year": year,
+        "tier": "gp_head",
+        "tier_local": "pradhan",
         "district": (row.get("district_name") or "").strip(),
         "block": (row.get("block_name") or "").strip(),
-        "gram_panchayat": (row.get("gp_name_fin")
-                           or row.get("gp_name") or "").strip(),
+        "gram_panchayat": (row.get("gp_name_fin") or row.get("gp_name") or "").strip(),
         "caste_reservation": caste or "",
         "caste_reservation_local": stated,
         "woman_reserved": "" if caste is None else int(woman == 1),
@@ -147,21 +157,31 @@ def seat_row(row, year, relative):
         # distinguish "a seat reserved for a scheduled caste" from "a
         # scheduled-caste person won", which is most of what these data are
         # for.
-        "winner_caste": (row.get("candidate_res_status_fin")
-                         or row.get("candidate_res_status") or "").strip(),
-        "winner_gender": (row.get("cand_sex_fin")
-                          or row.get("sex") or "").strip(),
-        "winner_age": (row.get("age_fin") or row.get("age_t2")
-                       or row.get("age") or "").strip(),
-        "winner_education": (row.get("educ_fin_eng") or row.get("educ_fin")
-                             or row.get("education") or "").strip(),
+        "winner_caste": (
+            row.get("candidate_res_status_fin") or row.get("candidate_res_status") or ""
+        ).strip(),
+        "winner_gender": (row.get("cand_sex_fin") or row.get("sex") or "").strip(),
+        "winner_age": (
+            row.get("age_fin") or row.get("age_t2") or row.get("age") or ""
+        ).strip(),
+        "winner_education": (
+            row.get("educ_fin_eng") or row.get("educ_fin") or row.get("education") or ""
+        ).strip(),
         "relation_name": (row.get("husband_spouse_name") or "").strip(),
         # Read from the row rather than asserted. Hardcoding this shipped
         # 304,689 rows saying the wrong thing - see normalize.script_of.
         "script": normalize.script_of(
-            *(row.get(k) or "" for k in
-              ("elected_sarpanch_name", "gp_name_fin", "gp_name",
-               "district_name", "block_name"))),
+            *(
+                row.get(k) or ""
+                for k in (
+                    "elected_sarpanch_name",
+                    "gp_name_fin",
+                    "gp_name",
+                    "district_name",
+                    "block_name",
+                )
+            )
+        ),
         "source_path": relative,
         # 2010 names the file each row came from; 2005 gives only a page number,
         # which without a filename identifies nothing on its own
@@ -183,8 +203,13 @@ def candidate_row(row, year, relative):
     block = (row.get("block") or "").strip()
     return {
         "_key": (district, block, number, panchayat),
-        "state": STATE, "year": year, "tier": "gp_head", "tier_local": "pradhan",
-        "district": district, "block": block, "gram_panchayat": panchayat,
+        "state": STATE,
+        "year": year,
+        "tier": "gp_head",
+        "tier_local": "pradhan",
+        "district": district,
+        "block": block,
+        "gram_panchayat": panchayat,
         "seat_no": number,
         "caste_reservation": caste or "",
         "caste_reservation_local": stated,

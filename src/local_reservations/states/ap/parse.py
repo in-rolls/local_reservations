@@ -45,21 +45,48 @@ from local_reservations.paths import ROOT
 AP = ROOT / "data" / "ap" / "2020_res_gp"
 OCR_CACHE = ROOT / "data" / "ap" / "ocr"
 
-COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "serial",
-           "ward_no", "tier", "tier_local", "reservation", "caste_reservation",
-           "woman_reserved", "ward_count", "wards_parsed",
-           "ward_list_complete", "printings", "printings_agree",
-           "gender_stated", "ocr_repaired", "reservation_raw",
-           "script", "text_source"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "serial",
+    "ward_no",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "ward_count",
+    "wards_parsed",
+    "ward_list_complete",
+    "printings",
+    "printings_agree",
+    "gender_stated",
+    "ocr_repaired",
+    "reservation_raw",
+    "script",
+    "text_source",
+]
 
 # District codes in the filenames.
 DISTRICTS = {
-    "atp": "Anantapur", "est": "East Godavari", "kri": "Krishna",
-    "nlr": "Nellore", "pkm": "Prakasam",
+    "atp": "Anantapur",
+    "est": "East Godavari",
+    "kri": "Krishna",
+    "nlr": "Nellore",
+    "pkm": "Prakasam",
     # the archive names West Godavari "wg" where the other tiers use "wst"
-    "wg": "West Godavari", "wst": "West Godavari",
-    "kdp": "Kadapa", "ctr": "Chittoor", "gnt": "Guntur", "srk": "Srikakulam",
-    "vsp": "Visakhapatnam", "vzm": "Vizianagaram", "krl": "Kurnool",
+    "wg": "West Godavari",
+    "wst": "West Godavari",
+    "kdp": "Kadapa",
+    "ctr": "Chittoor",
+    "gnt": "Guntur",
+    "srk": "Srikakulam",
+    "vsp": "Visakhapatnam",
+    "vzm": "Vizianagaram",
+    "krl": "Kurnool",
 }
 
 # A reservation token, tolerant of the OCR substitutions actually observed:
@@ -93,7 +120,8 @@ CATEGORY = re.compile(
     # that way. (G) is damaged far more often than (W) here, so the two cannot
     # be treated symmetrically.
     r"|\s*[({\[/¢]?\s*[CcGgei€]{1,2}\s*[)}\]])?",
-    re.X)
+    re.X,
+)
 
 # A gram panchayat name: at least one run of letters. Used to tell a real record
 # from an abstract row, which is numbers all the way across.
@@ -115,8 +143,9 @@ def repair(token):
     original = token
     fixed = re.sub(r"\s+", " ", token).strip()
     fixed = "".join(CANONICAL.get(c, c) for c in fixed)
-    fixed = fixed.replace("{", "(").replace("[", "(").replace("}", ")").replace("]",
-            ")")
+    fixed = (
+        fixed.replace("{", "(").replace("[", "(").replace("}", ")").replace("]", ")")
+    )
     if "(" in fixed and ")" not in fixed:
         fixed += ")"
     # a closing bracket carrying no W is an open seat whose marker was mangled
@@ -141,13 +170,15 @@ def digits(token):
         return ""
     return mapped
 
+
 STANDALONE = re.compile(r"(?:(?<=\s)|^)([0-9tTlIiOo]{1,3})(?=\s|$)")
 
 # Every form the closed category vocabulary can legitimately take. Used only to
 # recognise an OCR-damaged sarpanch code in the one position the layout says a
 # code must be - never to invent one anywhere else.
-CANONICAL_CODES = [f"{c}{g}" for c in ("UR", "SC", "ST", "BC", "GN")
-                   for g in ("", "(W)", "(G)")]
+CANONICAL_CODES = [
+    f"{c}{g}" for c in ("UR", "SC", "ST", "BC", "GN") for g in ("", "(W)", "(G)")
+]
 
 
 def _distance(a, b):
@@ -158,8 +189,9 @@ def _distance(a, b):
     for i, x in enumerate(a, 1):
         current = [i]
         for j, y in enumerate(b, 1):
-            current.append(min(previous[j] + 1, current[j - 1] + 1,
-                               previous[j - 1] + (x != y)))
+            current.append(
+                min(previous[j] + 1, current[j - 1] + 1, previous[j - 1] + (x != y))
+            )
         previous = current
     return previous[-1]
 
@@ -215,11 +247,10 @@ def scan_line(line):
     # counting categories: Anantapur's gazette is sarpanch-only, with no ward
     # columns at all, so its records carry exactly one. What separates them is
     # that a record names a place and an abstract row is numbers across.
-    names = rest[:matches[0].start()].strip()
+    names = rest[: matches[0].start()].strip()
     if not names or not HAS_NAME.search(names):
         return None
-    return {"serial": head.group(1), "names": names, "rest": rest,
-            "matches": matches}
+    return {"serial": head.group(1), "names": names, "rest": rest, "matches": matches}
 
 
 # A code with one stray character stuck to its front, which is how this OCR
@@ -228,18 +259,22 @@ def scan_line(line):
 # recover_wards - never to find codes in the first place, because with the word
 # boundary relaxed this also matches inside ordinary names ("Sur-" would give
 # UR) and would start inventing wards out of place names.
-LOOSE = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]?(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]"
-                   r"|[Gg][Nn])\s*(?:[({\[/]\s*[WwVvGg]\s*[)}\]]?)?"
-                   # the match has to end at a word boundary as well as start
-                   # at one, or "Surareddypalem" yields a UR ward out of a
-                   # place name - which a truncated line can put in this region
-                   r"(?![A-Za-z])")
+LOOSE = re.compile(
+    r"(?<![A-Za-z0-9])[A-Za-z]?(?:[Uu][Rr]|[Ss5][CcTt]|[Bb8][Cc]"
+    r"|[Gg][Nn])\s*(?:[({\[/]\s*[WwVvGg]\s*[)}\]]?)?"
+    # the match has to end at a word boundary as well as start
+    # at one, or "Surareddypalem" yields a UR ward out of a
+    # place name - which a truncated line can put in this region
+    r"(?![A-Za-z])"
+)
 
 
 # A cell that no longer looks like a code at all. Used only after the looser
 # pattern has found nothing, and only up to the shortfall the record declares.
-ORPHAN = re.compile(r"(?<![A-Za-z])[A-Za-z]{2}(?:\s*[({\[/]\s*[WwGg]\s*[)}\]]?)?"
-                    r"(?![A-Za-z])")
+ORPHAN = re.compile(
+    r"(?<![A-Za-z])[A-Za-z]{2}(?:\s*[({\[/]\s*[WwGg]\s*[)}\]]?)?"
+    r"(?![A-Za-z])"
+)
 
 
 def recover_wards(region, spans, shortfall):
@@ -308,7 +343,7 @@ def apply_layout(record):
     """
     names, rest, matches = record["names"], record["rest"], record["matches"]
     found = list(STANDALONE.finditer(names))
-    trailing = names[found[-1].end():].strip() if found else ""
+    trailing = names[found[-1].end() :].strip() if found else ""
     count_first = bool(found) and (not trailing or bool(as_category(trailing)))
     place, panchayat, sarpanch_raw, ward_count = names, "", "", ""
     repaired = recovered = 0
@@ -316,7 +351,7 @@ def apply_layout(record):
     if count_first:
         last = found[-1]
         ward_count = digits(last.group(1))
-        place = names[:last.start()].strip()
+        place = names[: last.start()].strip()
         mended = as_category(trailing)
         if mended:
             sarpanch_raw, repaired = mended, 1
@@ -327,7 +362,7 @@ def apply_layout(record):
     else:
         sarpanch_raw = matches[0].group(0)
         wards = [m.group(0) for m in matches[1:]]
-        tail = rest[matches[0].end():].strip()
+        tail = rest[matches[0].end() :].strip()
         token = tail.split(" ")[0] if tail else ""
         ward_count = digits(token) if COUNT.match(token or "") else ""
         if found:
@@ -335,9 +370,9 @@ def apply_layout(record):
             # number between the two names, which is the only place any district
             # marks the boundary explicitly. Where it is there, use it.
             last = found[-1]
-            after = names[last.end():].strip()
+            after = names[last.end() :].strip()
             if after and HAS_NAME.search(after):
-                place, panchayat = names[:last.start()].strip(), after
+                place, panchayat = names[: last.start()].strip(), after
 
     # Bound the ward list by the count the record itself states. Reassembling
     # wrapped records means the buffer also picks up page furniture and stray
@@ -347,27 +382,38 @@ def apply_layout(record):
     if ward_count.isdigit() and int(ward_count) > 0:
         spans = [m.span() for m in matches]
         start = matches[0].start() if count_first else matches[0].end()
-        extra = recover_wards(rest[start:], [(a - start, b - start)
-                                             for a, b in spans],
-                              int(ward_count) - len(wards))
+        extra = recover_wards(
+            rest[start:],
+            [(a - start, b - start) for a, b in spans],
+            int(ward_count) - len(wards),
+        )
         if extra:
-            ordered = [(m.start() - start, m.group(0)) for m in matches
-                       if m.start() >= start] + extra
+            ordered = [
+                (m.start() - start, m.group(0)) for m in matches if m.start() >= start
+            ] + extra
             # matches before `start` are the sarpanch's own cell, already
             # excluded by the offset filter above - do not drop one again
             wards = [c for _, c in sorted(ordered)]
             recovered = len(extra)
-        wards = wards[:int(ward_count)]
+        wards = wards[: int(ward_count)]
     else:
         # No readable count on this record. The gazette's own header numbers
         # wards 1 to 20, so that is the ceiling; without it the reassembled
         # buffer keeps absorbing page furniture.
         wards = wards[:MAX_WARDS]
 
-    record.update({"mandal": "", "place": place, "panchayat": panchayat,
-                   "sarpanch_raw": sarpanch_raw, "ward_count": ward_count,
-                   "ward_raws": wards, "code_repaired": repaired,
-                   "wards_recovered": recovered})
+    record.update(
+        {
+            "mandal": "",
+            "place": place,
+            "panchayat": panchayat,
+            "sarpanch_raw": sarpanch_raw,
+            "ward_count": ward_count,
+            "ward_raws": wards,
+            "code_repaired": repaired,
+            "wards_recovered": recovered,
+        }
+    )
     return record
 
 
@@ -399,8 +445,11 @@ def mandal_vocabulary(names):
     for key, group in groups.items():
         vocabulary[key] = group[0][0]
         second = {w[1].lower() for w in group if len(w) > 1}
-        if (len(group) >= MIN_GROUP and len(second) == 1
-                and all(len(w) > 2 for w in group)):
+        if (
+            len(group) >= MIN_GROUP
+            and len(second) == 1
+            and all(len(w) > 2 for w in group)
+        ):
             vocabulary[key + " " + second.pop()] = " ".join(group[0][:2])
     return vocabulary
 
@@ -451,9 +500,10 @@ def split_names(records):
         # Podalakur. Allowing a single edit against a division already learnt
         # recognises it. This picks where the name starts; it does not rewrite
         # the name, which stays as printed.
-        if len(words) > 1 and (words[0].lower() in divisions or
-                               any(_distance(words[0].lower(), d) <= 1
-                                   for d in divisions)):
+        if len(words) > 1 and (
+            words[0].lower() in divisions
+            or any(_distance(words[0].lower(), d) <= 1 for d in divisions)
+        ):
             words = words[1:]
         record["mandal"] = " ".join(words)
 
@@ -505,8 +555,9 @@ def source_text(path):
     cached = OCR_CACHE / f"{path.stem}.txt"
     if cached.exists():
         return cached.read_text(encoding="utf-8"), "ocr"
-    return subprocess.run(["pdftotext", "-layout", str(path), "-"],
-                          capture_output=True, text=True).stdout, "embedded"
+    return subprocess.run(
+        ["pdftotext", "-layout", str(path), "-"], capture_output=True, text=True
+    ).stdout, "embedded"
 
 
 def parse_pdf(path):
@@ -536,12 +587,15 @@ def parse_pdf(path):
             continue
         caste, woman, script = got
         base = {
-            "state": "Andhra Pradesh", "year": "2020",
-            "district": district, "block": parsed["mandal"],
+            "state": "Andhra Pradesh",
+            "year": "2020",
+            "district": district,
+            "block": parsed["mandal"],
             "gram_panchayat": parsed["panchayat"],
             "ward_count": parsed["ward_count"],
             "wards_parsed": len(parsed["ward_raws"]),
-            "serial": parsed["serial"], "script": script,
+            "serial": parsed["serial"],
+            "script": script,
             "text_source": origin,
             # 1 when the ward list matches the count the record states, 0
             # when it does not, blank when the record states no count. 92% of
@@ -550,14 +604,28 @@ def parse_pdf(path):
             # ones, which are mostly lines the page cut off at its right edge.
             "ward_list_complete": (
                 int(len(parsed["ward_raws"]) == int(parsed["ward_count"]))
-                if parsed["ward_count"].isdigit() else ""),
+                if parsed["ward_count"].isdigit()
+                else ""
+            ),
         }
-        rows.append(emit.stamp(dict(
-            base, ward_no="", tier="gp_head", tier_local="sarpanch",
-            reservation=label(caste, woman), caste_reservation=caste,
-            woman_reserved=woman, ocr_repaired=repaired,
-            reservation_raw=parsed["sarpanch_raw"],
-        ), path, page_no, ROOT))
+        rows.append(
+            emit.stamp(
+                dict(
+                    base,
+                    ward_no="",
+                    tier="gp_head",
+                    tier_local="sarpanch",
+                    reservation=label(caste, woman),
+                    caste_reservation=caste,
+                    woman_reserved=woman,
+                    ocr_repaired=repaired,
+                    reservation_raw=parsed["sarpanch_raw"],
+                ),
+                path,
+                page_no,
+                ROOT,
+            )
+        )
 
         for index, raw in enumerate(parsed["ward_raws"], 1):
             fixed, repaired = repair(raw)
@@ -565,16 +633,31 @@ def parse_pdf(path):
             if not got:
                 continue
             caste, woman, script = got
-            rows.append(emit.stamp(dict(
-                base, ward_no=str(index), tier="gp_ward", tier_local="ward",
-                reservation=label(caste, woman), caste_reservation=caste,
-                woman_reserved=woman, ocr_repaired=int(repaired),
-                reservation_raw=raw, script=script,
-            ), path, page_no, ROOT))
+            rows.append(
+                emit.stamp(
+                    dict(
+                        base,
+                        ward_no=str(index),
+                        tier="gp_ward",
+                        tier_local="ward",
+                        reservation=label(caste, woman),
+                        caste_reservation=caste,
+                        woman_reserved=woman,
+                        ocr_repaired=int(repaired),
+                        reservation_raw=raw,
+                        script=script,
+                    ),
+                    path,
+                    page_no,
+                    ROOT,
+                )
+            )
     unstated = mark_gender_stated(rows)
     if unstated:
-        print(f"  {district}: {unstated:,} of {len(rows):,} rows state a caste "
-              f"but no gender", file=sys.stderr)
+        print(
+            f"  {unstated:,} of {len(rows):,} rows state a caste but no gender",
+            file=sys.stderr,
+        )
     return dedupe(rows)
 
 
@@ -624,8 +707,9 @@ def mark_gender_stated(rows):
         by_page[(row.get("source_pdf", ""), row.get("source_page", ""))].append(row)
 
     for page in by_page.values():
-        marks_open = sum(1 for r in page
-                         if OPEN_MARKER.search(r["reservation_raw"].strip()))
+        marks_open = sum(
+            1 for r in page if OPEN_MARKER.search(r["reservation_raw"].strip())
+        )
         both = marks_open > 0.05 * max(len(page), 1)
         for row in page:
             stated = bool(GENDER_MARKER.search(row["reservation_raw"].strip()))
@@ -653,20 +737,28 @@ def dedupe(rows):
     """
     groups = collections.OrderedDict()
     for row in rows:
-        key = (row["tier"], row["district"], row["block"].lower(),
-               row["gram_panchayat"].lower(), row["ward_no"])
+        key = (
+            row["tier"],
+            row["district"],
+            row["block"].lower(),
+            row["gram_panchayat"].lower(),
+            row["ward_no"],
+        )
         groups.setdefault(key, []).append(row)
     out = []
     for group in groups.values():
         # keep the statement that carries the most, so a seat listed in both the
         # sarpanch-only proforma and the ward table keeps its ward count
-        best = max(group, key=lambda r: (int(r["wards_parsed"] or 0),
-                                         -int(r["ocr_repaired"] or 0)))
+        best = max(
+            group,
+            key=lambda r: (int(r["wards_parsed"] or 0), -int(r["ocr_repaired"] or 0)),
+        )
         best["printings"] = len(group)
         # blank when there is nothing to compare, so "no second statement" is
         # never mistaken for "the two statements matched"
-        best["printings_agree"] = ("" if len(group) == 1 else
-                                   int(len({r["reservation"] for r in group}) == 1))
+        best["printings_agree"] = (
+            "" if len(group) == 1 else int(len({r["reservation"] for r in group}) == 1)
+        )
         out.append(best)
     return out
 
@@ -694,15 +786,18 @@ def main():
         women = sum(r["woman_reserved"] for r in subset)
         repaired = sum(r["ocr_repaired"] for r in subset)
         districts = {r["district"] for r in subset}
-        print(f"{tier:9s} {len(subset):6d} seats  {len(districts)} districts  "
-              f"women {women / max(len(subset), 1) * 100:4.1f}%  "
-              f"ocr-repaired {repaired / max(len(subset), 1) * 100:4.1f}%  "
-              f"-> {csv_path.name}")
+        print(
+            f"{tier:9s} {len(subset):6d} seats  {len(districts)} districts  "
+            f"women {women / max(len(subset), 1) * 100:4.1f}%  "
+            f"ocr-repaired {repaired / max(len(subset), 1) * 100:4.1f}%  "
+            f"-> {csv_path.name}"
+        )
 
     print("\nsarpanch reservation split:")
     total = max(len(by_tier["sarpanch"]), 1)
-    for k, v in collections.Counter(r["reservation"]
-                                    for r in by_tier["sarpanch"]).most_common():
+    for k, v in collections.Counter(
+        r["reservation"] for r in by_tier["sarpanch"]
+    ).most_common():
         print(f"   {v:6d}  {v / total * 100:5.1f}%  {k}")
 
 

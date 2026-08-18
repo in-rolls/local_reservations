@@ -21,15 +21,22 @@ from local_reservations.paths import ROOT
 # and this script already refuses - but it refused with "uncommitted changes",
 # which does not tell anyone that the readme was out of date. Naming them turns
 # a puzzle into an instruction.
-GENERATED = ["readme.md", "WORKLIST.md", "MANIFEST.json", "MANIFEST.md",
-             "DICTIONARY.md"]
+GENERATED = [
+    "readme.md",
+    "WORKLIST.md",
+    "MANIFEST.json",
+    "MANIFEST.md",
+    "DICTIONARY.md",
+]
 
 
 def dirty_files():
     """Paths git reports as changed, relative to the repository root."""
     out = subprocess.run(
         ["git", "-C", str(ROOT), "status", "--porcelain"],
-        capture_output=True, text=True).stdout
+        capture_output=True,
+        text=True,
+    ).stdout
     return [line[3:].strip() for line in out.splitlines() if line.strip()]
 
 
@@ -40,27 +47,31 @@ def main():
     problems = []
     if manifest.get("dirty"):
         changed = dirty_files()
-        stale = [f for f in changed
-                 if f in GENERATED or f.startswith("data/")]
+        stale = [f for f in changed if f in GENERATED or f.startswith("data/")]
         problems.append("this repository has uncommitted changes")
         for path in changed[:8]:
             note = ""
             if path in GENERATED:
-                note = "  <- generated; `make coverage` rebuilt it, so it was "\
-                       "out of date"
+                note = (
+                    "  <- generated; `make coverage` rebuilt it, so it was out of date"
+                )
             problems.append(f"    {path}{note}")
         if len(changed) > 8:
             problems.append(f"    ... and {len(changed) - 8} more")
         if stale:
-            problems.append("  commit these: a release pins file hashes, so a "
-                            "generated file that is not committed is not the "
-                            "one the manifest describes")
+            problems.append(
+                "  commit these: a release pins file hashes, so a "
+                "generated file that is not committed is not the "
+                "one the manifest describes"
+            )
     for sibling in manifest.get("sibling_repos", []):
         if sibling.get("dirty"):
             problems.append(f"{sibling['repo']} has uncommitted changes")
         if not sibling.get("present"):
-            problems.append(f"{sibling['repo']} is not checked out, so its "
-                            f"state is missing from this release")
+            problems.append(
+                f"{sibling['repo']} is not checked out, so its "
+                f"state is missing from this release"
+            )
 
     print()
     if problems:
@@ -70,20 +81,32 @@ def main():
         return 1
 
     rows = manifest["totals"].get("master_rows", 0)
-    states = len({s for f in manifest["files"]
-                  for s in f.get("states", []) if f.get("kind") == "master"})
-    print(f"Ready to tag: {rows:,} pooled seats across {states} states, "
-          f"{len(manifest['files'])} files pinned.")
+    states = len(
+        {
+            s
+            for f in manifest["files"]
+            for s in f.get("states", [])
+            if f.get("kind") == "master"
+        }
+    )
+    print(
+        f"Ready to tag: {rows:,} pooled seats across {states} states, "
+        f"{len(manifest['files'])} files pinned."
+    )
     if not version:
-        print("\nRe-run with a version to get the command:"
-              "\n  make release-check VERSION=v0.1.0")
+        print(
+            "\nRe-run with a version to get the command:"
+            "\n  make release-check VERSION=v0.1.0"
+        )
         return 0
-    print(f"\nRun this yourself - a tag cannot be taken back:\n"
-          f"  uv run build-manifest --release {version} && \\\n"
-          f"  git add MANIFEST.json MANIFEST.md && \\\n"
-          f"  git commit -m 'Release {version}' && \\\n"
-          f"  git tag -a {version} -m 'Release {version}' && \\\n"
-          f"  git push origin main {version}")
+    print(
+        f"\nRun this yourself - a tag cannot be taken back:\n"
+        f"  uv run build-manifest --release {version} && \\\n"
+        f"  git add MANIFEST.json MANIFEST.md && \\\n"
+        f"  git commit -m 'Release {version}' && \\\n"
+        f"  git tag -a {version} -m 'Release {version}' && \\\n"
+        f"  git push origin main {version}"
+    )
     return 0
 
 

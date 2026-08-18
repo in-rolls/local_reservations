@@ -20,8 +20,7 @@ def _find_root(start):
     for directory in [start, *start.parents]:
         if all((directory / marker).exists() for marker in _MARKERS):
             return directory
-    raise RuntimeError(
-        f"no repository root above {start}: looked for {_MARKERS}")
+    raise RuntimeError(f"no repository root above {start}: looked for {_MARKERS}")
 
 
 ROOT = _find_root(pathlib.Path(__file__).resolve())

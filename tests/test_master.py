@@ -5,20 +5,32 @@ import pytest
 from local_reservations.common import master as M
 
 BASE = {
-    "state": "Goa", "year": "2012", "tier": "gp_ward", "tier_local": "ward",
-    "district": "North Goa", "block": "Bardez", "gram_panchayat": "Anjuna",
-    "ward_no": "1", "caste_reservation": "NONE", "woman_reserved": "0",
-    "reservation": "Other than Woman", "reservation_raw": "G",
-    "script": "latin", "source_path": "data/goa/x.pdf", "source_page": "3",
+    "state": "Goa",
+    "year": "2012",
+    "tier": "gp_ward",
+    "tier_local": "ward",
+    "district": "North Goa",
+    "block": "Bardez",
+    "gram_panchayat": "Anjuna",
+    "ward_no": "1",
+    "caste_reservation": "NONE",
+    "woman_reserved": "0",
+    "reservation": "Other than Woman",
+    "reservation_raw": "G",
+    "script": "latin",
+    "source_path": "data/goa/x.pdf",
+    "source_page": "3",
 }
 
 
 def convert(**overrides):
-    return M.to_master(dict(BASE, **overrides), "goa/gp_ward/2012",
-                       "local_elections", "abc123", "page")
+    return M.to_master(
+        dict(BASE, **overrides), "goa/gp_ward/2012", "local_elections", "abc123", "page"
+    )
 
 
 # ------------------------------------------------------------- the coalesce
+
 
 def test_the_panchayat_column_records_which_term_the_source_used():
     row = convert()
@@ -27,9 +39,16 @@ def test_the_panchayat_column_records_which_term_the_source_used():
 
 def test_a_halqa_lands_in_the_same_column_and_says_so():
     row = M.to_master(
-        {**{k: v for k, v in BASE.items() if k != "gram_panchayat"},
-         "halqa": "Kupwara A", "state": "Jammu & Kashmir"},
-        "jk/gp_ward/2016", "local_elections", "abc123", "page")
+        {
+            **{k: v for k, v in BASE.items() if k != "gram_panchayat"},
+            "halqa": "Kupwara A",
+            "state": "Jammu & Kashmir",
+        },
+        "jk/gp_ward/2016",
+        "local_elections",
+        "abc123",
+        "page",
+    )
     assert (row["gram_panchayat"], row["gp_term"]) == ("Kupwara A", "halqa")
 
 
@@ -41,6 +60,7 @@ def test_naming_the_panchayat_twice_raises():
 
 
 # ------------------------------------------------------------------ row ids
+
 
 def test_a_row_id_is_stable_across_builds():
     assert M.row_id(convert(), 1) == M.row_id(convert(), 1)
@@ -59,6 +79,7 @@ def test_a_row_id_distinguishes_repeated_statements_of_one_seat():
 
 # ------------------------------------------------------------------- scope
 
+
 def test_an_urban_seat_is_not_pooled():
     """Kerala and Rajasthan ship urban wards in the same files as rural ones, so
     the filter has to be on the row rather than on which file it came from."""
@@ -68,13 +89,22 @@ def test_an_urban_seat_is_not_pooled():
 
 # ------------------------------------------------------------------- caste
 
+
 def test_the_local_caste_label_survives_the_fold():
     """Haryana reserves only Block A of its Backward Classes list. Folding that
     to BC is right for pooling and wrong to be the only thing recorded."""
     row = M.to_master(
-        dict(BASE, state="Haryana", caste_reservation="BC",
-             caste_reservation_local="BC_A"),
-        "haryana/gp_ward/2022", "local_elections_haryana", "def456", "document")
+        dict(
+            BASE,
+            state="Haryana",
+            caste_reservation="BC",
+            caste_reservation_local="BC_A",
+        ),
+        "haryana/gp_ward/2022",
+        "local_elections_haryana",
+        "def456",
+        "document",
+    )
     assert row["caste_reservation"] == "BC"
     assert row["caste_reservation_local"] == "BC_A"
     assert row["caste_scheme"] == "sc_st_bca_only"
@@ -88,6 +118,7 @@ def test_the_listing_scope_is_written_on_every_row():
 
 
 # ---------------------------------------------------------- quality flags
+
 
 def test_a_guessed_gender_is_flagged():
     """woman_reserved is 0 by default where the marker did not survive the
@@ -110,9 +141,17 @@ def test_a_clean_row_carries_no_flags():
 
 # ------------------------------------------------------------------ extras
 
+
 def test_state_specific_columns_go_long_form_rather_than_widening_the_table():
-    got = M.extras({"pop_sc": "412", "ward_count": "8", "state": "Goa",
-                    "gram_panchayat": "Anjuna"}, "abc")
+    got = M.extras(
+        {
+            "pop_sc": "412",
+            "ward_count": "8",
+            "state": "Goa",
+            "gram_panchayat": "Anjuna",
+        },
+        "abc",
+    )
     assert {e["column"] for e in got} == {"pop_sc", "ward_count"}
     assert all(e["row_id"] == "abc" for e in got)
 
@@ -164,8 +203,13 @@ def test_every_rows_script_matches_its_own_text():
             if script == "krutidev":
                 continue
             text = " ".join(v for v in values[:-1] if v)
-            want = ("kannada" if kannada.search(text)
-                    else "devanagari" if devanagari.search(text) else "latin")
+            want = (
+                "kannada"
+                if kannada.search(text)
+                else "devanagari"
+                if devanagari.search(text)
+                else "latin"
+            )
             if want != script:
                 wrong.append((path.name, want, script, text[:40]))
     assert not wrong, f"{len(wrong)} rows: {wrong[:3]}"

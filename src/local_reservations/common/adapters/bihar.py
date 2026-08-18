@@ -69,32 +69,52 @@ YEAR = "2016"
 #          seat). `NUM` means the serial off the end of the `number` column,
 #          which is how the two upper tiers number their seats.
 FILES = {
-    "mukhiya.csv": ("gp_head", "mukhiya",
-                    ("district", "block", "panchayat")),
-    "ward_member.csv": ("gp_ward", "ward member",
-                        ("district", "block", "panchayat", "ward")),
-    "sarpanch.csv": ("kachahari_head", "sarpanch",
-                     ("district", "block", "panchayat")),
-    "panch.csv": ("kachahari_member", "panch",
-                  ("district", "block", "panchayat", "ward")),
-    "panchayat_samiti_member.csv": ("block_member", "panchayat samiti member",
-                                    ("district", "block", "NUM")),
-    "zila_parishad_member.csv": ("zp_member", "zila parishad member",
-                                 ("district", "NUM")),
+    "mukhiya.csv": ("gp_head", "mukhiya", ("district", "block", "panchayat")),
+    "ward_member.csv": (
+        "gp_ward",
+        "ward member",
+        ("district", "block", "panchayat", "ward"),
+    ),
+    "sarpanch.csv": ("kachahari_head", "sarpanch", ("district", "block", "panchayat")),
+    "panch.csv": (
+        "kachahari_member",
+        "panch",
+        ("district", "block", "panchayat", "ward"),
+    ),
+    "panchayat_samiti_member.csv": (
+        "block_member",
+        "panchayat samiti member",
+        ("district", "block", "NUM"),
+    ),
+    "zila_parishad_member.csv": (
+        "zp_member",
+        "zila parishad member",
+        ("district", "NUM"),
+    ),
 }
 
 # Records, not lines. Addresses contain embedded newlines, so `mukhiya.csv` is
 # 103,241 lines and 96,266 records; a line count here would fire the tripwire on
 # a clean checkout.
-DECLARED = {"mukhiya.csv": 96266, "sarpanch.csv": 45059, "panch.csv": 136676,
-            "ward_member.csv": 277219, "panchayat_samiti_member.csv": 80259,
-            "zila_parishad_member.csv": 10126}
+DECLARED = {
+    "mukhiya.csv": 96266,
+    "sarpanch.csv": 45059,
+    "panch.csv": 136676,
+    "ward_member.csv": 277219,
+    "panchayat_samiti_member.csv": 80259,
+    "zila_parishad_member.csv": 10126,
+}
 
 # What each file must collapse to. Declared because a wrong seat key produces a
 # plausible number either way - it is the whole risk of this adapter.
-SEATS = {"mukhiya.csv": 7997, "sarpanch.csv": 7916, "panch.csv": 93341,
-         "ward_member.csv": 98131, "panchayat_samiti_member.csv": 10837,
-         "zila_parishad_member.csv": 895}
+SEATS = {
+    "mukhiya.csv": 7997,
+    "sarpanch.csv": 7916,
+    "panch.csv": 93341,
+    "ward_member.csv": 98131,
+    "panchayat_samiti_member.csv": 10837,
+    "zila_parishad_member.csv": 895,
+}
 
 CODED = re.compile(r"^\s*(\d+)\s*-\s*(.*)$")
 
@@ -109,8 +129,7 @@ def split_code(value):
     other source that prints the district on its own.
     """
     got = CODED.match(value or "")
-    return (got.group(1), got.group(2).strip()) if got \
-        else ("", (value or "").strip())
+    return (got.group(1), got.group(2).strip()) if got else ("", (value or "").strip())
 
 
 def serial(value):
@@ -144,7 +163,7 @@ def key_of(row, fields):
 
 def slices(root):
     root = pathlib.Path(root)
-    csv.field_size_limit(10 ** 7)
+    csv.field_size_limit(10**7)
     for filename, (tier, tier_local, _fields) in sorted(FILES.items()):
         path = root / "data" / filename
         if not path.exists():
@@ -155,30 +174,34 @@ def slices(root):
         if expected is not None and len(raw) != expected:
             raise SystemExit(
                 f"{REPO}: {filename} holds {len(raw):,} records, "
-                f"{expected:,} declared - the sibling changed")
+                f"{expected:,} declared - the sibling changed"
+            )
 
-        candidates = fold(
-            [convert(r, tier, tier_local, filename) for r in raw])
+        candidates = fold([convert(r, tier, tier_local, filename) for r in raw])
         seats = collapse.to_seats(candidates, ["_key"], vote_field="votes")
         expected = SEATS.get(filename)
         if expected is not None and len(seats) != expected:
             raise SystemExit(
                 f"{REPO}: {filename} collapses to {len(seats):,} seats, "
-                f"{expected:,} declared - the seat key changed")
+                f"{expected:,} declared - the seat key changed"
+            )
         for seat in seats:
             members = seat["seat_members"]
             # both are properties of the whole contest, and to_seats copies the
             # first candidate's row, so they have to be gathered from all of it
             seat["duplicate_candidacy"] = int(
-                any(m.get("duplicate_candidacy") for m in members))
+                any(m.get("duplicate_candidacy") for m in members)
+            )
             seat["serial_not_unique"] = int(
-                any(m.get("serial_not_unique") for m in members))
+                any(m.get("serial_not_unique") for m in members)
+            )
             for row in [seat, *members]:
                 row.pop("_key", None)
                 row.pop("_serial", None)
         yield {
             "dataset_id": f"bihar/{tier}/{YEAR}",
-            "state": STATE, "rows": seats,
+            "state": STATE,
+            "rows": seats,
             # the scrape kept neither a document nor a page
             "provenance_level": "dataset",
             "unit_of_observation": "seat_from_candidates",
@@ -198,8 +221,8 @@ def fold(candidates):
     grouped = collections.OrderedDict()
     for candidate in candidates:
         grouped.setdefault(
-            (candidate["_key"], candidate["_serial"],
-             candidate["candidate_name"]), []).append(candidate)
+            (candidate["_key"], candidate["_serial"], candidate["candidate_name"]), []
+        ).append(candidate)
 
     out = []
     for group in grouped.values():
@@ -229,12 +252,16 @@ def convert(row, tier, tier_local, filename):
     return {
         "_key": key_of(row, FILES[filename][2]),
         "_serial": serial(row.get("sr_no")),
-        "state": STATE, "year": YEAR,
-        "tier": tier, "tier_local": tier_local,
-        "district": district, "block": block, "gram_panchayat": panchayat,
-        "ward_no": ward_code, "ward_name": ward_name,
-        "seat_no": serial(row.get("number")) if "NUM" in FILES[filename][2]
-        else "",
+        "state": STATE,
+        "year": YEAR,
+        "tier": tier,
+        "tier_local": tier_local,
+        "district": district,
+        "block": block,
+        "gram_panchayat": panchayat,
+        "ward_no": ward_code,
+        "ward_name": ward_name,
+        "seat_no": serial(row.get("number")) if "NUM" in FILES[filename][2] else "",
         "caste_reservation": caste or "",
         "caste_reservation_local": stated.strip(),
         # The vocabulary is paired - every category appears plain and with
@@ -247,13 +274,15 @@ def convert(row, tier, tier_local, filename):
         "reservation_raw": stated.strip(),
         # Read from the row rather than asserted. Hardcoding this shipped
         # 304,689 rows saying the wrong thing - see normalize.script_of.
-        "script": normalize.script_of(district, block, panchayat,
-                                      row.get("candidate_name") or ""),
+        "script": normalize.script_of(
+            district, block, panchayat, row.get("candidate_name") or ""
+        ),
         "source_path": f"data/{filename}",
         "source_page": "",
         # the codes Bihar numbers its places by, kept out of the join key and
         # off the master, recoverable from master_extras.parquet
-        "district_code": district_code, "block_code": block_code,
+        "district_code": district_code,
+        "block_code": block_code,
         "panchayat_code": panchayat_code,
         "seat_id_printed": (row.get("number") or "").strip(),
         # the long form

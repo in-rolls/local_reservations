@@ -102,18 +102,25 @@ marks every such row. Do not compute shares across it.""",
 # actually catch silent corruption, since every parser bug in this repo produced
 # plausible values rather than an error.
 STATE_CHECKS = {
-    "ap": ["each gazette's own FORMAT-I abstract, district by district",
-           "agreement between the two proformas that state a seat twice",
-           "the share of category cells that needed OCR repair"],
-    "goa": ["the published count of panchayats that went to poll in 2012",
-            "the ward set, compared across the three cycles",
-            "per-taluka coverage against 2012, which is complete"],
-    "jharkhand": ["the published seat totals for each tier",
-                  "how much of the gap is the source's and how much the "
-                  "parser's, decided by opening the file"],
-    "jk": ["SC-reserved wards against SC population, the strongest check "
-           "available here",
-           "the women's share against the one-third floor"],
+    "ap": [
+        "each gazette's own FORMAT-I abstract, district by district",
+        "agreement between the two proformas that state a seat twice",
+        "the share of category cells that needed OCR repair",
+    ],
+    "goa": [
+        "the published count of panchayats that went to poll in 2012",
+        "the ward set, compared across the three cycles",
+        "per-taluka coverage against 2012, which is complete",
+    ],
+    "jharkhand": [
+        "the published seat totals for each tier",
+        "how much of the gap is the source's and how much the "
+        "parser's, decided by opening the file",
+    ],
+    "jk": [
+        "SC-reserved wards against SC population, the strongest check available here",
+        "the women's share against the one-third floor",
+    ],
 }
 
 MAKE_TARGET = {"ap": "ap", "goa": "goa", "jharkhand": "jharkhand", "jk": "jk"}
@@ -145,9 +152,10 @@ def render_checks(state):
     appeals = {r["check_id"]: r["appeals_to"] for r in rows}
     grid = {(r["year"], r["tier"], r["check_id"]): r for r in rows}
 
-    out = ["| Check | Appeals to | " +
-           " | ".join(f"{y} `{t}`" for y, t in slices) + " |",
-           "|---|---|" + "---|" * len(slices)]
+    out = [
+        "| Check | Appeals to | " + " | ".join(f"{y} `{t}`" for y, t in slices) + " |",
+        "|---|---|" + "---|" * len(slices),
+    ]
     for check in checks:
         cells = []
         for year, tier in slices:
@@ -160,9 +168,11 @@ def render_checks(state):
             cells.append(f"{mark} {shown}".strip())
         out.append(f"| `{check}` | {appeals[check]} | " + " | ".join(cells) + " |")
     out.append("")
-    out.append("&check; pass &nbsp; ! warn &nbsp; &cross; fail &nbsp; "
-               "&ndash; skipped, meaning no rule is declared for that slice — "
-               "which is not the same as passing.")
+    out.append(
+        "&check; pass &nbsp; ! warn &nbsp; &cross; fail &nbsp; "
+        "&ndash; skipped, meaning no rule is declared for that slice — "
+        "which is not the same as passing."
+    )
     return out
 
 
@@ -170,18 +180,23 @@ def render_stats(state):
     rows = [r for r in stats_rows("slice_stats.csv") if r["state"] == state]
     if not rows:
         return []
-    out = ["| Year | Tier | Rows | Districts | Blocks | Panchayats | "
-           "Women | SC | ST | BC | Sources |",
-           "|---|---|---|---|---|---|---|---|---|---|---|"]
+    out = [
+        "| Year | Tier | Rows | Districts | Blocks | Panchayats | "
+        "Women | SC | ST | BC | Sources |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
+    ]
     for r in sorted(rows, key=lambda x: (x["year"], x["tier"])):
+
         def pct(key):
             return f"{float(r[key]) * 100:.0f}%" if r[key] else "—"
+
         out.append(
             f"| {r['year']} | `{r['tier']}` | {int(r['rows']):,} | "
             f"{r['districts']} | {r['blocks']} | {int(r['panchayats']):,} | "
             f"{pct('women_share')} | {pct('sc_share')} | {pct('st_share')} | "
             f"{pct('bc_share')} | {r['source_documents']} docs, "
-            f"{int(r['source_pages']):,} pages |")
+            f"{int(r['source_pages']):,} pages |"
+        )
     return out
 
 
@@ -198,13 +213,15 @@ def dataset_files(directory):
     for path, rows in datasets.parsed():
         if path.parent.name != directory:
             continue
-        out.append({
-            "name": path.name,
-            "stem": path.stem,
-            "rows": len(rows),
-            "columns": len(rows[0]),
-            "sources": len({r.get("source_path", "") for r in rows}),
-        })
+        out.append(
+            {
+                "name": path.name,
+                "stem": path.stem,
+                "rows": len(rows),
+                "columns": len(rows[0]),
+                "sources": len({r.get("source_path", "") for r in rows}),
+            }
+        )
     return out
 
 
@@ -230,9 +247,11 @@ def source_files(directory):
     """Files actually held, not counting the readme this script writes - which
     would otherwise make every directory report one file more than it has.
     """
-    return sorted(p for p in (DATA / directory).rglob("*")
-                  if p.is_file() and p.name != "readme.md"
-                  and not p.name.startswith("."))
+    return sorted(
+        p
+        for p in (DATA / directory).rglob("*")
+        if p.is_file() and p.name != "readme.md" and not p.name.startswith(".")
+    )
 
 
 def raw_inventory(directory):
@@ -257,14 +276,18 @@ def render_parsed(directory, state, entries):
     total = sum(e["rows"] for e in entries)
 
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"{total:,} rows across {len(entries)} "
-               f"{'slice' if len(entries) == 1 else 'slices'}, parsed from "
-               f"{len(cited)} source "
-               f"{'document' if len(cited) == 1 else 'documents'} committed "
-               f"alongside.")
+    out.append(
+        f"{total:,} rows across {len(entries)} "
+        f"{'slice' if len(entries) == 1 else 'slices'}, parsed from "
+        f"{len(cited)} source "
+        f"{'document' if len(cited) == 1 else 'documents'} committed "
+        f"alongside."
+    )
     out.append("")
 
     out.append("## What is here")
@@ -272,26 +295,34 @@ def render_parsed(directory, state, entries):
     out.append("| Year | Tier | Rows | Women | Districts | vs published | Notes |")
     out.append("|---|---|---|---|---|---|---|")
     for e in entries:
-        out.append(f"| {e['year']} | `{e['tier']}` | {e['rows']:,} | "
-                   f"{e['women']:.0f}% | {e['districts']} | {e['coverage']} | "
-                   f"{e['notes'] or '—'} |")
+        out.append(
+            f"| {e['year']} | `{e['tier']}` | {e['rows']:,} | "
+            f"{e['women']:.0f}% | {e['districts']} | {e['coverage']} | "
+            f"{e['notes'] or '—'} |"
+        )
     out.append("")
-    out.append("Read the notes before the numbers — several of them say that a "
-               "share is a property of which pages were published rather than "
-               "of the state.")
+    out.append(
+        "Read the notes before the numbers — several of them say that a "
+        "share is a property of which pages were published rather than "
+        "of the state."
+    )
     out.append("")
 
     out.append("## Files")
     out.append("")
-    out.append("Every file is written twice: `.csv` for a spreadsheet, "
-               "`.jsonl` for a reader that should not break when a column is "
-               "added.")
+    out.append(
+        "Every file is written twice: `.csv` for a spreadsheet, "
+        "`.jsonl` for a reader that should not break when a column is "
+        "added."
+    )
     out.append("")
     out.append("| File | Rows | Columns | Source documents |")
     out.append("|---|---|---|---|")
     for f in files:
-        out.append(f"| [`{f['name']}`]({f['name']}) | {f['rows']:,} | "
-                   f"{f['columns']} | {f['sources']} |")
+        out.append(
+            f"| [`{f['name']}`]({f['name']}) | {f['rows']:,} | "
+            f"{f['columns']} | {f['sources']} |"
+        )
     out.append("")
 
     stats = render_stats(state)
@@ -300,11 +331,13 @@ def render_parsed(directory, state, entries):
         out.append("")
         out += stats
         out.append("")
-        out.append("Generated by `make stats` into "
-                   "[../stats/slice_stats.csv](../stats/slice_stats.csv). "
-                   "Snapshot that file before changing a parser and diff it "
-                   "after: a change that only renames things must not move a "
-                   "single number.")
+        out.append(
+            "Generated by `make stats` into "
+            "[../stats/slice_stats.csv](../stats/slice_stats.csv). "
+            "Snapshot that file before changing a parser and diff it "
+            "after: a change that only renames things must not move a "
+            "single number."
+        )
         out.append("")
 
     note = STATE_NOTES.get(directory)
@@ -316,26 +349,32 @@ def render_parsed(directory, state, entries):
 
     out.append("## Provenance")
     out.append("")
-    out.append("Every row carries `source_path` and `source_page` — the "
-               "document it was read from and the page within it. The "
-               "documents are committed here, so any row can be checked "
-               "against the page it came from without a network round trip. "
-               "That mattered repeatedly: nearly every parser bug in this "
-               "repository produced plausible wrong values rather than an "
-               "error, and opening the page was the only way to settle it.")
+    out.append(
+        "Every row carries `source_path` and `source_page` — the "
+        "document it was read from and the page within it. The "
+        "documents are committed here, so any row can be checked "
+        "against the page it came from without a network round trip. "
+        "That mattered repeatedly: nearly every parser bug in this "
+        "repository produced plausible wrong values rather than an "
+        "error, and opening the page was the only way to settle it."
+    )
     out.append("")
     if missing:
-        out.append(f"⚠️ {len(missing)} cited "
-                   f"{'document is' if len(missing) == 1 else 'documents are'} "
-                   f"not on disk: `{missing[0]}`" +
-                   ("" if len(missing) == 1 else " and others"))
+        out.append(
+            f"⚠️ {len(missing)} cited "
+            f"{'document is' if len(missing) == 1 else 'documents are'} "
+            f"not on disk: `{missing[0]}`"
+            + ("" if len(missing) == 1 else " and others")
+        )
     else:
         out.append(f"All {len(cited)} cited documents are present.")
     out.append("")
     if kinds:
         described = ", ".join(f"{n} {k}" for k, n in kinds.most_common())
-        out.append(f"Inventory for this directory: {described}" +
-                   (f", {pages:,} pages total." if pages else "."))
+        out.append(
+            f"Inventory for this directory: {described}"
+            + (f", {pages:,} pages total." if pages else ".")
+        )
         out.append("")
 
     out.append("## Reproducing")
@@ -344,20 +383,24 @@ def render_parsed(directory, state, entries):
     out.append(f"make {MAKE_TARGET.get(directory, directory)}")
     out.append("```")
     out.append("")
-    out.append(f"Parses from the committed documents and rewrites the files "
-               f"above, then runs `src/local_reservations/states/{directory}/validate.py`.")  # noqa: E501
+    out.append(
+        f"Parses from the committed documents and rewrites the files "
+        f"above, then runs `src/local_reservations/states/{directory}/validate.py`."
+    )
     out.append("")
 
     grid = render_checks(state)
     checks = STATE_CHECKS.get(directory)
     out.append("## What is checked")
     out.append("")
-    out.append("Every state runs a shared battery first — the seat key is "
-               "unique, the reservation label agrees with the two fields it "
-               "summarises, every `source_path` exists and every "
-               "`source_page` falls inside its document. Then this state's own "
-               "checks, which are the ones that catch silent corruption "
-               "because they appeal to something outside the data:")
+    out.append(
+        "Every state runs a shared battery first — the seat key is "
+        "unique, the reservation label agrees with the two fields it "
+        "summarises, every `source_path` exists and every "
+        "`source_page` falls inside its document. Then this state's own "
+        "checks, which are the ones that catch silent corruption "
+        "because they appeal to something outside the data:"
+    )
     out.append("")
     for check in checks or ["—"]:
         out.append(f"- {check}")
@@ -366,15 +409,19 @@ def render_parsed(directory, state, entries):
         out.append("")
         out += grid
         out.append("")
-        out.append("Each check declares what it **appeals to**. Only an "
-                   "external appeal - a published total, a statutory share, a "
-                   "population - reliably catches silent corruption; an "
-                   "internal check confirms the file agrees with itself, which "
-                   "it does whether or not a category was misread.")
+        out.append(
+            "Each check declares what it **appeals to**. Only an "
+            "external appeal - a published total, a statutory share, a "
+            "population - reliably catches silent corruption; an "
+            "internal check confirms the file agrees with itself, which "
+            "it does whether or not a category was misread."
+        )
         out.append("")
-    out.append("Column meanings are in [../../DICTIONARY.md](../../DICTIONARY.md). "
-               "Expectation violations across every state are triaged into "
-               "[../expectations_report.csv](../expectations_report.csv).")
+    out.append(
+        "Column meanings are in [../../DICTIONARY.md](../../DICTIONARY.md). "
+        "Expectation violations across every state are triaged into "
+        "[../expectations_report.csv](../expectations_report.csv)."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -387,24 +434,37 @@ def render_sibling(directory, state, years, tiers, url):
     files = source_files(directory)
     name = url.rsplit("/", 1)[-1]
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"**The parsed data for {state} is in "
-               f"[{name}]({url})** — {tiers}, {years}. It was split into its "
-               f"own repository, so it is counted in the [top-level "
-               f"readme](../../readme.md) but has no rows here.")
+    out.append(
+        f"**The parsed data for {state} is in "
+        f"[{name}]({url})** — {tiers}, {years}. It was split into its "
+        f"own repository, so it is counted in the [top-level "
+        f"readme](../../readme.md) but has no rows here."
+    )
     out.append("")
-    out.append(f"What is in this directory is source material: {len(files)} "
-               f"{'file' if len(files) == 1 else 'files'}" +
-               (f", {', '.join(f'{n} {k}' for k, n in kinds.most_common())}" +
-                (f", {pages:,} pages" if pages else "") if kinds else "") + ".")
+    out.append(
+        f"What is in this directory is source material: {len(files)} "
+        f"{'file' if len(files) == 1 else 'files'}"
+        + (
+            f", {', '.join(f'{n} {k}' for k, n in kinds.most_common())}"
+            + (f", {pages:,} pages" if pages else "")
+            if kinds
+            else ""
+        )
+        + "."
+    )
     out.append("")
-    out.append("It is not in this repository's schema, so it does not appear "
-               "in the per-slice table. Bringing a sibling to that grain means "
-               "giving its parsed files the shared columns — `state`, `year`, "
-               "`tier`, `caste_reservation`, `woman_reserved` — which is the "
-               "schema harmonisation still to be done.")
+    out.append(
+        "It is not in this repository's schema, so it does not appear "
+        "in the per-slice table. Bringing a sibling to that grain means "
+        "giving its parsed files the shared columns — `state`, `year`, "
+        "`tier`, `caste_reservation`, `woman_reserved` — which is the "
+        "schema harmonisation still to be done."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -412,41 +472,49 @@ def render_unparsed(directory, state, status, where):
     kinds, pages = raw_inventory(directory)
     files = source_files(directory)
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"**Status: {status}.** Nothing in this directory is in the "
-               f"repository's schema yet, so it does not appear in the "
-               f"per-slice table in the [top-level readme](../../readme.md).")
+    out.append(
+        f"**Status: {status}.** Nothing in this directory is in the "
+        f"repository's schema yet, so it does not appear in the "
+        f"per-slice table in the [top-level readme](../../readme.md)."
+    )
     out.append("")
     if status == "tables, other layout":
-        out.append("The documents or tables are here and nobody has parsed "
-                   "them into this repository's schema yet. This is open work, "
-                   "not coverage already achieved - a distinction the old label "
-                   "\"prior work, other schema\" blurred, which is how "
-                   "Rajasthan sat here for months while its parse existed in "
-                   "another repository.")
+        out.append(
+            "The documents or tables are here and nobody has parsed "
+            "them into this repository's schema yet. This is open work, "
+            "not coverage already achieved - a distinction the old label "
+            '"prior work, other schema" blurred, which is how '
+            "Rajasthan sat here for months while its parse existed in "
+            "another repository."
+        )
         out.append("")
         if where:
             out.append(f"Recorded years: {where}.")
             out.append("")
-    out.append(f"{len(files)} "
-               f"{'file' if len(files) == 1 else 'files'} on disk.")
+    out.append(f"{len(files)} {'file' if len(files) == 1 else 'files'} on disk.")
     if kinds:
         described = ", ".join(f"{n} {k}" for k, n in kinds.most_common())
         out.append("")
-        out.append(f"Inventory: {described}" +
-                   (f", {pages:,} pages total." if pages else "."))
+        out.append(
+            f"Inventory: {described}" + (f", {pages:,} pages total." if pages else ".")
+        )
     out.append("")
     out.append("## What it would take")
     out.append("")
-    out.append("See [../../SOURCES.md](../../SOURCES.md) for where this state "
-               "publishes its reservation data and what parsing it involves. "
-               "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "  # noqa: E501
-               "`local_reservations/common/emit.py` so every row carries its source "
-               "document and page, and is paired with a `validate.py` that "
-               "checks the result against something outside the data — a "
-               "published total, a statutory share, a population.")
+    out.append(
+        "See [../../SOURCES.md](../../SOURCES.md) for where this state "
+        "publishes its reservation data and what parsing it involves. "
+        "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "  # noqa: E501
+        "`local_reservations/common/emit.py` so every row carries its source "
+        "document and page, and is paired with a `validate.py` that "
+        "checks the result against something outside the data — a "
+        "published total, a statutory share, a population."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -454,34 +522,43 @@ def build():
     """Return {path: text} for every state directory."""
     entries = slices_by_directory()
     legacy = {d: (state, years) for state, (years, d) in coverage.LEGACY.items()}
-    siblings = {state: (spec["years"], spec["tiers"],
-                        f"https://github.com/in-rolls/{spec['repo']}")
-                for state, spec in coverage.SIBLINGS.items()}
+    siblings = {
+        state: (
+            spec["years"],
+            spec["tiers"],
+            f"https://github.com/in-rolls/{spec['repo']}",
+        )
+        for state, spec in coverage.SIBLINGS.items()
+    }
 
     out = {}
-    for directory in sorted(p.name for p in DATA.iterdir()
-                            if p.is_dir() and p.name not in datasets.DERIVED):
+    for directory in sorted(
+        p.name for p in DATA.iterdir() if p.is_dir() and p.name not in datasets.DERIVED
+    ):
         state = coverage.pretty(directory)
         target = DATA / directory / "readme.md"
         if directory in entries:
             out[target] = render_parsed(directory, state, entries[directory])
         elif directory in legacy:
             name, years = legacy[directory]
-            out[target] = render_unparsed(directory, name,
-                                          "tables, other layout", years)
+            out[target] = render_unparsed(
+                directory, name, "tables, other layout", years
+            )
         elif state in siblings:
             years, tiers, url = siblings[state]
             out[target] = render_sibling(directory, state, years, tiers, url)
         else:
-            out[target] = render_unparsed(directory, state,
-                                          "documents, no parser", "")
+            out[target] = render_unparsed(directory, state, "documents, no parser", "")
     return out
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true",
-                    help="fail if any file differs from what would be written")
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="fail if any file differs from what would be written",
+    )
     args = ap.parse_args()
 
     written = build()

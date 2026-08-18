@@ -3,9 +3,8 @@ PY ?= uv run python
 # where pdfplumber needs >=12.2. That used to mean a hand-made ocrenv/; it is
 # now a uv dependency group declared as conflicting, so uv refuses to install
 # both together rather than leaving whichever came second broken.
-# --no-group dev: dev is on by default and conflicts with ocr, so asking
-# for ocr alone is an error rather than a swap.
-OCR_PY ?= uv run --no-group dev --group ocr python
+# The OCR group conflicts with dev, so exclude every default group explicitly.
+OCR_PY ?= uv run --no-default-groups --group ocr python
 
 .PHONY: help inventory probe goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk ap test coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
@@ -47,7 +46,7 @@ transliterate:
 	uv run --with indicate python -m local_reservations.tools.transliterate
 
 karnataka-ocr:
-	uv run --group ocr python -m local_reservations.states.karnataka.ocr
+	$(OCR_PY) -m local_reservations.states.karnataka.ocr
 
 goa:
 	$(PY) -m local_reservations.states.goa.parse
@@ -68,7 +67,7 @@ jharkhand-bench-record:
 
 # Not part of `make jharkhand`, and not a dependency of anything. Its output is
 # committed, it takes about six hours, and it needs an interpreter the rest of
-# the repository cannot share - see requirements-ocr.txt.
+# the repository cannot share, so uv runs it from the isolated OCR group.
 jharkhand-ocr:
 	$(OCR_PY) -m local_reservations.states.jharkhand.ocr
 	$(PY) -m local_reservations.states.jharkhand.ocr_seats

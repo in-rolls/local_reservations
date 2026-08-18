@@ -13,7 +13,6 @@ instead: a pooled row carries the master's columns **over** the row it came
 from, not instead of it.
 """
 
-
 import pytest
 
 from local_reservations.common import master
@@ -21,11 +20,19 @@ from local_reservations.common import master
 
 def test_the_projection_does_not_replace_the_source_row():
     """This is the shape `pooled()` yields: `dict(row, **projection)`."""
-    source = {"state": "Karnataka", "year": "2007", "tier": "gp_head",
-              "caste_reservation": "SC", "woman_reserved": "1",
-              "pop_total": "1200", "pop_sc": "300", "ward_count": "12"}
-    projected = master.to_master(source, "karnataka/gp_head/2007",
-                                 "local_elections", "abc", "dataset")
+    source = {
+        "state": "Karnataka",
+        "year": "2007",
+        "tier": "gp_head",
+        "caste_reservation": "SC",
+        "woman_reserved": "1",
+        "pop_total": "1200",
+        "pop_sc": "300",
+        "ward_count": "12",
+    }
+    projected = master.to_master(
+        source, "karnataka/gp_head/2007", "local_elections", "abc", "dataset"
+    )
     pooled = dict(source, **projected)
 
     # the master's own columns are present and win. row_id and seat_key_unique
@@ -39,8 +46,10 @@ def test_the_projection_does_not_replace_the_source_row():
         assert pooled[column] == source[column], column
 
 
-@pytest.mark.parametrize("column", ["pop_total", "pop_sc", "ward_count",
-                                    "seat_from_image", "printings_agree"])
+@pytest.mark.parametrize(
+    "column",
+    ["pop_total", "pop_sc", "ward_count", "seat_from_image", "printings_agree"],
+)
 def test_the_columns_the_checks_appeal_to_are_not_master_columns(column):
     """Each of these is read by a check and dropped by the projection, which is
     what made the loss silent. If one is ever promoted into MASTER_COLUMNS this

@@ -36,8 +36,12 @@ WOMEN_SHARE = 0.50
 # parsed" for a district that had parsed 851 seats perfectly well - a failure
 # that says the data is broken when the lookup is.
 DISTRICTS = {
-    "atp": "Anantapur", "est": "East Godavari", "kri": "Krishna",
-    "nlr": "Nellore", "pkm": "Prakasam", "wg": "West Godavari",
+    "atp": "Anantapur",
+    "est": "East Godavari",
+    "kri": "Krishna",
+    "nlr": "Nellore",
+    "pkm": "Prakasam",
+    "wg": "West Godavari",
 }
 
 
@@ -86,7 +90,6 @@ def abstract_total(path, district):
     return None
 
 
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--verbose", action="store_true")
@@ -97,8 +100,8 @@ def main():
         sys.exit("no parsed data - run scripts/ap/parse.py first")
     failures = 0
     failures += shared_battery(
-        "Andhra Pradesh - shared checks",
-        [("sarpanch", sarpanch), ("ward", ward)]).finish()
+        "Andhra Pradesh - shared checks", [("sarpanch", sarpanch), ("ward", ward)]
+    ).finish()
 
     print("\n=== Andhra Pradesh gram panchayat reservation, 2020 ===\n")
 
@@ -106,16 +109,19 @@ def main():
     share = pct(women, len(sarpanch))
     repaired = sum(int(r["ocr_repaired"]) for r in sarpanch + ward)
     print(f"sarpanch {len(sarpanch):6d} seats   ward {len(ward):6d} seats")
-    print(f"women {women}/{len(sarpanch)} = {share:.1f}%  (statute "
-          f"{WOMEN_SHARE:.0%})")
+    print(f"women {women}/{len(sarpanch)} = {share:.1f}%  (statute {WOMEN_SHARE:.0%})")
     ok = abs(share / 100 - WOMEN_SHARE) <= 0.05
     failures += not ok
     print(f"   [{'PASS' if ok else 'FAIL'}] women's share within 5pp of half")
 
-    print(f"OCR-mended cells: {repaired} of {len(sarpanch) + len(ward)} "
-          f"= {pct(repaired, len(sarpanch) + len(ward)):.1f}%")
-    print("   these are repairs to a closed vocabulary (5C->SC, 8c->BC); a "
-          "wrong repair looks like a right one, so they stay flagged")
+    print(
+        f"OCR-mended cells: {repaired} of {len(sarpanch) + len(ward)} "
+        f"= {pct(repaired, len(sarpanch) + len(ward)):.1f}%"
+    )
+    print(
+        "   these are repairs to a closed vocabulary (5C->SC, 8c->BC); a "
+        "wrong repair looks like a right one, so they stay flagged"
+    )
 
     print("\ncoverage against each gazette's own FORMAT-I abstract:")
     counts = collections.Counter(r["district"] for r in sarpanch)
@@ -139,11 +145,14 @@ def main():
             else:
                 flag, note = "FAIL", "  nothing parsed"
             failures += flag == "FAIL"
-            print(f"   [{flag}] {district:16s} {got:5d} of {stated:5d} stated "
-                  f"({share_of:5.1f}%){note}")
+            print(
+                f"   [{flag}] {district:16s} {got:5d} of {stated:5d} stated "
+                f"({share_of:5.1f}%){note}"
+            )
         else:
-            print(f"   [INFO] {district:16s} {got:5d} parsed, abstract total "
-                  f"not readable")
+            print(
+                f"   [INFO] {district:16s} {got:5d} parsed, abstract total not readable"
+            )
 
     # Anantapur states each sarpanch seat twice, in two separately typeset
     # proformas. Two independent statements of the same fact agreeing is the
@@ -155,18 +164,24 @@ def main():
         disagree = [r for r in twice if r.get("printings_agree") == "0"]
         share = 100.0 * (len(twice) - len(disagree)) / len(twice)
         flag = "PASS" if share >= 95 else "WARN"
-        print(f"\n   [{flag}] seats stated twice agree - "
-              f"{len(twice) - len(disagree)} of {len(twice)} ({share:.1f}%)")
+        print(
+            f"\n   [{flag}] seats stated twice agree - "
+            f"{len(twice) - len(disagree)} of {len(twice)} ({share:.1f}%)"
+        )
         for row in disagree[:8]:
-            print(f"        {row['district']}/{row['block']}/"
-                  f"{row['gram_panchayat']}: kept {row['reservation']!r} "
-                  f"(from {row['reservation_raw']!r}), p{row['source_page']}")
+            print(
+                f"        {row['district']}/{row['block']}/"
+                f"{row['gram_panchayat']}: kept {row['reservation']!r} "
+                f"(from {row['reservation_raw']!r}), p{row['source_page']}"
+            )
 
-    bad = [r for r in sarpanch
-           if r["caste_reservation"] not in ("SC", "ST", "BC", "NONE")]
+    bad = [
+        r for r in sarpanch if r["caste_reservation"] not in ("SC", "ST", "BC", "NONE")
+    ]
     failures += bool(bad)
-    print(f"\n   [{'PASS' if not bad else 'FAIL'}] every row normalised "
-          f"({len(bad)} bad)")
+    print(
+        f"\n   [{'PASS' if not bad else 'FAIL'}] every row normalised ({len(bad)} bad)"
+    )
 
     print(f"\n{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
     return 1 if failures else 0
@@ -184,9 +199,19 @@ def shared_battery(title, datasets):
         if not rows:
             continue
         print(f"\n-- {label}")
-        checks.structural(report, rows, ROOT,
-                          required=("state", "year", "tier", "reservation",
-                                    "caste_reservation", "woman_reserved"))
+        checks.structural(
+            report,
+            rows,
+            ROOT,
+            required=(
+                "state",
+                "year",
+                "tier",
+                "reservation",
+                "caste_reservation",
+                "woman_reserved",
+            ),
+        )
         checks.provenance(report, rows, ROOT)
     return report
 

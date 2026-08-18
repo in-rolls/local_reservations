@@ -4,10 +4,10 @@ Imported by scripts/<state>/ocr.py. Only the paths and the "does this document
 need OCR at all" test are per-state; the rendering, the rotation and the model
 are not, and were on their way to being copied a second time.
 
-**Runs under its own interpreter.** savitr pins pillow<11 where pdfplumber needs
->=12.2, so the OCR venv and the parsing one cannot be the same - see
-requirements-ocr.txt. Nothing here imports anything else from common, so this
-module loads in an interpreter that has only savitr.
+**Runs in its own uv dependency group.** savitr pins pillow<11 where pdfplumber
+needs >=12.2, so the OCR and parsing dependencies cannot share an interpreter.
+Nothing here imports anything else from common, so the isolated OCR environment
+contains only what the model needs.
 
 Named `ocr_engine` and not `surya`: this directory goes on sys.path[0], and a
 module called `surya` here would shadow the real surya package for savitr.
@@ -35,8 +35,7 @@ _ENGINE = None
 
 
 def page_count(path):
-    out = subprocess.run(["pdfinfo", str(path)], capture_output=True,
-                         text=True).stdout
+    out = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True).stdout
     for line in out.split("\n"):
         if line.startswith("Pages:"):
             return int(line.split()[1])
@@ -52,9 +51,13 @@ def rotation(image):
     on a page that is merely a little skewed, and acting on that would rotate a
     good page into a bad one.
     """
-    out = subprocess.run(["tesseract", str(image), "stdout", "--psm", "0"],
-                         capture_output=True, text=True, errors="replace",
-                         timeout=300).stdout
+    out = subprocess.run(
+        ["tesseract", str(image), "stdout", "--psm", "0"],
+        capture_output=True,
+        text=True,
+        errors="replace",
+        timeout=300,
+    ).stdout
     degrees = confidence = 0.0
     for line in out.split("\n"):
         if line.startswith("Rotate:"):
@@ -72,14 +75,18 @@ def engine(model=None):
     if _ENGINE is None:
         model = pathlib.Path(model or DEFAULT_MODEL)
         try:
-            from savitr import MLXSuryaOCR
+            from savitr import MLXSuryaOCR  # pyright: ignore[reportMissingImports]
         except ImportError:
-            sys.exit("savitr is not importable. This script runs under its own "
-                     "interpreter - see requirements-ocr.txt.")
+            sys.exit(
+                "savitr is not importable. Run this through "
+                "`uv run --no-default-groups --group ocr python`."
+            )
         if not model.exists():
-            sys.exit(f"no Surya model at {model}. Convert it once with:\n"
-                     f"  python -m mlx_vlm convert --hf-path "
-                     f"datalab-to/surya-ocr-2 --mlx-path {model} -q --q-bits 4")
+            sys.exit(
+                f"no Surya model at {model}. Convert it once with:\n"
+                f"  python -m mlx_vlm convert --hf-path "
+                f"datalab-to/surya-ocr-2 --mlx-path {model} -q --q-bits 4"
+            )
         _ENGINE = MLXSuryaOCR(str(model))
     return _ENGINE
 
@@ -135,8 +142,16 @@ def unusable(text, wants_table=False):
     return degenerate(text) or (wants_table and "<table" not in text)
 
 
-def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
-        retry_crops=RETRY_CROPS, wants_table=False, partial=None):
+def ocr(
+    path,
+    model=None,
+    dpi=DPI,
+    deskew=True,
+    progress=True,
+    retry_crops=RETRY_CROPS,
+    wants_table=False,
+    partial=None,
+):
     """Every page of a PDF as Surya's HTML, form-feed separated.
 
     HTML rather than flattened text, because the table's cell boundaries are
@@ -177,9 +192,21 @@ def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
         with tempfile.TemporaryDirectory() as scratch:
             stem = pathlib.Path(scratch) / "p"
             subprocess.run(
-                ["pdftoppm", "-f", str(number), "-l", str(number), "-r",
-                 str(dpi), "-png", str(path), str(stem)],
-                capture_output=True, timeout=300)
+                [
+                    "pdftoppm",
+                    "-f",
+                    str(number),
+                    "-l",
+                    str(number),
+                    "-r",
+                    str(dpi),
+                    "-png",
+                    str(path),
+                    str(stem),
+                ],
+                capture_output=True,
+                timeout=300,
+            )
             rendered = sorted(pathlib.Path(scratch).glob("p-*.png"))
             if not rendered:
                 pages.append("<!-- ocr-unread reason=render-failed -->")
@@ -203,23 +230,28 @@ def ocr(path, model=None, dpi=DPI, deskew=True, progress=True,
                 cropped = pathlib.Path(scratch) / f"crop{int(crop * 100)}.png"
                 with Image.open(page) as image:
                     width, height = image.size
-                    image.crop((0, int(height * crop), width, height)).save(
-                        cropped)
+                    image.crop((0, int(height * crop), width, height)).save(cropped)
                 text, _ = engine(model).ocr_image(str(cropped))
                 if not unusable(text, wants_table):
                     text = f"<!-- ocr-retry crop={crop} -->\n{text}"
                     break
             else:
                 if bad:
-                    text = ("<!-- ocr-unread reason=degenerate-after-retries "
-                            f"tried={len(retry_crops)} -->\n{text}")
+                    text = (
+                        "<!-- ocr-unread reason=degenerate-after-retries "
+                        f"tried={len(retry_crops)} -->\n{text}"
+                    )
             pages.append(text)
         if handle:
             handle.write(json.dumps({"page": number, "text": text}) + "\n")
             handle.flush()
         if progress:
-            print(f"\r  {path.name[:44]:44s} {number}/{total}", end="",
-                  file=sys.stderr, flush=True)
+            print(
+                f"\r  {path.name[:44]:44s} {number}/{total}",
+                end="",
+                file=sys.stderr,
+                flush=True,
+            )
     if handle:
         handle.close()
     if progress:

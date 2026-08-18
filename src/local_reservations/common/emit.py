@@ -19,20 +19,37 @@ import json
 import pathlib
 import re
 
-PROVENANCE = ["source_path", "source_page", "source_pdf", "source_url",
-              "source_capture"]
+PROVENANCE = [
+    "source_path",
+    "source_page",
+    "source_pdf",
+    "source_url",
+    "source_capture",
+]
 
 # Phrases that are table headers, not places. A header row that survives into
 # the data is invisible in a row count and only shows up as a duplicate key -
 # Goa carried three rows for a panchayat called "Name of the Panchayat", and
 # J&K 2018 a district called "Name of District".
 HEADER_TEXT = {
-    "name of the panchayat", "name of panchayat", "name of the taluka",
-    "name of district", "name of the district", "district name",
-    "name of block", "name of the block", "block name", "name of halqa",
-    "name of the halqa", "panchayat name", "grampanchayat", "gram panchayat",
-    "name of the grampanchayat", "number & name of panch constituencies",
-    "name of the mandal", "mandal",
+    "name of the panchayat",
+    "name of panchayat",
+    "name of the taluka",
+    "name of district",
+    "name of the district",
+    "district name",
+    "name of block",
+    "name of the block",
+    "block name",
+    "name of halqa",
+    "name of the halqa",
+    "panchayat name",
+    "grampanchayat",
+    "gram panchayat",
+    "name of the grampanchayat",
+    "number & name of panch constituencies",
+    "name of the mandal",
+    "mandal",
 }
 
 
@@ -45,7 +62,8 @@ HEADER_SHAPE = re.compile(
     r"|^\s*(?:the\s+)?name\s+of\b"
     r"|\bname\s+of\s+(?:the\s+)?(?:district|block|panchayat|halqa|taluka|"
     r"mandal|number|ward|constituenc\w*)\b",
-    re.I)
+    re.I,
+)
 
 
 def is_header_text(value):
@@ -69,8 +87,10 @@ def archived(directory):
     if not manifest.exists():
         return {}
     with manifest.open(encoding="utf-8") as fh:
-        return {r["file"]: (r.get("url", ""), r.get("wayback_timestamp", ""))
-                for r in csv.DictReader(fh)}
+        return {
+            r["file"]: (r.get("url", ""), r.get("wayback_timestamp", ""))
+            for r in csv.DictReader(fh)
+        }
 
 
 def stamp(row, path, page=None, root=None, archive=None):
@@ -102,8 +122,9 @@ def write(rows, stem, columns):
 
     csv_path = stem.with_suffix(".csv")
     with csv_path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore",
-                                lineterminator="\n")
+        writer = csv.DictWriter(
+            fh, fieldnames=columns, extrasaction="ignore", lineterminator="\n"
+        )
         writer.writeheader()
         for row in rows:
             writer.writerow({c: row.get(c, "") for c in columns})
@@ -111,7 +132,9 @@ def write(rows, stem, columns):
     jsonl_path = stem.with_suffix(".jsonl")
     with jsonl_path.open("w", encoding="utf-8") as fh:
         for row in rows:
-            fh.write(json.dumps({c: row.get(c, "") for c in columns},
-                                ensure_ascii=False) + "\n")
+            fh.write(
+                json.dumps({c: row.get(c, "") for c in columns}, ensure_ascii=False)
+                + "\n"
+            )
 
     return csv_path, jsonl_path

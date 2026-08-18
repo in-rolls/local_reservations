@@ -37,11 +37,15 @@ STATE = "Uttarakhand"
 # one, so both are read. It also polled in different years - 2010 and 2015
 # against the rest of the state's 2008, 2014 and 2019 - so it lands in slices of
 # its own rather than being folded into a cycle it did not vote in.
-FILES = ["data/uttarakhand-panchayat-elections.csv",
-         "data/uttarakhand-panchayat-elections-haridwar.csv"]
+FILES = [
+    "data/uttarakhand-panchayat-elections.csv",
+    "data/uttarakhand-panchayat-elections-haridwar.csv",
+]
 
-DECLARED = {"data/uttarakhand-panchayat-elections.csv": 106382,
-            "data/uttarakhand-panchayat-elections-haridwar.csv": 10132}
+DECLARED = {
+    "data/uttarakhand-panchayat-elections.csv": 106382,
+    "data/uttarakhand-panchayat-elections-haridwar.csv": 10132,
+}
 
 POST = "निर्वाचित पद"
 TIERS = {
@@ -73,23 +77,28 @@ C = {
 # What the two files collapse to, per (year, tier). Declared because a wrong
 # seat key produces a plausible number either way.
 SEATS = {
-    ("2008", "gp_head"): 6368, ("2008", "block_member"): 2943,
+    ("2008", "gp_head"): 6368,
+    ("2008", "block_member"): 2943,
     ("2008", "zp_member"): 371,
-    ("2014", "gp_head"): 6621, ("2014", "block_member"): 2885,
+    ("2014", "gp_head"): 6621,
+    ("2014", "block_member"): 2885,
     ("2014", "zp_member"): 386,
-    ("2019", "gp_head"): 5846, ("2019", "block_member"): 2674,
+    ("2019", "gp_head"): 5846,
+    ("2019", "block_member"): 2674,
     ("2019", "zp_member"): 347,
     # Haridwar, which polls on its own cycle
-    ("2010", "gp_head"): 314, ("2010", "block_member"): 219,
+    ("2010", "gp_head"): 314,
+    ("2010", "block_member"): 219,
     ("2010", "zp_member"): 42,
-    ("2015", "gp_head"): 308, ("2015", "block_member"): 221,
+    ("2015", "gp_head"): 308,
+    ("2015", "block_member"): 221,
     ("2015", "zp_member"): 47,
 }
 
 
 def slices(root):
     root = pathlib.Path(root)
-    csv.field_size_limit(10 ** 7)
+    csv.field_size_limit(10**7)
 
     raw = []
     for relative in FILES:
@@ -102,7 +111,8 @@ def slices(root):
         if expected is not None and len(rows) != expected:
             raise SystemExit(
                 f"{REPO}: {relative} holds {len(rows):,} records, "
-                f"{expected:,} declared - the sibling changed")
+                f"{expected:,} declared - the sibling changed"
+            )
         raw += [convert(r, relative) for r in rows]
 
     grouped = {}
@@ -118,7 +128,8 @@ def slices(root):
         if expected is not None and len(seats) != expected:
             raise SystemExit(
                 f"{REPO}: {year}/{tier} collapses to {len(seats):,} seats, "
-                f"{expected:,} declared - the seat key changed")
+                f"{expected:,} declared - the seat key changed"
+            )
         for seat in seats:
             # The result is stated on every row of the seat, so it is read off
             # rather than worked out from the votes.
@@ -127,7 +138,8 @@ def slices(root):
                 row.pop("_key", None)
         yield {
             "dataset_id": f"uttarakhand/{tier}/{year}",
-            "state": STATE, "rows": seats,
+            "state": STATE,
+            "rows": seats,
             "provenance_level": "dataset",
             "unit_of_observation": "seat_from_candidates",
         }
@@ -152,7 +164,9 @@ def split_shared_names(candidates):
     for candidate in candidates:
         if (candidate["_key"],) in varies:
             candidate["_key"] = candidate["_key"] + (
-                candidate["caste_reservation"], candidate["woman_reserved"])
+                candidate["caste_reservation"],
+                candidate["woman_reserved"],
+            )
             candidate["shared_place_name"] = 1
 
 
@@ -216,8 +230,12 @@ def convert(row, relative):
     year = (row.get("Year") or "").strip()
     return {
         "_key": (year, tier, district, block, panchayat, block_ward, zp_ward),
-        "state": STATE, "year": year, "tier": tier, "tier_local": tier_local,
-        "district": district, "block": block,
+        "state": STATE,
+        "year": year,
+        "tier": tier,
+        "tier_local": tier_local,
+        "district": district,
+        "block": block,
         # a block or district seat is a numbered ward of that body and has no
         # panchayat, so the ward is the whole of its identity
         "gram_panchayat": panchayat,
@@ -227,8 +245,7 @@ def convert(row, relative):
         "caste_reservation_local": stated,
         # The vocabulary pairs every category with a महिला form, so a label
         # without one states that the seat is not reserved for a woman.
-        "woman_reserved": "" if (caste is None and woman is None)
-        else int(woman == 1),
+        "woman_reserved": "" if (caste is None and woman is None) else int(woman == 1),
         "gender_stated": "" if (caste is None and woman is None) else 1,
         "reservation": label(caste or "NONE", woman == 1) if stated else "",
         "reservation_raw": stated,

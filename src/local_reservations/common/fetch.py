@@ -104,8 +104,9 @@ def session():
             # rather than an exception that loses which status it was
             raise_on_status=False,
         )
-        adapter = LimiterAdapter(per_second=PER_SECOND, per_minute=PER_MINUTE,
-                                 max_retries=retry)
+        adapter = LimiterAdapter(
+            per_second=PER_SECOND, per_minute=PER_MINUTE, max_retries=retry
+        )
         _SESSION = requests.Session()
         _SESSION.mount("http://", adapter)
         _SESSION.mount("https://", adapter)
@@ -121,13 +122,15 @@ def get(url, timeout=TIMEOUT, headers=None):
     """
     try:
         response = session().get(
-            url, timeout=timeout,
-            headers=headers or {"User-Agent": "Mozilla/5.0"})
+            url, timeout=timeout, headers=headers or {"User-Agent": "Mozilla/5.0"}
+        )
     except requests.RequestException as exc:
         raise Unanswered(f"{type(exc).__name__}: {exc}") from exc
     if response.status_code in RETRY_ON:
-        raise Unanswered(f"HTTP {response.status_code} after retries: {url}",
-                         status=response.status_code)
+        raise Unanswered(
+            f"HTTP {response.status_code} after retries: {url}",
+            status=response.status_code,
+        )
     return response
 
 
@@ -135,6 +138,7 @@ def body(url, **kwargs):
     """The bytes of a 2xx response, or `Unanswered`."""
     response = get(url, **kwargs)
     if not response.ok:
-        raise Unanswered(f"HTTP {response.status_code}: {url}",
-                         status=response.status_code)
+        raise Unanswered(
+            f"HTTP {response.status_code}: {url}", status=response.status_code
+        )
     return response.content

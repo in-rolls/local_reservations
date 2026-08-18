@@ -522,7 +522,7 @@ wheels = [
 
 [[package]]
 name = "local-reservations"
-version = "0.2.1"
+version = "0.2.8"
 source = { editable = "." }
 dependencies = [
     { name = "pandas" },
@@ -543,6 +543,9 @@ ocr = [
     { name = "mlx-vlm" },
     { name = "pillow", version = "10.4.0", source = { registry = "https://pypi.org/simple" } },
     { name = "savitr" },
+]
+test = [
+    { name = "pytest" },
 ]
 
 [package.metadata]
@@ -566,6 +569,7 @@ ocr = [
     { name = "pillow", specifier = "==10.4.0" },
     { name = "savitr", specifier = "==0.2.0" },
 ]
+test = [{ name = "pytest" }]
 
 [[package]]
 name = "markdown-it-py"
@@ -1342,7 +1346,7 @@ name = "pytest"
 version = "9.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'group-18-local-reservations-dev' and extra == 'group-18-local-reservations-ocr')" },
     { name = "iniconfig" },
     { name = "packaging" },
     { name = "pluggy" },
