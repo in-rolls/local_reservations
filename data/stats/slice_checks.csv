@@ -878,7 +878,7 @@ Uttar Pradesh,2005,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_
 Uttar Pradesh,2005,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Uttar Pradesh,2005,gp_head,plausible_vs_registry,external,pass,88%,,"51,872 against 58,757 in the register (2019-20)"
 Uttar Pradesh,2005,gp_head,year_constant,internal,pass,2005,2005,
-Uttar Pradesh,2005,gp_head,provenance_resolves,internal,skip,,,local_elections_up is not checked out here
+Uttar Pradesh,2005,gp_head,provenance_resolves,internal,pass,0,0,1 documents
 Uttar Pradesh,2010,gp_head,rows_in_band,declared,pass,51861,45000..60000,
 Uttar Pradesh,2010,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc; 33 rows state no category
 Uttar Pradesh,2010,gp_head,blank_share_within_tolerance,declared,warn,caste_reservation 0%>0%; woman_reserved 0%>0%; gender_stated 0%>0%; reservation 0%>0%,,4 column(s) over tolerance
@@ -894,7 +894,7 @@ Uttar Pradesh,2010,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_
 Uttar Pradesh,2010,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Uttar Pradesh,2010,gp_head,plausible_vs_registry,external,pass,88%,,"51,861 against 58,757 in the register (2019-20)"
 Uttar Pradesh,2010,gp_head,year_constant,internal,pass,2010,2010,
-Uttar Pradesh,2010,gp_head,provenance_resolves,internal,skip,,,local_elections_up is not checked out here
+Uttar Pradesh,2010,gp_head,provenance_resolves,internal,pass,0,0,1 documents
 Uttar Pradesh,2021,gp_head,rows_in_band,declared,pass,49772,45000..60000,
 Uttar Pradesh,2021,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
 Uttar Pradesh,2021,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
