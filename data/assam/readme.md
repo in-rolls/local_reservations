@@ -66,8 +66,8 @@ SHA-256, with page provenance on every emitted seat. The board totals reconcile
 to the notification's own grand total of 1,004 wards.
 
 The separate `2025_reservation` source series contains 27 district PRI
-notifications acquired from the Assam State Election Commission. Charaideo,
-Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are parsed, not a
+notifications acquired from the Assam State Election Commission.
+Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are parsed, not a
 statewide claim. Charaideo's 36 GPs span four Anchalik Panchayats; its left table keeps
 the printed SC/ST ward counts, including zeroes and twos. Kamrup Metropolitan's
 20 GPs span three Anchalik Panchayats; its notification explicitly labels every
@@ -78,8 +78,9 @@ blank because that source does not print the crosswalk. Hailakandi contributes
 a 62-GP left table across five Anchalik Panchayats and 459 identifiable reserved
 seats. Its notification omits open seats, so those are not invented and its
 unknown all-ward counts stay blank. Seven child seat tables contain 1,678 stated
-seats across the four districts. Acquisition, OCR, parsing, and validation are
-separate stages. The remaining 23 district PDFs stay visible as held, unparsed
+seats across the 4 districts. Acquisition, OCR, parsing, and
+validation are separate stages. The remaining 23 district PDFs
+stay visible as held, unparsed
 work. Four supporting final-delimitation gazettes preserve the official AP, GP,
 development-block, and ZPC hierarchy used to review Hailakandi.
 

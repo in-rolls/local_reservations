@@ -44,7 +44,7 @@ Assam,2025,block_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_pa
 Assam,2025,block_head,seat_key_unique,internal,pass,0,0,
 Assam,2025,block_head,tier_local_maps_to_one_tier,internal,pass,Anchalik Panchayat President,block_head,
 Assam,2025,block_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
-Assam,2025,block_head,plausible_vs_registry,external,pass,7%,,"13 against 191 in the register (2019-20) - Charaideo, Kamrup Metropolitan, and South Salmara-Mankachar are the first 3 of 27 held district notifications; the coverage table keeps the remaining 24 visible as unparsed work"
+Assam,2025,block_head,plausible_vs_registry,external,pass,7%,,"13 against 191 in the register (2019-20) - Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are 4 of 27 held district notifications; the coverage table keeps the remaining 23 visible as unparsed work"
 Assam,2025,block_head,year_constant,internal,pass,2025,2025,
 Assam,2025,block_head,provenance_resolves,internal,pass,0,0,4 documents
 Assam,2025,block_member,rows_in_band,declared,skip,127,,no row band declared for this state and tier
@@ -92,7 +92,7 @@ Assam,2025,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panch
 Assam,2025,gp_head,seat_key_unique,internal,pass,0,0,
 Assam,2025,gp_head,tier_local_maps_to_one_tier,internal,pass,Gaon Panchayat President,gp_head,
 Assam,2025,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
-Assam,2025,gp_head,plausible_vs_registry,external,pass,6%,,"124 against 2,197 in the register (2019-20) - Charaideo, Kamrup Metropolitan, and South Salmara-Mankachar are the first 3 of 27 held district notifications; the coverage table keeps the remaining 24 visible as unparsed work"
+Assam,2025,gp_head,plausible_vs_registry,external,pass,6%,,"124 against 2,197 in the register (2019-20) - Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are 4 of 27 held district notifications; the coverage table keeps the remaining 23 visible as unparsed work"
 Assam,2025,gp_head,year_constant,internal,pass,2025,2025,
 Assam,2025,gp_head,provenance_resolves,internal,pass,0,0,4 documents
 Assam,2025,gp_vice_head,rows_in_band,declared,skip,125,,no row band declared for this state and tier

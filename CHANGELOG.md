@@ -11,6 +11,11 @@ here is usually the thing that was wrong.
 
 ### Corrected
 
+- **Gram-panchayat identifiers now survive the pooled projection.** The shared
+  schema carries `gp_no` as a string, including J&K identifiers such as `14K`,
+  rather than relegating 31,939 values to the extras table. This resolves 108
+  false seat-key collisions without adding or dropping a row.
+
 - **Kadapa applies the gazette's own 41-row errata instead of silently
   overwriting the original cells.** The positioned parser reads 807 GP heads
   and 7,903 wards,
@@ -72,7 +77,7 @@ here is usually the thing that was wrong.
   marked `Private :: Do Not Upload`: the released product is the GitHub data
   package pinned by `MANIFEST.json`, not a PyPI distribution.
 
-- **The master has 865,916 distinct seat keys (99.6%) and 3,643 collisions,**
+- **The master has 866,024 distinct seat keys (99.6%) and 3,535 collisions,**
   compared with 824,987 (99.4%) and 5,079 in v0.2.8. The release checks the
   declared seat grain, provenance, hierarchy, and reservation fields before
   writing the manifest.

@@ -49,10 +49,10 @@ we get it" but "what is in it".
 | **Goa** | 37 | 4 | 0 | 0 | 687 | **2012/2017/2022 `panres_<taluka>` panchayat reservation + ward category** |
 | Gujarat | 0 | 0 | 45 | 0 | 605 | **2020 SEC rotation orders: 16 district-panchayat and 29 taluka-panchayat PDFs; parsed into 1,178 seats** |
 | West Bengal | 0 | 39 | 0 | 1 | 603 | 2018 SEC delimitation-and-reservation gazettes, per district - parsed, 825 zilla parishad seats |
+| Madhya Pradesh | 0 | 2 | 0 | 0 | 351 | two large OmniPage-OCR'd volumes |
 | Odisha | 6 | 0 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member - **district totals, not seat-level** |
+| Tamil Nadu | 11 | 1 | 0 | 0 | 74 | gazettes, but **municipal/corporation**, not village panchayat |
 | Himachal Pradesh | 0 | 1 | 0 | 0 | 3 | one source PDF |
-| Tamil Nadu | 0 | 0 | 0 | 0 | 0 | gazettes, but **municipal/corporation**, not village panchayat |
-| Madhya Pradesh | 0 | 0 | 0 | 0 | 0 | two large OmniPage-OCR'd volumes |
 <!-- holdings:end -->
 
 An India-egress review on 26 August 2026 changed two acquisition findings:

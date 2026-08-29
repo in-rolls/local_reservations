@@ -53,7 +53,7 @@ than a defect.
 | `serial` | integer | warn | range 1–9999; ≤10% blank | AP's per-mandal running number; gaps in it mean lost rows. |
 | `halqa` | string | warn | length 2–45; ≤10% blank |  |
 | `seat_id_raw` | string | info | length 1–90; ≤5% blank | Jharkhand. The seat identifier exactly as printed, before it was taken apart - a compound of district, block, gram panchayat and constituency number run together with @ and /. Kept because the split is the kind of thing worth being able to re-check against the page. |
-| `gp_no` | integer | warn | range 1–99; ≤60% blank | The gram panchayat's number within its block, where the source states one. |
+| `gp_no` | string | warn | length 1–10; ≤60% blank | The gram panchayat's identifier within its block, where the source states one. J&K uses alphanumeric identifiers such as 14K. |
 | `gp_identity_from_page_text` | boolean | info | — | J&K 2016 only. Set when a merged panchayat cell is visibly printed but the table extractor returns it empty, so the number and name are recovered from the source-faithful page text instead. |
 | `pop_sc` | integer | warn | range 0–100000; ≤90% blank | J&K prints the populations the allocation was based on, which is the only place in this repo the rule can be checked against its own inputs. |
 | `pop_st` | integer | warn | range 0–100000; ≤90% blank |  |

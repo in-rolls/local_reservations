@@ -24,7 +24,6 @@ warn,jk/ward_reservation_2010.csv,column,ward_name,length outside 2..40,31,0.002
 warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,27,0.0037,5S | 1g | 1s,data/ap/2020_res_gp/atp_res_gp.pdf,78
 warn,jharkhand/zila_parishad_reservation_2015.csv,row,ward_no,seat-level row carries a ward number,25,0.1106,01 | 02 | 03,data/jharkhand/2015/8. DEOGHAR MUKHIYA PSS/DEOGHAR ZP MUKHIYA PSS GPS.pdf,2
 warn,ap/ward_reservation_2020.csv,column,serial,outside 1..9999,22,0.0003,0 | 0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
-warn,jk/ward_reservation_2016.csv,column,gp_no,not an integer,20,0.0016,1. Ghagwal | 2. Harsath | 3. Jatwal,data/jk/2016/PDF Samba Distt.pdf,4
 warn,jk/ward_reservation_2016.csv,column,pop_total,not an integer,20,0.0016,2 2 9 | 446.52 | 252.54,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/ward_reservation_2016.csv,column,pop_oc,not an integer,18,0.0015,2 2 9 | 142.74 | 146.4,data/jk/2016/Annex B Doda.pdf,6
 warn,jk/ward_reservation_2016.csv,column,ward_name,length outside 2..40,16,0.0013,Moh. Uper Ranjol to Ho Charan  | Moh. Pangotra Ram Nath Tarkhan | Lower Ranjol Ho Saran Sharma t,data/jk/2016/Annex A Kathua.pdf,7
@@ -35,6 +34,7 @@ warn,assam/gp_ward_reservation_2025.csv,column,ward_name,length outside 2..40,7,
 warn,jk/ward_reservation_2016.csv,column,pop_oc,outside 0..100000,7,0.0006,-273 | -301 | -303,data/jk/2016/Publication Jammu B.pdf,38
 warn,telangana/gp_ward_2019.csv,column,gram_panchayat,length outside 2..45,6,0.0001,Ab Thanda @ Addabata Thanda@Ma | Ab Thanda @ Addabata Thanda@Ma | Ab Thanda @ Addabata Thanda@Ma,data/telangana/2019_ward/2019_ward_Warangal Rural.csv,
 warn,ap/sarpanch_reservation_2020.csv,column,gram_panchayat,length outside 2..45,5,0.0007,Chigicherla De (G) zee Dharmav | Chilamakuru B.C (G) _ S.C (W)  | Kunavaram 16 8 8 16 0 0 0 0 0 ,data/ap/2020_res_gp/atp_res_gp.pdf,7
+warn,jk/ward_reservation_2016.csv,column,gp_no,length outside 1..10,4,0.0003,6. Patyari Kattlian | 8. Sangwali | 2.Chak dulma,data/jk/2016/PDF Samba Distt.pdf,5
 warn,jk/ward_reservation_2016.csv,column,pop_sc,not an integer,3,0.0002,NIL | NIL | 1 0 5,data/jk/2016/Publication Udhampur A.pdf,31
 warn,jk/ward_reservation_2018.csv,column,ward_name,length outside 2..40,3,0.0021,"vii-BRADINARD,KHATAN, GANIE,BI | i-DARDKHOWER/KOLI/ BARA /AHENG | ii-DARDKHOWER/ KHATANA /PASWAL",data/jk/2018/Srinagar.pdf,1
 warn,ap/sarpanch_reservation_2020.csv,column,serial,outside 1..9999,2,0.0003,0 | 0,data/ap/2020_res_gp/pkm_res_gp.pdf,15
@@ -44,8 +44,6 @@ warn,karnataka/block_member_2016.csv,column,ward_name,length outside 2..40,2,0.0
 warn,telangana/gp_head_2019.csv,column,gram_panchayat,length outside 2..45,2,0.0002,Nazrulnagar ( Name To Be Chang | Ab Thanda @ Addabata Thanda@Ma,data/telangana/2019_gp_sarpanch.csv,
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6
 warn,gujarat/block_member_reservation_2020.csv,column,ward_name,length outside 2..40,1,0.0015,2,data/gujarat/2020_reservation/block_member_patan_tps_2020.pdf,6
-warn,jharkhand/ward_member_reservation_2015.csv,column,gp_no,outside 1..99,1,0.0001,0,data/jharkhand/2015/19. RANCHI MUKHIYA PSS/RANCHI ZP PSS MUKHIYA GPS.pdf,128
-warn,jk/sarpanch_reservation_2016.csv,column,gp_no,not an integer,1,0.0006,14K,data/jk/2016/Reasi Distt Publication.pdf,12
 info,karnataka/block_member_2016.csv,column,party_local,length outside 1..80,20,0.0058,ಭಾರತೀಯ ರಾಷ್ಟ್ರೀಯ ಕಾಂಗ್ರೆಸ್ ಕೆ. | ಭಾರತೀಯ ಜನತಾ ಪಕ್ಷ ಕೆ.ಎಸ್. ರೇವಣ್ | ಭಾರತೀಯ ರಾಷ್ಟ್ರೀಯ ಕಾಂಗ್ರೆಸ್ ಮಹೇ,data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_TP_Chamarajanagara_Gundlupete.pdf,2
 info,jharkhand/panchayat_samiti_reservation_2015.csv,column,seat_id_raw,length outside 1..90,10,0.0019,XVI रामगढ़/05/चितरपुर -09 ग्रा | XVI रामगढ़/05/चितरपुर -10 ग्रा | XVI रामगढ़/06/गोला -01 ग्राम प,data/jharkhand/2015/16. RAMGARH ZP PSS MUKHIYA GPS/Panchayat Samiti Final Prapatra - 23/Chiterpur PSS.pdf,1
 info,karnataka/block_member_2016.csv,column,relation_name,length outside 1..90,9,0.0026,"ಡಿ. ಎಂ. ಜಾನೇಗೌಡ, ದಿಣ್ಣೇಕೆರೆ, ಕ | ಕೆ.ಇ.ಮಂಜಣ್ಣ, ಭರಮಸಮುದ್ರ, ಜಗಳೂರು | ಬೋರೇಗೌಡ, ಹೊಸೂರುಕೊಪ್ಪಲು ಗಾಮ, ಗೆ",data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_TP_Chikkamagalur_Chikkamagalur.pdf,4
