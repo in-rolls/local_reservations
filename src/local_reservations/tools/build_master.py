@@ -90,9 +90,16 @@ def git_commit(directory, paths=None):
 
 
 # What a locally parsed row is actually built from: the parsers, and the parsed
-# data they wrote. Not data/master, which is this script's own output - counting
-# it would put the build back in the loop it is here to break.
-LOCAL_INPUTS = ["src", "tests", "data", ":(exclude)data/master"]
+# data they wrote. Generated data products are excluded: counting an output as
+# an input would put the build back in the loop this scope is here to break.
+LOCAL_INPUTS = [
+    "src",
+    "tests",
+    "data",
+    ":(exclude)data/master",
+    ":(exclude)data/stats",
+    ":(exclude)data/expectations_report.csv",
+]
 
 
 def local_slices():
