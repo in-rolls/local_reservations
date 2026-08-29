@@ -115,7 +115,8 @@ def test_generated_outputs_do_not_advance_local_source_commit(tmp_path):
     stats = tmp_path / "data" / "stats" / "slice_checks.csv"
     master = tmp_path / "data" / "master" / "state.parquet"
     report = tmp_path / "data" / "expectations_report.csv"
-    for path in (source, stats, master, report):
+    state_readme = tmp_path / "data" / "assam" / "readme.md"
+    for path in (source, stats, master, report, state_readme):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text("first\n", encoding="utf-8")
     subprocess.run(["git", "-C", tmp_path, "add", "."], check=True)
@@ -127,7 +128,7 @@ def test_generated_outputs_do_not_advance_local_source_commit(tmp_path):
         text=True,
     ).stdout.strip()[:12]
 
-    for path in (stats, master, report):
+    for path in (stats, master, report, state_readme):
         path.write_text("second\n", encoding="utf-8")
     subprocess.run(["git", "-C", tmp_path, "add", "."], check=True)
     subprocess.run(["git", "-C", tmp_path, "commit", "-qm", "generated"], check=True)
