@@ -36,7 +36,7 @@ MANIFEST_MD = ROOT / "MANIFEST.md"
 
 # Bumped whenever MASTER_COLUMNS changes, so a consumer can tell a schema change
 # from a data change without diffing the header.
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 
 def git(directory, *args):

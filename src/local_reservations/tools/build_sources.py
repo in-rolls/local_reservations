@@ -23,6 +23,7 @@ import sys
 
 from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
+from local_reservations.states.assam import controls_2025 as assam_controls
 
 SOURCES = ROOT / "SOURCES.md"
 INVENTORY = ROOT / "data" / "inventory.csv"
@@ -40,9 +41,9 @@ GROUPS = {
     "**Goa**": ["goa"],
     "West Bengal": ["wb"],
     "Gujarat": ["gujarat"],
-    "Madhya Pradesh": ["mp"],
+    "Madhya Pradesh": ["madhya_pradesh"],
     "Odisha": ["odisha"],
-    "Tamil Nadu": ["tn"],
+    "Tamil Nadu": ["tamil_nadu"],
     "Chandigarh, Puducherry, Delhi": ["chandigarh", "puducherry", "delhi"],
     "**Karnataka**": ["karnataka"],
     "Assam": ["assam"],
@@ -73,8 +74,12 @@ HELD = {
     "plus `Karnataka_GP_ReservationHistory.dta`. 244 of the "
     "documents are deliberately unread - see "
     "data/karnataka/readme.md",
-    "Assam": "2020 municipal reservation parsed; all 27 district PRI "
-    "notifications for 2025 acquired; 4 district notifications parsed",
+    "Assam": (
+        "2020 municipal reservation parsed; all "
+        f"{assam_controls.HELD_DISTRICT_NOTIFICATIONS} district PRI notifications "
+        f"for 2025 acquired; {len(assam_controls.PARSED_DISTRICTS)} district "
+        "notifications parsed"
+    ),
     "Himachal Pradesh": "one source PDF",
 }
 

@@ -19,6 +19,8 @@ seats and its holdings are an ad-hoc subset rather than a corpus, so inventing a
 denominator there would be worse than admitting there isn't one.
 """
 
+from local_reservations.states.assam import controls_2025 as assam_controls
+
 # (state, year, tier) -> {"total": int|None, "basis": str, "source": str}
 PUBLISHED = {
     ("Gujarat", "2020", "zp_member"): {
@@ -505,9 +507,7 @@ REGISTRY_TIER = {"gp_head": 2, "block_head": 1, "zp_head": 0}
 # Why a slice holds far fewer bodies than the state has. Without these the
 # registry check reports four mysteries; with them it reports four facts.
 REGISTRY_SCOPE = {
-    ("Assam", "2025"): "Charaideo, Kamrup Metropolitan, and South "
-    "Salmara-Mankachar are the first 3 of 27 held district notifications; "
-    "the coverage table keeps the remaining 24 visible as unparsed work",
+    ("Assam", "2025"): assam_controls.REGISTRY_SCOPE,
     ("Uttarakhand", "2010"): "Haridwar alone, which polls on its own cycle - "
     "the state's other twelve districts voted in 2008 "
     "and 2014, and this slice is complete for the "

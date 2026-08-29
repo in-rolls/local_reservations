@@ -20,6 +20,17 @@ from local_reservations.states.assam import (
 )
 
 
+def test_district_scope_counts_derive_from_one_reviewed_list():
+    assert len(controls_2025.PARSED_DISTRICTS) == 4
+    assert controls_2025.HELD_DISTRICT_NOTIFICATIONS == 27
+    assert controls_2025.UNPARSED_DISTRICT_NOTIFICATIONS == 23
+    assert (
+        len(controls_2025.PARSED_DISTRICTS)
+        + controls_2025.UNPARSED_DISTRICT_NOTIFICATIONS
+        == controls_2025.HELD_DISTRICT_NOTIFICATIONS
+    )
+
+
 def test_hailakandi_delimitation_gazettes_use_the_standard_manifest():
     rows = delimitation_2024.verify()
     assert len(rows) == delimitation_2024.EXPECTED_DOCUMENTS

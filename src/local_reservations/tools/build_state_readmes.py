@@ -24,17 +24,22 @@ import sys
 from local_reservations.common import datasets
 from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
+from local_reservations.states.assam import controls_2025 as assam_controls
 from local_reservations.tools import build_coverage as coverage
 
 STATS = DATA_STATS = None
 
 DATA = ROOT / "data"
+ASSAM_HELD = assam_controls.HELD_DISTRICT_NOTIFICATIONS
+ASSAM_PARSED = len(assam_controls.PARSED_DISTRICTS)
+ASSAM_PARSED_LABEL = assam_controls.PARSED_DISTRICT_LABEL
+ASSAM_UNPARSED = assam_controls.UNPARSED_DISTRICT_NOTIFICATIONS
 
 # What is awkward about each state's sources. Knowledge about the documents,
 # not a fact derivable from the rows, so it is written rather than computed -
 # and kept to what a reader needs before using the numbers.
 STATE_NOTES = {
-    "assam": """The 2020 notification contains two reservation rosters: wards
+    "assam": f"""The 2020 notification contains two reservation rosters: wards
 and municipal-board chairpersons. It prints only the reserved seats. The ward
 table also prints each board's total number of wards, but not the identifiers
 of the open wards; those seats are therefore not invented in the output, and
@@ -45,9 +50,9 @@ and 46 chairperson rows are checked transcriptions tied to the committed PDF's
 SHA-256, with page provenance on every emitted seat. The board totals reconcile
 to the notification's own grand total of 1,004 wards.
 
-The separate `2025_reservation` source series contains 27 district PRI
-notifications acquired from the Assam State Election Commission. Charaideo,
-Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are parsed, not a
+The separate `2025_reservation` source series contains {ASSAM_HELD} district PRI
+notifications acquired from the Assam State Election Commission.
+{ASSAM_PARSED_LABEL} are parsed, not a
 statewide claim. Charaideo's 36 GPs span four Anchalik Panchayats; its left table keeps
 the printed SC/ST ward counts, including zeroes and twos. Kamrup Metropolitan's
 20 GPs span three Anchalik Panchayats; its notification explicitly labels every
@@ -58,8 +63,9 @@ blank because that source does not print the crosswalk. Hailakandi contributes
 a 62-GP left table across five Anchalik Panchayats and 459 identifiable reserved
 seats. Its notification omits open seats, so those are not invented and its
 unknown all-ward counts stay blank. Seven child seat tables contain 1,678 stated
-seats across the four districts. Acquisition, OCR, parsing, and validation are
-separate stages. The remaining 23 district PDFs stay visible as held, unparsed
+seats across the {ASSAM_PARSED} districts. Acquisition, OCR, parsing, and
+validation are separate stages. The remaining {ASSAM_UNPARSED} district PDFs
+stay visible as held, unparsed
 work. Four supporting final-delimitation gazettes preserve the official AP, GP,
 development-block, and ZPC hierarchy used to review Hailakandi.
 

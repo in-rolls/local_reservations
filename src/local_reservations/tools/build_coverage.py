@@ -29,6 +29,7 @@ import sys
 import pyarrow.parquet as pq
 
 from local_reservations.paths import ROOT
+from local_reservations.states.assam import controls_2025 as assam_controls
 
 DATA = ROOT / "data"
 README = ROOT / "readme.md"
@@ -164,7 +165,10 @@ REMAINING_WORK = {
         "unparsed; 32 held PDFs cover MPTC, ZPTC, MPP, and MPL tiers and "
         "remain unparsed"
     ),
-    "Assam": "23 held 2025 district PRI scans remain unparsed",
+    "Assam": (
+        f"{assam_controls.UNPARSED_DISTRICT_NOTIFICATIONS} held 2025 district "
+        "PRI scans remain unparsed"
+    ),
     "Chandigarh": (
         "5 held municipal and election-report PDFs need a rural-scope review"
     ),

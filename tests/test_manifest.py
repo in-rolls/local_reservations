@@ -91,7 +91,7 @@ def test_the_manifest_records_the_exact_column_order():
     from local_reservations.tools import build_manifest
 
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["schema_version"] == build_manifest.SCHEMA_VERSION == 2
+    assert manifest["schema_version"] == build_manifest.SCHEMA_VERSION == 3
     assert manifest["master_columns"] == M.MASTER_COLUMNS
 
 

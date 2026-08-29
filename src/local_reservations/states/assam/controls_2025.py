@@ -2,6 +2,24 @@
 
 import collections
 
+HELD_DISTRICT_NOTIFICATIONS = 27
+PARSED_DISTRICTS = (
+    "Charaideo",
+    "Kamrup Metropolitan",
+    "South Salmara-Mankachar",
+    "Hailakandi",
+)
+UNPARSED_DISTRICT_NOTIFICATIONS = HELD_DISTRICT_NOTIFICATIONS - len(PARSED_DISTRICTS)
+PARSED_DISTRICT_LABEL = (
+    ", ".join(PARSED_DISTRICTS[:-1]) + f", and {PARSED_DISTRICTS[-1]}"
+)
+REGISTRY_SCOPE = (
+    f"{PARSED_DISTRICT_LABEL} are {len(PARSED_DISTRICTS)} of "
+    f"{HELD_DISTRICT_NOTIFICATIONS} held district notifications; the coverage "
+    f"table keeps the remaining {UNPARSED_DISTRICT_NOTIFICATIONS} visible as "
+    "unparsed work"
+)
+
 BLOCK_GP_COUNTS = {"Sonari": 8, "Sapekhati": 11, "Mahmora": 11, "Lakwa": 6}
 EXPECTED_ROWS = {
     "gp_ward": 360,

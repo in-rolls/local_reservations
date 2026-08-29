@@ -2,9 +2,10 @@
 
 import pyarrow as pa
 import pyarrow.parquet as pq
+import pytest
 
 from local_reservations.common import notes, slice_checks
-from local_reservations.tools import build_coverage
+from local_reservations.tools import build_coverage, build_sources
 
 
 def test_sibling_parquet_rows_are_counted_from_metadata(tmp_path, monkeypatch):
@@ -14,6 +15,18 @@ def test_sibling_parquet_rows_are_counted_from_metadata(tmp_path, monkeypatch):
     monkeypatch.setattr(build_coverage, "ROOT", tmp_path / "local_reservations")
     spec = {"repo": "sibling", "files": ["seats.parquet"]}
     assert build_coverage.sibling_rows(spec) == "3"
+
+
+def test_source_holdings_use_inventory_directory_names(tmp_path, monkeypatch):
+    inventory = tmp_path / "inventory.csv"
+    inventory.write_text(
+        "state,format,pages\nmadhya_pradesh,digital-text,351\ntamil_nadu,scan,74\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(build_sources, "INVENTORY", inventory)
+    rendered = build_sources.render()
+    assert "| Madhya Pradesh | 1 | 0 | 0 | 0 | 351 |" in rendered
+    assert "| Tamil Nadu | 0 | 1 | 0 | 0 | 74 |" in rendered
 
 
 def test_coverage_describes_held_unparsed_pdfs_plainly():
@@ -65,6 +78,12 @@ def test_every_parsed_state_with_unlinked_pdfs_has_a_reviewed_classification():
 
 def test_sibling_source_record_counts_are_reported():
     rows = {row[0]: row for row in build_coverage.build_rows()}
-    assert rows["Rajasthan"][3] == "39,520"
     assert "local_elections_rajasthan" in rows["Rajasthan"][6]
+    required = [
+        build_coverage.ROOT.parent / build_coverage.SIBLINGS[state]["repo"]
+        for state in ("Rajasthan", "Uttar Pradesh")
+    ]
+    if not all(path.exists() for path in required):
+        pytest.skip("state sibling repositories are not checked out")
+    assert rows["Rajasthan"][3] == "39,520"
     assert rows["Uttar Pradesh"][3] == "535,848"

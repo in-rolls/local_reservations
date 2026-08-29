@@ -86,6 +86,13 @@ def test_a_source_table_rule_cannot_break_the_seat_key_delimiter():
     assert "Sakra - %7C" in key
 
 
+def test_gp_number_survives_projection_and_distinguishes_same_named_gps():
+    gp_18 = convert(gp_no="18", gram_panchayat="नावाडीह")
+    gp_32 = convert(gp_no="32", gram_panchayat="नावाडीह")
+    assert (gp_18["gp_no"], gp_32["gp_no"]) == ("18", "32")
+    assert gp_18["seat_key"] != gp_32["seat_key"]
+
+
 # ------------------------------------------------------------------- scope
 
 
