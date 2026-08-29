@@ -355,12 +355,12 @@ COLUMNS = [
     ),
     column(
         "gp_no",
-        "integer",
-        range=(1, 99),
+        "string",
+        length=(1, 10),
         max_blank=0.60,
         severity=WARN,
-        note="The gram panchayat's number within its block, where the "
-        "source states one.",
+        note="The gram panchayat's identifier within its block, where the "
+        "source states one. J&K uses alphanumeric identifiers such as 14K.",
     ),
     column(
         "gp_identity_from_page_text",

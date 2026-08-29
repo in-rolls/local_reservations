@@ -91,6 +91,7 @@ def test_gp_number_survives_projection_and_distinguishes_same_named_gps():
     gp_32 = convert(gp_no="32", gram_panchayat="नावाडीह")
     assert (gp_18["gp_no"], gp_32["gp_no"]) == ("18", "32")
     assert gp_18["seat_key"] != gp_32["seat_key"]
+    assert convert(gp_no="14K")["gp_no"] == "14K"
 
 
 # ------------------------------------------------------------------- scope
