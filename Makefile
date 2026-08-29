@@ -203,8 +203,8 @@ test:
 
 ci-docker:
 	docker run --rm --pull=always \
-		--mount type=bind,source="$(abspath ..)",target=/workspace \
-		--workdir /workspace/local_elections \
+		--mount type=bind,source="$(CURDIR)",target=/workspace \
+		--workdir /workspace \
 		--env UV_PROJECT_ENVIRONMENT=/tmp/local-reservations-venv \
 		--env UV_CACHE_DIR=/tmp/uv-cache \
 		--env RUFF_CACHE_DIR=/tmp/ruff-cache \
