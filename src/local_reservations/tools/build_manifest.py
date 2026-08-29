@@ -55,17 +55,21 @@ def git(directory, *args):
 # that checked plain `git status` reported clean on its first run and dirty on
 # its second - the manifest recording a fact its own existence changed.
 GENERATED = ("MANIFEST.json", "MANIFEST.md")
+RELEASE_INPUTS = [".", *(f":(exclude){path}" for path in GENERATED)]
 
 
-def repo_state(directory):
-    changed = [
-        line
-        for line in git(directory, "status", "--porcelain").split("\n")
-        if line.strip() and not any(line.strip().endswith(name) for name in GENERATED)
-    ]
+def repo_state(directory, paths=None):
+    scope = list(paths or [])
+    if scope:
+        commit = git(directory, "log", "-1", "--format=%H", "--", *scope)
+        changed = git(directory, "status", "--porcelain", "--", *scope)
+    else:
+        commit = git(directory, "rev-parse", "HEAD")
+        changed = git(directory, "status", "--porcelain")
+    changed = [line for line in changed.split("\n") if line.strip()]
     return {
-        "commit": git(directory, "rev-parse", "HEAD"),
-        "committed_utc": git(directory, "show", "-s", "--format=%cI", "HEAD"),
+        "commit": commit,
+        "committed_utc": git(directory, "show", "-s", "--format=%cI", commit),
         "dirty": bool(changed),
     }
 
@@ -122,7 +126,7 @@ def describe(path, rows):
 
 
 def build():
-    here = repo_state(ROOT)
+    here = repo_state(ROOT, RELEASE_INPUTS)
     files, totals = [], collections.Counter()
 
     master_dir = ROOT / "data" / "master"

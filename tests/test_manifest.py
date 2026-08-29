@@ -51,6 +51,37 @@ def test_two_builds_from_one_tree_are_byte_identical():
     assert first == second
 
 
+def test_manifest_only_commits_do_not_advance_the_build_commit(tmp_path):
+    from local_reservations.tools import build_manifest
+
+    subprocess.run(["git", "init", "-q", tmp_path], check=True)
+    subprocess.run(
+        ["git", "-C", tmp_path, "config", "user.email", "test@example.com"],
+        check=True,
+    )
+    subprocess.run(["git", "-C", tmp_path, "config", "user.name", "Test"], check=True)
+    source = tmp_path / "data.csv"
+    source.write_text("source\n", encoding="utf-8")
+    subprocess.run(["git", "-C", tmp_path, "add", "."], check=True)
+    subprocess.run(["git", "-C", tmp_path, "commit", "-qm", "source"], check=True)
+    expected = subprocess.run(
+        ["git", "-C", tmp_path, "rev-parse", "HEAD"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+
+    for name in build_manifest.GENERATED:
+        (tmp_path / name).write_text("manifest\n", encoding="utf-8")
+    subprocess.run(["git", "-C", tmp_path, "add", "."], check=True)
+    subprocess.run(["git", "-C", tmp_path, "commit", "-qm", "manifest"], check=True)
+    (tmp_path / "MANIFEST.json").write_text("updated\n", encoding="utf-8")
+
+    state = build_manifest.repo_state(tmp_path, build_manifest.RELEASE_INPUTS)
+    assert state["commit"] == expected
+    assert state["dirty"] is False
+
+
 def test_the_manifest_records_the_exact_column_order():
     """So a consumer can tell a schema change from a data change without
     diffing a header."""
