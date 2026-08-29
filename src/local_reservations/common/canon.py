@@ -25,16 +25,18 @@ from local_reservations.common import dictionary
 # The canonical offices, with the body each belongs to.
 TIER = {
     "gp_head": "head of the gram panchayat",
+    "gp_vice_head": "vice-head of the gram panchayat",
     "gp_ward": "member of a gram panchayat ward",
     "block_member": "member of the block-level body",
     "block_head": "head of the block-level body",
+    "block_vice_head": "vice-head of the block-level body",
     "zp_member": "member of the district-level body",
     "zp_head": "head of the district-level body",
     # The gram kachahari is a village court, elected alongside the panchayat but
     # not part of it. Bihar is the state in this corpus that elects one.
     "kachahari_head": "head of the gram kachahari (village court)",
     "kachahari_member": "member of the gram kachahari (village court)",
-    # Declared so a urban row can be recognised and excluded by name rather
+    # Declared so an urban row can be recognized and excluded by name rather
     # than by falling through as unknown.
     "ulb_ward": "member of an urban local body ward",
     "ulb_head": "head of an urban local body",
@@ -61,6 +63,11 @@ TIER_OF_LOCAL = {
     "grama_panchayat_member": "gp_ward",
     "block_panchayat_member": "block_member",
     "district_panchayat_member": "zp_member",
+    # Assam's notification names the urban body explicitly. Keeping that local
+    # name distinguishes these rows from the rural ward and head offices while
+    # still giving the pooled layer a canonical urban tier.
+    "municipal_board_ward": "ulb_ward",
+    "municipal_board_chairperson": "ulb_head",
     # Uttarakhand
     "kshetra_panchayat_sadasya": "block_member",
     "zila_panchayat_sadasya": "zp_member",
@@ -70,6 +77,15 @@ TIER_OF_LOCAL = {
     "taluk_panchayat_member": "block_member",
     "zilla_panchayat_member": "zp_member",
     "pradhan_(gram_panchayat)": "gp_head",
+    # Assam 2025
+    "gaon_panchayat_president": "gp_head",
+    "gaon_panchayat_ward_member": "gp_ward",
+    "gaon_panchayat_vice_president": "gp_vice_head",
+    "gaon_panchayat_vice-president": "gp_vice_head",
+    "anchalik_panchayat_president": "block_head",
+    "anchalik_panchayat_vice_president": "block_vice_head",
+    "anchalik_panchayat_vice-president": "block_vice_head",
+    "anchalik_panchayat_member": "block_member",
 }
 
 # Printed name -> canonical office, where the state has to decide it. Keep this
@@ -89,11 +105,20 @@ TIER_BY_STATE = {
 
 # Rural, i.e. panchayati raj. The urban local bodies are out of scope for now -
 # the Trivedi Centre holds that material - so the master is built from these and
-# what it leaves out is recorded rather than quietly dropped. Kerala and
-# Rajasthan both ship urban wards in the same file as rural ones, so this has to
-# be a filter, not an assumption about which file a row came from.
-RURAL_TIERS = {"gp_head", "gp_ward", "block_member", "block_head",
-               "zp_member", "zp_head", "kachahari_head", "kachahari_member"}
+# what it leaves out is recorded rather than quietly dropped. Kerala ships urban
+# wards in the same file as rural ones, so this has to be a row-level filter.
+RURAL_TIERS = {
+    "gp_head",
+    "gp_vice_head",
+    "gp_ward",
+    "block_member",
+    "block_head",
+    "block_vice_head",
+    "zp_member",
+    "zp_head",
+    "kachahari_head",
+    "kachahari_member",
+}
 URBAN_TIERS = {"ulb_ward", "ulb_head"}
 
 
@@ -120,6 +145,8 @@ def tier_of(local, state):
 # checkable rather than merely absent. Kerala reserving no BC seat is the law,
 # not a parsing failure; Goa suddenly reserving none would be a parsing failure.
 CASTE_SCHEME = {
+    "Assam": "sc_st_only",
+    "Gujarat": "sc_st_bc",
     "Andhra Pradesh": "sc_st_bc",
     # the same commission's house style as Andhra Pradesh, and the same scheme
     "Telangana": "sc_st_bc",
@@ -166,8 +193,14 @@ def allowed_castes(state):
 # The panchayat's name arrives under whichever term the state prints. The
 # mapping lives in dictionary.py so there is one place that decides it; this
 # reads it rather than repeating the list, which is how the two drifted before.
-UNIT_COLUMNS = ["gram_panchayat", *sorted(alias for alias,
-        canonical in dictionary.ALIAS_OF.items() if canonical == "gram_panchayat")]
+UNIT_COLUMNS = [
+    "gram_panchayat",
+    *sorted(
+        alias
+        for alias, canonical in dictionary.ALIAS_OF.items()
+        if canonical == "gram_panchayat"
+    ),
+]
 
 
 def unit_name(row):
@@ -179,6 +212,31 @@ def unit_name(row):
     """
     present = [c for c in UNIT_COLUMNS if (row.get(c) or "").strip()]
     if len(present) > 1:
-        raise ValueError(f"row names the panchayat in {present}: "
-                         f"{ {c: row[c] for c in present} }")
+        raise ValueError(
+            f"row names the panchayat in {present}: { {c: row[c] for c in present} }"
+        )
     return row.get(present[0], "") if present else ""
+
+
+SEAT_IDENTITY_FIELDS = (
+    "state",
+    "year",
+    "tier",
+    "district",
+    "block",
+    "body",
+    "gp_no",
+    "gram_panchayat",
+    "ward_no",
+    "ward_name",
+    "seat_no",
+)
+
+
+def seat_identity(row):
+    """The standardized seat key used by the master and every shared check."""
+    values = []
+    for field in SEAT_IDENTITY_FIELDS:
+        value = unit_name(row) if field == "gram_panchayat" else row.get(field, "")
+        values.append(str(value or "").strip())
+    return tuple(values)

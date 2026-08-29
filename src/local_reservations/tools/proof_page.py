@@ -27,11 +27,21 @@ import subprocess
 import sys
 import webbrowser
 
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 OUT = pathlib.Path("/tmp/proof_page.html")
-SHOW = ["winner", "tier_local", "caste_reservation", "woman_reserved",
-        "block", "gram_panchayat", "ward_no", "seat_no", "seat_id_raw"]
+SHOW = [
+    "winner",
+    "tier_local",
+    "caste_reservation",
+    "woman_reserved",
+    "block",
+    "gram_panchayat",
+    "ward_no",
+    "seat_no",
+    "seat_id_raw",
+]
 
 
 def rows_for(stem, page):
@@ -46,8 +56,9 @@ def rows_for(stem, page):
                 if not reader.fieldnames or "source_pdf" not in reader.fieldnames:
                     continue
                 for row in reader:
-                    if (pathlib.Path(row.get("source_pdf") or "").stem == stem
-                            and str(row.get("source_page")) == str(page)):
+                    if pathlib.Path(row.get("source_pdf") or "").stem == stem and str(
+                        row.get("source_page")
+                    ) == str(page):
                         found.append(row)
         except (UnicodeDecodeError, csv.Error):
             continue
@@ -57,16 +68,31 @@ def rows_for(stem, page):
 def find_pdf(stem):
     hits = [p for p in (ROOT / "data").rglob("*.pdf") if p.stem == stem]
     if not hits:
-        hits = [p for p in (ROOT / "data").rglob("*.pdf")
-                if stem.lower() in p.stem.lower()]
+        hits = [
+            p for p in (ROOT / "data").rglob("*.pdf") if stem.lower() in p.stem.lower()
+        ]
     return hits[0] if hits else None
 
 
 def render(pdf, page, dpi):
     stem = pathlib.Path("/tmp") / f"proof_{abs(hash(str(pdf))) % 10**8}_{page}"
-    subprocess.run(["pdftoppm", "-f", str(page), "-l", str(page), "-r", str(dpi),
-                    "-png", "-singlefile", str(pdf), str(stem)],
-                   check=True, capture_output=True)
+    subprocess.run(
+        [
+            "pdftoppm",
+            "-f",
+            str(page),
+            "-l",
+            str(page),
+            "-r",
+            str(dpi),
+            "-png",
+            "-singlefile",
+            str(pdf),
+            str(stem),
+        ],
+        check=True,
+        capture_output=True,
+    )
     return stem.with_suffix(".png")
 
 
@@ -80,6 +106,7 @@ def cell(value):
     return f"<td>{html.escape(value)}</td>"
 
 
+@command("review", artifact="proof_page")
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("document", help="PDF stem, or part of it")
@@ -98,10 +125,13 @@ def main():
     for row in rows:
         body += "<tr>" + "".join(cell(row.get(c)) for c in SHOW) + "</tr>"
     if not rows:
-        body = (f"<tr><td colspan='{len(SHOW)}' class='blank'>no published rows "
-                f"cite this page — which is itself the finding</td></tr>")
+        body = (
+            f"<tr><td colspan='{len(SHOW)}' class='blank'>no published rows "
+            f"cite this page — which is itself the finding</td></tr>"
+        )
 
-    OUT.write_text(f"""<!doctype html><meta charset="utf-8">
+    OUT.write_text(
+        f"""<!doctype html><meta charset="utf-8">
 <title>{html.escape(pdf.stem)} p{args.page}</title>
 <style>
  body {{ font: 14px/1.5 -apple-system, sans-serif; margin: 0; background: #f6f6f4; }}
@@ -127,7 +157,9 @@ def main():
   <div class="half"><h2>what we published from it</h2>
     <table><tr>{head}</tr>{body}</table></div>
 </div>
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
     print(f"{len(rows)} row(s) -> {OUT}")
     webbrowser.open(f"file://{OUT}")
     return 0

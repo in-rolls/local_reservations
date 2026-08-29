@@ -21,6 +21,7 @@ import collections
 import csv
 import sys
 
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 SOURCES = ROOT / "SOURCES.md"
@@ -38,12 +39,14 @@ GROUPS = {
     "**Andhra Pradesh**": ["ap"],
     "**Goa**": ["goa"],
     "West Bengal": ["wb"],
+    "Gujarat": ["gujarat"],
     "Madhya Pradesh": ["mp"],
     "Odisha": ["odisha"],
     "Tamil Nadu": ["tn"],
     "Chandigarh, Puducherry, Delhi": ["chandigarh", "puducherry", "delhi"],
     "**Karnataka**": ["karnataka"],
-    "Assam, Himachal": ["assam", "himachal"],
+    "Assam": ["assam"],
+    "Himachal Pradesh": ["himachal"],
 }
 
 # The half a directory listing cannot tell you.
@@ -51,26 +54,28 @@ HELD = {
     "Bihar": "PRI winners 2006-2016; also `local_elections_bihar`",
     "Rajasthan": "panchayat 2005-2021",
     "**Jharkhand**": "**2015 mukhiya (GP head) reservation by district; 2022 "
-                     "Form-23 ZP members**",
+    "Form-23 ZP members**",
     "**Jammu & Kashmir**": "**2010/2016/2018 block-wise, panch-ward "
-                           "reservation with SC/ST/OC population**",
-    "**Andhra Pradesh**": "**2020 district gazettes: GP, MPTC, ZPTC, MPP "
-                          "reservation**",
+    "reservation with SC/ST/OC population**",
+    "**Andhra Pradesh**": "**2020 district gazettes: GP, MPTC, ZPTC, MPP reservation**",
     "**Goa**": "**2012/2017/2022 `panres_<taluka>` panchayat reservation + "
-               "ward category**",
+    "ward category**",
     "West Bengal": "2018 SEC delimitation-and-reservation gazettes, per "
-                   "district - parsed, 825 zilla parishad seats",
+    "district - parsed, 825 zilla parishad seats",
+    "Gujarat": "**2020 SEC rotation orders: 16 district-panchayat and 29 "
+    "taluka-panchayat PDFs; parsed into 1,178 seats**",
     "Madhya Pradesh": "two large OmniPage-OCR'd volumes",
     "Odisha": "2017 reservation of sarpanch/ward member - **district totals, "
-              "not seat-level**",
-    "Tamil Nadu": "gazettes, but **municipal/corporation**, not village "
-                  "panchayat",
+    "not seat-level**",
+    "Tamil Nadu": "gazettes, but **municipal/corporation**, not village panchayat",
     "Chandigarh, Puducherry, Delhi": "mostly urban local bodies",
     "**Karnataka**": "**2016 taluk & zilla panchayat winners with party**; "
-                     "plus `Karnataka_GP_ReservationHistory.dta`. 244 of the "
-                     "documents are deliberately unread - see "
-                     "data/karnataka/readme.md",
-    "Assam, Himachal": "one file each; Assam's is municipal",
+    "plus `Karnataka_GP_ReservationHistory.dta`. 244 of the "
+    "documents are deliberately unread - see "
+    "data/karnataka/readme.md",
+    "Assam": "2020 municipal reservation parsed; all 27 district PRI "
+    "notifications for 2025 acquired; 4 district notifications parsed",
+    "Himachal Pradesh": "one source PDF",
 }
 
 
@@ -86,8 +91,10 @@ def counts():
 
 def render():
     held = counts()
-    lines = ["| state | text | scan | mixed | pages | what is held |",
-             "|---|---|---|---|---|---|"]
+    lines = [
+        "| state | text | scan | encoded | mixed | pages | what is held |",
+        "|---|---|---|---|---|---|---|",
+    ]
     rows = []
     for label, directories in GROUPS.items():
         total = collections.Counter()
@@ -95,28 +102,34 @@ def render():
             total.update(held.get(directory, {}))
         rows.append((total["pages"], label, total))
     for pages, label, total in sorted(rows, reverse=True):
-        lines.append(f"| {label} | {total['digital-text']} | {total['scan']} | "
-                     f"{total['mixed']} | {pages:,} | {HELD[label]} |")
+        lines.append(
+            f"| {label} | {total['digital-text']} | {total['scan']} | "
+            f"{total['encoded-text']} | {total['mixed']} | {pages:,} "
+            f"| {HELD[label]} |"
+        )
     return "\n".join(lines)
 
 
+@command("document", artifact="source_holdings")
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true",
-                    help="fail when the file on disk differs from this")
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="fail when the file on disk differs from this",
+    )
     args = ap.parse_args()
 
     text = SOURCES.read_text(encoding="utf-8")
     if START not in text or END not in text:
         sys.exit(f"{SOURCES.name} has no {START} / {END} block")
-    before = text[:text.index(START) + len(START)]
-    after = text[text.index(END):]
+    before = text[: text.index(START) + len(START)]
+    after = text[text.index(END) :]
     fresh = f"{before}\n{render()}\n{after}"
 
     if args.check:
         if fresh != text:
-            sys.exit(f"{SOURCES.name} holdings table is stale - "
-                     f"run make sources")
+            sys.exit(f"{SOURCES.name} holdings table is stale - run make sources")
         print(f"  {SOURCES.name} holdings table is current")
         return 0
     SOURCES.write_text(fresh, encoding="utf-8")

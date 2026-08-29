@@ -14,15 +14,22 @@ import pathlib
 import sys
 
 from local_reservations.common import ocr_engine
+from local_reservations.common.runlog import command, get_logger
+
+LOGGER = get_logger(__name__)
 
 
+@command("extract", state="Jharkhand", method="surya_page_ocr")
 def main():
     if len(sys.argv) != 2:
         return print(__doc__.strip()) or 2
     directory = pathlib.Path(sys.argv[1])
     pages = sorted(directory.glob("*.png"))
     if not pages:
-        print(f"no PNGs in {directory}", file=sys.stderr)
+        LOGGER.error(
+            "No PNG inputs found",
+            extra={"event": "ocr_input_missing", "input_directory": str(directory)},
+        )
         return 1
     engine = ocr_engine.engine()
     for index, page in enumerate(pages, 1):
@@ -31,8 +38,15 @@ def main():
             continue
         text, _ = engine.ocr_image(str(page))
         out.write_text(text, encoding="utf-8")
-        print(f"\r  {index}/{len(pages)}", end="", file=sys.stderr)
-    print(file=sys.stderr)
+        LOGGER.info(
+            "OCR page completed",
+            extra={
+                "event": "ocr_page_completed",
+                "source_file": page.name,
+                "page": index,
+                "pages": len(pages),
+            },
+        )
     return 0
 
 

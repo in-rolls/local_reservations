@@ -33,28 +33,62 @@ import sys
 import urllib.parse
 
 from local_reservations.common import fetch
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 OUT = ROOT / "data" / "archive_inventory.csv"
 HOSTS = ROOT / "data" / "archive_hosts.csv"
 
-COLUMNS = ["state", "host", "pdfs", "first_capture", "last_capture",
-           "reservation_by_name", "results_by_name", "delimitation_by_name",
-           "other", "opened", "readable", "confirmed", "top_directories",
-           "status"]
+COLUMNS = [
+    "state",
+    "host",
+    "pdfs",
+    "first_capture",
+    "last_capture",
+    "reservation_by_name",
+    "results_by_name",
+    "delimitation_by_name",
+    "other",
+    "opened",
+    "readable",
+    "confirmed",
+    "top_directories",
+    "status",
+]
 
 # Two-letter-ish forms the commissions actually use in their hostnames.
 ABBREV = {
-    "Andhra Pradesh": "ap", "Arunachal Pradesh": "arunachal", "Assam": "assam",
-    "Bihar": "bihar", "Chhattisgarh": "cg", "Goa": "goa", "Gujarat": "gujarat",
-    "Haryana": "haryana", "Himachal Pradesh": "hp", "Jammu & Kashmir": "jk",
-    "Jharkhand": "jharkhand", "Karnataka": "kar", "Kerala": "kerala",
-    "Madhya Pradesh": "mp", "Maharashtra": "maha", "Manipur": "manipur",
-    "Meghalaya": "meghalaya", "Mizoram": "mizoram", "Nagaland": "nagaland",
-    "Odisha": "odisha", "Puducherry": "py", "Punjab": "punjab",
-    "Rajasthan": "raj", "Sikkim": "sikkim", "Tamil Nadu": "tn",
-    "Telangana": "tg", "Tripura": "tripura", "Uttar Pradesh": "up",
-    "Uttarakhand": "uk", "West Bengal": "wb", "NCT of Delhi": "delhi",
+    "Andhra Pradesh": "ap",
+    "Arunachal Pradesh": "arunachal",
+    "Assam": "assam",
+    "Bihar": "bihar",
+    "Chhattisgarh": "cg",
+    "Goa": "goa",
+    "Gujarat": "gujarat",
+    "Haryana": "haryana",
+    "Himachal Pradesh": "hp",
+    "Jammu & Kashmir": "jk",
+    "Jharkhand": "jharkhand",
+    "Karnataka": "kar",
+    "Kerala": "kerala",
+    "Madhya Pradesh": "mp",
+    "Maharashtra": "maha",
+    "Manipur": "manipur",
+    "Meghalaya": "meghalaya",
+    "Mizoram": "mizoram",
+    "Nagaland": "nagaland",
+    "Odisha": "odisha",
+    "Puducherry": "py",
+    "Punjab": "punjab",
+    "Rajasthan": "raj",
+    "Sikkim": "sikkim",
+    "Tamil Nadu": "tn",
+    "Telangana": "tg",
+    "Tripura": "tripura",
+    "Uttar Pradesh": "up",
+    "Uttarakhand": "uk",
+    "West Bengal": "wb",
+    "NCT of Delhi": "delhi",
 }
 
 # Confirmed by hand, and kept because deriving them every run would re-guess a
@@ -104,9 +138,11 @@ def cdx(host, prefix=True, limit=5000):
     that.
     """
     query = urllib.parse.quote(host + "/" if prefix else host, safe=":/")
-    url = (f"http://web.archive.org/cdx/search/cdx?url={query}&limit={limit}"
-           f"&fl=original,timestamp&collapse=urlkey&output=json"
-           f"&matchType={'prefix' if prefix else 'domain'}")
+    url = (
+        f"http://web.archive.org/cdx/search/cdx?url={query}&limit={limit}"
+        f"&fl=original,timestamp&collapse=urlkey&output=json"
+        f"&matchType={'prefix' if prefix else 'domain'}"
+    )
     try:
         body = fetch.body(url, timeout=180).decode("utf-8", "replace")
     except fetch.Unanswered:
@@ -168,7 +204,9 @@ def classify(url):
 CONFIRMS = re.compile(
     r"elected|winning|winner|returned candidate|declared elected|"
     r"name of the (?:elected|returned)|sarpanch|mukhiya|pradhan|panch\b|"
-    r"ward member|zilla parishad|panchayat samiti", re.I)
+    r"ward member|zilla parishad|panchayat samiti",
+    re.I,
+)
 
 
 def looks_like_results(pdf):
@@ -181,12 +219,16 @@ def looks_like_results(pdf):
     try:
         import subprocess
         import tempfile
+
         with tempfile.NamedTemporaryFile(suffix=".pdf") as handle:
             handle.write(pdf)
             handle.flush()
             text = subprocess.run(
                 ["pdftotext", "-f", "1", "-l", "2", handle.name, "-"],
-                capture_output=True, text=True, errors="replace").stdout
+                capture_output=True,
+                text=True,
+                errors="replace",
+            ).stdout
     except Exception:
         return None
     if len(text.strip()) < 120:
@@ -214,8 +256,9 @@ def sample(rows, kind, want=5):
     opened = readable = confirmed = 0
     for url, stamp in picks:
         try:
-            body = fetch.body(f"https://web.archive.org/web/{stamp}id_/{url}",
-                              timeout=120)
+            body = fetch.body(
+                f"https://web.archive.org/web/{stamp}id_/{url}", timeout=120
+            )
         except fetch.Unanswered:
             continue
         opened += 1
@@ -239,21 +282,31 @@ def sweep(state, check=0):
     kinds = collections.Counter(classify(u) for u, _ in rows)
     stamps = sorted(t for _, t in rows if t)
     directories = collections.Counter(
-        "/".join(urllib.parse.unquote(u).split("/")[3:-1])[:44] for u, _ in rows)
-    opened, readable, confirmed = (sample(rows, "results", check) if check
-                                   else (0, 0, 0))
-    return {
-        "opened": opened, "readable": readable, "confirmed": confirmed,
-        "state": state, "host": host, "pdfs": len(rows),
-        "first_capture": stamps[0][:6] if stamps else "",
-        "last_capture": stamps[-1][:6] if stamps else "",
-        "reservation_by_name": kinds["reservation"],
-        "results_by_name": kinds["results"],
-        "delimitation_by_name": kinds["delimitation"], "other": kinds["other"],
-        "top_directories": " | ".join(
-            f"{d}({n})" for d, n in directories.most_common(3) if d),
-        "status": "ok",
-    }, tried, "ok"
+        "/".join(urllib.parse.unquote(u).split("/")[3:-1])[:44] for u, _ in rows
+    )
+    opened, readable, confirmed = sample(rows, "results", check) if check else (0, 0, 0)
+    return (
+        {
+            "opened": opened,
+            "readable": readable,
+            "confirmed": confirmed,
+            "state": state,
+            "host": host,
+            "pdfs": len(rows),
+            "first_capture": stamps[0][:6] if stamps else "",
+            "last_capture": stamps[-1][:6] if stamps else "",
+            "reservation_by_name": kinds["reservation"],
+            "results_by_name": kinds["results"],
+            "delimitation_by_name": kinds["delimitation"],
+            "other": kinds["other"],
+            "top_directories": " | ".join(
+                f"{d}({n})" for d, n in directories.most_common(3) if d
+            ),
+            "status": "ok",
+        },
+        tried,
+        "ok",
+    )
 
 
 def previous():
@@ -266,12 +319,18 @@ def previous():
         return {r["state"]: r for r in csv.DictReader(fh)}
 
 
+@command("discover", source="internet_archive")
 def main():
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     ap.add_argument("--only", help="one state")
-    ap.add_argument("--check", type=int, default=0, metavar="N",
-                    help="open N of the documents a filename called a result, "
-                         "and record how many say so themselves")
+    ap.add_argument(
+        "--check",
+        type=int,
+        default=0,
+        metavar="N",
+        help="open N of the documents a filename called a result, "
+        "and record how many say so themselves",
+    )
     args = ap.parse_args()
 
     states = [args.only] if args.only else sorted(ABBREV)
@@ -281,28 +340,42 @@ def main():
         row, tried, status = sweep(state, args.check)
         if row:
             found.append(row)
-            print(f"  {state:<20} {row['host']:<30} {row['pdfs']:>5} PDFs  "
-                  f"res={row['reservation_by_name']:<4} "
-              f"results={row['results_by_name']:<4} "
-              f"opened={row['opened']} readable={row['readable']} "
-              f"confirmed={row['confirmed']}",
-                  flush=True)
+            print(
+                f"  {state:<20} {row['host']:<30} {row['pdfs']:>5} PDFs  "
+                f"res={row['reservation_by_name']:<4} "
+                f"results={row['results_by_name']:<4} "
+                f"opened={row['opened']} readable={row['readable']} "
+                f"confirmed={row['confirmed']}",
+                flush=True,
+            )
         elif status == "query failed" and state in prior:
             row = dict(prior[state], status="carried forward")
             found.append(row)
-            print(f"  {state:<20} {row['host']:<30} {row['pdfs']:>5} PDFs  "
-                  "(carried forward - the archive did not answer)",
-                  flush=True)
+            print(
+                f"  {state:<20} {row['host']:<30} {row['pdfs']:>5} PDFs  "
+                "(carried forward - the archive did not answer)",
+                flush=True,
+            )
         elif status == "query failed":
-            print(f"  {state:<20} {'?':<30} the archive did not answer, and "
-                  f"there is no earlier number to carry", flush=True)
+            print(
+                f"  {state:<20} {'?':<30} the archive did not answer, and "
+                f"there is no earlier number to carry",
+                flush=True,
+            )
         else:
-            print(f"  {state:<20} {'-':<30} nothing archived under "
-                  f"{len(tried)} candidate host(s)", flush=True)
-        attempts.append({
-            "state": state, "resolved": row["host"] if row else "",
-            "status": row["status"] if row else status,
-            "candidates_tried": " ".join(tried)})
+            print(
+                f"  {state:<20} {'-':<30} nothing archived under "
+                f"{len(tried)} candidate host(s)",
+                flush=True,
+            )
+        attempts.append(
+            {
+                "state": state,
+                "resolved": row["host"] if row else "",
+                "status": row["status"] if row else status,
+                "candidates_tried": " ".join(tried),
+            }
+        )
 
     # --only rewrites one state and must not drop the other thirty.
     #
@@ -310,9 +383,11 @@ def main():
     # results_by_name without this silently blanked the counts for every state
     # not re-swept, because those rows are read back from the file under their
     # old headings - 22 states reading as zero after a one-state run.
-    renamed = {"reservation": "reservation_by_name",
-               "results": "results_by_name",
-               "delimitation": "delimitation_by_name"}
+    renamed = {
+        "reservation": "reservation_by_name",
+        "results": "results_by_name",
+        "delimitation": "delimitation_by_name",
+    }
     if args.only:
         kept = []
         for state, row in sorted(prior.items()):
@@ -327,20 +402,25 @@ def main():
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=COLUMNS, extrasaction="ignore",
-                                lineterminator="\n")
+        writer = csv.DictWriter(
+            fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(sorted(found, key=lambda r: -int(r["pdfs"])))
     with HOSTS.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, lineterminator="\n",
-                                fieldnames=["state", "resolved", "status",
-                                            "candidates_tried"])
+        writer = csv.DictWriter(
+            fh,
+            lineterminator="\n",
+            fieldnames=["state", "resolved", "status", "candidates_tried"],
+        )
         writer.writeheader()
         writer.writerows(attempts)
     stale = sum(1 for r in found if r["status"] == "carried forward")
     carried = f"  ({stale} carried forward from an earlier run)" if stale else ""
-    print(f"\n{len(found)} states with an archived host -> "
-          f"{OUT.relative_to(ROOT)}{carried}")
+    print(
+        f"\n{len(found)} states with an archived host -> "
+        f"{OUT.relative_to(ROOT)}{carried}"
+    )
     print(f"every candidate tried -> {HOSTS.relative_to(ROOT)}")
     return 0
 

@@ -27,12 +27,21 @@ import webbrowser
 import parse
 
 from local_reservations.common import krutidev
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 OUT = pathlib.Path("/tmp/compare_readers.html")
 DEVA = re.compile(r"[ऀ-ॿ]")
-SHOW = ["winner", "tier_local", "caste_reservation", "woman_reserved",
-        "gram_panchayat", "ward_no", "seat_no", "seat_id_raw"]
+SHOW = [
+    "winner",
+    "tier_local",
+    "caste_reservation",
+    "woman_reserved",
+    "gram_panchayat",
+    "ward_no",
+    "seat_no",
+    "seat_id_raw",
+]
 
 
 def readable(value):
@@ -45,14 +54,16 @@ def readable(value):
 def find_pdf(stem):
     hits = [p for p in (ROOT / "data").rglob("*.pdf") if p.stem == stem]
     if not hits:
-        hits = [p for p in (ROOT / "data").rglob("*.pdf")
-                if stem.lower() in p.stem.lower()]
+        hits = [
+            p for p in (ROOT / "data").rglob("*.pdf") if stem.lower() in p.stem.lower()
+        ]
     return hits[0] if hits else None
 
 
 def from_text_layer(pdf, page, district):
     """What pdfplumber makes of the page: ruled tables, then the line reader."""
     import pdfplumber
+
     rows = []
     with pdfplumber.open(str(pdf)) as doc:
         target = doc.pages[page - 1]
@@ -68,8 +79,11 @@ def from_text_layer(pdf, page, district):
                 got = parse.table_row(cells)
                 if got:
                     tier, caste, woman, seat, winner, label = got
-                    rows.append(parse.seat_row(district, block, tier, caste,
-                                               woman, seat, winner, label))
+                    rows.append(
+                        parse.seat_row(
+                            district, block, tier, caste, woman, seat, winner, label
+                        )
+                    )
         rows += [dict(r) for r in parse._from_text(target, pdf, district, block)]
     return rows
 
@@ -81,22 +95,27 @@ def from_model(stem, page, district):
     pages = cache.read_text(encoding="utf-8").split("\f")
     if page > len(pages):
         return []
-    return parse.html_rows(pages[page - 1], pathlib.Path(f"{stem}.pdf"),
-                           district, page)
+    return parse.html_rows(pages[page - 1], pathlib.Path(f"{stem}.pdf"), district, page)
 
 
 def table(rows):
     head = "".join(f"<th>{c}</th>" for c in SHOW)
     body = ""
     for row in rows:
-        body += "<tr>" + "".join(
-            f"<td>{html.escape(readable(row.get(c))) or '<i>—</i>'}</td>"
-            for c in SHOW) + "</tr>"
+        body += (
+            "<tr>"
+            + "".join(
+                f"<td>{html.escape(readable(row.get(c))) or '<i>—</i>'}</td>"
+                for c in SHOW
+            )
+            + "</tr>"
+        )
     if not rows:
         body = f"<tr><td colspan='{len(SHOW)}'><i>no rows</i></td></tr>"
     return f"<table><tr>{head}</tr>{body}</table>"
 
 
+@command("review", artifact="reader_comparison")
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("document")
@@ -109,14 +128,29 @@ def main():
     if not pdf:
         sys.exit(f"no PDF matching {args.document!r}")
     stem = pathlib.Path("/tmp") / f"cmp_{abs(hash(pdf.stem)) % 10**7}_{args.page}"
-    subprocess.run(["pdftoppm", "-f", str(args.page), "-l", str(args.page),
-                    "-r", str(args.dpi), "-png", "-singlefile", str(pdf),
-                    str(stem)], check=True, capture_output=True)
+    subprocess.run(
+        [
+            "pdftoppm",
+            "-f",
+            str(args.page),
+            "-l",
+            str(args.page),
+            "-r",
+            str(args.dpi),
+            "-png",
+            "-singlefile",
+            str(pdf),
+            str(stem),
+        ],
+        check=True,
+        capture_output=True,
+    )
 
     text_rows = from_text_layer(pdf, args.page, args.district)
     model_rows = from_model(pdf.stem, args.page, args.district)
 
-    OUT.write_text(f"""<!doctype html><meta charset="utf-8">
+    OUT.write_text(
+        f"""<!doctype html><meta charset="utf-8">
 <title>{html.escape(pdf.stem)} p{args.page}</title>
 <style>
  body {{ font: 13px/1.45 -apple-system, sans-serif; margin: 0; background: #f6f6f4; }}
@@ -145,9 +179,10 @@ def main():
   <div class="pane model"><h2>model — {len(model_rows)} rows</h2>
     {table(model_rows)}</div>
 </div>
-""", encoding="utf-8")
-    print(f"text layer {len(text_rows)} rows, model {len(model_rows)} rows "
-          f"-> {OUT}")
+""",
+        encoding="utf-8",
+    )
+    print(f"text layer {len(text_rows)} rows, model {len(model_rows)} rows -> {OUT}")
     webbrowser.open(f"file://{OUT}")
     return 0
 

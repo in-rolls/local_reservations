@@ -30,6 +30,7 @@ import subprocess
 import sys
 
 from local_reservations.common.ocr_engine import page_count
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "wb" / "2018"
@@ -52,7 +53,6 @@ def documents():
         yield path, "draft"
 
 
-
 def cache_path(path, printing, page):
     return CACHE / printing / f"{path.stem}-{page:02d}.tsv"
 
@@ -63,20 +63,37 @@ def run(path, printing, page, force=False):
         return False
     out.parent.mkdir(parents=True, exist_ok=True)
     stem = out.with_suffix("")
-    subprocess.run(["pdftoppm", "-r", DPI, "-png", "-f", str(page),
-                    "-l", str(page), str(path), str(stem)], check=True)
+    subprocess.run(
+        [
+            "pdftoppm",
+            "-r",
+            DPI,
+            "-png",
+            "-f",
+            str(page),
+            "-l",
+            str(page),
+            str(path),
+            str(stem),
+        ],
+        check=True,
+    )
     # pdftoppm names by page number; with -f == -l it still suffixes
     rendered = sorted(stem.parent.glob(f"{stem.name}-*.png"))
     if not rendered:
         return False
     image = rendered[0]
-    got = subprocess.run(["tesseract", str(image), "stdout", "--psm", "4",
-                          "tsv"], capture_output=True, text=True)
+    got = subprocess.run(
+        ["tesseract", str(image), "stdout", "--psm", "4", "tsv"],
+        capture_output=True,
+        text=True,
+    )
     out.write_text(got.stdout, encoding="utf-8")
     image.unlink()
     return True
 
 
+@command("extract", state="West Bengal", method="ocr")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")

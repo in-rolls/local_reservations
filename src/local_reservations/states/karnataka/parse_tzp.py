@@ -30,6 +30,7 @@ import sys
 import tables
 
 from local_reservations.common import emit
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 CACHE = ROOT / "data" / "karnataka" / "ocr"
@@ -43,22 +44,43 @@ YEAR = 2016
 # since changed. Mapped to the name the Local Government Directory uses, so a
 # row joins to the register these are checked against.
 DISTRICTS = {
-    "bagalakote": "Bagalkot", "ballari": "Ballari", "belagavi": "Belagavi",
-    "bidar": "Bidar", "chamarajanagara": "Chamarajanagar",
-    "chikkaballapur": "Chikkaballapur", "chikkaballapura": "Chikkaballapur",
-    "chikkamagalur": "Chikkamagaluru", "chikmagaluru": "Chikkamagaluru",
-    "chitradurga": "Chitradurga", "dk": "Dakshina Kannada",
-    "davangere": "Davanagere", "dvg": "Davanagere", "dharwad": "Dharwad",
-    "gadag": "Gadag", "hassan": "Hassan", "haveri": "Haveri",
-    "kalaburagi": "Kalaburagi", "kodagu": "Kodagu",
+    "bagalakote": "Bagalkot",
+    "ballari": "Ballari",
+    "belagavi": "Belagavi",
+    "bidar": "Bidar",
+    "chamarajanagara": "Chamarajanagar",
+    "chikkaballapur": "Chikkaballapur",
+    "chikkaballapura": "Chikkaballapur",
+    "chikkamagalur": "Chikkamagaluru",
+    "chikmagaluru": "Chikkamagaluru",
+    "chitradurga": "Chitradurga",
+    "dk": "Dakshina Kannada",
+    "davangere": "Davanagere",
+    "dvg": "Davanagere",
+    "dharwad": "Dharwad",
+    "gadag": "Gadag",
+    "hassan": "Hassan",
+    "haveri": "Haveri",
+    "kalaburagi": "Kalaburagi",
+    "kodagu": "Kodagu",
     # the district is Kodagu; Madikeri is its headquarters and also a taluk
     "madikeri": "Kodagu",
-    "kolar": "Kolar", "koppal": "Koppal", "mandya": "Mandya",
-    "mysore": "Mysuru", "raichur": "Raichur", "ramanagara": "Ramanagara",
-    "rural": "Bangalore Rural", "shivamogga": "Shivamogga",
-    "tumkur": "Tumakuru", "udupi": "Udupi", "uk": "Uttara Kannada",
-    "urban": "Bangalore Urban", "bangalore": "Bangalore Urban",
-    "vijayapura": "Vijayapura", "yadgir": "Yadgir", "yadagiri": "Yadgir",
+    "kolar": "Kolar",
+    "koppal": "Koppal",
+    "mandya": "Mandya",
+    "mysore": "Mysuru",
+    "raichur": "Raichur",
+    "ramanagara": "Ramanagara",
+    "rural": "Bangalore Rural",
+    "shivamogga": "Shivamogga",
+    "tumkur": "Tumakuru",
+    "udupi": "Udupi",
+    "uk": "Uttara Kannada",
+    "urban": "Bangalore Urban",
+    "bangalore": "Bangalore Urban",
+    "vijayapura": "Vijayapura",
+    "yadgir": "Yadgir",
+    "yadagiri": "Yadgir",
 }
 
 TIERS = {
@@ -113,26 +135,32 @@ def rows_of_document(stem, text):
                 serial, _ = tables.seat(cells[layout["serial"]] + "-")
             printed_party = cells[layout["party"]]
             row = {
-                "state": "Karnataka", "year": YEAR,
-                "tier": tier, "tier_local": tier_local,
-                "district": district, "block": taluk,
-                "seat_no": number, "ward_name": name,
+                "state": "Karnataka",
+                "year": YEAR,
+                "tier": tier,
+                "tier_local": tier_local,
+                "district": district,
+                "block": taluk,
+                "seat_no": number,
+                "ward_name": name,
                 "caste_reservation": caste,
                 "caste_reservation_local": caste_local,
                 "woman_reserved": int(woman),
-                "reservation": (f"{caste + ' ' if caste != 'NONE' else ''}"
-                                f"{'Woman' if woman else 'Other than Woman'}"),
+                "reservation": (
+                    f"{caste + ' ' if caste != 'NONE' else ''}"
+                    f"{'Woman' if woman else 'Other than Woman'}"
+                ),
                 "reservation_raw": cells[layout["reservation"]],
                 "winner": winner_name(cells[layout["winner"]]),
                 "relation_name": winner_relation(cells[layout["winner"]]),
                 "winner_address": winner_address(cells[layout["winner"]]),
                 "party": tables.party(printed_party),
                 "party_local": printed_party,
-                "script": "kannada", "text_source": "ocr",
+                "script": "kannada",
+                "text_source": "ocr",
                 # the taluk the page itself printed, where it has that column,
                 # so the filename can be checked rather than trusted
-                "taluk_printed": (cells[layout["taluk"]]
-                                  if "taluk" in layout else ""),
+                "taluk_printed": (cells[layout["taluk"]] if "taluk" in layout else ""),
             }
             row["_serial"] = serial
             out.append(emit.stamp(row, source, page_no, ROOT, archive))
@@ -184,11 +212,11 @@ def numbered(rows):
 # confusion that turns ಸೂ into ಕೂ elsewhere in these scans. Listed rather than
 # fuzzy-matched because there are four real markers and a token-by-token
 # similarity pass would be a lot of machinery for a closed set of six strings.
-RELATION = re.compile(
-    r"\s*(?:ಬಿನ್|ಜಿನ್|ತಂದೆ|ತೆಂದೆ|ಕೋಂ|ಗಂಡ|ಕಂದ|ಬಿ\s*[/.]\s*ಒ|ಸಿ\s*[/.]\s*ಒ)\s")
+RELATION = re.compile(r"\s*(?:ಬಿನ್|ಜಿನ್|ತಂದೆ|ತೆಂದೆ|ಕೋಂ|ಗಂಡ|ಕಂದ|ಬಿ\s*[/.]\s*ಒ|ಸಿ\s*[/.]\s*ಒ)\s")
 ADDRESS = re.compile(
     r"\s*(?:ಸಾ\s*[:.]|ಮು\s*[:.]|ವಾಸ\s*[:.]|ತಾ\s*[:.]|ಗ್ರಾಮ\b|"
-    r"ಮ\s*[.]?\s*ನಂ|ಮನೆ\s*ನಂ|ವಾರ್ಡ್)")
+    r"ಮ\s*[.]?\s*ನಂ|ಮನೆ\s*ನಂ|ವಾರ್ಡ್)"
+)
 
 
 def _split(cell):
@@ -283,19 +311,38 @@ def disagreements(rows):
             continue
         (main, _), *rest = spellings.most_common()
         for other, count in rest:
-            out.append((document, main, other, count,
-                        bool(tables.nearest(other, {main: 1}))))
+            out.append(
+                (document, main, other, count, bool(tables.nearest(other, {main: 1})))
+            )
     return out
 
 
-COLUMNS = ["state", "year", "tier", "tier_local", "district", "block",
-           "seat_no", "ward_name", "caste_reservation",
-           "caste_reservation_local", "woman_reserved", "reservation",
-           "reservation_raw", "winner", "relation_name", "winner_address",
-           "party",
-           "party_local", "script", "text_source", "seat_no_from_serial"]
+COLUMNS = [
+    "state",
+    "year",
+    "tier",
+    "tier_local",
+    "district",
+    "block",
+    "seat_no",
+    "ward_name",
+    "caste_reservation",
+    "caste_reservation_local",
+    "woman_reserved",
+    "reservation",
+    "reservation_raw",
+    "winner",
+    "relation_name",
+    "winner_address",
+    "party",
+    "party_local",
+    "script",
+    "text_source",
+    "seat_no_from_serial",
+]
 
 
+@command("parse", state="Karnataka", series="taluka_zilla_results")
 def main():
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     ap.add_argument("--only", help="substring of the filename")
@@ -306,27 +353,27 @@ def main():
     if args.only:
         files = [f for f in files if args.only.lower() in f.name.lower()]
     for path in files:
-        rows.extend(rows_of_document(
-            path.stem, path.read_text(encoding="utf-8")))
+        rows.extend(rows_of_document(path.stem, path.read_text(encoding="utf-8")))
 
     # Which of two readings of one seat survives, when they disagree. A row
     # whose party resolved against the fixed list is a row whose cells were
     # read cleanly, so it is better evidence than one that came first.
     def read_cleanly(row):
-        return (bool(row["party"]), bool(row["winner"]),
-                bool(row["caste_reservation"]))
+        return (bool(row["party"]), bool(row["winner"]), bool(row["caste_reservation"]))
 
     kept, conflicts = tables.dedupe(
-        rows, key=lambda r: (r["source_pdf"], r["seat_no"])
-        if r["seat_no"] else None,
-        better=read_cleanly)
+        rows,
+        key=lambda r: (r["source_pdf"], r["seat_no"]) if r["seat_no"] else None,
+        better=read_cleanly,
+    )
 
     # before the column is dropped: kept holds the same objects as rows, so
     # popping first left the check with almost nothing to read and it reported
     # a cheerful "1 of 1"
     clashes = disagreements(rows)
-    carrying = len({r["source_pdf"] for r in rows
-                    if tables.clean(r.get("taluk_printed", ""))})
+    carrying = len(
+        {r["source_pdf"] for r in rows if tables.clean(r.get("taluk_printed", ""))}
+    )
     for row in kept:
         row.pop("taluk_printed", None)
         row.pop("_serial", None)
@@ -343,38 +390,49 @@ def main():
     partied = sum(1 for r in kept if r["party"])
     print(f"\n{len(kept)} rows from {documents} of {len(files)} documents")
     print(f"  winner named   {named:>5} ({named / max(len(kept), 1):.1%})")
-    print(f"  party resolved {partied:>5} "
-          f"({partied / max(len(kept), 1):.1%})")
-    print(f"  woman-reserved {women:>5} "
-          f"({women / max(len(kept), 1):.1%}; the Act requires 50%)")
+    print(f"  party resolved {partied:>5} ({partied / max(len(kept), 1):.1%})")
+    print(
+        f"  woman-reserved {women:>5} "
+        f"({women / max(len(kept), 1):.1%}; the Act requires 50%)"
+    )
 
     quiet = silent_pages(files)
-    total_pages = sum(len(f.read_text(encoding="utf-8").split("\f"))
-                      for f in files)
+    total_pages = sum(len(f.read_text(encoding="utf-8").split("\f")) for f in files)
     unread = sum(1 for _, _, was_unread in quiet if was_unread)
-    print(f"\n{total_pages - len(quiet)} of {total_pages} pages produced rows; "
-          f"{len(quiet)} did not ({unread} of those the OCR had already marked "
-          f"unread)")
+    print(
+        f"\n{total_pages - len(quiet)} of {total_pages} pages produced rows; "
+        f"{len(quiet)} did not ({unread} of those the OCR had already marked "
+        f"unread)"
+    )
     for stem, page_no, was_unread in quiet[:8]:
-        print(f"  {stem[-38:]:40s} p{page_no}"
-              + ("  (ocr-unread)" if was_unread else ""))
+        print(
+            f"  {stem[-38:]:40s} p{page_no}" + ("  (ocr-unread)" if was_unread else "")
+        )
     if len(quiet) > 8:
         print(f"  ... and {len(quiet) - 8} more")
 
     missing = gaps(kept)
-    print(f"\nseat numbers contiguous in {documents - len(missing)} of "
-          f"{documents} documents")
+    print(
+        f"\nseat numbers contiguous in {documents - len(missing)} of "
+        f"{documents} documents"
+    )
     for document, (highest, absent, repeated) in sorted(missing.items()):
-        print(f"  {document[-38:]:40s} 1..{highest}: missing {absent[:8]}"
-              + (f" repeated {repeated}" if repeated else ""))
+        print(
+            f"  {document[-38:]:40s} 1..{highest}: missing {absent[:8]}"
+            + (f" repeated {repeated}" if repeated else "")
+        )
     if conflicts:
         print(f"\n{len(conflicts)} seats stated twice with different content:")
         for first, second in conflicts[:5]:
-            print(f"  seat {first['seat_no']} of {first['source_pdf'][-30:]}: "
-                  f"{first['winner'][:24]!r} vs {second['winner'][:24]!r}")
-    print(f"\nprinted taluk agrees with itself in "
-          f"{carrying - len({c[0] for c in clashes})} of {carrying} documents "
-          f"that print one")
+            print(
+                f"  seat {first['seat_no']} of {first['source_pdf'][-30:]}: "
+                f"{first['winner'][:24]!r} vs {second['winner'][:24]!r}"
+            )
+    print(
+        f"\nprinted taluk agrees with itself in "
+        f"{carrying - len({c[0] for c in clashes})} of {carrying} documents "
+        f"that print one"
+    )
     for document, main, other, count, close in clashes:
         note = "one scan apart" if close else "NOT THE SAME NAME"
         print(f"  {document[-34:]:36s} {main} vs {other} x{count}  ({note})")

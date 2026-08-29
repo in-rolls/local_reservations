@@ -51,13 +51,26 @@ import tempfile
 
 import parse
 
+from local_reservations.common.runlog import command, get_logger
 from local_reservations.paths import ROOT
+
+LOGGER = get_logger(__name__)
 
 JHARKHAND = ROOT / "data" / "jharkhand" / "2015"
 OUT = JHARKHAND / "image_seats.csv"
 
-COLUMNS = ["source_pdf", "source_page", "serial", "name_ocr", "district_roman",
-           "block_no", "gp_no", "gram_panchayat", "ward_no", "ward_no_ocr"]
+COLUMNS = [
+    "source_pdf",
+    "source_page",
+    "serial",
+    "name_ocr",
+    "district_roman",
+    "block_no",
+    "gp_no",
+    "gram_panchayat",
+    "ward_no",
+    "ward_no_ocr",
+]
 
 # The whole page is read, not just the seat column. The serial number in the
 # first column is what joins an OCR line back to a parsed row, and the name
@@ -73,7 +86,6 @@ TEXT_REACHES = 0.75
 DPI = 400
 
 
-
 def image_pages(path):
     """Pages whose seat column is drawn rather than typed.
 
@@ -81,6 +93,7 @@ def image_pages(path):
     there runs to the page's right edge, one without stops well before it.
     """
     import pdfplumber
+
     found = []
     with pdfplumber.open(str(path)) as pdf:
         for number, page in enumerate(pdf.pages, 1):
@@ -104,10 +117,26 @@ def render(path, number, width, into):
     left = int(CROP_FROM * width / 72 * DPI)
     stem = into / f"{path.stem}__{number}"
     subprocess.run(
-        ["pdftoppm", "-f", str(number), "-l", str(number), "-r", str(DPI),
-         "-x", str(left), "-W", str(int(width / 72 * DPI) - left),
-         "-png", "-singlefile", str(path), str(stem)],
-        capture_output=True, timeout=300)
+        [
+            "pdftoppm",
+            "-f",
+            str(number),
+            "-l",
+            str(number),
+            "-r",
+            str(DPI),
+            "-x",
+            str(left),
+            "-W",
+            str(int(width / 72 * DPI) - left),
+            "-png",
+            "-singlefile",
+            str(path),
+            str(stem),
+        ],
+        capture_output=True,
+        timeout=300,
+    )
     return stem.with_suffix(".png")
 
 
@@ -137,10 +166,13 @@ def ocr_all(pages, into):
         return
     python = os.environ.get("OCR_PY", str(ROOT / "ocrenv" / "bin" / "python"))
     if not pathlib.Path(python).exists():
-        sys.exit(f"no OCR interpreter at {python}. Set OCR_PY, and see "
-                 f"requirements-ocr.txt for what it needs.")
-    done = subprocess.run([python, str(pathlib.Path(__file__).parent
-                                       / "surya_pages.py"), str(into)])
+        sys.exit(
+            f"no OCR interpreter at {python}. Set OCR_PY, and see "
+            f"requirements-ocr.txt for what it needs."
+        )
+    done = subprocess.run(
+        [python, str(pathlib.Path(__file__).parent / "surya_pages.py"), str(into)]
+    )
     if done.returncode:
         sys.exit(f"{python} failed reading {into}")
 
@@ -162,12 +194,18 @@ def read(path):
         return []
     with tempfile.TemporaryDirectory() as scratch:
         into = pathlib.Path(scratch)
-        rendered = {number: render(path, number, width, into)
-                    for number, width in found}
+        rendered = {
+            number: render(path, number, width, into) for number, width in found
+        }
         ocr_all(found, into)
-        pages = {number: (png.with_suffix(".txt").read_text(encoding="utf-8")
-                          if png.with_suffix(".txt").exists() else "")
-                 for number, png in rendered.items()}
+        pages = {
+            number: (
+                png.with_suffix(".txt").read_text(encoding="utf-8")
+                if png.with_suffix(".txt").exists()
+                else ""
+            )
+            for number, png in rendered.items()
+        }
 
     rows = []
     for number, text in sorted(pages.items()):
@@ -176,22 +214,26 @@ def read(path):
             if not seat.get("gram_panchayat"):
                 continue
             serial = SERIAL.match(name)
-            rows.append({
-                # the serial is a cheaper join key where the page prints one;
-                # where it does not, fill_image_seats falls back to the name
-                "serial": serial.group(1) if serial else "",
-                "name_ocr": re.sub(r"^\s*\d{1,3}[\s.|)]*", "", name).strip(),
-                "district_roman": seat.get("district_roman", ""),
-                "block_no": seat.get("block_no", ""),
-                "gp_no": seat.get("gp_no", ""),
-                "gram_panchayat": seat.get("gram_panchayat", ""),
-                "ward_no": seat.get("seat_no", ""),
-                "ward_no_ocr": seat.get("seat_no", ""),
-                "source_pdf": path.name, "source_page": number,
-            })
+            rows.append(
+                {
+                    # the serial is a cheaper join key where the page prints one;
+                    # where it does not, fill_image_seats falls back to the name
+                    "serial": serial.group(1) if serial else "",
+                    "name_ocr": re.sub(r"^\s*\d{1,3}[\s.|)]*", "", name).strip(),
+                    "district_roman": seat.get("district_roman", ""),
+                    "block_no": seat.get("block_no", ""),
+                    "gp_no": seat.get("gp_no", ""),
+                    "gram_panchayat": seat.get("gram_panchayat", ""),
+                    "ward_no": seat.get("seat_no", ""),
+                    "ward_no_ocr": seat.get("seat_no", ""),
+                    "source_pdf": path.name,
+                    "source_page": number,
+                }
+            )
     return rows
 
 
+@command("extract", state="Jharkhand", method="seat_ocr")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pdf", help="only this document")
@@ -204,17 +246,27 @@ def main():
         try:
             got = read(path)
         except Exception as exc:
-            print(f"  {path.name}: {type(exc).__name__}", file=sys.stderr)
+            LOGGER.exception(
+                "Seat image OCR failed",
+                extra={
+                    "event": "seat_image_ocr_failed",
+                    "source_file": path.name,
+                    "error_type": type(exc).__name__,
+                },
+            )
             continue
         if got:
-            print(f"  {path.name}: {len(got)} seats from "
-                  f"{len({r['source_page'] for r in got})} image pages")
+            print(
+                f"  {path.name}: {len(got)} seats from "
+                f"{len({r['source_page'] for r in got})} image pages"
+            )
             rows += got
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=COLUMNS, extrasaction="ignore",
-                                lineterminator="\n")
+        writer = csv.DictWriter(
+            fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
     print(f"\n{len(rows)} seats -> {OUT.relative_to(ROOT)}")

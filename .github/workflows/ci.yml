@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   ci:
-    uses: gojiplus/py-canon/.github/workflows/reusable-ci.yml@v1
+    uses: gojiplus/py-canon/.github/workflows/reusable-ci.yml@v1.3.0
     with:
       wheel-import: local_reservations
       coverage-floor: 0

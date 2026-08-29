@@ -23,11 +23,20 @@ STATS = ROOT / "data" / "stats" / "slice_stats.csv"
 # Every reason a row can fail to identify a distinct seat.
 EXPLAINS = {"seat_key_not_unique", "panchayat_not_named", "seat_not_numbered"}
 
-SLUG = {"andhra_pradesh": "Andhra Pradesh", "goa": "Goa", "haryana": "Haryana",
-        "jammu_and_kashmir": "Jammu & Kashmir", "jharkhand": "Jharkhand",
-        "rajasthan": "Rajasthan", "kerala": "Kerala", "bihar": "Bihar",
-        "uttar_pradesh": "Uttar Pradesh", "uttarakhand": "Uttarakhand",
-        "karnataka": "Karnataka", "telangana": "Telangana"}
+SLUG = {
+    "andhra_pradesh": "Andhra Pradesh",
+    "goa": "Goa",
+    "haryana": "Haryana",
+    "jammu_and_kashmir": "Jammu & Kashmir",
+    "jharkhand": "Jharkhand",
+    "rajasthan": "Rajasthan",
+    "kerala": "Kerala",
+    "bihar": "Bihar",
+    "uttar_pradesh": "Uttar Pradesh",
+    "uttarakhand": "Uttarakhand",
+    "karnataka": "Karnataka",
+    "telangana": "Telangana",
+}
 
 
 def read(path):
@@ -47,16 +56,20 @@ def test_every_colliding_row_is_explained():
     explained = collections.Counter()
     for row in read(WORKLIST):
         if row["note_id"] in EXPLAINS:
-            explained[(row["state"], row["year"], row["tier"])] += \
-                int(row["rows_affected"])
+            explained[(row["state"], row["year"], row["tier"])] += int(
+                row["rows_affected"]
+            )
 
     colliding = collections.Counter()
     for row in read(COLLISIONS):
         slug, tier, year = row["dataset_id"].split("/")
         colliding[(SLUG.get(slug, slug), year, tier)] += 1
 
-    unexplained = {key: (n, explained.get(key, 0))
-                   for key, n in colliding.items() if explained.get(key, 0) < n}
+    unexplained = {
+        key: (n, explained.get(key, 0))
+        for key, n in colliding.items()
+        if explained.get(key, 0) < n
+    }
     assert not unexplained, unexplained
 
 

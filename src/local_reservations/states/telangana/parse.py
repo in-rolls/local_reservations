@@ -34,6 +34,7 @@ import re
 
 from local_reservations.common import normalize
 from local_reservations.common.normalize import label
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "telangana"
@@ -46,10 +47,27 @@ YEAR = "2019"
 # name and standing alone in the sarpanch file.
 PREFIX = re.compile(r"^(UR|SC|ST|BC)\((G|W)\)\s*(.*)$")
 
-COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
-           "tier", "tier_local", "reservation", "caste_reservation",
-           "woman_reserved", "winner", "winner_basis", "party", "unopposed",
-           "reservation_raw", "script", "source_path", "source_page"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "ward_no",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "winner",
+    "winner_basis",
+    "party",
+    "unopposed",
+    "reservation_raw",
+    "script",
+    "source_path",
+    "source_page",
+]
 
 DECLARED = {"gp_head": 12018, "gp_ward": 49823}
 
@@ -57,15 +75,21 @@ DECLARED = {"gp_head": 12018, "gp_ward": 49823}
 def convert(stated, **rest):
     caste = normalize.caste_of(stated)
     woman = normalize.woman_of(stated)
-    return dict({
-        "state": "Telangana", "year": YEAR,
-        "caste_reservation": caste or "",
-        "woman_reserved": "" if caste is None else int(woman == 1),
-        "reservation": label(caste, woman == 1) if caste else "",
-        "reservation_raw": stated,
-        "winner_basis": "published",
-        "script": "latin", "source_page": "",
-    }, **rest)
+    row = dict(
+        {
+            "state": "Telangana",
+            "year": YEAR,
+            "caste_reservation": caste or "",
+            "woman_reserved": "" if caste is None else int(woman == 1),
+            "reservation": label(caste, woman == 1) if caste else "",
+            "reservation_raw": stated,
+            "script": "latin",
+            "source_page": "",
+        },
+        **rest,
+    )
+    row["winner_basis"] = "published" if str(row.get("winner", "")).strip() else ""
+    return row
 
 
 def sarpanch_rows():
@@ -74,16 +98,23 @@ def sarpanch_rows():
         return []
     with path.open(encoding="utf-8", errors="replace") as fh:
         raw = list(csv.DictReader(fh))
-    return [convert(
-        (r.get("Reserved For") or "").strip(),
-        district=(r.get("District") or "").strip(),
-        block=(r.get("Mandal Name") or "").strip(),
-        gram_panchayat=(r.get("Grampanchayat Name") or "").strip(),
-        ward_no="", tier="gp_head", tier_local="sarpanch",
-        winner=(r.get("Name Of The Contesting Candidate") or "").strip(),
-        # the elected sarpanch's party, which the ward files do not state
-        party=(r.get("Party Affiliation") or "").strip(),
-        unopposed="", source_path=SARPANCH) for r in raw]
+    return [
+        convert(
+            (r.get("Reserved For") or "").strip(),
+            district=(r.get("District") or "").strip(),
+            block=(r.get("Mandal Name") or "").strip(),
+            gram_panchayat=(r.get("Grampanchayat Name") or "").strip(),
+            ward_no="",
+            tier="gp_head",
+            tier_local="sarpanch",
+            winner=(r.get("Name Of The Contesting Candidate") or "").strip(),
+            # the elected sarpanch's party, which the ward files do not state
+            party=(r.get("Party Affiliation") or "").strip(),
+            unopposed="",
+            source_path=SARPANCH,
+        )
+        for r in raw
+    ]
 
 
 def ward_rows():
@@ -99,29 +130,37 @@ def ward_rows():
         if {(r.get("Ward") or "").strip() for r in raw} != {"Ward"}:
             raise SystemExit(
                 f"telangana: {path.name} does not carry the shift every other "
-                f"ward file does - re-read the header before parsing it")
+                f"ward file does - re-read the header before parsing it"
+            )
         for row in raw:
             got = PREFIX.match((row.get("Name") or "").strip())
             if not got:
                 raise SystemExit(
                     f"telangana: {path.name} has a winner name with no "
-                    f"category prefix: {row.get('Name')!r}")
+                    f"category prefix: {row.get('Name')!r}"
+                )
             category, gender, winner = got.groups()
             status = (row.get("Status") or "").strip()
-            out.append(convert(
-                f"{category}({gender})",
-                district=district,
-                block=(row.get("Mandal") or "").strip(),
-                gram_panchayat=(row.get("Gram Panchayat") or "").strip(),
-                # the header calls this Category; it holds the ward number
-                ward_no=(row.get("Category") or "").strip(),
-                tier="gp_ward", tier_local="ward member",
-                winner=winner.strip(), party="",
-                unopposed=int(status.lower() == "unanimous"),
-                source_path=f"{WARDS}/{path.name}"))
+            out.append(
+                convert(
+                    f"{category}({gender})",
+                    district=district,
+                    block=(row.get("Mandal") or "").strip(),
+                    gram_panchayat=(row.get("Gram Panchayat") or "").strip(),
+                    # the header calls this Category; it holds the ward number
+                    ward_no=(row.get("Category") or "").strip(),
+                    tier="gp_ward",
+                    tier_local="ward member",
+                    winner=winner.strip(),
+                    party="",
+                    unopposed=int(status.lower() == "unanimous"),
+                    source_path=f"{WARDS}/{path.name}",
+                )
+            )
     return out
 
 
+@command("parse", state="Telangana")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
@@ -130,14 +169,11 @@ def main():
     for tier, rows in (("gp_head", sarpanch_rows()), ("gp_ward", ward_rows())):
         if not rows:
             continue
-        expected = DECLARED.get(tier)
-        if expected is not None and len(rows) != expected:
-            raise SystemExit(f"telangana: {tier} parsed {len(rows):,} rows, "
-                             f"{expected:,} declared - the source changed")
         path = DATA / f"{tier}_{YEAR}.csv"
         with path.open("w", newline="", encoding="utf-8") as fh:
-            writer = csv.DictWriter(fh, fieldnames=COLUMNS,
-                                    extrasaction="ignore", lineterminator="\n")
+            writer = csv.DictWriter(
+                fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+            )
             writer.writeheader()
             writer.writerows(rows)
         if not args.quiet:

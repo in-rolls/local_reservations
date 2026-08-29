@@ -11,6 +11,7 @@ from local_reservations.common import canon, datasets, dictionary
 
 # --------------------------------------------------------------- the tiers
 
+
 def test_bihar_sarpanch_is_not_a_panchayat_head():
     """The single most expensive mapping in the corpus.
 
@@ -25,8 +26,9 @@ def test_bihar_sarpanch_is_not_a_panchayat_head():
     assert canon.tier_of("mukhiya", "Bihar") == "gp_head"
 
 
-@pytest.mark.parametrize("state", ["Haryana", "Rajasthan", "Andhra Pradesh",
-                                   "Jammu & Kashmir"])
+@pytest.mark.parametrize(
+    "state", ["Haryana", "Rajasthan", "Andhra Pradesh", "Jammu & Kashmir"]
+)
 def test_sarpanch_is_a_panchayat_head_everywhere_else(state):
     assert canon.tier_of("sarpanch", state) == "gp_head"
 
@@ -34,8 +36,7 @@ def test_sarpanch_is_a_panchayat_head_everywhere_else(state):
 def test_the_same_office_under_two_names_pools():
     """Jharkhand calls the panchayat's ward member a ward_member and everyone
     else calls it a ward. Same seat, and it has to land in one bucket."""
-    assert canon.tier_of("ward", "Goa") == canon.tier_of("ward_member",
-                                                         "Jharkhand")
+    assert canon.tier_of("ward", "Goa") == canon.tier_of("ward_member", "Jharkhand")
 
 
 def test_an_unknown_office_is_not_guessed():
@@ -55,6 +56,14 @@ def test_rural_and_urban_partition_the_tiers():
     assert not canon.RURAL_TIERS & canon.URBAN_TIERS
 
 
+def test_assam_president_and_vice_president_are_distinct_offices():
+    assert canon.tier_of("Gaon Panchayat President", "Assam") == "gp_head"
+    assert canon.tier_of("Gaon Panchayat Vice-President", "Assam") == "gp_vice_head"
+    assert (
+        canon.tier_of("Anchalik Panchayat Vice-President", "Assam") == "block_vice_head"
+    )
+
+
 def test_every_tier_in_the_data_is_canonical_and_maps_back():
     """Read against the shipped files, so a parser writing an unmapped tier
     fails here rather than turning up as a hole in the pooled table."""
@@ -65,7 +74,8 @@ def test_every_tier_in_the_data_is_canonical_and_maps_back():
             assert local, f"{path.name}: tier_local is blank"
             assert canon.tier_of(local, row["state"]) == row["tier"], (
                 f"{path.name}: {local!r} in {row['state']} should map to "
-                f"{row['tier']!r}")
+                f"{row['tier']!r}"
+            )
             break
 
 
@@ -75,12 +85,15 @@ def test_no_local_name_maps_to_two_tiers_within_a_state():
         for row in rows:
             key = (row["state"], row.get("tier_local", ""))
             if key in seen:
-                assert seen[key] == row["tier"], f"{key} -> {seen[key]} and {row['tier']}"  # noqa: E501
+                assert seen[key] == row["tier"], (
+                    f"{key} -> {seen[key]} and {row['tier']}"
+                )
             else:
                 seen[key] = row["tier"]
 
 
 # ------------------------------------------------------------ caste schemes
+
 
 def test_kerala_reserving_no_backward_class_seat_is_lawful():
     """Kerala reserves no BC seat in local bodies, so zero BC rows is the law
@@ -103,6 +116,7 @@ def test_observed_categories_stay_inside_the_declared_scheme():
 
 
 # ------------------------------------------------- the panchayat name column
+
 
 def test_the_alias_family_is_read_from_the_dictionary():
     """It was a hardcoded list in checks.py and a docstring in dictionary.py,

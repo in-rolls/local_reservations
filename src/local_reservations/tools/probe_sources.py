@@ -17,17 +17,30 @@ import csv
 import pathlib
 import re
 import subprocess
-import sys
 import tempfile
 
 from local_reservations.common import fetch
+from local_reservations.common.runlog import command, get_logger
 from local_reservations.paths import ROOT
+
+LOGGER = get_logger(__name__)
 
 DATA = ROOT / "data"
 TEXT_THRESHOLD = 800  # chars/page; same cut inventory.py uses
 
-COLUMNS = ["state", "tier", "url", "reachable", "doc_url", "pages", "producer",
-           "chars_per_page", "format", "topic_match", "note"]
+COLUMNS = [
+    "state",
+    "tier",
+    "url",
+    "reachable",
+    "doc_url",
+    "pages",
+    "producer",
+    "chars_per_page",
+    "format",
+    "topic_match",
+    "note",
+]
 
 # A district homepage links dozens of PDFs and the first one is usually
 # unrelated - a computer-disposal tender, a staff transfer list. Classifying
@@ -42,10 +55,14 @@ COLUMNS = ["state", "tier", "url", "reachable", "doc_url", "pages", "producer",
 # nearly went into SOURCES.md as evidence that Chhattisgarh was easy.
 BODY = re.compile(
     r"\bsarpanch|सरपंच|\bpanchayat\b|पंचायत|\bmukhiya\b|\bhalqa\b"
-    r"|\bward\s*(?:no|number|wise)\b|\bजनपद\b", re.I)
+    r"|\bward\s*(?:no|number|wise)\b|\bजनपद\b",
+    re.I,
+)
 CATEGORY = re.compile(
     r"\breservation\b|\baarakshan\b|आरक्षण|अनुसूचित|\bunreserved\b"
-    r"|\bscheduled\s+(?:caste|tribe)\b|\bबीसी\b|\bओबीसी\b", re.I)
+    r"|\bscheduled\s+(?:caste|tribe)\b|\bबीसी\b|\bओबीसी\b",
+    re.I,
+)
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
@@ -86,30 +103,56 @@ def classify_pdf(payload):
         fh.write(payload)
         path = fh.name
     try:
-        info = subprocess.run(["pdfinfo", path], capture_output=True,
-                              text=True, timeout=60).stdout
+        info = subprocess.run(
+            ["pdfinfo", path], capture_output=True, text=True, timeout=60
+        ).stdout
         pages = re.search(r"^Pages:\s+(\d+)", info, re.M)
         producer = re.search(r"^Producer:\s*(.*)$", info, re.M)
         pages = int(pages.group(1)) if pages else 0
         sample = min(pages, 5) or 1
         text = subprocess.run(
             ["pdftotext", "-layout", "-f", "1", "-l", str(sample), path, "-"],
-            capture_output=True, text=True, timeout=120).stdout
+            capture_output=True,
+            text=True,
+            timeout=120,
+        ).stdout
         density = int(len(text) / sample)
-        fmt = ("digital-text" if density >= TEXT_THRESHOLD
-               else "mixed" if density > 50 else "scan")
-        topic = ("yes" if (BODY.search(text) and CATEGORY.search(text))
-                 else "no" if density > 50 else "unknown-no-text")
-        return {"pages": pages,
-                "producer": (producer.group(1).strip() if producer else "") or "(none)",
-                "chars_per_page": density, "format": fmt, "topic_match": topic}
+        fmt = (
+            "digital-text"
+            if density >= TEXT_THRESHOLD
+            else "mixed"
+            if density > 50
+            else "scan"
+        )
+        topic = (
+            "yes"
+            if (BODY.search(text) and CATEGORY.search(text))
+            else "no"
+            if density > 50
+            else "unknown-no-text"
+        )
+        return {
+            "pages": pages,
+            "producer": (producer.group(1).strip() if producer else "") or "(none)",
+            "chars_per_page": density,
+            "format": fmt,
+            "topic_match": topic,
+        }
     finally:
         pathlib.Path(path).unlink(missing_ok=True)
 
 
 def probe(row):
-    out = dict(row, reachable="", doc_url="", pages="", producer="",
-               chars_per_page="", format="", topic_match="")
+    out = dict(
+        row,
+        reachable="",
+        doc_url="",
+        pages="",
+        producer="",
+        chars_per_page="",
+        format="",
+        topic_match="",
+    )
     try:
         page = get(row["url"])
     except fetch.Unanswered as exc:  # unreachable is the finding
@@ -138,15 +181,22 @@ def probe(row):
     return out
 
 
+@command("discover", artifact="source_probe")
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true",
-                    help="list the seed URLs without fetching anything")
+    ap.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="list the seed URLs without fetching anything",
+    )
     ap.add_argument("--seed", default=str(DATA / "sources_seed.csv"))
     ap.add_argument("--out", default=str(DATA / "sources_probe.csv"))
-    ap.add_argument("--skip-unreachable", action="store_true",
-                    help="carry over rows a previous run could not reach, so a "
-                         "re-run does not spend minutes re-timing-out on them")
+    ap.add_argument(
+        "--skip-unreachable",
+        action="store_true",
+        help="carry over rows a previous run could not reach, so a "
+        "re-run does not spend minutes re-timing-out on them",
+    )
     args = ap.parse_args()
 
     with open(args.seed, encoding="utf-8") as fh:
@@ -155,33 +205,49 @@ def main():
     if args.dry_run:
         for row in seed:
             print(f"  {row['state']:18s} {row['tier']:9s} {row['url']}")
-        print(f"\n{len(seed)} candidate sources across "
-              f"{len({r['state'] for r in seed})} states")
+        print(
+            f"\n{len(seed)} candidate sources across "
+            f"{len({r['state'] for r in seed})} states"
+        )
         return
 
     previous = {}
     if args.skip_unreachable and pathlib.Path(args.out).exists():
         with open(args.out, encoding="utf-8") as fh:
-            previous = {r["url"]: r for r in csv.DictReader(fh)
-                        if r["reachable"] == "no"}
+            previous = {
+                r["url"]: r for r in csv.DictReader(fh) if r["reachable"] == "no"
+            }
 
     rows = []
     for i, row in enumerate(seed, 1):
-        print(f"\r  {i}/{len(seed)} {row['state']:18s}", end="", file=sys.stderr)
-        rows.append(previous.get(row["url"]) or probe(row))
-    print(file=sys.stderr)
+        got = previous.get(row["url"]) or probe(row)
+        rows.append(got)
+        LOGGER.info(
+            "Source probe completed",
+            extra={
+                "event": "source_probe_completed",
+                "state": row["state"],
+                "url": row["url"],
+                "reachable": got["reachable"],
+                "position": i,
+                "total": len(seed),
+            },
+        )
 
     with open(args.out, "w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=COLUMNS, extrasaction="ignore",
-                                lineterminator="\n")
+        writer = csv.DictWriter(
+            fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+        )
         writer.writeheader()
         writer.writerows(rows)
     print(f"wrote {args.out} ({len(rows)} rows)\n")
 
     for row in rows:
-        detail = (f"{row['format']:20s} {row['pages'] or '-':>5} pp  "
-                  f"{row['chars_per_page'] or '-':>5} ch/pg  "
-                  f"topic={row['topic_match'] or '-':15s} {row['producer']}")
+        detail = (
+            f"{row['format']:20s} {row['pages'] or '-':>5} pp  "
+            f"{row['chars_per_page'] or '-':>5} ch/pg  "
+            f"topic={row['topic_match'] or '-':15s} {row['producer']}"
+        )
         print(f"  {row['state']:18s} {row['tier']:9s} {detail}")
 
 

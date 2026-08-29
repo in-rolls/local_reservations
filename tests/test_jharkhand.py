@@ -25,10 +25,12 @@ split_seat_id = jharkhand.split_seat_id
 
 # ----------------------------------------------------------- ward member
 
+
 def test_block_and_panchayat_both_named():
     """Bokaro prints every part, separated by spaces after each number."""
-    got = split_seat_id("XV cksdkjks@08 pkl@18 lruiqj@izk0fu0{ks0 la0&12",
-                        "ward_member")
+    got = split_seat_id(
+        "XV cksdkjks@08 pkl@18 lruiqj@izk0fu0{ks0 la0&12", "ward_member"
+    )
     assert got["district_roman"] == "XV"
     assert (got["block_no"], got["block"]) == ("08", "pkl")
     assert (got["gp_no"], got["gram_panchayat"]) == ("18", "lruiqj")
@@ -47,8 +49,7 @@ def test_block_given_only_as_a_number():
 
 def test_roman_numeral_trails_the_string():
     """East Singhbhum puts the district's index at the end, not the front."""
-    got = split_seat_id("iwohZ flga Hkwe@05@02@cMk[kq'khZ XXIV - (04)",
-                        "ward_member")
+    got = split_seat_id("iwohZ flga Hkwe@05@02@cMk[kq'khZ XXIV - (04)", "ward_member")
     assert got["district_roman"] == "XXIV"
     assert got["gram_panchayat"] == "cMk[kq'khZ"
     assert got["seat_no"] == "04"
@@ -70,6 +71,7 @@ def test_the_number_survives_every_bracket_style(raw, expected):
 
 
 # ------------------------------------------------- the tier decides the name
+
 
 def test_same_shape_means_block_at_samiti_level():
     got = split_seat_id("I x<+ok@01@[kjkSa/kh&¼01½", "panchayat_samiti")
@@ -106,8 +108,7 @@ def test_nothing_is_invented_from_a_bare_roman_numeral():
     answer for the rest; only OCR can close it."""
     got = split_seat_id("XVII", "ward_member")
     assert got["district_roman"] == "XVII"
-    assert not {"block", "block_no", "gram_panchayat", "gp_no",
-                "seat_no"} & set(got)
+    assert not {"block", "block_no", "gram_panchayat", "gp_no", "seat_no"} & set(got)
 
 
 def test_empty_input_yields_nothing():
@@ -116,12 +117,16 @@ def test_empty_input_yields_nothing():
 
 # -------------------------------------------- joining the block name back on
 
+
 def test_block_name_joined_from_a_row_that_states_it():
     rows = [
-        {"district": "Bokaro", "block_no": "08", "block": "pkl",
-         "block_from": "identifier"},
-        {"district": "Bokaro", "block_no": "08", "block": "",
-         "block_from": ""},
+        {
+            "district": "Bokaro",
+            "block_no": "08",
+            "block": "pkl",
+            "block_from": "identifier",
+        },
+        {"district": "Bokaro", "block_no": "08", "block": "", "block_from": ""},
     ]
     filled, ambiguous = fill_block_names(rows)
     assert (filled, ambiguous) == (1, 0)
@@ -134,10 +139,13 @@ def test_page_header_blocks_do_not_seed_the_lookup():
     different names against block 04. Only blocks stated on the row itself are
     usable, so a header-only value teaches the lookup nothing."""
     rows = [
-        {"district": "Dhanbad", "block_no": "04", "block": "fujlk",
-         "block_from": "page"},
-        {"district": "Dhanbad", "block_no": "04", "block": "",
-         "block_from": ""},
+        {
+            "district": "Dhanbad",
+            "block_no": "04",
+            "block": "fujlk",
+            "block_from": "page",
+        },
+        {"district": "Dhanbad", "block_no": "04", "block": "", "block_from": ""},
     ]
     filled, _ = fill_block_names(rows)
     assert filled == 0

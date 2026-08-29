@@ -7,7 +7,76 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
-## Unreleased — v0.2.8
+## v0.3.0 — 2026-08-28
+
+### Corrected
+
+- **Kadapa applies the gazette's own 41-row errata instead of silently
+  overwriting the original cells.** The positioned parser reads 807 GP heads
+  and 7,903 wards,
+  checks every mandal against the gazette's printed 807-GP/50-mandal
+  abstracts, and applies all 41 rows in the later errata only after each `For`
+  value agrees with the original table. Corrected rows retain the original
+  cell, `For`, `Read as`, and correction page.
+
+### Added
+
+- **Andhra Pradesh and Jammu & Kashmir add 36,637 pooled seats.** Kurnool adds
+  972 GP heads and 9,987 wards; Kadapa adds 807 heads and 7,903 wards. After
+  the reviewed parser also removes a net 35 rows from the six earlier AP
+  districts, AP grows by 19,634 rows to 80,021 across 8 of 13 held district
+  gazettes. J&K grows by 17,003 rows: 5,676 wards from 2010, plus 1,353 GP
+  heads and 9,974 wards from the complete set of 25 held 2016 PDFs.
+
+- **Assam and Gujarat add 2,856 rural seats and bring the pooled master to
+  869,559 seats across 15 states.** Assam contributes 1,678 seats from the
+  2025 Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi
+  orders; Gujarat contributes all 1,178 block- and district-panchayat seats in
+  the 2020 rotation orders.
+
+  Assam's local files also retain 610 reserved-only municipal rows from 2020,
+  which are excluded from the rural master. All 27 Assam district PDFs are
+  held; four are parsed and 23 remain explicitly marked held/unparsed rather
+  than being presented as statewide coverage.
+
+- **The source documents now retain distinctions that a single reservation
+  label loses.** Assam keeps the printed SC and ST counts independently,
+  including `0/0`, `0/1`, and `1/0`, and expands merged gram-panchayat cells
+  over every ward they span. Named constituencies, vice-head offices, and the
+  block and gram-panchayat hierarchy survive into the common schema.
+
+### Changed
+
+- **Acquisition, text extraction, and parsing are separate stages.** New
+  source pipelines can fetch once, inspect or replace the extracted text, and
+  re-run deterministic parsers without touching the network. Commands emit
+  structured JSON run records with source, stage, counts, duration, and
+  outcome, and source-specific expectations fail on missing pages, rows, seat
+  runs, or reservation combinations.
+
+- **Coverage reporting now distinguishes source records from pooled seats.**
+  Candidate-level sibling files can contain several records for one seat; the
+  state table reports those source records, while the master remains the
+  comparable one-row-per-seat view. Parquet counts come from file metadata,
+  other held PDFs are distinguished from rows they do not source, and Bihar
+  remains correctly shown as parsed.
+
+- **Rajasthan now comes from `local_elections_rajasthan`.** The four published
+  sarpanch panels retain the same 39,520 rows, but their source path and commit
+  now point to the maintained state repository instead of the paper-specific
+  `quota_raj` repository.
+
+- **Development installs and CI now use uv's native build backend.** Hatchling
+  is gone, and the project is marked `Private :: Do Not Upload`. The released
+  product is the GitHub data package pinned by `MANIFEST.json`; the Python
+  project exists to build and validate it, not for publication to PyPI.
+
+- **The master has 865,916 distinct seat keys (99.6%) and 3,643 collisions,**
+  compared with 824,987 (99.4%) and 5,079 in v0.2.8. The release checks the
+  declared seat grain, provenance, hierarchy, and reservation fields before
+  writing the manifest.
+
+## v0.2.8 — 2026-08-14
 
 ### Corrected
 
@@ -38,7 +107,7 @@ here is usually the thing that was wrong.
   in the data — a sarpanch seat reads `Backward Class 'A' Women` in English and
   `पिछड़ा वर्ग क महिला के सिवाय` in Hindi, and the row has `printings_agree = 0`.
 
-## Unreleased — v0.2.7
+## v0.2.7 — 2026-08-14
 
 ### Added
 
@@ -79,7 +148,7 @@ here is usually the thing that was wrong.
   guessed: the only certain repair is the number of constituencies enumerated,
   which is the very thing the check tests.
 
-## Unreleased — v0.2.6
+## v0.2.6 — 2026-08-14
 
 ### Added
 
@@ -120,7 +189,7 @@ here is usually the thing that was wrong.
   from the data it is meant to test is not a check. Declaring a confirmed
   statute in `reference.WOMEN_RULE` tightens any slice.
 
-## Unreleased — v0.2.5
+## v0.2.5 — 2026-08-14
 
 ### Corrected
 
@@ -141,7 +210,7 @@ here is usually the thing that was wrong.
   five parsers with five different bodies, because each strips what its own
   documents carry. Same name is not the same function.
 
-## Unreleased — v0.2.4
+## v0.2.4 — 2026-08-13
 
 ### Corrected
 
@@ -186,7 +255,7 @@ here is usually the thing that was wrong.
   name, so the work happens once per name rather than once per row, and a
   correction to one name fixes every row that carries it. `make transliterate`.
 
-## Unreleased — v0.2.3
+## v0.2.3 — 2026-08-13
 
 ### Corrected
 
@@ -218,7 +287,7 @@ here is usually the thing that was wrong.
   wards. This predates the correction above and is why Alurupadu now holds 4
   wards where a misaligned parse used to spill 7 of its 8.
 
-## Unreleased — v0.2.2
+## v0.2.2 — 2026-08-13
 
 No data changed. Every value in every master table was compared against v0.2.1
 column by column; only `source_commit`, the build's own provenance stamp, moved.
@@ -269,7 +338,7 @@ column by column; only `source_commit`, the build's own provenance stamp, moved.
   system interpreter happened to have pandas; nothing said the corpus needed
   it. It is declared now.
 
-## Unreleased — v0.2.1
+## v0.2.1 — 2026-08-12
 
 ### Corrected
 
@@ -321,7 +390,7 @@ had no ward number before and so collided with nothing; numbering them
 correctly revealed that Chirao and Babain each hold two panchayats sharing a
 name — a separate defect that was invisible while the rows were unnumbered.
 
-## Unreleased — v0.2.0
+## v0.2.0 — 2026-08-12
 
 ### Added
 
@@ -419,7 +488,7 @@ name — a separate defect that was invisible while the rows were unnumbered.
 
 - **A caption was published as a place name.** The seat identifier puts its
   number after "territorial constituency no.", and only the Kruti Dev spelling of
-  that label was recognised, so on a Devanagari page the caption itself became
+  that label was recognized, so on a Devanagari page the caption itself became
   the gram panchayat. 18 rows named `प्रा0नि0क्षे0 सं0` instead of a place.
 
 - **501 seats were published twice.** Two readers of the same page rendered one
@@ -466,7 +535,7 @@ per-state figure in this release is wider than the figure's own precision sugges
   It is the raw record, and for the 29 documents whose render is broken it is the
   only form available. Installing the font and re-rendering those would close it.
 
-## Unreleased — v0.1.0
+## v0.1.0 — 2026-08-10
 
 The first tagged release, and the first time the whole corpus is pinned by hash.
 
@@ -490,7 +559,7 @@ The first tagged release, and the first time the whole corpus is pinned by hash.
 
 - **18 rows named a caption rather than a place.** The identifier puts its number
   after "territorial constituency no.", and only the Kruti Dev spelling of that
-  label was recognised, so on a Devanagari page the caption itself was published
+  label was recognized, so on a Devanagari page the caption itself was published
   as the gram panchayat. A reader joining on the name got a match that was not a
   place. `बगदा` and its neighbours are now read correctly.
 
@@ -566,7 +635,7 @@ The first tagged release, and the first time the whole corpus is pinned by hash.
 ### Fixed
 
 - **Seat numbers printed with a trailing hyphen** were not read. `SEAT_TAIL`
-  recognised `(01)`, `¼01½` and `&01`, but the panchayat samiti form prints
+  recognized `(01)`, `¼01½` and `&01`, but the panchayat samiti form prints
   `XII दुमका/04/काठीकुण्ड-01`. Three documents resolved no seat number at all for
   want of it — on tesseract and on Surya alike, so it was a parser gap rather than
   a scan one. **+393 seat numbers, no row whose value changed.**

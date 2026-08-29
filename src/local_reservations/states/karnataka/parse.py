@@ -33,6 +33,7 @@ import argparse
 import csv
 
 from local_reservations.common.normalize import label
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 SOURCE = "data/karnataka/Karnataka_GP_ReservationHistory.dta"
@@ -62,18 +63,38 @@ CASTE = {
 
 # Census columns carried through, so caste_share_vs_population has something to
 # appeal to. Named as the dictionary names them.
-POPULATION = {"tot_p": "pop_total", "p_sc": "pop_sc", "p_st": "pop_st",
-              "tot_f": "pop_female"}
+POPULATION = {
+    "tot_p": "pop_total",
+    "p_sc": "pop_sc",
+    "p_st": "pop_st",
+    "tot_f": "pop_female",
+}
 
-COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "gp_code",
-           "tier", "tier_local", "reservation", "caste_reservation",
-           "caste_reservation_local", "woman_reserved", "reservation_raw",
-           "script", "source_path", "source_page",
-           "pop_total", "pop_sc", "pop_st", "pop_female"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "gp_code",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "caste_reservation_local",
+    "woman_reserved",
+    "reservation_raw",
+    "script",
+    "source_path",
+    "source_page",
+    "pop_total",
+    "pop_sc",
+    "pop_st",
+    "pop_female",
+]
 
 # What each cycle holds, so a re-run that reads a different file says so.
-DECLARED = {"1993": 5264, "2000": 5320, "2002": 5320, "2005": 5322,
-            "2007": 5322}
+DECLARED = {"1993": 5264, "2000": 5320, "2002": 5320, "2005": 5322, "2007": 5322}
 
 
 def rows_for(frame, year):
@@ -90,18 +111,22 @@ def rows_for(frame, year):
             continue
         caste, local, woman = CASTE[code]
         row = {
-            "state": "Karnataka", "year": year,
+            "state": "Karnataka",
+            "year": year,
             "district": str(record.get("districtname") or "").strip(),
             "block": str(record.get("talukname") or "").strip(),
             "gram_panchayat": str(record.get("gpname") or "").strip(),
             "gp_code": str(record.get("gpidcode") or "").strip(),
-            "tier": "gp_head", "tier_local": "adhyaksha",
-            "caste_reservation": caste, "caste_reservation_local": local,
+            "tier": "gp_head",
+            "tier_local": "adhyaksha",
+            "caste_reservation": caste,
+            "caste_reservation_local": local,
             "woman_reserved": woman,
             "reservation": label(caste, woman == 1),
             "reservation_raw": f"{column}={code}",
             "script": "latin",
-            "source_path": SOURCE, "source_page": "",
+            "source_path": SOURCE,
+            "source_page": "",
         }
         for source, target in POPULATION.items():
             got = record.get(source)
@@ -110,6 +135,7 @@ def rows_for(frame, year):
     return out, unreadable
 
 
+@command("parse", state="Karnataka", series="gp_head_reservation")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
@@ -118,27 +144,25 @@ def main():
     try:
         import pandas
     except ImportError as exc:
-        raise SystemExit("pandas is needed to read the Stata file; the CSVs it "
-                         "writes are committed, so this only has to run when "
-                         "the source changes") from exc
+        raise SystemExit(
+            "pandas is needed to read the Stata file; the CSVs it "
+            "writes are committed, so this only has to run when "
+            "the source changes"
+        ) from exc
 
     frame = pandas.read_stata(ROOT / SOURCE, convert_categoricals=False)
     OUT.mkdir(parents=True, exist_ok=True)
     for year in YEARS:
         rows, unreadable = rows_for(frame, year)
-        expected = DECLARED.get(year)
-        if expected is not None and len(rows) != expected:
-            raise SystemExit(f"karnataka: {year} parsed {len(rows):,} rows, "
-                             f"{expected:,} declared - the source changed")
         path = OUT / f"gp_head_{year}.csv"
         with path.open("w", newline="", encoding="utf-8") as fh:
-            writer = csv.DictWriter(fh, fieldnames=COLUMNS,
-                                    extrasaction="ignore", lineterminator="\n")
+            writer = csv.DictWriter(
+                fh, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n"
+            )
             writer.writeheader()
             writer.writerows(rows)
         if not args.quiet:
-            note = f"  ({unreadable} outside the caste label)" if unreadable \
-                else ""
+            note = f"  ({unreadable} outside the caste label)" if unreadable else ""
             print(f"  {year}: {len(rows):,} panchayat presidents{note}")
 
 

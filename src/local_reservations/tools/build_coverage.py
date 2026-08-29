@@ -26,6 +26,8 @@ import csv
 import re
 import sys
 
+import pyarrow.parquet as pq
+
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data"
@@ -39,6 +41,7 @@ from local_reservations.common import (  # noqa: E402 - after DATA, which it nee
     fetch,
     reference,
 )
+from local_reservations.common.runlog import command  # noqa: E402
 
 # States split into their own repositories.
 # States parsed in a repository of their own, with the files that hold the
@@ -48,49 +51,67 @@ from local_reservations.common import (  # noqa: E402 - after DATA, which it nee
 # local_elections_up - as a second Uttar Pradesh.
 SIBLINGS = {
     "Haryana": {
-        "repo": "local_elections_haryana", "years": "2016, 2022",
+        "repo": "local_elections_haryana",
+        "years": "2016, 2022",
         "tiers": "gp_head, gp_ward",
-        "files": ["data/2016/gp_reservation.csv", "data/2016/ward_reservation.csv",
-                  "data/2022/gp_reservation.csv", "data/2022/ward_reservation.csv"],
+        "files": [
+            "data/2016/gp_reservation.csv",
+            "data/2016/ward_reservation.csv",
+            "data/2022/gp_reservation.csv",
+            "data/2022/ward_reservation.csv",
+        ],
     },
     "Bihar": {
-        "repo": "local_elections_bihar", "years": "2016",
+        "repo": "local_elections_bihar",
+        "years": "2016",
         "tiers": "gp_head, gp_ward, block_member, zp_member, kachahari_head, kachahari_member",  # noqa: E501
-        "files": ["data/mukhiya.csv", "data/ward_member.csv", "data/sarpanch.csv",
-                  "data/panch.csv", "data/panchayat_samiti_member.csv",
-                  "data/zila_parishad_member.csv"],
+        "files": [
+            "data/mukhiya.csv",
+            "data/ward_member.csv",
+            "data/sarpanch.csv",
+            "data/panch.csv",
+            "data/panchayat_samiti_member.csv",
+            "data/zila_parishad_member.csv",
+        ],
     },
     "Kerala": {
-        "repo": "local_elections_kerala", "years": "2010, 2015, 2020",
+        "repo": "local_elections_kerala",
+        "years": "2010, 2015, 2020",
         "tiers": "gp_ward, block_member, zp_member, ulb_ward",
         "files": ["data/lsgi-election-kerala.csv"],
     },
     "Uttar Pradesh": {
-        "repo": "local_elections_up", "years": "2005, 2010, 2015, 2021",
+        "repo": "local_elections_up",
+        "years": "2005, 2010, 2015, 2021",
         "tiers": "gp_head",
-        "files": ["data/fin/up_gp_sarpanch_2005_fixed_with_transliteration.parquet",
-                  "data/fin/up_gp_sarpanch_2010_fixed_with_transliteration.parquet",
-                  "data/fin/up_gp_sarpanch_2015_fixed_with_transliteration.parquet",
-                  "data/fin/up_gp_sarpanch_2021_fixed_with_transliteration.parquet"],
+        "files": [
+            "data/fin/up_gp_sarpanch_2005_fixed_with_transliteration.parquet",
+            "data/fin/up_gp_sarpanch_2010_fixed_with_transliteration.parquet",
+            "data/fin/up_gp_sarpanch_2015_fixed_with_transliteration.parquet",
+            "data/fin/up_gp_sarpanch_2021_fixed_with_transliteration.parquet",
+        ],
     },
     "Uttarakhand": {
-        "repo": "local_elections_uttarakhand", "years": "2008, 2014, 2019",
+        "repo": "local_elections_uttarakhand",
+        "years": "2008, 2014, 2019",
         "tiers": "gp_head, block_member, zp_member",
-        "files": ["data/uttarakhand-panchayat-elections.csv",
-                  "data/uttarakhand-panchayat-elections-haridwar.csv"],
+        "files": [
+            "data/uttarakhand-panchayat-elections.csv",
+            "data/uttarakhand-panchayat-elections-haridwar.csv",
+        ],
     },
-    # Rajasthan's parse lives in quota_raj rather than a local_elections_* repo,
-    # which is the only reason it spent this long filed under "prior work, other
-    # schema" - a label that reads as "already handled" when it meant "parsed,
-    # just not by a repository I was looking for". It is as ready as Haryana:
+    # The standardized sarpanch panel lives with the state's election data;
     # caste_category and female_reserved are already separate columns.
     "Rajasthan": {
-        "repo": "quota_raj", "years": "2005, 2010, 2015, 2020",
+        "repo": "local_elections_rajasthan",
+        "years": "2005, 2010, 2015, 2020",
         "tiers": "gp_head",
-        "files": ["data/raj/source_2005_std.parquet",
-                  "data/raj/source_2010_std.parquet",
-                  "data/raj/source_2015_std.parquet",
-                  "data/raj/source_2020_std.parquet"],
+        "files": [
+            "data/fin/source_2005_std.parquet",
+            "data/fin/source_2010_std.parquet",
+            "data/fin/source_2015_std.parquet",
+            "data/fin/source_2020_std.parquet",
+        ],
     },
 }
 
@@ -114,9 +135,13 @@ URBAN_ONLY = {
 
 # Directory name in data/ -> printed state name.
 DIRECTORY_NAMES = {
-    "ap": "Andhra Pradesh", "jk": "Jammu & Kashmir", "wb": "West Bengal",
-    "up": "Uttar Pradesh", "madhya_pradesh": "Madhya Pradesh",
-    "tamil_nadu": "Tamil Nadu", "delhi": "NCT of Delhi",
+    "ap": "Andhra Pradesh",
+    "jk": "Jammu & Kashmir",
+    "wb": "West Bengal",
+    "up": "Uttar Pradesh",
+    "madhya_pradesh": "Madhya Pradesh",
+    "tamil_nadu": "Tamil Nadu",
+    "delhi": "NCT of Delhi",
     "himachal": "Himachal Pradesh",
 }
 
@@ -128,15 +153,97 @@ NO_PRI = {
     "Nagaland": "Article 371A - village councils, no PRI",
 }
 
+# A held PDF that is not cited by a parsed row is not automatically missing
+# data. It may be an unparsed source series, a draft superseded by a final
+# order, an urban document, or a second statement of a seat already parsed.
+# Inventory can count those files but cannot decide which case applies, so the
+# evidence-backed classification lives here and is printed beside the count.
+REMAINING_WORK = {
+    "Andhra Pradesh": (
+        "all 13 GP district gazettes are held; 8 are parsed and 5 remain "
+        "unparsed; 32 held PDFs cover MPTC, ZPTC, MPP, and MPL tiers and "
+        "remain unparsed"
+    ),
+    "Assam": "23 held 2025 district PRI scans remain unparsed",
+    "Chandigarh": (
+        "5 held municipal and election-report PDFs need a rural-scope review"
+    ),
+    "Goa": (
+        "the 2017 and 2022 rosters are incomplete; 10 held cycle files are "
+        "not linked to parsed rows"
+    ),
+    "Himachal Pradesh": "1 held scan needs a seat-level scope review and OCR",
+    "Jammu & Kashmir": (
+        "2016 is parsed from all 25 held PDFs; 13 files from 2010 and 2018 "
+        "produce no rows"
+    ),
+    "Jharkhand": (
+        "GP-ward and ZP coverage reaches 11 of 24 districts; 29 rural and 3 "
+        "municipal PDFs are not linked to parsed rows"
+    ),
+    "Karnataka": (
+        "244 of 248 unlinked PDFs were reviewed as duplicate reservation "
+        "statements or aggregate forms, not missing seats; 4 produce no rows"
+    ),
+    "Madhya Pradesh": "2 held scans need a seat-level scope review and OCR",
+    "Odisha": (
+        "the 6 held PDFs are district aggregates, not seat rosters; acquire "
+        "seat-level rural data"
+    ),
+    "Puducherry": (
+        "the 2021 panchayat notification is a 60-page scan that needs OCR; "
+        "the other held notification is municipal"
+    ),
+    "Tamil Nadu": (
+        "the 12 held gazettes are urban; acquire a village-panchayat reservation roster"
+    ),
+    "Telangana": (
+        "the 4 unlinked PDFs are urban reservation orders or election manuals, "
+        "not missing rural seats"
+    ),
+    "West Bengal": (
+        "the final 2018 ZP gazettes are parsed; 19 drafts and 1 election manual "
+        "are not additional final seats"
+    ),
+}
+
 ALL_STATES = [
-    "Andaman & Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam",
-    "Bihar", "Chandigarh", "Chhattisgarh", "Dadra & Nagar Haveli and Daman & Diu",
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir",
-    "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep",
-    "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
-    "Nagaland", "NCT of Delhi", "Odisha", "Puducherry", "Punjab", "Rajasthan",
-    "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh",
-    "Uttarakhand", "West Bengal",
+    "Andaman & Nicobar Islands",
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chandigarh",
+    "Chhattisgarh",
+    "Dadra & Nagar Haveli and Daman & Diu",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu & Kashmir",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Ladakh",
+    "Lakshadweep",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "NCT of Delhi",
+    "Odisha",
+    "Puducherry",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
 ]
 
 
@@ -163,8 +270,9 @@ def unmapped_directories():
 
 def parsed_datasets():
     """Every CSV in data/ that carries our schema, keyed by state name."""
-    found = collections.defaultdict(lambda: {"years": set(), "tiers": set(),
-                                             "rows": 0, "dir": None})
+    found = collections.defaultdict(
+        lambda: {"years": set(), "tiers": set(), "rows": 0, "dir": None}
+    )
     for path, rows in datasets.parsed():
         state = rows[0]["state"] or pretty(path.parent.name)
         entry = found[state]
@@ -187,6 +295,28 @@ def raw_holdings():
     return holdings
 
 
+def unlinked_source_pdfs():
+    """Held PDFs not linked from any parsed row, keyed by state directory."""
+    inventory = DATA / "inventory.csv"
+    if not inventory.exists():
+        return {}
+    cited = collections.defaultdict(set)
+    for path, rows in datasets.parsed():
+        cited[path.parent.name] |= {
+            row.get("source_path", "") for row in rows if row.get("source_path")
+        }
+    held = collections.defaultdict(set)
+    with inventory.open(encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            if row.get("kind") == "pdf":
+                held[row["state"]].add(f"data/{row['path']}")
+    return {
+        directory: paths - cited.get(directory, set())
+        for directory, paths in held.items()
+        if paths - cited.get(directory, set())
+    }
+
+
 def sibling_rows(spec):
     """Count the rows in a sibling's named parse files.
 
@@ -194,29 +324,30 @@ def sibling_rows(spec):
     counted Haryana's 187-row download manifest as seats, and would have counted
     quota_raj's byte-identical copy of Uttar Pradesh as a second Uttar Pradesh.
 
-    Parquet is not readable from the standard library, so those files are
-    counted as unknown rather than as zero. The authoritative counts come from
-    the master build, which reads them through an adapter.
+    CSV files are counted as records rather than lines, and Parquet files are
+    counted from their footer metadata without loading their columns.
     """
     directory = ROOT.parent / spec["repo"]
     if not directory.exists():
         return "-"
-    total, unread = 0, 0
+    total, missing = 0, 0
     for relative in spec["files"]:
         path = directory / relative
-        if not path.exists() or path.suffix != ".csv":
-            unread += 1
+        if not path.exists():
+            missing += 1
             continue
-        # Records, not lines. Bihar's addresses contain embedded newlines, so
-        # counting lines reported 692,314 where the six files hold 645,605
-        # records - a 7% overstatement printed in the coverage table as a fact.
-        csv.field_size_limit(10 ** 7)
-        with path.open(encoding="utf-8", errors="replace", newline="") as fh:
-            total += max(sum(1 for _ in csv.reader(fh)) - 1, 0)
-    # Parquet cannot be read from the standard library, so say so rather than
-    # printing a dash that reads as "nothing here". The authoritative counts
-    # come from the master build, which reads these through an adapter.
-    note = f"{unread} parquet" if unread else ""
+        if path.suffix == ".parquet":
+            total += pq.read_metadata(path).num_rows
+        elif path.suffix == ".csv":
+            # Records, not lines. Bihar's addresses contain embedded newlines,
+            # so counting lines reported 692,314 where the six files hold
+            # 645,605 records, a 7% overstatement printed as a fact.
+            csv.field_size_limit(10**7)
+            with path.open(encoding="utf-8", errors="replace", newline="") as fh:
+                total += max(sum(1 for _ in csv.reader(fh)) - 1, 0)
+        else:
+            raise RuntimeError(f"unsupported sibling data file: {path}")
+    note = f"{missing} missing file{'s' if missing != 1 else ''}" if missing else ""
     if not total:
         return note or "0"
     return f"{total:,}" + (f" + {note}" if note else "")
@@ -225,48 +356,116 @@ def sibling_rows(spec):
 def build_rows():
     parsed = parsed_datasets()
     raw = raw_holdings()
+    unlinked = unlinked_source_pdfs()
     by_directory = {v["dir"]: k for k, v in parsed.items() if v["dir"]}
 
     table = []
     for state in ALL_STATES:
         if state in parsed:
             entry = parsed[state]
-            table.append((state, ", ".join(sorted(entry["tiers"])),
-                          ", ".join(sorted(entry["years"])),
-                          f"{entry['rows']:,}", "parsed",
-                          f"[data/{entry['dir']}/](data/{entry['dir']}/)"))
+            extra = len(unlinked.get(entry["dir"], ()))
+            remaining = REMAINING_WORK.get(state, "—")
+            if extra and state not in REMAINING_WORK:
+                remaining = (
+                    f"{extra} held PDFs are not linked to parsed rows; "
+                    "see the state readme"
+                )
+            table.append(
+                (
+                    state,
+                    ", ".join(sorted(entry["tiers"])),
+                    ", ".join(sorted(entry["years"])),
+                    f"{entry['rows']:,}",
+                    "parsed",
+                    remaining,
+                    f"[data/{entry['dir']}/](data/{entry['dir']}/)",
+                )
+            )
             continue
         if state in SIBLINGS:
             spec = SIBLINGS[state]
             url = f"https://github.com/in-rolls/{spec['repo']}"
-            table.append((state, spec["tiers"], spec["years"],
-                          sibling_rows(spec), "parsed",
-                          f"[{spec['repo']}]({url})"))
+            table.append(
+                (
+                    state,
+                    spec["tiers"],
+                    spec["years"],
+                    sibling_rows(spec),
+                    "parsed",
+                    "see sibling repository",
+                    f"[{spec['repo']}]({url})",
+                )
+            )
             continue
         if state in LEGACY:
             years, directory = LEGACY[state]
-            table.append((state, "-", years, "-", "tables, other layout",
-                          f"[data/{directory}/](data/{directory}/)"))
+            table.append(
+                (
+                    state,
+                    "-",
+                    years,
+                    "-",
+                    "tables, other layout",
+                    "parse the held tables into the common schema",
+                    f"[data/{directory}/](data/{directory}/)",
+                )
+            )
             continue
         if state in URBAN_ONLY:
             years, directory = URBAN_ONLY[state]
-            table.append((state, "`ulb_ward`", years, "-", "urban only",
-                          f"[data/{directory}/](data/{directory}/)"))
+            table.append(
+                (
+                    state,
+                    "`ulb_ward`",
+                    years,
+                    "-",
+                    "urban only",
+                    "rural data are not held here",
+                    f"[data/{directory}/](data/{directory}/)",
+                )
+            )
             continue
         if state in NO_PRI:
-            table.append((state, "-", "-", "-", "no PRI", NO_PRI[state]))
+            table.append(
+                (state, "-", "-", "-", "not applicable", "none", NO_PRI[state])
+            )
             continue
 
-        directory = next((d for d in raw
-                          if pretty(d) == state and d not in by_directory), None)
+        directory = next(
+            (d for d in raw if pretty(d) == state and d not in by_directory), None
+        )
         if directory:
             counts = raw[directory]
-            text = ", ".join(f"{n} {k}" for k, n in counts.most_common()
-                             if k in ("digital-text", "scan", "mixed", "tabular"))
-            table.append((state, "-", "-", "-", "documents, no parser",
-                          f"[data/{directory}/](data/{directory}/) - {text}"))
+            text = ", ".join(
+                f"{n} {k}"
+                for k, n in counts.most_common()
+                if k in ("digital-text", "scan", "encoded-text", "mixed", "tabular")
+            )
+            table.append(
+                (
+                    state,
+                    "-",
+                    "-",
+                    "-",
+                    "no parsed rows",
+                    REMAINING_WORK.get(
+                        state, "review the held documents and parse any seat rosters"
+                    ),
+                    f"[data/{directory}/](data/{directory}/) - {text}",
+                )
+            )
         else:
-            table.append((state, "-", "-", "-", "not held", "-"))
+            table.append(
+                (
+                    state,
+                    "-",
+                    "-",
+                    "-",
+                    "not held",
+                    "acquire and assess a seat-level rural source",
+                    "-",
+                )
+            )
     return table
 
 
@@ -290,15 +489,22 @@ def slices():
     for (state, year, tier), rows in sorted(grouped.items()):
         total = len(rows)
         women = sum(1 for r in rows if str(r.get("woman_reserved")) == "1")
-        districts = {r.get("district") for r in rows if (r.get("district") or "").strip()}  # noqa: E501
-        out.append({
-            "state": state, "year": year, "tier": tier, "rows": total,
-            "women": 100.0 * women / max(total, 1),
-            "districts": len(districts),
-            "coverage": _coverage(state, year, tier, rows),
-            "notes": "; ".join(_notes(state, year, tier, rows, len(districts))),
-            "dir": directory_of[(state, year, tier)],
-        })
+        districts = {
+            r.get("district") for r in rows if (r.get("district") or "").strip()
+        }
+        out.append(
+            {
+                "state": state,
+                "year": year,
+                "tier": tier,
+                "rows": total,
+                "women": 100.0 * women / max(total, 1),
+                "districts": len(districts),
+                "coverage": _coverage(state, year, tier, rows),
+                "notes": "; ".join(_notes(state, year, tier, rows, len(districts))),
+                "dir": directory_of[(state, year, tier)],
+            }
+        )
     return out
 
 
@@ -330,8 +536,10 @@ def _notes(state, year, tier, rows, districts):
     if not any((r.get("winner") or "").strip() for r in rows):
         notes.append("no winner published")
     if rows and rows[0].get("listing_scope") == "reserved_only":
-        notes.append("**reserved seats only** — shares are a property of the "
-                     "document, not of the state")
+        notes.append(
+            "**reserved seats only** — shares are a property of the "
+            "document, not of the state"
+        )
     if rows and rows[0].get("script") == "krutidev":
         notes.append("place names not transliterated")
 
@@ -343,27 +551,32 @@ def _notes(state, year, tier, rows, districts):
     known = [f for f in flags if f in ("0", "1")]
     if known and len(known) > 0.1 * len(rows):
         share = 100.0 * sum(1 for f in known if f == "1") / len(known)
-        notes.append(f"ward list complete for {share:.0f}% of rows with a "
-                     f"stated count")
+        notes.append(f"ward list complete for {share:.0f}% of rows with a stated count")
     # the full reasoning, and what would close each gap, lives in WORKLIST.md
     return notes
 
 
 def render_slices(entries):
-    head = ("| State | Year | Tier | Rows | Women | Districts | vs published | "
-            "Notes | Where |\n|---|---|---|---|---|---|---|---|---|\n")
+    head = (
+        "| State | Year | Tier | Rows | Women | Districts | vs published | "
+        "Notes | Where |\n|---|---|---|---|---|---|---|---|---|\n"
+    )
     body = ""
     for e in entries:
-        body += (f"| {e['state']} | {e['year']} | `{e['tier']}` | "
-                 f"{e['rows']:,} | {e['women']:.0f}% | {e['districts']} | "
-                 f"{e['coverage']} | {e['notes'] or '—'} | "
-                 f"[data/{e['dir']}/](data/{e['dir']}/) |\n")
+        body += (
+            f"| {e['state']} | {e['year']} | `{e['tier']}` | "
+            f"{e['rows']:,} | {e['women']:.0f}% | {e['districts']} | "
+            f"{e['coverage']} | {e['notes'] or '—'} | "
+            f"[data/{e['dir']}/](data/{e['dir']}/) |\n"
+        )
     return head + body
 
 
 def render(table):
-    head = ("| State | Tier | Years | Rows | Status | Where |\n"
-            "|---|---|---|---|---|---|\n")
+    head = (
+        "| State | Tier | Years | Rows | Coverage | Remaining work | Where |\n"
+        "|---|---|---|---|---|---|---|\n"
+    )
     body = "".join("| " + " | ".join(cells) + " |\n" for cells in table)
     return head + body
 
@@ -402,12 +615,19 @@ def check_links(text, base=None):
     return dead, unanswered
 
 
+@command("document", artifact="coverage")
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true",
-                    help="verify links and exit non-zero if any is dead")
-    ap.add_argument("--dry-run", action="store_true",
-                    help="print the table without writing readme.md")
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="verify links and exit non-zero if any is dead",
+    )
+    ap.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="print the table without writing readme.md",
+    )
     args = ap.parse_args()
 
     unmapped = unmapped_directories()
@@ -424,12 +644,15 @@ def main():
         print(rendered)
     else:
         text = README.read_text(encoding="utf-8")
-        for start, end, block_body in ((SLICE_START, SLICE_END, rendered_slices),
-                                       (START, END, rendered)):
+        for start, end, block_body in (
+            (SLICE_START, SLICE_END, rendered_slices),
+            (START, END, rendered),
+        ):
             block = f"{start}\n\n{block_body}\n{end}"
             if start in text and end in text:
-                text = re.sub(re.escape(start) + r".*?" + re.escape(end), block,
-                              text, flags=re.S)
+                text = re.sub(
+                    re.escape(start) + r".*?" + re.escape(end), block, text, flags=re.S
+                )
             else:
                 text = text.rstrip() + "\n\n" + block + "\n"
         README.write_text(text, encoding="utf-8")
@@ -442,7 +665,8 @@ def main():
         dead, unanswered = check_links(README.read_text(encoding="utf-8"))
         for path in sorted(DATA.glob("*/readme.md")):
             more_dead, more_unanswered = check_links(
-                path.read_text(encoding="utf-8"), path.parent)
+                path.read_text(encoding="utf-8"), path.parent
+            )
             label = path.parent.name
             dead += [(f"{label}/{t}", why) for t, why in more_dead]
             unanswered += [(f"{label}/{t}", why) for t, why in more_unanswered]

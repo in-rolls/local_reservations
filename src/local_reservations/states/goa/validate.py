@@ -20,6 +20,7 @@ import sys
 
 from local_reservations.common import checks
 from local_reservations.common.checks import pct
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 DATA = ROOT / "data" / "goa"
@@ -42,15 +43,15 @@ def load(year):
         return list(csv.DictReader(fh))
 
 
-
 def _formats():
     """Format of each Goa source document, from the repo-wide inventory."""
     path = DATA.parent / "inventory.csv"
     if not path.exists():
         return {}
     with path.open(encoding="utf-8") as fh:
-        return {r["path"]: r["format"] for r in csv.DictReader(fh)
-                if r["state"] == "goa"}
+        return {
+            r["path"]: r["format"] for r in csv.DictReader(fh) if r["state"] == "goa"
+        }
 
 
 def _why(year, block):
@@ -60,8 +61,11 @@ def _why(year, block):
     our bug.
     """
     formats = _formats()
-    matches = [(p, f) for p, f in formats.items()
-               if f"/{year}/" in f"/{p}" and re.search(block, p, re.I)]
+    matches = [
+        (p, f)
+        for p, f in formats.items()
+        if f"/{year}/" in f"/{p}" and re.search(block, p, re.I)
+    ]
     if not matches:
         return "no source file"
     if all(f == "scan" for _, f in matches):
@@ -69,6 +73,7 @@ def _why(year, block):
     return "under-parsed (source is text)"
 
 
+@command("validate", state="Goa")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--years", nargs="*", default=["2012", "2017", "2022"])
@@ -80,7 +85,8 @@ def main():
     failures = 0
     failures += shared_battery(
         "Goa - shared checks",
-        [(f"{y} ward", rows) for y, rows in years.items() if rows]).finish()
+        [(f"{y} ward", rows) for y, rows in years.items() if rows],
+    ).finish()
 
     print("\n=== Goa village panchayat ward reservation ===\n")
     for year, rows in years.items():
@@ -92,10 +98,14 @@ def main():
         women = sum(int(r["woman_reserved"]) for r in rows)
         hard = year == REFERENCE_YEAR
 
-        print(f"{year}: {len(rows)} wards, {len(panchayats)} panchayats, "
-              f"{len(talukas)}/{TALUKAS} talukas")
-        print(f"      women {women}/{len(rows)} = {pct(women, len(rows)):.1f}% "
-              f"(statute {WOMEN_SHARE * 100:.0f}%)")
+        print(
+            f"{year}: {len(rows)} wards, {len(panchayats)} panchayats, "
+            f"{len(talukas)}/{TALUKAS} talukas"
+        )
+        print(
+            f"      women {women}/{len(rows)} = {pct(women, len(rows)):.1f}% "
+            f"(statute {WOMEN_SHARE * 100:.0f}%)"
+        )
 
         if hard:
             # 185 of 186. The count matched exactly until a header row masking
@@ -105,8 +115,10 @@ def main():
             # any figure that lands suspiciously perfectly.
             ok = abs(len(panchayats) - OFFICIAL_PANCHAYATS) <= 1
             failures += not ok
-            print(f"      [{'PASS' if ok else 'FAIL'}] panchayats == "
-                  f"{OFFICIAL_PANCHAYATS} published")
+            print(
+                f"      [{'PASS' if ok else 'FAIL'}] panchayats == "
+                f"{OFFICIAL_PANCHAYATS} published"
+            )
             ok_t = len(talukas) == TALUKAS
             failures += not ok_t
             print(f"      [{'PASS' if ok_t else 'FAIL'}] all {TALUKAS} talukas present")
@@ -118,14 +130,20 @@ def main():
 
         if year != REFERENCE_YEAR and ref_wards:
             here = collections.Counter(r["block"] for r in rows)
-            thin = [(b, here[b], ref_wards[b]) for b in ref_wards
-                    if here[b] < COVERAGE_FLOOR * ref_wards[b]]
-            print(f"      coverage vs {REFERENCE_YEAR}: "
-                  f"{len(ref_wards) - len(thin)}/{len(ref_wards)} talukas at "
-                  f"{COVERAGE_FLOOR:.0%}+")
+            thin = [
+                (b, here[b], ref_wards[b])
+                for b in ref_wards
+                if here[b] < COVERAGE_FLOOR * ref_wards[b]
+            ]
+            print(
+                f"      coverage vs {REFERENCE_YEAR}: "
+                f"{len(ref_wards) - len(thin)}/{len(ref_wards)} talukas at "
+                f"{COVERAGE_FLOOR:.0%}+"
+            )
             for block, got, want in sorted(thin, key=lambda x: x[1] - x[2]):
-                print(f"          {block:14s} {got:4d} / {want:4d}   "
-                      f"{_why(year, block)}")
+                print(
+                    f"          {block:14s} {got:4d} / {want:4d}   {_why(year, block)}"
+                )
         print()
 
     print(f"{'FAILED' if failures else 'OK'}: {failures} hard check(s) failed\n")
@@ -144,9 +162,19 @@ def shared_battery(title, datasets):
         if not rows:
             continue
         print(f"\n-- {label}")
-        checks.structural(report, rows, ROOT,
-                          required=("state", "year", "tier", "reservation",
-                                    "caste_reservation", "woman_reserved"))
+        checks.structural(
+            report,
+            rows,
+            ROOT,
+            required=(
+                "state",
+                "year",
+                "tier",
+                "reservation",
+                "caste_reservation",
+                "woman_reserved",
+            ),
+        )
         checks.provenance(report, rows, ROOT)
     return report
 

@@ -44,8 +44,10 @@ URL = "https://github.com/in-rolls/local_elections_haryana"
 STATE = "Haryana"
 
 # filename stem -> canonical office
-TIERS = {"gp_reservation": ("gp_head", "sarpanch"),
-         "ward_reservation": ("gp_ward", "ward")}
+TIERS = {
+    "gp_reservation": ("gp_head", "sarpanch"),
+    "ward_reservation": ("gp_ward", "ward"),
+}
 
 # What the sibling's committed files hold. A mismatch means the sibling moved
 # under us, and silently pooling a different number of rows is exactly the
@@ -62,8 +64,10 @@ TIERS = {"gp_reservation": ("gp_head", "sarpanch"),
 # read as the winner and no ward - 68 panchayats in a block that has 34. The 26
 # affected pages are now read by Surya, and the phantom printing is gone.
 DECLARED = {
-    ("2016", "gp_head"): 6090, ("2016", "gp_ward"): 61879,
-    ("2022", "gp_head"): 6123, ("2022", "gp_ward"): 60981,
+    ("2016", "gp_head"): 6090,
+    ("2016", "gp_ward"): 61879,
+    ("2022", "gp_head"): 6123,
+    ("2022", "gp_ward"): 60981,
 }
 
 
@@ -78,16 +82,20 @@ def slices(root):
             if not path.exists():
                 continue
             with path.open(encoding="utf-8", errors="replace") as fh:
-                rows = [convert(r, year, tier, tier_local, path, root)
-                        for r in csv.DictReader(fh)]
+                rows = [
+                    convert(r, year, tier, tier_local, path, root)
+                    for r in csv.DictReader(fh)
+                ]
             expected = DECLARED.get((year, tier))
             if expected is not None and len(rows) != expected:
                 raise SystemExit(
                     f"{REPO}: {year}/{tier} holds {len(rows):,} rows, "
-                    f"{expected:,} declared - the sibling changed")
+                    f"{expected:,} declared - the sibling changed"
+                )
             yield {
                 "dataset_id": f"haryana/{tier}/{year}",
-                "state": STATE, "rows": rows,
+                "state": STATE,
+                "rows": rows,
                 # the parser kept the notification but not the page within it
                 "provenance_level": "document",
                 "unit_of_observation": "seat",
@@ -103,8 +111,12 @@ def convert(row, year, tier, tier_local, path, root):
             if value and not krutidev.looks_converted(value):
                 row[column] = krutidev.to_unicode(value)
     return {
-        "state": STATE, "year": year, "tier": tier, "tier_local": tier_local,
-        "district": row.get("district", ""), "block": row.get("block", ""),
+        "state": STATE,
+        "year": year,
+        "tier": tier,
+        "tier_local": tier_local,
+        "district": row.get("district", ""),
+        "block": row.get("block", ""),
         "gram_panchayat": row.get("gram_panchayat", ""),
         "ward_no": row.get("ward_no", ""),
         # Block A of the Backward Classes list, which is not the same set as
@@ -117,18 +129,23 @@ def convert(row, year, tier, tier_local, path, root):
         # label as printed disagrees with the two fields it is meant to
         # summarise - 12,521 rows of it. The printed form survives in
         # reservation_raw and caste_reservation_local.
-        "reservation": label("BC" if local == "BC_A" else local,
-                             str(row.get("woman_reserved")) == "1"),
+        "reservation": label(
+            "BC" if local == "BC_A" else local, str(row.get("woman_reserved")) == "1"
+        ),
         "reservation_raw": row.get("reservation_raw", ""),
-        "winner": row.get("winner", ""), "winner_basis": "published",
+        "winner": row.get("winner", ""),
+        "winner_basis": "published" if (row.get("winner") or "").strip() else "",
         "relation_name": row.get("father_husband", ""),
-        "vacant": row.get("vacant", ""), "unopposed": row.get("unopposed", ""),
+        "vacant": row.get("vacant", ""),
+        "unopposed": row.get("unopposed", ""),
         # converted above, so the row is Devanagari now whatever it was printed
         # in; the printed form survives in reservation_raw
-        "script": "devanagari" if row.get("script") == "krutidev"
+        "script": "devanagari"
+        if row.get("script") == "krutidev"
         else row.get("script", "latin"),
         "printings_agree": row.get("printings_agree", ""),
-        "source_path": str((path.parent / "pdfs" /
-                            row.get("source_pdf", "")).relative_to(root)),
+        "source_path": str(
+            (path.parent / "pdfs" / row.get("source_pdf", "")).relative_to(root)
+        ),
         "source_page": "",
     }

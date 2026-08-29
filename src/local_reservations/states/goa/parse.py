@@ -25,7 +25,6 @@ Writes data/goa/ward_reservation_<year>.csv.
 import argparse
 import collections
 import re
-import sys
 
 import pdfplumber
 
@@ -34,24 +33,49 @@ from local_reservations.common.normalize import (
     label,
     normalize_reservation,
 )
+from local_reservations.common.runlog import command, get_logger
 from local_reservations.paths import ROOT
+
+LOGGER = get_logger(__name__)
 
 GOA = ROOT / "data" / "goa"
 
 # Goa's 12 talukas roll up to two districts. Stable, and worth carrying so the
 # output has the same district/block shape as the other states.
 DISTRICT = {
-    "bardez": "North Goa", "bicholim": "North Goa", "pernem": "North Goa",
-    "ponda": "North Goa", "sattari": "North Goa", "tiswadi": "North Goa",
-    "canacona": "South Goa", "dharbandora": "South Goa",
-    "mormugao": "South Goa", "quepem": "South Goa", "salcete": "South Goa",
+    "bardez": "North Goa",
+    "bicholim": "North Goa",
+    "pernem": "North Goa",
+    "ponda": "North Goa",
+    "sattari": "North Goa",
+    "tiswadi": "North Goa",
+    "canacona": "South Goa",
+    "dharbandora": "South Goa",
+    "mormugao": "South Goa",
+    "quepem": "South Goa",
+    "salcete": "South Goa",
     "sanguem": "South Goa",
 }
 
-COLUMNS = ["state", "year", "district", "block", "gram_panchayat", "ward_no",
-           "tier", "tier_local", "reservation", "caste_reservation", "woman_reserved",
-           "winner", "votes", "unopposed", "reservation_raw", "script",
-           "source_pdf"]
+COLUMNS = [
+    "state",
+    "year",
+    "district",
+    "block",
+    "gram_panchayat",
+    "ward_no",
+    "tier",
+    "tier_local",
+    "reservation",
+    "caste_reservation",
+    "woman_reserved",
+    "winner",
+    "votes",
+    "unopposed",
+    "reservation_raw",
+    "script",
+    "source_pdf",
+]
 
 RE_UNOPPOSED = re.compile(r"^unopp", re.I)
 
@@ -68,7 +92,8 @@ RE_BODY_ROW = re.compile(r"^\s*\d+\s+([A-Za-z][A-Za-z .'\-]{1,34}?)\s+\d+\s+\S")
 #   Pernem    "I (General)"        - no "WARD" keyword at all
 SEP = r"[\s\u00ad\u2010\u2011.:\-\u2013\u2014]*"
 RE_WARD_AND_CATEGORY = re.compile(
-    rf"WARD{SEP}(?:NO\.?)?{SEP}([IVXLC]+|\d+){SEP}\(([^)]{{1,25}})\)", re.I)
+    rf"WARD{SEP}(?:NO\.?)?{SEP}([IVXLC]+|\d+){SEP}\(([^)]{{1,25}})\)", re.I
+)
 # fallback for the talukas that print only the numeral
 RE_BARE_WARD = re.compile(rf"^{SEP}([IVXLC]+|\d+){SEP}\(([^)]{{1,25}})\)")
 
@@ -90,8 +115,18 @@ def taluka_of(path, printed):
     return clean(printed).title()
 
 
-def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
-        path=None, page=None):
+def row(
+    year,
+    taluka,
+    panchayat,
+    ward,
+    raw,
+    winner="",
+    votes="",
+    source="",
+    path=None,
+    page=None,
+):
     # A header row that survives shows up only as a duplicate key later - Goa
     # carried three wards for a panchayat called "Name of the Panchayat".
     if emit.is_header_text(panchayat) or emit.is_header_text(taluka):
@@ -114,14 +149,23 @@ def row(year, taluka, panchayat, ward, raw, winner="", votes="", source="",
     if RE_UNOPPOSED.match(str(votes).strip()):
         votes, unopposed = "", 1
     made = {
-        "state": "Goa", "year": year,
-        "district": DISTRICT.get(taluka.lower(), ""), "block": taluka,
-        "gram_panchayat": panchayat, "ward_no": ward,
-        "tier": "gp_ward", "tier_local": "ward",
-        "reservation": label(caste, woman), "caste_reservation": caste,
-        "woman_reserved": woman, "winner": winner, "votes": votes,
+        "state": "Goa",
+        "year": year,
+        "district": DISTRICT.get(taluka.lower(), ""),
+        "block": taluka,
+        "gram_panchayat": panchayat,
+        "ward_no": ward,
+        "tier": "gp_ward",
+        "tier_local": "ward",
+        "reservation": label(caste, woman),
+        "caste_reservation": caste,
+        "woman_reserved": woman,
+        "winner": winner,
+        "votes": votes,
         "unopposed": unopposed,
-        "reservation_raw": clean(raw), "script": script, "source_pdf": source,
+        "reservation_raw": clean(raw),
+        "script": script,
+        "source_pdf": source,
     }
     # Every other state stamps provenance; Goa's parser predates emit.stamp, so
     # its rows could not be traced back to a page. The expectations run flagged
@@ -146,12 +190,26 @@ def parse_2012(path):
                     if cells[2]:
                         panchayat = cells[2]
                     ward, category = cells[3], cells[4]
-                    if not ward or not category or category.lower().startswith("category"):  # noqa: E501
+                    if (
+                        not ward
+                        or not category
+                        or category.lower().startswith("category")
+                    ):
                         continue
                     winner = cells[5] if len(cells) > 5 else ""
                     votes = cells[7] if len(cells) > 7 else ""
-                    made = row("2012", taluka, panchayat or "", ward, category,
-                               winner, votes, path.name, path, page.page_number)
+                    made = row(
+                        "2012",
+                        taluka,
+                        panchayat or "",
+                        ward,
+                        category,
+                        winner,
+                        votes,
+                        path.name,
+                        path,
+                        page.page_number,
+                    )
                     if made:
                         out.append(made)
     return out
@@ -175,17 +233,25 @@ def parse_2022(path):
                         continue
                     if cells[1]:
                         panchayat = cells[1]
-                    match = (RE_WARD_AND_CATEGORY.search(cells[2])
-                             or RE_BARE_WARD.match(cells[2]))
+                    match = RE_WARD_AND_CATEGORY.search(cells[2]) or RE_BARE_WARD.match(
+                        cells[2]
+                    )
                     if not match:
                         continue
                     ward, category = match.group(1), match.group(2)
                     key = (panchayat, ward)
                     if key in seen:
                         continue
-                    made = row("2022", taluka, panchayat or "", ward, category,
-                               source=path.name, path=path,
-                               page=page.page_number)
+                    made = row(
+                        "2022",
+                        taluka,
+                        panchayat or "",
+                        ward,
+                        category,
+                        source=path.name,
+                        path=path,
+                        page=page.page_number,
+                    )
                     if made:
                         seen[key] = made
     return list(seen.values())
@@ -204,8 +270,10 @@ def _column_bounds(page):
     if not ward or not panch:
         return None
     ward_x = (min(w["x0"] for w in ward) - 6, max(w["x1"] for w in ward) + 42)
-    panch_x = (min(w["x0"] for w in panch) - 6, min(ward_x[0],
-            min(w["x0"] for w in panch) + 90))
+    panch_x = (
+        min(w["x0"] for w in panch) - 6,
+        min(ward_x[0], min(w["x0"] for w in panch) + 90),
+    )
     right = min((w["x0"] for w in cands), default=None)
     if right:
         ward_x = (ward_x[0], min(ward_x[1], right - 4))
@@ -218,9 +286,10 @@ def _cells_in_column(page, bounds, tolerance=4):
     for w in page.extract_words():
         if bounds[0] <= w["x0"] < bounds[1]:
             rows[round(w["top"] / tolerance)].append(w)
-    return [(key * tolerance, " ".join(x["text"] for x in sorted(v,
-            key=lambda w: w["x0"])))
-            for key, v in sorted(rows.items())]
+    return [
+        (key * tolerance, " ".join(x["text"] for x in sorted(v, key=lambda w: w["x0"])))
+        for key, v in sorted(rows.items())
+    ]
 
 
 # The separator between "Ward" and its numeral is not always a space. Bicholim
@@ -251,9 +320,12 @@ def parse_2017(path):
 
         for page in pdf.pages:
             wards = _cells_in_column(page, ward_x)
-            panchayats = [(y, t) for y, t in _cells_in_column(page, panch_x)
-                          if re.search(r"[A-Za-z]{3}", t)
-                          and not re.match(r"(?i)panchayat|name|sr|no\.?$", t.strip())]
+            panchayats = [
+                (y, t)
+                for y, t in _cells_in_column(page, panch_x)
+                if re.search(r"[A-Za-z]{3}", t)
+                and not re.match(r"(?i)panchayat|name|sr|no\.?$", t.strip())
+            ]
 
             # a ward entry can straddle two or three y-bands; merge neighbours
             merged, buffer, top = [], "", None
@@ -280,9 +352,16 @@ def parse_2017(path):
                 if key in seen:
                     continue
                 seen.add(key)
-                made = row("2017", taluka, panchayat, ward_match.group(1),
-                           cat_match.group(1), source=path.name, path=path,
-                           page=page.page_number)
+                made = row(
+                    "2017",
+                    taluka,
+                    panchayat,
+                    ward_match.group(1),
+                    cat_match.group(1),
+                    source=path.name,
+                    path=path,
+                    page=page.page_number,
+                )
                 if made:
                     out.append(made)
     return out
@@ -294,12 +373,23 @@ PARSERS = {"2012": parse_2012, "2017": parse_2017, "2022": parse_2022}
 def sources(year):
     """The per-taluka documents for a year, skipping gazettes and scans."""
     directory = GOA / year
-    skip = ("elected-members", "resevation", "rservation", "corigendum",
-            "details-pan", "sr.-", "2223-")
-    return [p for p in sorted(directory.glob("*.pdf"))
-            if not any(s in p.name.lower() for s in skip)]
+    skip = (
+        "elected-members",
+        "resevation",
+        "rservation",
+        "corigendum",
+        "details-pan",
+        "sr.-",
+        "2223-",
+    )
+    return [
+        p
+        for p in sorted(directory.glob("*.pdf"))
+        if not any(s in p.name.lower() for s in skip)
+    ]
 
 
+@command("parse", state="Goa")
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", choices=sorted(PARSERS), action="append")
@@ -312,14 +402,29 @@ def main():
             try:
                 got = PARSERS[year](path)
             except Exception as exc:
-                print(f"  ERROR {path.name}: {exc}", file=sys.stderr)
+                LOGGER.exception(
+                    "Source parse failed",
+                    extra={
+                        "event": "source_parse_failed",
+                        "source_file": path.name,
+                        "year": year,
+                        "error_type": type(exc).__name__,
+                    },
+                )
                 got = []
             if not got:
                 skipped.append(path.name)
             rows += got
-            print(f"\r  {year} {path.name[:44]:44s} rows={len(rows)}",
-                  end="", file=sys.stderr)
-        print(file=sys.stderr)
+            LOGGER.info(
+                "Source parsed",
+                extra={
+                    "event": "source_parsed",
+                    "source_file": path.name,
+                    "year": year,
+                    "source_rows": len(got),
+                    "rows": len(rows),
+                },
+            )
 
         out = GOA / f"ward_reservation_{year}.csv"
         emit.write(rows, out.with_suffix(""), COLUMNS)
@@ -327,10 +432,14 @@ def main():
         talukas = {r["block"] for r in rows}
         panchayats = {(r["block"], r["gram_panchayat"]) for r in rows}
         women = sum(r["woman_reserved"] for r in rows)
-        print(f"{year}: {len(rows)} wards, {len(panchayats)} panchayats, "
-              f"{len(talukas)} talukas -> {out.name}")
-        print(f"      women-reserved {women}/{len(rows)} = "
-              f"{women / max(len(rows), 1) * 100:.1f}%")
+        print(
+            f"{year}: {len(rows)} wards, {len(panchayats)} panchayats, "
+            f"{len(talukas)} talukas -> {out.name}"
+        )
+        print(
+            f"      women-reserved {women}/{len(rows)} = "
+            f"{women / max(len(rows), 1) * 100:.1f}%"
+        )
         share = collections.Counter(r["reservation"] for r in rows)
         print("      " + "  ".join(f"{k}={v}" for k, v in share.most_common()))
         if skipped:

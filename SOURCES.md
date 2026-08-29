@@ -7,8 +7,8 @@ never from what a website says it publishes.
 Two scripts back this document and both can be re-run:
 
 ```
-python scripts/inventory.py       # classify the documents already in data/
-python scripts/probe_sources.py   # fetch candidate web sources and classify them
+make inventory
+make probe
 ```
 
 They write `data/inventory.csv` and `data/sources_probe.csv`.
@@ -22,8 +22,10 @@ was involved. That turned out to be unusual. Of the sources opened for this
 survey, Punjab, Maharashtra, Chhattisgarh, West Bengal and Madhya Pradesh are
 all images.
 
-So the classification here is `digital-text` (≥800 chars/page), `mixed`, or
-`scan`, measured with `pdftotext`. A scan is not a dead end — `savitr` (Surya on
+So the classification here is `digital-text` (≥800 chars/page), `mixed`,
+`encoded-text`, or `scan`. `encoded-text` means a dense hidden glyph stream
+exists but does not decode to the script visible on the page; Gujarat's 2020
+orders are the concrete case. A scan is not a dead end — `savitr` (Surya on
 MLX) and `parse_unsearchable_rolls` exist for exactly this — but it changes a
 week of work into a month.
 
@@ -34,22 +36,44 @@ week of work into a month.
 we get it" but "what is in it".
 
 <!-- holdings:start -->
-| state | text | scan | mixed | pages | what is held |
-|---|---|---|---|---|---|
-| Bihar | 290 | 0 | 0 | 9,193 | PRI winners 2006-2016; also `local_elections_bihar` |
-| Rajasthan | 23 | 9 | 5 | 7,888 | panchayat 2005-2021 |
-| **Jharkhand** | 108 | 28 | 8 | 4,970 | **2015 mukhiya (GP head) reservation by district; 2022 Form-23 ZP members** |
-| **Karnataka** | 236 | 202 | 2 | 1,552 | **2016 taluk & zilla panchayat winners with party**; plus `Karnataka_GP_ReservationHistory.dta`. 244 of the documents are deliberately unread - see data/karnataka/readme.md |
-| **Jammu & Kashmir** | 105 | 8 | 0 | 1,488 | **2010/2016/2018 block-wise, panch-ward reservation with SC/ST/OC population** |
-| **Andhra Pradesh** | 20 | 18 | 0 | 830 | **2020 district gazettes: GP, MPTC, ZPTC, MPP reservation** |
-| Chandigarh, Puducherry, Delhi | 7 | 2 | 0 | 707 | mostly urban local bodies |
-| **Goa** | 37 | 4 | 0 | 687 | **2012/2017/2022 `panres_<taluka>` panchayat reservation + ward category** |
-| West Bengal | 0 | 39 | 1 | 603 | 2018 SEC delimitation-and-reservation gazettes, per district - parsed, 825 zilla parishad seats |
-| Odisha | 6 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member - **district totals, not seat-level** |
-| Assam, Himachal | 1 | 1 | 0 | 11 | one file each; Assam's is municipal |
-| Tamil Nadu | 0 | 0 | 0 | 0 | gazettes, but **municipal/corporation**, not village panchayat |
-| Madhya Pradesh | 0 | 0 | 0 | 0 | two large OmniPage-OCR'd volumes |
+| state | text | scan | encoded | mixed | pages | what is held |
+|---|---|---|---|---|---|---|
+| Bihar | 290 | 0 | 0 | 0 | 9,193 | PRI winners 2006-2016; also `local_elections_bihar` |
+| Rajasthan | 23 | 9 | 0 | 5 | 7,888 | panchayat 2005-2021 |
+| **Jharkhand** | 108 | 28 | 0 | 8 | 4,970 | **2015 mukhiya (GP head) reservation by district; 2022 Form-23 ZP members** |
+| **Karnataka** | 236 | 202 | 0 | 2 | 1,552 | **2016 taluk & zilla panchayat winners with party**; plus `Karnataka_GP_ReservationHistory.dta`. 244 of the documents are deliberately unread - see data/karnataka/readme.md |
+| **Jammu & Kashmir** | 105 | 8 | 0 | 0 | 1,488 | **2010/2016/2018 block-wise, panch-ward reservation with SC/ST/OC population** |
+| **Andhra Pradesh** | 15 | 17 | 0 | 13 | 1,243 | **2020 district gazettes: GP, MPTC, ZPTC, MPP reservation** |
+| Assam | 1 | 31 | 0 | 0 | 1,026 | 2020 municipal reservation parsed; all 27 district PRI notifications for 2025 acquired; 4 district notifications parsed |
+| Chandigarh, Puducherry, Delhi | 7 | 2 | 0 | 0 | 707 | mostly urban local bodies |
+| **Goa** | 37 | 4 | 0 | 0 | 687 | **2012/2017/2022 `panres_<taluka>` panchayat reservation + ward category** |
+| Gujarat | 0 | 0 | 45 | 0 | 605 | **2020 SEC rotation orders: 16 district-panchayat and 29 taluka-panchayat PDFs; parsed into 1,178 seats** |
+| West Bengal | 0 | 39 | 0 | 1 | 603 | 2018 SEC delimitation-and-reservation gazettes, per district - parsed, 825 zilla parishad seats |
+| Odisha | 6 | 0 | 0 | 0 | 254 | 2017 reservation of sarpanch/ward member - **district totals, not seat-level** |
+| Himachal Pradesh | 0 | 1 | 0 | 0 | 3 | one source PDF |
+| Tamil Nadu | 0 | 0 | 0 | 0 | 0 | gazettes, but **municipal/corporation**, not village panchayat |
+| Madhya Pradesh | 0 | 0 | 0 | 0 | 0 | two large OmniPage-OCR'd volumes |
 <!-- holdings:end -->
+
+An India-egress review on 26 August 2026 changed two acquisition findings:
+
+- [Assam SEC's 2025 panchayat page](https://sec.assam.gov.in/panchayat-election-2025)
+  publishes 27 district reservation PDFs. All 27 are held under
+  `data/assam/2025_reservation/`, with exact URLs, retrieval timestamps, byte
+  counts, and SHA-256 values. They span several rural tiers and are scans; they
+  are not represented in parsed slices yet.
+- [Gujarat SEC's district-panchayat page](https://sec.gujarat.gov.in/district-panchayat-2020.htm)
+  publishes 16 PDFs and its
+  [taluka-panchayat page](https://sec.gujarat.gov.in/taluka-panchayat-2020.htm)
+  publishes 29. All 45 are held under `data/gujarat/2020_reservation/`. The
+  pages are visually clear Gujarati scans, but the hidden text is a misencoded
+  glyph stream. They are now parsed as two source series: 532 district-
+  panchayat and 646 taluka-panchayat seats. Acquisition, OCR, and parsing are
+  separate stages; every source reproduces its published eight-category total.
+  The independent controls come from section 4.3 of the SEC's 2021 Annual
+  Statistical Report ([searchable mirror](https://www.scribd.com/document/766555637/Annual-Report-full-2021));
+  Gandhinagar Taluka, which was outside that election series, is checked against
+  the summary table printed in its held order.
 
 Bold rows are the ones holding **GP-level reservation in machine-readable form
 already on disk**. That is the shortest path to new coverage in this repo, and it
@@ -65,30 +89,33 @@ taluk totals. That is a decision rather than a backlog; the reasoning is in
 [data/karnataka/readme.md](data/karnataka/readme.md) so it does not have to be
 made twice.
 
-### Four states buildable now, without acquisition
+### What the held sources yielded
 
-- **Jammu & Kashmir** — the cleanest of the lot. `jk/2016/Annex A Doda.pdf` and
-  its siblings are plain English tables: district, block, halqa, panch ward,
-  SC/ST/OC population, percentages, and *proposed reservation*. 105 text
-  documents, 1,488 pages. Population alongside reservation is unusual and makes
-  the assignment rule auditable.
-- **Goa** — `panres_2012_<Taluka>.pdf` is a "Report of Winning Candidate for
-  V.P. Election" carrying taluka, panchayat, ward number, **category of the ward**
-  (`G/ST/OBC/W/OBCW/STW`), the elected representative, their address and votes
-  polled — one clean English table, ~4,900 chars/page. `details-pan-2012.pdf`
-  adds nomination and elector counts. Three cycles held (2012, 2017, 2022), so
-  it is a panel out of the box. Note the reservation is at **ward** level: Goa's
-  sarpanch is elected indirectly by the members, so there is no directly
-  reserved sarpanch seat to collect. Small state, ~190 panchayats.
-- **Jharkhand** — `jharkhand/2015/<N>. <DISTRICT> MUKHIYA PSS/` is GP-head
-  (mukhiya) data for 24 districts; the 2022 set is `Prapatra 23`, which is the
-  Zila Parishad tier, so check the folder before assuming the tier. Typeset in
-  legacy Kruti Dev-style Hindi — **the same mojibake already solved** in
-  `local_elections_haryana/scripts/normalize.py`, which handles nine spellings
-  of *anusuchit* and the doubled-character damage.
-- **Andhra Pradesh** — 2020 district gazettes, GP reservation among them. Also a
-  legacy-font problem, but Telugu rather than Devanagari, so the Haryana
-  mapping does not transfer — only the technique does.
+These four holdings now produce parsed slices without new acquisition. The
+remaining gaps come from missing documents, incomplete rosters, or cells that
+need a second reading; [WORKLIST.md](WORKLIST.md) records each one.
+
+- **Jammu & Kashmir**: all 25 held 2016 PDFs are parsed into 12,300 panch-ward
+  seats and 1,763 sarpanch seats. The plain English tables carry district,
+  block, halqa, panch ward, SC/ST/OC population, percentages, and proposed
+  reservation. Population alongside reservation makes the assignment rule
+  auditable. The state now contributes 28,511 rows across 2010, 2016, and 2018;
+  13 other held PDFs remain unparsed.
+- **Goa**: `panres_2012_<Taluka>.pdf` is a "Report of Winning Candidate for V.P.
+  Election" carrying taluka, panchayat, ward number, category of the ward
+  (`G/ST/OBC/W/OBCW/STW`), the elected representative, their address, and votes
+  polled. Three cycles are parsed (2012, 2017, and 2022), though the latter two
+  rosters are incomplete. Reservation is at ward level because Goa's sarpanch
+  is elected indirectly by the members.
+- **Jharkhand**: the 2015 district notifications now yield 29,111 rows across
+  mukhiya, panchayat-samiti, ward-member, and zila-parishad tiers. The documents
+  mix scans, digital text, and legacy Kruti Dev-style Hindi. The source and OCR
+  gaps are measured in [WORKLIST.md](WORKLIST.md), including the districts for
+  which ward-level documents are not held.
+- **Andhra Pradesh**: the held 2020 district gazettes now yield 80,021 GP-head
+  and GP-ward seats across eight districts. The complete 13-district GP series
+  is held; Chittoor, Guntur, Srikakulam, Visakhapatnam, and Vizianagaram remain
+  acquired but unparsed.
 
 ### Traps in what is already held
 
@@ -100,8 +127,8 @@ made twice.
   corporations. Village panchayat president reservation is not in what we hold.
 - **Maharashtra is Mumbai only** — `data/maharashtra/mumbai/`, BMC 1997–2012.
   The ~28,000 rural GPs are absent entirely.
-- **AP's tiers are mixed together.** Of its 38 documents, the GP-level set
-  (`2020_res_gp/`) is only 5; the rest are MPTC, ZPTC, MPP and MPL. Do not read
+- **AP's tiers are mixed together.** Of its 45 documents, the GP-level set
+  (`2020_res_gp/`) is 13; the other 32 are MPTC, ZPTC, MPP and MPL. Do not read
   the state-level text/scan split as applying to the GP files.
 
 ## States needing acquisition
@@ -129,23 +156,20 @@ category term together. Seed specific pages, not homepages.
 | Madhya Pradesh | 22.9k | SEC portal blocked; district portals reachable | **scan** | OCR then build |
 | Punjab | 13.2k | district portals, 2024 election, block-wise | **scan** (CamScanner / print-to-image) | OCR then build |
 | Chhattisgarh | 11.6k | district portals (`raigarh` notice page) | **scan** | OCR then build |
-| Gujarat | 14.5k | `sec.gujarat.gov.in`, `panchayat.gujarat.gov.in` | unverified | needs India egress |
 | Tamil Nadu | 12.5k | `tnsec.tn.gov.in` | unverified | needs India egress |
 | Odisha (seat-level) | 6.8k | `sec.odisha.gov.in` | unverified | needs India egress |
 | Himachal Pradesh | 3.6k | `sec.hp.gov.in` | unverified | needs India egress |
-| Assam | 2.2k | `sec.assam.gov.in` | unverified | needs India egress |
 
 ### Reachability
 
-There is a clean split. **NIC-template district portals answer** — `washim.gov.in`,
+From ordinary non-India egress there is a clean split. **NIC-template district portals answer** — `washim.gov.in`,
 `raigarh.gov.in`, `bilaspur.gov.in`, `dhule.gov.in`, `indore.nic.in`,
 `guntur.ap.gov.in`, and the Punjab districts — and they serve their PDFs from
 `cdn.s3waas.gov.in`, which also answers. **State-specific SEC domains refuse**:
 `sec.odisha.gov.in`, `sec.gujarat.gov.in`, `tnsec.tn.gov.in`, `sec.hp.gov.in`,
-`sec.assam.gov.in`, `panchayat.gujarat.gov.in`, `egramswaraj.gov.in`. These give
-`ECONNREFUSED` from two independent egresses, so it is the network path, not the
-sites being down — the same wall the TN RTI work hits, and the reason those rows
-say *needs India egress*.
+`sec.assam.gov.in`, `panchayat.gujarat.gov.in`, `egramswaraj.gov.in`. The India
+VPN confirmed that Assam and Gujarat are live and supplied the holdings above;
+the refusal was the network path, not those sites being down.
 
 Practical consequence: **most states are reachable through their district
 collectorate portals even when the SEC is not.** That is more crawling surface —
@@ -167,8 +191,8 @@ reserved seat. Worth verifying behind a VPN; worth not assuming.
    gives three cycles. Days, not weeks.
 2. **Jharkhand** — GP-level, already downloaded, and its legacy-Hindi encoding is
    a solved problem in this codebase.
-3. **Andhra Pradesh** — already downloaded, but needs a Telugu legacy-font
-   mapping built from scratch.
+3. **Andhra Pradesh** — the five held/unparsed district gazettes are the next
+   clean continuation of an established parser and validation pipeline.
 4. **Maharashtra** — the largest missing state by far. Requires OCR and a
    36-district crawl, so it is the first real project rather than a cleanup.
 5. Anything behind the geo-block, once a VPN run confirms what is actually there.

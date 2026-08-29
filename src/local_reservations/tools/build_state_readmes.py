@@ -22,6 +22,7 @@ import csv
 import sys
 
 from local_reservations.common import datasets
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 from local_reservations.tools import build_coverage as coverage
 
@@ -33,12 +34,58 @@ DATA = ROOT / "data"
 # not a fact derivable from the rows, so it is written rather than computed -
 # and kept to what a reader needs before using the numbers.
 STATE_NOTES = {
-    "ap": """The gazettes have no ruled tables and no reliable text layer, so
-every district is re-OCR'd from a 300 DPI render and read positionally. The
-districts do not agree on the column order, and neither does Krishna with
-itself: its pages 12 and 13 put the ward count on opposite sides of the
-sarpanch's own cell. Nothing in a line marks where the mandal ends and the
-panchayat begins, so that boundary is recovered from the order of the records.
+    "assam": """The 2020 notification contains two reservation rosters: wards
+and municipal-board chairpersons. It prints only the reserved seats. The ward
+table also prints each board's total number of wards, but not the identifiers
+of the open wards; those seats are therefore not invented in the output, and
+`listing_scope` is `reserved_only` on every row.
+
+The PDF is a scan with a misleading hidden OCR layer. Its 81 ward-summary rows
+and 46 chairperson rows are checked transcriptions tied to the committed PDF's
+SHA-256, with page provenance on every emitted seat. The board totals reconcile
+to the notification's own grand total of 1,004 wards.
+
+The separate `2025_reservation` source series contains 27 district PRI
+notifications acquired from the Assam State Election Commission. Charaideo,
+Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi are parsed, not a
+statewide claim. Charaideo's 36 GPs span four Anchalik Panchayats; its left table keeps
+the printed SC/ST ward counts, including zeroes and twos. Kamrup Metropolitan's
+20 GPs span three Anchalik Panchayats; its notification explicitly labels every
+office and all 200 named ward rows, including Unreserved seats. South
+Salmara-Mankachar adds a complete 35-GP and 350-ward universe; all 175 names
+printed for women-reserved wards are retained, while GP-to-AP membership stays
+blank because that source does not print the crosswalk. Hailakandi contributes
+a 62-GP left table across five Anchalik Panchayats and 459 identifiable reserved
+seats. Its notification omits open seats, so those are not invented and its
+unknown all-ward counts stay blank. Seven child seat tables contain 1,678 stated
+seats across the four districts. Acquisition, OCR, parsing, and validation are
+separate stages. The remaining 23 district PDFs stay visible as held, unparsed
+work. Four supporting final-delimitation gazettes preserve the official AP, GP,
+development-block, and ZPC hierarchy used to review Hailakandi.
+
+Some source pages contain administrative contact details; derived election
+tables whitelist election fields and do not carry phone numbers or other
+incidental personal data.""",
+    "ap": """All 13 district GP-reservation gazettes are held. Eight have
+passed extraction, parsing, and validation; the other five remain acquired but
+unparsed. Acquisition, text extraction/OCR, and parsing are separate stages.
+`extract.py` retains usable embedded text, `ocr.py` re-reads scans from 300 DPI
+renders, and the parser consumes only those retained artifacts. A newly held
+PDF therefore cannot silently enter the published rows merely because its
+hidden text contains something category-like.
+
+The source layouts differ. Kurnool is a ruled GP-by-ward table with usable
+embedded text. Several earlier districts require positional OCR; they do not
+agree on column order, and Krishna itself puts the ward count on opposite sides
+of the Sarpanch cell on adjacent pages. Where no line marks the boundary between
+the mandal and panchayat, it is recovered from the order of the records.
+
+Kadapa is read from retained word coordinates because the scan is skewed and
+its hidden text order does not preserve the table. Its 807 GP rows and 50
+mandals are checked against the three abstracts printed in the same gazette.
+Pages 56–57 then supply a separate errata layer: all 41 `For` values must agree
+with the original table before the `Read as` values are applied. Corrected rows
+retain both printed values and the correction page.
 
 Two consequences worth knowing before using this. `ocr_repaired` counts the
 mends a row's category cell needed - a wrong mend looks exactly like a right
@@ -51,8 +98,20 @@ said the same thing.""",
 2012 cycle names the winner; 2017 and 2022 are nomination-stage listings and
 name nobody, which is a property of the document rather than a gap in the
 parse. Ward numbers arrive in five different shapes, including one with a soft
-hyphen inside it (`Ward­IV`), so they are normalised rather than read
+hyphen inside it (`Ward­IV`), so they are normalized rather than read
 literally.""",
+    "gujarat": """The 2020 rotation orders display Gujarati correctly but their
+hidden text layer is a misencoded glyph stream. Acquisition, OCR, and parsing
+are separate stages: the raw cell readings remain in `ocr/*.jsonl`, while the
+two parsed files standardise only the reservation category and retain the
+source-script constituency name.
+
+The holdings contain multiple administrative layers rather than treating a
+state as a single table: 16 district-panchayat orders and 29 taluka-panchayat
+orders, with district and body recorded in the source manifest. Five
+low-contrast constituency cells that neither page-wide nor isolated-cell OCR
+could read were transcribed from their rendered source pages and are marked as
+reviewed readings in the raw JSONL.""",
     "karnataka": """Two very different sources sit under this state. The
 1993-2007 gram panchayat rows come from a Stata file, a reservation history
 that names no winner in any cycle because it is a roster rather than a result.
@@ -102,21 +161,72 @@ marks every such row. Do not compute shares across it.""",
 # actually catch silent corruption, since every parser bug in this repo produced
 # plausible values rather than an error.
 STATE_CHECKS = {
-    "ap": ["each gazette's own FORMAT-I abstract, district by district",
-           "agreement between the two proformas that state a seat twice",
-           "the share of category cells that needed OCR repair"],
-    "goa": ["the published count of panchayats that went to poll in 2012",
-            "the ward set, compared across the three cycles",
-            "per-taluka coverage against 2012, which is complete"],
-    "jharkhand": ["the published seat totals for each tier",
-                  "how much of the gap is the source's and how much the "
-                  "parser's, decided by opening the file"],
-    "jk": ["SC-reserved wards against SC population, the strongest check "
-           "available here",
-           "the women's share against the one-third floor"],
+    "assam": [
+        "the notification's printed 1,004-ward grand total",
+        "the printed runs of 81 board rows and 46 chairperson rows",
+        "mutual exclusivity of the five ward-reservation columns",
+        "Charaideo's printed 36-GP, four-AP, and 360-ward universes",
+        "exact source category vectors for all seven Charaideo rural tiers",
+        "Kamrup Metropolitan's 20-GP, three-AP, and 200-ward universes",
+        "all 200 printed village cells and the rendered-page recovery of ward 139",
+        "Hailakandi's 62-GP, five-AP, and 459 identifiable reserved-seat rows",
+        "the rejected malformed GP-president row and GP-45 hierarchy conflict",
+        "every rural child row joining to its district GP left table",
+    ],
+    "ap": [
+        "the complete 13-document official source manifest and file checksums",
+        "Kurnool's complete GP serial sequence from 1 through 972",
+        "Kadapa's printed 807-GP/50-mandal controls and all 41 errata rows",
+        "each gazette's own FORMAT-I abstract, district by district",
+        "agreement between the two proformas that state a seat twice",
+        "the share of category cells that needed OCR repair",
+    ],
+    "goa": [
+        "the published count of panchayats that went to poll in 2012",
+        "the ward set, compared across the three cycles",
+        "per-taluka coverage against 2012, which is complete",
+    ],
+    "gujarat": [
+        "the published eight-category totals for every one of the 45 source orders",
+        "the complete 1-through-N constituency sequence in each order",
+        "a source-script constituency name and a reviewed category match for every row",
+    ],
+    "jharkhand": [
+        "the published seat totals for each tier",
+        "how much of the gap is the source's and how much the "
+        "parser's, decided by opening the file",
+    ],
+    "jk": [
+        "SC-reserved wards against SC population, the strongest check available here",
+        "the women's share against the one-third floor",
+    ],
+    "karnataka": [
+        "the source-declared GP-head row count in each cycle",
+        "reviewed row-count floors for the 2016 OCR outputs",
+        "seat-number continuity within each source document",
+    ],
+    "telangana": [
+        "the declared row counts for both 2019 GP tiers",
+        "source-backed uniqueness and provenance for every row",
+    ],
+    "wb": [
+        "the reviewed total of 825 zilla-parishad seats",
+        "all 20 district gazettes represented",
+        "complete, unique district seat runs from 1 through N",
+    ],
 }
 
-MAKE_TARGET = {"ap": "ap", "goa": "goa", "jharkhand": "jharkhand", "jk": "jk"}
+MAKE_TARGET = {
+    "ap": "ap",
+    "assam": "assam",
+    "goa": "goa",
+    "gujarat": "gujarat",
+    "jharkhand": "jharkhand",
+    "jk": "jk",
+    "karnataka": "karnataka",
+    "telangana": "telangana",
+    "wb": "wb",
+}
 
 
 def stats_rows(name):
@@ -145,9 +255,10 @@ def render_checks(state):
     appeals = {r["check_id"]: r["appeals_to"] for r in rows}
     grid = {(r["year"], r["tier"], r["check_id"]): r for r in rows}
 
-    out = ["| Check | Appeals to | " +
-           " | ".join(f"{y} `{t}`" for y, t in slices) + " |",
-           "|---|---|" + "---|" * len(slices)]
+    out = [
+        "| Check | Appeals to | " + " | ".join(f"{y} `{t}`" for y, t in slices) + " |",
+        "|---|---|" + "---|" * len(slices),
+    ]
     for check in checks:
         cells = []
         for year, tier in slices:
@@ -160,9 +271,11 @@ def render_checks(state):
             cells.append(f"{mark} {shown}".strip())
         out.append(f"| `{check}` | {appeals[check]} | " + " | ".join(cells) + " |")
     out.append("")
-    out.append("&check; pass &nbsp; ! warn &nbsp; &cross; fail &nbsp; "
-               "&ndash; skipped, meaning no rule is declared for that slice — "
-               "which is not the same as passing.")
+    out.append(
+        "&check; pass &nbsp; ! warn &nbsp; &cross; fail &nbsp; "
+        "&ndash; skipped, meaning no rule is declared for that slice — "
+        "which is not the same as passing."
+    )
     return out
 
 
@@ -170,18 +283,23 @@ def render_stats(state):
     rows = [r for r in stats_rows("slice_stats.csv") if r["state"] == state]
     if not rows:
         return []
-    out = ["| Year | Tier | Rows | Districts | Blocks | Panchayats | "
-           "Women | SC | ST | BC | Sources |",
-           "|---|---|---|---|---|---|---|---|---|---|---|"]
+    out = [
+        "| Year | Tier | Rows | Districts | Blocks | Panchayats | "
+        "Women | SC | ST | BC | Sources |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
+    ]
     for r in sorted(rows, key=lambda x: (x["year"], x["tier"])):
+
         def pct(key):
             return f"{float(r[key]) * 100:.0f}%" if r[key] else "—"
+
         out.append(
             f"| {r['year']} | `{r['tier']}` | {int(r['rows']):,} | "
             f"{r['districts']} | {r['blocks']} | {int(r['panchayats']):,} | "
             f"{pct('women_share')} | {pct('sc_share')} | {pct('st_share')} | "
             f"{pct('bc_share')} | {r['source_documents']} docs, "
-            f"{int(r['source_pages']):,} pages |")
+            f"{int(r['source_pages']):,} pages |"
+        )
     return out
 
 
@@ -198,13 +316,15 @@ def dataset_files(directory):
     for path, rows in datasets.parsed():
         if path.parent.name != directory:
             continue
-        out.append({
-            "name": path.name,
-            "stem": path.stem,
-            "rows": len(rows),
-            "columns": len(rows[0]),
-            "sources": len({r.get("source_path", "") for r in rows}),
-        })
+        out.append(
+            {
+                "name": path.name,
+                "stem": path.stem,
+                "rows": len(rows),
+                "columns": len(rows[0]),
+                "sources": len({r.get("source_path", "") for r in rows}),
+            }
+        )
     return out
 
 
@@ -230,9 +350,11 @@ def source_files(directory):
     """Files actually held, not counting the readme this script writes - which
     would otherwise make every directory report one file more than it has.
     """
-    return sorted(p for p in (DATA / directory).rglob("*")
-                  if p.is_file() and p.name != "readme.md"
-                  and not p.name.startswith("."))
+    return sorted(
+        p
+        for p in (DATA / directory).rglob("*")
+        if p.is_file() and p.name != "readme.md" and not p.name.startswith(".")
+    )
 
 
 def raw_inventory(directory):
@@ -250,21 +372,79 @@ def raw_inventory(directory):
     return kinds, pages
 
 
+def source_series(directory):
+    """Reviewed source series declared by standard harvest manifests."""
+    grouped = collections.Counter()
+    for manifest in (DATA / directory).rglob("manifest.csv"):
+        with manifest.open(encoding="utf-8", errors="replace") as fh:
+            reader = csv.DictReader(fh)
+            if not reader.fieldnames or "source_id" not in reader.fieldnames:
+                continue
+            for row in reader:
+                key = (
+                    row["source_id"],
+                    row["year"],
+                    row["government_level"],
+                    row["tier"],
+                    row["document_format"],
+                    row["landing_url"],
+                )
+                grouped[key] += 1
+    return grouped
+
+
+def render_source_series(directory):
+    series = source_series(directory)
+    if not series:
+        return []
+    out = [
+        "| Source series | Year | Government level | Tier | Documents | "
+        "Format | Landing page |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for key, count in sorted(series.items()):
+        source_id, year, level, tier, document_format, landing = key
+        out.append(
+            f"| `{source_id}` | {year} | `{level}` | `{tier}` | {count} | "
+            f"`{document_format}` | [official source]({landing}) |"
+        )
+    return out
+
+
 def render_parsed(directory, state, entries):
     files = dataset_files(directory)
     cited, missing = source_documents(directory)
     kinds, pages = raw_inventory(directory)
     total = sum(e["rows"] for e in entries)
+    held_pdfs = {
+        str(path.relative_to(ROOT))
+        for path in (DATA / directory).rglob("*.pdf")
+        if path.is_file()
+    }
+    uncited = sorted(held_pdfs - set(cited))
 
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"{total:,} rows across {len(entries)} "
-               f"{'slice' if len(entries) == 1 else 'slices'}, parsed from "
-               f"{len(cited)} source "
-               f"{'document' if len(cited) == 1 else 'documents'} committed "
-               f"alongside.")
+
+    if uncited:
+        out.append(
+            f"This directory also holds {len(uncited)} source PDF"
+            f"{'s' if len(uncited) != 1 else ''} not cited by any "
+            "current output slice. They are acquired, but not counted "
+            "as parsed coverage."
+        )
+        out.append("")
+    out.append(
+        f"{total:,} rows across {len(entries)} "
+        f"{'slice' if len(entries) == 1 else 'slices'}, parsed from "
+        f"{len(cited)} source "
+        f"{'document' if len(cited) == 1 else 'documents'} committed "
+        f"alongside."
+    )
     out.append("")
 
     out.append("## What is here")
@@ -272,26 +452,34 @@ def render_parsed(directory, state, entries):
     out.append("| Year | Tier | Rows | Women | Districts | vs published | Notes |")
     out.append("|---|---|---|---|---|---|---|")
     for e in entries:
-        out.append(f"| {e['year']} | `{e['tier']}` | {e['rows']:,} | "
-                   f"{e['women']:.0f}% | {e['districts']} | {e['coverage']} | "
-                   f"{e['notes'] or '—'} |")
+        out.append(
+            f"| {e['year']} | `{e['tier']}` | {e['rows']:,} | "
+            f"{e['women']:.0f}% | {e['districts']} | {e['coverage']} | "
+            f"{e['notes'] or '—'} |"
+        )
     out.append("")
-    out.append("Read the notes before the numbers — several of them say that a "
-               "share is a property of which pages were published rather than "
-               "of the state.")
+    out.append(
+        "Read the notes before the numbers — several of them say that a "
+        "share is a property of which pages were published rather than "
+        "of the state."
+    )
     out.append("")
 
     out.append("## Files")
     out.append("")
-    out.append("Every file is written twice: `.csv` for a spreadsheet, "
-               "`.jsonl` for a reader that should not break when a column is "
-               "added.")
+    out.append(
+        "Every file is written twice: `.csv` for a spreadsheet, "
+        "`.jsonl` for a reader that should not break when a column is "
+        "added."
+    )
     out.append("")
     out.append("| File | Rows | Columns | Source documents |")
     out.append("|---|---|---|---|")
     for f in files:
-        out.append(f"| [`{f['name']}`]({f['name']}) | {f['rows']:,} | "
-                   f"{f['columns']} | {f['sources']} |")
+        out.append(
+            f"| [`{f['name']}`]({f['name']}) | {f['rows']:,} | "
+            f"{f['columns']} | {f['sources']} |"
+        )
     out.append("")
 
     stats = render_stats(state)
@@ -300,11 +488,13 @@ def render_parsed(directory, state, entries):
         out.append("")
         out += stats
         out.append("")
-        out.append("Generated by `make stats` into "
-                   "[../stats/slice_stats.csv](../stats/slice_stats.csv). "
-                   "Snapshot that file before changing a parser and diff it "
-                   "after: a change that only renames things must not move a "
-                   "single number.")
+        out.append(
+            "Generated by `make stats` into "
+            "[../stats/slice_stats.csv](../stats/slice_stats.csv). "
+            "Snapshot that file before changing a parser and diff it "
+            "after: a change that only renames things must not move a "
+            "single number."
+        )
         out.append("")
 
     note = STATE_NOTES.get(directory)
@@ -316,27 +506,54 @@ def render_parsed(directory, state, entries):
 
     out.append("## Provenance")
     out.append("")
-    out.append("Every row carries `source_path` and `source_page` — the "
-               "document it was read from and the page within it. The "
-               "documents are committed here, so any row can be checked "
-               "against the page it came from without a network round trip. "
-               "That mattered repeatedly: nearly every parser bug in this "
-               "repository produced plausible wrong values rather than an "
-               "error, and opening the page was the only way to settle it.")
+    out.append(
+        "Every row carries `source_path` and `source_page` — the "
+        "document it was read from and the page within it. The "
+        "documents are committed here, so any row can be checked "
+        "against the page it came from without a network round trip. "
+        "That mattered repeatedly: nearly every parser bug in this "
+        "repository produced plausible wrong values rather than an "
+        "error, and opening the page was the only way to settle it."
+    )
     out.append("")
     if missing:
-        out.append(f"⚠️ {len(missing)} cited "
-                   f"{'document is' if len(missing) == 1 else 'documents are'} "
-                   f"not on disk: `{missing[0]}`" +
-                   ("" if len(missing) == 1 else " and others"))
+        out.append(
+            f"⚠️ {len(missing)} cited "
+            f"{'document is' if len(missing) == 1 else 'documents are'} "
+            f"not on disk: `{missing[0]}`"
+            + ("" if len(missing) == 1 else " and others")
+        )
     else:
         out.append(f"All {len(cited)} cited documents are present.")
     out.append("")
     if kinds:
         described = ", ".join(f"{n} {k}" for k, n in kinds.most_common())
-        out.append(f"Inventory for this directory: {described}" +
-                   (f", {pages:,} pages total." if pages else "."))
+        out.append(
+            f"Inventory for this directory: {described}"
+            + (f", {pages:,} pages total." if pages else ".")
+        )
         out.append("")
+
+    if uncited:
+        groups = collections.Counter(
+            str((ROOT / path).relative_to(DATA / directory).parent) for path in uncited
+        )
+        out.append("## Acquired sources outside the parsed slices")
+        out.append("")
+        out.append(
+            "These held PDFs are not cited by any parsed row. A source "
+            "series remains distinct from the state-level status, so "
+            "parsed work in one year or government level cannot hide "
+            "unparsed holdings in another."
+        )
+        out.append("")
+        for group, count in sorted(groups.items()):
+            out.append(f"- `{group}`: {count} PDF{'s' if count != 1 else ''}")
+        out.append("")
+        series = render_source_series(directory)
+        if series:
+            out += series
+            out.append("")
 
     out.append("## Reproducing")
     out.append("")
@@ -344,20 +561,24 @@ def render_parsed(directory, state, entries):
     out.append(f"make {MAKE_TARGET.get(directory, directory)}")
     out.append("```")
     out.append("")
-    out.append(f"Parses from the committed documents and rewrites the files "
-               f"above, then runs `src/local_reservations/states/{directory}/validate.py`.")  # noqa: E501
+    out.append(
+        f"Parses from the committed documents and rewrites the files "
+        f"above, then runs `src/local_reservations/states/{directory}/validate.py`."
+    )
     out.append("")
 
     grid = render_checks(state)
     checks = STATE_CHECKS.get(directory)
     out.append("## What is checked")
     out.append("")
-    out.append("Every state runs a shared battery first — the seat key is "
-               "unique, the reservation label agrees with the two fields it "
-               "summarises, every `source_path` exists and every "
-               "`source_page` falls inside its document. Then this state's own "
-               "checks, which are the ones that catch silent corruption "
-               "because they appeal to something outside the data:")
+    out.append(
+        "Every state runs a shared battery first — the seat key is "
+        "unique, the reservation label agrees with the two fields it "
+        "summarises, every `source_path` exists and every "
+        "`source_page` falls inside its document. Then this state's own "
+        "checks, which are the ones that catch silent corruption "
+        "because they appeal to something outside the data:"
+    )
     out.append("")
     for check in checks or ["—"]:
         out.append(f"- {check}")
@@ -366,15 +587,19 @@ def render_parsed(directory, state, entries):
         out.append("")
         out += grid
         out.append("")
-        out.append("Each check declares what it **appeals to**. Only an "
-                   "external appeal - a published total, a statutory share, a "
-                   "population - reliably catches silent corruption; an "
-                   "internal check confirms the file agrees with itself, which "
-                   "it does whether or not a category was misread.")
+        out.append(
+            "Each check declares what it **appeals to**. Only an "
+            "external appeal - a published total, a statutory share, a "
+            "population - reliably catches silent corruption; an "
+            "internal check confirms the file agrees with itself, which "
+            "it does whether or not a category was misread."
+        )
         out.append("")
-    out.append("Column meanings are in [../../DICTIONARY.md](../../DICTIONARY.md). "
-               "Expectation violations across every state are triaged into "
-               "[../expectations_report.csv](../expectations_report.csv).")
+    out.append(
+        "Column meanings are in [../../DICTIONARY.md](../../DICTIONARY.md). "
+        "Expectation violations across every state are triaged into "
+        "[../expectations_report.csv](../expectations_report.csv)."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -387,24 +612,37 @@ def render_sibling(directory, state, years, tiers, url):
     files = source_files(directory)
     name = url.rsplit("/", 1)[-1]
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"**The parsed data for {state} is in "
-               f"[{name}]({url})** — {tiers}, {years}. It was split into its "
-               f"own repository, so it is counted in the [top-level "
-               f"readme](../../readme.md) but has no rows here.")
+    out.append(
+        f"**The parsed data for {state} is in "
+        f"[{name}]({url})** — {tiers}, {years}. It was split into its "
+        f"own repository, so it is counted in the [top-level "
+        f"readme](../../readme.md) but has no rows here."
+    )
     out.append("")
-    out.append(f"What is in this directory is source material: {len(files)} "
-               f"{'file' if len(files) == 1 else 'files'}" +
-               (f", {', '.join(f'{n} {k}' for k, n in kinds.most_common())}" +
-                (f", {pages:,} pages" if pages else "") if kinds else "") + ".")
+    out.append(
+        f"What is in this directory is source material: {len(files)} "
+        f"{'file' if len(files) == 1 else 'files'}"
+        + (
+            f", {', '.join(f'{n} {k}' for k, n in kinds.most_common())}"
+            + (f", {pages:,} pages" if pages else "")
+            if kinds
+            else ""
+        )
+        + "."
+    )
     out.append("")
-    out.append("It is not in this repository's schema, so it does not appear "
-               "in the per-slice table. Bringing a sibling to that grain means "
-               "giving its parsed files the shared columns — `state`, `year`, "
-               "`tier`, `caste_reservation`, `woman_reserved` — which is the "
-               "schema harmonisation still to be done.")
+    out.append(
+        "It is not in this repository's schema, so it does not appear "
+        "in the per-slice table. Bringing a sibling to that grain means "
+        "giving its parsed files the shared columns — `state`, `year`, "
+        "`tier`, `caste_reservation`, `woman_reserved` — which is the "
+        "schema harmonisation still to be done."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -412,41 +650,55 @@ def render_unparsed(directory, state, status, where):
     kinds, pages = raw_inventory(directory)
     files = source_files(directory)
     out = [f"# {state} — local body reservation", ""]
-    out.append("*Generated by `make state-readmes`. Edits here are overwritten "
-               "— change the data or the generator instead.*")
+    out.append(
+        "*Generated by `make state-readmes`. Edits here are overwritten "
+        "— change the data or the generator instead.*"
+    )
     out.append("")
-    out.append(f"**Status: {status}.** Nothing in this directory is in the "
-               f"repository's schema yet, so it does not appear in the "
-               f"per-slice table in the [top-level readme](../../readme.md).")
+    out.append(
+        f"**Status: {status}.** Nothing in this directory is in the "
+        f"repository's schema yet, so it does not appear in the "
+        f"per-slice table in the [top-level readme](../../readme.md)."
+    )
     out.append("")
     if status == "tables, other layout":
-        out.append("The documents or tables are here and nobody has parsed "
-                   "them into this repository's schema yet. This is open work, "
-                   "not coverage already achieved - a distinction the old label "
-                   "\"prior work, other schema\" blurred, which is how "
-                   "Rajasthan sat here for months while its parse existed in "
-                   "another repository.")
+        out.append(
+            "The documents or tables are here and nobody has parsed "
+            "them into this repository's schema yet. This is open work, "
+            "not coverage already achieved - a distinction the old label "
+            '"prior work, other schema" blurred, which is how '
+            "Rajasthan sat here for months while its parse existed in "
+            "another repository."
+        )
         out.append("")
         if where:
             out.append(f"Recorded years: {where}.")
             out.append("")
-    out.append(f"{len(files)} "
-               f"{'file' if len(files) == 1 else 'files'} on disk.")
+    out.append(f"{len(files)} {'file' if len(files) == 1 else 'files'} on disk.")
     if kinds:
         described = ", ".join(f"{n} {k}" for k, n in kinds.most_common())
         out.append("")
-        out.append(f"Inventory: {described}" +
-                   (f", {pages:,} pages total." if pages else "."))
+        out.append(
+            f"Inventory: {described}" + (f", {pages:,} pages total." if pages else ".")
+        )
+    series = render_source_series(directory)
+    if series:
+        out.append("")
+        out.append("## Source series")
+        out.append("")
+        out += series
     out.append("")
     out.append("## What it would take")
     out.append("")
-    out.append("See [../../SOURCES.md](../../SOURCES.md) for where this state "
-               "publishes its reservation data and what parsing it involves. "
-               "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "  # noqa: E501
-               "`local_reservations/common/emit.py` so every row carries its source "
-               "document and page, and is paired with a `validate.py` that "
-               "checks the result against something outside the data — a "
-               "published total, a statutory share, a population.")
+    out.append(
+        "See [../../SOURCES.md](../../SOURCES.md) for where this state "
+        "publishes its reservation data and what parsing it involves. "
+        "A parser lands in `src/local_reservations/states/<state>/parse.py`, writes through "  # noqa: E501
+        "`local_reservations/common/emit.py` so every row carries its source "
+        "document and page, and is paired with a `validate.py` that "
+        "checks the result against something outside the data — a "
+        "published total, a statutory share, a population."
+    )
     return "\n".join(out) + "\n"
 
 
@@ -454,34 +706,44 @@ def build():
     """Return {path: text} for every state directory."""
     entries = slices_by_directory()
     legacy = {d: (state, years) for state, (years, d) in coverage.LEGACY.items()}
-    siblings = {state: (spec["years"], spec["tiers"],
-                        f"https://github.com/in-rolls/{spec['repo']}")
-                for state, spec in coverage.SIBLINGS.items()}
+    siblings = {
+        state: (
+            spec["years"],
+            spec["tiers"],
+            f"https://github.com/in-rolls/{spec['repo']}",
+        )
+        for state, spec in coverage.SIBLINGS.items()
+    }
 
     out = {}
-    for directory in sorted(p.name for p in DATA.iterdir()
-                            if p.is_dir() and p.name not in datasets.DERIVED):
+    for directory in sorted(
+        p.name for p in DATA.iterdir() if p.is_dir() and p.name not in datasets.DERIVED
+    ):
         state = coverage.pretty(directory)
         target = DATA / directory / "readme.md"
         if directory in entries:
             out[target] = render_parsed(directory, state, entries[directory])
         elif directory in legacy:
             name, years = legacy[directory]
-            out[target] = render_unparsed(directory, name,
-                                          "tables, other layout", years)
+            out[target] = render_unparsed(
+                directory, name, "tables, other layout", years
+            )
         elif state in siblings:
             years, tiers, url = siblings[state]
             out[target] = render_sibling(directory, state, years, tiers, url)
         else:
-            out[target] = render_unparsed(directory, state,
-                                          "documents, no parser", "")
+            out[target] = render_unparsed(directory, state, "documents, no parser", "")
     return out
 
 
+@command("document", artifact="state_readmes")
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true",
-                    help="fail if any file differs from what would be written")
+    ap.add_argument(
+        "--check",
+        action="store_true",
+        help="fail if any file differs from what would be written",
+    )
     args = ap.parse_args()
 
     written = build()

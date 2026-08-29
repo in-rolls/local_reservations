@@ -1,15 +1,11 @@
-"""Rajasthan, from quota_raj.
+"""Rajasthan, from local_elections_rajasthan.
 
-Rajasthan's parse sits in quota_raj rather than a local_elections_* repository,
-which is the only reason it spent months in this repository's coverage table
-filed as "prior work, other schema" - a label that reads as *already handled*
-where it meant *parsed, just not by a repository I was looking for*.
+The standardized sarpanch panel moved out of the paper-specific quota_raj
+repository so it can keep being maintained with the state's election data.
 
 Four gram panchayat head cycles, 2005/2010/2015/2020, with caste and gender
-already in separate columns. The only real work is reading parquet without
-pandas, since this repository is standard library only: the four files are read
-through pandas when it is importable and the slice is skipped with a reason when
-it is not, rather than silently contributing nothing.
+already in separate columns. The four parquet files are read through the
+declared pandas dependency and checked against their published row counts.
 
 Rajasthan carries no provenance at all - no source document, no page - so
 provenance_level is `dataset`. A row can be traced to the file it came from and

@@ -76,8 +76,7 @@ def without_the_wait(monkeypatch):
     fetch._SESSION = None
 
 
-def test_a_refused_connection_is_unanswered_and_not_an_empty_answer(
-        without_the_wait):
+def test_a_refused_connection_is_unanswered_and_not_an_empty_answer(without_the_wait):
     """The regression test for Gujarat 614 -> 0.
 
     The sweep's retry loop caught every transport error and returned [], so a
@@ -111,8 +110,9 @@ def test_a_429_is_retried_and_the_retry_after_header_is_obeyed():
     for more than a minute, so this is the behaviour that matters most and the
     one a configuration-only assertion cannot demonstrate.
     """
-    with Server([(429, {"Retry-After": "1"}, b"slow down"),
-                 (200, {}, b"ok")]) as server:
+    with Server(
+        [(429, {"Retry-After": "1"}, b"slow down"), (200, {}, b"ok")]
+    ) as server:
         started = time.monotonic()
         response = fetch.get(server.url, timeout=10)
         waited = time.monotonic() - started
@@ -159,7 +159,8 @@ def test_the_session_paces_requests():
             fetch.get(server.url, timeout=5)
         elapsed = time.monotonic() - started
     assert elapsed >= 2 / fetch.PER_SECOND, (
-        f"three requests took {elapsed:.2f}s - unpaced")
+        f"three requests took {elapsed:.2f}s - unpaced"
+    )
 
 
 def test_the_adapter_carries_both_the_limiter_and_the_retry():

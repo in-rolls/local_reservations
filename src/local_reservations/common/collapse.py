@@ -56,10 +56,15 @@ def votes_of(value):
     return int(digits) if digits else None
 
 
-def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
-                                                   "woman_reserved"),
-             vote_field=None, winner_field=None, winner_value=None,
-             runner_up_value=None):
+def to_seats(
+    rows,
+    key_fields,
+    reservation_fields=("caste_reservation", "woman_reserved"),
+    vote_field=None,
+    winner_field=None,
+    winner_value=None,
+    runner_up_value=None,
+):
     """One row per seat, from many rows per candidate.
 
     `winner_field`/`winner_value` name an explicit winner marker; failing that,
@@ -74,13 +79,11 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
     """
     grouped = collections.OrderedDict()
     for row in rows:
-        grouped.setdefault(tuple(row.get(f, "") for f in key_fields),
-                           []).append(row)
+        grouped.setdefault(tuple(row.get(f, "") for f in key_fields), []).append(row)
 
     out = []
     for key, candidates in grouped.items():
-        stated = {tuple(c.get(f, "") for f in reservation_fields)
-                  for c in candidates}
+        stated = {tuple(c.get(f, "") for f in reservation_fields) for c in candidates}
         if len(stated) > 1:
             raise ReservationVaries(f"{key}: {sorted(stated)}")
 
@@ -90,8 +93,11 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
 
         won, basis = None, ""
         if winner_field:
-            marked = [c for c in candidates
-                      if str(c.get(winner_field, "")).strip() == winner_value]
+            marked = [
+                c
+                for c in candidates
+                if str(c.get(winner_field, "")).strip() == winner_value
+            ]
             if len(marked) == 1:
                 won, basis = marked[0], "published"
         if won is None and vote_field:
@@ -103,8 +109,9 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
                 if len(leaders) == 1:
                     won, basis = leaders[0], "argmax_votes"
 
-        seat["winner"] = (won or {}).get("candidate_name") or \
-            (won or {}).get("winner") or ""
+        seat["winner"] = (
+            (won or {}).get("candidate_name") or (won or {}).get("winner") or ""
+        )
         seat["winner_basis"] = basis if seat["winner"] else ""
 
         for candidate in candidates:
@@ -113,8 +120,7 @@ def to_seats(rows, key_fields, reservation_fields=("caste_reservation",
         seat["seat_members"] = candidates
         seat.update(margin(candidates, vote_field))
         if runner_up_value and winner_field and not seat["runner_up"]:
-            seat.update(stated_runner_up(candidates, winner_field,
-                                         runner_up_value))
+            seat.update(stated_runner_up(candidates, winner_field, runner_up_value))
         out.append(seat)
     return out
 
@@ -131,7 +137,8 @@ def rank(candidates, vote_field):
         return
     counted = sorted(
         ((votes_of(c.get(vote_field)), c) for c in candidates),
-        key=lambda pair: -(pair[0] if pair[0] is not None else -1))
+        key=lambda pair: -(pair[0] if pair[0] is not None else -1),
+    )
     place, previous, seen = 0, object(), 0
     for votes, candidate in counted:
         if votes is None:
@@ -150,12 +157,14 @@ def margin(candidates, vote_field):
     and by how much" is a fact about the seat; the full field of candidates is
     a fact about the contest and lives in the long form.
     """
-    blank = {"runner_up": "", "winner_votes": "", "runner_up_votes": "",
-             "margin": ""}
+    blank = {"runner_up": "", "winner_votes": "", "runner_up_votes": "", "margin": ""}
     if not vote_field:
         return blank
-    ranked = [(c.get("candidate_rank"), votes_of(c.get(vote_field)), c)
-              for c in candidates if c.get("candidate_rank")]
+    ranked = [
+        (c.get("candidate_rank"), votes_of(c.get(vote_field)), c)
+        for c in candidates
+        if c.get("candidate_rank")
+    ]
     first = [c for r, _, c in ranked if r == 1]
     second = [c for r, _, c in ranked if r == 2]
     if len(first) != 1:
@@ -170,10 +179,8 @@ def margin(candidates, vote_field):
         # subtraction was a TypeError waiting for the first of those to reach
         # a two-candidate seat. A margin between an unknown and a number is
         # unknown, which is what blank already means here.
-        margin = (top - runner if top is not None and runner is not None
-                  else "")
-        out.update(runner_up=name_of(second[0]), runner_up_votes=runner,
-                   margin=margin)
+        margin = top - runner if top is not None and runner is not None else ""
+        out.update(runner_up=name_of(second[0]), runner_up_votes=runner, margin=margin)
     elif not second:
         # Nobody else polled a vote. Unopposed, or the only recorded candidate.
         out["margin"] = top
@@ -188,8 +195,9 @@ def stated_runner_up(candidates, winner_field, runner_up_value):
     is not derivable. A stated second place with no margin is the honest shape
     of that, and better than turning a percentage into a vote count.
     """
-    marked = [c for c in candidates
-              if str(c.get(winner_field, "")).strip() == runner_up_value]
+    marked = [
+        c for c in candidates if str(c.get(winner_field, "")).strip() == runner_up_value
+    ]
     if len(marked) != 1:
         return {}
     marked[0].setdefault("candidate_rank", 2)
@@ -200,8 +208,9 @@ def name_of(candidate):
     return candidate.get("candidate_name") or candidate.get("winner") or ""
 
 
-def varies(rows, key_fields, reservation_fields=("caste_reservation",
-                                                 "woman_reserved")):
+def varies(
+    rows, key_fields, reservation_fields=("caste_reservation", "woman_reserved")
+):
     """Seats whose candidates disagree about the reservation, without raising.
 
     For measuring a source before deciding how to treat it - Uttarakhand's nine
@@ -210,5 +219,6 @@ def varies(rows, key_fields, reservation_fields=("caste_reservation",
     grouped = collections.defaultdict(set)
     for row in rows:
         grouped[tuple(row.get(f, "") for f in key_fields)].add(
-            tuple(row.get(f, "") for f in reservation_fields))
+            tuple(row.get(f, "") for f in reservation_fields)
+        )
     return {k: v for k, v in grouped.items() if len(v) > 1}

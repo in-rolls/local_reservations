@@ -8,6 +8,7 @@ declarations, so a rule cannot change without the documentation changing too.
 import sys
 
 from local_reservations.common import dictionary as D
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 
 OUT = ROOT / "DICTIONARY.md"
@@ -49,13 +50,18 @@ def constraints(spec):
     return "; ".join(bits) or "—"
 
 
+@command("document", artifact="data_dictionary")
 def main():
-    lines = [HEAD, "| Column | Type | Severity | Constraints | Notes |",
-             "|---|---|---|---|---|"]
+    lines = [
+        HEAD,
+        "| Column | Type | Severity | Constraints | Notes |",
+        "|---|---|---|---|---|",
+    ]
     for spec in D.COLUMNS:
         lines.append(
             f"| `{spec['name']}` | {spec['dtype']} | {spec['severity']} | "
-            f"{constraints(spec)} | {spec['note'] or ''} |")
+            f"{constraints(spec)} | {spec['note'] or ''} |"
+        )
 
     lines.append("\n## Plausible row counts\n")
     lines.append("A file outside its band has lost rows or double counted them.\n")

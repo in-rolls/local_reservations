@@ -33,8 +33,7 @@ def test_a_misread_category_still_lands_in_the_right_family():
 
 
 def test_a_column_header_is_not_a_category():
-    for header in ("ನಿಗದಿ ಪಡಿಸಿರುವ ಮೀಸಲಾತಿ ವರ್ಗ", "ಕ್ಷೇತ್ರದ ಮೀಸಲಾತಿ",
-                   "ಮೀಸಲಾತಿ/ ಮೀಸಲಿರಿಸಿದ ವರ್ಗ", "3", ""):
+    for header in ("ನಿಗದಿ ಪಡಿಸಿರುವ ಮೀಸಲಾತಿ ವರ್ಗ", "ಕ್ಷೇತ್ರದ ಮೀಸಲಾತಿ", "ಮೀಸಲಾತಿ/ ಮೀಸಲಿರಿಸಿದ ವರ್ಗ", "3", ""):
         assert tables.reservation(header) is None, header
 
 

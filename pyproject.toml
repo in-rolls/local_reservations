@@ -5,12 +5,17 @@ readme = "readme.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.12"
-version = "0.2.1"
+version = "0.3.0"
 authors = [{ name = "Gaurav Sood", email = "contact@gsood.com" }]
 keywords = ["india", "panchayat", "elections", "reservation", "local government"]
 classifiers = [
     "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Private :: Do Not Upload",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering :: Information Analysis",
 ]
 
@@ -32,7 +37,10 @@ dependencies = [
 ]
 
 [project.urls]
+Homepage = "https://github.com/in-rolls/local_reservations"
 Repository = "https://github.com/in-rolls/local_reservations"
+Issues = "https://github.com/in-rolls/local_reservations/issues"
+Changelog = "https://github.com/in-rolls/local_reservations/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = ["pytest", "ruff", "pyright", "pydoclint>=0.5"]
@@ -140,11 +148,8 @@ verify-manifest = "local_reservations.tools.verify_manifest:main"
 release-check = "local_reservations.tools.release_check:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/local_reservations"]
+requires = ["uv_build>=0.12.5,<0.13"]
+build-backend = "uv_build"
 
 [tool.preen]
 # What this repository does not take from the fleet standard, and why.
@@ -177,4 +182,3 @@ skip_checks = [
     # `ruff check` is enforced and passes clean.
     "ruff",
 ]
-

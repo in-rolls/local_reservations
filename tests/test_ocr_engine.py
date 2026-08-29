@@ -18,6 +18,7 @@ GOOD = "<table><tr><td>ಒಂದು</td><td>ಎರಡು</td></tr></table>"
 EMPTY = "<div><img/></div>"
 LOOP = "ಕರ್ನಾಟಕ ರಾಜ್ಯಪತ್ರ ಸಂಪಾದಕ " * 30
 PROSE_NO_TABLE = "<p>" + " ".join(f"ಪದ{i}" for i in range(40)) + "</p>"
+LAYOUT_ONLY = json.dumps([{"label": "Table", "bbox": "170 13 807 570", "count": 2520}])
 
 
 class FakeEngine:
@@ -50,10 +51,12 @@ def fake(monkeypatch):
     records whatever it finds at the moment it is called, the later patch in
     the same test restored the *fake* at teardown and leaked it into the rest
     of the file."""
+
     def install(replies, cls=None):
         engine = (cls or FakeEngine)(replies)
         monkeypatch.setattr(ocr_engine, "engine", lambda model=None: engine)
         return engine
+
     return install
 
 
@@ -78,8 +81,14 @@ def test_a_degenerate_page_is_retried_and_the_repair_is_recorded(a_pdf, fake):
     assert "crop8.png" in " ".join(engine.seen), "the retry did not crop"
 
 
-def test_a_page_with_no_table_is_retried_only_where_a_table_is_expected(
-        a_pdf, fake):
+def test_a_layout_summary_without_cells_is_retried(a_pdf, fake):
+    engine = fake([LAYOUT_ONLY, GOOD])
+    text = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False)
+    assert "<!-- ocr-retry same-image=1 -->" in text
+    assert "crop8.png" not in " ".join(engine.seen)
+
+
+def test_a_page_with_no_table_is_retried_only_where_a_table_is_expected(a_pdf, fake):
     """Hunagund's failure: correct Kannada, healthy variety, no table. Nothing
     about it looks wrong, so only a caller that knows every page is a table can
     catch it."""
@@ -88,8 +97,9 @@ def test_a_page_with_no_table_is_retried_only_where_a_table_is_expected(
     assert "ocr-retry" not in plain, "retried a page nobody said was a table"
 
     engine = fake([PROSE_NO_TABLE, GOOD])
-    tabular = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False,
-                             wants_table=True)
+    tabular = ocr_engine.ocr(
+        a_pdf, dpi=DPI, deskew=False, progress=False, wants_table=True
+    )
     assert "<!-- ocr-retry crop=0.08 -->" in tabular
     assert engine.seen
 
@@ -120,30 +130,31 @@ def test_an_interrupted_run_resumes_without_rereading(a_pdf, fake, tmp_path):
 
     fake([GOOD], cls=DiesAfterOnePage)
     with pytest.raises(KeyboardInterrupt):
-        ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False,
-                       partial=partial)
+        ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False, partial=partial)
 
     assert partial.exists(), "nothing was written before the interruption"
-    saved = [json.loads(line) for line in
-             partial.read_text(encoding="utf-8").splitlines()]
+    saved = [
+        json.loads(line) for line in partial.read_text(encoding="utf-8").splitlines()
+    ]
     assert [r["page"] for r in saved] == [1]
 
     resumed = fake([GOOD])
-    text = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False,
-                          partial=partial)
+    text = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False, partial=partial)
     assert len(resumed.seen) == pages - 1, "a finished page was read again"
     assert len(text.split("\f")) == pages
 
 
 def test_a_line_truncated_by_the_kill_costs_one_page_not_the_file(
-        a_pdf, fake, tmp_path):
+    a_pdf, fake, tmp_path
+):
     partial = tmp_path / "doc.jsonl"
     partial.write_text(
-        json.dumps({"page": 1, "text": GOOD}) + "\n" +
-        '{"page": 2, "text": "half a li',   # killed mid-write
-        encoding="utf-8")
+        json.dumps({"page": 1, "text": GOOD})
+        + "\n"
+        + '{"page": 2, "text": "half a li',  # killed mid-write
+        encoding="utf-8",
+    )
     engine = fake([GOOD])
-    text = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False,
-                          partial=partial)
+    text = ocr_engine.ocr(a_pdf, dpi=DPI, deskew=False, progress=False, partial=partial)
     assert len(engine.seen) == ocr_engine.page_count(a_pdf) - 1
     assert len(text.split("\f")) == ocr_engine.page_count(a_pdf)

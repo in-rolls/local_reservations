@@ -32,15 +32,15 @@ import unicodedata
 # Legacy font encoding, byte-for-byte deterministic rather than OCR guesses.
 # "anusuchit" is spelt at least a dozen ways across Haryana and Jharkhand, so it
 # is matched as "vuq + anything + jati" rather than by literal.
-KD_SC = re.compile(r"vuq\S*\s+tkfr")            # anusuchit jati
-KD_ST = re.compile(r"vuq\S*\s+tu\s*tkfr")       # anusuchit janjati
+KD_SC = re.compile(r"vuq\S*\s+tkfr")  # anusuchit jati
+KD_ST = re.compile(r"vuq\S*\s+tu\s*tkfr")  # anusuchit janjati
 KD_SC_TIGHT = re.compile(r"vuq\w*tkfr")
 KD_ST_TIGHT = re.compile(r"vuq\w*tutkfr")
-KD_BC = re.compile(r"f[io]NM|fiNM")             # pichhda varg, and its typos
-KD_UNRESERVED = re.compile(r"vuk[fj]+\{kr")     # anarakshit, incl. "vukfj{kr"
-KD_WOMAN = "efgyk"                              # mahila
-KD_OTHER = "vU;"                                # anya - the "not a woman" cell
-KD_OTHER_THAN = "flok;"                         # sivay - "other than"
+KD_BC = re.compile(r"f[io]NM|fiNM")  # pichhda varg, and its typos
+KD_UNRESERVED = re.compile(r"vuk[fj]+\{kr")  # anarakshit, incl. "vukfj{kr"
+KD_WOMAN = "efgyk"  # mahila
+KD_OTHER = "vU;"  # anya - the "not a woman" cell
+KD_OTHER_THAN = "flok;"  # sivay - "other than"
 
 # Unicode Devanagari, which is what OCR of a scanned notification returns -
 # Jharkhand's six scanned districts are the same PROFORMA-23 form as its text
@@ -68,22 +68,54 @@ VACANT = ("rikt", "riet", "vacant", "fjDr", "[kkyh", "रिक्त")
 # letters-only form, so "O.B.C.", "OBC" and "Obc" all land here, and so does
 # "UR (W)" -> "urw".
 CODES = {
-    "g": ("NONE", 0), "gn": ("NONE", 0), "gen": ("NONE", 0),
+    "g": ("NONE", 0),
+    "gn": ("NONE", 0),
+    "gen": ("NONE", 0),
     "general": ("NONE", 0),
-    "ur": ("NONE", 0), "unreserved": ("NONE", 0), "open": ("NONE", 0),
-    "oc": ("NONE", 0), "o": ("NONE", 0),
-    "w": ("NONE", 1), "women": ("NONE", 1), "woman": ("NONE", 1),
-    "gw": ("NONE", 1), "genw": ("NONE", 1), "generalw": ("NONE", 1),
-    "urw": ("NONE", 1), "openw": ("NONE", 1), "ocw": ("NONE", 1),
-    "sc": ("SC", 0), "scw": ("SC", 1), "scwomen": ("SC", 1),
-    "st": ("ST", 0), "stw": ("ST", 1), "stwomen": ("ST", 1),
-    "bc": ("BC", 0), "bcw": ("BC", 1), "bcwomen": ("BC", 1),
-    "obc": ("BC", 0), "obcw": ("BC", 1), "obcwomen": ("BC", 1),
-    "bca": ("BC", 0), "bcaw": ("BC", 1),
+    "ur": ("NONE", 0),
+    "unreserved": ("NONE", 0),
+    "open": ("NONE", 0),
+    "oc": ("NONE", 0),
+    "o": ("NONE", 0),
+    "w": ("NONE", 1),
+    "women": ("NONE", 1),
+    "woman": ("NONE", 1),
+    "gw": ("NONE", 1),
+    "genw": ("NONE", 1),
+    "generalw": ("NONE", 1),
+    "urw": ("NONE", 1),
+    "openw": ("NONE", 1),
+    "ocw": ("NONE", 1),
+    "sc": ("SC", 0),
+    "scw": ("SC", 1),
+    "scwomen": ("SC", 1),
+    "st": ("ST", 0),
+    "stw": ("ST", 1),
+    "stwomen": ("ST", 1),
+    "bc": ("BC", 0),
+    "bcw": ("BC", 1),
+    "bcwomen": ("BC", 1),
+    "obc": ("BC", 0),
+    "obcw": ("BC", 1),
+    "obcwomen": ("BC", 1),
+    "bca": ("BC", 0),
+    "bcaw": ("BC", 1),
     # Anantapur marks the open seats explicitly with G for General rather than
     # leaving them unmarked: UR(G), SC/G, BC/W.
-    "urg": ("NONE", 0), "gng": ("NONE", 0), "og": ("NONE", 0),
-    "scg": ("SC", 0), "stg": ("ST", 0), "bcg": ("BC", 0), "obcg": ("BC", 0),
+    "urg": ("NONE", 0),
+    "urm": ("NONE", 0),
+    "gng": ("NONE", 0),
+    "gnm": ("NONE", 0),
+    "og": ("NONE", 0),
+    "om": ("NONE", 0),
+    "scg": ("SC", 0),
+    "scm": ("SC", 0),
+    "stg": ("ST", 0),
+    "stm": ("ST", 0),
+    "bcg": ("BC", 0),
+    "bcm": ("BC", 0),
+    "obcg": ("BC", 0),
+    "obcm": ("BC", 0),
 }
 
 
@@ -117,12 +149,19 @@ def _kd_forms(s):
 
 def is_krutidev(text):
     kd, tight = _kd_forms(_squash(text))
-    return bool(KD_WOMAN in kd or KD_WOMAN in tight or KD_OTHER in kd
-                or KD_UNRESERVED.search(kd) or KD_SC_TIGHT.search(tight))
+    return bool(
+        KD_WOMAN in kd
+        or KD_WOMAN in tight
+        or KD_OTHER in kd
+        or KD_UNRESERVED.search(kd)
+        or KD_SC_TIGHT.search(tight)
+    )
 
 
 # Unicode blocks, not guesses about a state's habits.
 _DEVANAGARI = re.compile(r"[\u0900-\u097f]")
+_BENGALI = re.compile(r"[\u0980-\u09ff]")
+_GUJARATI = re.compile(r"[\u0a80-\u0aff]")
 _KANNADA = re.compile(r"[\u0c80-\u0cff]")
 
 
@@ -151,6 +190,10 @@ def script_of(*values):
     joined = " ".join(v for v in values if v)
     if _KANNADA.search(joined):
         return "kannada"
+    if _GUJARATI.search(joined):
+        return "gujarati"
+    if _BENGALI.search(joined):
+        return "bengali"
     if _DEVANAGARI.search(joined):
         return "devanagari"
     if any(is_krutidev(v) for v in values if v):
@@ -266,7 +309,7 @@ def woman_of(text):
         return CODES[letters][1]
     if "wom" in letters:
         return 0 if "otherthan" in letters else 1
-    # Uttar Pradesh's normalised English column writes "Female" and "Other
+    # Uttar Pradesh's normalized English column writes "Female" and "Other
     # Backward Class - Female" rather than "Woman" - 24,000 seats of it in 2005
     # alone, every one of them reading as gender-not-stated until now. Tested
     # before any "male", which "female" contains.

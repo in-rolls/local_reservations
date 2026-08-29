@@ -38,6 +38,7 @@ import sys
 import urllib.parse
 
 from local_reservations.common import fetch
+from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
 from local_reservations.tools.archive_sweep import cdx
 
@@ -100,13 +101,13 @@ def held(out):
     for name, row in recorded.items():
         target = out / name
         if target.exists() and hashlib.sha256(
-                target.read_bytes()).hexdigest() == row.get("sha256"):
+            target.read_bytes()
+        ).hexdigest() == row.get("sha256"):
             good[name] = row
     return good
 
 
-def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf",
-            verify=False):
+def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf", verify=False):
     found = listing(host, match, suffix)
     if found is None:
         print(f"  {host}: the archive did not answer - nothing fetched")
@@ -149,8 +150,15 @@ def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf",
         else:
             target.write_bytes(body)
             fetched += 1
-        rows.append({"file": name, "url": url, "wayback_timestamp": timestamp,
-                     "sha256": digest, "bytes": len(body)})
+        rows.append(
+            {
+                "file": name,
+                "url": url,
+                "wayback_timestamp": timestamp,
+                "sha256": digest,
+                "bytes": len(body),
+            }
+        )
         if (fetched + matched) % 25 == 0:
             print(f"    {fetched + matched}/{len(found)}", flush=True)
 
@@ -162,13 +170,16 @@ def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf",
                 merged = {r["file"]: r for r in csv.DictReader(fh)}
         merged.update({r["file"]: r for r in rows})
         with manifest.open("w", newline="", encoding="utf-8") as fh:
-            writer = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n",
-                                    extrasaction="ignore")
+            writer = csv.DictWriter(
+                fh, fieldnames=FIELDS, lineterminator="\n", extrasaction="ignore"
+            )
             writer.writeheader()
             writer.writerows([merged[k] for k in sorted(merged)])
 
-    print(f"  {fetched} new, {matched} re-checked and identical, "
-          f"{skipped} already held -> {out.relative_to(ROOT)}")
+    print(
+        f"  {fetched} new, {matched} re-checked and identical, "
+        f"{skipped} already held -> {out.relative_to(ROOT)}"
+    )
     if differed:
         print(f"  DIFFERENT from our copy, not overwritten: {differed}")
     if failed:
@@ -176,24 +187,38 @@ def harvest(host, match, out, dry_run=False, limit=None, suffix=".pdf",
     return rows
 
 
+@command("harvest", source="internet_archive")
 def main():
     ap = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     ap.add_argument("--host", required=True, help="e.g. karsec.gov.in")
-    ap.add_argument("--match", default="",
-                    help="regex the archived path must contain")
+    ap.add_argument("--match", default="", help="regex the archived path must contain")
     ap.add_argument("--out", required=True, type=pathlib.Path)
-    ap.add_argument("--suffix", default=".pdf",
-                    help="file extension to keep; empty for all")
+    ap.add_argument(
+        "--suffix", default=".pdf", help="file extension to keep; empty for all"
+    )
     ap.add_argument("--limit", type=int, help="stop after N files")
-    ap.add_argument("--dry-run", action="store_true",
-                    help="list what would be fetched and fetch nothing")
-    ap.add_argument("--verify", action="store_true",
-                    help="re-fetch everything and compare against our copies")
+    ap.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="list what would be fetched and fetch nothing",
+    )
+    ap.add_argument(
+        "--verify",
+        action="store_true",
+        help="re-fetch everything and compare against our copies",
+    )
     args = ap.parse_args()
 
     out = args.out if args.out.is_absolute() else ROOT / args.out
-    rows = harvest(args.host, args.match, out, dry_run=args.dry_run,
-                   limit=args.limit, suffix=args.suffix, verify=args.verify)
+    rows = harvest(
+        args.host,
+        args.match,
+        out,
+        dry_run=args.dry_run,
+        limit=args.limit,
+        suffix=args.suffix,
+        verify=args.verify,
+    )
     return 0 if rows is not None else 1
 
 
