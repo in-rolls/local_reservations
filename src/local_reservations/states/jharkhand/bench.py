@@ -1,9 +1,9 @@
 """Measure the Jharkhand parse against a recorded baseline.
 
-    uv run python -m local_reservations.tools.jharkhand/bench.py --record    # store
+    uv run python -m local_reservations.states.jharkhand.bench --record    # store
     what the code does now
     ...make a change...
-    uv run python -m local_reservations.tools.jharkhand/bench.py             # print the
+    uv run python -m local_reservations.states.jharkhand.bench             # print the
     gates
 
 Written because this branch's OCR change passed every check it had and still

@@ -1,6 +1,6 @@
 """The page, and what we made of it, side by side.
 
-    uv run python -m local_reservations.tools.proof_page.py "PAKUR MUKHIYA" 1
+    uv run python -m local_reservations.tools.proof_page "PAKUR MUKHIYA" 1
 
 Renders one source page and puts the rows we published from it next to the
 image, then opens the result. Reading down the two halves is a check no

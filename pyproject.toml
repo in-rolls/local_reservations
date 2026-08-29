@@ -43,14 +43,20 @@ Issues = "https://github.com/in-rolls/local_reservations/issues"
 Changelog = "https://github.com/in-rolls/local_reservations/blob/main/CHANGELOG.md"
 
 [dependency-groups]
-dev = ["pytest", "ruff", "pyright", "pydoclint>=0.5"]
+dev = [
+    { include-group = "test" },
+    "ruff",
+    "pyright",
+    "pydoclint>=0.5",
+]
+test = ["pytest"]
 
 # Reading the scans. Kept apart because it cannot share an interpreter with the
 # parsing dependencies: savitr pins pillow<11 and pdfplumber needs >=12.2, so
 # installing both leaves whichever came second broken - which happened, and the
 # OCR run silently produced nothing. This replaces the hand-made ocrenv/.
 # Apple Silicon only; MLX is a Metal runtime with no CPU fallback.
-ocr = ["savitr==0.2.0", "pillow==10.4.0", "mlx-vlm==0.6.10"]
+ocr = ["savitr==0.2.0", "pillow==10.4.0", "mlx-vlm==0.6.13"]
 
 [tool.uv]
 # Declared rather than discovered. uv resolves every group together unless told
@@ -129,10 +135,6 @@ convention = "google"
 # reader. This is the scope, not a staging post.
 include = ["src/local_reservations/common", "src/local_reservations/paths.py"]
 typeCheckingMode = "standard"
-# savitr is the `ocr` dependency group, which conflicts with `dev` and so is
-# never installed alongside the type checker. The modules that import it are
-# guarded and exit with an instruction when it is absent.
-reportMissingImports = "warning"
 
 [tool.pydoclint]
 style = "google"
@@ -174,11 +176,4 @@ skip_checks = [
     # Checked directly over the code and prose, which is the part that matters:
     #     uv run --with codespell codespell src tests readme.md  ->  0
     "codespell",
-    # `ruff format` would reformat 72 of 86 files. The formatting here is
-    # deliberate and load-bearing in places - aligned tables in dictionary.py
-    # and canon.py that are read as tables, and comment blocks wrapped to sit
-    # under the line they explain. Trading that for a uniform diff would make
-    # every one of those harder to read and change nothing that runs.
-    # `ruff check` is enforced and passes clean.
-    "ruff",
 ]

@@ -36,18 +36,15 @@ ignoring it would mean only one machine in the world could rebuild Jharkhand.
 
 Reproducing it, once:
 
-    python3 -m venv ocrenv
-    ./ocrenv/bin/pip install -r requirements-ocr.txt
-    ./ocrenv/bin/python -m mlx_vlm convert --hf-path datalab-to/surya-ocr-2 \
+    uv run --no-default-groups --group ocr python -m mlx_vlm convert \
+        --hf-path datalab-to/surya-ocr-2 \
         --mlx-path ~/surya-mlx-4bit -q --q-bits 4
     SURYA_MLX_PATH=~/surya-mlx-4bit make jharkhand-ocr
 
-savitr is deliberately not in requirements.txt. It needs Apple Silicon for MLX,
-and it pins pillow<11 where pdfplumber needs >=12.2, so the two cannot share an
-interpreter - which is why the OCR gets its own requirements file and its own
-venv. Nothing else in the repository imports it, and the parser reads the
-committed cache rather than calling it, so only someone regenerating the cache
-needs any of this.
+savitr is deliberately isolated in the `ocr` dependency group. It needs Apple
+Silicon for MLX and pins pillow<11 where pdfplumber needs >=12.2, so uv declares
+that group as conflicting with `dev`. The parser reads the committed cache
+rather than calling it, so only someone regenerating the cache needs the group.
 """
 
 import argparse

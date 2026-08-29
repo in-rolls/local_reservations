@@ -32,9 +32,8 @@ timing page 1 of Badami, which is mostly prose over a three-row table; Surya
 decodes autoregressively, so a page carrying twenty rows costs several times
 as much. 17 seconds a page became 61.
 
-    python3 -m venv ocrenv
-    ./ocrenv/bin/pip install -r requirements-ocr.txt
-    ./ocrenv/bin/python scripts/karnataka/ocr.py
+    uv run --no-default-groups --group ocr python \
+        -m local_reservations.states.karnataka.ocr
 """
 
 import argparse

@@ -1,7 +1,7 @@
 """What the web archive holds for every state election commission.
 
-    uv run python -m local_reservations.tools.archive_sweep.py            # every state
-    uv run python -m local_reservations.tools.archive_sweep.py --only Karnataka
+    uv run python -m local_reservations.tools.archive_sweep            # every state
+    uv run python -m local_reservations.tools.archive_sweep --only Karnataka
 
 Written because the corpus's largest recent find was an accident. Chasing an
 unrelated question, a query against the whole of karsec.gov.in returned 828

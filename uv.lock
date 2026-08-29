@@ -544,6 +544,9 @@ ocr = [
     { name = "pillow", version = "10.4.0", source = { registry = "https://pypi.org/simple" } },
     { name = "savitr" },
 ]
+test = [
+    { name = "pytest" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -562,10 +565,11 @@ dev = [
     { name = "ruff" },
 ]
 ocr = [
-    { name = "mlx-vlm", specifier = "==0.6.10" },
+    { name = "mlx-vlm", specifier = "==0.6.13" },
     { name = "pillow", specifier = "==10.4.0" },
     { name = "savitr", specifier = "==0.2.0" },
 ]
+test = [{ name = "pytest" }]
 
 [[package]]
 name = "markdown-it-py"
@@ -761,7 +765,7 @@ wheels = [
 
 [[package]]
 name = "mlx-vlm"
-version = "0.6.10"
+version = "0.6.13"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi" },
@@ -780,9 +784,9 @@ dependencies = [
     { name = "transformers" },
     { name = "uvicorn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b1/9b/08307fbbfeaba9075b6eb94a697428b9b6e40a85f712048fb4b97f21f004/mlx_vlm-0.6.10.tar.gz", hash = "sha256:87ef8bba007c29ddc877c15e95eb20c7d90b0777951e27691c03cabb09e6ef40", size = 1728993, upload-time = "2026-08-04T15:26:29.396Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/29/43/9426a1b1e2be786b901fa23e752fe9c9a8d4329c4a57fe79aaecb6aa6d35/mlx_vlm-0.6.13.tar.gz", hash = "sha256:c9564d6f01df6cc72a47fb64fbc4c28918021849ee6451bc241cd78a4a5bd327", size = 1827027, upload-time = "2026-08-12T21:10:42.456Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b0/5f/e62b2fd9847dd1220d13abe3ebfdb6f94ed938468ba01d88b5df6076aedc/mlx_vlm-0.6.10-py3-none-any.whl", hash = "sha256:293bb90fc01b1db3b653652d14ae33f58c8d4268c5ca2bb193fae884e9b7ab5f", size = 2179953, upload-time = "2026-08-04T15:26:26.933Z" },
+    { url = "https://files.pythonhosted.org/packages/3f/0a/40a5bfb3b18a0ba87e2797369ede10e30a560e7eae96e868fab117372e3b/mlx_vlm-0.6.13-py3-none-any.whl", hash = "sha256:8035a73761a1055e11d3e55504bfb13a5a4ed4ada863fb396b029069be105e92", size = 2294920, upload-time = "2026-08-12T21:10:40.701Z" },
 ]
 
 [[package]]
@@ -1342,7 +1346,7 @@ name = "pytest"
 version = "9.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32'" },
+    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'group-18-local-reservations-dev' and extra == 'group-18-local-reservations-ocr')" },
     { name = "iniconfig" },
     { name = "packaging" },
     { name = "pluggy" },

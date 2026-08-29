@@ -66,10 +66,11 @@ here is usually the thing that was wrong.
   now point to the maintained state repository instead of the paper-specific
   `quota_raj` repository.
 
-- **Development installs and CI now use uv's native build backend.** Hatchling
-  is gone, and the project is marked `Private :: Do Not Upload`. The released
-  product is the GitHub data package pinned by `MANIFEST.json`; the Python
-  project exists to build and validate it, not for publication to PyPI.
+- **Development installs and CI now use uv's native build backend and shared
+  checks.** Hatchling is gone; dependencies use the canonical `test` group,
+  CI covers Python 3.12 and 3.14, and formatting is enforced. The project is
+  marked `Private :: Do Not Upload`: the released product is the GitHub data
+  package pinned by `MANIFEST.json`, not a PyPI distribution.
 
 - **The master has 865,916 distinct seat keys (99.6%) and 3,643 collisions,**
   compared with 824,987 (99.4%) and 5,079 in v0.2.8. The release checks the
@@ -314,9 +315,10 @@ column by column; only `source_commit`, the build's own provenance stamp, moved.
   changing a value.
 
 - **The OCR dependencies are a conflicting dependency group.** savitr pins
-  `pillow<11` where pdfplumber needs `>=12.2`; `uv sync --group ocr` replaces
-  the hand-made `ocrenv/`, and uv refuses to install both rather than leaving
-  whichever came second broken.
+  `pillow<11` where pdfplumber needs `>=12.2`;
+  `uv run --no-default-groups --group ocr` replaces the hand-made `ocrenv/`,
+  and uv refuses to install both rather than leaving whichever came second
+  broken.
 
 - **Fleet tooling via preen**, minus the parts built for shipping a package.
   The release workflow was removed rather than left in place: it fires on `v*`

@@ -1,6 +1,6 @@
 r"""Fetch archived documents for any host, as crawled, with a manifest.
 
-    uv run python -m local_reservations.tools.harvest_archive.py --host karsec.gov.in \\
+    uv run python -m local_reservations.tools.harvest_archive --host karsec.gov.in \\
         --match TZP_Elected_Members --out data/karnataka/tzp_2016_elected \\
         --dry-run
 

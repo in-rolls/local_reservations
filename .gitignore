@@ -21,5 +21,3 @@ data/*/ocr/.partial/
 # uv's environment; the lockfile is committed, the venv is not
 .venv/
 /dist/
-# the hand-made OCR venv, replaced by the `ocr` dependency group
-ocrenv/

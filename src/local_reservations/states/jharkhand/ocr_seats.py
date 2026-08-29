@@ -42,17 +42,15 @@ surya_pages.py under savitr's.
 
 import argparse
 import csv
-import os
 import pathlib
 import re
 import subprocess
 import sys
 import tempfile
 
-import parse
-
 from local_reservations.common.runlog import command, get_logger
 from local_reservations.paths import ROOT
+from local_reservations.states.jharkhand import parse
 
 LOGGER = get_logger(__name__)
 
@@ -157,24 +155,24 @@ def read_page(text):
 
 
 def ocr_all(pages, into):
-    """Hand a directory of rendered pages to savitr's interpreter, once.
+    """Hand a directory of rendered pages to savitr's uv environment, once.
 
     A subprocess rather than an import: this script needs pdfplumber to find the
     pages at all, and pdfplumber cannot be installed beside surya-ocr.
     """
     if not pages:
         return
-    python = os.environ.get("OCR_PY", str(ROOT / "ocrenv" / "bin" / "python"))
-    if not pathlib.Path(python).exists():
-        sys.exit(
-            f"no OCR interpreter at {python}. Set OCR_PY, and see "
-            f"requirements-ocr.txt for what it needs."
-        )
+    command = ["uv", "run", "--no-default-groups", "--group", "ocr", "python"]
     done = subprocess.run(
-        [python, str(pathlib.Path(__file__).parent / "surya_pages.py"), str(into)]
+        [
+            *command,
+            str(pathlib.Path(__file__).parent / "surya_pages.py"),
+            str(into),
+        ],
+        cwd=ROOT,
     )
     if done.returncode:
-        sys.exit(f"{python} failed reading {into}")
+        sys.exit(f"the OCR environment failed reading {into}")
 
 
 SERIAL = re.compile(r"^\s*(\d{1,3})\b")

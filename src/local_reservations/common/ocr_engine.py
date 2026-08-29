@@ -4,10 +4,10 @@ Imported by scripts/<state>/ocr.py. Only the paths and the "does this document
 need OCR at all" test are per-state; the rendering, the rotation and the model
 are not, and were on their way to being copied a second time.
 
-**Runs under its own interpreter.** savitr pins pillow<11 where pdfplumber needs
->=12.2, so the OCR venv and the parsing one cannot be the same - see
-requirements-ocr.txt. Nothing here imports anything else from common, so this
-module loads in an interpreter that has only savitr.
+**Runs in its own uv dependency group.** savitr pins pillow<11 where pdfplumber
+needs >=12.2, so the OCR and parsing dependencies cannot share an interpreter.
+Nothing here imports anything else from common, so the isolated OCR environment
+contains only what the model needs.
 
 Named `ocr_engine` and not `surya`: this directory goes on sys.path[0], and a
 module called `surya` here would shadow the real surya package for savitr.
@@ -81,8 +81,8 @@ def engine(model=None):
             from savitr import MLXSuryaOCR  # pyright: ignore[reportMissingImports]
         except ImportError:
             sys.exit(
-                "savitr is not importable. This script runs under its own "
-                "interpreter - see requirements-ocr.txt."
+                "savitr is not importable. Run this through "
+                "`uv run --no-default-groups --group ocr python`."
             )
         if not model.exists():
             sys.exit(

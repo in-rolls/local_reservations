@@ -1,6 +1,6 @@
 """One page, both readers, side by side with the page itself.
 
-    uv run python -m local_reservations.tools.compare_readers.py "RANCHI ZP PSS MUKHIYA
+    uv run python -m local_reservations.tools.compare_readers "RANCHI ZP PSS MUKHIYA
     GPS" 37
 
 Every Jharkhand document is now read twice - out of its own text layer, and by
@@ -24,11 +24,10 @@ import subprocess
 import sys
 import webbrowser
 
-import parse
-
 from local_reservations.common import krutidev
 from local_reservations.common.runlog import command
 from local_reservations.paths import ROOT
+from local_reservations.states.jharkhand import parse
 
 OUT = pathlib.Path("/tmp/compare_readers.html")
 DEVA = re.compile(r"[ऀ-ॿ]")

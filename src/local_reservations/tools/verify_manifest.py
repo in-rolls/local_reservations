@@ -5,9 +5,9 @@ it has to run from a bare checkout, an unpacked release tarball, or a machine
 where nothing else in this repository works. A verifier that needs the
 repository to be in working order cannot tell you the repository is intact.
 
-    uv run python -m local_reservations.tools.verify_manifest.py            # exit 0 if
+    uv run python -m local_reservations.tools.verify_manifest            # exit 0 if
     every file matches
-    uv run python -m local_reservations.tools.verify_manifest.py --quiet    # only
+    uv run python -m local_reservations.tools.verify_manifest --quiet    # only
     report failures
 """
 
