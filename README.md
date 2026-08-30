@@ -42,7 +42,7 @@ into a national missing-seat total.
 | [Open gaps](WORKLIST.md) | 59 | 82,339 |
 | [Blocked](WORKLIST.md) | 0 | 0 |
 | [Parked](WORKLIST.md) | 9 | 1,653 |
-| [Undetermined](WORKLIST.md) | 17 | 72,402 |
+| [Undetermined](WORKLIST.md) | 18 | 72,403 |
 | [Accepted properties of the sources](WORKLIST.md) | 24 | 141,056 |
 
 <!-- worklist:end -->
@@ -160,7 +160,7 @@ seats. The state readme linked in `Where` gives the file-level inventory.
 | Odisha | - | - | - | no parsed rows | the 6 held PDFs are district aggregates, not seat rosters; acquire seat-level rural data | [data/odisha/](data/odisha/) - 6 digital-text |
 | Puducherry | - | - | - | no parsed rows | the 2021 panchayat notification is a 60-page scan that needs OCR; the other held notification is municipal | [data/puducherry/](data/puducherry/) - 1 digital-text, 1 scan |
 | Punjab | - | - | - | not held | acquire and assess a seat-level rural source | - |
-| Rajasthan | gp_head, gp_ward, block_member | 2005, 2010, 2015, 2020, 2021, 2022 | 248,196 | parsed | 155,224 rural seat events, 68,202 candidates, and 13,473 GP-event nomination summaries are standardized; the 2005 and 2015 Panchayat Samiti books and all held Zila Parishad books remain unparsed; municipal material is held outside the rural master | [local_elections_rajasthan](https://github.com/in-rolls/local_elections_rajasthan) |
+| Rajasthan | gp_head, gp_ward, block_member | 2005, 2010, 2015, 2020, 2021, 2022 | 253,453 | parsed | 160,481 rural seat events, 68,202 candidates, and 13,473 GP-event nomination summaries are standardized; the 2015 Panchayat Samiti book and all held Zila Parishad books remain unparsed; municipal material is held outside the rural master | [local_elections_rajasthan](https://github.com/in-rolls/local_elections_rajasthan) |
 | Sikkim | - | - | - | not held | acquire and assess a seat-level rural source | - |
 | Tamil Nadu | - | - | - | no parsed rows | the 12 held gazettes are urban; acquire a village-panchayat reservation roster | [data/tamil_nadu/](data/tamil_nadu/) - 11 digital-text, 1 scan |
 | Telangana | gp_head, gp_ward | 2019 | 61,841 | parsed | the 4 unlinked PDFs are urban reservation orders or election manuals, not missing rural seats | [data/telangana/](data/telangana/) |

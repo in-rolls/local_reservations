@@ -171,6 +171,7 @@ A file outside its band has lost rows or double counted them.
 | Kerala | block_member | 1,500–2,500 |
 | Kerala | gp_ward | 14,000–18,000 |
 | Kerala | zp_member | 250–400 |
+| Rajasthan | block_member | 5,257–5,273 |
 | Rajasthan | gp_head | 8,000–14,000 |
 | Rajasthan | gp_ward | 90,000–130,000 |
 | Telangana | gp_head | 10,000–14,000 |

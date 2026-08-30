@@ -1,7 +1,12 @@
 severity,file,scope,column,rule,count,share,examples,first_source,first_page
 warn,jharkhand/ward_member_reservation_2015.csv,column,block,blank share 36% above the 35% tolerated,7153,0.3616, |  | ,data/jharkhand/2015/13. JAMTARA MUKHIYA PSS/JAMTARA ZP MUKHIYA PSS GPS.pdf,42
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,ward_no,blank share 98% above the 30% tolerated,5022,0.9786, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,karnataka/gp_head_2005.csv,column,gp_no,length outside 1..10,4673,0.8781,10_1_CHITAKULA | 10_1_AMADALLI | 10_1_MALLAPUR,data/karnataka/Karnataka_GP_ReservationHistory.dta,
+warn,karnataka/gp_head_2007.csv,column,gp_no,length outside 1..10,4673,0.8781,10_1_CHITAKULA | 10_1_AMADALLI | 10_1_MALLAPUR,data/karnataka/Karnataka_GP_ReservationHistory.dta,
+warn,karnataka/gp_head_2000.csv,column,gp_no,length outside 1..10,4671,0.878,10_1_CHITAKULA | 10_1_AMADALLI | 10_1_MALLAPUR,data/karnataka/Karnataka_GP_ReservationHistory.dta,
+warn,karnataka/gp_head_2002.csv,column,gp_no,length outside 1..10,4671,0.878,10_1_CHITAKULA | 10_1_AMADALLI | 10_1_MALLAPUR,data/karnataka/Karnataka_GP_ReservationHistory.dta,
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gp_no,blank share 91% above the 60% tolerated,4647,0.9055, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,1
+warn,karnataka/gp_head_1993.csv,column,gp_no,length outside 1..10,4626,0.8788,10_1_CHITAKULA | 10_1_AMADALLI | 10_1_MALLAPUR,data/karnataka/Karnataka_GP_ReservationHistory.dta,
 warn,jharkhand/mukhiya_reservation_2015.csv,column,seat_no,blank share 94% above the 90% tolerated,3743,0.9423, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jharkhand/mukhiya_reservation_2015.csv,column,gp_no,blank share 75% above the 60% tolerated,2992,0.7533, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA MUKHIYA.pdf,1
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,blank share 46% above the 10% tolerated,2359,0.4597, |  | ,data/jharkhand/2015/1. GARHWA MUKHIYA PSS/GARHWA PSS.pdf,4

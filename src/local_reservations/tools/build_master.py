@@ -485,7 +485,9 @@ def render_readme(rows, dropped, candidates, counts, written):
         "`quality_flags` carries what a row cannot be trusted for: "
         "`ocr_repaired`, `gender_not_stated`, `ward_list_incomplete`, "
         "`winner_inferred`, `winner_candidate_ambiguous`, "
-        "`winner_category_sex_disagree`, `name_untransliterated`, "
+        "`winner_category_sex_disagree`, `winner_name_missing`, "
+        "`seat_number_inferred`, `reservation_control_disagree`, "
+        "`margin_not_below_votes`, `name_untransliterated`, and "
         "`printings_disagree`. "
         "`gender_not_stated` in particular means `woman_reserved=0` is a "
         "default rather than a reading.",

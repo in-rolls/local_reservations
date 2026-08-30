@@ -260,6 +260,14 @@ def quality_flags(row):
         flags.append("serial_not_unique")
     if str(row.get("winner_candidate_ambiguous") or "0") not in ("0", ""):
         flags.append("winner_candidate_ambiguous")
+    if str(row.get("ward_no_inferred") or "0") not in ("0", ""):
+        flags.append("seat_number_inferred")
+    if str(row.get("winner_name_missing") or "0") not in ("0", ""):
+        flags.append("winner_name_missing")
+    if str(row.get("reservation_body_control_agree", "")) == "0":
+        flags.append("reservation_control_disagree")
+    if str(row.get("margin_below_votes", "")) == "0":
+        flags.append("margin_not_below_votes")
     if str(row.get("winner_category_sex_agree", "")) == "0":
         flags.append("winner_category_sex_disagree")
     # two places in one block printed under one name, told apart only by the

@@ -8,6 +8,6 @@ What is in this directory is source material: 66 files, 25 tabular, 23 digital-t
 
 The pooled adapter reads the sibling's declared parsed files into the shared seat and candidate schemas. Files held only in this local source directory do not enter that adapter automatically.
 
-**Pooled outputs:** 155,224 rural seat events, 68,202 candidates, and 13,473 GP-event nomination summaries are standardized.
+**Pooled outputs:** 160,481 rural seat events, 68,202 candidates, and 13,473 GP-event nomination summaries are standardized.
 
-**Remaining work:** the 2005 and 2015 Panchayat Samiti books and all held Zila Parishad books remain unparsed; municipal material is held outside the rural master.
+**Remaining work:** the 2015 Panchayat Samiti book and all held Zila Parishad books remain unparsed; municipal material is held outside the rural master.

@@ -2,8 +2,8 @@
 
 The sibling contains three complementary rural sources. Four standardized
 sarpanch panels cover the 2005, 2010, 2015 and 2020 reservation cycles. The
-2010 Panchayat Samiti result book supplies every block-member ward with its
-seat reservation and elected member. A separate Rajasthan SEC scrape records
+2005 and 2010 Panchayat Samiti result books supply every block-member ward with
+its seat reservation and elected member. A separate Rajasthan SEC scrape records
 sarpanch candidates, sarpanch results, ward winners and nomination summaries
 for 2020--2022. The scrape is already acquired data: this adapter parses it
 without touching the network.
@@ -48,7 +48,10 @@ CONTESTING_FILE = "data/ContestingSarpanch.csv.gz"
 WINNER_FILE = "data/WinnerSarpanch.csv.gz"
 WARD_FILE = "data/WarnWinningPanch.csv.gz"
 NOMINATION_FILE = "data/StatsNomination.csv.gz"
-BLOCK_MEMBER_FILE = "data/fin/panchayat_samiti_2010_std.parquet"
+BLOCK_MEMBER_FILES = {
+    "2005": "data/fin/panchayat_samiti_2005_std.parquet",
+    "2010": "data/fin/panchayat_samiti_2010_std.parquet",
+}
 
 DECLARED = {
     **{"2005": 9178, "2010": 9166, "2015": 9862, "2020": 11314},
@@ -56,7 +59,8 @@ DECLARED = {
     WINNER_FILE: 11432,
     WARD_FILE: 110296,
     NOMINATION_FILE: 13473,
-    BLOCK_MEMBER_FILE: 5273,
+    "data/fin/panchayat_samiti_2005_std.parquet": 5257,
+    "data/fin/panchayat_samiti_2010_std.parquet": 5273,
 }
 
 DECLARED_UNITS = {
@@ -69,6 +73,7 @@ DECLARED_UNITS = {
     ("gp_ward", "2020"): 108197,
     ("gp_ward", "2021"): 1373,
     ("gp_ward", "2022"): 726,
+    ("block_member", "2005"): 5257,
     ("block_member", "2010"): 5273,
 }
 
@@ -271,58 +276,65 @@ def block_member_slices(root):
             f"{REPO}: pandas is required to read its parquet panels"
         ) from None
 
-    path = pathlib.Path(root) / BLOCK_MEMBER_FILE
-    if not path.exists():
-        return
-    frame = pandas.read_parquet(path)
-    if len(frame) != DECLARED[BLOCK_MEMBER_FILE]:
-        raise SystemExit(
-            f"{REPO}: {BLOCK_MEMBER_FILE} holds {len(frame):,} rows, "
-            f"{DECLARED[BLOCK_MEMBER_FILE]:,} declared - the sibling changed"
+    root = pathlib.Path(root)
+    for year, relative in sorted(BLOCK_MEMBER_FILES.items()):
+        path = root / relative
+        if not path.exists():
+            continue
+        frame = pandas.read_parquet(path)
+        if len(frame) != DECLARED[relative]:
+            raise SystemExit(
+                f"{REPO}: {relative} holds {len(frame):,} rows, "
+                f"{DECLARED[relative]:,} declared - the sibling changed"
+            )
+        rows = [
+            block_member_row(record, year, relative)
+            for record in frame.to_dict("records")
+        ]
+        check_units("block_member", year, rows)
+        LOGGER.info(
+            "Rajasthan source loaded",
+            extra={
+                "event": "adapter_source_loaded",
+                "state": STATE,
+                "source_path": relative,
+                "records": len(rows),
+            },
         )
-    rows = [block_member_row(record) for record in frame.to_dict("records")]
-    check_units("block_member", "2010", rows)
-    LOGGER.info(
-        "Rajasthan source loaded",
-        extra={
-            "event": "adapter_source_loaded",
+        yield {
+            "dataset_id": f"rajasthan/block_member/{year}",
             "state": STATE,
-            "source_path": BLOCK_MEMBER_FILE,
-            "records": len(rows),
-        },
-    )
-    yield {
-        "dataset_id": "rajasthan/block_member/2010",
-        "state": STATE,
-        "rows": rows,
-        "provenance_level": "row",
-        "unit_of_observation": "seat",
-    }
+            "rows": rows,
+            "provenance_level": "row",
+            "unit_of_observation": "seat",
+        }
 
 
-def block_member_row(record):
+def block_member_row(record, year, relative):
     local = blank(record.get("caste_category")).upper()
     caste = CASTE.get(local)
     if caste is None:
-        raise SystemExit(f"{REPO}: 2010 block member has unknown caste {local!r}")
+        raise SystemExit(f"{REPO}: {year} block member has unknown caste {local!r}")
+    filled = integer(record.get("seat_filled")) != "0"
     winner_local = blank(record.get("winner_caste_category")).upper()
     winner_caste = CASTE.get(winner_local)
-    if winner_caste is None:
+    if filled and winner_caste is None:
         raise SystemExit(
-            f"{REPO}: 2010 block member has unknown winner caste {winner_local!r}"
+            f"{REPO}: {year} block member has unknown winner caste {winner_local!r}"
         )
     woman = integer(record.get("female_reserved"))
     winner_female = integer(record.get("winner_female"))
     category_sex_agree = integer(record.get("winner_category_sex_agree"))
     return {
         "state": STATE,
-        "year": "2010",
+        "year": year,
         "tier": "block_member",
         "tier_local": "panchayat_samiti_member",
         "district": blank(record.get("district_raw")),
         "block": blank(record.get("samiti_raw")),
         "seat_no": integer(record.get("ward_no")),
         "ward_no_raw": integer(record.get("ward_no_raw")),
+        "ward_no_inferred": integer(record.get("ward_no_inferred")),
         "listing_scope": "all_seats",
         "caste_reservation": caste,
         "caste_reservation_local": blank(record.get("reservation_raw")),
@@ -331,16 +343,27 @@ def block_member_row(record):
         "reservation": label(caste, woman == "1"),
         "reservation_raw": blank(record.get("reservation_raw")),
         "winner": blank(record.get("winner_name")),
-        "winner_basis": "published",
-        "winner_gender": "Woman" if winner_female == "1" else "Other than Woman",
-        "winner_caste": winner_caste,
+        "winner_basis": "published" if blank(record.get("winner_name")) else "",
+        "winner_gender": ("Woman" if winner_female == "1" else "Other than Woman")
+        if winner_female
+        else "",
+        "winner_caste": winner_caste or "",
         "winner_category_raw": blank(record.get("winner_category_raw")),
         "winner_category": blank(record.get("winner_category")),
         "winner_category_sex_agree": category_sex_agree,
-        "party": blank(record.get("party_raw")),
+        "party": blank(record.get("party")) or blank(record.get("party_raw")),
         "party_local": blank(record.get("party_raw")),
+        "winner_votes": integer(record.get("votes_secured")),
+        "margin": integer(record.get("margin")),
+        "unopposed": integer(record.get("elected_uncontested")),
+        "vacant": 0 if filled else 1,
+        "winner_name_missing": integer(record.get("winner_name_missing")),
+        "reservation_body_control_agree": integer(
+            record.get("reservation_body_control_agree")
+        ),
+        "margin_below_votes": integer(record.get("margin_below_votes")),
         "script": "latin",
-        "source_path": blank(record.get("source_path")) or BLOCK_MEMBER_FILE,
+        "source_path": blank(record.get("source_path")) or relative,
         "source_page": integer(record.get("source_page")),
     }
 

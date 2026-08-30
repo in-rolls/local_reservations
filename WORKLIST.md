@@ -140,7 +140,7 @@ This note used to say the gap was Jharkhand's scans, naming 34% of OCR'd rows ag
 **some rows do not identify a distinct seat** — Two rows sharing every standardized seat-identity field cannot be told apart. Usually one printed identifier did not parse.
   *Closes with:* parsing whichever identifier is blank on the colliding rows. For the Jharkhand scans that means re-OCR: Surya keeps the block and panchayat numbers - the 1 and 2 of 'IVचतरा/1/2/जोगीडीह' - that tesseract drops, and those numbers are exactly what these rows are short of.
 
-## Undetermined (17)
+## Undetermined (18)
 
 We have not established whether these are properties of the sources or gaps in our collecting. That question is itself the work - asserting "no results document exists" is a claim about everything a state published, not about the file in hand.
 
@@ -168,6 +168,7 @@ So the seat-level results exist and the archive does not hold them. Reaching the
 | 5 | Uttarakhand | 2008 | `block_member` | some result rows do not identify a winner | 5 of 2,943 rows |
 | 5 | Uttarakhand | 2019 | `block_member` | some result rows do not identify a winner | 5 of 2,674 rows |
 | 3 | Bihar | 2016 | `zp_member` | some result rows do not identify a winner | 3 of 895 rows |
+| 1 | Rajasthan | 2005 | `block_member` | some result rows do not identify a winner | 1 of 5,257 rows |
 | 1 | Uttarakhand | 2010 | `block_member` | some result rows do not identify a winner | 1 of 219 rows |
 
 **some result rows do not identify a winner** — A blank winner inside a result-stage slice is not the same as a pre-poll roster that names nobody. Vacant seats are excluded; the remaining blanks need a result source or an explicit source reason.

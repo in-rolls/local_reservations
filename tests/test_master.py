@@ -183,6 +183,21 @@ def test_an_inferred_winner_is_flagged():
     assert "winner_inferred" in convert(winner_basis="argmax_votes")["quality_flags"]
 
 
+def test_source_level_seat_exceptions_are_flagged():
+    row = convert(
+        ward_no_inferred="1",
+        winner_name_missing="1",
+        reservation_body_control_agree="0",
+        margin_below_votes="0",
+    )
+    assert set(row["quality_flags"].split(";")) == {
+        "seat_number_inferred",
+        "winner_name_missing",
+        "reservation_control_disagree",
+        "margin_not_below_votes",
+    }
+
+
 def test_untransliterated_names_are_flagged():
     assert "name_untransliterated" in convert(script="krutidev")["quality_flags"]
 

@@ -11,23 +11,28 @@ here is usually the thing that was wrong.
 
 ### Added
 
-- **Rajasthan adds all 5,273 Panchayat Samiti member wards from the 2010
-  general-election result book.** Each seat retains its reservation separately
-  from the elected member's name, sex, category, and party, with exact page and
-  row provenance. Rajasthan now has 155,224 rural seat events and the pooled
-  corpus has 985,263, up from 979,990 in v0.3.0. The parser agrees exactly with
-  the publication's 33 districts, 248 Panchayat Samitis, 5,273 constituencies,
-  eight reservation-category totals, and 2,485 women-reserved seats.
+- **Rajasthan adds all 10,530 Panchayat Samiti member seats from the 2005 and
+  2010 general-election result books.** Each seat retains its reservation
+  separately from the elected member's name, sex, category, party, votes, and
+  margin where the source prints them. Rajasthan now has 160,481 rural seat
+  events and the pooled corpus has 990,520, up from 979,990 in v0.3.0. The 2005
+  parser accounts for 5,257 seats, 32 districts, 237 Panchayat Samitis, one
+  vacancy, and 127 uncontested winners. The 2010 parser accounts for 5,273
+  seats, 33 districts, and 248 Panchayat Samitis.
 
-- **The source pipeline separates extraction from parsing.** A retained JSONL
-  artifact stores 55,910 positioned words from 144 source pages; the parser
-  reads only that artifact and emits structured JSON logs. Its dictionary
-  declares the seat key, fields, recodes, and validation controls.
+- **The source pipeline separates extraction from parsing.** Retained JSONL
+  artifacts store 117,595 positioned words from 214 source pages. The parsers
+  read only those artifacts and emit structured JSON logs. Each year has a data
+  dictionary declaring the seat key, fields, recodes, and validation controls.
 
 ### Corrected
 
-- **Two source anomalies remain visible rather than silently changing the
-  record.** Rajsamand–Bhim's 16-row roster prints its last ward as 17 after
+- **Source anomalies remain visible rather than silently changing the
+  record.** The 2005 roster prints Parbatsar ward 19 as `OBC W`, while its body
+  control and the statewide control imply `OBC`; the roster value remains and
+  the pooled row is flagged. One filled seat has a blank winner name, and three
+  margins exceed the printed winner votes. Shahbad ward 11 remains in the data
+  as a vacant seat. In 2010, Rajsamand–Bhim's 16-row roster prints its last ward as 17 after
   wards 1–15; `ward_no_raw=17` is retained and the seat key uses 16, consistent
   with the publication's independent 16-constituency control. Serial 71 prints
   winner sex `M` but winner category `OBCW`; neither is overwritten, and the
@@ -35,8 +40,8 @@ here is usually the thing that was wrong.
 
 ### Changed
 
-- **The remaining Rajasthan work is now stated precisely.** The held 2005 and
-  2015 Panchayat Samiti books and all held Zila Parishad books remain unparsed;
+- **The remaining Rajasthan work is now stated precisely.** The held 2015
+  Panchayat Samiti book and all held Zila Parishad books remain unparsed;
   municipal holdings remain outside the rural master.
 
 ## v0.3.0 — 2026-08-29

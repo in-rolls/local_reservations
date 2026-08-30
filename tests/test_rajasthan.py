@@ -25,7 +25,7 @@ def test_all_structured_rural_seats_are_adapted(slices):
         (row["tier"], row["year"]) for slice_ in slices for row in slice_["rows"]
     )
     assert counts == collections.Counter(rajasthan.DECLARED_UNITS)
-    assert sum(counts.values()) == 155224
+    assert sum(counts.values()) == 160481
 
 
 def test_panchayat_samiti_result_roster_is_retained(slices):
@@ -65,6 +65,47 @@ def test_panchayat_samiti_result_roster_is_retained(slices):
     assert contradiction[0]["winner"] == "MAGADU"
     assert contradiction[0]["winner_gender"] == "Other than Woman"
     assert contradiction[0]["winner_category_raw"] == "OBCW"
+
+
+def test_2005_panchayat_samiti_source_exceptions_are_retained(slices):
+    rows = [
+        row
+        for slice_ in slices
+        for row in slice_["rows"]
+        if row["tier"] == "block_member" and row["year"] == "2005"
+    ]
+    assert len(rows) == 5257
+    assert len(
+        {(row["district"], row["block"], row["seat_no"]) for row in rows}
+    ) == len(rows)
+    assert collections.Counter(row["reservation_raw"] for row in rows) == {
+        "GEN": 1780,
+        "GEN W": 919,
+        "SC": 635,
+        "SC W": 311,
+        "ST": 549,
+        "ST W": 256,
+        "OBC": 555,
+        "OBC W": 252,
+    }
+
+    vacancy = [row for row in rows if row["vacant"] == 1]
+    assert len(vacancy) == 1
+    assert (vacancy[0]["district"], vacancy[0]["block"], vacancy[0]["seat_no"]) == (
+        "BARAN",
+        "SHAHBAD",
+        "11",
+    )
+    assert not vacancy[0]["winner"]
+
+    control_conflict = [
+        row for row in rows if row["reservation_body_control_agree"] == "0"
+    ]
+    assert len(control_conflict) == 1
+    assert control_conflict[0]["reservation_raw"] == "OBC W"
+
+    margin_conflicts = [row for row in rows if row["margin_below_votes"] == "0"]
+    assert len(margin_conflicts) == 3
 
 
 def test_all_sarpanch_candidates_are_retained(slices):

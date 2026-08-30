@@ -23,6 +23,14 @@ from local_reservations.states.assam import controls_2025 as assam_controls
 
 # (state, year, tier) -> {"total": int|None, "basis": str, "source": str}
 PUBLISHED = {
+    ("Rajasthan", "2005", "block_member"): {
+        "total": 5257,
+        "basis": "seats",
+        "unit": "seats",
+        "source": "Rajasthan SEC, Panchayat General Election 2005: the "
+        "reservation controls and the Part-B member-result roster each "
+        "account for all 5,257 Panchayat Samiti constituencies.",
+    },
     ("Rajasthan", "2010", "block_member"): {
         "total": 5273,
         "basis": "seats",
