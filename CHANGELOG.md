@@ -7,7 +7,7 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
-## Unreleased
+## v0.4.0 — 2026-08-30
 
 ### Added
 
