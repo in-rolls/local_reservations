@@ -66,14 +66,14 @@ assert len(seats) == 985263
 
 ## Before you use it
 
-`quality_flags` carries what a row cannot be trusted for: `ocr_repaired`, `gender_not_stated`, `ward_list_incomplete`, `winner_inferred`, `winner_candidate_ambiguous`, `name_untransliterated`, `printings_disagree`. `gender_not_stated` in particular means `woman_reserved=0` is a default rather than a reading.
+`quality_flags` carries what a row cannot be trusted for: `ocr_repaired`, `gender_not_stated`, `ward_list_incomplete`, `winner_inferred`, `winner_candidate_ambiguous`, `winner_category_sex_disagree`, `name_untransliterated`, `printings_disagree`. `gender_not_stated` in particular means `woman_reserved=0` is a default rather than a reading.
 
 `provenance_level` says how far back a row can be traced:
 
 - **dataset** — 504,157 rows, traceable to the file it came from and no further
 - **page** — 288,888 rows, traceable to the page it was read from
 - **document** — 186,945 rows, traceable to a document, but not a page within it
-- **row** — 5,273 rows, traceable 
+- **row** — 5,273 rows, traceable to the exact source row and page it was read from
 
 ## Companion tables
 
