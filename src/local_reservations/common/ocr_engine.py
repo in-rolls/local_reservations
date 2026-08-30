@@ -4,10 +4,9 @@ Imported by scripts/<state>/ocr.py. Only the paths and the "does this document
 need OCR at all" test are per-state; the rendering, the rotation and the model
 are not, and were on their way to being copied a second time.
 
-**Runs in its own uv dependency group.** savitr pins pillow<11 where pdfplumber
-needs >=12.2, so the OCR and parsing dependencies cannot share an interpreter.
-Nothing here imports anything else from common, so the isolated OCR environment
-contains only what the model needs.
+**Runs in its own uv dependency group.** The model stack is Apple-Silicon-only
+and unnecessary for parser-only work, so the OCR environment contains only
+what the model needs.
 
 Named `ocr_engine` and not `surya`: this directory goes on sys.path[0], and a
 module called `surya` here would shadow the real surya package for savitr.

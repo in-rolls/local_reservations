@@ -52,18 +52,9 @@ dev = [
 ]
 test = ["pytest"]
 
-# Reading the scans. Kept apart because it cannot share an interpreter with the
-# parsing dependencies: savitr pins pillow<11 and pdfplumber needs >=12.2, so
-# installing both leaves whichever came second broken - which happened, and the
-# OCR run silently produced nothing. This replaces the hand-made ocrenv/.
-# Apple Silicon only; MLX is a Metal runtime with no CPU fallback.
-ocr = ["savitr==0.2.0", "pillow==10.4.0", "mlx-vlm==0.6.13"]
-
-[tool.uv]
-# Declared rather than discovered. uv resolves every group together unless told
-# they conflict, so without this it would fail to resolve at all and the reason
-# would not be obvious from the error.
-conflicts = [[{ group = "dev" }, { group = "ocr" }]]
+# Reading the scans. Apple Silicon only; Savitr's MLX runtime has no CPU
+# fallback. Kept separate so parser-only work does not install the model stack.
+ocr = ["savitr==0.3.0"]
 
 # Console scripts, so the Makefile and anyone else name a command rather than a
 # file path. verify-manifest is deliberately also runnable as a bare file: it

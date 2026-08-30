@@ -1,9 +1,5 @@
 PY ?= uv run python
-# The OCR cannot share an environment with the parsers: savitr pins pillow<11
-# where pdfplumber needs >=12.2. That used to mean a hand-made ocrenv/; it is
-# now a uv dependency group declared as conflicting, so uv refuses to install
-# both together rather than leaving whichever came second broken.
-# The OCR group conflicts with dev, so exclude every default group explicitly.
+# The Apple-Silicon model stack stays out of parser-only environments.
 OCR_PY ?= uv run --no-default-groups --group ocr python
 UV_DOCKER_IMAGE ?= ghcr.io/astral-sh/uv:0.12.7-python3.12-trixie
 

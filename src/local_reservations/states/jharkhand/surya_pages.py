@@ -1,10 +1,8 @@
 """OCR every PNG in a directory, writing <name>.txt beside each.
 
-Exists because surya-ocr pins pillow<11 and pdfplumber needs >=12.2, so the
-model and the PDF reader cannot share an interpreter. ocr_seats.py has to have
-both - pdfplumber to find the pages whose seat column is drawn, the model to
-read them - so it runs under the repository's interpreter and calls this one
-under savitr's, once, for a whole directory.
+`ocr_seats.py` uses pdfplumber to find the pages whose seat column is drawn,
+then calls this module under the Apple-Silicon Savitr environment once for the
+whole directory.
 
 Once, and not per page: loading the weights costs more than reading a page, so a
 call per page would spend most of the run in startup.

@@ -82,6 +82,10 @@ here is usually the thing that was wrong.
 
 ### Changed
 
+- **The optional Apple-Silicon OCR environment now uses Savitr 0.3.0.** This
+  removes the obsolete Pillow 10.4 compatibility pin and resolves the Pillow
+  security advisories reported against the lock file.
+
 - **The pooled key now distinguishes election events.** `election_type` and
   `election_duration` are shared seat and candidate columns and part of the
   seat key. Rajasthan seats that recur in later by-elections therefore remain

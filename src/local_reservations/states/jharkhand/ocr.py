@@ -41,10 +41,9 @@ Reproducing it, once:
         --mlx-path ~/surya-mlx-4bit -q --q-bits 4
     SURYA_MLX_PATH=~/surya-mlx-4bit make jharkhand-ocr
 
-savitr is deliberately isolated in the `ocr` dependency group. It needs Apple
-Silicon for MLX and pins pillow<11 where pdfplumber needs >=12.2, so uv declares
-that group as conflicting with `dev`. The parser reads the committed cache
-rather than calling it, so only someone regenerating the cache needs the group.
+savitr is deliberately isolated in the `ocr` dependency group because it needs
+Apple Silicon for MLX. The parser reads the committed cache rather than calling
+it, so only someone regenerating the cache needs the group.
 """
 
 import argparse
