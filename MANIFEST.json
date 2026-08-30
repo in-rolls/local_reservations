@@ -1,5 +1,5 @@
 {
-  "built_from_commit": "8bdfa6f94431104d6bb22db5a2e6001629c94882",
+  "built_from_commit": "95e1184ed4ec3f9ea454b5bd02a6fa500f09c445",
   "candidate_columns": [
     "dataset_id",
     "candidate_id",
@@ -43,7 +43,7 @@
     "source_path",
     "source_page"
   ],
-  "committed_utc": "2026-08-30T10:17:29-07:00",
+  "committed_utc": "2026-08-30T10:37:20-07:00",
   "dirty": false,
   "files": [
     {
@@ -85,7 +85,7 @@
       "kind": "candidates",
       "path": "data/master/candidates_rajasthan.parquet",
       "rows": 68202,
-      "sha256": "3e9f46e7e291fefd460567f197204619390ddda23ff77c2a4914e5bdb1a086de",
+      "sha256": "7cd897eaa767348222833302fd705b8be0a3327a90f5b3ca5a2c11961f10b477",
       "states": [
         "Rajasthan"
       ],
@@ -157,7 +157,7 @@
       ]
     },
     {
-      "bytes": 1263754,
+      "bytes": 1263675,
       "dataset_ids": [
         "andhra_pradesh/gp_head/2020",
         "andhra_pradesh/gp_ward/2020"
@@ -172,7 +172,7 @@
       ],
       "rows": 80021,
       "rows_identifying_a_distinct_seat": 80021,
-      "sha256": "61a043235b2fa2f72f866ef711a4a6c21fac4e509d5f4796a090192adbf6f15a",
+      "sha256": "5fa566d69dd9ee9108b9ecf47354784bf02dd2501103717c77a716941176be3d",
       "states": [
         "Andhra Pradesh"
       ],
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "bytes": 54047,
+      "bytes": 54017,
       "dataset_ids": [
         "assam/block_head/2025",
         "assam/block_member/2025",
@@ -206,7 +206,7 @@
       ],
       "rows": 1678,
       "rows_identifying_a_distinct_seat": 1678,
-      "sha256": "797d6b39de2e7d7c7e389d93616926f16049ccef4e37eca902200be35f9cf4d4",
+      "sha256": "138c235be4722a5a6dba01c2bef75afa531d7156bb9ab1e5982326942ed43106",
       "states": [
         "Assam"
       ],
@@ -281,7 +281,7 @@
       "sha256": "b8f445d39d8a9eb75e0e2689d5dd78851546eefac78ea52784da087ca4c81b0e"
     },
     {
-      "bytes": 88472,
+      "bytes": 88442,
       "dataset_ids": [
         "goa/gp_ward/2012",
         "goa/gp_ward/2017",
@@ -298,7 +298,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "1ac16898bd1b5249b06ae08929277dcac23feaa8931373ff6b6b974e8099c3a6",
+      "sha256": "3c55076d96c853f7d098852ba0f29ea05989f835986ad736183568a274425a1b",
       "states": [
         "Goa"
       ],
@@ -312,7 +312,7 @@
       ]
     },
     {
-      "bytes": 62541,
+      "bytes": 62511,
       "dataset_ids": [
         "gujarat/block_member/2020",
         "gujarat/zp_member/2020"
@@ -327,7 +327,7 @@
       ],
       "rows": 1178,
       "rows_identifying_a_distinct_seat": 1178,
-      "sha256": "a86a041eaf259bee4e4c6838592078d2ceb3c26284449c3caaab9c034d0e61b0",
+      "sha256": "a3b1f206a1c61525f0d3c44540f2a0e68d2da7f21d6491dd5a40a97a3ec894ac",
       "states": [
         "Gujarat"
       ],
@@ -371,7 +371,7 @@
       ]
     },
     {
-      "bytes": 842455,
+      "bytes": 842413,
       "dataset_ids": [
         "jammu_and_kashmir/gp_head/2016",
         "jammu_and_kashmir/gp_ward/2010",
@@ -389,7 +389,7 @@
       ],
       "rows": 28511,
       "rows_identifying_a_distinct_seat": 28497,
-      "sha256": "b0f3f0cf243b25ce345d043c02fca2b65c9d4f6e5843ffbd195b59a6967b7c73",
+      "sha256": "0f323c23d4e795250d5b147eeb8830b1592409e23c088cad70be067b5abc62ac",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -404,7 +404,7 @@
       ]
     },
     {
-      "bytes": 995628,
+      "bytes": 995586,
       "dataset_ids": [
         "jharkhand/block_member/2015",
         "jharkhand/gp_head/2015",
@@ -421,7 +421,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27696,
-      "sha256": "7991159a69a9c3a5bb928b3e68733237dce8abb22030ba4cf5de50739bc81d85",
+      "sha256": "5b42a2f625806c670c394be9e585ddf3ffd896101a92cc85cdba6e4f50b67089",
       "states": [
         "Jharkhand"
       ],
@@ -436,7 +436,7 @@
       ]
     },
     {
-      "bytes": 812811,
+      "bytes": 812769,
       "dataset_ids": [
         "karnataka/block_member/2016",
         "karnataka/gp_head/1993",
@@ -456,7 +456,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30901,
-      "sha256": "33f9acfede00bd1fb8407167c61c600641d591376a3aa67072cc0d5c98b6987e",
+      "sha256": "a1ea130c479a6ab6c3a35eceab815306f640ccf18432521e09113d39aba59eb2",
       "states": [
         "Karnataka"
       ],
@@ -564,7 +564,7 @@
       ],
       "rows": 160481,
       "rows_identifying_a_distinct_seat": 160474,
-      "sha256": "e47a79204b621f42f0748ede72d02db3bd95869d78428801a60870437931013d",
+      "sha256": "0b0282ac93adcb2cea8edb3739fc37f99cfc76eb204ba93ae60c89dedc18c72c",
       "states": [
         "Rajasthan"
       ],
@@ -583,7 +583,7 @@
       ]
     },
     {
-      "bytes": 1693869,
+      "bytes": 1693802,
       "dataset_ids": [
         "telangana/gp_head/2019",
         "telangana/gp_ward/2019"
@@ -598,7 +598,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "9d2d1445e714f8477c79465f2d6183f218ca27c08aaf161094154e4aef9c88fb",
+      "sha256": "03bd780deb32ee2d6f3466a8fd6939f15b83ef6ebc8b4910dd9372d522ede58c",
       "states": [
         "Telangana"
       ],
@@ -689,7 +689,7 @@
       ]
     },
     {
-      "bytes": 32197,
+      "bytes": 32167,
       "dataset_ids": [
         "west_bengal/zp_member/2018"
       ],
@@ -703,7 +703,7 @@
       ],
       "rows": 825,
       "rows_identifying_a_distinct_seat": 825,
-      "sha256": "a87d42563cd848599ce8ce7c0d44b28c43c887d1d139f8867251de640112a9cb",
+      "sha256": "95e8f0c99d53f1c78b2360b841b66a524aa9ed0ad19848712e73dabf877f8e7b",
       "states": [
         "West Bengal"
       ],
@@ -727,7 +727,7 @@
         "dataset"
       ],
       "rows": 13473,
-      "sha256": "1a67b18e5c58ff9d497a83a954bdb7b7d3d32ad8054e933038d137fdd97a808b",
+      "sha256": "eb98d475dfba7472e92336a17acce81c1bca3bbfb1af320957c1bb51ff8a6013",
       "states": [
         "Rajasthan"
       ],
@@ -1414,8 +1414,8 @@
       "url": "https://github.com/in-rolls/local_elections_kerala"
     },
     {
-      "commit": "d673c40fb156f8137ec97e9f20ebb81e54e1625d",
-      "committed_utc": "2026-08-30T09:43:08-07:00",
+      "commit": "636c2025d9fa1c70e7d046190aea2251924a2b9d",
+      "committed_utc": "2026-08-30T10:33:02-07:00",
       "dirty": false,
       "present": true,
       "repo": "local_elections_rajasthan",
