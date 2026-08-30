@@ -2,7 +2,7 @@ import collections
 
 import pytest
 
-from local_reservations.common import canon
+from local_reservations.common import canon, reference
 from local_reservations.common.adapters import rajasthan
 from local_reservations.paths import ROOT
 
@@ -68,6 +68,7 @@ def test_panchayat_samiti_result_roster_is_retained(slices):
 
 
 def test_2005_panchayat_samiti_source_exceptions_are_retained(slices):
+    assert reference.document_stage("Rajasthan", "2005", "block_member") == "result"
     rows = [
         row
         for slice_ in slices

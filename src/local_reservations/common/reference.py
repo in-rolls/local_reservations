@@ -807,6 +807,7 @@ DOCUMENT_STAGE = {
     ("Karnataka", "2005", "gp_head"): "pre_poll",
     ("Karnataka", "2007", "gp_head"): "pre_poll",
     ("Rajasthan", "2005", "gp_head"): "result",
+    ("Rajasthan", "2005", "block_member"): "result",
     ("Rajasthan", "2010", "gp_head"): "result",
     ("Rajasthan", "2010", "block_member"): "result",
     ("Rajasthan", "2015", "gp_head"): "result",
