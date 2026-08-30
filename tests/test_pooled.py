@@ -15,7 +15,7 @@ from, not instead of it.
 
 import pytest
 
-from local_reservations.common import master
+from local_reservations.common import datasets, master
 from local_reservations.common.adapters import haryana, kerala, uttar_pradesh
 from local_reservations.states.telangana import parse as telangana
 
@@ -61,6 +61,33 @@ def test_the_projection_does_not_replace_the_source_row():
     # and what the projection drops is still there for the checks to read
     for column in ("pop_total", "pop_sc", "ward_count"):
         assert pooled[column] == source[column], column
+
+
+def test_pooled_prefers_row_observation_grain(monkeypatch):
+    from local_reservations.tools import build_master
+
+    row = {
+        "state": "Rajasthan",
+        "year": "2020",
+        "tier": "gp_head",
+        "gram_panchayat": "RIBIYA",
+        "unit_of_observation": "seat",
+    }
+    slice_ = {
+        "dataset_id": "rajasthan/gp_head/2020",
+        "source_repo": "local_elections_rajasthan",
+        "source_commit": "abc",
+        "provenance_level": "dataset",
+        "unit_of_observation": "seat_from_candidates",
+        "rows": [row],
+    }
+    monkeypatch.setattr(build_master, "local_slices", lambda: iter(()))
+    monkeypatch.setattr(build_master, "sibling_slices", lambda: iter((slice_,)))
+    monkeypatch.setattr(master, "transliterations", lambda root: {})
+
+    pooled = dict(datasets.pooled())
+
+    assert pooled["rajasthan/gp_head/2020"][0]["unit_of_observation"] == "seat"
 
 
 @pytest.mark.parametrize(

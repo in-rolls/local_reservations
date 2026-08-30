@@ -92,7 +92,7 @@ def main():
         }
     )
     print(
-        f"Ready to tag: {rows:,} pooled seats across {states} states, "
+        f"Ready to tag: {rows:,} pooled seat-event records across {states} states, "
         f"{len(manifest['files'])} files pinned."
     )
     if not version:

@@ -332,6 +332,21 @@ def test_south_salmara_offices_use_reserved_lists_and_complete_complements():
     }
 
 
+def test_south_salmara_missing_office_tier_fails_with_source_context():
+    parsed = parse_scan_2025.extracted("South Salmara-Mankachar")
+    parsed = {
+        **parsed,
+        "offices": [
+            row for row in parsed["offices"] if row["office"] != "block_member"
+        ],
+    }
+    with pytest.raises(
+        ValueError,
+        match=r"South Salmara-Mankachar.*block_member",
+    ):
+        parse_2025.scan_rows(parsed)
+
+
 def test_hailakandi_dispatches_by_table_shape_and_keeps_reserved_scope():
     parsed = parse_scan_2025.extracted("Hailakandi")
     assert parsed["layout"] == "hailakandi_reserved_rows"

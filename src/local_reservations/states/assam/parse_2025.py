@@ -610,14 +610,18 @@ def scan_rows(parsed):
     assignments = {
         (record["office"], record["gp_serial"]): record for record in parsed["offices"]
     }
-    default_pages = {
-        tier: next(
+    default_pages = {}
+    for tier in ("block_member", "gp_head", "gp_vice_head"):
+        pages = [
             record["source_page"]
             for record in parsed["offices"]
             if record["office"] == tier
-        )
-        for tier in ("block_member", "gp_head", "gp_vice_head")
-    }
+        ]
+        if not pages:
+            raise ValueError(
+                f"{parsed['district']} source contains no {tier} office assignment"
+            )
+        default_pages[tier] = pages[0]
     for tier in ("block_member", "gp_head", "gp_vice_head"):
         for gp in parsed["gps"]:
             assignment = assignments.get((tier, gp["serial"]))

@@ -141,19 +141,36 @@ def acquire(documents, out, manifest, root, *, dry_run=False):
     rows = []
     for document in documents:
         target = out / document.file
-        payload = fetch.body(document.url, timeout=300, headers=HEADERS)
-        digest = hashlib.sha256(payload).hexdigest()
-        status = "fetched"
-        if target.exists():
-            current = hashlib.sha256(target.read_bytes()).hexdigest()
-            if current != digest:
+        old = prior.get(document.file, {})
+        document_fields = asdict(document)
+        held = target.read_bytes() if target.exists() else None
+        held_digest = hashlib.sha256(held).hexdigest() if held is not None else ""
+        unchanged_document = all(
+            old.get(field, "") == str(value) for field, value in document_fields.items()
+        )
+        verified_held = (
+            held is not None
+            and unchanged_document
+            and old.get("sha256") == held_digest
+            and old.get("bytes") == str(len(held))
+        )
+        payload: bytes
+        if verified_held and held is not None:
+            payload = held
+            digest = held_digest
+            status = "held"
+        else:
+            payload = fetch.body(document.url, timeout=300, headers=HEADERS)
+            digest = hashlib.sha256(payload).hexdigest()
+            status = "fetched"
+            if held is not None and held_digest != digest:
                 LOGGER.error(
                     "held source differs from live bytes",
                     extra={
                         "event": "source_changed",
                         **_event_fields(
                             document,
-                            held_sha256=current,
+                            held_sha256=held_digest,
                             live_sha256=digest,
                         ),
                     },
@@ -162,12 +179,10 @@ def acquire(documents, out, manifest, root, *, dry_run=False):
                     f"{target.relative_to(root)} differs from the live source; "
                     "not overwritten"
                 )
-            status = "held"
-        else:
-            target.write_bytes(payload)
+            if held is None:
+                target.write_bytes(payload)
 
-        old = prior.get(document.file, {})
-        row = asdict(document)
+        row = document_fields
         row.update(
             {
                 "retrieved_at": old.get("retrieved_at")

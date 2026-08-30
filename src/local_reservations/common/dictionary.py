@@ -612,7 +612,7 @@ COLUMNS = [
     column(
         "reservation_match_score",
         "string",
-        length=(3, 8),
+        length=(1, 8),
         pattern=r"^(?:0\.\d+|1(?:\.0+)?)$",
         severity=INFO,
         note="Similarity of the selected source-cell OCR reading to the "

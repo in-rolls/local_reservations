@@ -26,7 +26,13 @@ def test_acquire_writes_standard_manifest_and_reuses_identical_bytes(
     tmp_path, monkeypatch
 ):
     payload = b"reviewed source bytes"
-    monkeypatch.setattr(harvest.fetch, "body", lambda *args, **kwargs: payload)
+    calls = []
+
+    def fetch(*args, **kwargs):
+        calls.append((args, kwargs))
+        return payload
+
+    monkeypatch.setattr(harvest.fetch, "body", fetch)
     out = tmp_path / "sources"
     manifest = out / "manifest.csv"
 
@@ -35,6 +41,7 @@ def test_acquire_writes_standard_manifest_and_reuses_identical_bytes(
 
     assert first[0]["sha256"] == hashlib.sha256(payload).hexdigest()
     assert second[0]["retrieved_at"] == first[0]["retrieved_at"]
+    assert len(calls) == 1
     with manifest.open(encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     assert list(rows[0]) == harvest.MANIFEST_FIELDS

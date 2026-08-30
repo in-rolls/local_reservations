@@ -87,7 +87,7 @@ than a defect.
 | `seat_no_from_order` | boolean | info | — | Set for Gujarat, whose final roster is printed once in strict 1..N order. The table grid proves that no row was skipped; seat_no_ocr retains the independent OCR reading. |
 | `sc_rank_ocr` | string | info | length 0–12 | Tesseract's uncorrected reading of the source's SC ranking. |
 | `st_rank_ocr` | string | info | length 0–12 | Tesseract's uncorrected reading of the source's ST ranking. |
-| `reservation_match_score` | string | info | length 3–8 | Similarity of the selected source-cell OCR reading to the reviewed Gujarati reservation vocabulary. |
+| `reservation_match_score` | string | info | length 1–8 | Similarity of the selected source-cell OCR reading to the reviewed Gujarati reservation vocabulary. |
 | `ocr_mean_confidence` | string | info | length 1–8 | Mean Tesseract confidence over the whole-page words assigned to this source row; not a probability of correctness. |
 | `source_url` | string | info | length 8–300 | Where the document was fetched from. source_path says which file on disk a row came from and source_page which page of it; neither says where the file came from, which is the one question a reader outside this repository is most likely to ask. Recorded from the harvest manifest, so it is what was actually requested rather than what a URL pattern would reconstruct. |
 | `source_capture` | string | info | length 8–40 | The web archive's capture timestamp, YYYYMMDDhhmmss. With source_url this refetches the exact bytes the row was read from - a live URL may since have changed or gone. Blank for documents that were not fetched from an archive. |

@@ -137,7 +137,8 @@ def pooled():
                 slice_["source_repo"],
                 slice_["source_commit"],
                 slice_["provenance_level"],
-                slice_.get("unit_of_observation", "seat"),
+                row.get("unit_of_observation")
+                or slice_.get("unit_of_observation", "seat"),
                 row.get("seat_candidates", ""),
                 latin,
             )

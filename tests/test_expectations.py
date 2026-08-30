@@ -56,3 +56,16 @@ def test_declared_source_blanks_are_information_not_warnings():
     assert len(findings.rows) == 1
     assert findings.rows[0]["severity"] == "info"
     assert "Charaideo numbers wards" in findings.rows[0]["rule"]
+
+
+def test_perfect_reservation_match_score_is_valid():
+    row = {"reservation_match_score": "1"}
+    findings = expectations.Findings()
+    expectations.check_column(
+        findings,
+        expectations.DATA / "gujarat" / "fixture.csv",
+        [row],
+        "reservation_match_score",
+        [(row, "1")],
+    )
+    assert not findings.rows
