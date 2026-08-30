@@ -29,7 +29,8 @@ dependencies = [
     "pdfplumber",
     "requests",
     "requests-ratelimiter",
-    # quota_raj publishes its Rajasthan slices as pandas parquet. This was
+    # local_elections_rajasthan publishes its historical panels as pandas
+    # parquet. This was
     # never declared and the system interpreter happened to have it; the first
     # run inside a locked environment skipped 39,520 rows with a one-line
     # warning, which is exactly the failure a lockfile is for.
@@ -150,7 +151,7 @@ verify-manifest = "local_reservations.tools.verify_manifest:main"
 release-check = "local_reservations.tools.release_check:main"
 
 [build-system]
-requires = ["uv_build>=0.12.5,<0.13"]
+requires = ["uv_build>=0.12.7,<0.13"]
 build-backend = "uv_build"
 
 [tool.preen]

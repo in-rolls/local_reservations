@@ -36,7 +36,7 @@ MANIFEST_MD = ROOT / "MANIFEST.md"
 
 # Bumped whenever MASTER_COLUMNS changes, so a consumer can tell a schema change
 # from a data change without diffing the header.
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 
 def git(directory, *args):
@@ -134,12 +134,20 @@ def build():
         list(master_dir.glob("master_*.parquet"))
         + list(master_dir.glob("master_*.csv*"))
         + list(master_dir.glob("candidates_*.parquet"))
+        + list(master_dir.glob("supplemental_*.parquet"))
     ):
         rows = read(path)
-        kind = "candidates" if path.name.startswith("candidates_") else "master"
+        if path.name.startswith("candidates_"):
+            kind = "candidates"
+        elif path.name.startswith("supplemental_"):
+            kind = "supplemental"
+        else:
+            kind = "master"
         files.append(dict(describe(path, rows), kind=kind))
         if kind == "candidates":
             totals["candidate_rows"] += len(rows)
+        elif kind == "supplemental":
+            totals["supplemental_rows"] += len(rows)
         # Not every master_* file is a state. Miss one of these three and its
         # rows land in the headline count and it is counted as a state - the
         # extras table alone would add 3.4M rows and a thirteenth state, with
@@ -190,6 +198,7 @@ def build():
         # looking like the corpus moved.
         "written_by": f"pyarrow {pa.__version__}",
         "master_columns": M.MASTER_COLUMNS,
+        "candidate_columns": M.CANDIDATE_COLUMNS,
         "totals": dict(totals),
         "sibling_repos": siblings,
         "files": files,
@@ -207,8 +216,10 @@ def render(manifest):
         f"- built from commit `{manifest['built_from_commit'][:12]}`"
         + (" **(dirty)**" if manifest["dirty"] else "")
         + " — necessarily the parent of the commit holding this file",
-        f"- {manifest['totals'].get('master_rows', 0):,} pooled seats, "
-        f"{manifest['totals'].get('parsed_rows', 0):,} parsed rows",
+        f"- {manifest['totals'].get('master_rows', 0):,} pooled seat-event records, "
+        f"{manifest['totals'].get('candidate_rows', 0):,} candidates, "
+        f"{manifest['totals'].get('supplemental_rows', 0):,} supplemental rows, "
+        f"and {manifest['totals'].get('parsed_rows', 0):,} local parsed rows",
         f"- written by **{manifest.get('written_by', '—')}** — parquet "
         f"records its writer in every footer, so a different version changes "
         f"every hash below without changing a value",
@@ -251,6 +262,12 @@ def render(manifest):
         ", ".join(manifest["master_columns"]),
         "```",
         "",
+        "`candidate_columns` does the same for the long candidate tables:",
+        "",
+        "```",
+        ", ".join(manifest["candidate_columns"]),
+        "```",
+        "",
     ]
     return "\n".join(out) + "\n"
 
@@ -285,7 +302,7 @@ def main():
     MANIFEST_MD.write_text(render(manifest), encoding="utf-8")
     print(f"\n{len(manifest['files'])} files -> MANIFEST.json")
     print(
-        f"  {manifest['totals'].get('master_rows', 0):,} pooled seats, "
+        f"  {manifest['totals'].get('master_rows', 0):,} pooled seat-event records, "
         f"{manifest['totals'].get('parsed_rows', 0):,} parsed rows"
     )
     dirty = [s["repo"] for s in manifest["sibling_repos"] if s.get("dirty")]

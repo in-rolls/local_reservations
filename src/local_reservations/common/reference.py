@@ -522,6 +522,10 @@ REGISTRY_SCOPE = {
     ("Jammu & Kashmir", "2016"): "an ad-hoc subset of districts rather than a "
     "corpus, which is why no published total is "
     "declared for it either",
+    ("Rajasthan", "2021"): "the SEC scrape identifies the January general "
+    "election phase and that year's by-election events, not a new statewide "
+    "cycle",
+    ("Rajasthan", "2022"): "by-election events only, not a new statewide cycle",
 }
 
 # Partial blanks that follow the source's table design rather than extraction
@@ -695,16 +699,16 @@ INVESTIGATED = {
     ("Karnataka", "2002", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2005", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
     ("Karnataka", "2007", "gp_head", "results_notification"): _KARNATAKA_SEARCH,
-    # Not a parse defect, which is what it looked like: 2005, 2010 and 2015 all
-    # carry a winner on essentially every row and 2020 on none.
+    # The reservation panel alone carried no 2020 winners. The sibling's SEC
+    # scrape does, and the adapter now joins every exact contest key it holds.
     ("Rajasthan", "2020", "gp_head", "results_notification"): {
-        "on": "2026-08-28",
+        "on": "2026-08-29",
         "searched": "local_elections_rajasthan's standardized sarpanch panel "
-        "and its source inventory",
-        "found": "winner_name is empty on all 11,314 reservation rows, while "
-        "the sibling retains a separate 2020 winner file that has not been "
-        "joined to this panel",
-        "outcome": "inconclusive",
+        "and its Rajasthan SEC candidate and winner scrapes",
+        "found": "11,300 calendar-2020 general-election contests join exactly "
+        "to candidates and winners; four reservation-roster GPs have no "
+        "scraped contest and remain winnerless",
+        "outcome": "settled",
     },
 }
 
@@ -722,13 +726,6 @@ PARKED = {
         "of the register, so the bigger question there is the ~9,000 "
         "gram panchayats the sibling does not hold at all, which is a "
         "harvest rather than a parse",
-    },
-    "Rajasthan": {
-        "on": "2026-08-28",
-        "why": "47 rows of seat-key collisions, plus 11,314 of 2020 with no "
-        "winner in the standardized panel. The sibling retains the 2020 "
-        "winner file separately; joining it and resolving the collisions are "
-        "parked for this release",
     },
 }
 
@@ -793,6 +790,15 @@ DOCUMENT_STAGE = {
     ("Karnataka", "2002", "gp_head"): "pre_poll",
     ("Karnataka", "2005", "gp_head"): "pre_poll",
     ("Karnataka", "2007", "gp_head"): "pre_poll",
+    ("Rajasthan", "2005", "gp_head"): "result",
+    ("Rajasthan", "2010", "gp_head"): "result",
+    ("Rajasthan", "2015", "gp_head"): "result",
+    ("Rajasthan", "2020", "gp_head"): "result",
+    ("Rajasthan", "2021", "gp_head"): "result",
+    ("Rajasthan", "2022", "gp_head"): "result",
+    ("Rajasthan", "2020", "gp_ward"): "result",
+    ("Rajasthan", "2021", "gp_ward"): "result",
+    ("Rajasthan", "2022", "gp_ward"): "result",
 }
 
 

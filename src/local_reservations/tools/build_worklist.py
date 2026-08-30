@@ -78,8 +78,8 @@ def gather():
 SECTIONS = {
     notes_module.OPEN_GAP: (
         "Open gaps",
-        "The document holds more than our parse recovered. Each line says what "
-        "would close it. Sorted by rows affected.",
+        "Actionable gaps in what was acquired, parsed, or linked. Each line says "
+        "what would close it. Sorted by rows affected.",
     ),
     notes_module.BLOCKED: (
         "Blocked",

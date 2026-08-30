@@ -18,7 +18,7 @@ def expectations():
             state="Karnataka",
             year=year,
             tier="gp_head",
-            key=("state", "year", "tier", "gp_code"),
+            key=("state", "year", "tier", "gp_no"),
             expected_rows=expected,
         )
         for year, expected in DECLARED.items()

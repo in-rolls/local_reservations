@@ -4,7 +4,7 @@ A versioned, checksummed data package of reservation and election-result data
 for India's local bodies. Coverage varies by state, year and tier; the tables
 below state those limits rather than implying nationwide completeness.
 
-For comparable rural data with one row per seat, start with the generated
+For comparable rural data with one row per seat event, start with the generated
 **[pooled master guide](data/master/readme.md)**. State directories also retain
 source-specific fields and urban rows that do not enter the rural master.
 
@@ -39,10 +39,10 @@ into a national missing-seat total.
 
 | | Entries | Rows affected |
 |---|---|---|
-| [Open gaps](WORKLIST.md) | 54 | 82,206 |
+| [Open gaps](WORKLIST.md) | 59 | 82,339 |
 | [Blocked](WORKLIST.md) | 0 | 0 |
-| [Parked](WORKLIST.md) | 10 | 13,189 |
-| [Undetermined](WORKLIST.md) | 3 | 2,302 |
+| [Parked](WORKLIST.md) | 9 | 1,653 |
+| [Undetermined](WORKLIST.md) | 17 | 72,402 |
 | [Accepted properties of the sources](WORKLIST.md) | 24 | 141,056 |
 
 <!-- worklist:end -->
@@ -60,9 +60,10 @@ unpacked tarball.
 
 ## What we have
 
-One row per state, year and tier — the grain the data actually has. The notes
-are derived from the rows themselves rather than written by hand, so they cannot
-drift from what is in the files.
+The table below covers slices parsed in this repository, with one row per
+state, year and tier. The pooled files also include parsed sibling repositories
+and have one row per seat event. The notes are derived from the rows themselves
+rather than written by hand, so they cannot drift from what is in the files.
 
 Each state directory also has its own generated readme — what is in it, which
 documents each row came from, what to be careful of, and how to rebuild it.
@@ -118,8 +119,8 @@ are still in the legacy font they were printed in.
 This table inventories every state, including completed sibling repositories.
 `Rows` counts records in parsed source files; candidate-level sources may
 contain several records per seat, and local files may include urban bodies that
-the rural master excludes. Use the pooled master above for comparable seat
-counts.
+the rural master excludes. Use the pooled master above for comparable
+seat-event counts.
 
 `Coverage` says whether rows are parsed, no rows are parsed, sources are not
 held, or rural PRI data are not applicable. `Remaining work` records the next
@@ -159,7 +160,7 @@ seats. The state readme linked in `Where` gives the file-level inventory.
 | Odisha | - | - | - | no parsed rows | the 6 held PDFs are district aggregates, not seat rosters; acquire seat-level rural data | [data/odisha/](data/odisha/) - 6 digital-text |
 | Puducherry | - | - | - | no parsed rows | the 2021 panchayat notification is a 60-page scan that needs OCR; the other held notification is municipal | [data/puducherry/](data/puducherry/) - 1 digital-text, 1 scan |
 | Punjab | - | - | - | not held | acquire and assess a seat-level rural source | - |
-| Rajasthan | gp_head | 2005, 2010, 2015, 2020 | 39,520 | parsed | see sibling repository | [local_elections_rajasthan](https://github.com/in-rolls/local_elections_rajasthan) |
+| Rajasthan | gp_head, gp_ward | 2005, 2010, 2015, 2020, 2021, 2022 | 242,923 | parsed | 149,951 rural seat events, 68,202 candidates, and 13,473 GP-event nomination summaries are standardized; Panchayat Samiti and Zila Parishad source books remain unparsed; municipal material is held outside the rural master | [local_elections_rajasthan](https://github.com/in-rolls/local_elections_rajasthan) |
 | Sikkim | - | - | - | not held | acquire and assess a seat-level rural source | - |
 | Tamil Nadu | - | - | - | no parsed rows | the 12 held gazettes are urban; acquire a village-panchayat reservation roster | [data/tamil_nadu/](data/tamil_nadu/) - 11 digital-text, 1 scan |
 | Telangana | gp_head, gp_ward | 2019 | 61,841 | parsed | the 4 unlinked PDFs are urban reservation orders or election manuals, not missing rural seats | [data/telangana/](data/telangana/) |

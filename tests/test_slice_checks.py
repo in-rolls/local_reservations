@@ -148,6 +148,52 @@ def test_the_label_must_agree_with_the_two_fields_it_summarises():
     assert got["status"] == sc.FAIL
 
 
+def test_reservation_may_change_between_election_events():
+    got = sc.reservation_constant_within_seat(
+        make(
+            [
+                {
+                    "unit_of_observation": "seat_from_candidates",
+                    "election_type": "General Election",
+                    "election_duration": "JAN-MAR 2020",
+                },
+                {
+                    "unit_of_observation": "seat_from_candidates",
+                    "election_type": "By Election",
+                    "election_duration": "SEP-OCT 2020",
+                    "caste_reservation": "SC",
+                    "woman_reserved": "1",
+                    "reservation": "SC Woman",
+                },
+            ]
+        )
+    )
+    assert got["status"] == sc.PASS
+
+
+def test_reservation_must_be_constant_within_one_election_event():
+    got = sc.reservation_constant_within_seat(
+        make(
+            [
+                {
+                    "unit_of_observation": "seat_from_candidates",
+                    "election_type": "General Election",
+                    "election_duration": "JAN-MAR 2020",
+                },
+                {
+                    "unit_of_observation": "seat_from_candidates",
+                    "election_type": "General Election",
+                    "election_duration": "JAN-MAR 2020",
+                    "caste_reservation": "SC",
+                    "woman_reserved": "1",
+                    "reservation": "SC Woman",
+                },
+            ]
+        )
+    )
+    assert got["status"] == sc.FAIL
+
+
 def test_two_cycles_in_one_slice_fails():
     got = sc.year_constant(make([{"year": "2012"}, {"year": "2017"}]))
     assert got["status"] == sc.FAIL

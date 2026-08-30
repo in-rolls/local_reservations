@@ -142,6 +142,7 @@ def seat_row(row, year, relative):
         "tier_local": "pradhan",
         "district": (row.get("district_name") or "").strip(),
         "block": (row.get("block_name") or "").strip(),
+        "gp_no": (row.get("gp_code") or "").strip(),
         "gram_panchayat": (row.get("gp_name_fin") or row.get("gp_name") or "").strip(),
         "caste_reservation": caste or "",
         "caste_reservation_local": stated,

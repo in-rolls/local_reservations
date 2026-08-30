@@ -7,14 +7,35 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
-## v0.3.0 — 2026-08-28
+## v0.3.0 — 2026-08-29
 
 ### Corrected
+
+- **Rajasthan's structured SEC scrape is no longer left outside the pooled
+  data.** The earlier adapter read only four sarpanch reservation panels. It
+  now uses all 68,202 sarpanch-candidate records, 11,432 sarpanch-result
+  records, 110,296 ward-result records, and 13,473 nomination summaries. The
+  two result files link on exact event and place keys; no fuzzy match is used.
+  Four 2020 roster seats have no scraped contest, and thirteen by-election
+  contests have candidates but no result, so both limits remain explicit.
 
 - **Gram-panchayat identifiers now survive the pooled projection.** The shared
   schema carries `gp_no` as a string, including J&K identifiers such as `14K`,
   rather than relegating 31,939 values to the extras table. This resolves 108
   false seat-key collisions without adding or dropping a row.
+
+- **Uttar Pradesh and Rajasthan no longer merge distinct panchayats that share
+  a cleaned name.** UP now promotes its published `gp_code` into `gp_no`,
+  resolving 359 of its 363 collision rows. Rajasthan uses the printed GP name
+  for seat identity and retains the sibling repository's standardized name as
+  a non-key linkage field, resolving 34 of its 41 collision rows. No record is
+  dropped; the remaining four UP and seven Rajasthan rows stay in the collision
+  report for source review.
+
+- **Karnataka's published GP identifier now controls pooled seat identity.**
+  All five president cycles promote `gp_code` into the shared `gp_no` field,
+  resolving all 82 Karnataka GP-head collision rows across 35 groups without
+  adding or dropping a record.
 
 - **Kadapa applies the gazette's own 41-row errata instead of silently
   overwriting the original cells.** The positioned parser reads 807 GP heads
@@ -26,6 +47,15 @@ here is usually the thing that was wrong.
 
 ### Added
 
+- **Rajasthan adds 110,431 rural seat-event records.** Its pooled file now
+  contains 39,655 GP-head and 110,296 GP-ward records for 2005--2022, up from
+  39,520 GP-head rows alone. A 68,202-row candidate sidecar retains gender,
+  age, caste, education, occupation, marital status, assets, and child-count
+  fields; public contact fields are deliberately excluded. The 13,473 GP-event
+  nomination summaries remain a separate typed table because they are not seat
+  or candidate records. The pooled corpus grows from 869,559 to 979,990
+  seat-event records, with 1,202,319 candidate records.
+
 - **Andhra Pradesh and Jammu & Kashmir add 36,637 pooled seats.** Kurnool adds
   972 GP heads and 9,987 wards; Kadapa adds 807 heads and 7,903 wards. After
   the reviewed parser also removes a net 35 rows from the six earlier AP
@@ -33,9 +63,9 @@ here is usually the thing that was wrong.
   gazettes. J&K grows by 17,003 rows: 5,676 wards from 2010, plus 1,353 GP
   heads and 9,974 wards from the complete set of 25 held 2016 PDFs.
 
-- **Assam and Gujarat add 2,856 rural seats and bring the pooled master to
-  869,559 seats across 15 states.** Assam contributes 1,678 seats from the
-  2025 Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and Hailakandi
+- **Assam and Gujarat add 2,856 rural seats.** Assam contributes 1,678 seats
+  from the 2025 Charaideo, Kamrup Metropolitan, South Salmara-Mankachar, and
+  Hailakandi
   orders; Gujarat contributes all 1,178 block- and district-panchayat seats in
   the 2020 rotation orders.
 
@@ -52,6 +82,11 @@ here is usually the thing that was wrong.
 
 ### Changed
 
+- **The pooled key now distinguishes election events.** `election_type` and
+  `election_duration` are shared seat and candidate columns and part of the
+  seat key. Rajasthan seats that recur in later by-elections therefore remain
+  separate events rather than false duplicate seat-years.
+
 - **Acquisition, text extraction, and parsing are separate stages.** New
   source pipelines can fetch once, inspect or replace the extracted text, and
   re-run deterministic parsers without touching the network. Commands emit
@@ -59,17 +94,17 @@ here is usually the thing that was wrong.
   outcome, and source-specific expectations fail on missing pages, rows, seat
   runs, or reservation combinations.
 
-- **Coverage reporting now distinguishes source records from pooled seats.**
+- **Coverage reporting now distinguishes source records from pooled seat
+  events.**
   Candidate-level sibling files can contain several records for one seat; the
   state table reports those source records, while the master remains the
-  comparable one-row-per-seat view. Parquet counts come from file metadata,
-  other held PDFs are distinguished from rows they do not source, and Bihar
-  remains correctly shown as parsed.
+  comparable one-row-per-seat-event view. Parquet counts come from file
+  metadata. Other held PDFs are distinguished from rows they do not source,
+  and Bihar remains correctly shown as parsed.
 
-- **Rajasthan now comes from `local_elections_rajasthan`.** The four published
-  sarpanch panels retain the same 39,520 rows, but their source path and commit
-  now point to the maintained state repository instead of the paper-specific
-  `quota_raj` repository.
+- **Rajasthan now comes from `local_elections_rajasthan`.** Its four published
+  sarpanch panels and 2020--2022 SEC scrape now point to the maintained state
+  repository instead of the paper-specific `quota_raj` repository.
 
 - **Development installs and CI now use uv's native build backend and shared
   checks.** Hatchling is gone; dependencies use the canonical `test` group,
@@ -77,10 +112,11 @@ here is usually the thing that was wrong.
   marked `Private :: Do Not Upload`: the released product is the GitHub data
   package pinned by `MANIFEST.json`, not a PyPI distribution.
 
-- **The master has 866,024 distinct seat keys (99.6%) and 3,535 collisions,**
+- **The master has 976,936 distinct seat-event keys (99.7%) and 3,054
+  collisions,**
   compared with 824,987 (99.4%) and 5,079 in v0.2.8. The release checks the
-  declared seat grain, provenance, hierarchy, and reservation fields before
-  writing the manifest.
+  declared seat-event grain, provenance, hierarchy, and reservation fields
+  before writing the manifest.
 
 ## v0.2.8 — 2026-08-14
 

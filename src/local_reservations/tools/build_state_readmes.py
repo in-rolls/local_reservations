@@ -609,7 +609,7 @@ def render_parsed(directory, state, entries):
     return "\n".join(out) + "\n"
 
 
-def render_sibling(directory, state, years, tiers, url):
+def render_sibling(directory, state, years, tiers, url, standardized, remaining):
     """A state parsed in its own repository. What sits here is the source
     material it was parsed from, which is worth saying plainly - the directory
     otherwise looks like a state nobody has got to yet.
@@ -643,12 +643,16 @@ def render_sibling(directory, state, years, tiers, url):
     )
     out.append("")
     out.append(
-        "It is not in this repository's schema, so it does not appear "
-        "in the per-slice table. Bringing a sibling to that grain means "
-        "giving its parsed files the shared columns — `state`, `year`, "
-        "`tier`, `caste_reservation`, `woman_reserved` — which is the "
-        "schema harmonisation still to be done."
+        "The pooled adapter reads the sibling's declared parsed files into "
+        "the shared seat and candidate schemas. Files held only in this local "
+        "source directory do not enter that adapter automatically."
     )
+    if standardized:
+        out.append("")
+        out.append(f"**Pooled outputs:** {standardized}.")
+    if remaining and remaining != "see sibling repository":
+        out.append("")
+        out.append(f"**Remaining work:** {remaining}.")
     return "\n".join(out) + "\n"
 
 
@@ -717,6 +721,8 @@ def build():
             spec["years"],
             spec["tiers"],
             f"https://github.com/in-rolls/{spec['repo']}",
+            spec.get("standardized", ""),
+            spec.get("remaining", ""),
         )
         for state, spec in coverage.SIBLINGS.items()
     }
@@ -735,8 +741,10 @@ def build():
                 directory, name, "tables, other layout", years
             )
         elif state in siblings:
-            years, tiers, url = siblings[state]
-            out[target] = render_sibling(directory, state, years, tiers, url)
+            years, tiers, url, standardized, remaining = siblings[state]
+            out[target] = render_sibling(
+                directory, state, years, tiers, url, standardized, remaining
+            )
         else:
             out[target] = render_unparsed(directory, state, "documents, no parser", "")
     return out

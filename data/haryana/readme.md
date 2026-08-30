@@ -6,4 +6,4 @@
 
 What is in this directory is source material: 1 file, 1 digital-text, 1 other, 13 pages.
 
-It is not in this repository's schema, so it does not appear in the per-slice table. Bringing a sibling to that grain means giving its parsed files the shared columns — `state`, `year`, `tier`, `caste_reservation`, `woman_reserved` — which is the schema harmonisation still to be done.
+The pooled adapter reads the sibling's declared parsed files into the shared seat and candidate schemas. Files held only in this local source directory do not enter that adapter automatically.

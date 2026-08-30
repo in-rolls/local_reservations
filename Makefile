@@ -218,5 +218,4 @@ ci-docker:
 			uvx --from pydoclint==0.9.1 pydoclint src/ && \
 			uvx preen check --strict --skip tests && \
 			uv run pytest tests -q -p no:cacheprovider && \
-			uv build --out-dir /tmp/dist && \
-			uvx twine check /tmp/dist/*'
+			uv build --out-dir /tmp/dist'

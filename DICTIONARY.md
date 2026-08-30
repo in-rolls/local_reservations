@@ -27,6 +27,7 @@ than a defect.
 | `district` | string | warn | length 3–30; ≤20% blank | J&K's 2010 files carry no district column at all, so a blank share above zero is expected there but not elsewhere. |
 | `block` | string | warn | length 2–40; ≤35% blank | Block, taluka or mandal depending on the state. |
 | `gram_panchayat` | string | warn | length 2–45; ≤10% blank; also called `halqa` | The panchayat. Called halqa in J&K. Jharkhand printed it inside a compound seat identifier until that was taken apart; see seat_id_raw. A value far over the length bound has usually swallowed the next column - that is how AP's broken mandal split was found. |
+| `gram_panchayat_standardized` | string | info | length 2–45 | A source repository's standardized panchayat name, retained for linkage but excluded from seat identity because a many-to-one name crosswalk can merge distinct printed panchayats. |
 | `ward_no` | roman_or_integer | warn | length 1–6; ≤30% blank | Blank on sarpanch and mukhiya rows by design. J&K and Goa number wards in Roman numerals, so this is not purely numeric. |
 | `ward_name` | string | warn | length 2–40; ≤30% blank | A named ward or upper-tier constituency where the source names rather than numbers the seat. |
 | `caste_reservation` | enum | error | one of `SC`, `ST`, `BC`, `NONE`; ≤0% blank | **The seat's reservation, never the winner's caste.** The two are different facts and this corpus keeps them apart: a scheduled-caste person can win an unreserved seat, and in Uttar Pradesh 2005 the winner's own category matches the seat's on only 19,324 of 51,872 rows. The winner's category, where a source states it, is `winner_caste` on a seat row and `candidate_caste` on a candidate row. Orthogonal to woman_reserved: a seat can be both. |
@@ -76,7 +77,7 @@ than a defect.
 | `source_path` | path | error | ≤0% blank | Relative to data/, and checked by opening it rather than by matching a pattern - a first attempt at a filename regex rejected 1,783 perfectly good Jharkhand rows because one file is called 'Gomia_GPS, GPM & GPVM.pdf'. What matters is that the document is there, not what it is called. |
 | `source_page` | integer | error | range 1–2000; ≤0% blank |  |
 | `pop_female` | integer | info | range 0–10000000 | Census female population of the panchayat, from Karnataka. |
-| `gp_code` | string | info | length 1–40 | The panchayat's own identifier in the source, kept out of the join key and recoverable. |
+| `gp_code` | string | info | length 1–40 | The panchayat's own identifier in the source. An adapter may promote a stable source code into the shared gp_no identity field while retaining the original here. |
 | `district_code` | string | info | length 1–12 |  |
 | `block_code` | string | info | length 1–12 |  |
 | `panchayat_code` | string | info | length 1–12 |  |
@@ -90,6 +91,8 @@ than a defect.
 | `ocr_mean_confidence` | string | info | length 1–8 | Mean Tesseract confidence over the whole-page words assigned to this source row; not a probability of correctness. |
 | `source_url` | string | info | length 8–300 | Where the document was fetched from. source_path says which file on disk a row came from and source_page which page of it; neither says where the file came from, which is the one question a reader outside this repository is most likely to ask. Recorded from the harvest manifest, so it is what was actually requested rather than what a URL pattern would reconstruct. |
 | `source_capture` | string | info | length 8–40 | The web archive's capture timestamp, YYYYMMDDhhmmss. With source_url this refetches the exact bytes the row was read from - a live URL may since have changed or gone. Blank for documents that were not fetched from an archive. |
+| `result_source_path` | string | info | length 1–120 | A second parsed input that supplies the result when source_path supplies the seat or candidates. |
+| `nomination_source_path` | string | info | length 1–120 | The separate source table that supplies GP-event nomination totals. |
 | `original_filename` | string | info | length 1–80 | The document a row was read from, where the parse kept it but the pooled schema has no column for it. |
 | `party` | string | info | length 1–80 | The party the winner represented. Kerala prints it and so do Karnataka's 2016 taluk and zilla notifications; almost nothing else in the corpus does. Karnataka's is canonicalised against a fixed list and left blank where the cell does not settle which party - a reading truncated to ದಾರತೀಯ fits both of the two largest, so it is empty rather than guessed. party_local keeps what the page actually said. |
 | `party_local` | string | info | length 1–80 | The party exactly as the document printed it, before any canonicalisation, so a row can be audited against its page. Kept for the same reason as reservation_raw. |
@@ -98,8 +101,32 @@ than a defect.
 | `winner_education` | string | info | length 1–90 |  |
 | `winner_occupation` | string | info | length 1–90 |  |
 | `winner_marital_status` | string | info | length 1–24 |  |
+| `candidate_marital_status` | string | info | length 1–24 |  |
+| `candidate_occupation` | string | info | length 1–90 |  |
+| `candidate_total_assets` | string | info | length 1–30 |  |
+| `candidate_children_before_1995_11_27` | string | info | length 1–4 |  |
+| `candidate_children_after_1995_11_27` | string | info | length 1–4 |  |
 | `winner_gender` | string | info | length 1–24 | The elected person's own gender. Not woman_reserved, which says whether the seat was reserved for a woman. |
 | `winner_caste` | string | info | length 1–60 | The elected person's **own** category, where the source states it alongside the seat's. Not caste_reservation: that is what the seat was reserved for. Uttar Pradesh 2005 and 2010 are the only seat-level slices that carry both, and they disagree on 63% of rows - which is what makes them worth holding separately rather than a redundancy. |
+| `winner_category_raw` | string | info | length 1–60 | The source's untouched winning-candidate category, retained even on a result row where the winner name is blank. |
+| `election_type` | enum | info | one of `General Election`, `By Election` | Whether Rajasthan SEC labels the event as a general or by-election. |
+| `election_duration` | string | info | length 5–20 | The event period exactly as Rajasthan SEC labels it. |
+| `total_candidates_stated` | integer | info | range 0–100 |  |
+| `electorate` | integer | info | range 0–100000 |  |
+| `votes_polled` | integer | info | range 0–100000 |  |
+| `rejected_votes` | integer | info | range 0–100000 |  |
+| `valid_votes` | integer | info | range 0–100000 |  |
+| `poll_percentage` | string | info | length 1–8 |  |
+| `nota_votes` | integer | info | range 0–100000 |  |
+| `tendered_votes` | integer | info | range 0–100000 |  |
+| `winner_pledge_url` | string | info | length 8–300 |  |
+| `result_remark` | string | info | length 1–120 |  |
+| `nominations_filed` | integer | info | range 0–1000 |  |
+| `nomination_candidates` | integer | info | range 0–1000 |  |
+| `validly_nominated_candidates` | integer | info | range 0–1000 |  |
+| `withdrawals` | integer | info | range 0–1000 |  |
+| `nominated_unopposed` | integer | info | range 0–1000 |  |
+| `contestants` | integer | info | range 0–1000 |  |
 | `lgi_role` | string | info | length 1–40 | Kerala's Role column. An office the ward member also holds - President, Vice President - not a tier. |
 | `body` | string | info | length 1–80 | The local body a seat belongs to, where it is not a gram panchayat. |
 | `zilla_parishad_constituency` | string | info | length 2–80 | Named district-level constituency containing a GP, where printed. |
@@ -109,6 +136,7 @@ than a defect.
 | `criminal_history` | string | info | length 1–40 |  |
 | `duplicate_candidacy` | integer | info | range 0–20 | The source stated this contest more than once, with vote counts that disagree. Folded on (serial, name) keeping the higher count; this says it happened. |
 | `serial_not_unique` | integer | info | range 0–1 | One serial number carrying two different candidates. Not resolvable from the file, so both are kept. |
+| `winner_candidate_ambiguous` | integer | info | range 0–1 | More than one candidate in the contest has the published winner's exact normalized name, so the seat winner is known but the winning candidate serial is not. |
 | `shared_place_name` | integer | info | range 0–1 | Two places in one block printed under one name, told apart only by being reserved differently. |
 
 ## Plausible row counts
@@ -144,6 +172,7 @@ A file outside its band has lost rows or double counted them.
 | Kerala | gp_ward | 14,000–18,000 |
 | Kerala | zp_member | 250–400 |
 | Rajasthan | gp_head | 8,000–14,000 |
+| Rajasthan | gp_ward | 90,000–130,000 |
 | Telangana | gp_head | 10,000–14,000 |
 | Telangana | gp_ward | 40,000–60,000 |
 | Uttar Pradesh | gp_head | 45,000–60,000 |

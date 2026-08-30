@@ -35,10 +35,11 @@ Three columns exist because one could not carry the fact:
   seat_candidates                collapsed to seats; a row that came from a
                                  collapse has to say so
 
-The grain is **one row per seat as a source document states it**, which is not
-the same as one row per seat. 1,435 rows in the current corpus do not identify a
-distinct seat, so `seat_key_unique` is a column and the collisions are exported
-rather than hidden behind a claim the data does not support.
+The grain is **one row per seat-event as a source states it**. Most sources name
+only a cycle, so year identifies the event; Rajasthan also names general and
+by-election periods, which remain separate. Rows that still do not identify a
+distinct event are exported rather than hidden behind a claim the data does not
+support.
 """
 
 import hashlib
@@ -54,6 +55,8 @@ MASTER_COLUMNS = [
     # place
     "state",
     "year",
+    "election_type",
+    "election_duration",
     "district",
     "block",
     "body",
@@ -137,6 +140,8 @@ CANDIDATE_COLUMNS = [
     # place
     "state",
     "year",
+    "election_type",
+    "election_duration",
     "district",
     "block",
     "body",
@@ -158,6 +163,11 @@ CANDIDATE_COLUMNS = [
     "candidate_age",
     "candidate_caste",
     "candidate_education",
+    "candidate_marital_status",
+    "candidate_occupation",
+    "candidate_total_assets",
+    "candidate_children_before_1995_11_27",
+    "candidate_children_after_1995_11_27",
     "party",
     # how they did
     "votes",
@@ -181,6 +191,11 @@ CANDIDATE_FIELDS = [
     "candidate_age",
     "candidate_caste",
     "candidate_education",
+    "candidate_marital_status",
+    "candidate_occupation",
+    "candidate_total_assets",
+    "candidate_children_before_1995_11_27",
+    "candidate_children_after_1995_11_27",
     "party",
     "votes",
     "candidate_rank",
@@ -243,6 +258,8 @@ def quality_flags(row):
     # one serial number carrying two different candidates, unresolvable
     if str(row.get("serial_not_unique") or "0") not in ("0", ""):
         flags.append("serial_not_unique")
+    if str(row.get("winner_candidate_ambiguous") or "0") not in ("0", ""):
+        flags.append("winner_candidate_ambiguous")
     # two places in one block printed under one name, told apart only by the
     # fact that they are reserved differently
     if str(row.get("shared_place_name") or "0") not in ("0", ""):
@@ -333,6 +350,8 @@ def to_master(
         "dataset_id": dataset_id,
         "state": state,
         "year": row.get("year", ""),
+        "election_type": row.get("election_type", ""),
+        "election_duration": row.get("election_duration", ""),
         "district": row.get("district", ""),
         "block": row.get("block", ""),
         "body": row.get("body", ""),
@@ -450,6 +469,7 @@ def candidates(row, seat):
             shared, candidate_no=position, row_id=seat.get("row_id", "")
         )
         got.update({c: member.get(c, "") for c in CANDIDATE_FIELDS})
+        got["candidate_no"] = member.get("candidate_no") or position
         got["candidate_id"] = hashlib.sha1(
             f"{seat.get('row_id', '')}|{position}".encode()
         ).hexdigest()[:12]

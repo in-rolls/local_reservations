@@ -76,6 +76,7 @@ COLUMNS = [
     "district",
     "block",
     "gram_panchayat",
+    "gp_no",
     "gp_code",
     "tier",
     "tier_local",
@@ -110,13 +111,15 @@ def rows_for(frame, year):
             unreadable += 1
             continue
         caste, local, woman = CASTE[code]
+        gp_code = str(record.get("gpidcode") or "").strip()
         row = {
             "state": "Karnataka",
             "year": year,
             "district": str(record.get("districtname") or "").strip(),
             "block": str(record.get("talukname") or "").strip(),
             "gram_panchayat": str(record.get("gpname") or "").strip(),
-            "gp_code": str(record.get("gpidcode") or "").strip(),
+            "gp_no": gp_code,
+            "gp_code": gp_code,
             "tier": "gp_head",
             "tier_local": "adhyaksha",
             "caste_reservation": caste,

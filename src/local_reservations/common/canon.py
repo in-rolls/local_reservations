@@ -221,6 +221,8 @@ def unit_name(row):
 SEAT_IDENTITY_FIELDS = (
     "state",
     "year",
+    "election_type",
+    "election_duration",
     "tier",
     "district",
     "block",

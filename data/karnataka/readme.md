@@ -27,11 +27,11 @@ Every file is written twice: `.csv` for a spreadsheet, `.jsonl` for a reader tha
 | File | Rows | Columns | Source documents |
 |---|---|---|---|
 | [`block_member_2016.csv`](block_member_2016.csv) | 3,478 | 26 | 166 |
-| [`gp_head_1993.csv`](gp_head_1993.csv) | 5,264 | 20 | 1 |
-| [`gp_head_2000.csv`](gp_head_2000.csv) | 5,320 | 20 | 1 |
-| [`gp_head_2002.csv`](gp_head_2002.csv) | 5,320 | 20 | 1 |
-| [`gp_head_2005.csv`](gp_head_2005.csv) | 5,322 | 20 | 1 |
-| [`gp_head_2007.csv`](gp_head_2007.csv) | 5,322 | 20 | 1 |
+| [`gp_head_1993.csv`](gp_head_1993.csv) | 5,264 | 21 | 1 |
+| [`gp_head_2000.csv`](gp_head_2000.csv) | 5,320 | 21 | 1 |
+| [`gp_head_2002.csv`](gp_head_2002.csv) | 5,320 | 21 | 1 |
+| [`gp_head_2005.csv`](gp_head_2005.csv) | 5,322 | 21 | 1 |
+| [`gp_head_2007.csv`](gp_head_2007.csv) | 5,322 | 21 | 1 |
 | [`zp_member_2016.csv`](zp_member_2016.csv) | 888 | 26 | 26 |
 
 ## Stats
@@ -125,7 +125,7 @@ Every state runs a shared battery first — the seat key is unique, the reservat
 | `provenance_resolves` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 | &check; 0 | &check; 0 | &check; 0 |
 | `reservation_constant_within_seat` | internal | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; |
 | `rows_in_band` | declared | &check; 5264 | &check; 5320 | &check; 5320 | &check; 5322 | &check; 5322 | &check; 3478 | &check; 888 |
-| `seat_key_unique` | internal | ! 18 | ! 16 | ! 16 | ! 16 | ! 16 | ! 13 | &check; 0 |
+| `seat_key_unique` | internal | &check; 0 | &check; 0 | &check; 0 | &check; 0 | &check; 0 | ! 13 | &check; 0 |
 | `tier_local_maps_to_one_tier` | internal | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha | &check; adhyaksha | &check; taluk panchayat member | &check; zilla panchayat member |
 | `winner_caste_is_not_the_seats` | internal | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 | &ndash; 0 |
 | `women_share_by_block` | external | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; | &ndash; |

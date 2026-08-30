@@ -401,6 +401,25 @@ def seat_key_not_unique(s):
 
 
 @note(
+    "winner_candidate_ambiguous",
+    "the winner name matches more than one candidate",
+    OPEN_GAP,
+    because="The result names the winner but not the candidate serial, and "
+    "two people in the same contest print the same normalized name. The seat "
+    "winner remains known; which candidate record won does not.",
+    closes_with="linking the result's pledge document or another source that "
+    "states the winning candidate serial",
+)
+def winner_candidate_ambiguous(s):
+    affected = sum(
+        1
+        for row in s.rows
+        if "winner_candidate_ambiguous" in (row.get("quality_flags") or "").split(";")
+    )
+    return found(affected) if affected else None
+
+
+@note(
     "district_not_printed",
     "the district column is mostly blank",
     OPEN_GAP,
@@ -437,6 +456,12 @@ def no_winner_recorded(s):
     stage = reference.document_stage(s.state, s.year, s.tier)
     if stage == "pre_poll":
         return found(s.n, "a pre-poll roster names no winner", status=SOURCE_PROPERTY)
+    if stage == "result":
+        return found(
+            s.n,
+            "a result-stage source should identify the elected person",
+            status=OPEN_GAP,
+        )
     # "Nobody has looked" and "somebody looked and found nothing" are the same
     # absence to DOCUMENT_STAGE and are not the same claim. Saying which costs
     # one line here and saves the next person repeating the search.
@@ -446,6 +471,30 @@ def no_winner_recorded(s):
             s.n, f"searched {done['on']}: {done['searched']} - {done['found']}"
         )
     return found(s.n, "no document stage declared, and nobody has looked")
+
+
+@note(
+    "some_winners_missing",
+    "some result rows do not identify a winner",
+    UNDETERMINED,
+    because="A blank winner inside a result-stage slice is not the same as a "
+    "pre-poll roster that names nobody. Vacant seats are excluded; the "
+    "remaining blanks need a result source or an explicit source reason.",
+    closes_with="recovering the missing result rows or recording why those "
+    "specific contests produced no elected person",
+)
+def some_winners_missing(s):
+    missing = [
+        row
+        for row in s.rows
+        if not (row.get("winner") or "").strip()
+        and str(row.get("vacant") or "0") not in {"1", "True", "true"}
+    ]
+    if not missing or len(missing) == s.n:
+        return None
+    stage = reference.document_stage(s.state, s.year, s.tier)
+    status = OPEN_GAP if stage == "result" else None
+    return found(len(missing), f"{len(missing):,} of {s.n:,} rows", status=status)
 
 
 @note(

@@ -96,6 +96,10 @@ def rows_in_band(s):
     if not band:
         return result(SKIP, s.n, "", "no row band declared for this state and tier")
     low, high = band
+    if any((row.get("election_duration") or "").strip() for row in s.rows):
+        return result(PASS if s.n <= high else FAIL, s.n, f"<= {high} (event records)")
+    if s.scope == "partial":
+        return result(PASS if s.n <= high else FAIL, s.n, f"<= {high} (partial)")
     return result(PASS if low <= s.n <= high else FAIL, s.n, f"{low}..{high}")
 
 
@@ -495,6 +499,8 @@ def reservation_constant_within_seat(s):
     for row in named:
         counts[
             (
+                row.get("election_type", ""),
+                row.get("election_duration", ""),
                 row.get("district", ""),
                 row.get("block", ""),
                 canon.unit_name(row),

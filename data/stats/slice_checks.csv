@@ -255,7 +255,7 @@ Goa,2012,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is
 Goa,2012,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
 Goa,2012,gp_ward,year_constant,internal,pass,2012,2012,
 Goa,2012,gp_ward,provenance_resolves,internal,pass,0,0,12 documents
-Goa,2017,gp_ward,rows_in_band,declared,pass,684,400..1800,
+Goa,2017,gp_ward,rows_in_band,declared,pass,684,<= 1800 (partial),
 Goa,2017,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Goa,2017,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Goa,2017,gp_ward,coverage_vs_published,external,skip,684,,"Measured against 2012, which is complete, taluka by taluka."
@@ -271,7 +271,7 @@ Goa,2017,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is
 Goa,2017,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
 Goa,2017,gp_ward,year_constant,internal,pass,2017,2017,
 Goa,2017,gp_ward,provenance_resolves,internal,pass,0,0,10 documents
-Goa,2022,gp_ward,rows_in_band,declared,pass,793,400..1800,
+Goa,2022,gp_ward,rows_in_band,declared,pass,793,<= 1800 (partial),
 Goa,2022,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Goa,2022,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
 Goa,2022,gp_ward,coverage_vs_published,external,skip,793,,As above.
@@ -329,7 +329,7 @@ Haryana,2016,gp_head,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2016,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2016,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2016,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2016,gp_head,seat_key_unique,internal,warn,29,0,"largest group 3 at ('Haryana', '2016', 'gp_head', 'Bhiwani', 'Badhra', '', '', 'Dohka Moji', '', '', '')"
+Haryana,2016,gp_head,seat_key_unique,internal,warn,29,0,"largest group 3 at ('Haryana', '2016', '', '', 'gp_head', 'Bhiwani', 'Badhra', '', '', 'Dohka Moji', '', '', '')"
 Haryana,2016,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Haryana,2016,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2016,gp_head,plausible_vs_registry,external,pass,98%,,"6,090 against 6,197 in the register (2019-20)"
@@ -345,7 +345,7 @@ Haryana,2016,gp_ward,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2016,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2016,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2016,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2016,gp_ward,seat_key_unique,internal,warn,692,0,"largest group 6 at ('Haryana', '2016', 'gp_ward', 'Mewat', 'Nagina', '', '', '* Anju Bala', '', '', '')"
+Haryana,2016,gp_ward,seat_key_unique,internal,warn,692,0,"largest group 6 at ('Haryana', '2016', '', '', 'gp_ward', 'Mewat', 'Nagina', '', '', '* Anju Bala', '', '', '')"
 Haryana,2016,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
 Haryana,2016,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2016,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -361,7 +361,7 @@ Haryana,2022,gp_head,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2022,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2022,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2022,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2022,gp_head,seat_key_unique,internal,warn,2,0,"largest group 2 at ('Haryana', '2022', 'gp_head', 'Kurukshetra', 'Babain', '', '', 'Ram Nagar', '', '', '')"
+Haryana,2022,gp_head,seat_key_unique,internal,warn,2,0,"largest group 2 at ('Haryana', '2022', '', '', 'gp_head', 'Kurukshetra', 'Babain', '', '', 'Ram Nagar', '', '', '')"
 Haryana,2022,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Haryana,2022,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2022,gp_head,plausible_vs_registry,external,pass,99%,,"6,123 against 6,197 in the register (2019-20)"
@@ -377,7 +377,7 @@ Haryana,2022,gp_ward,caste_share_vs_population,external,skip,0,,no population co
 Haryana,2022,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Haryana,2022,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Haryana,2022,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Haryana,2022,gp_ward,seat_key_unique,internal,warn,820,0,"largest group 22 at ('Haryana', '2022', 'gp_ward', 'Jhajjar', 'Machhrauli', '', '', 'ljksyk', '2', '', '')"
+Haryana,2022,gp_ward,seat_key_unique,internal,warn,820,0,"largest group 22 at ('Haryana', '2022', '', '', 'gp_ward', 'Jhajjar', 'Machhrauli', '', '', 'ljksyk', '2', '', '')"
 Haryana,2022,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
 Haryana,2022,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Haryana,2022,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -441,7 +441,7 @@ Jammu & Kashmir,2018,gp_ward,caste_share_vs_population,external,skip,0,,no popul
 Jammu & Kashmir,2018,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jammu & Kashmir,2018,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jammu & Kashmir,2018,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jammu & Kashmir,2018,gp_ward,seat_key_unique,internal,warn,14,0,"largest group 2 at ('Jammu & Kashmir', '2018', 'gp_ward', 'Kupwara', 'Drugmulla', '', '', 'Gonipora', 'PC-II', 'Gonipora', '')"
+Jammu & Kashmir,2018,gp_ward,seat_key_unique,internal,warn,14,0,"largest group 2 at ('Jammu & Kashmir', '2018', '', '', 'gp_ward', 'Kupwara', 'Drugmulla', '', '', 'Gonipora', 'PC-II', 'Gonipora', '')"
 Jammu & Kashmir,2018,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward,gp_ward,
 Jammu & Kashmir,2018,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jammu & Kashmir,2018,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -457,7 +457,7 @@ Jharkhand,2015,block_member,caste_share_vs_population,external,skip,0,,no popula
 Jharkhand,2015,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,block_member,seat_key_unique,internal,warn,500,0,"largest group 43 at ('Jharkhand', '2015', 'block_member', 'East Singhbhum', '', '', '', '', '', '', '')"
+Jharkhand,2015,block_member,seat_key_unique,internal,warn,500,0,"largest group 43 at ('Jharkhand', '2015', '', '', 'block_member', 'East Singhbhum', '', '', '', '', '', '', '')"
 Jharkhand,2015,block_member,tier_local_maps_to_one_tier,internal,pass,panchayat_samiti,block_member,
 Jharkhand,2015,block_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,block_member,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -473,7 +473,7 @@ Jharkhand,2015,gp_head,caste_share_vs_population,external,skip,0,,no population 
 Jharkhand,2015,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_head,seat_key_unique,internal,warn,147,0,"largest group 126 at ('Jharkhand', '2015', 'gp_head', 'Pakur', '', '', '', '', '', '', '')"
+Jharkhand,2015,gp_head,seat_key_unique,internal,warn,147,0,"largest group 126 at ('Jharkhand', '2015', '', '', 'gp_head', 'Pakur', '', '', '', '', '', '', '')"
 Jharkhand,2015,gp_head,tier_local_maps_to_one_tier,internal,pass,mukhiya,gp_head,
 Jharkhand,2015,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_head,plausible_vs_registry,external,pass,91%,,"3,972 against 4,364 in the register (2019-20)"
@@ -489,7 +489,7 @@ Jharkhand,2015,gp_ward,caste_share_vs_population,external,skip,0,,no population 
 Jharkhand,2015,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,760,0,"largest group 57 at ('Jharkhand', '2015', 'gp_ward', 'Lohardaga', '', '', '', '', '', '', '')"
+Jharkhand,2015,gp_ward,seat_key_unique,internal,warn,760,0,"largest group 57 at ('Jharkhand', '2015', '', '', 'gp_ward', 'Lohardaga', '', '', '', '', '', '', '')"
 Jharkhand,2015,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward_member,gp_ward,
 Jharkhand,2015,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -505,7 +505,7 @@ Jharkhand,2015,zp_member,caste_share_vs_population,external,skip,0,,no populatio
 Jharkhand,2015,zp_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Jharkhand,2015,zp_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Jharkhand,2015,zp_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Jharkhand,2015,zp_member,seat_key_unique,internal,warn,8,0,"largest group 8 at ('Jharkhand', '2015', 'zp_member', 'Lohardaga', '', '', '', '', '', '', '')"
+Jharkhand,2015,zp_member,seat_key_unique,internal,warn,8,0,"largest group 8 at ('Jharkhand', '2015', '', '', 'zp_member', 'Lohardaga', '', '', '', '', '', '', '')"
 Jharkhand,2015,zp_member,tier_local_maps_to_one_tier,internal,pass,zila_parishad,zp_member,
 Jharkhand,2015,zp_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Jharkhand,2015,zp_member,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -521,7 +521,7 @@ Karnataka,1993,gp_head,caste_share_vs_population,external,pass,SC seats 25.5% vs
 Karnataka,1993,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,1993,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,1993,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,1993,gp_head,seat_key_unique,internal,warn,18,0,"largest group 4 at ('Karnataka', '1993', 'gp_head', 'CHIKMAGALUR', 'Kadur', '', '', '', '', '', '')"
+Karnataka,1993,gp_head,seat_key_unique,internal,pass,0,0,
 Karnataka,1993,gp_head,tier_local_maps_to_one_tier,internal,pass,adhyaksha,gp_head,
 Karnataka,1993,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,1993,gp_head,plausible_vs_registry,external,pass,88%,,"5,264 against 6,009 in the register (2019-20)"
@@ -537,7 +537,7 @@ Karnataka,2000,gp_head,caste_share_vs_population,external,pass,SC seats 21.7% vs
 Karnataka,2000,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,2000,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,2000,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,2000,gp_head,seat_key_unique,internal,warn,16,0,"largest group 4 at ('Karnataka', '2000', 'gp_head', 'CHIKMAGALUR', 'Kadur', '', '', '', '', '', '')"
+Karnataka,2000,gp_head,seat_key_unique,internal,pass,0,0,
 Karnataka,2000,gp_head,tier_local_maps_to_one_tier,internal,pass,adhyaksha,gp_head,
 Karnataka,2000,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,2000,gp_head,plausible_vs_registry,external,pass,89%,,"5,320 against 6,009 in the register (2019-20)"
@@ -553,7 +553,7 @@ Karnataka,2002,gp_head,caste_share_vs_population,external,warn,SC seats 18.0% vs
 Karnataka,2002,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,2002,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,2002,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,2002,gp_head,seat_key_unique,internal,warn,16,0,"largest group 4 at ('Karnataka', '2002', 'gp_head', 'CHIKMAGALUR', 'Kadur', '', '', '', '', '', '')"
+Karnataka,2002,gp_head,seat_key_unique,internal,pass,0,0,
 Karnataka,2002,gp_head,tier_local_maps_to_one_tier,internal,pass,adhyaksha,gp_head,
 Karnataka,2002,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,2002,gp_head,plausible_vs_registry,external,pass,89%,,"5,320 against 6,009 in the register (2019-20)"
@@ -569,7 +569,7 @@ Karnataka,2005,gp_head,caste_share_vs_population,external,pass,SC seats 18.5% vs
 Karnataka,2005,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,2005,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,2005,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,2005,gp_head,seat_key_unique,internal,warn,16,0,"largest group 4 at ('Karnataka', '2005', 'gp_head', 'CHIKMAGALUR', 'Kadur', '', '', '', '', '', '')"
+Karnataka,2005,gp_head,seat_key_unique,internal,pass,0,0,
 Karnataka,2005,gp_head,tier_local_maps_to_one_tier,internal,pass,adhyaksha,gp_head,
 Karnataka,2005,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,2005,gp_head,plausible_vs_registry,external,pass,89%,,"5,322 against 6,009 in the register (2019-20)"
@@ -585,7 +585,7 @@ Karnataka,2007,gp_head,caste_share_vs_population,external,warn,SC seats 17.2% vs
 Karnataka,2007,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,2007,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,2007,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,2007,gp_head,seat_key_unique,internal,warn,16,0,"largest group 4 at ('Karnataka', '2007', 'gp_head', 'CHIKMAGALUR', 'Kadur', '', '', '', '', '', '')"
+Karnataka,2007,gp_head,seat_key_unique,internal,pass,0,0,
 Karnataka,2007,gp_head,tier_local_maps_to_one_tier,internal,pass,adhyaksha,gp_head,
 Karnataka,2007,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,2007,gp_head,plausible_vs_registry,external,pass,89%,,"5,322 against 6,009 in the register (2019-20)"
@@ -601,7 +601,7 @@ Karnataka,2016,block_member,caste_share_vs_population,external,skip,0,,no popula
 Karnataka,2016,block_member,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Karnataka,2016,block_member,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Karnataka,2016,block_member,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Karnataka,2016,block_member,seat_key_unique,internal,warn,13,0,"largest group 13 at ('Karnataka', '2016', 'block_member', 'Raichur', 'Deodurga', '', '', '', '', 'ಕಾರಾಮವಾಳ', '')"
+Karnataka,2016,block_member,seat_key_unique,internal,warn,13,0,"largest group 13 at ('Karnataka', '2016', '', '', 'block_member', 'Raichur', 'Deodurga', '', '', '', '', 'ಕಾರಾಮವಾಳ', '')"
 Karnataka,2016,block_member,tier_local_maps_to_one_tier,internal,pass,taluk panchayat member,block_member,
 Karnataka,2016,block_member,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Karnataka,2016,block_member,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -777,17 +777,17 @@ Rajasthan,2005,gp_head,caste_share_vs_population,external,skip,0,,no population 
 Rajasthan,2005,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Rajasthan,2005,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Rajasthan,2005,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Rajasthan,2005,gp_head,seat_key_unique,internal,warn,41,0,"largest group 3 at ('Rajasthan', '2005', 'gp_head', 'ALWAR', 'RAJGARH', '', '', '', '', '', '')"
+Rajasthan,2005,gp_head,seat_key_unique,internal,warn,7,0,"largest group 3 at ('Rajasthan', '2005', '', '', 'gp_head', 'ALWAR', 'RAJGARH', '', '', '', '', '', '')"
 Rajasthan,2005,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Rajasthan,2005,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Rajasthan,2005,gp_head,plausible_vs_registry,external,pass,81%,,"9,178 against 11,316 in the register (2019-20)"
 Rajasthan,2005,gp_head,year_constant,internal,pass,2005,2005,
 Rajasthan,2005,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Rajasthan,2010,gp_head,rows_in_band,declared,pass,9166,8000..14000,
-Rajasthan,2010,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
-Rajasthan,2010,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2010,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc; 1 rows state no category
+Rajasthan,2010,gp_head,blank_share_within_tolerance,declared,warn,caste_reservation 0%>0%; woman_reserved 0%>0%; reservation 0%>0%,,3 column(s) over tolerance
 Rajasthan,2010,gp_head,coverage_vs_published,external,skip,9166,,no published total for this slice
-Rajasthan,2010,gp_head,women_share_vs_statute,external,pass,47.6%,floor 33%,
+Rajasthan,2010,gp_head,women_share_vs_statute,external,pass,47.6%,floor 33%,"over the 9,165 rows whose gender the source states; 47.6% over all 9,166"
 Rajasthan,2010,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Rajasthan,2010,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Rajasthan,2010,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
@@ -815,22 +815,102 @@ Rajasthan,2015,gp_head,reservation_constant_within_seat,internal,skip,,,"the sou
 Rajasthan,2015,gp_head,plausible_vs_registry,external,pass,87%,,"9,862 against 11,316 in the register (2019-20)"
 Rajasthan,2015,gp_head,year_constant,internal,pass,2015,2015,
 Rajasthan,2015,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
-Rajasthan,2020,gp_head,rows_in_band,declared,pass,11314,8000..14000,
+Rajasthan,2020,gp_head,rows_in_band,declared,pass,11304,<= 14000 (event records),
 Rajasthan,2020,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
-Rajasthan,2020,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
-Rajasthan,2020,gp_head,coverage_vs_published,external,skip,11314,,no published total for this slice
-Rajasthan,2020,gp_head,women_share_vs_statute,external,pass,48.6%,floor 33%,
+Rajasthan,2020,gp_head,blank_share_within_tolerance,declared,warn,unopposed 0%>0%,,1 column(s) over tolerance
+Rajasthan,2020,gp_head,coverage_vs_published,external,skip,11304,,no published total for this slice
+Rajasthan,2020,gp_head,women_share_vs_statute,external,pass,48.8%,floor 33%,
 Rajasthan,2020,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
 Rajasthan,2020,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
 Rajasthan,2020,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
-Rajasthan,2020,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
+Rajasthan,2020,gp_head,winner_caste_is_not_the_seats,internal,pass,"7,767/11,128 agree (70%)",under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
 Rajasthan,2020,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Rajasthan,2020,gp_head,seat_key_unique,internal,warn,6,0,"largest group 2 at ('Rajasthan', '2020', 'gp_head', 'CHURU', 'CHURU', '', '', 'ribiya', '', '', '')"
+Rajasthan,2020,gp_head,seat_key_unique,internal,pass,0,0,
 Rajasthan,2020,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
-Rajasthan,2020,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
-Rajasthan,2020,gp_head,plausible_vs_registry,external,pass,100%,,"11,314 against 11,316 in the register (2019-20)"
+Rajasthan,2020,gp_head,reservation_constant_within_seat,internal,pass,0,0,"11,304 seats, all internally consistent"
+Rajasthan,2020,gp_head,plausible_vs_registry,external,pass,100%,,"11,304 against 11,316 in the register (2019-20)"
 Rajasthan,2020,gp_head,year_constant,internal,pass,2020,2020,
 Rajasthan,2020,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2020,gp_ward,rows_in_band,declared,pass,108197,<= 130000 (event records),
+Rajasthan,2020,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2020,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2020,gp_ward,coverage_vs_published,external,skip,108197,,no published total for this slice
+Rajasthan,2020,gp_ward,women_share_vs_statute,external,pass,43.9%,floor 33%,
+Rajasthan,2020,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2020,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2020,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2020,gp_ward,winner_caste_is_not_the_seats,internal,pass,"69,764/108,195 agree (64%)",under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
+Rajasthan,2020,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2020,gp_ward,seat_key_unique,internal,pass,0,0,
+Rajasthan,2020,gp_ward,tier_local_maps_to_one_tier,internal,pass,panch,gp_ward,
+Rajasthan,2020,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
+Rajasthan,2020,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
+Rajasthan,2020,gp_ward,year_constant,internal,pass,2020,2020,
+Rajasthan,2020,gp_ward,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2021,gp_head,rows_in_band,declared,pass,89,<= 14000 (event records),
+Rajasthan,2021,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2021,gp_head,blank_share_within_tolerance,declared,warn,unopposed 11%>0%,,1 column(s) over tolerance
+Rajasthan,2021,gp_head,coverage_vs_published,external,skip,89,,no published total for this slice
+Rajasthan,2021,gp_head,women_share_vs_statute,external,pass,34.8%,floor 33%,
+Rajasthan,2021,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2021,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2021,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2021,gp_head,winner_caste_is_not_the_seats,internal,skip,79,,this source states the seat's reservation only
+Rajasthan,2021,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2021,gp_head,seat_key_unique,internal,pass,0,0,
+Rajasthan,2021,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2021,gp_head,reservation_constant_within_seat,internal,pass,0,0,"89 seats, all internally consistent"
+Rajasthan,2021,gp_head,plausible_vs_registry,external,pass,1%,,"89 against 11,316 in the register (2019-20) - the SEC scrape identifies the January general election phase and that year's by-election events, not a new statewide cycle"
+Rajasthan,2021,gp_head,year_constant,internal,pass,2021,2021,
+Rajasthan,2021,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2021,gp_ward,rows_in_band,declared,pass,1373,<= 130000 (event records),
+Rajasthan,2021,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2021,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2021,gp_ward,coverage_vs_published,external,skip,1373,,no published total for this slice
+Rajasthan,2021,gp_ward,women_share_vs_statute,external,pass,47.9%,floor 33%,
+Rajasthan,2021,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2021,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2021,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2021,gp_ward,winner_caste_is_not_the_seats,internal,pass,"994/1,373 agree (72%)",under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
+Rajasthan,2021,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2021,gp_ward,seat_key_unique,internal,pass,0,0,
+Rajasthan,2021,gp_ward,tier_local_maps_to_one_tier,internal,pass,panch,gp_ward,
+Rajasthan,2021,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
+Rajasthan,2021,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
+Rajasthan,2021,gp_ward,year_constant,internal,pass,2021,2021,
+Rajasthan,2021,gp_ward,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2022,gp_head,rows_in_band,declared,pass,56,<= 14000 (event records),
+Rajasthan,2022,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2022,gp_head,blank_share_within_tolerance,declared,warn,unopposed 5%>0%,,1 column(s) over tolerance
+Rajasthan,2022,gp_head,coverage_vs_published,external,skip,56,,no published total for this slice
+Rajasthan,2022,gp_head,women_share_vs_statute,external,pass,39.3%,floor 33%,
+Rajasthan,2022,gp_head,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2022,gp_head,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2022,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2022,gp_head,winner_caste_is_not_the_seats,internal,skip,50,,this source states the seat's reservation only
+Rajasthan,2022,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2022,gp_head,seat_key_unique,internal,pass,0,0,
+Rajasthan,2022,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
+Rajasthan,2022,gp_head,reservation_constant_within_seat,internal,pass,0,0,"56 seats, all internally consistent"
+Rajasthan,2022,gp_head,plausible_vs_registry,external,pass,0%,,"56 against 11,316 in the register (2019-20) - by-election events only, not a new statewide cycle"
+Rajasthan,2022,gp_head,year_constant,internal,pass,2022,2022,
+Rajasthan,2022,gp_head,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
+Rajasthan,2022,gp_ward,rows_in_band,declared,pass,726,<= 130000 (event records),
+Rajasthan,2022,gp_ward,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_obc
+Rajasthan,2022,gp_ward,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
+Rajasthan,2022,gp_ward,coverage_vs_published,external,skip,726,,no published total for this slice
+Rajasthan,2022,gp_ward,women_share_vs_statute,external,pass,35.4%,floor 33%,
+Rajasthan,2022,gp_ward,women_share_by_block,external,skip,,,only applies where the share is an exact split
+Rajasthan,2022,gp_ward,caste_share_vs_population,external,skip,0,,no population columns in this source
+Rajasthan,2022,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
+Rajasthan,2022,gp_ward,winner_caste_is_not_the_seats,internal,pass,477/726 agree (66%),under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
+Rajasthan,2022,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
+Rajasthan,2022,gp_ward,seat_key_unique,internal,pass,0,0,
+Rajasthan,2022,gp_ward,tier_local_maps_to_one_tier,internal,pass,panch,gp_ward,
+Rajasthan,2022,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
+Rajasthan,2022,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
+Rajasthan,2022,gp_ward,year_constant,internal,pass,2022,2022,
+Rajasthan,2022,gp_ward,provenance_resolves,internal,skip,,,"provenance_level is dataset: this source records no document, so there is no path to resolve"
 Telangana,2019,gp_head,rows_in_band,declared,pass,12018,10000..14000,
 Telangana,2019,gp_head,caste_scheme_respected,declared,pass,"BC,NONE,SC,ST","BC,NONE,SC,ST",sc_st_bc
 Telangana,2019,gp_head,blank_share_within_tolerance,declared,pass,,,0 column(s) over tolerance
@@ -841,7 +921,7 @@ Telangana,2019,gp_head,caste_share_vs_population,external,skip,0,,no population 
 Telangana,2019,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Telangana,2019,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Telangana,2019,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Telangana,2019,gp_head,seat_key_unique,internal,warn,14,0,"largest group 2 at ('Telangana', '2019', 'gp_head', 'Bhadradri', 'Palawancha', '', '', 'Laxmidevipally', '', '', '')"
+Telangana,2019,gp_head,seat_key_unique,internal,warn,14,0,"largest group 2 at ('Telangana', '2019', '', '', 'gp_head', 'Bhadradri', 'Palawancha', '', '', 'Laxmidevipally', '', '', '')"
 Telangana,2019,gp_head,tier_local_maps_to_one_tier,internal,pass,sarpanch,gp_head,
 Telangana,2019,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Telangana,2019,gp_head,plausible_vs_registry,external,pass,94%,,"12,018 against 12,771 in the register (2019-20)"
@@ -857,7 +937,7 @@ Telangana,2019,gp_ward,caste_share_vs_population,external,skip,0,,no population 
 Telangana,2019,gp_ward,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Telangana,2019,gp_ward,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Telangana,2019,gp_ward,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Telangana,2019,gp_ward,seat_key_unique,internal,warn,26,0,"largest group 2 at ('Telangana', '2019', 'gp_ward', 'Mahabubabad', 'Nellikudur', '', '', 'Pedda Thanda', '1', '', '')"
+Telangana,2019,gp_ward,seat_key_unique,internal,warn,26,0,"largest group 2 at ('Telangana', '2019', '', '', 'gp_ward', 'Mahabubabad', 'Nellikudur', '', '', 'Pedda Thanda', '1', '', '')"
 Telangana,2019,gp_ward,tier_local_maps_to_one_tier,internal,pass,ward member,gp_ward,
 Telangana,2019,gp_ward,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Telangana,2019,gp_ward,plausible_vs_registry,external,skip,,,"the register counts bodies, and only a head tier has one seat per body"
@@ -873,7 +953,7 @@ Uttar Pradesh,2005,gp_head,caste_share_vs_population,external,skip,0,,no populat
 Uttar Pradesh,2005,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttar Pradesh,2005,gp_head,winner_caste_is_not_the_seats,internal,pass,"23,918/49,954 agree (48%)",under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
 Uttar Pradesh,2005,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttar Pradesh,2005,gp_head,seat_key_unique,internal,warn,256,0,"largest group 14 at ('Uttar Pradesh', '2005', 'gp_head', 'सुल्तानपुर', 'दोस्तपुर', '', '', '', '', '', '')"
+Uttar Pradesh,2005,gp_head,seat_key_unique,internal,warn,2,0,"largest group 2 at ('Uttar Pradesh', '2005', '', '', 'gp_head', 'लखीमपुर खीरी', 'निघासन', '', '1', 'रायपुर', '', '', '')"
 Uttar Pradesh,2005,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_head,
 Uttar Pradesh,2005,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Uttar Pradesh,2005,gp_head,plausible_vs_registry,external,pass,88%,,"51,872 against 58,757 in the register (2019-20)"
@@ -889,7 +969,7 @@ Uttar Pradesh,2010,gp_head,caste_share_vs_population,external,skip,0,,no populat
 Uttar Pradesh,2010,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttar Pradesh,2010,gp_head,winner_caste_is_not_the_seats,internal,pass,"23,266/51,773 agree (45%)",under 99%,the winner's own category and the seat's reservation are different facts; identical columns mean one was copied
 Uttar Pradesh,2010,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttar Pradesh,2010,gp_head,seat_key_unique,internal,warn,107,0,"largest group 3 at ('Uttar Pradesh', '2010', 'gp_head', 'बहराइच', 'कैसरगंज', '', '', 'गोडहिया नं', '', '', '')"
+Uttar Pradesh,2010,gp_head,seat_key_unique,internal,warn,2,0,"largest group 2 at ('Uttar Pradesh', '2010', '', '', 'gp_head', 'बलिया', 'मुरली छपरा', '', '15.0', 'कोडहरा नौबरार', '', '', '')"
 Uttar Pradesh,2010,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_head,
 Uttar Pradesh,2010,gp_head,reservation_constant_within_seat,internal,skip,,,"the source is seat-level, so there is nothing to collapse"
 Uttar Pradesh,2010,gp_head,plausible_vs_registry,external,pass,88%,,"51,861 against 58,757 in the register (2019-20)"
@@ -937,7 +1017,7 @@ Uttarakhand,2008,gp_head,caste_share_vs_population,external,skip,0,,no populatio
 Uttarakhand,2008,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2008,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2008,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2008,gp_head,seat_key_unique,internal,warn,12,0,"largest group 2 at ('Uttarakhand', '2008', 'gp_head', 'पौडी गढवाल', 'द्वारीखाल', '', '', 'भलगांव', '', '', '')"
+Uttarakhand,2008,gp_head,seat_key_unique,internal,warn,12,0,"largest group 2 at ('Uttarakhand', '2008', '', '', 'gp_head', 'पौडी गढवाल', 'द्वारीखाल', '', '', 'भलगांव', '', '', '')"
 Uttarakhand,2008,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_head,
 Uttarakhand,2008,gp_head,reservation_constant_within_seat,internal,pass,0,0,"12 row(s) excluded as shared_place_name - places this key cannot tell apart, already flagged"
 Uttarakhand,2008,gp_head,plausible_vs_registry,external,pass,82%,,"6,368 against 7,791 in the register (2019-20)"
@@ -1129,7 +1209,7 @@ Uttarakhand,2019,gp_head,caste_share_vs_population,external,skip,0,,no populatio
 Uttarakhand,2019,gp_head,label_agrees,internal,pass,0,0,"the label is written separately from the two fields it summarises, so they can disagree"
 Uttarakhand,2019,gp_head,winner_caste_is_not_the_seats,internal,skip,0,,this source states the seat's reservation only
 Uttarakhand,2019,gp_head,alias_family_exclusive,internal,pass,0,0,"one of ['gram_panchayat', 'halqa']"
-Uttarakhand,2019,gp_head,seat_key_unique,internal,warn,6,0,"largest group 2 at ('Uttarakhand', '2019', 'gp_head', 'टिहरी गढवाल', 'कीर्तिनगर', '', '', 'गवाणा', '', '', '')"
+Uttarakhand,2019,gp_head,seat_key_unique,internal,warn,6,0,"largest group 2 at ('Uttarakhand', '2019', '', '', 'gp_head', 'टिहरी गढवाल', 'कीर्तिनगर', '', '', 'गवाणा', '', '', '')"
 Uttarakhand,2019,gp_head,tier_local_maps_to_one_tier,internal,pass,pradhan,gp_head,
 Uttarakhand,2019,gp_head,reservation_constant_within_seat,internal,pass,0,0,"6 row(s) excluded as shared_place_name - places this key cannot tell apart, already flagged"
 Uttarakhand,2019,gp_head,plausible_vs_registry,external,pass,75%,,"5,846 against 7,791 in the register (2019-20)"

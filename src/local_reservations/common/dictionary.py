@@ -149,6 +149,15 @@ COLUMNS = [
         "mandal split was found.",
     ),
     column(
+        "gram_panchayat_standardized",
+        "string",
+        length=(2, 45),
+        severity=INFO,
+        note="A source repository's standardized panchayat name, retained for "
+        "linkage but excluded from seat identity because a many-to-one name "
+        "crosswalk can merge distinct printed panchayats.",
+    ),
+    column(
         "ward_no",
         "roman_or_integer",
         length=(1, 6),
@@ -540,8 +549,9 @@ COLUMNS = [
         "string",
         length=(1, 40),
         severity=INFO,
-        note="The panchayat's own identifier in the source, kept out of the "
-        "join key and recoverable.",
+        note="The panchayat's own identifier in the source. An adapter may "
+        "promote a stable source code into the shared gp_no identity field "
+        "while retaining the original here.",
     ),
     column("district_code", "string", length=(1, 12), severity=INFO),
     column("block_code", "string", length=(1, 12), severity=INFO),
@@ -640,6 +650,21 @@ COLUMNS = [
         "documents that were not fetched from an archive.",
     ),
     column(
+        "result_source_path",
+        "string",
+        length=(1, 120),
+        severity=INFO,
+        note="A second parsed input that supplies the result when source_path "
+        "supplies the seat or candidates.",
+    ),
+    column(
+        "nomination_source_path",
+        "string",
+        length=(1, 120),
+        severity=INFO,
+        note="The separate source table that supplies GP-event nomination totals.",
+    ),
+    column(
         "original_filename",
         "string",
         length=(1, 80),
@@ -685,6 +710,21 @@ COLUMNS = [
     column("winner_education", "string", length=(1, 90), severity=INFO),
     column("winner_occupation", "string", length=(1, 90), severity=INFO),
     column("winner_marital_status", "string", length=(1, 24), severity=INFO),
+    column("candidate_marital_status", "string", length=(1, 24), severity=INFO),
+    column("candidate_occupation", "string", length=(1, 90), severity=INFO),
+    column("candidate_total_assets", "string", length=(1, 30), severity=INFO),
+    column(
+        "candidate_children_before_1995_11_27",
+        "string",
+        length=(1, 4),
+        severity=INFO,
+    ),
+    column(
+        "candidate_children_after_1995_11_27",
+        "string",
+        length=(1, 4),
+        severity=INFO,
+    ),
     column(
         "winner_gender",
         "string",
@@ -705,6 +745,49 @@ COLUMNS = [
         "disagree on 63% of rows - which is what makes them worth "
         "holding separately rather than a redundancy.",
     ),
+    column(
+        "winner_category_raw",
+        "string",
+        length=(1, 60),
+        severity=INFO,
+        note="The source's untouched winning-candidate category, retained "
+        "even on a result row where the winner name is blank.",
+    ),
+    column(
+        "election_type",
+        "enum",
+        allowed=["General Election", "By Election"],
+        severity=INFO,
+        note="Whether Rajasthan SEC labels the event as a general or by-election.",
+    ),
+    column(
+        "election_duration",
+        "string",
+        length=(5, 20),
+        severity=INFO,
+        note="The event period exactly as Rajasthan SEC labels it.",
+    ),
+    column("total_candidates_stated", "integer", range=(0, 100), severity=INFO),
+    column("electorate", "integer", range=(0, 100000), severity=INFO),
+    column("votes_polled", "integer", range=(0, 100000), severity=INFO),
+    column("rejected_votes", "integer", range=(0, 100000), severity=INFO),
+    column("valid_votes", "integer", range=(0, 100000), severity=INFO),
+    column("poll_percentage", "string", length=(1, 8), severity=INFO),
+    column("nota_votes", "integer", range=(0, 100000), severity=INFO),
+    column("tendered_votes", "integer", range=(0, 100000), severity=INFO),
+    column("winner_pledge_url", "string", length=(8, 300), severity=INFO),
+    column("result_remark", "string", length=(1, 120), severity=INFO),
+    column("nominations_filed", "integer", range=(0, 1000), severity=INFO),
+    column("nomination_candidates", "integer", range=(0, 1000), severity=INFO),
+    column(
+        "validly_nominated_candidates",
+        "integer",
+        range=(0, 1000),
+        severity=INFO,
+    ),
+    column("withdrawals", "integer", range=(0, 1000), severity=INFO),
+    column("nominated_unopposed", "integer", range=(0, 1000), severity=INFO),
+    column("contestants", "integer", range=(0, 1000), severity=INFO),
     column(
         "lgi_role",
         "string",
@@ -757,6 +840,15 @@ COLUMNS = [
         "resolvable from the file, so both are kept.",
     ),
     column(
+        "winner_candidate_ambiguous",
+        "integer",
+        range=(0, 1),
+        severity=INFO,
+        note="More than one candidate in the contest has the published "
+        "winner's exact normalized name, so the seat winner is known but the "
+        "winning candidate serial is not.",
+    ),
+    column(
         "shared_place_name",
         "integer",
         range=(0, 1),
@@ -806,6 +898,7 @@ ROW_BANDS = {
     ("Haryana", "gp_head"): (4000, 8000),
     ("Haryana", "gp_ward"): (40000, 80000),
     ("Rajasthan", "gp_head"): (8000, 14000),
+    ("Rajasthan", "gp_ward"): (90000, 130000),
     # Bihar 2016, one cycle. Bounds are set around what the scrape holds rather
     # than around a published total, because there is no published per-tier
     # total available in machine-readable form - see reference.PUBLISHED.

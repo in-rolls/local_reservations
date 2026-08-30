@@ -23,6 +23,7 @@ the same way the validate scripts gate the data.
 import argparse
 import collections
 import csv
+import gzip
 import re
 import sys
 
@@ -105,14 +106,22 @@ SIBLINGS = {
     # caste_category and female_reserved are already separate columns.
     "Rajasthan": {
         "repo": "local_elections_rajasthan",
-        "years": "2005, 2010, 2015, 2020",
-        "tiers": "gp_head",
+        "years": "2005, 2010, 2015, 2020, 2021, 2022",
+        "tiers": "gp_head, gp_ward",
         "files": [
             "data/fin/source_2005_std.parquet",
             "data/fin/source_2010_std.parquet",
             "data/fin/source_2015_std.parquet",
             "data/fin/source_2020_std.parquet",
+            "data/ContestingSarpanch.csv.gz",
+            "data/WinnerSarpanch.csv.gz",
+            "data/WarnWinningPanch.csv.gz",
+            "data/StatsNomination.csv.gz",
         ],
+        "standardized": "149,951 rural seat events, 68,202 candidates, and "
+        "13,473 GP-event nomination summaries are standardized",
+        "remaining": "Panchayat Samiti and Zila Parishad source books remain "
+        "unparsed; municipal material is held outside the rural master",
     },
 }
 
@@ -342,12 +351,19 @@ def sibling_rows(spec):
             continue
         if path.suffix == ".parquet":
             total += pq.read_metadata(path).num_rows
-        elif path.suffix == ".csv":
+        elif path.suffix == ".csv" or path.name.endswith(".csv.gz"):
             # Records, not lines. Bihar's addresses contain embedded newlines,
             # so counting lines reported 692,314 where the six files hold
             # 645,605 records, a 7% overstatement printed as a fact.
             csv.field_size_limit(10**7)
-            with path.open(encoding="utf-8", errors="replace", newline="") as fh:
+            opener = gzip.open if path.name.endswith(".gz") else open
+            with opener(
+                path,
+                "rt",
+                encoding="utf-8",
+                errors="replace",
+                newline="",
+            ) as fh:
                 total += max(sum(1 for _ in csv.reader(fh)) - 1, 0)
         else:
             raise RuntimeError(f"unsupported sibling data file: {path}")
@@ -396,7 +412,14 @@ def build_rows():
                     spec["years"],
                     sibling_rows(spec),
                     "parsed",
-                    "see sibling repository",
+                    "; ".join(
+                        part
+                        for part in (
+                            spec.get("standardized", ""),
+                            spec.get("remaining", "see sibling repository"),
+                        )
+                        if part
+                    ),
                     f"[{spec['repo']}]({url})",
                 )
             )
