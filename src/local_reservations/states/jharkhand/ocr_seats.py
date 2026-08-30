@@ -157,8 +157,8 @@ def read_page(text):
 def ocr_all(pages, into):
     """Hand a directory of rendered pages to savitr's uv environment, once.
 
-    A subprocess rather than an import: this script needs pdfplumber to find the
-    pages at all, and pdfplumber cannot be installed beside surya-ocr.
+    A subprocess keeps the Apple-Silicon model stack out of parser-only runs
+    and loads the model once for the complete page batch.
     """
     if not pages:
         return

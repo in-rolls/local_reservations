@@ -9,22 +9,13 @@ updates:
     # Security updates are not delayed by cooldown.
     cooldown:
       default-days: 7
-    # Two pins are load-bearing and must not be proposed at all. Dependabot
-    # bumped both on the day this config was added, and left the comments
-    # explaining the pins sitting three lines above the new numbers - so the
-    # file argued with itself and the reasoning was still there to be read.
-    #
+    # This pin is load-bearing and must not be proposed automatically.
     # pyarrow: parquet writes `created_by: parquet-cpp-arrow version <x>` into
     # every footer, so a different version rewrites every SHA-256 in
     # MANIFEST.json without one value changing, and `make verify` reports the
     # whole corpus altered. The version is recorded in the manifest.
-    #
-    # pillow: savitr needs <11 and pdfplumber needs >=12.2, which is why they
-    # are separate dependency groups declared as conflicting. Raising pillow
-    # breaks the OCR rather than the parse, and it breaks it silently.
     ignore:
       - dependency-name: "pyarrow"
-      - dependency-name: "pillow"
     groups:
       python-minor-and-patch:
         applies-to: version-updates
@@ -43,22 +34,6 @@ updates:
       day: "monday"
     cooldown:
       default-days: 7
-    # Two pins are load-bearing and must not be proposed at all. Dependabot
-    # bumped both on the day this config was added, and left the comments
-    # explaining the pins sitting three lines above the new numbers - so the
-    # file argued with itself and the reasoning was still there to be read.
-    #
-    # pyarrow: parquet writes `created_by: parquet-cpp-arrow version <x>` into
-    # every footer, so a different version rewrites every SHA-256 in
-    # MANIFEST.json without one value changing, and `make verify` reports the
-    # whole corpus altered. The version is recorded in the manifest.
-    #
-    # pillow: savitr needs <11 and pdfplumber needs >=12.2, which is why they
-    # are separate dependency groups declared as conflicting. Raising pillow
-    # breaks the OCR rather than the parse, and it breaks it silently.
-    ignore:
-      - dependency-name: "pyarrow"
-      - dependency-name: "pillow"
     groups:
       actions-minor-and-patch:
         applies-to: version-updates
