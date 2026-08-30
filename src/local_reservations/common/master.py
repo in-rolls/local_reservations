@@ -260,6 +260,8 @@ def quality_flags(row):
         flags.append("serial_not_unique")
     if str(row.get("winner_candidate_ambiguous") or "0") not in ("0", ""):
         flags.append("winner_candidate_ambiguous")
+    if str(row.get("winner_category_sex_agree", "")) == "0":
+        flags.append("winner_category_sex_disagree")
     # two places in one block printed under one name, told apart only by the
     # fact that they are reserved differently
     if str(row.get("shared_place_name") or "0") not in ("0", ""):

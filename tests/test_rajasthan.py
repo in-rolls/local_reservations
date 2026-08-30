@@ -25,7 +25,46 @@ def test_all_structured_rural_seats_are_adapted(slices):
         (row["tier"], row["year"]) for slice_ in slices for row in slice_["rows"]
     )
     assert counts == collections.Counter(rajasthan.DECLARED_UNITS)
-    assert sum(counts.values()) == 149951
+    assert sum(counts.values()) == 155224
+
+
+def test_panchayat_samiti_result_roster_is_retained(slices):
+    rows = [
+        row
+        for slice_ in slices
+        for row in slice_["rows"]
+        if row["tier"] == "block_member" and row["year"] == "2010"
+    ]
+    assert len(rows) == 5273
+    assert len(
+        {(row["district"], row["block"], row["seat_no"]) for row in rows}
+    ) == len(rows)
+    assert collections.Counter(row["reservation_raw"] for row in rows) == {
+        "GEN": 1378,
+        "GENW": 1345,
+        "SC": 510,
+        "SCW": 423,
+        "ST": 454,
+        "STW": 372,
+        "OBC": 446,
+        "OBCW": 345,
+    }
+
+    bhim = [
+        row
+        for row in rows
+        if row["district"] == "RAJSAMAND"
+        and row["block"] == "BHIM"
+        and row["ward_no_raw"] == "17"
+    ]
+    assert len(bhim) == 1
+    assert bhim[0]["seat_no"] == "16"
+
+    contradiction = [row for row in rows if row["winner_category_sex_agree"] == "0"]
+    assert len(contradiction) == 1
+    assert contradiction[0]["winner"] == "MAGADU"
+    assert contradiction[0]["winner_gender"] == "Other than Woman"
+    assert contradiction[0]["winner_category_raw"] == "OBCW"
 
 
 def test_all_sarpanch_candidates_are_retained(slices):

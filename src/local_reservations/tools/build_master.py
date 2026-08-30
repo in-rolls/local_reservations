@@ -485,7 +485,8 @@ def render_readme(rows, dropped, candidates, counts, written):
         "`quality_flags` carries what a row cannot be trusted for: "
         "`ocr_repaired`, `gender_not_stated`, `ward_list_incomplete`, "
         "`winner_inferred`, `winner_candidate_ambiguous`, "
-        "`name_untransliterated`, `printings_disagree`. "
+        "`winner_category_sex_disagree`, `name_untransliterated`, "
+        "`printings_disagree`. "
         "`gender_not_stated` in particular means `woman_reserved=0` is a "
         "default rather than a reading.",
         "",
@@ -494,6 +495,7 @@ def render_readme(rows, dropped, candidates, counts, written):
     ]
     for level, n in provenance.most_common():
         meaning = {
+            "row": "to the exact source row and page it was read from",
             "page": "to the page it was read from",
             "document": "to a document, but not a page within it",
             "dataset": "to the file it came from and no further",

@@ -102,13 +102,14 @@ SIBLINGS = {
             "data/uttarakhand-panchayat-elections-haridwar.csv",
         ],
     },
-    # The standardized sarpanch panel lives with the state's election data;
+    # The standardized rural panels live with the state's election data;
     # caste_category and female_reserved are already separate columns.
     "Rajasthan": {
         "repo": "local_elections_rajasthan",
         "years": "2005, 2010, 2015, 2020, 2021, 2022",
-        "tiers": "gp_head, gp_ward",
+        "tiers": "gp_head, gp_ward, block_member",
         "files": [
+            "data/fin/panchayat_samiti_2010_std.parquet",
             "data/fin/source_2005_std.parquet",
             "data/fin/source_2010_std.parquet",
             "data/fin/source_2015_std.parquet",
@@ -118,10 +119,11 @@ SIBLINGS = {
             "data/WarnWinningPanch.csv.gz",
             "data/StatsNomination.csv.gz",
         ],
-        "standardized": "149,951 rural seat events, 68,202 candidates, and "
+        "standardized": "155,224 rural seat events, 68,202 candidates, and "
         "13,473 GP-event nomination summaries are standardized",
-        "remaining": "Panchayat Samiti and Zila Parishad source books remain "
-        "unparsed; municipal material is held outside the rural master",
+        "remaining": "the 2005 and 2015 Panchayat Samiti books and all held "
+        "Zila Parishad books remain unparsed; municipal material is held "
+        "outside the rural master",
     },
 }
 

@@ -7,6 +7,38 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased
+
+### Added
+
+- **Rajasthan adds all 5,273 Panchayat Samiti member wards from the 2010
+  general-election result book.** Each seat retains its reservation separately
+  from the elected member's name, sex, category, and party, with exact page and
+  row provenance. Rajasthan now has 155,224 rural seat events and the pooled
+  corpus has 985,263, up from 979,990 in v0.3.0. The parser agrees exactly with
+  the publication's 33 districts, 248 Panchayat Samitis, 5,273 constituencies,
+  eight reservation-category totals, and 2,485 women-reserved seats.
+
+- **The source pipeline separates extraction from parsing.** A retained JSONL
+  artifact stores 55,910 positioned words from 144 source pages; the parser
+  reads only that artifact and emits structured JSON logs. Its dictionary
+  declares the seat key, fields, recodes, and validation controls.
+
+### Corrected
+
+- **Two source anomalies remain visible rather than silently changing the
+  record.** Rajsamand–Bhim's 16-row roster prints its last ward as 17 after
+  wards 1–15; `ward_no_raw=17` is retained and the seat key uses 16, consistent
+  with the publication's independent 16-constituency control. Serial 71 prints
+  winner sex `M` but winner category `OBCW`; neither is overwritten, and the
+  pooled row carries `winner_category_sex_disagree`.
+
+### Changed
+
+- **The remaining Rajasthan work is now stated precisely.** The held 2005 and
+  2015 Panchayat Samiti books and all held Zila Parishad books remain unparsed;
+  municipal holdings remain outside the rural master.
+
 ## v0.3.0 — 2026-08-29
 
 ### Corrected
