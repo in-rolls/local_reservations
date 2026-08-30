@@ -1,7 +1,7 @@
 [project]
 name = "local-reservations"
 description = "Reservation and results data for India's local electoral bodies"
-readme = "readme.md"
+readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.12"
@@ -164,7 +164,7 @@ build-backend = "uv_build"
 # release workflow was removed rather than left to fire on the next v* tag -
 # and our tags are v0.2.1, so it would have fired.
 #
-# The documentation is readme.md plus a generated readme in every state
+# The documentation is README.md plus a generated readme in every state
 # directory, both rebuilt by `make coverage` and checked by
 # build_state_readmes.py --check. A Sphinx site would be a second, unchecked
 # copy, so docs/ and its workflow are out too.
@@ -175,6 +175,6 @@ skip_checks = [
     # transliterated several ways, plus Kruti Dev mojibake kept as evidence -
     # produce ~47,000 "misspellings", every one of them a person or a village.
     # Checked directly over the code and prose, which is the part that matters:
-    #     uv run --with codespell codespell src tests readme.md  ->  0
+    #     uv run --with codespell codespell src tests README.md  ->  0
     "codespell",
 ]

@@ -23,7 +23,7 @@ from local_reservations.paths import ROOT
 # which does not tell anyone that the readme was out of date. Naming them turns
 # a puzzle into an instruction.
 GENERATED = [
-    "readme.md",
+    "README.md",
     "WORKLIST.md",
     "MANIFEST.json",
     "MANIFEST.md",

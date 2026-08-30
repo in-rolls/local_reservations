@@ -8,6 +8,7 @@ business.
 """
 
 import json
+import shutil
 
 import pytest
 
@@ -38,6 +39,8 @@ class FakeEngine:
 def a_pdf():
     """Any real multi-page PDF in the repo - this exercises pdfinfo and
     pdftoppm for real, which is where a path bug would hide."""
+    if not all(shutil.which(command) for command in ("pdfinfo", "pdftoppm")):
+        pytest.skip("Poppler CLI is not installed")
     for candidate in sorted((ROOT / "data" / "karnataka").rglob("*.pdf")):
         if ocr_engine.page_count(candidate) >= 3:
             return candidate

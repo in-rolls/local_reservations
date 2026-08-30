@@ -24,7 +24,7 @@ from local_reservations.paths import ROOT
 
 WORKLIST_CSV = ROOT / "data" / "worklist.csv"
 WORKLIST_MD = ROOT / "WORKLIST.md"
-README = ROOT / "readme.md"
+README = ROOT / "README.md"
 
 START, END = "<!-- worklist:start -->", "<!-- worklist:end -->"
 

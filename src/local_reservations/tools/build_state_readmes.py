@@ -627,7 +627,7 @@ def render_sibling(directory, state, years, tiers, url, standardized, remaining)
         f"**The parsed data for {state} is in "
         f"[{name}]({url})** — {tiers}, {years}. It was split into its "
         f"own repository, so it is counted in the [top-level "
-        f"readme](../../readme.md) but has no rows here."
+        f"readme](../../README.md) but has no rows here."
     )
     out.append("")
     out.append(
@@ -668,7 +668,7 @@ def render_unparsed(directory, state, status, where):
     out.append(
         f"**Status: {status}.** Nothing in this directory is in the "
         f"repository's schema yet, so it does not appear in the "
-        f"per-slice table in the [top-level readme](../../readme.md)."
+        f"per-slice table in the [top-level readme](../../README.md)."
     )
     out.append("")
     if status == "tables, other layout":

@@ -1,4 +1,4 @@
-"""Generate the coverage table in readme.md, and check that its links work.
+"""Generate the coverage table in README.md, and check that its links work.
 
 The readme is the index of record for this whole family of repos, and it has
 drifted twice already: Haryana sat blank after being built, `data/karnatka/` was
@@ -33,7 +33,7 @@ from local_reservations.paths import ROOT
 from local_reservations.states.assam import controls_2025 as assam_controls
 
 DATA = ROOT / "data"
-README = ROOT / "readme.md"
+README = ROOT / "README.md"
 
 START, END = "<!-- coverage:start -->", "<!-- coverage:end -->"
 SLICE_START, SLICE_END = "<!-- slices:start -->", "<!-- slices:end -->"
@@ -653,7 +653,7 @@ def main():
     ap.add_argument(
         "--dry-run",
         action="store_true",
-        help="print the table without writing readme.md",
+        help="print the table without writing README.md",
     )
     args = ap.parse_args()
 

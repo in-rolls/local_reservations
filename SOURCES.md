@@ -32,7 +32,7 @@ week of work into a month.
 ## The surprise: much of the acquisition is already done
 
 `data/` already holds ~2 GB of source documents for states the coverage table in
-[readme.md](readme.md) still shows as blank. For these the question is not "can
+[README.md](README.md) still shows as blank. For these the question is not "can
 we get it" but "what is in it".
 
 <!-- holdings:start -->
