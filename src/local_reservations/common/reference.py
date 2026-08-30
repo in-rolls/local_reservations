@@ -39,6 +39,22 @@ PUBLISHED = {
         "institution table prints 5,273 Panchayat Samiti constituencies, "
         "and the Part-B member-result roster reproduces all 5,273.",
     },
+    ("Rajasthan", "2005", "zp_member"): {
+        "total": 1008,
+        "basis": "seats",
+        "unit": "seats",
+        "source": "Rajasthan SEC, Panchayat General Election 2005: the "
+        "reservation control and detailed Zila Parishad member-result roster "
+        "each account for all 1,008 wards.",
+    },
+    ("Rajasthan", "2010", "zp_member"): {
+        "total": 1013,
+        "basis": "seats",
+        "unit": "seats",
+        "source": "Rajasthan SEC, Panchayat General Election 2010: the "
+        "reservation control and detailed Zila Parishad member-result roster "
+        "each account for all 1,013 wards.",
+    },
     ("Gujarat", "2020", "zp_member"): {
         "total": 532,
         "basis": "seats",
@@ -808,8 +824,10 @@ DOCUMENT_STAGE = {
     ("Karnataka", "2007", "gp_head"): "pre_poll",
     ("Rajasthan", "2005", "gp_head"): "result",
     ("Rajasthan", "2005", "block_member"): "result",
+    ("Rajasthan", "2005", "zp_member"): "result",
     ("Rajasthan", "2010", "gp_head"): "result",
     ("Rajasthan", "2010", "block_member"): "result",
+    ("Rajasthan", "2010", "zp_member"): "result",
     ("Rajasthan", "2015", "gp_head"): "result",
     ("Rajasthan", "2020", "gp_head"): "result",
     ("Rajasthan", "2021", "gp_head"): "result",

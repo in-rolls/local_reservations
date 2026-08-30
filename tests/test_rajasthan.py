@@ -25,7 +25,7 @@ def test_all_structured_rural_seats_are_adapted(slices):
         (row["tier"], row["year"]) for slice_ in slices for row in slice_["rows"]
     )
     assert counts == collections.Counter(rajasthan.DECLARED_UNITS)
-    assert sum(counts.values()) == 160481
+    assert sum(counts.values()) == 162502
 
 
 def test_panchayat_samiti_result_roster_is_retained(slices):
@@ -107,6 +107,45 @@ def test_2005_panchayat_samiti_source_exceptions_are_retained(slices):
 
     margin_conflicts = [row for row in rows if row["margin_below_votes"] == "0"]
     assert len(margin_conflicts) == 3
+
+
+def test_zila_parishad_result_rosters_are_retained(slices):
+    assert reference.document_stage("Rajasthan", "2005", "zp_member") == "result"
+    assert reference.document_stage("Rajasthan", "2010", "zp_member") == "result"
+    rows = [
+        row for slice_ in slices for row in slice_["rows"] if row["tier"] == "zp_member"
+    ]
+    assert collections.Counter(row["year"] for row in rows) == {
+        "2005": 1008,
+        "2010": 1013,
+    }
+    assert len({(row["year"], row["district"], row["seat_no"]) for row in rows}) == len(
+        rows
+    )
+
+    vacancy = [row for row in rows if row["vacant"] == 1]
+    assert len(vacancy) == 1
+    assert (vacancy[0]["year"], vacancy[0]["district"], vacancy[0]["seat_no"]) == (
+        "2005",
+        "BARAN",
+        "13",
+    )
+
+    churu = [row for row in rows if row["district"] == "CHURU"]
+    assert len(churu) == 54
+    assert {row["ward_no_raw"] for row in churu if row["seat_no"] == "1"} == {"5"}
+    assert all(row["ward_no_inferred"] == "1" for row in churu)
+
+    jaipur_two = [
+        row
+        for row in rows
+        if row["year"] == "2005"
+        and row["district"] == "JAIPUR"
+        and row["seat_no"] == "2"
+    ]
+    assert len(jaipur_two) == 1
+    assert jaipur_two[0]["unopposed"] == "1"
+    assert jaipur_two[0]["unopposed_inferred"] == "1"
 
 
 def test_all_sarpanch_candidates_are_retained(slices):

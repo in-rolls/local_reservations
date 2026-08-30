@@ -900,6 +900,7 @@ ROW_BANDS = {
     ("Rajasthan", "gp_head"): (8000, 14000),
     ("Rajasthan", "gp_ward"): (90000, 130000),
     ("Rajasthan", "block_member"): (5257, 5273),
+    ("Rajasthan", "zp_member"): (1008, 1013),
     # Bihar 2016, one cycle. Bounds are set around what the scrape holds rather
     # than around a published total, because there is no published per-tier
     # total available in machine-readable form - see reference.PUBLISHED.

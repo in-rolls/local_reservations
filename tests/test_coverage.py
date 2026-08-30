@@ -85,5 +85,5 @@ def test_sibling_source_record_counts_are_reported():
     ]
     if not all(path.exists() for path in required):
         pytest.skip("state sibling repositories are not checked out")
-    assert rows["Rajasthan"][3] == "253,453"
+    assert rows["Rajasthan"][3] == "255,474"
     assert rows["Uttar Pradesh"][3] == "535,848"

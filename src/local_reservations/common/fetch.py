@@ -2,7 +2,8 @@
 
 Four scripts talk to the web - archive_sweep, harvest_archive, probe_sources,
 build_coverage - and each used to roll its own retry loop. They all now come
-through `get()`.
+through this module. Acquisitions use retrying `get()`; link liveness checks use
+single-attempt `probe()` so one unreachable host cannot stall a release build.
 
 **Why this exists rather than a sleep loop.** The archive sweep once reported
 Gujarat at 614 archived PDFs and, an hour later, at 0; Odisha 817 then 0;
@@ -69,6 +70,7 @@ BACKOFF_FACTOR = 2
 TIMEOUT = 120
 
 _SESSION = None
+_PROBE_SESSION = None
 
 
 class Unanswered(Exception):
@@ -113,15 +115,25 @@ def session():
     return _SESSION
 
 
-def get(url, timeout=TIMEOUT, headers=None):
-    """The response, whatever status the server gave - or `Unanswered`.
+def probe_session():
+    """Return a rate-limited session that makes one attempt per URL."""
+    global _PROBE_SESSION
+    if _PROBE_SESSION is None:
+        adapter = LimiterAdapter(
+            per_second=PER_SECOND,
+            per_minute=PER_MINUTE,
+            max_retries=0,
+        )
+        _PROBE_SESSION = requests.Session()
+        _PROBE_SESSION.mount("http://", adapter)
+        _PROBE_SESSION.mount("https://", adapter)
+    return _PROBE_SESSION
 
-    A 404 comes back as a response, because "the state took this down" is a
-    finding. A 429 that survived five backoffs does not, because "the archive
-    would not talk to us" is not a finding about the archive's holdings.
-    """
+
+def _get(active_session, url, timeout, headers):
+    """Run one configured session and preserve answer/failure semantics."""
     try:
-        response = session().get(
+        response = active_session.get(
             url, timeout=timeout, headers=headers or {"User-Agent": "Mozilla/5.0"}
         )
     except requests.RequestException as exc:
@@ -132,6 +144,21 @@ def get(url, timeout=TIMEOUT, headers=None):
             status=response.status_code,
         )
     return response
+
+
+def get(url, timeout=TIMEOUT, headers=None):
+    """The response, whatever status the server gave - or `Unanswered`.
+
+    A 404 comes back as a response, because "the state took this down" is a
+    finding. A 429 that survived five backoffs does not, because "the archive
+    would not talk to us" is not a finding about the archive's holdings.
+    """
+    return _get(session(), url, timeout, headers)
+
+
+def probe(url, timeout=TIMEOUT, headers=None):
+    """Make one rate-limited liveness attempt without acquisition retries."""
+    return _get(probe_session(), url, timeout, headers)
 
 
 def body(url, **kwargs):

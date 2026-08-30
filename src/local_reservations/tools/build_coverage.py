@@ -107,10 +107,12 @@ SIBLINGS = {
     "Rajasthan": {
         "repo": "local_elections_rajasthan",
         "years": "2005, 2010, 2015, 2020, 2021, 2022",
-        "tiers": "gp_head, gp_ward, block_member",
+        "tiers": "gp_head, gp_ward, block_member, zp_member",
         "files": [
             "data/fin/panchayat_samiti_2005_std.parquet",
             "data/fin/panchayat_samiti_2010_std.parquet",
+            "data/fin/zila_parishad_2005_std.parquet",
+            "data/fin/zila_parishad_2010_std.parquet",
             "data/fin/source_2005_std.parquet",
             "data/fin/source_2010_std.parquet",
             "data/fin/source_2015_std.parquet",
@@ -120,9 +122,9 @@ SIBLINGS = {
             "data/WarnWinningPanch.csv.gz",
             "data/StatsNomination.csv.gz",
         ],
-        "standardized": "160,481 rural seat events, 68,202 candidates, and "
+        "standardized": "162,502 rural seat events, 68,202 candidates, and "
         "13,473 GP-event nomination summaries are standardized",
-        "remaining": "the 2015 Panchayat Samiti book and all held "
+        "remaining": "the 2015 Panchayat Samiti book and the 2015 and 2020 "
         "Zila Parishad books remain unparsed; municipal material is held "
         "outside the rural master",
     },
@@ -633,7 +635,7 @@ def check_links(text, base=None):
     for target in sorted(set(links_in(text))):
         if target.startswith(("http://", "https://")):
             try:
-                response = fetch.get(target, timeout=30)
+                response = fetch.probe(target, timeout=30)
             except fetch.Unanswered as exc:
                 unanswered.append((target, str(exc)))
                 continue

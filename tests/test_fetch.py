@@ -57,8 +57,10 @@ def fresh_session():
     """Each test gets its own session, or one test's token bucket paces the
     next one and the suite takes minutes."""
     fetch._SESSION = None
+    fetch._PROBE_SESSION = None
     yield
     fetch._SESSION = None
+    fetch._PROBE_SESSION = None
 
 
 @pytest.fixture
@@ -74,6 +76,7 @@ def without_the_wait(monkeypatch):
     monkeypatch.setattr(fetch, "PER_SECOND", 100)
     monkeypatch.setattr(fetch, "PER_MINUTE", 6000)
     fetch._SESSION = None
+    fetch._PROBE_SESSION = None
 
 
 def test_a_refused_connection_is_unanswered_and_not_an_empty_answer(without_the_wait):
@@ -128,6 +131,13 @@ def test_a_429_that_never_clears_is_unanswered(without_the_wait):
         # five retries after the first attempt, and it gave up rather than
         # hammering on
         assert len(server.seen) == fetch.TOTAL + 1
+
+
+def test_a_liveness_probe_does_not_retry(without_the_wait):
+    with Server([(500, {}, b"no"), (200, {}, b"ok")]) as server:
+        with pytest.raises(fetch.Unanswered):
+            fetch.probe(server.url, timeout=10)
+        assert len(server.seen) == 1
 
 
 def test_the_shipped_settings_are_what_the_archive_asks_for():

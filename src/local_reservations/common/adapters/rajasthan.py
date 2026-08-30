@@ -1,12 +1,12 @@
 """Rajasthan, from ``local_elections_rajasthan``.
 
-The sibling contains three complementary rural sources. Four standardized
+The sibling contains complementary rural sources. Four standardized
 sarpanch panels cover the 2005, 2010, 2015 and 2020 reservation cycles. The
-2005 and 2010 Panchayat Samiti result books supply every block-member ward with
-its seat reservation and elected member. A separate Rajasthan SEC scrape records
-sarpanch candidates, sarpanch results, ward winners and nomination summaries
-for 2020--2022. The scrape is already acquired data: this adapter parses it
-without touching the network.
+2005 and 2010 Panchayat Samiti and Zila Parishad result books supply every
+block- and district-member ward with its seat reservation and elected member.
+A separate Rajasthan SEC scrape records sarpanch candidates, sarpanch results,
+ward winners and nomination summaries for 2020--2022. The scrape is already
+acquired data: this adapter parses it without touching the network.
 
 The 2020 reservation roster has 11,314 rows. The general-election scrape names
 11,310 contests; four roster seats have no scraped contest. Those four are kept
@@ -52,6 +52,10 @@ BLOCK_MEMBER_FILES = {
     "2005": "data/fin/panchayat_samiti_2005_std.parquet",
     "2010": "data/fin/panchayat_samiti_2010_std.parquet",
 }
+ZP_MEMBER_FILES = {
+    "2005": "data/fin/zila_parishad_2005_std.parquet",
+    "2010": "data/fin/zila_parishad_2010_std.parquet",
+}
 
 DECLARED = {
     **{"2005": 9178, "2010": 9166, "2015": 9862, "2020": 11314},
@@ -61,6 +65,8 @@ DECLARED = {
     NOMINATION_FILE: 13473,
     "data/fin/panchayat_samiti_2005_std.parquet": 5257,
     "data/fin/panchayat_samiti_2010_std.parquet": 5273,
+    "data/fin/zila_parishad_2005_std.parquet": 1008,
+    "data/fin/zila_parishad_2010_std.parquet": 1013,
 }
 
 DECLARED_UNITS = {
@@ -75,6 +81,8 @@ DECLARED_UNITS = {
     ("gp_ward", "2022"): 726,
     ("block_member", "2005"): 5257,
     ("block_member", "2010"): 5273,
+    ("zp_member", "2005"): 1008,
+    ("zp_member", "2010"): 1013,
 }
 
 NOMINATION_UNITS = {"2020": 11310, "2021": 1304, "2022": 859}
@@ -361,6 +369,102 @@ def block_member_row(record, year, relative):
         "reservation_body_control_agree": integer(
             record.get("reservation_body_control_agree")
         ),
+        "margin_below_votes": integer(record.get("margin_below_votes")),
+        "script": "latin",
+        "source_path": blank(record.get("source_path")) or relative,
+        "source_page": integer(record.get("source_page")),
+    }
+
+
+def zp_member_slices(root):
+    try:
+        import pandas
+    except ImportError:
+        raise SystemExit(
+            f"{REPO}: pandas is required to read its parquet panels"
+        ) from None
+
+    root = pathlib.Path(root)
+    for year, relative in sorted(ZP_MEMBER_FILES.items()):
+        path = root / relative
+        if not path.exists():
+            continue
+        frame = pandas.read_parquet(path)
+        if len(frame) != DECLARED[relative]:
+            raise SystemExit(
+                f"{REPO}: {relative} holds {len(frame):,} rows, "
+                f"{DECLARED[relative]:,} declared - the sibling changed"
+            )
+        rows = [
+            zp_member_row(record, year, relative) for record in frame.to_dict("records")
+        ]
+        check_units("zp_member", year, rows)
+        LOGGER.info(
+            "Rajasthan source loaded",
+            extra={
+                "event": "adapter_source_loaded",
+                "state": STATE,
+                "source_path": relative,
+                "records": len(rows),
+            },
+        )
+        yield {
+            "dataset_id": f"rajasthan/zp_member/{year}",
+            "state": STATE,
+            "rows": rows,
+            "provenance_level": "row",
+            "unit_of_observation": "seat",
+        }
+
+
+def zp_member_row(record, year, relative):
+    local = blank(record.get("caste_category")).upper()
+    caste = CASTE.get(local)
+    if caste is None:
+        raise SystemExit(f"{REPO}: {year} ZP member has unknown caste {local!r}")
+    filled = integer(record.get("seat_filled")) != "0"
+    winner_local = blank(record.get("winner_caste_category")).upper()
+    winner_caste = CASTE.get(winner_local)
+    if filled and winner_caste is None:
+        raise SystemExit(
+            f"{REPO}: {year} ZP member has unknown winner caste {winner_local!r}"
+        )
+    woman = integer(record.get("female_reserved"))
+    winner_female = integer(record.get("winner_female"))
+    return {
+        "state": STATE,
+        "year": year,
+        "tier": "zp_member",
+        "tier_local": "zila_parishad_member",
+        "district": blank(record.get("district")) or blank(record.get("district_raw")),
+        "district_raw": blank(record.get("district_raw")),
+        "district_inferred": integer(record.get("district_inferred")),
+        "seat_no": integer(record.get("ward_no")),
+        "ward_no_raw": integer(record.get("ward_no_raw")),
+        "ward_no_inferred": integer(record.get("ward_no_inferred")),
+        "listing_scope": "all_seats",
+        "caste_reservation": caste,
+        "caste_reservation_local": blank(record.get("reservation_raw")),
+        "woman_reserved": woman,
+        "gender_stated": 1,
+        "reservation": label(caste, woman == "1"),
+        "reservation_raw": blank(record.get("reservation_raw")),
+        "winner": blank(record.get("winner_name")),
+        "winner_basis": "published" if blank(record.get("winner_name")) else "",
+        "winner_gender": ("Woman" if winner_female == "1" else "Other than Woman")
+        if winner_female
+        else "",
+        "winner_caste": winner_caste or "",
+        "winner_category_raw": blank(record.get("winner_category_raw")),
+        "winner_category": blank(record.get("winner_category")),
+        "winner_category_sex_agree": integer(record.get("winner_category_sex_agree")),
+        "party": blank(record.get("party")) or blank(record.get("party_raw")),
+        "party_local": blank(record.get("party_raw")),
+        "winner_votes": integer(record.get("votes_secured")),
+        "margin": integer(record.get("margin")),
+        "unopposed": integer(record.get("elected_uncontested")),
+        "unopposed_inferred": integer(record.get("uncontested_inferred")),
+        "vacant": 0 if filled else 1,
         "margin_below_votes": integer(record.get("margin_below_votes")),
         "script": "latin",
         "source_path": blank(record.get("source_path")) or relative,
@@ -680,6 +784,7 @@ def ward_slices(rows):
 def slices(root):
     yield from old_panel_slices(root)
     yield from block_member_slices(root)
+    yield from zp_member_slices(root)
     candidates = read_csv(root, CONTESTING_FILE, DECLARED[CONTESTING_FILE])
     winners = read_csv(root, WINNER_FILE, DECLARED[WINNER_FILE])
     nominations = read_csv(root, NOMINATION_FILE, DECLARED[NOMINATION_FILE])
