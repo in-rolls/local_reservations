@@ -108,6 +108,8 @@ are still in the legacy font they were printed in.
 | Karnataka | 2007 | `gp_head` | 5,322 | 33% | 27 | — | no winner published | [data/karnataka/](data/karnataka/) |
 | Karnataka | 2016 | `block_member` | 3,478 | 51% | 30 | — | — | [data/karnataka/](data/karnataka/) |
 | Karnataka | 2016 | `zp_member` | 888 | 48% | 26 | — | — | [data/karnataka/](data/karnataka/) |
+| Maharashtra | 2012 | `ulb_ward` | 227 | 51% | 1 | — | — | [data/maharashtra/](data/maharashtra/) |
+| Maharashtra | 2017 | `ulb_ward` | 227 | 50% | 1 | — | — | [data/maharashtra/](data/maharashtra/) |
 | Telangana | 2019 | `gp_head` | 12,018 | 50% | 30 | 94% of 12,728 seats | — | [data/telangana/](data/telangana/) |
 | Telangana | 2019 | `gp_ward` | 49,823 | 51% | 30 | 44% of 112,242 seats | — | [data/telangana/](data/telangana/) |
 | West Bengal | 2018 | `zp_member` | 825 | 49% | 20 | — | no winner published | [data/wb/](data/wb/) |
@@ -151,7 +153,7 @@ seats. The state readme linked in `Where` gives the file-level inventory.
 | Ladakh | - | - | - | not held | acquire and assess a seat-level rural source | - |
 | Lakshadweep | - | - | - | not held | acquire and assess a seat-level rural source | - |
 | Madhya Pradesh | - | - | - | no parsed rows | 2 held scans need a seat-level scope review and OCR | [data/madhya_pradesh/](data/madhya_pradesh/) - 2 scan |
-| Maharashtra | `ulb_ward` | Mumbai 2007, 2012, 2017 | - | urban only | rural data are not held here | [data/maharashtra/](data/maharashtra/) |
+| Maharashtra | ulb_ward | 2012, 2017 | 454 | parsed | Mumbai only: the 1997, 2002 and 2007 BMC councils lack a seat-reservation roster (2007 has the women's flag as a supplemental file); the ~28,000 rural gram panchayats are absent entirely | [data/maharashtra/](data/maharashtra/) |
 | Manipur | - | - | - | not held | acquire and assess a seat-level rural source | - |
 | Meghalaya | - | - | - | not applicable | none | Sixth Schedule - autonomous district councils, no PRI |
 | Mizoram | - | - | - | not applicable | none | Sixth Schedule - village councils, no PRI |

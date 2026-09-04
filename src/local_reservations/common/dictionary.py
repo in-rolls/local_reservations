@@ -873,6 +873,8 @@ ROW_BANDS = {
     # contract rather than a statewide ward denominator.
     ("Assam", "gp_ward"): (1254, 1254),
     ("Goa", "gp_ward"): (400, 1800),
+    # Mumbai's council has had 227 wards since 1992; two councils are in the schema.
+    ("Maharashtra", "ulb_ward"): (454, 454),
     # All 45 Gujarat sources have independent per-order seat totals, so the
     # aggregate expectations are exact rather than merely plausible bands.
     ("Gujarat", "block_member"): (646, 646),

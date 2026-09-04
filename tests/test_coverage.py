@@ -29,6 +29,15 @@ def test_source_holdings_use_inventory_directory_names(tmp_path, monkeypatch):
     assert "| Tamil Nadu | 0 | 1 | 0 | 0 | 74 |" in rendered
 
 
+def test_maharashtra_is_parsed_urban_with_its_gaps_named():
+    row = next(row for row in build_coverage.build_rows() if row[0] == "Maharashtra")
+    assert row[1] == "ulb_ward"
+    assert row[2] == "2012, 2017"
+    assert row[4] == "parsed"
+    assert "lack a seat-reservation roster" in row[5]
+    assert "rural gram panchayats are absent" in row[5]
+
+
 def test_coverage_describes_held_unparsed_pdfs_plainly():
     assam = next(row for row in build_coverage.build_rows() if row[0] == "Assam")
     assert assam[4] == "parsed"

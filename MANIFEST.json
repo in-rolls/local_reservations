@@ -44,7 +44,7 @@
     "source_page"
   ],
   "committed_utc": "2026-08-30T15:11:03-07:00",
-  "dirty": false,
+  "dirty": true,
   "files": [
     {
       "bytes": 19269581,
@@ -1289,6 +1289,44 @@
       ]
     },
     {
+      "bytes": 77151,
+      "kind": "parsed",
+      "listing_scopes": [
+        "all_seats"
+      ],
+      "path": "data/maharashtra/ulb_ward_2012.csv",
+      "rows": 227,
+      "sha256": "2a3efe26109358564cc0697d972749b8261add3f39bf8c5f70e4b2db518b4816",
+      "states": [
+        "Maharashtra"
+      ],
+      "tiers": [
+        "ulb_ward"
+      ],
+      "years": [
+        "2012"
+      ]
+    },
+    {
+      "bytes": 82094,
+      "kind": "parsed",
+      "listing_scopes": [
+        "all_seats"
+      ],
+      "path": "data/maharashtra/ulb_ward_2017.csv",
+      "rows": 227,
+      "sha256": "41d8271d52e7b51c0880fd6ca2589c37b4574e23889ae0f0b0ed1ad3f2cde1f4",
+      "states": [
+        "Maharashtra"
+      ],
+      "tiers": [
+        "ulb_ward"
+      ],
+      "years": [
+        "2017"
+      ]
+    },
+    {
       "bytes": 1993418,
       "kind": "parsed",
       "path": "data/telangana/gp_head_2019.csv",
@@ -1426,8 +1464,8 @@
       "url": "https://github.com/in-rolls/local_elections_rajasthan"
     },
     {
-      "commit": "db4c13e41a4683943d7f14fad0e37104d370afc1",
-      "committed_utc": "2026-08-28T20:46:48-07:00",
+      "commit": "3e19684df019be328664f2f98362d789874855d9",
+      "committed_utc": "2026-09-01T08:48:20-07:00",
       "dirty": false,
       "present": true,
       "repo": "local_elections_up",
@@ -1448,7 +1486,7 @@
     "candidate_rows": 1202319,
     "master_rows": 992541,
     "master_states": 15,
-    "parsed_rows": 237637,
+    "parsed_rows": 238091,
     "supplemental_rows": 13473
   },
   "written_by": "pyarrow 23.0.1"

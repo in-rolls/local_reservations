@@ -24,6 +24,7 @@ warn,jharkhand/panchayat_samiti_reservation_2015.csv,row,ward_no,seat-level row 
 warn,karnataka/block_member_2016.csv,column,winner,length outside 2..60,77,0.0221,"ಬಹಮಾಡು ಕಂದೆ ಬಳ್ಳು ಬಳ್ಳು ಹಂಪಾಮ್ | ರವೀಶಾ ಜಿ ಗಂಜಿ ರಾಜಾದ್ವಿ ಸಾಹೇಬ್  | ಕಲಿಕೇರಿ ಕೇರಣಾನಾಯ್ಯ, ಕಲಿಕೇರಿ ವಿ",data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_TP_Ballari_HBHalli.pdf,2
 warn,jharkhand/panchayat_samiti_reservation_2015.csv,column,gram_panchayat,length outside 2..45,66,0.0129,चितरपुर-01 ग्राम पंचायत मायल क | चितरपुर-02 ग्राम पंचायत सेवई द | चितरपुर-03 ग्राम पंचायत सेवई उ,data/jharkhand/2015/16. RAMGARH ZP PSS MUKHIYA GPS/Panchayat Samiti Final Prapatra - 23/Chiterpur PSS.pdf,1
 warn,karnataka/zp_member_2016.csv,column,winner,length outside 2..60,62,0.0698,"ಬಿ.ಎಸ್.ಪ್ರವೀಣ್ ಸಿಂಗ್, ಚಪ್ಪರದಹಳ | ರತ್ನಮ್ಮ ಹೆಚ್.ಟಿ.ಯಲ್ಲಪ್ಪ, ಹಾರೋಕ | ಸಜಿತಾ, ನಂ.174, ವೈಷ್ಣವಿ, ಅಶೋಕ ಬ",data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_ZP_Ballari.pdf,2
+warn,maharashtra/ulb_ward_2012.csv,column,ward_name,length outside 2..40,43,0.1894,Naravane Sanscrutik center - A | Poinsur Village (West) - Kandi | Poinsur (East) - Rajaram Nagar,data/maharashtra/mumbai/BMC-2007_raw.xlsx,
 warn,assam/chairperson_reservation_2020.csv,column,block,blank share 78% above the 35% tolerated,36,0.7826, |  | ,data/assam/pdfs/Reservation of Wards and post of Chairperson of Municipal Boards_2020.pdf,7
 warn,jk/ward_reservation_2010.csv,column,ward_name,length outside 2..40,31,0.0024,"Sungal Lower Moh Parwana and M | Sungal Lower Moh Karala,Vidhuw | Nai Basti Sungal Lower Moh Tat",data/jk/2010/Akhnoor.pdf,9
 warn,ap/sarpanch_reservation_2020.csv,column,serial,not an integer,27,0.0037,5S | 1g | 1s,data/ap/2020_res_gp/atp_res_gp.pdf,78
@@ -49,7 +50,10 @@ warn,karnataka/block_member_2016.csv,column,ward_name,length outside 2..40,2,0.0
 warn,telangana/gp_head_2019.csv,column,gram_panchayat,length outside 2..45,2,0.0002,Nazrulnagar ( Name To Be Chang | Ab Thanda @ Addabata Thanda@Ma,data/telangana/2019_gp_sarpanch.csv,
 warn,goa/ward_reservation_2012.csv,column,winner,length outside 2..60,1,0.0007,Stael Piedade Ana Michael Anto,data/goa/2012/panres_2012_Salcete.pdf,6
 warn,gujarat/block_member_reservation_2020.csv,column,ward_name,length outside 2..40,1,0.0015,2,data/gujarat/2020_reservation/block_member_patan_tps_2020.pdf,6
+warn,maharashtra/ulb_ward_2012.csv,dataset,ulb_ward,227 rows outside the plausible band 454..454,1,0.0044,227,data/maharashtra/mumbai/BMC-2007_raw.xlsx,
+warn,maharashtra/ulb_ward_2017.csv,dataset,ulb_ward,227 rows outside the plausible band 454..454,1,0.0044,227,data/maharashtra/mumbai/dataverse_IO9SLQ/mumbai_full.tab,
 info,karnataka/block_member_2016.csv,column,party_local,length outside 1..80,20,0.0058,ಭಾರತೀಯ ರಾಷ್ಟ್ರೀಯ ಕಾಂಗ್ರೆಸ್ ಕೆ. | ಭಾರತೀಯ ಜನತಾ ಪಕ್ಷ ಕೆ.ಎಸ್. ರೇವಣ್ | ಭಾರತೀಯ ರಾಷ್ಟ್ರೀಯ ಕಾಂಗ್ರೆಸ್ ಮಹೇ,data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_TP_Chamarajanagara_Gundlupete.pdf,2
+info,maharashtra/ulb_ward_2012.csv,column,electorate,not an integer,11,0.0485,- | - | -,data/maharashtra/mumbai/BMC-2007_raw.xlsx,
 info,jharkhand/panchayat_samiti_reservation_2015.csv,column,seat_id_raw,length outside 1..90,10,0.0019,XVI रामगढ़/05/चितरपुर -09 ग्रा | XVI रामगढ़/05/चितरपुर -10 ग्रा | XVI रामगढ़/06/गोला -01 ग्राम प,data/jharkhand/2015/16. RAMGARH ZP PSS MUKHIYA GPS/Panchayat Samiti Final Prapatra - 23/Chiterpur PSS.pdf,1
 info,karnataka/block_member_2016.csv,column,relation_name,length outside 1..90,9,0.0026,"ಡಿ. ಎಂ. ಜಾನೇಗೌಡ, ದಿಣ್ಣೇಕೆರೆ, ಕ | ಕೆ.ಇ.ಮಂಜಣ್ಣ, ಭರಮಸಮುದ್ರ, ಜಗಳೂರು | ಬೋರೇಗೌಡ, ಹೊಸೂರುಕೊಪ್ಪಲು ಗಾಮ, ಗೆ",data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_TP_Chikkamagalur_Chikkamagalur.pdf,4
 info,karnataka/zp_member_2016.csv,column,relation_name,length outside 1..90,6,0.0068,"ಲೇಟ್ ಕೆಂಪಯ್ಯ, ಬೈಲಪ್ಪನಪಾಳ್ಯ, ನಂ | ಲೇಟ್ ಗಂಗಾಧರಯ್ಯ ಎಂ., ನಂ.59, ಕೆರ | ಕೃಷ್ಣಪ್ಪ, ನಂ.8, ಭೈರವೇಶ್ವರ ನಿಲಯ",data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_ZP_Bangalore_Urban.pdf,1
@@ -108,6 +112,9 @@ info,karnataka/gp_head_2002.csv,column,source_page,not present in this source (e
 info,karnataka/gp_head_2005.csv,column,source_page,not present in this source (entirely blank),1,0.0002,,data/karnataka/Karnataka_GP_ReservationHistory.dta,
 info,karnataka/gp_head_2007.csv,column,source_page,not present in this source (entirely blank),1,0.0002,,data/karnataka/Karnataka_GP_ReservationHistory.dta,
 info,karnataka/zp_member_2016.csv,column,block,not present in this source (entirely blank),1,0.0011,,data/karnataka/tzp_2016_elected/TZP_Elected_Members_2016_ZP_Bagalakote.pdf,1
+info,maharashtra/ulb_ward_2012.csv,column,source_page,not present in this source (entirely blank),1,0.0044,,data/maharashtra/mumbai/BMC-2007_raw.xlsx,
+info,maharashtra/ulb_ward_2017.csv,column,ward_name,not present in this source (entirely blank),1,0.0044,,data/maharashtra/mumbai/dataverse_IO9SLQ/mumbai_full.tab,
+info,maharashtra/ulb_ward_2017.csv,column,source_page,not present in this source (entirely blank),1,0.0044,,data/maharashtra/mumbai/dataverse_IO9SLQ/mumbai_full.tab,
 info,telangana/gp_head_2019.csv,column,ward_no,not present in this source (entirely blank),1,0.0001,,data/telangana/2019_gp_sarpanch.csv,
 info,telangana/gp_head_2019.csv,column,unopposed,not present in this source (entirely blank),1,0.0001,,data/telangana/2019_gp_sarpanch.csv,
 info,telangana/gp_head_2019.csv,column,source_page,not present in this source (entirely blank),1,0.0001,,data/telangana/2019_gp_sarpanch.csv,

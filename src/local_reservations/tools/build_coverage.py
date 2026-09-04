@@ -16,8 +16,9 @@ Three sources feed it:
   * **sibling repos**, for the states that were split out.
 
 Every link is verified: relative paths must exist on disk and http(s) links must
-answer 200. `--check` exits non-zero on a dead link, so this can gate the index
-the same way the validate scripts gate the data.
+answer 2xx (Harvard Dataverse answers its landing pages with 202). `--check`
+exits non-zero on a dead link, so this can gate the index the same way the
+validate scripts gate the data.
 """
 
 import argparse
@@ -145,7 +146,6 @@ LEGACY = {
 # "nothing acquired".
 URBAN_ONLY = {
     "NCT of Delhi": ("2007, 2012, 2017", "delhi"),
-    "Maharashtra": ("Mumbai 2007, 2012, 2017", "maharashtra"),
 }
 
 # Directory name in data/ -> printed state name.
@@ -174,6 +174,11 @@ NO_PRI = {
 # Inventory can count those files but cannot decide which case applies, so the
 # evidence-backed classification lives here and is printed beside the count.
 REMAINING_WORK = {
+    "Maharashtra": (
+        "Mumbai only: the 1997, 2002 and 2007 BMC councils lack a seat-reservation "
+        "roster (2007 has the women's flag as a supplemental file); the ~28,000 "
+        "rural gram panchayats are absent entirely"
+    ),
     "Andhra Pradesh": (
         "all 13 GP district gazettes are held; 8 are parsed and 5 remain "
         "unparsed; 32 held PDFs cover MPTC, ZPTC, MPP, and MPL tiers and "
@@ -639,7 +644,7 @@ def check_links(text, base=None):
             except fetch.Unanswered as exc:
                 unanswered.append((target, str(exc)))
                 continue
-            if response.status_code != 200:
+            if not 200 <= response.status_code < 300:
                 dead.append((target, response.status_code))
         else:
             if not (base / target).resolve().exists():

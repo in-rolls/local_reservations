@@ -39,6 +39,36 @@ ASSAM_UNPARSED = assam_controls.UNPARSED_DISTRICT_NOTIFICATIONS
 # not a fact derivable from the rows, so it is written rather than computed -
 # and kept to what a reader needs before using the numbers.
 STATE_NOTES = {
+    "maharashtra": """Mumbai only. The Brihanmumbai Municipal Corporation has 227
+ward seats; two councils are in the schema, `ulb_ward_2012` and `ulb_ward_2017`.
+
+Every file under `mumbai/` arrived as a result table assembled for research, not
+as the State Election Commission's reservation roster, and only one of them
+states the seat reservation at all: the "Present Reservation" column of
+`BMC-2007_raw.xlsx`. **That column is the 2012 draw, not 2007's.** It lists 115
+women's seats where the 2007 council had 76 (one third), and it agrees ward for
+ward with the deposit's 2012-term flag on 226 of 227 wards (ward 172 differs).
+Its "Sitting Corporator" column holds the 2007 winners. So the sheet supplies
+the 2012 slice's reservation and the 2007 supplemental file's winners.
+
+The 2017 slice takes its reservation from the replication deposit for
+Karekurve-Ramachandra & Lee (2025, *Comparative Political Studies*), Harvard
+Dataverse doi:10.7910/DVN/IO9SLQ, CC0, held under `mumbai/dataverse_IO9SLQ/`
+with a manifest and checksums. The authors digitised the commission's result
+handbooks, so for 2017 the reservation is a secondary source. Winners for 2012
+come from a scan transcription (202 of 227 wards named; names are surname-first
+and phonetic) and for 2017 from the commission's result export; both are checked
+against the deposit's councillor names by the validator.
+
+Supplemental files under `mumbai/` carry no `reservation` column and stay out of
+the pooled machinery on purpose: `bmc_seats_2007.csv` (2007 winners with the
+women's flag only; caste reservation unknown), `bmc_candidates_<year>.csv` for
+1997, 2002, 2012 and 2017, and the Praja Foundation ward-by-wave citizen ratings
+of councillors, `praja_ward_ratings_2011_2018.csv`, in which the satisfaction
+item is inverted in the 2018 wave and flagged rather than repaired. The 1997 and
+2002 councils have no reservation roster here, and rural Maharashtra's ~28,000
+gram panchayats are absent entirely.
+""",
     "assam": f"""The 2020 notification contains two reservation rosters: wards
 and municipal-board chairpersons. It prints only the reserved seats. The ward
 table also prints each board's total number of wards, but not the identifiers
@@ -211,6 +241,13 @@ STATE_CHECKS = {
         "reviewed row-count floors for the 2016 OCR outputs",
         "seat-number continuity within each source document",
     ],
+    "maharashtra": [
+        "227 seats in each council, one per ward",
+        "the statutory women's share (one half from 2012) and the 27% Backward "
+        "Class share",
+        "the 2012 reservation against the deposit's independently digitised flag",
+        "winner names against the deposit's councillors for 2012 and 2017",
+    ],
     "telangana": [
         "the declared row counts for both 2019 GP tiers",
         "source-backed uniqueness and provenance for every row",
@@ -230,6 +267,7 @@ MAKE_TARGET = {
     "jharkhand": "jharkhand",
     "jk": "jk",
     "karnataka": "karnataka",
+    "maharashtra": "maharashtra",
     "telangana": "telangana",
     "wb": "wb",
 }

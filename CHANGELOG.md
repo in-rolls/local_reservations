@@ -7,6 +7,47 @@ is worse than one that does not change at all.
 Corrections are listed first in each release, not last. The most useful thing
 here is usually the thing that was wrong.
 
+## Unreleased
+
+### Corrected
+
+- **The one Mumbai sheet that states a seat reservation states the 2012 draw,
+  not 2007's.** `data/maharashtra/mumbai/BMC-2007_raw.xlsx` pairs the 2007
+  council's winners ("Sitting Corporator") with a "Present Reservation" column
+  listing 115 women's seats, the half quota in force from 2012, where the 2007
+  council had 76. Ward by ward it agrees with the independently digitised 2012
+  flag on 226 of 227 wards and with 2007 on 38. Nothing downstream had used the
+  sheet, so no published figure moves, but any reader who had taken the column
+  at face value had every ward's reservation attached to the wrong council.
+
+### Added
+
+- **Maharashtra enters the schema with Mumbai's 2012 and 2017 councils: 454
+  `ulb_ward` seats, 227 per council.** The 2012 reservation comes from the sheet
+  above, the 2017 reservation from the Karekurve-Ramachandra & Lee (2025)
+  replication deposit (Harvard Dataverse doi:10.7910/DVN/IO9SLQ, CC0), which the
+  authors digitised from the State Election Commission's handbooks and which is
+  held under `mumbai/dataverse_IO9SLQ/` with a manifest. Winners come from a
+  2012 scan transcription (202 of 227 named) and the 2017 result export (226 of
+  227; ward 78's name is lost to encoding, ward 220's tie is settled by the
+  deposit). The validator checks the statutory women's and Backward Class
+  shares, the 2012 reservation against the deposit's flag (ward 172 is the one
+  disagreement and is kept as printed), and winner names against the deposit's
+  councillors. Urban rows are excluded from the pooled master by design, so the
+  rural total of 990,520 does not move.
+
+- **Supplemental Mumbai files that carry no reservation column and stay out of
+  the pooled machinery:** the 2007 seats with the women's flag only
+  (`bmc_seats_2007.csv`; caste reservation unknown), candidate tables for 1997,
+  2002, 2012 and 2017, and the Praja Foundation's ward-by-wave citizen ratings
+  of councillors for 2011 to 2018 (`praja_ward_ratings_2011_2018.csv`). In the
+  ratings the satisfaction item is inverted in the 2018 wave (its correlation
+  with the thirteen service items is +0.44 in 2016 and -0.33 in 2018); the
+  row carries `satisfaction_inverted` rather than a repair.
+
+- `openpyxl` and `xlrd` join the runtime dependencies; the Mumbai files are the
+  first spreadsheets the package reads.
+
 ## v0.4.0 — 2026-08-30
 
 ### Added

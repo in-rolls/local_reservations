@@ -35,6 +35,10 @@ dependencies = [
     # run inside a locked environment skipped 39,520 rows with a one-line
     # warning, which is exactly the failure a lockfile is for.
     "pandas",
+    # Mumbai's BMC result files arrive as spreadsheets: 1997 and 2002 are BIFF
+    # .xls (xlrd), 2007 and 2012 are .xlsx (openpyxl). Nothing else reads Excel.
+    "openpyxl",
+    "xlrd>=2.0.1",
 ]
 
 [project.urls]

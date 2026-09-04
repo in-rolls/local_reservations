@@ -3,7 +3,7 @@ PY ?= uv run python
 OCR_PY ?= uv run --no-default-groups --group ocr python
 UV_DOCKER_IMAGE ?= ghcr.io/astral-sh/uv:0.12.7-python3.12-trixie
 
-.PHONY: help inventory probe assam assam-2025 assam-2025-extract assam-2025-ocr assam-harvest gujarat gujarat-ocr gujarat-harvest gujarat-validate goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk jk-2010-extract jk-2016-extract ap karnataka telangana wb validate test ci-docker coverage state-readmes stats worklist master manifest verify release-check expect dictionary
+.PHONY: help inventory probe assam assam-2025 assam-2025-extract assam-2025-ocr assam-harvest gujarat gujarat-ocr gujarat-harvest gujarat-validate goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk jk-2010-extract jk-2016-extract ap karnataka maharashtra maharashtra-harvest telangana wb validate test ci-docker coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -26,6 +26,8 @@ help:
 	@echo "make jk-2016-extract  extract J&K 2016 digital tables"
 	@echo "make ap          parse + validate Andhra Pradesh"
 	@echo "make karnataka   parse + validate Karnataka's held source series"
+	@echo "make maharashtra parse + validate Mumbai (BMC) ward seats"
+	@echo "make maharashtra-harvest  fetch the Karekurve-Ramachandra & Lee Dataverse deposit"
 	@echo "make telangana   parse + validate Telangana"
 	@echo "make wb          parse + validate West Bengal"
 	@echo "make validate    run every state validator without reparsing"
@@ -136,6 +138,13 @@ karnataka:
 	$(PY) -m local_reservations.states.karnataka.parse_tzp
 	$(PY) -m local_reservations.states.karnataka.validate
 
+maharashtra:
+	$(PY) -m local_reservations.states.maharashtra.parse
+	$(PY) -m local_reservations.states.maharashtra.validate
+
+maharashtra-harvest:
+	$(PY) -m local_reservations.states.maharashtra.harvest
+
 telangana:
 	$(PY) -m local_reservations.states.telangana.parse
 	$(PY) -m local_reservations.states.telangana.validate
@@ -152,6 +161,7 @@ validate:
 	$(PY) -m local_reservations.states.jharkhand.validate
 	$(PY) -m local_reservations.states.jk.validate
 	$(PY) -m local_reservations.states.karnataka.validate
+	$(PY) -m local_reservations.states.maharashtra.validate
 	$(PY) -m local_reservations.states.telangana.validate
 	$(PY) -m local_reservations.states.wb.validate
 

@@ -57,6 +57,8 @@ TIER_OF_LOCAL = {
     # spelling and the mapping absorbs the difference.
     "zilla_parishad_member": "zp_member",
     "zila_pramukh": "zp_head",
+    # Mumbai's municipal ward member
+    "corporator": "ulb_ward",
     # Karnataka's gram panchayat president
     "adhyaksha": "gp_head",
     # Kerala names the body rather than the seat
@@ -155,6 +157,8 @@ CASTE_SCHEME = {
     # Haryana reserves for Block A of the Backward Classes list in panchayats
     # and prints it as BC_A, so the local label is finer than the pooled one.
     "Haryana": "sc_st_bca_only",
+    # Mumbai's municipal wards reserve for SC, ST and OBC (27%), printed as OBC.
+    "Maharashtra": "sc_st_obc",
     "Bihar": "sc_st_obc",
     "Rajasthan": "sc_st_obc",
     "Uttar Pradesh": "sc_st_obc",
