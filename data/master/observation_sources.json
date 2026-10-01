@@ -2,14 +2,416 @@
   "format_version": 1,
   "sources": [
     {
-      "manifest_path": "data/release/offices/manifest.json",
-      "manifest_sha256": "c8e539b075fd93185d9222ea979de0390d54c4f438c1140d6ab8aad52a310626",
-      "row_semantics": "Source observations partitioned by office and record kind; overlapping winner, candidate and reservation scopes; not a unique-seat denominator.",
+      "row_semantics": "Source observations, one table per office, record kind and election cycle; overlapping winner, candidate and reservation scopes; not a unique-seat denominator.",
       "slug": "uttar_pradesh",
       "source_repo": "local_elections_up",
       "state": "Uttar Pradesh",
       "status": "standardized_source_observations_pending_validation",
-      "source_release": "v2.0"
+      "source_release": "v3.0",
+      "files": [
+        {
+          "path": "data/1995/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "1995_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 17,
+          "sha256": "a5ebade6c913e75405e5712ad5bf7992b44c29bbab983d61b3bb19e1daa68d5a"
+        },
+        {
+          "path": "data/1995/zilla_parishad_member_seat_reservation.parquet",
+          "name": "1995_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 58,
+          "sha256": "c5bb24450b1213372b40de957fcb7a13d4fd6ce3cd1d0bbd7c0a730172f6d39e"
+        },
+        {
+          "path": "data/2000/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "2000_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 17,
+          "sha256": "beb72e0e2ee8d52f48c485f46b959607c2815a2d47bcb9b7d2b1941258ecc387"
+        },
+        {
+          "path": "data/2000/zilla_parishad_member_seat_reservation.parquet",
+          "name": "2000_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 58,
+          "sha256": "13b995ee5725924cfe64d15692908a51643a02a30eaf114a7da69a938ff234e3"
+        },
+        {
+          "path": "data/2005/gram_panchayat_head_declared_winner.parquet",
+          "name": "2005_gram_panchayat_head_declared_winner.parquet",
+          "rows": 51872,
+          "sha256": "4be3a10dd45092ee0845d80efaddc6a79a6aa542cdb232b6faa3635260fa8689"
+        },
+        {
+          "path": "data/2005/panchayat_samiti_head_elected_official.parquet",
+          "name": "2005_panchayat_samiti_head_elected_official.parquet",
+          "rows": 820,
+          "sha256": "d93440c1e82b0f9105ba1091b564d3db2d5a94e5263ef3bec4d1a39567d13b4d"
+        },
+        {
+          "path": "data/2005/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "2005_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 17,
+          "sha256": "b869a586a9235c3e78e5f343be7f23c7c2cdf9a5c77b5681800716f0a28f11e1"
+        },
+        {
+          "path": "data/2005/panchayat_samiti_junior_deputy_elected_official.parquet",
+          "name": "2005_panchayat_samiti_junior_deputy_elected_official.parquet",
+          "rows": 819,
+          "sha256": "ae1b844c0e37fbad2164c9f17a7701f66fb6f13c3a2fcdcc1369a4a5eb136911"
+        },
+        {
+          "path": "data/2005/panchayat_samiti_member_reported_official.parquet",
+          "name": "2005_panchayat_samiti_member_reported_official.parquet",
+          "rows": 64277,
+          "sha256": "267fda1b3c598d6e697034cfd405fc61e00f2d8f3260f7dc17318bbdeaef3aed"
+        },
+        {
+          "path": "data/2005/panchayat_samiti_senior_deputy_elected_official.parquet",
+          "name": "2005_panchayat_samiti_senior_deputy_elected_official.parquet",
+          "rows": 820,
+          "sha256": "e97d108b3b1a911acc350209e5343f417612fca3b2ad59e764d77521b79213bc"
+        },
+        {
+          "path": "data/2005/zilla_parishad_head_elected_official.parquet",
+          "name": "2005_zilla_parishad_head_elected_official.parquet",
+          "rows": 70,
+          "sha256": "bbff1161e213e4dcc0de0bef49f1354fb43a067877b4921df2f86258adf563b1"
+        },
+        {
+          "path": "data/2005/zilla_parishad_member_elected_official.parquet",
+          "name": "2005_zilla_parishad_member_elected_official.parquet",
+          "rows": 2561,
+          "sha256": "4d45b61fb7707d681fc95e5f437b6493ed9379ede261d8eba328113d69f43a8b"
+        },
+        {
+          "path": "data/2005/zilla_parishad_member_seat_reservation.parquet",
+          "name": "2005_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 58,
+          "sha256": "378cf5bee51c80aa01a5e54707b58fc54364da239e12dced59e001a52dd95206"
+        },
+        {
+          "path": "data/2006/municipal_corporation_mayor_candidate_record.parquet",
+          "name": "2006_municipal_corporation_mayor_candidate_record.parquet",
+          "rows": 145,
+          "sha256": "b1f31f6b7ee7eb6f7035fa15ededb1bc3dc9d6caa8fddfda5b1f041eb53b8852"
+        },
+        {
+          "path": "data/2006/municipal_corporation_ward_member_candidate_record.parquet",
+          "name": "2006_municipal_corporation_ward_member_candidate_record.parquet",
+          "rows": 8010,
+          "sha256": "9e60621e7eab3961636628f07c400260abe02537ff5ffb064fb61f72ebcd1f90"
+        },
+        {
+          "path": "data/2006/municipal_council_chair_candidate_record.parquet",
+          "name": "2006_municipal_council_chair_candidate_record.parquet",
+          "rows": 1619,
+          "sha256": "72acc8a16dba930b14a47c19f65a7204c155c54dee94d18e8ca3352cdbcb16bf"
+        },
+        {
+          "path": "data/2006/municipal_council_ward_member_candidate_record.parquet",
+          "name": "2006_municipal_council_ward_member_candidate_record.parquet",
+          "rows": 22952,
+          "sha256": "4a1be29c9c34c4fd09aecb4b5b62d8a62e6fa316fffc39b714d82368c0e41446"
+        },
+        {
+          "path": "data/2006/nagar_panchayat_chair_candidate_record.parquet",
+          "name": "2006_nagar_panchayat_chair_candidate_record.parquet",
+          "rows": 3099,
+          "sha256": "708d6843e1636771be3bf0dd48162ebc05e5aac5929a9da2751c25f15d30614c"
+        },
+        {
+          "path": "data/2006/nagar_panchayat_ward_member_candidate_record.parquet",
+          "name": "2006_nagar_panchayat_ward_member_candidate_record.parquet",
+          "rows": 17714,
+          "sha256": "bedf5ec648c3bf7db8f8ea3093df8c392a76623b94c22a8b063e6d4daab13412"
+        },
+        {
+          "path": "data/2010/gram_panchayat_head_declared_winner.parquet",
+          "name": "2010_gram_panchayat_head_declared_winner.parquet",
+          "rows": 51861,
+          "sha256": "a57e86c6b40cb2367d50ee29341ef762804ede3d5cc7b3622c53b2fcf4b77428"
+        },
+        {
+          "path": "data/2010/panchayat_samiti_head_reported_official.parquet",
+          "name": "2010_panchayat_samiti_head_reported_official.parquet",
+          "rows": 821,
+          "sha256": "5cf098f8b565ebd83f7e00ec7ead64e8d4f63ce9a510a25bbcde8133fa956d08"
+        },
+        {
+          "path": "data/2010/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "2010_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 17,
+          "sha256": "37acabf2150bef3b15d30f6aba2f788b1df2bbfb9a8898b2a3c1bef23c326871"
+        },
+        {
+          "path": "data/2010/panchayat_samiti_member_reported_official.parquet",
+          "name": "2010_panchayat_samiti_member_reported_official.parquet",
+          "rows": 63321,
+          "sha256": "425f4e7e20fb97a18d7865fcfc8f5f56cc5b056f69c4e03d1be2106ce808e318"
+        },
+        {
+          "path": "data/2010/panchayat_samiti_member_source_status_notice.parquet",
+          "name": "2010_panchayat_samiti_member_source_status_notice.parquet",
+          "rows": 12,
+          "sha256": "45303944489bfe4db7f1c02f8a2705b9b386f7ecad6f5b39224ce39a78992d4e"
+        },
+        {
+          "path": "data/2010/zilla_parishad_head_reported_official.parquet",
+          "name": "2010_zilla_parishad_head_reported_official.parquet",
+          "rows": 72,
+          "sha256": "deb7934ff76a5a5db7293f5a9e4a539b428465ed92a92281ea3bf1e071d11878"
+        },
+        {
+          "path": "data/2010/zilla_parishad_member_reported_official.parquet",
+          "name": "2010_zilla_parishad_member_reported_official.parquet",
+          "rows": 2624,
+          "sha256": "6fe68f9f5bf5421f8db13952b64118e34797740958efbd79d7f068805ad017e1"
+        },
+        {
+          "path": "data/2010/zilla_parishad_member_seat_reservation.parquet",
+          "name": "2010_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 58,
+          "sha256": "835c4c42c4ce8d9ad3a598882c6e1dfd7049a63602d334630ca2a6e75390662a"
+        },
+        {
+          "path": "data/2012/municipal_corporation_mayor_declared_winner.parquet",
+          "name": "2012_municipal_corporation_mayor_declared_winner.parquet",
+          "rows": 12,
+          "sha256": "f349c08f672fcb9009c182c8c6743593a8b8088e9e4067d00e38149179e69782"
+        },
+        {
+          "path": "data/2012/municipal_corporation_mayor_seat_reservation.parquet",
+          "name": "2012_municipal_corporation_mayor_seat_reservation.parquet",
+          "rows": 13,
+          "sha256": "1ceda98cc71f981117ba460de175326437cf4e57f5b9ea4e32cd14b4730dbd4f"
+        },
+        {
+          "path": "data/2012/municipal_corporation_ward_member_declared_winner.parquet",
+          "name": "2012_municipal_corporation_ward_member_declared_winner.parquet",
+          "rows": 980,
+          "sha256": "42360b18edf73ed9ac85e9c1660c76391b2e0cb025aa6d6d8f82acf202703b07"
+        },
+        {
+          "path": "data/2012/municipal_corporation_ward_member_seat_reservation.parquet",
+          "name": "2012_municipal_corporation_ward_member_seat_reservation.parquet",
+          "rows": 1040,
+          "sha256": "514ffee1dceb7872d6df18045767e6b437b8a208df989f1ce77bda5d5eac8ef6"
+        },
+        {
+          "path": "data/2012/municipal_council_chair_declared_winner.parquet",
+          "name": "2012_municipal_council_chair_declared_winner.parquet",
+          "rows": 194,
+          "sha256": "969cd0d56e9b7498ca60539a30ae699aa603e04aa8d16b7fe8c3d2010faab171"
+        },
+        {
+          "path": "data/2012/municipal_council_chair_seat_reservation.parquet",
+          "name": "2012_municipal_council_chair_seat_reservation.parquet",
+          "rows": 194,
+          "sha256": "1e84e2ba62c90c19ee5bced0164b8f28e82bc9ca4ae5fdc4a544cb57f3661eac"
+        },
+        {
+          "path": "data/2012/municipal_council_ward_member_declared_winner.parquet",
+          "name": "2012_municipal_council_ward_member_declared_winner.parquet",
+          "rows": 5097,
+          "sha256": "59409409083b487dea2a6ca44d98ca7d4207caa79c57c8a32ee8424157fbcdd8"
+        },
+        {
+          "path": "data/2012/municipal_council_ward_member_seat_reservation.parquet",
+          "name": "2012_municipal_council_ward_member_seat_reservation.parquet",
+          "rows": 4779,
+          "sha256": "1877b6d7f755fac6aaf69b2c22a01c4712ef11d87acf1bd7b5cd4560a8dac720"
+        },
+        {
+          "path": "data/2012/nagar_panchayat_chair_declared_winner.parquet",
+          "name": "2012_nagar_panchayat_chair_declared_winner.parquet",
+          "rows": 423,
+          "sha256": "be5576ebe366125056e0a4e8e7f05f0da5597fa757aeba3e42741121270efa1d"
+        },
+        {
+          "path": "data/2012/nagar_panchayat_chair_seat_reservation.parquet",
+          "name": "2012_nagar_panchayat_chair_seat_reservation.parquet",
+          "rows": 423,
+          "sha256": "3cb4ca4bb7cd88189a507c16b345d9eb79cee3fa29d9df7a4349ba3b32e7ffd5"
+        },
+        {
+          "path": "data/2012/nagar_panchayat_ward_member_declared_winner.parquet",
+          "name": "2012_nagar_panchayat_ward_member_declared_winner.parquet",
+          "rows": 5158,
+          "sha256": "19f648baf94236c49ef023e28951571826a9971e9f61a21f291aff9e7f2604d9"
+        },
+        {
+          "path": "data/2012/nagar_panchayat_ward_member_seat_reservation.parquet",
+          "name": "2012_nagar_panchayat_ward_member_seat_reservation.parquet",
+          "rows": 4958,
+          "sha256": "4fe63961b44d513d8fe8420790530d09ba6701d852a52414646ce0d700a3485d"
+        },
+        {
+          "path": "data/2015/gram_panchayat_head_declared_winner.parquet",
+          "name": "2015_gram_panchayat_head_declared_winner.parquet",
+          "rows": 59019,
+          "sha256": "18eedacd6d280de347484ec46d559edbdce9f904e2f25e22f88e4f565c64f7e9"
+        },
+        {
+          "path": "data/2015/gram_panchayat_head_seat_reservation.parquet",
+          "name": "2015_gram_panchayat_head_seat_reservation.parquet",
+          "rows": 59021,
+          "sha256": "38025accc2077e5760aaddfa1e3fe68d0e936c5428c6ad3cd32d3060a822a41e"
+        },
+        {
+          "path": "data/2015/gram_panchayat_member_seat_reservation.parquet",
+          "name": "2015_gram_panchayat_member_seat_reservation.parquet",
+          "rows": 743685,
+          "sha256": "6c4039718ec021359f37e593d4900ea2f36f246727349a2549532276159bc141"
+        },
+        {
+          "path": "data/2015/panchayat_samiti_head_declared_winner.parquet",
+          "name": "2015_panchayat_samiti_head_declared_winner.parquet",
+          "rows": 816,
+          "sha256": "5532103c00582e49a30ecb3e7bd77ddaa026a9079bf43f48f0136cd98d532be1"
+        },
+        {
+          "path": "data/2015/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "2015_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 838,
+          "sha256": "969f8f0113293838c07c64a67808d8b515a3af99f7e0b9ec06b1aefd75c6b97f"
+        },
+        {
+          "path": "data/2015/panchayat_samiti_member_declared_winner.parquet",
+          "name": "2015_panchayat_samiti_member_declared_winner.parquet",
+          "rows": 77743,
+          "sha256": "14feca4952011cbc971d27d77f99526010afff0a2b84f8a4ebacbf98128990d3"
+        },
+        {
+          "path": "data/2015/panchayat_samiti_member_seat_reservation.parquet",
+          "name": "2015_panchayat_samiti_member_seat_reservation.parquet",
+          "rows": 79229,
+          "sha256": "764d9b587966982b31256622745d3fc14102de7805405da4b08bf13895ace401"
+        },
+        {
+          "path": "data/2015/zilla_parishad_head_declared_winner.parquet",
+          "name": "2015_zilla_parishad_head_declared_winner.parquet",
+          "rows": 74,
+          "sha256": "f779fbe89eb7ccd3adc4245e1b907006458a5ce75fdb5a16eae1cc4f2ecbee80"
+        },
+        {
+          "path": "data/2015/zilla_parishad_head_seat_reservation.parquet",
+          "name": "2015_zilla_parishad_head_seat_reservation.parquet",
+          "rows": 75,
+          "sha256": "3c40f4eb8be9697fcefbbb4877f1bde44428ac173392776896ef6ea560449cde"
+        },
+        {
+          "path": "data/2015/zilla_parishad_member_declared_winner.parquet",
+          "name": "2015_zilla_parishad_member_declared_winner.parquet",
+          "rows": 3121,
+          "sha256": "3a732c0b1acb002598446f54f9cd0c6c2d0ce4ccd4ae5fe23a06eb6de1fccb80"
+        },
+        {
+          "path": "data/2015/zilla_parishad_member_seat_reservation.parquet",
+          "name": "2015_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 3179,
+          "sha256": "239706c70f893e3ee177f38245187053f4c50329c4d71fb4092ea7ea33ccc6c9"
+        },
+        {
+          "path": "data/2017/municipal_corporation_mayor_declared_winner.parquet",
+          "name": "2017_municipal_corporation_mayor_declared_winner.parquet",
+          "rows": 16,
+          "sha256": "7096d2298801f3293ffee4effbf36bd204c3563765e4180e34a66e993c2a3901"
+        },
+        {
+          "path": "data/2017/municipal_corporation_ward_member_declared_winner.parquet",
+          "name": "2017_municipal_corporation_ward_member_declared_winner.parquet",
+          "rows": 1300,
+          "sha256": "15b7bcf4f1ed946f89d98bd2064d3c24837302607686b67a5d819bf22adbdc94"
+        },
+        {
+          "path": "data/2017/municipal_council_chair_declared_winner.parquet",
+          "name": "2017_municipal_council_chair_declared_winner.parquet",
+          "rows": 198,
+          "sha256": "202e6b905cdfeb73a22215f2a07bad0ff655522f87105624440202d2ab18b971"
+        },
+        {
+          "path": "data/2017/municipal_council_ward_member_declared_winner.parquet",
+          "name": "2017_municipal_council_ward_member_declared_winner.parquet",
+          "rows": 5261,
+          "sha256": "7a55f7690a6a95302810da7c3af29a1808eccab8e1d9a4f53dc8af43a2ce9368"
+        },
+        {
+          "path": "data/2017/nagar_panchayat_chair_declared_winner.parquet",
+          "name": "2017_nagar_panchayat_chair_declared_winner.parquet",
+          "rows": 438,
+          "sha256": "6372c395b24ae4a546b36346ee25fd9a2b1d5bb35ccc22fd5fff3c61dcbb8710"
+        },
+        {
+          "path": "data/2017/nagar_panchayat_ward_member_declared_winner.parquet",
+          "name": "2017_nagar_panchayat_ward_member_declared_winner.parquet",
+          "rows": 5434,
+          "sha256": "e2d0c463fd73a9dd74b0f0416870b6de2cc5b43d54e3711ab8384456ce2005c1"
+        },
+        {
+          "path": "data/2021/gram_panchayat_head_declared_winner.parquet",
+          "name": "2021_gram_panchayat_head_declared_winner.parquet",
+          "rows": 49773,
+          "sha256": "6f87465d7e3cb90727b8b39528f4cf5aafca212b81d61d166747747688b377e6"
+        },
+        {
+          "path": "data/2021/gram_panchayat_head_seat_reservation.parquet",
+          "name": "2021_gram_panchayat_head_seat_reservation.parquet",
+          "rows": 405,
+          "sha256": "814fba5c07cc5ea0dc583424b5fd95c81ef8ba2b13ff93b89e77a359ec342012"
+        },
+        {
+          "path": "data/2021/panchayat_samiti_head_seat_reservation.parquet",
+          "name": "2021_panchayat_samiti_head_seat_reservation.parquet",
+          "rows": 27,
+          "sha256": "00c323db0f670a41a6bde2453bd64cb99415c1f33cf7299b6bb97e01ad1ad3d3"
+        },
+        {
+          "path": "data/2021/panchayat_samiti_member_seat_reservation.parquet",
+          "name": "2021_panchayat_samiti_member_seat_reservation.parquet",
+          "rows": 1764,
+          "sha256": "88e66c4ef2a13c9d9613c01ef64f6a2633556c1546a3fd73e5fc4785bc4b8857"
+        },
+        {
+          "path": "data/2021/zilla_parishad_member_seat_reservation.parquet",
+          "name": "2021_zilla_parishad_member_seat_reservation.parquet",
+          "rows": 92,
+          "sha256": "1df9587f99035c0b6bdbc958926334b9cb506c5932721d2829f63e7e9761a48a"
+        },
+        {
+          "path": "data/2023/municipal_corporation_mayor_seat_reservation.parquet",
+          "name": "2023_municipal_corporation_mayor_seat_reservation.parquet",
+          "rows": 17,
+          "sha256": "05bfe294f3e02f3ad0175ba761a994b7981187013a530152685751925d1cbae4"
+        },
+        {
+          "path": "data/2023/municipal_corporation_ward_member_seat_reservation.parquet",
+          "name": "2023_municipal_corporation_ward_member_seat_reservation.parquet",
+          "rows": 1420,
+          "sha256": "56ce5dfdd65bc820c514374fcf43f4c98e9d0c68d1db9237169adfaa9e023eea"
+        },
+        {
+          "path": "data/2023/municipal_council_chair_seat_reservation.parquet",
+          "name": "2023_municipal_council_chair_seat_reservation.parquet",
+          "rows": 200,
+          "sha256": "3178f91336c847d67dcb34d7a12121377fd08e83b13d77a3efbe1726126da1ff"
+        },
+        {
+          "path": "data/2023/municipal_council_ward_member_seat_reservation.parquet",
+          "name": "2023_municipal_council_ward_member_seat_reservation.parquet",
+          "rows": 5352,
+          "sha256": "7882f261d10699ebcba27604525b545cfa8e0d0640d7625afbc72208a47b040e"
+        },
+        {
+          "path": "data/2023/nagar_panchayat_chair_seat_reservation.parquet",
+          "name": "2023_nagar_panchayat_chair_seat_reservation.parquet",
+          "rows": 544,
+          "sha256": "1b04f5ac0fa5a31db2fe756d7e94ac1a0345a4c51658933afb0fb74c209b57fb"
+        },
+        {
+          "path": "data/2023/nagar_panchayat_ward_member_seat_reservation.parquet",
+          "name": "2023_nagar_panchayat_ward_member_seat_reservation.parquet",
+          "rows": 7177,
+          "sha256": "cee80a512dc4a2dd4103f5ec3b09a8adcd032273c920fdb5366f1c28f0fccd2c"
+        }
+      ]
     },
     {
       "files": [

@@ -73,13 +73,13 @@ SIBLINGS = {
             "reservation; 2021 winner education is transcribed for Arwal only"
         ),
         "files": [
-            "data/release/2016_panchayat/seats.parquet",
-            "data/release/2016_panchayat/candidates.parquet",
-            "data/release/2016_panchayat/winners.parquet",
-            "data/release/2021_panchayat/seats.parquet",
-            "data/release/2021_panchayat/candidates.parquet",
-            "data/release/2021_panchayat/winners.parquet",
-            "data/release/2021_panchayat/current_reservations.parquet",
+            "data/2016/seats.parquet",
+            "data/2016/candidates.parquet",
+            "data/2016/winners.parquet",
+            "data/2021/seats.parquet",
+            "data/2021/candidates.parquet",
+            "data/2021/winners.parquet",
+            "data/2021/current_reservations.parquet",
         ],
     },
     "Kerala": {
@@ -93,10 +93,10 @@ SIBLINGS = {
         "years": "2005, 2010, 2015, 2021",
         "tiers": "gp_head",
         "files": [
-            "data/release/gp/gp_head_winner_records_2005.parquet",
-            "data/release/gp/gp_head_winner_records_2010.parquet",
-            "data/release/gp/gp_head_winner_records_2015.parquet",
-            "data/release/gp/gp_head_candidates_2021.parquet",
+            "data/2005/gram_panchayat_head_winner_list.parquet",
+            "data/2010/gram_panchayat_head_winner_list.parquet",
+            "data/2015/gram_panchayat_head_winner_list.parquet",
+            "data/2021/gram_panchayat_head_candidate_record.parquet",
         ],
     },
     "Uttarakhand": {
