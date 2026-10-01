@@ -68,17 +68,17 @@
     }
   },
   "local_elections_bihar": {
-    "ref": "5d56ac4be8a24dda6a4b46f8d5c092b9ba67df77",
+    "ref": "fd517438c8d9b58c05d3b9523d3b146a6c40576b",
     "files": {
-      "data/release/2016_panchayat/MANIFEST.json": "2ff0bf19c5c6ed1f161458331bc465d4f1b87294aad55d9ea892778322daef83",
-      "data/release/2016_panchayat/candidates.parquet": "0b73373fce5b29292c61399b3308d44b95f850f17127f5c2e6bfef3e162f65ca",
-      "data/release/2016_panchayat/seats.parquet": "5f234dad9afc7603e37aa34401ff4210fee31e6448cb8f94d79737a667d1761c",
-      "data/release/2016_panchayat/winners.parquet": "1f1712f0a91370cb3db6a4b891d419a60cd81a4a7dbc00c57ea04e4fc14aeb13",
-      "data/release/2021_panchayat/MANIFEST.json": "a328a8562811cedc0810823635789d972f3b42f5ce15052d5f8205545c48a46b",
-      "data/release/2021_panchayat/candidates.parquet": "3971775d2e2593e7aba39b154e60402a1f619219fd809d0e2de95c01f6fd63ef",
-      "data/release/2021_panchayat/current_reservations.parquet": "a432377012f1d55f5862f44fe3f9f8a4b391b1b215fc44c5d5d626f96dc71073",
-      "data/release/2021_panchayat/seats.parquet": "690f4e18e5e73558bb578f539b1c957c09dd17469b49726f69961c636b3d1fab",
-      "data/release/2021_panchayat/winners.parquet": "6ac618e92b7bf9f22a0b95211a8fcdb9d1f605aa870a2d729986cddfe635c217"
+      "data/2016/MANIFEST.json": "2ff0bf19c5c6ed1f161458331bc465d4f1b87294aad55d9ea892778322daef83",
+      "data/2016/candidates.parquet": "0b73373fce5b29292c61399b3308d44b95f850f17127f5c2e6bfef3e162f65ca",
+      "data/2016/seats.parquet": "5f234dad9afc7603e37aa34401ff4210fee31e6448cb8f94d79737a667d1761c",
+      "data/2016/winners.parquet": "1f1712f0a91370cb3db6a4b891d419a60cd81a4a7dbc00c57ea04e4fc14aeb13",
+      "data/2021/MANIFEST.json": "5da0815918899af771d58a865ab1cb45083dde545c44d690c6cd5d1316319d3b",
+      "data/2021/candidates.parquet": "8e6fda01045edf245cc0c7d46665f3496c5e41323775a3900300a9ae0b9537be",
+      "data/2021/current_reservations.parquet": "a432377012f1d55f5862f44fe3f9f8a4b391b1b215fc44c5d5d626f96dc71073",
+      "data/2021/seats.parquet": "690f4e18e5e73558bb578f539b1c957c09dd17469b49726f69961c636b3d1fab",
+      "data/2021/winners.parquet": "32c40abc700179c19c8ff0c36ce860c34640e22a3be534f51fb77f78031b3c10"
     }
   },
   "local_elections_haryana": {

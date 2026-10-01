@@ -47,7 +47,7 @@ import pyarrow.parquet as pq
 from local_elections.common import normalize
 from local_elections.common.normalize import label
 
-RELEASE = "data/release/2016_panchayat"
+RELEASE = "data/2016"
 SHA256 = {
     "seats.parquet": (
         "5f234dad9afc7603e37aa34401ff4210fee31e6448cb8f94d79737a667d1761c"

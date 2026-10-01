@@ -38,7 +38,7 @@ import pyarrow.parquet as pq
 from local_elections.common import normalize
 from local_elections.common.normalize import label
 
-RELEASE = "data/release/2021_panchayat"
+RELEASE = "data/2021"
 SHA256 = {
     "seats.parquet": (
         "690f4e18e5e73558bb578f539b1c957c09dd17469b49726f69961c636b3d1fab"
@@ -47,10 +47,10 @@ SHA256 = {
         "a432377012f1d55f5862f44fe3f9f8a4b391b1b215fc44c5d5d626f96dc71073"
     ),
     "winners.parquet": (
-        "6ac618e92b7bf9f22a0b95211a8fcdb9d1f605aa870a2d729986cddfe635c217"
+        "32c40abc700179c19c8ff0c36ce860c34640e22a3be534f51fb77f78031b3c10"
     ),
     "candidates.parquet": (
-        "3971775d2e2593e7aba39b154e60402a1f619219fd809d0e2de95c01f6fd63ef"
+        "8e6fda01045edf245cc0c7d46665f3496c5e41323775a3900300a9ae0b9537be"
     ),
 }
 DECLARED = {
