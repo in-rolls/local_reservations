@@ -1,5 +1,5 @@
 {
-  "built_from_commit": "2a3765fe5c48ec02142f50db0f58ab03e68643a3",
+  "built_from_commit": "f1430c4dc2ac18614a4b0ce61d6e870cc8d89e08",
   "candidate_columns": [
     "dataset_id",
     "candidate_id",
@@ -43,7 +43,7 @@
     "source_path",
     "source_page"
   ],
-  "committed_utc": "2026-10-01T14:20:00-07:00",
+  "committed_utc": "2026-10-01T14:29:54-07:00",
   "dirty": false,
   "files": [
     {
@@ -179,7 +179,7 @@
       ],
       "rows": 80021,
       "rows_identifying_a_distinct_seat": 80021,
-      "sha256": "009986957b9e726e4370b8b928a36b34606692fdc26d2c770177da95ce282ba1",
+      "sha256": "65f84d2818dbc5708220df124100b9a4be38db970a9515c7355dccc8f9c12c9b",
       "states": [
         "Andhra Pradesh"
       ],
@@ -213,7 +213,7 @@
       ],
       "rows": 1678,
       "rows_identifying_a_distinct_seat": 1678,
-      "sha256": "52b134e5091c5bbd17927649692df57ac79c4e19ce80f90a7a76a5e0a0a455f7",
+      "sha256": "3d309b22752b70357dd7b095811f020599aeac5b925aaa3a98d7af988203e7b4",
       "states": [
         "Assam"
       ],
@@ -315,7 +315,7 @@
       ],
       "rows": 2948,
       "rows_identifying_a_distinct_seat": 2948,
-      "sha256": "248a5dd6b02577bb78090538a8eb0c4b933944f851832b1f7a9ca138182190d7",
+      "sha256": "c135077a1cd7822bf07f217f01c2e33d46f02174b0d8459d7cfc39f27aa56d2d",
       "states": [
         "Goa"
       ],
@@ -344,7 +344,7 @@
       ],
       "rows": 1178,
       "rows_identifying_a_distinct_seat": 1178,
-      "sha256": "c4568b5de161c68516004f238740b7ae095fcb5e0f8e8b9c90760b515c69a681",
+      "sha256": "ced1e9dd823ad6bb44717fc94685c36796e63e10fb5a9cf1ca9601a58f6a78e2",
       "states": [
         "Gujarat"
       ],
@@ -406,7 +406,7 @@
       ],
       "rows": 28498,
       "rows_identifying_a_distinct_seat": 28484,
-      "sha256": "c4cc8e012ef97c433a98d14aa2d7518dacc3e975abab310ea604a7b4cfff077b",
+      "sha256": "931ca699ee69dabe012187044fc44fd9e874b31514311ef9ac3437633c089cac",
       "states": [
         "Jammu & Kashmir"
       ],
@@ -438,7 +438,7 @@
       ],
       "rows": 29111,
       "rows_identifying_a_distinct_seat": 27696,
-      "sha256": "17c29fec0d6e8db99013142a63d1530dcb1ed69b0fe0393ea929c9af3073a517",
+      "sha256": "06ac9e80f12afb4f6a6cfbc72b5dd3f5acebadec549ddd82b581d87bddc17052",
       "states": [
         "Jharkhand"
       ],
@@ -473,7 +473,7 @@
       ],
       "rows": 30914,
       "rows_identifying_a_distinct_seat": 30901,
-      "sha256": "12d3e78684b379c630e95b783824a55270001b836e68217bb9314e4331588371",
+      "sha256": "ef47c13aff6fb0d25f8855fb7e3b823b9d6a9bef743c3e0829199940dba8a09a",
       "states": [
         "Karnataka"
       ],
@@ -620,7 +620,7 @@
       ],
       "rows": 61841,
       "rows_identifying_a_distinct_seat": 61801,
-      "sha256": "ab0135efd3ee74981f9d19f9ae96c0984b379893598a1fd0c7cf9579df0806a0",
+      "sha256": "92472cca49ef7831ed40394ac7fd0791f740cd41673af6d83cefedfab30bf397",
       "states": [
         "Telangana"
       ],
@@ -727,7 +727,7 @@
       ],
       "rows": 825,
       "rows_identifying_a_distinct_seat": 825,
-      "sha256": "6528b438ed2921ba7ce2f516ec886b71201afbe132497e99c6517dec249e32bd",
+      "sha256": "93a40a38ff8613c7b3c134c95ab30ddb6e68e06e938c2e54c35e5b33b370e468",
       "states": [
         "West Bengal"
       ],
