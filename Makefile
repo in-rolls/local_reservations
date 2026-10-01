@@ -2,9 +2,8 @@ PY ?= uv run python
 # The Apple-Silicon model stack stays out of parser-only environments.
 OCR_PY ?= uv run --no-default-groups --group ocr python
 TABLE_OCR_PY ?= uv run --group table-ocr python
-UV_DOCKER_IMAGE ?= ghcr.io/astral-sh/uv:0.12.7-python3.12-trixie
 
-.PHONY: help inventory probe assam assam-2025 assam-2025-extract assam-2025-ocr assam-harvest gujarat gujarat-ocr gujarat-harvest gujarat-validate goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk jk-2010-extract jk-2016-extract ap karnataka maharashtra maharashtra-harvest telangana wb validate test ci-docker coverage state-readmes stats worklist master manifest verify release-check expect dictionary
+.PHONY: help inventory probe assam assam-2025 assam-2025-extract assam-2025-ocr assam-harvest gujarat gujarat-ocr gujarat-harvest gujarat-validate goa jharkhand jharkhand-ocr jharkhand-bench jharkhand-bench-record jk jk-2010-extract jk-2016-extract ap karnataka maharashtra maharashtra-harvest telangana wb validate test  coverage state-readmes stats worklist master manifest verify release-check expect dictionary
 
 help:
 	@echo "make inventory   classify the source documents already in data/"
@@ -36,7 +35,6 @@ help:
 	@echo "make expect      triage every column against the data dictionary"
 	@echo "make dictionary  regenerate DICTIONARY.md from the declarations"
 	@echo "make test        unit tests for the shared normalizer"
-	@echo "make ci-docker   run the release checks in a clean Python 3.12 container"
 	@echo "make sweep       what the web archive holds, per state commission"
 	@echo "make karnataka-ocr  read the Kannada scans; resumable, ~10 hours"
 	@echo "make transliterate  Indic names -> Latin, into a committed table"
@@ -283,25 +281,6 @@ dictionary:
 
 test:
 	$(PY) -m pytest tests -q
-
-ci-docker:
-	docker run --rm --pull=always \
-		--mount type=bind,source="$(CURDIR)",target=/workspace \
-		--workdir /workspace \
-		--env UV_PROJECT_ENVIRONMENT=/tmp/local-elections-venv \
-		--env UV_CACHE_DIR=/tmp/uv-cache \
-		--env RUFF_CACHE_DIR=/tmp/ruff-cache \
-		$(UV_DOCKER_IMAGE) \
-		sh -c 'apt-get update && \
-			apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-ben libgl1 && \
-			uv sync --no-default-groups --frozen --group dev --all-extras && \
-			uv run ruff check . && \
-			uv run ruff format --check . && \
-			uv run pyright && \
-			uvx --from pydoclint==0.9.1 pydoclint src/ && \
-			uvx preen check --strict --skip tests && \
-			uv run pytest tests -q -p no:cacheprovider && \
-			uv build --out-dir /tmp/dist'
 
 .PHONY: delhi delhi-harvest
 delhi-harvest:
