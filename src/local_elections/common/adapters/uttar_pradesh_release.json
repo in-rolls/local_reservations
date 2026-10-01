@@ -1,6 +1,6 @@
 {
-  "release": "v2.0",
-  "manifest_sha256": "ae78137a4dbf776f3be10e86a3c06c567b4f296e05c806e81ee60f449dfafbd2",
+  "release": "v3.0",
+  "manifest_sha256": "ea4ba6a2401270c24e3a750b1d7025c221821e599a08d7cd2d9280281a38e497",
   "source_sha256": {
     "2005": "f6b9087ab7c844b5eec6188e78ef1b29ca095db4c4c0530155e06b8a27a7fe2a",
     "2010": "5c9e0de7b58b84cc8c4a046e37ca50d939e9252dbd9b364aadc188e5d9093631",

@@ -4,7 +4,7 @@
 
 **Status: documents, no parser.** Nothing in this directory is in the repository's schema yet, so it does not appear in the per-slice table in the [top-level readme](../../README.md).
 
-14 files on disk.
+13 files on disk.
 
 Inventory: 11 digital-text, 2 other, 1 scan, 74 pages total.
 

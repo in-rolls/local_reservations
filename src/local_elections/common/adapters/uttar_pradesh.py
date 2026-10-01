@@ -46,11 +46,11 @@ URL = "https://github.com/in-rolls/local_elections_up"
 STATE = "Uttar Pradesh"
 
 SEAT_FILES = {
-    "2005": "data/release/gp/gp_head_winner_records_2005.parquet",
-    "2010": "data/release/gp/gp_head_winner_records_2010.parquet",
-    "2015": "data/release/gp/gp_head_winner_records_2015.parquet",
+    "2005": "data/2005/gram_panchayat_head_winner_list.parquet",
+    "2010": "data/2010/gram_panchayat_head_winner_list.parquet",
+    "2015": "data/2015/gram_panchayat_head_winner_list.parquet",
 }
-CANDIDATE_FILE = ("2021", "data/release/gp/gp_head_candidates_2021.parquet")
+CANDIDATE_FILE = ("2021", "data/2021/gram_panchayat_head_candidate_record.parquet")
 DECLARED = {"2005": 51872, "2010": 51861, "2015": 59019, "2021": 373096}
 RELEASE_PIN = pathlib.Path(__file__).with_name("uttar_pradesh_release.json")
 PIN = json.loads(RELEASE_PIN.read_text())
@@ -58,7 +58,7 @@ SOURCE_SHA256 = PIN["source_sha256"]
 
 
 def verify_release(root):
-    manifest = pathlib.Path(root) / "data/release/manifest.json"
+    manifest = pathlib.Path(root) / "data/manifest.json"
     if hashlib.sha256(manifest.read_bytes()).hexdigest() != PIN["manifest_sha256"]:
         raise ValueError("UP release manifest differs from the pinned artifact")
 
