@@ -152,7 +152,6 @@ held, or rural PRI data are not applicable. `Remaining work` records the next
 source action or explains why held PDFs do not represent additional missing
 seats. The state readme linked in `Where` gives the file-level inventory.
 
-
 <!-- coverage:start -->
 
 | State | Tier | Years | Rows | Coverage | Remaining work | Where |
@@ -196,7 +195,10 @@ seats. The state readme linked in `Where` gives the file-level inventory.
 
 <!-- coverage:end -->
 
-
 ### Other Sources
 
 * https://github.com/tcpd/Urban_Local_Body
+
+## Maintenance
+
+This is a point-in-time data collection; see the [shared maintenance policy](https://github.com/soodoku/data-repos#maintenance-policy). Run the affected parser tests when code changes and the relevant data validators when inputs or outputs change. Full-data checks and publication are explicit operations. Routine edits do not require hosted CI, Docker, a Python-version matrix, Preen or pre-commit.
